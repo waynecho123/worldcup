@@ -41,6 +41,7 @@ const INFO_FILE = path.join(BASE_DIR, 'match-info.json');
 
 // Team name → our ID
 const TEAM_MAP = {
+  // Chinese
   '墨西哥':'MEX','南非':'RSA','韩国':'KOR','捷克':'CZE',
   '加拿大':'CAN','波黑':'BIH','卡塔尔':'QAT','瑞士':'SUI',
   '巴西':'BRA','摩洛哥':'MAR','海地':'HAI','苏格兰':'SCO',
@@ -54,6 +55,20 @@ const TEAM_MAP = {
   '葡萄牙':'POR','刚果(金)':'COD','乌兹别克斯坦':'UZB','哥伦比亚':'COL',
   '英格兰':'ENG','克罗地亚':'CRO','加纳':'GHA','巴拿马':'PAN',
   '捷克共和国':'CZE','刚果':'COD','沙特':'KSA','韩国(南韩)':'KOR',
+  // English (API returns English names)
+  'Mexico':'MEX','South Africa':'RSA','South Korea':'KOR','Czech Republic':'CZE','Czechia':'CZE',
+  'Canada':'CAN','Bosnia and Herzegovina':'BIH','Qatar':'QAT','Switzerland':'SUI',
+  'Brazil':'BRA','Morocco':'MAR','Haiti':'HAI','Scotland':'SCO',
+  'United States':'USA','Paraguay':'PAR','Australia':'AUS','Turkey':'TUR','Türkiye':'TUR',
+  'Germany':'GER','Curacao':'CUW','Curaçao':'CUW','Ivory Coast':'CIV',"Côte d'Ivoire":'CIV','Ecuador':'ECU',
+  'Netherlands':'NED','Japan':'JPN','Sweden':'SWE','Tunisia':'TUN',
+  'Belgium':'BEL','Egypt':'EGY','Iran':'IRN','New Zealand':'NZL',
+  'Spain':'ESP','Cape Verde':'CPV','Saudi Arabia':'KSA','Uruguay':'URU',
+  'France':'FRA','Senegal':'SEN','Iraq':'IRQ','Norway':'NOR',
+  'Argentina':'ARG','Algeria':'ALG','Austria':'AUT','Jordan':'JOR',
+  'Portugal':'POR','DR Congo':'COD','Uzbekistan':'UZB','Colombia':'COL',
+  'England':'ENG','Croatia':'CRO','Ghana':'GHA','Panama':'PAN',
+  'Korea Republic':'KOR','Congo DR':'COD','United States of America':'USA',
 };
 
 // ========== RSA SIGN ==========
@@ -114,42 +129,42 @@ function loadMatchLookup() {
 }
 
 function getMatchSchedule() { return [
-  {id:"m001",date:"2026-06-11",home:"MEX",away:"RSA"},{id:"m002",date:"2026-06-12",home:"KOR",away:"CZE"},
-  {id:"m003",date:"2026-06-13",home:"CAN",away:"BIH"},{id:"m004",date:"2026-06-13",home:"USA",away:"PAR"},
-  {id:"m005",date:"2026-06-14",home:"QAT",away:"SUI"},{id:"m006",date:"2026-06-14",home:"BRA",away:"MAR"},
-  {id:"m007",date:"2026-06-14",home:"HAI",away:"SCO"},{id:"m008",date:"2026-06-14",home:"AUS",away:"TUR"},
-  {id:"m009",date:"2026-06-15",home:"GER",away:"CUW"},{id:"m010",date:"2026-06-15",home:"NED",away:"JPN"},
-  {id:"m011",date:"2026-06-15",home:"CIV",away:"ECU"},{id:"m012",date:"2026-06-15",home:"SWE",away:"TUN"},
-  {id:"m013",date:"2026-06-16",home:"ESP",away:"CPV"},{id:"m014",date:"2026-06-16",home:"BEL",away:"EGY"},
-  {id:"m015",date:"2026-06-16",home:"KSA",away:"URU"},{id:"m016",date:"2026-06-16",home:"IRN",away:"NZL"},
-  {id:"m017",date:"2026-06-17",home:"FRA",away:"SEN"},{id:"m018",date:"2026-06-17",home:"IRQ",away:"NOR"},
-  {id:"m019",date:"2026-06-17",home:"ARG",away:"ALG"},{id:"m020",date:"2026-06-17",home:"AUT",away:"JOR"},
-  {id:"m021",date:"2026-06-18",home:"POR",away:"COD"},{id:"m022",date:"2026-06-18",home:"ENG",away:"CRO"},
-  {id:"m023",date:"2026-06-18",home:"GHA",away:"PAN"},{id:"m024",date:"2026-06-18",home:"UZB",away:"COL"},
-  {id:"m025",date:"2026-06-19",home:"RSA",away:"KOR"},{id:"m026",date:"2026-06-19",home:"MEX",away:"CZE"},
-  {id:"m027",date:"2026-06-19",home:"SUI",away:"BIH"},{id:"m028",date:"2026-06-19",home:"CAN",away:"QAT"},
-  {id:"m029",date:"2026-06-20",home:"TUR",away:"PAR"},{id:"m030",date:"2026-06-20",home:"USA",away:"AUS"},
-  {id:"m031",date:"2026-06-20",home:"BRA",away:"HAI"},{id:"m032",date:"2026-06-20",home:"MAR",away:"SCO"},
-  {id:"m033",date:"2026-06-21",home:"GER",away:"CIV"},{id:"m034",date:"2026-06-21",home:"ECU",away:"CUW"},
-  {id:"m035",date:"2026-06-21",home:"NED",away:"SWE"},{id:"m036",date:"2026-06-21",home:"JPN",away:"TUN"},
-  {id:"m037",date:"2026-06-22",home:"BEL",away:"IRN"},{id:"m038",date:"2026-06-22",home:"EGY",away:"NZL"},
-  {id:"m039",date:"2026-06-22",home:"ESP",away:"KSA"},{id:"m040",date:"2026-06-22",home:"URU",away:"CPV"},
-  {id:"m041",date:"2026-06-23",home:"FRA",away:"IRQ"},{id:"m042",date:"2026-06-23",home:"SEN",away:"NOR"},
-  {id:"m043",date:"2026-06-23",home:"ARG",away:"AUT"},{id:"m044",date:"2026-06-23",home:"ALG",away:"JOR"},
-  {id:"m045",date:"2026-06-24",home:"POR",away:"UZB"},{id:"m046",date:"2026-06-24",home:"COL",away:"COD"},
-  {id:"m047",date:"2026-06-24",home:"ENG",away:"GHA"},{id:"m048",date:"2026-06-24",home:"CRO",away:"PAN"},
-  {id:"m049",date:"2026-06-25",home:"MEX",away:"KOR"},{id:"m050",date:"2026-06-25",home:"CZE",away:"RSA"},
-  {id:"m051",date:"2026-06-25",home:"CAN",away:"SUI"},{id:"m052",date:"2026-06-25",home:"BIH",away:"QAT"},
-  {id:"m053",date:"2026-06-26",home:"BRA",away:"SCO"},{id:"m054",date:"2026-06-26",home:"MAR",away:"HAI"},
-  {id:"m055",date:"2026-06-26",home:"GER",away:"ECU"},{id:"m056",date:"2026-06-26",home:"CIV",away:"CUW"},
-  {id:"m057",date:"2026-06-26",home:"NED",away:"TUN"},{id:"m058",date:"2026-06-26",home:"JPN",away:"SWE"},
-  {id:"m059",date:"2026-06-26",home:"USA",away:"TUR"},{id:"m060",date:"2026-06-26",home:"PAR",away:"AUS"},
-  {id:"m061",date:"2026-06-27",home:"BEL",away:"NZL"},{id:"m062",date:"2026-06-27",home:"EGY",away:"IRN"},
-  {id:"m063",date:"2026-06-27",home:"ESP",away:"URU"},{id:"m064",date:"2026-06-27",home:"CPV",away:"KSA"},
-  {id:"m065",date:"2026-06-27",home:"FRA",away:"NOR"},{id:"m066",date:"2026-06-27",home:"SEN",away:"IRQ"},
-  {id:"m067",date:"2026-06-28",home:"ARG",away:"JOR"},{id:"m068",date:"2026-06-28",home:"ALG",away:"AUT"},
-  {id:"m069",date:"2026-06-28",home:"POR",away:"COL"},{id:"m070",date:"2026-06-28",home:"COD",away:"UZB"},
-  {id:"m071",date:"2026-06-28",home:"ENG",away:"PAN"},{id:"m072",date:"2026-06-28",home:"CRO",away:"GHA"},
+  {id:"m001",date:"2026-06-11",time:"03:00",home:"MEX",away:"RSA"},{id:"m002",date:"2026-06-12",time:"10:00",home:"KOR",away:"CZE"},
+  {id:"m003",date:"2026-06-13",time:"03:00",home:"CAN",away:"BIH"},{id:"m004",date:"2026-06-13",time:"09:00",home:"USA",away:"PAR"},
+  {id:"m005",date:"2026-06-14",time:"03:00",home:"QAT",away:"SUI"},{id:"m006",date:"2026-06-14",time:"06:00",home:"BRA",away:"MAR"},
+  {id:"m007",date:"2026-06-14",time:"09:00",home:"HAI",away:"SCO"},{id:"m008",date:"2026-06-14",time:"12:00",home:"AUS",away:"TUR"},
+  {id:"m009",date:"2026-06-15",time:"01:00",home:"GER",away:"CUW"},{id:"m010",date:"2026-06-15",time:"04:00",home:"NED",away:"JPN"},
+  {id:"m011",date:"2026-06-15",time:"07:00",home:"CIV",away:"ECU"},{id:"m012",date:"2026-06-15",time:"10:00",home:"SWE",away:"TUN"},
+  {id:"m013",date:"2026-06-16",time:"00:00",home:"ESP",away:"CPV"},{id:"m014",date:"2026-06-16",time:"03:00",home:"BEL",away:"EGY"},
+  {id:"m015",date:"2026-06-16",time:"06:00",home:"KSA",away:"URU"},{id:"m016",date:"2026-06-16",time:"09:00",home:"IRN",away:"NZL"},
+  {id:"m017",date:"2026-06-17",time:"03:00",home:"FRA",away:"SEN"},{id:"m018",date:"2026-06-17",time:"06:00",home:"IRQ",away:"NOR"},
+  {id:"m019",date:"2026-06-17",time:"09:00",home:"ARG",away:"ALG"},{id:"m020",date:"2026-06-17",time:"12:00",home:"AUT",away:"JOR"},
+  {id:"m021",date:"2026-06-18",time:"01:00",home:"POR",away:"COD"},{id:"m022",date:"2026-06-18",time:"04:00",home:"ENG",away:"CRO"},
+  {id:"m023",date:"2026-06-18",time:"07:00",home:"GHA",away:"PAN"},{id:"m024",date:"2026-06-18",time:"10:00",home:"UZB",away:"COL"},
+  {id:"m025",date:"2026-06-19",time:"03:00",home:"RSA",away:"KOR"},{id:"m026",date:"2026-06-19",time:"09:00",home:"MEX",away:"CZE"},
+  {id:"m027",date:"2026-06-19",time:"06:00",home:"SUI",away:"BIH"},{id:"m028",date:"2026-06-19",time:"12:00",home:"CAN",away:"QAT"},
+  {id:"m029",date:"2026-06-20",time:"03:00",home:"TUR",away:"PAR"},{id:"m030",date:"2026-06-20",time:"09:00",home:"USA",away:"AUS"},
+  {id:"m031",date:"2026-06-20",time:"06:00",home:"BRA",away:"HAI"},{id:"m032",date:"2026-06-20",time:"12:00",home:"MAR",away:"SCO"},
+  {id:"m033",date:"2026-06-21",time:"01:00",home:"GER",away:"CIV"},{id:"m034",date:"2026-06-21",time:"07:00",home:"ECU",away:"CUW"},
+  {id:"m035",date:"2026-06-21",time:"04:00",home:"NED",away:"SWE"},{id:"m036",date:"2026-06-21",time:"10:00",home:"JPN",away:"TUN"},
+  {id:"m037",date:"2026-06-22",time:"03:00",home:"BEL",away:"IRN"},{id:"m038",date:"2026-06-22",time:"09:00",home:"EGY",away:"NZL"},
+  {id:"m039",date:"2026-06-22",time:"00:00",home:"ESP",away:"KSA"},{id:"m040",date:"2026-06-22",time:"06:00",home:"URU",away:"CPV"},
+  {id:"m041",date:"2026-06-23",time:"03:00",home:"FRA",away:"IRQ"},{id:"m042",date:"2026-06-23",time:"09:00",home:"SEN",away:"NOR"},
+  {id:"m043",date:"2026-06-23",time:"06:00",home:"ARG",away:"AUT"},{id:"m044",date:"2026-06-23",time:"12:00",home:"ALG",away:"JOR"},
+  {id:"m045",date:"2026-06-24",time:"01:00",home:"POR",away:"UZB"},{id:"m046",date:"2026-06-24",time:"07:00",home:"COL",away:"COD"},
+  {id:"m047",date:"2026-06-24",time:"04:00",home:"ENG",away:"GHA"},{id:"m048",date:"2026-06-24",time:"10:00",home:"CRO",away:"PAN"},
+  {id:"m049",date:"2026-06-25",time:"03:00",home:"MEX",away:"KOR"},{id:"m050",date:"2026-06-25",time:"03:00",home:"CZE",away:"RSA"},
+  {id:"m051",date:"2026-06-25",time:"09:00",home:"CAN",away:"SUI"},{id:"m052",date:"2026-06-25",time:"09:00",home:"BIH",away:"QAT"},
+  {id:"m053",date:"2026-06-26",time:"06:00",home:"BRA",away:"SCO"},{id:"m054",date:"2026-06-26",time:"06:00",home:"MAR",away:"HAI"},
+  {id:"m055",date:"2026-06-26",time:"01:00",home:"GER",away:"ECU"},{id:"m056",date:"2026-06-26",time:"01:00",home:"CIV",away:"CUW"},
+  {id:"m057",date:"2026-06-26",time:"04:00",home:"NED",away:"TUN"},{id:"m058",date:"2026-06-26",time:"04:00",home:"JPN",away:"SWE"},
+  {id:"m059",date:"2026-06-26",time:"09:00",home:"USA",away:"TUR"},{id:"m060",date:"2026-06-26",time:"09:00",home:"PAR",away:"AUS"},
+  {id:"m061",date:"2026-06-27",time:"03:00",home:"BEL",away:"NZL"},{id:"m062",date:"2026-06-27",time:"03:00",home:"EGY",away:"IRN"},
+  {id:"m063",date:"2026-06-27",time:"06:00",home:"ESP",away:"URU"},{id:"m064",date:"2026-06-27",time:"06:00",home:"CPV",away:"KSA"},
+  {id:"m065",date:"2026-06-27",time:"09:00",home:"FRA",away:"NOR"},{id:"m066",date:"2026-06-27",time:"09:00",home:"SEN",away:"IRQ"},
+  {id:"m067",date:"2026-06-28",time:"03:00",home:"ARG",away:"JOR"},{id:"m068",date:"2026-06-28",time:"03:00",home:"ALG",away:"AUT"},
+  {id:"m069",date:"2026-06-28",time:"06:00",home:"POR",away:"COL"},{id:"m070",date:"2026-06-28",time:"06:00",home:"COD",away:"UZB"},
+  {id:"m071",date:"2026-06-28",time:"09:00",home:"ENG",away:"PAN"},{id:"m072",date:"2026-06-28",time:"09:00",home:"CRO",away:"GHA"},
 ];}
 
 function loadJSON(file, fallback = {}) {
@@ -169,7 +184,8 @@ function saveJSON(file, data) {
 async function updateScores() {
   const now = new Date();
   const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
-  const todayStr = now.toISOString().slice(0, 10);
+  // 用北京时间，因为赛程日期是BJT
+  const todayStr = now.toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
 
   // Pre-check: skip if no matches today
   const sched = getMatchSchedule();
@@ -206,9 +222,9 @@ async function updateScores() {
   const lookup = loadMatchLookup();
 
   let allMatches = [];
-  // Fetch today + yesterday
+  // Fetch today + yesterday (BJT)
   for (let off = 0; off <= 1; off++) {
-    const d = new Date(now.getTime() - off * 86400000).toISOString().slice(0, 10);
+    const d = new Date(now.getTime() - off * 86400000).toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
     try {
       const resp = await apiGet('/firo/tsd/soccer-events', { date: d, isJc: 1 });
       if (resp.code === 200 && resp.data?.matches) {
@@ -238,7 +254,7 @@ async function updateScores() {
 async function updateOdds() {
   const now = new Date();
   const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
-  const tomorrow = new Date(now.getTime() + 86400000).toISOString().slice(0, 10);
+  const tomorrow = new Date(now.getTime() + 86400000).toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
 
   // Skip if no matches tomorrow
   const sched = getMatchSchedule();
@@ -293,8 +309,8 @@ async function updateOdds() {
 async function updateInfo() {
   const now = new Date();
   const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
-  const today = now.toISOString().slice(0, 10);
-  const tmr = new Date(now.getTime() + 86400000).toISOString().slice(0, 10);
+  const today = now.toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
+  const tmr = new Date(now.getTime() + 86400000).toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
 
   // Skip if no matches today or tomorrow
   const sched = getMatchSchedule();
