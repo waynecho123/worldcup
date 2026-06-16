@@ -1,0 +1,30 @@
+name: Update WC Data
+
+on:
+  schedule:
+    # 每3小时跑一次 (UTC时间)
+    - cron: '0 */3 * * *'
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run update
+        run: node update-scores.js
+        env:
+          FIRO_API_KEY: ${{ secrets.FIRO_API_KEY }}
+          FIRO_PRIVATE_KEY: ${{ secrets.FIRO_PRIVATE_KEY }}
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name 'wc-bot'
+          git config user.email 'bot@worldcup'
+          git add scores.json odds.json match-info.json mini-program-worldcup/utils/odds-data.js mini-program-worldcup/utils/info-data.js
+          git diff --staged --quiet || (git commit -m "📊 auto update $(date +%Y-%m-%d_%H:%M)" && git push)
