@@ -1,0 +1,29 @@
+name: Update Odds & Info
+
+on:
+  schedule:
+    # 每天1次 UTC 02:00 = BJT 10:00
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Update odds & info
+        run: node update-scores.js --odds && node update-scores.js --info
+        env:
+          FIRO_API_KEY: ${{ secrets.FIRO_API_KEY }}
+          FIRO_PRIVATE_KEY: ${{ secrets.FIRO_PRIVATE_KEY }}
+
+      - name: Commit & push
+        run: |
+          git config user.name 'wc-bot'
+          git config user.email 'bot@worldcup'
+          git add odds.json match-info.json mini-program-worldcup/utils/odds-data.js mini-program-worldcup/utils/info-data.js
+          git diff --staged --quiet || (git commit -m "📊 odds+info $(TZ='Asia/Shanghai' date +%m-%d)" && git push)
