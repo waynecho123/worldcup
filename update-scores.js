@@ -175,14 +175,34 @@ async function updateScores() {
   const sched = getMatchSchedule();
   const todayMatches = sched.filter(m => m.date === todayStr);
   if (todayMatches.length === 0) {
-    // Check if it's a rest day (no matches between group stage and KO)
     const futureMatches = sched.filter(m => m.date > todayStr);
     const nextDate = futureMatches.length > 0 ? futureMatches[0].date : 'none';
     console.log(`[${ts}] Rest day — no matches. Next: ${nextDate}. Skipping.`);
     return false;
   }
 
+  // Pre-check: skip if no matches have ended yet, or all ended matches already scored
   const existing = loadJSON(SCORES_FILE);
+  let endedCount = 0, scoredCount = 0;
+  todayMatches.forEach(m => {
+    if (!m.time) return;
+    const [h, min] = m.time.split(':').map(Number);
+    const kickoff = new Date(m.date + 'T' + String(h).padStart(2,'0') + ':' + String(min||0).padStart(2,'0') + ':00+08:00');
+    const endTime = new Date(kickoff.getTime() + 135 * 60000); // ~2h15m for match
+    if (now > endTime) {
+      endedCount++;
+      if (existing[m.id]) scoredCount++;
+    }
+  });
+  if (endedCount === 0) {
+    console.log(`[${ts}] No matches ended yet (today: ${todayMatches.length}). Skipping.`);
+    return false;
+  }
+  if (scoredCount === endedCount && endedCount > 0) {
+    console.log(`[${ts}] All ${endedCount} ended matches already scored. Skipping.`);
+    return false;
+  }
+
   const lookup = loadMatchLookup();
 
   let allMatches = [];
