@@ -1,0 +1,13 @@
+{
+  "env": "cloud1-d1ggmx6ur18b296fc",
+  "permissions": {
+    "openapi": []
+  },
+  "triggers": [
+    {
+      "name": "scoresTimer",
+      "type": "timer",
+      "config": "0 30 3,6,9,12,15 * * * *"
+    }
+  ]
+}

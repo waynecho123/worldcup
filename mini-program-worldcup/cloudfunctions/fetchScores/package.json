@@ -1,0 +1,9 @@
+{
+  "name": "fetchScores",
+  "version": "1.0.0",
+  "description": "Fetch World Cup scores from ESPN API",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  }
+}
