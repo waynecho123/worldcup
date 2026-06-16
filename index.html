@@ -3050,6 +3050,38 @@ function showMatchDetail(mid) {
   html += '<div><span style="font-size:.9rem;color:var(--accent)">⚔'+at.att+' 🛡'+at.def+'</span><div style="font-size:.6rem;color:var(--text3)">攻/防</div></div>';
   html += '</div></div>';
 
+  // 3.5 球队数据（来自实时API）
+  var infoData = liveInfo[mid];
+  var apiInjs = infoData ? (infoData.injuries || []) : [];
+  var feat = infoData ? (infoData.feature || {}) : null;
+  if (feat && Object.keys(feat).length > 0) {
+    html += '<div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:10px">';
+    html += '<div style="font-weight:700;font-size:.8rem;margin-bottom:6px">📊 球队数据</div>';
+    html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;text-align:center">';
+    html += '<div><span style="font-size:.85rem;font-weight:700;color:var(--accent)">'+ht.cn+'</span>';
+    html += '<div style="font-size:.65rem;color:var(--text2)">主场 '+(feat.homeTeamHomeWins||0)+'胜'+(feat.homeTeamHomeDraws||0)+'平'+(feat.homeTeamHomeLosses||0)+'负</div>';
+    html += '<div style="font-size:.62rem;color:var(--text3)">场均进'+(feat.homeTeamAvgGoals||'?')+'球·失'+(feat.homeTeamAvgLossGoals||'?')+'球</div></div>';
+    html += '<div><span style="font-size:.85rem;font-weight:700;color:var(--red)">'+at.cn+'</span>';
+    html += '<div style="font-size:.65rem;color:var(--text2)">客场 '+(feat.awayTeamAwayWins||0)+'胜'+(feat.awayTeamAwayDraws||0)+'平'+(feat.awayTeamAwayLosses||0)+'负</div>';
+    html += '<div style="font-size:.62rem;color:var(--text3)">场均进'+(feat.awayTeamAvgGoals||'?')+'球·失'+(feat.awayTeamAvgLossGoals||'?')+'球</div></div>';
+    html += '</div></div>';
+  }
+
+  // 3.8 实时伤停（替换硬编码）
+  if (apiInjs.length > 0) {
+    var hInjs = apiInjs.filter(function(i){return i.teamType==='home';});
+    var aInjs = apiInjs.filter(function(i){return i.teamType==='away';});
+    html += '<div style="padding:10px;background:rgba(255,61,87,.06);border-radius:8px;margin-bottom:10px">';
+    html += '<div style="font-weight:700;font-size:.78rem;margin-bottom:4px;color:var(--red)">🏥 实时伤停</div>';
+    if (hInjs.length > 0) {
+      html += '<div style="font-size:.68rem;color:var(--red)">'+ht.cn+'：'+hInjs.map(function(i){return i.playerName+(i.isSuspended?'[停赛]':'[伤病]')+'('+(i.position||'')+')';}).join('、')+'</div>';
+    }
+    if (aInjs.length > 0) {
+      html += '<div style="font-size:.68rem;color:var(--red)">'+at.cn+'：'+aInjs.map(function(i){return i.playerName+(i.isSuspended?'[停赛]':'[伤病]')+'('+(i.position||'')+')';}).join('、')+'</div>';
+    }
+    html += '</div>';
+  }
+
   // 4. 预测首发
   html += renderLineupComparison(m.home, m.away);
 

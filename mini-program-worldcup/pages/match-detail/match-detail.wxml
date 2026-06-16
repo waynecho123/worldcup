@@ -1,0 +1,238 @@
+<!-- Match Detail - 比赛详情 -->
+<scroll-view scroll-y class="page bg-dark" style="height:100vh" wx:if="{{!loading}}">
+  <view style="padding:14px">
+
+    <!-- Match Header -->
+    <view style="text-align:center;margin-bottom:12px">
+      <text style="font-size:50rpx">{{match.homeFlag}}</text>
+      <text class="font-xl font-extrabold"> {{match.homeName}}</text>
+      <text class="font-l text-muted"> vs </text>
+      <text class="font-xl font-extrabold">{{match.awayName}}</text>
+      <text style="font-size:50rpx"> {{match.awayFlag}}</text>
+      <view wx:if="{{match.group}}" class="font-s" style="color:#f0b90b;margin-top:4px">{{match.group}}组</view>
+    </view>
+
+    <!-- Match Info -->
+    <view class="info-bar">
+      <text class="font-xs text-secondary">📅 {{match.date}} {{match.time}} BJT</text>
+      <text class="font-xs text-secondary">📍 {{match.venue}}</text>
+    </view>
+
+    <!-- News & Injuries -->
+    <view wx:if="{{match.homeNews || match.awayNews || match.homeInj || match.awayInj}}" class="info-bar">
+      <text wx:if="{{match.homeNews}}" class="font-xs text-orange">📰 {{match.homeName}}：{{match.homeNews}}</text>
+      <text wx:if="{{match.awayNews}}" class="font-xs text-orange">📰 {{match.awayName}}：{{match.awayNews}}</text>
+      <text wx:if="{{match.homeInj}}" class="font-xs text-red">🏥 {{match.homeName}}：{{match.homeInj}}</text>
+      <text wx:if="{{match.awayInj}}" class="font-xs text-red">🏥 {{match.awayName}}：{{match.awayInj}}</text>
+    </view>
+
+    <!-- Strength Comparison -->
+    <view class="card">
+      <view class="card-header">📊 实力评分对比</view>
+      <view class="strength-row">
+        <view class="strength-col">
+          <text class="font-xxl text-accent font-extrabold">{{match.homeStr}}</text>
+          <text class="font-xs text-secondary">{{match.homeName}} 综合实力</text>
+        </view>
+        <view class="strength-col">
+          <text class="font-xxl font-extrabold" style="color:#ff3d57">{{match.awayStr}}</text>
+          <text class="font-xs text-secondary">{{match.awayName}} 综合实力</text>
+        </view>
+      </view>
+      <view class="strength-row">
+        <text class="font-m text-accent">⚔{{match.homeAtt}} 🛡{{match.homeDef}}</text>
+        <text class="font-m text-red">⚔{{match.awayAtt}} 🛡{{match.awayDef}}</text>
+      </view>
+    </view>
+
+    <!-- Team Stats from API -->
+    <view wx:if="{{teamStats}}" class="card">
+      <view class="card-header">📊 球队数据</view>
+      <view style="display:flex;text-align:center">
+        <view style="flex:1">
+          <text class="font-m text-accent font-bold">{{match.homeName}}</text>
+          <view class="font-xs text-secondary" style="margin-top:4px">
+            <text>主场 {{teamStats.homeHomeWins}}胜{{teamStats.homeHomeDraws}}平{{teamStats.homeHomeLosses}}负</text>
+            <text style="display:block">场均进{{teamStats.homeAvgGoals}}球 · 失{{teamStats.homeAvgLoss}}球</text>
+          </view>
+        </view>
+        <view style="flex:1">
+          <text class="font-m font-bold" style="color:#ff3d57">{{match.awayName}}</text>
+          <view class="font-xs text-secondary" style="margin-top:4px">
+            <text>客场 {{teamStats.awayAwayWins}}胜{{teamStats.awayAwayDraws}}平{{teamStats.awayAwayLosses}}负</text>
+            <text style="display:block">场均进{{teamStats.awayAvgGoals}}球 · 失{{teamStats.awayAvgLoss}}球</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- Injury-impacted Lineup -->
+    <view wx:if="{{homeInjuries.length > 0 || awayInjuries.length > 0}}" class="card">
+      <view class="card-header">🏥 伤停影响</view>
+      <view wx:if="{{homeInjuries.length > 0}}">
+        <text class="font-xs text-red font-bold">{{match.homeName}}缺阵：</text>
+        <view wx:for="{{homeInjuries}}" wx:key="playerName" class="font-xs text-secondary">
+          <text>• {{item.playerName}} ({{item.position}}{{item.jerseyNumber ? '#'+item.jerseyNumber : ''}}){{item.isSuspended ? ' [停赛]' : ' [伤病]'}}</text>
+        </view>
+      </view>
+      <view wx:if="{{awayInjuries.length > 0}}" style="margin-top:8px">
+        <text class="font-xs text-red font-bold">{{match.awayName}}缺阵：</text>
+        <view wx:for="{{awayInjuries}}" wx:key="playerName" class="font-xs text-secondary">
+          <text>• {{item.playerName}} ({{item.position}}{{item.jerseyNumber ? '#'+item.jerseyNumber : ''}}){{item.isSuspended ? ' [停赛]' : ' [伤病]'}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- AI Prediction -->
+    <view class="card" style="text-align:center">
+      <view class="card-header" style="justify-content:center">🤖 AI比分预测</view>
+      <text class="font-xxl text-gold font-extrabold">{{pred.score}}</text>
+      <view style="display:flex;justify-content:center;gap:16px;margin-top:8px">
+        <text class="font-s">{{match.homeName}}胜 {{pred.homeProb}}%</text>
+        <text class="font-s text-muted">平 {{pred.drawProb}}%</text>
+        <text class="font-s">{{match.awayName}}胜 {{pred.awayProb}}%</text>
+      </view>
+      <text class="font-xs text-secondary" style="margin-top:6px">预期进球 {{pred.expH}} - {{pred.expA}}</text>
+      <text wx:if="{{updateInfo}}" class="font-xs text-muted" style="display:block;margin-top:4px">{{updateInfo}}</text>
+    </view>
+
+    <!-- Top 3 Scores -->
+    <view class="card">
+      <view class="card-header">⚽ 最可能比分</view>
+      <view style="display:flex;justify-content:center;gap:20px">
+        <view wx:for="{{topScores}}" wx:key="score" style="text-align:center">
+          <text class="font-l {{item.isBest?'text-gold':''}} font-bold">{{item.score}}</text>
+          <text class="font-xs text-muted" style="display:block">{{item.prob}}%</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- Tactical Analysis -->
+    <view wx:if="{{pred.tacNarrative}}" class="card" style="border-color:rgba(139,92,246,.2)">
+      <view class="card-header" style="color:#8b5cf6">⚔️ 战术克制分析</view>
+      <text class="font-s">{{pred.tacNarrative}} ({{pred.tacAdjPct}})</text>
+      <view wx:if="{{pred.tacKeyPoints.length}}" style="margin-top:6px">
+        <text wx:for="{{pred.tacKeyPoints}}" wx:key="*this" class="font-xs text-secondary" style="display:block">• {{item}}</text>
+      </view>
+    </view>
+
+    <!-- Market Consensus -->
+    <view wx:if="{{marketConsensus}}" class="card" style="border-color:{{marketConsensus.agree ? 'rgba(0,200,83,.2)' : 'rgba(255,145,0,.2)'}}">
+      <view class="card-header" style="color:{{marketConsensus.agree ? '#00c853' : '#ff9100'}}">📊 {{marketConsensus.label}}</view>
+      <view style="display:flex;text-align:center">
+        <view style="flex:1">
+          <text class="font-s text-accent font-bold">🤖 AI</text>
+          <view style="display:flex;gap:4px;justify-content:center;margin-top:4px">
+            <text class="font-xs">{{pred.homeProb}}%</text>
+            <text class="font-xs text-muted">{{pred.drawProb}}%</text>
+            <text class="font-xs">{{pred.awayProb}}%</text>
+          </view>
+        </view>
+        <view style="flex:1">
+          <text class="font-s text-gold font-bold">🏷️ 机构</text>
+          <view style="display:flex;gap:4px;justify-content:center;margin-top:4px">
+            <text class="font-xs">{{marketConsensus.mktHome}}%</text>
+            <text class="font-xs text-muted">{{marketConsensus.mktDraw}}%</text>
+            <text class="font-xs">{{marketConsensus.mktAway}}%</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- Live Odds (from API) -->
+    <view wx:if="{{liveOdds && liveOdds.had}}" class="card">
+      <view class="card-header">🏷️ 参考指数 <text class="font-xs text-muted">更新于 {{liveOdds.updatedAt ? liveOdds.updatedAt.slice(0,10) : ''}}</text></view>
+      <view style="display:flex;text-align:center">
+        <view style="flex:1"><text class="font-l text-accent font-bold">{{liveOdds.had.homeWinOdds}}</text><text class="font-xs text-secondary" style="display:block">{{match.homeName}}胜</text></view>
+        <view style="flex:1"><text class="font-l text-muted font-bold">{{liveOdds.had.drawOdds}}</text><text class="font-xs text-secondary" style="display:block">平局</text></view>
+        <view style="flex:1"><text class="font-l text-red font-bold">{{liveOdds.had.awayWinOdds}}</text><text class="font-xs text-secondary" style="display:block">{{match.awayName}}胜</text></view>
+      </view>
+      <!-- Live injuries -->
+      <view wx:if="{{liveInjuries && liveInjuries.length > 0}}" style="margin-top:10px;padding:10px;background:rgba(255,61,87,.06);border-radius:8px">
+        <text class="font-xs text-red font-bold">🏥 实时伤病 ({{liveInjuries.length}}条)</text>
+        <view wx:for="{{liveInjuries}}" wx:key="playerName" class="font-xs text-secondary" style="margin-top:4px">
+          <text>• {{item.playerName || item.player}}</text>
+          <text wx:if="{{item.reason}}"> - {{item.reason}}</text>
+          <text wx:if="{{item.status}}"> [{{item.status}}]</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- Original hardcoded Odds (fallback) -->
+    <view wx:elif="{{odds}}" class="card">
+      <view class="card-header">🏷️ 游戏指数</view>
+      <view style="display:flex;text-align:center">
+        <view style="flex:1"><text class="font-l text-accent font-bold">{{odds.h}}</text><text class="font-xs text-secondary" style="display:block">{{match.homeName}}胜</text></view>
+        <view style="flex:1"><text class="font-l text-muted font-bold">{{odds.d}}</text><text class="font-xs text-secondary" style="display:block">平局</text></view>
+        <view style="flex:1"><text class="font-l text-red font-bold">{{odds.a}}</text><text class="font-xs text-secondary" style="display:block">{{match.awayName}}胜</text></view>
+      </view>
+      <view wx:if="{{fairProbs}}" class="font-xs text-secondary" style="text-align:center;margin-top:6px">
+        参考概率：{{fairProbs.home}}% / {{fairProbs.draw}}% / {{fairProbs.away}}%
+      </view>
+    </view>
+
+    <!-- Historical -->
+    <view wx:if="{{histData}}" class="card" style="border-color:rgba(139,92,246,.15)">
+      <view class="card-header" style="color:#8b5cf6">📚 历史同指数回溯</view>
+      <text class="font-xs text-secondary">区间{{histData.bucket}} · {{histData.total}}场真实比赛</text>
+      <view style="display:flex;text-align:center;margin-top:8px">
+        <view style="flex:1"><text class="font-l text-accent font-bold">{{histData.hRate}}%</text><text class="font-xs text-muted" style="display:block">主胜</text></view>
+        <view style="flex:1"><text class="font-l text-muted font-bold">{{histData.dRate}}%</text><text class="font-xs text-muted" style="display:block">平局</text></view>
+        <view style="flex:1"><text class="font-l text-red font-bold">{{histData.aRate}}%</text><text class="font-xs text-muted" style="display:block">客胜</text></view>
+      </view>
+    </view>
+
+    <!-- JC Recommendation -->
+    <view wx:if="{{jcRec}}" class="card" style="border-color:rgba(240,185,11,.2)">
+      <view class="card-header">
+        <text style="background:#ff3d57;color:#fff;padding:2px 8px;border-radius:6px;font-size:20rpx">竞猜</text>
+        中国竞猜分析
+      </view>
+      <view style="display:flex;text-align:center;margin-bottom:8px">
+        <view style="flex:1"><text class="font-xs text-secondary">{{match.homeName}}胜</text><text class="font-l text-accent font-bold" style="display:block">{{jcRec.spf[0]}}</text></view>
+        <view style="flex:1"><text class="font-xs text-secondary">平局</text><text class="font-l text-muted font-bold" style="display:block">{{jcRec.spf[1]}}</text></view>
+        <view style="flex:1"><text class="font-xs text-secondary">{{match.awayName}}胜</text><text class="font-l text-red font-bold" style="display:block">{{jcRec.spf[2]}}</text></view>
+      </view>
+      <view wx:if="{{jcRec.s && jcRec.s.length}}" class="font-s">
+        <text class="font-xs text-gold font-bold">💡 建议：</text>
+        <text wx:for="{{jcRec.s}}" wx:key="type" class="font-xs" style="display:block;padding:2px 0">→ {{item.pick}} @{{item.odds}} ({{item.reason}})</text>
+      </view>
+    </view>
+
+    <!-- Advanced Plays -->
+    <view class="card">
+      <view class="card-header">🎲 进阶玩法</view>
+      <!-- Half-Time/Full-Time -->
+      <text class="font-s text-secondary">⏱️ 半全场 Top5</text>
+      <view style="display:flex;gap:6px;flex-wrap:wrap;margin:6px 0">
+        <view wx:for="{{htFT}}" wx:key="label" style="padding:4px 10px;background:#182032;border-radius:4px;text-align:center">
+          <text class="font-s font-bold">{{item.label}}</text>
+          <text class="font-xs text-accent" style="display:block">{{item.prob}}%</text>
+        </view>
+      </view>
+      <!-- Total Goals -->
+      <text class="font-s text-secondary" style="margin-top:10px">🔢 总进球分布</text>
+      <view style="display:flex;gap:2px;margin-top:4px">
+        <view wx:for="{{goalDist}}" wx:key="label" style="flex:1;text-align:center;padding:4px 2px;border-radius:4px;background:{{item.isExpected?'rgba(240,185,11,.15)':'#182032'}}">
+          <text class="font-xs font-bold">{{item.label}}</text>
+          <text class="font-xs {{item.prob>15?'text-gold':'text-accent'}}" style="display:block">{{item.prob}}%</text>
+        </view>
+      </view>
+      <text class="font-xs text-muted" style="margin-top:4px">预期总进球 {{expTotalGoals}} 球</text>
+    </view>
+
+    <!-- AI Analysis -->
+    <view wx:if="{{analysis}}" class="card" style="border-color:rgba(77,166,255,.15);line-height:1.9">
+      <view class="card-header">📝 AI赛事深度分析</view>
+      <text wx:for="{{analysis}}" wx:key="*this" class="font-s" style="display:block;margin-bottom:8px">{{item}}</text>
+      <text class="font-xs text-muted" style="text-align:right;display:block;margin-top:8px">*基于泊松模型+战术矩阵+历史同赔+新闻情绪综合生成</text>
+    </view>
+
+  </view>
+</scroll-view>
+
+<!-- Loading -->
+<view wx:if="{{loading}}" class="empty-state">
+  <text class="icon">⏳</text>
+  <text>加载中...</text>
+</view>
