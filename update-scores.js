@@ -169,6 +169,19 @@ function saveJSON(file, data) {
 async function updateScores() {
   const now = new Date();
   const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
+  const todayStr = now.toISOString().slice(0, 10);
+
+  // Pre-check: skip if no matches today
+  const sched = getMatchSchedule();
+  const todayMatches = sched.filter(m => m.date === todayStr);
+  if (todayMatches.length === 0) {
+    // Check if it's a rest day (no matches between group stage and KO)
+    const futureMatches = sched.filter(m => m.date > todayStr);
+    const nextDate = futureMatches.length > 0 ? futureMatches[0].date : 'none';
+    console.log(`[${ts}] Rest day — no matches. Next: ${nextDate}. Skipping.`);
+    return false;
+  }
+
   const existing = loadJSON(SCORES_FILE);
   const lookup = loadMatchLookup();
 
@@ -205,6 +218,15 @@ async function updateScores() {
 async function updateOdds() {
   const now = new Date();
   const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
+  const tomorrow = new Date(now.getTime() + 86400000).toISOString().slice(0, 10);
+
+  // Skip if no matches tomorrow
+  const sched = getMatchSchedule();
+  if (!sched.some(m => m.date === tomorrow)) {
+    console.log(`[${ts}] No matches tomorrow. Skipping odds update.`);
+    return false;
+  }
+
   const existing = loadJSON(ODDS_FILE);
   const lookup = loadMatchLookup();
 
@@ -212,7 +234,6 @@ async function updateOdds() {
   try { wcMatches = await getWCMatches(); } catch(e) { console.error('list API failed:', e.message); return; }
 
   // Only fetch odds for tomorrow's matches
-  const tomorrow = new Date(now.getTime() + 86400000).toISOString().slice(0, 10);
   const targets = wcMatches.filter(m => m.matchMain?.matchDate === tomorrow);
 
   let n = 0;
@@ -252,6 +273,16 @@ async function updateOdds() {
 async function updateInfo() {
   const now = new Date();
   const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
+  const today = now.toISOString().slice(0, 10);
+  const tmr = new Date(now.getTime() + 86400000).toISOString().slice(0, 10);
+
+  // Skip if no matches today or tomorrow
+  const sched = getMatchSchedule();
+  if (!sched.some(m => m.date === today || m.date === tmr)) {
+    console.log(`[${ts}] No matches today/tomorrow. Skipping info update.`);
+    return false;
+  }
+
   const existing = loadJSON(INFO_FILE);
   const lookup = loadMatchLookup();
 
@@ -259,11 +290,9 @@ async function updateInfo() {
   try { wcMatches = await getWCMatches(); } catch(e) { console.error('list API failed:', e.message); return; }
 
   // Focus on today and tomorrow's matches for news/intel
-  const today = now.toISOString().slice(0, 10);
-  const tomorrow = new Date(now.getTime() + 86400000).toISOString().slice(0, 10);
   const targets = wcMatches.filter(m => {
     const d = m.matchMain?.matchDate;
-    return d === today || d === tomorrow;
+    return d === today || d === tmr;
   });
 
   let n = 0;
