@@ -2654,6 +2654,9 @@ let lastResult = null;
 let champChart = null, confedChart = null, roundChart = null, advChart = null, oddsCompChart = null;
 
 // ---------- TODAY'S MATCHES ----------
+function getTournamentToday() {
+  return new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Shanghai' });
+}
 function getMatchDates() {
   var dates = new Set();
   MATCH_SCHEDULE.forEach(function(m){ dates.add(m.date); });
@@ -4827,14 +4830,14 @@ var now2 = getTournamentNow();
 var nextMatchDate = null;
 for (var i = 0; i < 30; i++) {
   var checkD = new Date(now2.getTime() + i * 3600000);
-  var dStr = checkD.toISOString().slice(0, 10);
-  var upc = MATCH_SCHEDULE.filter(function(m){return m.date===dStr && m.stage==='group'});
+  var dStr = checkD.toLocaleDateString('en-CA', { timeZone: 'Asia/Shanghai' });
+  var upc = MATCH_SCHEDULE.filter(function(m){return m.date===dStr});
   if (upc.length > 0) {
     var hasNot = upc.some(function(m){return now2 < new Date(m.date+'T'+m.time+':00+08:00')});
     if (hasNot) { nextMatchDate = dStr; break; }
   }
 }
-var todayStr = nextMatchDate || getTournamentDateStr();
+var todayStr = nextMatchDate || getTournamentToday();
 // Log initial prediction snapshots before rendering (so update info is available)
 MATCH_SCHEDULE.forEach(function(m) {
   if (m.stage !== 'group') return;
