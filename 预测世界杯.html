@@ -2770,7 +2770,7 @@ function renderMatchCard(m) {
     resultHTML = `
       <div style="margin-top:12px;padding:12px;background:${correctOutcome?'rgba(0,200,83,.08)':'rgba(255,61,87,.08)'};border-radius:8px;border:1px solid ${resultColor}">
         <div style="display:flex;align-items:center;justify-content:center;gap:20px;text-align:center">
-          <div><div style="font-size:.65rem;color:var(--text3);margin-bottom:2px">🤖 ${pred.locked?'🔒最终预测':'AI预测'}</div><div style="font-weight:700;font-size:1.1rem;color:${pred.locked?'var(--gold)':'var(--accent)'}">${pred.predScore[0]} : ${pred.predScore[1]}</div></div>
+          <div><div style="font-size:.65rem;color:var(--text3);margin-bottom:2px">🤖 ${pred.locked?'🔒最终预测':'AI预测'}</div><div style="font-weight:700;font-size:.85rem;color:${pred.locked?'var(--gold)':'var(--accent)'}">${pred.topScores ? pred.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : pred.predScore[0]+':'+pred.predScore[1]}</div></div>
           <div style="font-size:1.5rem">${icon}</div>
           <div><div style="font-size:.65rem;color:var(--text3);margin-bottom:2px">📡 实际结果</div><div style="font-weight:700;font-size:1.1rem;color:${resultColor}">${act.homeScore} : ${act.awayScore}</div></div>
         </div>

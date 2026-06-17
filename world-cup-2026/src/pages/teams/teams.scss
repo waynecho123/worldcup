@@ -1,0 +1,69 @@
+.teams-page {
+  min-height: 100vh;
+}
+
+.groups-scroll {
+  height: calc(100vh - 200rpx);
+}
+
+.group-section {
+  margin-bottom: 32rpx;
+}
+
+.group-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 16rpx;
+  padding-left: 8rpx;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.team-card {
+  background: var(--color-card);
+  border-radius: 16rpx;
+  padding: 20rpx 16rpx;
+  width: calc(25% - 12rpx);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+  border: 2rpx solid transparent;
+  transition: all 0.2s;
+
+  &.selected {
+    border-color: var(--color-primary);
+    background: rgba(0, 210, 255, 0.1);
+  }
+}
+
+.team-flag-img {
+  width: 56rpx;
+  height: 40rpx;
+  border-radius: 4rpx;
+  box-shadow: 0 2rpx 6rpx rgba(0,0,0,0.3);
+}
+
+.team-name {
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.team-rank {
+  font-size: 20rpx;
+  color: var(--color-text-dim);
+}
+
+.selected-badge {
+  font-size: 18rpx;
+  color: var(--color-primary);
+  background: rgba(0, 210, 255, 0.2);
+  padding: 2rpx 8rpx;
+  border-radius: 8rpx;
+}

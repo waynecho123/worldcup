@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "jimeng": {
+      "command": "npx",
+      "args": ["-y", "jimeng-mcp-v4"],
+      "env": {
+        "ARK_API_KEY": "ark-d251be0c-b930-4807-b98e-c16d2ed68843-c734f"
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.home-page { min-height: 100vh; }
+
+.hero-section {
+  text-align: center;
+  padding: 32rpx 0;
+  .hero-icon { font-size: 80rpx; display: block; }
+  .hero-title { font-size: 44rpx; font-weight: 800; display: block; background: linear-gradient(135deg, var(--color-gold), var(--color-accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-subtitle { font-size: 28rpx; color: var(--color-text-dim); display: block; margin-top: 8rpx; }
+  .hero-date { font-size: 24rpx; color: var(--color-text-dim); margin-top: 4rpx; }
+}
+
+.selected-team-card { .card-label { font-size: 24rpx; color: var(--color-text-dim); margin-bottom: 16rpx; } }
+.flag-main { border-radius: 6rpx; box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.4); }
+.team-name-main { font-size: 34rpx; font-weight: 700; }
+
+.select-prompt {
+  text-align: center;
+  padding: 48rpx;
+  .prompt-icon { font-size: 64rpx; display: block; }
+  .prompt-text { font-size: 30rpx; font-weight: 600; margin: 16rpx 0 8rpx; display: block; }
+}
+
+.action-buttons { margin: 24rpx 0; }
+
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32rpx;
+  .stat-item { text-align: center; flex: 1; }
+  .stat-num { font-size: 42rpx; font-weight: 800; color: var(--color-primary); display: block; }
+  .stat-lbl { font-size: 22rpx; color: var(--color-text-dim); display: block; }
+}

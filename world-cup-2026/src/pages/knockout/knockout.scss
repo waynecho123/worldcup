@@ -1,0 +1,39 @@
+.knockout-page { min-height: 100vh; }
+
+.bracket-scroll { width: 100%; height: calc(100vh - 160rpx); }
+
+.kn-match-node {
+  padding: 12rpx;
+  .kn-round {
+    font-size: 22rpx;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 6rpx;
+  }
+  .kn-teams {
+    background: var(--color-card);
+    border-radius: 12rpx;
+    overflow: hidden;
+    margin-bottom: 4rpx;
+    min-width: 280rpx;
+  }
+  .kn-team {
+    display: flex; align-items: center; gap: 8rpx;
+    padding: 10rpx 16rpx;
+    font-size: 24rpx;
+    border-bottom: 1rpx solid rgba(255,255,255,0.05);
+    &.winner { background: rgba(0,210,255,0.08); }
+  }
+  .flag-micro { border-radius: 2rpx; flex-shrink: 0; }
+  .kn-team-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .kn-score { font-weight: 700; font-size: 26rpx; color: var(--color-gold); }
+  .kn-pens { font-size: 20rpx; color: var(--color-text-dim); padding-left: 8rpx; }
+
+  .kn-children {
+    display: flex;
+    gap: 4rpx;
+    margin-left: 20rpx;
+    padding-left: 12rpx;
+    border-left: 2rpx solid rgba(255,255,255,0.1);
+  }
+}
