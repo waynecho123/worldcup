@@ -26,9 +26,13 @@ jobs:
           FIRO_API_KEY: ${{ secrets.FIRO_API_KEY }}
           FIRO_PRIVATE_KEY: ${{ secrets.FIRO_PRIVATE_KEY }}
 
-      - name: Commit & push
+      - name: Commit & push to GitHub
         run: |
           git config user.name 'wc-bot'
           git config user.email 'bot@worldcup'
           git add scores.json
           git diff --staged --quiet || (git commit -m "⚽ scores $(TZ='Asia/Shanghai' date +%m-%d_%H:%M)" && git push)
+
+      - name: Push to Gitee
+        run: |
+          git push https://waynecho:${{ secrets.GITEE_TOKEN }}@gitee.com/waynecho/worldcup.git main:master --force
