@@ -39,10 +39,21 @@ function getStrength(t) {
   return Math.max(10, rankScore * 0.40 + perf * 0.45 + 15 - injPenalty);
 }
 
-// Cache for upset probability: key = "homeStr_awayStr", only recompute when strengths change
+// Cache for upset probability: persisted to storage, only recompute when strengths change
+var UPSET_CACHE_KEY = 'wc_upset_cache';
 var upsetCache = {};
 
-// Compute upset probability — runs 200 Monte Carlo sims once, caches result by strength values
+// Restore from storage on load
+try {
+  var stored = wx.getStorageSync(UPSET_CACHE_KEY);
+  if (stored) upsetCache = JSON.parse(stored);
+} catch(e) { upsetCache = {}; }
+
+function saveUpsetCache() {
+  try { wx.setStorageSync(UPSET_CACHE_KEY, JSON.stringify(upsetCache)); } catch(e) {}
+}
+
+// Compute upset probability — runs 200 Monte Carlo sims once, persists result
 function computeUpsetProb(homeStr, awayStr) {
   var key = homeStr.toFixed(1) + '_' + awayStr.toFixed(1);
   if (upsetCache[key] !== undefined) return upsetCache[key];
@@ -60,6 +71,7 @@ function computeUpsetProb(homeStr, awayStr) {
   }
   var result = upsets / N;
   upsetCache[key] = result;
+  saveUpsetCache();
   return result;
 }
 

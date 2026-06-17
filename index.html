@@ -2653,9 +2653,15 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
     finalAway = aiProbs.away * 0.55 + (impA/impTotal) * 0.45;
     oddsBlended = true;
   }
-  // Upset probability — cached by strength values, only reruns when strengths change
+  // Upset probability — persisted to localStorage, only reruns when strengths change
   var cacheKey = hStr.toFixed(1) + '_' + aStr.toFixed(1);
-  if (!predictMatch._upsetCache) predictMatch._upsetCache = {};
+  if (!predictMatch._upsetCache) {
+    predictMatch._upsetCache = {};
+    try {
+      var saved = localStorage.getItem('wc_upset_cache');
+      if (saved) predictMatch._upsetCache = JSON.parse(saved);
+    } catch(e) {}
+  }
   var upsetProb;
   if (predictMatch._upsetCache[cacheKey] !== undefined) {
     upsetProb = predictMatch._upsetCache[cacheKey];
@@ -2670,6 +2676,7 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
     }
     upsetProb = upsets / N;
     predictMatch._upsetCache[cacheKey] = upsetProb;
+    try { localStorage.setItem('wc_upset_cache', JSON.stringify(predictMatch._upsetCache)); } catch(e) {}
   }
   var underdog = hStr > aStr ? awayTeam : homeTeam;
   var isUpsetAlert = upsetProb > 0.25;
