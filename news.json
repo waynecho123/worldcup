@@ -8,13 +8,13 @@
     "📰 England won't change style despite US heat - Tuchel",
     "📰 Emotional Messi explains tears after Argentina goal",
     "📰 Clichy on Mbappe, Henderson and France 2010",
-    "📰 'Nearly men of Asian football' - Uzbekistan's rise to the World Cup",
     "📰 Messi stays humble after hat-trick performance",
     "📰 'Magnificent' - Messi scores hat-trick to equal Klose scoring record",
     "📰 Highlights: Messi equals Klose scoring record with hat-trick against Algeria ",
     "📰 Highlights: Haaland scores twice in Norway win over Iraq  ",
     "📰 How to watch the World Cup on the BBC and ITV",
     "📰 Catch up on the World Cup without any spoilers",
+    "📰 'Nearly men of Asian football' - Uzbekistan's rise to the World Cup",
     "🤝 葡萄牙 1-1 民主刚果 — 葡萄牙 1-1 民主刚果，双方激战成和",
     "⚽ 法国 3-1 塞内加尔 — 法国 3-1 取胜，关键3分",
     "🔥 伊拉克 1-4 挪威 — 挪威 4-1 大胜，强势表现",
@@ -300,13 +300,13 @@
     "📰 England won't change style despite US heat - Tuchel",
     "📰 Emotional Messi explains tears after Argentina goal",
     "📰 Clichy on Mbappe, Henderson and France 2010",
-    "📰 'Nearly men of Asian football' - Uzbekistan's rise to the World Cup",
     "📰 Messi stays humble after hat-trick performance",
     "📰 'Magnificent' - Messi scores hat-trick to equal Klose scoring record",
     "📰 Highlights: Messi equals Klose scoring record with hat-trick against Algeria ",
     "📰 Highlights: Haaland scores twice in Norway win over Iraq  ",
     "📰 How to watch the World Cup on the BBC and ITV",
-    "📰 Catch up on the World Cup without any spoilers"
+    "📰 Catch up on the World Cup without any spoilers",
+    "📰 'Nearly men of Asian football' - Uzbekistan's rise to the World Cup"
   ],
   "teamNews": {
     "ENG": [
@@ -340,16 +340,16 @@
     "FRA": [
       "📰 Clichy on Mbappe, Henderson and France 2010"
     ],
-    "UZB": [
-      "📰 'Nearly men of Asian football' - Uzbekistan's rise to the World Cup"
-    ],
     "ALG": [
       "📰 Highlights: Messi equals Klose scoring record with hat-trick against Algeria "
     ],
     "IRQ": [
       "📰 Highlights: Haaland scores twice in Norway win over Iraq  "
+    ],
+    "UZB": [
+      "📰 'Nearly men of Asian football' - Uzbekistan's rise to the World Cup"
     ]
   },
   "total": 36,
-  "updatedAt": "2026-06-17T19:43:59.554Z"
+  "updatedAt": "2026-06-17T19:47:48.495Z"
 }
