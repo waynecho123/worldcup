@@ -116,8 +116,8 @@ Page({
         };
       }
 
-      const pred = predict.predictMatch(ht, at);
       const mol = data.MATCH_ODDS[m.id];
+      const pred = predict.predictMatch(ht, at, mol);
       const predLog = app.globalData.predLog || {};
       const logEntry = predLog[m.id];
 
@@ -166,6 +166,8 @@ Page({
         homeProb: (pred.homeWinProb*100).toFixed(0), drawProb: (pred.drawProb*100).toFixed(0), awayProb: (pred.awayWinProb*100).toFixed(0),
         oddsH: mol ? mol.h.toFixed(2) : '', oddsD: mol ? mol.d.toFixed(2) : '', oddsA: mol ? mol.a.toFixed(2) : '',
         fairProbs, actual: actualDisplay, updateInfo,
+        upsetAlert: pred.upsetAlert, upsetTeam: pred.upsetTeam,
+        oddsBlended: pred.oddsBlended,
         hasNews: !!(ht.inj || at.inj),
         newsText: (ht.inj ? ht.cn+': '+ht.inj.replace(/[🔴⚠️]/g,'').trim()+' ' : '') +
                   (at.inj ? at.cn+': '+at.inj.replace(/[🔴⚠️]/g,'').trim() : '')

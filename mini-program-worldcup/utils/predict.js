@@ -21,14 +21,47 @@ function getStrength(t) {
   const rankScore = Math.max(5, 95 - (t.rk - 1) * 1.5);
   // Attack/defense average
   const perf = t.att * 0.5 + t.def * 0.5;
-  // Injury penalty (up to 8 points for key injuries)
+  // Injury penalty: 🔴=4pts, ⚠️=2pts + news keywords
   let injPenalty = 0;
-  if (t.inj) {
-    const redCount = (t.inj.match(/🔴/g) || []).length;
-    const warnCount = (t.inj.match(/⚠️/g) || []).length;
-    injPenalty = redCount * 4 + warnCount * 2;
-  }
+  const inj = t.inj || '';
+  const redCount = (inj.match(/🔴/g) || []).length;
+  const warnCount = (inj.match(/⚠️/g) || []).length;
+  injPenalty = redCount * 4 + warnCount * 2;
+
+  // News sentiment: positive news boosts, negative penalizes
+  const news = t.news || '';
+  const negKW = /visa|passport|absent|out|missing|suspended|ban|injury|injured|ruled out|withdraw/i;
+  const posKW = /hat-trick|hero|brilliant|stunning|in form|confident|fit|ready|return/i;
+  if (negKW.test(news + inj)) injPenalty += 3;
+  if (negKW.test(news) && /captain|key|star/i.test(news)) injPenalty += 1; // extra for key player
+  if (posKW.test(news)) injPenalty -= 2; // positive news reduces penalty
+
   return Math.max(10, rankScore * 0.40 + perf * 0.45 + 15 - injPenalty);
+}
+
+// Compute upset probability via Monte Carlo
+function computeUpsetProb(homeStr, awayStr) {
+  let upsets = 0;
+  const N = 200;
+  for (let i = 0; i < N; i++) {
+    // Add noise to simulate match-day variance
+    const hNoise = 1 + (Math.random() - 0.5) * 0.3;
+    const aNoise = 1 + (Math.random() - 0.5) * 0.3;
+    const hLambda = Math.max(0.3, homeStr / 28 * hNoise);
+    const aLambda = Math.max(0.3, awayStr / 28 * aNoise);
+    // Simulate one match
+    const hg = poissonSample(hLambda);
+    const ag = poissonSample(aLambda);
+    if ((awayStr < homeStr && ag > hg) || (homeStr < awayStr && hg > ag)) upsets++;
+  }
+  return upsets / N;
+}
+
+function poissonSample(lambda) {
+  const L = Math.exp(-lambda);
+  let k = 0, p = 1;
+  do { k++; p *= Math.random(); } while (p > L);
+  return k - 1;
 }
 
 function poissonPMF(lambda, k) {
@@ -38,7 +71,7 @@ function poissonPMF(lambda, k) {
   return Math.exp(logP);
 }
 
-function predictMatch(homeTeam, awayTeam, liveOdds) {
+function predictMatch(homeTeam, awayTeam, matchOdds) {
   const hStr = getStrength(homeTeam);
   const aStr = getStrength(awayTeam);
   // Home advantage for host nations and neutral venue adjustment
@@ -100,12 +133,36 @@ function predictMatch(homeTeam, awayTeam, liveOdds) {
     };
   }
 
+  // Blend AI predictions with market odds if available (Bayesian-style weighting)
+  let finalHome = aiProbs.home, finalDraw = aiProbs.draw, finalAway = aiProbs.away;
+  let oddsBlended = false;
+  if (matchOdds && matchOdds.h && matchOdds.d && matchOdds.a) {
+    const impH = 1/matchOdds.h, impD = 1/matchOdds.d, impA = 1/matchOdds.a;
+    const impTotal = impH + impD + impA;
+    const mktProbs = { home: impH/impTotal, draw: impD/impTotal, away: impA/impTotal };
+    // Blend: 55% AI model + 45% market (market captures insider info)
+    finalHome = aiProbs.home * 0.55 + mktProbs.home * 0.45;
+    finalDraw = aiProbs.draw * 0.55 + mktProbs.draw * 0.45;
+    finalAway = aiProbs.away * 0.55 + mktProbs.away * 0.45;
+    oddsBlended = true;
+  }
+
+  // Compute upset probability via Monte Carlo
+  const upsetProb = computeUpsetProb(hStr, aStr);
+  const underdog = hStr > aStr ? awayTeam : homeTeam;
+  const isUpsetAlert = upsetProb > 0.25;
+
   return {
-    homeWinProb: aiProbs.home, drawProb: aiProbs.draw, awayWinProb: aiProbs.away,
+    homeWinProb: finalHome, drawProb: finalDraw, awayWinProb: finalAway,
     expH: lambdaH, expA: lambdaA,
     predScore: bestS || [Math.round(lambdaH), Math.round(lambdaA)],
     topScores: topScores,
-    hStr, aStr, tacticalAdj, tacAnalysis, marketConsensus
+    hStr, aStr, tacticalAdj, tacAnalysis, marketConsensus,
+    // New fields for enhanced predictions
+    aiProbs, oddsBlended,
+    upsetProb, upsetAlert: isUpsetAlert,
+    upsetTeam: isUpsetAlert ? underdog.cn : null,
+    upsetTeamFlag: isUpsetAlert ? underdog.flag : null
   };
 }
 

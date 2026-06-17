@@ -66,6 +66,8 @@
       <text class="font-xs">{{item.homeName}}胜 {{item.homeProb}}%</text>
       <text class="font-xs" style="margin:0 8px;color:#556680">平 {{item.drawProb}}%</text>
       <text class="font-xs">{{item.awayName}}胜 {{item.awayProb}}%</text>
+      <text wx:if="{{item.upsetAlert}}" class="font-xs" style="display:block;margin-top:4px;color:#ff9100;font-weight:700">⚠️ 爆冷预警：{{item.upsetTeam}}有冷门可能！</text>
+      <text wx:if="{{item.oddsBlended}}" class="font-xs" style="display:block;margin-top:2px;color:#8b5cf6">🎯 已融合机构赔率</text>
     </view>
 
     <view wx:if="{{item.actual}}" style="margin-top:8px;padding:8px;background:rgba(255,61,87,.06);border-radius:6px;text-align:center">
