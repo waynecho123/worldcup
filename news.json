@@ -4,15 +4,15 @@
     "📰 How sweltering Scotland can handle World Cup heat",
     "📰 Extraordinary Messi makes more history in masterclass for the ages",
     "📰 No stage too big - Haaland arrives in style at World Cup",
-    "📰 Messi stays humble after hat-trick performance",
+    "📰 DR Congo earn World Cup point against Portugal",
     "📰 England won't change style despite US heat - Tuchel",
     "📰 Emotional Messi explains tears after Argentina goal",
     "📰 Clichy on Mbappe, Henderson and France 2010",
     "📰 'Nearly men of Asian football' - Uzbekistan's rise to the World Cup",
+    "📰 Messi stays humble after hat-trick performance",
     "📰 'Magnificent' - Messi scores hat-trick to equal Klose scoring record",
     "📰 Highlights: Messi equals Klose scoring record with hat-trick against Algeria ",
     "📰 Highlights: Haaland scores twice in Norway win over Iraq  ",
-    "📰 Highlights: Mbappe stars as France beat Senegal",
     "📰 How to watch the World Cup on the BBC and ITV",
     "📰 Catch up on the World Cup without any spoilers",
     "🤝 葡萄牙 1-1 民主刚果 — 葡萄牙 1-1 民主刚果，双方激战成和",
@@ -296,15 +296,15 @@
     "📰 How sweltering Scotland can handle World Cup heat",
     "📰 Extraordinary Messi makes more history in masterclass for the ages",
     "📰 No stage too big - Haaland arrives in style at World Cup",
-    "📰 Messi stays humble after hat-trick performance",
+    "📰 DR Congo earn World Cup point against Portugal",
     "📰 England won't change style despite US heat - Tuchel",
     "📰 Emotional Messi explains tears after Argentina goal",
     "📰 Clichy on Mbappe, Henderson and France 2010",
     "📰 'Nearly men of Asian football' - Uzbekistan's rise to the World Cup",
+    "📰 Messi stays humble after hat-trick performance",
     "📰 'Magnificent' - Messi scores hat-trick to equal Klose scoring record",
     "📰 Highlights: Messi equals Klose scoring record with hat-trick against Algeria ",
     "📰 Highlights: Haaland scores twice in Norway win over Iraq  ",
-    "📰 Highlights: Mbappe stars as France beat Senegal",
     "📰 How to watch the World Cup on the BBC and ITV",
     "📰 Catch up on the World Cup without any spoilers"
   ],
@@ -318,12 +318,18 @@
     ],
     "ARG": [
       "📰 Extraordinary Messi makes more history in masterclass for the ages",
-      "📰 Messi stays humble after hat-trick performance",
-      "📰 Emotional Messi explains tears after Argentina goal"
+      "📰 Emotional Messi explains tears after Argentina goal",
+      "📰 Messi stays humble after hat-trick performance"
     ],
     "NOR": [
       "📰 No stage too big - Haaland arrives in style at World Cup",
       "📰 Highlights: Haaland scores twice in Norway win over Iraq  "
+    ],
+    "POR": [
+      "📰 DR Congo earn World Cup point against Portugal"
+    ],
+    "COD": [
+      "📰 DR Congo earn World Cup point against Portugal"
     ],
     "USA": [
       "📰 England won't change style despite US heat - Tuchel"
@@ -332,8 +338,7 @@
       "📰 Clichy on Mbappe, Henderson and France 2010"
     ],
     "FRA": [
-      "📰 Clichy on Mbappe, Henderson and France 2010",
-      "📰 Highlights: Mbappe stars as France beat Senegal"
+      "📰 Clichy on Mbappe, Henderson and France 2010"
     ],
     "UZB": [
       "📰 'Nearly men of Asian football' - Uzbekistan's rise to the World Cup"
@@ -343,11 +348,8 @@
     ],
     "IRQ": [
       "📰 Highlights: Haaland scores twice in Norway win over Iraq  "
-    ],
-    "SEN": [
-      "📰 Highlights: Mbappe stars as France beat Senegal"
     ]
   },
   "total": 36,
-  "updatedAt": "2026-06-17T19:37:47.953Z"
+  "updatedAt": "2026-06-17T19:41:30.092Z"
 }
