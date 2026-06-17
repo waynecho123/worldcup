@@ -23,8 +23,7 @@ jobs:
       - name: Update scores
         run: node update-scores.js --scores
         env:
-          FIRO_API_KEY: ${{ secrets.FIRO_API_KEY }}
-          FIRO_PRIVATE_KEY: ${{ secrets.FIRO_PRIVATE_KEY }}
+          FD_TOKEN: ${{ secrets.FD_TOKEN }}
 
       - name: Commit & push to GitHub
         run: |
