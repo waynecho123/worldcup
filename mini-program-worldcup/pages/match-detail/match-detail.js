@@ -134,6 +134,9 @@ Page({
     markInjured(hLu, ht);
     markInjured(aLu, at);
 
+    // Live injuries from API
+    const apiInfo = liveInfo[matchId] || null;
+
     // Generate textual analysis with live data
     const analysis = this.generateAnalysis(m, ht, at, pred, mol, apiInfo);
 
@@ -148,9 +151,6 @@ Page({
       const ago = diffMin < 3 ? '刚刚' : diffMin < 60 ? diffMin+'分钟前' : Math.floor(diffMin/60)+'小时前';
       updateInfo = '🕐 ' + ago + '更新' + (logEntry.reason && logEntry.reason !== '定期更新' ? ' · '+logEntry.reason : '');
     }
-
-    // Live injuries from API
-    const apiInfo = liveInfo[matchId] || null;
     const apiInjuries = apiInfo ? apiInfo.injuries || [] : [];
     const homeInjuries = apiInjuries.filter(function(i) { return i.teamType === 'home'; });
     const awayInjuries = apiInjuries.filter(function(i) { return i.teamType === 'away'; });

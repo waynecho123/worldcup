@@ -2876,7 +2876,7 @@ function renderMatchCard(m) {
     return `
     <div class="match-card" onclick="showMatchDetail('${m.id}')">
       <div class="mc-header">
-        <span class="mc-time">${(m.id||'')} ${m.time}</span>
+        <span class="mc-time">${(m.date || m.id)} ${m.time}</span>
         <span class="mc-group">${m.grp ? m.grp + ' 组' : stageLabel}</span>
         <span class="venue-badge">📍 ${m.venue || ''}</span>
         <span style="font-size:.65rem;color:var(--text3);display:none">🔐 预测待发布</span>
@@ -2903,7 +2903,7 @@ function renderMatchCard(m) {
   return `
     <div class="match-card ${featuredCls}" onclick="showMatchDetail('${m.id}')">
       <div class="mc-header">
-        <span class="mc-time">${(m.id||'')} ${m.time}</span>
+        <span class="mc-time">${(m.date || m.id)} ${m.time}</span>
         <span class="mc-group">${m.grp ? m.grp + ' 组' : stageLabel}</span>
         <span class="venue-badge">📍 ${m.venue || ''}</span>
         ${hasResult ? `<span style="font-size:.65rem;color:${correctOutcome?'var(--green)':'var(--red)'};font-weight:700">${correctExact?'🎯':correctOutcome?'✅':'❌'} 已录入</span>` : isMatchLocked(m.id) ? `<span style="font-size:.62rem;color:var(--text3)">🔒 已停售</span>` : ''}
@@ -3075,7 +3075,7 @@ function showMatchDetail(mid) {
   html += '<span style="font-size:2.5rem">'+ht.flag+'</span> <span style="font-weight:800;font-size:1.3rem">'+ht.cn+'</span>';
   html += ' <span style="color:var(--text3);font-size:1rem">vs</span> ';
   html += '<span style="font-weight:800;font-size:1.3rem">'+at.cn+'</span> <span style="font-size:2.5rem">'+at.flag+'</span>';
-  html += '<div style="color:var(--gold);font-size:.85rem;margin-top:4px">'+(m.id||'')+'</div>';
+  html += '<div style="color:var(--gold);font-size:.85rem;margin-top:4px">'+(m.date || m.id)+'</div>';
   html += '</div>';
 
   // 2. 比赛时间 场地 天气 双方新闻
@@ -3571,7 +3571,7 @@ function renderFullSchedule() {
         }
         var updInfo = getPredUpdateInfo(m.id);
         return '<div class="schedule-match" style="flex-wrap:wrap">' +
-          '<span class="sm-time">' + (m.id||'') + '<br>' + m.time + '</span>' +
+          '<span class="sm-time">' + (m.date || m.id) + '<br>' + m.time + '</span>' +
           '<span class="sm-teams">' + (ht?ht.flag:'❓') + ' ' + (ht?ht.cn:m.home) + ' vs ' + (at?at.cn:m.away) + ' ' + (at?at.flag:'❓') + '</span>' +
           (m.grp ? '<span class="sm-group">' + m.grp + '组</span>' : '<span class="sm-group">' + (stageLabels[m.stage]||m.stage) + '</span>') +
           scoreHtml +
@@ -4639,7 +4639,7 @@ function buildAISection(div, strats, duel, todayMatches) {
           var ht = m ? TEAMS.find(function(t){return t.id===m.home}) : null;
           var at = m ? TEAMS.find(function(t){return t.id===m.away}) : null;
           var mn = (ht&&at) ? ht.cn+' vs '+at.cn : '';
-          var jn = m ? (m.id||'') : '';
+          var jn = m ? (m.date || m.id) : '';
           html += '<div style="font-size:.68rem;padding:3px 0 3px 12px;color:var(--text2)"><span style="color:var(--text3)">'+jn+'</span> '+mn+' → <span style="font-weight:600;color:var(--text)">'+p.pick+'</span> @'+p.odds.toFixed(2)+'</div>';
         });
         html += '</div>';
@@ -4683,7 +4683,7 @@ function buildHumanSection(div, strats, duel, todayMatches) {
           var ht = m ? TEAMS.find(function(t){return t.id===m.home}) : null;
           var at = m ? TEAMS.find(function(t){return t.id===m.away}) : null;
           var mn = (ht&&at) ? ht.flag+' '+ht.cn+' vs '+at.cn+' '+at.flag : '';
-          var jn = m ? (m.id||'') : '';
+          var jn = m ? (m.date || m.id) : '';
           html += '<span style="color:var(--text2);padding-left:12px">'+jn+' '+mn+' → <span style="font-weight:600;color:var(--text)">'+p.type+' '+p.pick+'</span> @'+p.odds.toFixed(2)+'</span><br>';
         });
         html += '</div>';
