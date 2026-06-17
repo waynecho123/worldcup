@@ -2698,7 +2698,7 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
   if (!predictMatch._upsetCache) {
     predictMatch._upsetCache = {};
     try {
-      var saved = localStorage.getItem('wc_upset_cache');
+      var saved = localStorage.getItem('wc_upset_cache_v2');
       if (saved) predictMatch._upsetCache = JSON.parse(saved);
     } catch(e) {}
   }
@@ -2716,7 +2716,7 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
     }
     upsetProb = upsets / N;
     predictMatch._upsetCache[cacheKey] = upsetProb;
-    try { localStorage.setItem('wc_upset_cache', JSON.stringify(predictMatch._upsetCache)); } catch(e) {}
+    try { localStorage.setItem('wc_upset_cache_v2', JSON.stringify(predictMatch._upsetCache)); } catch(e) {}
   }
   var underdog = hStr > aStr ? awayTeam : homeTeam;
   var isUpsetAlert = upsetProb > 0.25;

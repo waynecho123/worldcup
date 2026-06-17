@@ -40,7 +40,7 @@ function getStrength(t) {
 }
 
 // Cache for upset probability: persisted to storage, only recompute when strengths change
-var UPSET_CACHE_KEY = 'wc_upset_cache';
+var UPSET_CACHE_KEY = 'wc_upset_cache_v2';
 var upsetCache = {};
 
 // Restore from storage on load
