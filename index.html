@@ -2283,6 +2283,212 @@ function renderHistoricalMini(oddsH, oddsD, oddsA, aiH, aiD, aiA) {
 // =============================================================================
 // =============================================================================
 
+function jcFair(spf){const r=1/spf[0]+1/spf[1]+1/spf[2];return{home:(1/spf[0])/r,draw:(1/spf[1])/r,away:(1/spf[2])/r}}
+
+function getJCRecommendation(mid,ht,at){
+  const jc=JC_ODDS[mid];if(!jc)return null;
+  const pred=predictMatch(ht,at),fair=jcFair(jc.spf);
+  const devs=[{type:'胜',prob:pred.homeWinProb,market:fair.home,dev:(pred.homeWinProb-fair.home)*100,odds:jc.spf[0]},{type:'平',prob:pred.drawProb,market:fair.draw,dev:(pred.drawProb-fair.draw)*100,odds:jc.spf[1]},{type:'负',prob:pred.awayWinProb,market:fair.away,dev:(pred.awayWinProb-fair.away)*100,odds:jc.spf[2]}];
+  const best=devs.sort((a,b)=>b.dev-a.dev)[0];
+  const s=[];const minDev=Math.min(...devs.map(d=>Math.abs(d.dev)));
+  if(minDev===Math.abs(devs[0].dev))s.push({type:'保守',pick:ht.cn+'胜',odds:jc.spf[0],reason:'AI与竞猜共识'});
+  else if(minDev===Math.abs(devs[1].dev))s.push({type:'保守',pick:'平局',odds:jc.spf[1],reason:'AI与竞猜共识'});
+  else s.push({type:'保守',pick:at.cn+'胜',odds:jc.spf[2],reason:'AI与竞猜共识'});
+  const maxDev=Math.max(devs[0].dev,devs[1].dev,devs[2].dev);
+  if(maxDev>3){if(maxDev===devs[0].dev)s.push({type:'均衡',pick:ht.cn+'胜',odds:jc.spf[0],reason:'AI高估'+maxDev.toFixed(1)+'%'});else if(maxDev===devs[1].dev)s.push({type:'均衡',pick:'平局',odds:jc.spf[1],reason:'AI高估'+maxDev.toFixed(1)+'%'});else s.push({type:'均衡',pick:at.cn+'胜',odds:jc.spf[2],reason:'AI高估'+maxDev.toFixed(1)+'%'});}
+  const gd=pred.predScore[0]-pred.predScore[1];if(jc.rq&&jc.rqO&&Math.abs(gd)>Math.abs(parseInt(jc.rq))+1)s.push({type:'进取',pick:gd>0?'让胜':'让负',odds:gd>0?jc.rqO[0]:jc.rqO[2],reason:'预测净胜'+Math.abs(gd)+'球'});
+  const risk=Math.abs(best.dev)>10?'进取型':Math.abs(best.dev)>5?'均衡型':'保守型';
+  const riskC=risk==='进取型'?'var(--red)':risk==='均衡型'?'var(--orange)':'var(--green)';
+  return{spf:jc.spf,fair,devs,best,s,risk,riskC,rq:jc.rq,rqO:jc.rqO||[],predScore:pred.predScore,topScores:pred.topScores,totalG:pred.predScore[0]+pred.predScore[1]};
+}
+
+function renderJCAnalysis(mid,ht,at){
+  const r=getJCRecommendation(mid,ht,at);if(!r)return'';
+  return`<div style="margin:14px 0;padding:14px;background:rgba(240,185,11,.05);border:1px solid rgba(240,185,11,.2);border-radius:10px"><div style="font-weight:700;font-size:.85rem;margin-bottom:12px;color:var(--gold);display:flex;align-items:center;gap:8px"><span style="background:var(--red);color:#fff;padding:2px 8px;border-radius:10px;font-size:.65rem">竞猜</span>中国竞猜指数分析</div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center;margin-bottom:10px"><div style="padding:8px;background:var(--surface2);border-radius:6px"><div style="font-size:.7rem;color:var(--text2)">${ht.cn}胜</div><div style="font-size:1.2rem;font-weight:700;color:var(--accent)">${r.spf[0].toFixed(2)}</div><div style="font-size:.62rem;color:var(--text3)">隐含${(r.fair.home*100).toFixed(0)}%</div></div><div style="padding:8px;background:var(--surface2);border-radius:6px"><div style="font-size:.7rem;color:var(--text2)">平局</div><div style="font-size:1.2rem;font-weight:700;color:var(--text3)">${r.spf[1].toFixed(2)}</div><div style="font-size:.62rem;color:var(--text3)">隐含${(r.fair.draw*100).toFixed(0)}%</div></div><div style="padding:8px;background:var(--surface2);border-radius:6px"><div style="font-size:.7rem;color:var(--text2)">${at.cn}胜</div><div style="font-size:1.2rem;font-weight:700;color:var(--red)">${r.spf[2].toFixed(2)}</div><div style="font-size:.62rem;color:var(--text3)">隐含${(r.fair.away*100).toFixed(0)}%</div></div></div><div style="font-size:.7rem;color:var(--text2);margin-bottom:8px;display:flex;justify-content:space-around"><span>🤖AI:${(r.devs[0].prob*100).toFixed(0)}% ${r.devs[0].dev>0?'📈+':r.devs[0].dev<0?'📉':''}${Math.abs(r.devs[0].dev).toFixed(1)}%</span><span>🤖AI:${(r.devs[1].prob*100).toFixed(0)}% ${r.devs[1].dev>0?'📈+':r.devs[1].dev<0?'📉':''}${Math.abs(r.devs[1].dev).toFixed(1)}%</span><span>🤖AI:${(r.devs[2].prob*100).toFixed(0)}% ${r.devs[2].dev>0?'📈+':r.devs[2].dev<0?'📉':''}${Math.abs(r.devs[2].dev).toFixed(1)}%</span></div>${r.rq?`<div style="padding:8px;background:var(--surface2);border-radius:6px;margin-bottom:10px"><div style="font-size:.72rem;font-weight:600;margin-bottom:4px">🎯 让球盘(${r.rq})</div><div style="display:flex;gap:12px;font-size:.72rem"><span>让胜 ${r.rqO[0]?.toFixed(2)||'-'}</span><span>让平 ${r.rqO[1]?.toFixed(2)||'-'}</span><span>让负 ${r.rqO[2]?.toFixed(2)||'-'}</span></div></div>`:''}<div style="padding:10px;background:var(--surface2);border-radius:6px;border-left:3px solid var(--gold)"><div style="font-weight:700;font-size:.75rem;margin-bottom:8px">💡 竞猜建议 <span style="color:${r.riskC};font-size:.68rem">[${r.risk}]</span></div>${r.s.map(s=>`<div style="display:flex;align-items:center;justify-content:space-between;padding:4px 0;font-size:.72rem;border-bottom:1px dashed rgba(255,255,255,.05)"><span style="color:var(--text2)">${s.type==='保守'?'🛡️':s.type==='均衡'?'⚖️':'🚀'} ${s.type}</span><span style="font-weight:700">${s.pick}</span><span style="color:var(--gold)">@${s.odds.toFixed(2)}</span><span style="color:var(--text3);font-size:.65rem">${s.reason}</span></div>`).join('')}<div style="margin-top:6px;font-size:.65rem;color:var(--text3)">⚽ AI预测比分${r.topScores ? r.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : r.predScore[0]+':'+r.predScore[1]} 总进球${r.totalG}球</div></div><div style="font-size:.58rem;color:var(--text3);margin-top:4px;text-align:right">*AI概率模型估算 · 仅供参考</div></div>`;}
+
+/** 竞猜串关组合推荐 */
+function renderJCCombo(matches) {
+  const allPicks = [];
+  matches.forEach(m => {
+    const jc = JC_ODDS[m.id]; if (!jc) return;
+    const ht = TEAMS.find(t => t.id === m.home), at = TEAMS.find(t => t.id === m.away);
+    if (!ht || !at) return;
+    const pred = predictMatch(ht, at), fair = jcFair(jc.spf);
+    // SPF
+    [{t:'胜',p:pred.homeWinProb,m:fair.home,o:jc.spf[0],l:ht.cn+'胜',f:ht.flag},{t:'平',p:pred.drawProb,m:fair.draw,o:jc.spf[1],l:'平局',f:'🤝'},{t:'负',p:pred.awayWinProb,m:fair.away,o:jc.spf[2],l:at.cn+'胜',f:at.flag}].forEach(d=>{allPicks.push({play:'胜平负',type:d.t,prob:d.p,market:d.m,dev:(d.p-d.m)*100,odds:d.o,label:d.l,flag:d.f,mid:m.id,ht,at,grp:m.grp})});
+    // Total goals
+    const tg=calcTotalGoals(pred.expH,pred.expA);let bi=0,bp=0;tg.dist.forEach((p,i)=>{if(p>bp){bp=p;bi=i}});const gl=bi===7?'7+':bi.toString();const go=[10,4.2,3.2,3.5,5.5,9,18,35][bi];allPicks.push({play:'总进球',type:gl+'球',prob:bp,market:1/go,dev:bp*100-100/go,odds:go,label:`${ht.cn}vs${at.cn} ${gl}球`,flag:'🔢',mid:m.id,ht,at,grp:m.grp});
+    // HT/FT
+    const hf=calcHtFt(pred.expH,pred.expA);const htc=[{l:'胜-胜',p:hf.htH*pred.homeWinProb},{l:'平-胜',p:hf.htD*pred.homeWinProb},{l:'胜-平',p:hf.htH*pred.drawProb},{l:'平-平',p:hf.htD*pred.drawProb},{l:'负-胜',p:hf.htA*pred.homeWinProb},{l:'平-负',p:hf.htD*pred.awayWinProb},{l:'负-平',p:hf.htA*pred.drawProb},{l:'负-负',p:hf.htA*pred.awayWinProb},{l:'胜-负',p:hf.htH*pred.awayWinProb}];const hs=htc.reduce((s,v)=>s+v.p,0);htc.forEach(r=>r.p/=hs);const bh=htc.sort((a,b)=>b.p-a.p)[0];const hfo=Math.max(2.5,1/bh.p*0.85);allPicks.push({play:'半全场',type:bh.l,prob:bh.p,market:1/hfo,dev:bh.p*100-100/hfo,odds:hfo,label:`${ht.cn}vs${at.cn} ${bh.l}`,flag:'⏱️',mid:m.id,ht,at,grp:m.grp});
+    // Correct score
+    const sc=topScores(pred.expH,pred.expA,1)[0];const sco=Math.max(4.5,1/sc.prob*0.8);allPicks.push({play:'比分',type:`${sc.h}:${sc.a}`,prob:sc.prob,market:1/sco,dev:sc.prob*100-100/sco,odds:sco,label:`${ht.cn}vs${at.cn} ${sc.h}:${sc.a}`,flag:'⚽',mid:m.id,ht,at,grp:m.grp});
+  });
+  // 谨慎筛选：仅选高概率单注（>30%）
+  var safeSpf = allPicks.filter(function(p){return p.play==='胜平负'&&p.prob>0.30}).sort(function(a,b){return a.odds-b.odds});
+  var safeGoal = allPicks.filter(function(p){return p.play==='总进球'&&p.prob>0.20}).sort(function(a,b){return a.odds-b.odds});
+  if (safeSpf.length < 2 && safeGoal.length < 2) return '';
+
+  // 仅构建1个最保守的2串1
+  var combo = null;
+  if (safeSpf.length >= 2) {
+    var picks = [safeSpf[0], safeSpf[1]];
+    var odds = (picks[0].odds * picks[1].odds);
+    var hitProb = picks[0].prob * picks[1].prob;
+    if (hitProb > 0.12) { // 命中率至少12%
+      combo = {picks:picks, odds:odds.toFixed(2), hitProb:(hitProb*100).toFixed(1), failProb:(100-hitProb*100).toFixed(1), type:'高概率2串1'};
+    }
+  }
+  if (!combo) return '';
+
+  return '<div class="card" style="margin-top:16px;border:1px solid rgba(240,185,11,.3)">'+
+    '<div class="card-header" style="border-bottom-color:rgba(240,185,11,.2)">'+
+      '<span style="background:var(--red);color:#fff;padding:2px 8px;border-radius:8px;font-size:.65rem">竞猜</span> '+
+      '📊 今日概率最高的2串1组合'+
+      '<span style="font-size:.65rem;color:var(--text3);font-weight:400;margin-left:8px">| 仅展示，非竞猜建议</span>'+
+    '</div>'+
+    '<div style="padding:14px">'+
+      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">'+
+        '<span style="font-weight:700;font-size:.85rem">2场最稳胜平负组合</span>'+
+        '<span style="color:var(--gold);font-weight:700;font-size:1rem">@'+combo.odds+'</span>'+
+      '</div>'+
+      combo.picks.map(function(p){return '<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 8px;margin:4px 0;background:var(--surface);border-radius:6px;font-size:.75rem">'+
+        '<span>'+p.flag+' '+p.label.split('vs')[0]+' vs '+p.label.split('vs')[1]+'</span>'+
+        '<span style="font-weight:600;color:var(--accent)">→ '+p.type+'</span>'+
+        '<span style="color:var(--gold)">@'+p.odds.toFixed(2)+'</span>'+
+        '<span style="font-size:.7rem;color:var(--text2)">模型概率'+Math.round(p.prob*100)+'%</span>'+
+      '</div>'}).join('')+
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;padding:10px;background:var(--surface);border-radius:8px;text-align:center">'+
+        '<div><div style="font-size:.65rem;color:var(--text2)">模型估算中奖概率</div><div style="font-weight:700;color:var(--accent);font-size:1.1rem">'+combo.hitProb+'%</div></div>'+
+        '<div><div style="font-size:.65rem;color:var(--text2)">模型估算失败概率</div><div style="font-weight:700;color:var(--red);font-size:1.1rem">'+combo.failProb+'%</div></div>'+
+      '</div>'+
+      '<div style="margin-top:8px;font-size:.7rem;color:var(--text2);text-align:center">'+
+        '模型基于泊松分布计算，真实比赛存在大量不可预测因素。'+
+        '竞猜返还率约71%，以上仅为概率推演，不构成竞猜建议。'+
+      '</div>'+
+    '</div>'+
+  '</div>';
+}
+
+// ========== 竞猜进阶玩法: 比分/半全场/总进球 ==========
+
+/** Calculate half-time outcome probabilities using Poisson */
+function calcHtFt(homeLambda, awayLambda) {
+  const htLambdaH = homeLambda * 0.43, htLambdaA = awayLambda * 0.43;
+  let htH = 0, htD = 0, htA = 0;
+  const htScores = [];
+  for (let h = 0; h <= 6; h++) {
+    for (let a = 0; a <= 6; a++) {
+      const prob = poissonPMF(htLambdaH, h) * poissonPMF(htLambdaA, a);
+      if (h > a) htH += prob; else if (h === a) htD += prob; else htA += prob;
+      if (prob > 0.01) htScores.push({h,a,prob});
+    }
+  }
+  // Normalize
+  const htTotal = htH + htD + htA;
+  return { htH: htH/htTotal, htD: htD/htTotal, htA: htA/htTotal, htScores: htScores.sort((a,b) => b.prob-a.prob).slice(0,5) };
+}
+
+/** Calculate total goals distribution */
+function calcTotalGoals(lambdaH, lambdaA) {
+  const dist = Array(8).fill(0);
+  for (let h = 0; h <= 7; h++) {
+    for (let a = 0; a <= 7; a++) {
+      const prob = poissonPMF(lambdaH, h) * poissonPMF(lambdaA, a);
+      const total = h + a;
+      if (total < 7) dist[total] += prob;
+      else dist[7] += prob; // 7+
+    }
+  }
+  const sum = dist.reduce((s,v) => s+v, 0);
+  return { dist: dist.map(v => v/sum), labels: ['0','1','2','3','4','5','6','7+'] };
+}
+
+/** Find top correct scores */
+function topScores(lambdaH, lambdaA, n = 8) {
+  const scores = [];
+  for (let h = 0; h <= 7; h++) {
+    for (let a = 0; a <= 7; a++) {
+      scores.push({h, a, prob: poissonPMF(lambdaH, h) * poissonPMF(lambdaA, a)});
+    }
+  }
+  const sum = scores.reduce((s,v) => s+v.prob, 0);
+  return scores.sort((a,b) => b.prob-a.prob).slice(0,n).map(s => ({...s, prob: s.prob/sum}));
+}
+
+/** Render 竞猜进阶玩法: 比分/半全场/总进球 */
+function renderJCAdvanced(mid, ht, at) {
+  const jc = JC_ODDS[mid]; if (!jc) return '';
+  const pred = predictMatch(ht, at);
+  const htft = calcHtFt(pred.expH, pred.expA);
+  const totG = calcTotalGoals(pred.expH, pred.expA);
+  const scores = topScores(pred.expH, pred.expA, 6);
+
+  // HT/FT most likely combos
+  const htLabels = {H:'胜',D:'平',A:'负'};
+  const htResults = [
+    {ht:'H',ft:'H',label:'胜-胜',prob:htft.htH * pred.homeWinProb},
+    {ht:'D',ft:'H',label:'平-胜',prob:htft.htD * pred.homeWinProb},
+    {ht:'H',ft:'D',label:'胜-平',prob:htft.htH * pred.drawProb},
+    {ht:'D',ft:'D',label:'平-平',prob:htft.htD * pred.drawProb},
+    {ht:'A',ft:'H',label:'负-胜',prob:htft.htA * pred.homeWinProb},
+    {ht:'D',ft:'A',label:'平-负',prob:htft.htD * pred.awayWinProb},
+    {ht:'A',ft:'D',label:'负-平',prob:htft.htA * pred.drawProb},
+    {ht:'A',ft:'A',label:'负-负',prob:htft.htA * pred.awayWinProb},
+    {ht:'H',ft:'A',label:'胜-负',prob:htft.htH * pred.awayWinProb},
+  ].sort((a,b) => b.prob - a.prob);
+
+  // Normalize HT/FT
+  const htftSum = htResults.reduce((s,v) => s+v.prob, 0);
+  htResults.forEach(r => r.prob = r.prob/htftSum);
+
+  // Total goals distribution
+  const goalLabels = totG.labels;
+  const goalProbs = totG.dist;
+
+  return `
+  <div style="margin-top:10px;padding:10px 12px;background:rgba(240,185,11,.03);border-radius:8px;border:1px dashed rgba(240,185,11,.15)">
+    <div style="font-weight:700;font-size:.75rem;margin-bottom:10px;color:var(--gold)">🎲 竞猜进阶玩法 — AI概率预测</div>
+
+    <!-- Correct Score -->
+    <div style="margin-bottom:10px">
+      <div style="font-size:.7rem;color:var(--text2);margin-bottom:4px">⚽ 比分 (波胆)</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        ${scores.map(s => `
+        <div style="padding:4px 10px;background:var(--surface2);border-radius:4px;text-align:center;font-size:.7rem;min-width:55px">
+          <div style="font-weight:700;color:${pred.topScores && pred.topScores.some(function(t){return t.home===s.h&&t.away===s.a})?'var(--gold)':'var(--text)'}">${s.h}:${s.a}</div>
+          <div style="font-size:.62rem;color:var(--accent)">${(s.prob*100).toFixed(1)}%</div>
+        </div>`).join('')}
+      </div>
+    </div>
+
+    <!-- Half-Time/Full-Time -->
+    <div style="margin-bottom:10px">
+      <div style="font-size:.7rem;color:var(--text2);margin-bottom:4px">⏱️ 半全场</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        ${htResults.slice(0,5).map(r => `
+        <div style="padding:4px 10px;background:var(--surface2);border-radius:4px;text-align:center;font-size:.7rem;min-width:55px">
+          <div style="font-weight:700;color:var(--text)">${r.label}</div>
+          <div style="font-size:.62rem;color:var(--accent)">${(r.prob*100).toFixed(1)}%</div>
+        </div>`).join('')}
+        <div style="padding:4px 10px;font-size:.62rem;color:var(--text3);display:flex;align-items:center">其余34种组合</div>
+      </div>
+    </div>
+
+    <!-- Total Goals -->
+    <div>
+      <div style="font-size:.7rem;color:var(--text2);margin-bottom:4px">🔢 总进球数</div>
+      <div style="display:flex;gap:4px">
+        ${goalLabels.map((l,i) => `
+        <div style="flex:1;text-align:center;padding:5px 2px;background:${i===Math.round(pred.expH+pred.expA)?'rgba(240,185,11,.15)':'var(--surface2)'};border-radius:4px;font-size:.68rem">
+          <div style="font-weight:700;color:var(--text)">${l}</div>
+          <div style="font-size:.6rem;color:${goalProbs[i]>0.15?'var(--gold)':'var(--accent)'}">${(goalProbs[i]*100).toFixed(0)}%</div>
+        </div>`).join('')}
+      </div>
+      <div style="font-size:.62rem;color:var(--text3);margin-top:3px">预期总进球 ${(pred.expH+pred.expA).toFixed(1)} 球</div>
+    </div>
+  </div>`;
+}
+
 function getStrength(t) {
   // Base from FIFA rank (lower rank = higher score)
   const rankScore = Math.max(5, 95 - (t.rk - 1) * 1.5);
@@ -2303,45 +2509,6 @@ function poissonPMF(lambda, k) {
   let logP = -lambda + k * Math.log(lambda);
   for (let i = 2; i <= k; i++) logP -= Math.log(i);
   return Math.exp(logP);
-}
-
-function topScores(lambdaH, lambdaA, n) {
-  n = n || 8;
-  var scores = [];
-  for (var h = 0; h <= 7; h++) {
-    for (var a = 0; a <= 7; a++) {
-      scores.push({h: h, a: a, prob: poissonPMF(lambdaH, h) * poissonPMF(lambdaA, a)});
-    }
-  }
-  var sum = scores.reduce(function(s, v) { return s + v.prob; }, 0);
-  return scores.sort(function(a, b) { return b.prob - a.prob; }).slice(0, n).map(function(s) { return { home: s.h, away: s.a, prob: s.prob / sum }; });
-}
-
-function calcHtFt(homeLambda, awayLambda) {
-  var htLambdaH = homeLambda * 0.43, htLambdaA = awayLambda * 0.43;
-  var htH = 0, htD = 0, htA = 0;
-  for (var h = 0; h <= 6; h++) {
-    for (var a = 0; a <= 6; a++) {
-      var prob = poissonPMF(htLambdaH, h) * poissonPMF(htLambdaA, a);
-      if (h > a) htH += prob; else if (h === a) htD += prob; else htA += prob;
-    }
-  }
-  var htTotal = htH + htD + htA;
-  return { htH: htH/htTotal, htD: htD/htTotal, htA: htA/htTotal };
-}
-
-function calcTotalGoals(lambdaH, lambdaA) {
-  var dist = Array(8).fill(0);
-  for (var h = 0; h <= 7; h++) {
-    for (var a = 0; a <= 7; a++) {
-      var prob = poissonPMF(lambdaH, h) * poissonPMF(lambdaA, a);
-      var total = h + a;
-      if (total < 7) dist[total] += prob;
-      else dist[7] += prob;
-    }
-  }
-  var sum = dist.reduce(function(s, v) { return s + v; }, 0);
-  return { dist: dist.map(function(v) { return v / sum; }), labels: ['0','1','2','3','4','5','6','7+'] };
 }
 
 function predictMatch(homeTeam, awayTeam) {
@@ -2969,6 +3136,8 @@ function showMatchDetail(mid) {
   }
 
   // 7. 竞猜分析 + 进阶玩法
+  html += renderJCAnalysis(mid, ht, at);
+  html += renderJCAdvanced(mid, ht, at);
 
   // 8. 历史同指数
   if (mol) {
@@ -3921,12 +4090,12 @@ let tempHumanPicks = [], humanStakePer = 100, humanMode = 'single';
 function aiAllPositiveEV(matches) {
   var bets = [];
   matches.forEach(function(m){
-    var jc = MATCH_ODDS[m.id]; if (!jc) return;
+    var jc = JC_ODDS[m.id]; if (!jc) return;
     var ht = TEAMS.find(function(t){return t.id===m.home}), at = TEAMS.find(function(t){return t.id===m.away});
     if (!ht||!at) return;
     var pred = predictMatch(ht,at);
     // SPF
-    [{t:'胜',p:pred.homeWinProb,o:jc.h,l:ht.cn+'胜'},{t:'平',p:pred.drawProb,o:jc.d,l:'平局'},{t:'负',p:pred.awayWinProb,o:jc.a,l:at.cn+'胜'}].forEach(function(d){
+    [{t:'胜',p:pred.homeWinProb,o:jc.spf[0],l:ht.cn+'胜'},{t:'平',p:pred.drawProb,o:jc.spf[1],l:'平局'},{t:'负',p:pred.awayWinProb,o:jc.spf[2],l:at.cn+'胜'}].forEach(function(d){
       var ev=(d.p*(d.o*JC_RETURN_RATE-1)*100); if(ev>0) bets.push({type:'胜平负',pick:d.l,odds:d.o,prob:d.p,ev:ev,match:ht.cn+'vs'+at.cn,mid:m.id,ht:ht,at:at});
     });
     // Handicap
@@ -3936,714 +4105,776 @@ function aiAllPositiveEV(matches) {
       });
     }
     // Total goals
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    var tg=calcTotalGoals(pred.expH,pred.expA); var go=[10,4.2,3.2,3.5,5.5,9,18,35];
+    tg.dist.forEach(function(p,i){ var ev=(p*(go[i]*JC_RETURN_RATE-1)*100); if(ev>0&&p>0.04) bets.push({type:'总进球',pick:(i===7?'7+':i)+'球',odds:go[i],prob:p,ev:ev,match:ht.cn+'vs'+at.cn,mid:m.id,ht:ht,at:at}); });
+    // Correct score top 3
+    topScores(pred.expH,pred.expA,3).forEach(function(s){ var so=Math.max(4.5,1/s.prob*0.8); var ev=(s.prob*(so*JC_RETURN_RATE-1)*100); if(ev>0&&s.prob>0.04) bets.push({type:'比分',pick:s.h+':'+s.a,odds:so,prob:s.prob,ev:ev,match:ht.cn+'vs'+at.cn,mid:m.id,ht:ht,at:at}); });
+    // HT/FT top 2
+    var hf=calcHtFt(pred.expH,pred.expA);
+    [{l:'胜-胜',p:hf.htH*pred.homeWinProb},{l:'平-胜',p:hf.htD*pred.homeWinProb},{l:'负-负',p:hf.htA*pred.awayWinProb},{l:'平-平',p:hf.htD*pred.drawProb}].forEach(function(r){
+      var ho=Math.max(2.5,1/(r.p+0.01)*0.85); var ev=(r.p*(ho*JC_RETURN_RATE-1)*100); if(ev>0&&r.p>0.05) bets.push({type:'半全场',pick:r.l,odds:ho,prob:r.p,ev:ev,match:ht.cn+'vs'+at.cn,mid:m.id,ht:ht,at:at});
+    });
+  });
+  bets.sort(function(a,b){return b.ev-a.ev});
+  return bets.slice(0, 15);
+}
+
+function aiBestPick(matches) {
+  var duel = getDuelState();
+  var bets = aiAllPositiveEV(matches);
+  if (bets.length === 0) return { singles: [], parlays: [] };
+
+  // === 风险管理过滤器 ===
+  // 1. 过滤高风险竞猜：指数>5或概率<15%或EV<3%
+  bets = bets.filter(function(b){ return b.odds <= 5.0 && b.prob >= 0.15 && b.ev >= 1.0; });
+  // 2. 按夏普比率排序：EV / sqrt(odds-1) ≈ 风险调整后收益
+  bets.sort(function(a,b){
+    var scoreA = a.ev / Math.sqrt(Math.max(0.1, a.odds - 1));
+    var scoreB = b.ev / Math.sqrt(Math.max(0.1, b.odds - 1));
+    return scoreB - scoreA;
+  });
+
+  var kel = [];
+  var totalStake = 0;
+  var maxDailyLoss = duel.aiBalance * 0.12; // 单日最大亏损=余额12%
+  var perMatchExposure = {}; // 每场比赛最大敞口
+
+  bets.forEach(function(b){
+    if (totalStake >= duel.aiBalance * 0.60) return; // 最多使用60%资金
+    // 超保守凯利：1/16 Kelly
+    var edge = Math.max(0, b.ev / 100);
+    var kellyFrac = 1.0 / 16.0; // 极度保守
+    var k = duel.aiBalance * edge / Math.max(0.01, b.odds - 1) * kellyFrac;
+    // 限制：单注不超过余额5%，不超过¥200
+    k = Math.max(10, Math.min(k, duel.aiBalance * 0.05, 200));
+    k = Math.round(k / 10) * 10;
+
+    // 单场比赛最大敞口：余额10%
+    var matchKey = b.match;
+    var currentExposure = (perMatchExposure[matchKey] || 0);
+    if (currentExposure + k > duel.aiBalance * 0.10) {
+      k = Math.max(10, duel.aiBalance * 0.10 - currentExposure);
+      k = Math.round(k / 10) * 10;
+    }
+
+    // 总投入不超过资金60%
+    if (totalStake + k > duel.aiBalance * 0.60) {
+      k = Math.max(0, duel.aiBalance * 0.60 - totalStake);
+      k = Math.round(k / 10) * 10;
+    }
+
+    // 单日最大亏损预算：Σ(stake/odds) ≤ maxDailyLoss（简化风险预算）
+    var riskContribution = k / b.odds;
+    var totalRisk = kel.reduce(function(s,x){return s + x.stake/x.odds;}, 0);
+    if (totalRisk + riskContribution > maxDailyLoss * 1.5) {
+      k = Math.max(0, (maxDailyLoss * 1.5 - totalRisk) * b.odds);
+      k = Math.round(k / 10) * 10;
+    }
+
+    if (k >= 10) {
+      kel.push({type:b.type, pick:b.pick, odds:b.odds, stake:k, ev:b.ev, match:b.match, mid:b.mid, prob:b.prob});
+      totalStake += k;
+      perMatchExposure[matchKey] = (perMatchExposure[matchKey]||0) + k;
+    }
+  });
+
+  // === 串关：仅2串1，严格风控 ===
+  var parlays = [];
+  if (kel.length >= 2) {
+    var safePicks = kel.filter(function(b){ return b.prob >= 0.30 && b.odds <= 2.5; });
+    if (safePicks.length >= 2) {
+      var best2 = safePicks.slice(0, 2);
+      var parOdds = best2.reduce(function(s,b){return s*b.odds;}, 1);
+      var parProb = best2.reduce(function(s,b){return s*(b.prob||0.5);}, 1);
+      var parEV = (parProb * (parOdds * JC_RETURN_RATE - 1) * 100);
+      // 串关门槛：概率>12%，EV>5%
+      if (parProb >= 0.12 && parEV >= 5.0) {
+        var parStake = Math.round(duel.aiBalance * 0.03 / 10) * 10; // 赌3%余额
+        parStake = Math.max(10, Math.min(parStake, 150));
+        if (totalStake + parStake <= duel.aiBalance * 0.65) {
+          parlays.push({
+            type: '2串1',
+            legs: best2.map(function(b){return {type:b.type,pick:b.pick,odds:b.odds,match:b.match,mid:b.mid}}),
+            odds: parOdds,
+            stake: parStake,
+            ev: parEV,
+            prob: parProb
+          });
+        }
+      }
+    }
+  }
+  return { singles: kel, parlays: parlays };
+}
+
+function lockAIPick() {
+  const todayStr = getTournamentDateStr();
+  const allUpcoming = MATCH_SCHEDULE.filter(function(m){return m.stage==='group' && isMatchBettable(m.id) && m.date===getNextDayDate();});
+  const duel = getDuelState();
+  if (duel.aiBalance < 10) { showToast('AI余额不足'); return; }
+  if (allUpcoming.length === 0) { showToast('没有可竞猜的比赛'); return; }
+  const best = aiBestPick(allUpcoming);
+  if (best.singles.length === 0 && best.parlays.length === 0) { showToast('AI无正期望值策略'); return; }
+  let totalStake = 0;
+  // Lock each single bet as its own strategy
+  best.singles.forEach(b => {
+    if (duel.aiBalance - totalStake >= b.stake) {
+      addStrategy('ai', todayStr, {mode:'single', stake:b.stake, picks:[{mid:b.mid,type:b.type,pick:b.pick,odds:b.odds}], match:b.match});
+      totalStake += b.stake;
+    }
+  });
+  // Lock parlay as one strategy
+  best.parlays.forEach(p => {
+    if (duel.aiBalance - totalStake >= p.stake) {
+      addStrategy('ai', todayStr, {mode:'parlay', stake:p.stake, legs:p.legs, odds:p.odds});
+      totalStake += p.stake;
+    }
+  });
+  saveDuelState(duel);
+  renderDuel();
+  showToast('AI已锁定 ' + best.singles.length + '单关+' + best.parlays.length + '串关 ¥' + totalStake);
+}
+
+// --- Human UI helpers ---
+function optionBtn(selId, mid, o) {
+  var jsPick = o.pick.replace(/'/g, "\\'");
+  var onclickStr = "toggleHumanPick('" + mid + "','" + o.type + "','" + jsPick + "'," + o.odds.toFixed(4) + ",this)";
+  return '<button class="btn btn-outline" style="font-size:.68rem;padding:4px 8px;border-radius:5px;white-space:nowrap" onclick="' + onclickStr + '">' + o.pick + ' @' + o.odds.toFixed(2) + '<br><span style="font-size:.58rem;opacity:.8">' + (o.prob*100).toFixed(0) + '%</span></button>';
+}
+function toggleHumanPick(mid, type, pick, odds, btn) {
+  const key = mid+'|'+type+'|'+pick;
+  const existing = tempHumanPicks.findIndex(function(p){ return p.mid+'|'+p.type+'|'+p.pick === key; });
+  if (existing >= 0) { tempHumanPicks.splice(existing,1); btn.style.background=''; btn.style.color=''; btn.style.borderColor=''; }
+  else {
+    if (humanMode === 'parlay') {
+      const sameMatch = tempHumanPicks.findIndex(function(p){ return p.mid === mid; });
+      if (sameMatch >= 0) { showToast('串关每场只能选一项'); return; }
+    }
+    tempHumanPicks.push({mid:mid, type:type, pick:pick, odds:odds});
+    btn.style.background='var(--green)'; btn.style.color='#fff'; btn.style.borderColor='var(--green)';
+  }
+  updateLockBtn();
+}
+function updateLockBtn() {
+  const duel = getDuelState();
+  const cost = humanMode === 'parlay' ? humanStakePer : tempHumanPicks.length * humanStakePer;
+  const over = cost > duel.humanBalance;
+  const lockBtn = document.getElementById('btnLockHuman');
+  if (!lockBtn) return;
+  const matchIds = new Set(tempHumanPicks.map(function(p){return p.mid}));
+  const validParlay = humanMode === 'parlay' && matchIds.size >= 2;
+  if (over) { lockBtn.textContent = '余额不足(需¥'+cost+' 仅¥'+duel.humanBalance+')'; lockBtn.style.background='var(--red)'; }
+  else if (humanMode==='parlay'&&tempHumanPicks.length>0&&!validParlay) { lockBtn.textContent = '串关需至少2场不同比赛'; lockBtn.style.background='var(--orange)'; }
+  else if (humanMode==='parlay'&&validParlay) { var po=tempHumanPicks.reduce(function(s,p){return s*p.odds},1); lockBtn.textContent='锁定'+tempHumanPicks.length+'串1 ¥'+humanStakePer+' @'+po.toFixed(2)+' [余额¥'+(duel.humanBalance-humanStakePer)+']'; lockBtn.style.background=''; }
+  else if (tempHumanPicks.length>0) { lockBtn.textContent='锁定'+tempHumanPicks.length+'注 ¥'+cost+' [余额¥'+(duel.humanBalance-cost)+']'; lockBtn.style.background=''; }
+  else { lockBtn.textContent='选择方案后锁定'; lockBtn.style.background=''; }
+  lockBtn.disabled = over || (humanMode==='parlay'&&!validParlay) || tempHumanPicks.length===0;
+}
+function lockHumanPick() {
+  if (tempHumanPicks.length===0) { showToast('请至少选择一个竞猜方案'); return; }
+  if (humanMode==='parlay') {
+    var mids = new Set(tempHumanPicks.map(function(p){return p.mid}));
+    if (mids.size < 2) { showToast('串关必须至少2场不同比赛'); return; }
+  }
+  var todayStr = getActiveJcDate();
+  var duel = getDuelState();
+  var totalCost = humanMode==='parlay' ? humanStakePer : tempHumanPicks.length * humanStakePer;
+  if (totalCost > duel.humanBalance) { showToast('余额不足！'); return; }
+  // Auto-lock AI if no strategies yet
+  var existingAI = getStrategies('ai', todayStr);
+  if (existingAI.length === 0) {
+    var allUpcoming2 = MATCH_SCHEDULE.filter(function(m){return m.stage==='group' && isMatchBettable(m.id) && m.date===getNextDayDate();});
+    var best = aiBestPick(allUpcoming2);
+    best.singles.forEach(function(b){ if(duel.aiBalance>=b.stake) addStrategy('ai',todayStr,{mode:'single',stake:b.stake,picks:[{mid:b.mid,type:b.type,pick:b.pick,odds:b.odds}],match:b.match}); });
+    best.parlays.forEach(function(p){ if(duel.aiBalance>=p.stake) addStrategy('ai',todayStr,{mode:'parlay',stake:p.stake,legs:p.legs,odds:p.odds}); });
+  }
+  if (humanMode === 'single') {
+    addStrategy('human', todayStr, {mode:'single', stake:humanStakePer, picks:tempHumanPicks.map(function(p){return{mid:p.mid,type:p.type,pick:p.pick,odds:p.odds}})});
+  } else {
+    var parOdds = tempHumanPicks.reduce(function(s,p){return s*p.odds},1);
+    var legCount = tempHumanPicks.length;
+    addStrategy('human', todayStr, {mode:'parlay', type:legCount+'串1', stake:humanStakePer, legs:tempHumanPicks.map(function(p){var ht=TEAMS.find(function(t){return t.id===MATCH_SCHEDULE.find(function(m){return m.id===p.mid}).home});var at=TEAMS.find(function(t){return t.id===MATCH_SCHEDULE.find(function(m){return m.id===p.mid}).away});return{type:p.type,pick:p.pick,odds:p.odds,match:(ht?ht.cn:'')+'vs'+(at?at.cn:''),mid:p.mid}}), odds:parOdds});
+  }
+  tempHumanPicks = [];
+  document.querySelectorAll('#humanDuelPick button').forEach(function(b){if(b.id!=='btnLockHuman'&&b.id!=='btnSingle'&&b.id!=='btnParlay'){b.style.background='';b.style.color='';b.style.borderColor='';}});
+  renderDuel();
+  showToast('策略已锁定！余额¥'+duel.humanBalance+' | 可继续添加更多策略');
+}
+function clearHumanPick() {
+  tempHumanPicks = [];
+  document.querySelectorAll('#humanDuelPick button').forEach(function(b){if(b.id!=='btnLockHuman'&&b.id!=='btnSingle'&&b.id!=='btnParlay'){b.style.background='';b.style.color='';b.style.borderColor='';}});
+  updateLockBtn();
+}
+
+// --- Settlement ---
+function checkBetWin(mid, type, pick) {
+  var act = actualResults[mid]; if (!act) return null;
+  var m = MATCH_SCHEDULE.find(function(x){return x.id===mid}); if (!m) return null;
+  var ht = TEAMS.find(function(t){return t.id===m.home}), at = TEAMS.find(function(t){return t.id===m.away});
+  if (!ht||!at) return null;
+  if (type==='胜平负') { var r=act.homeScore>act.awayScore?'胜':act.homeScore===act.awayScore?'平':'负'; return (pick===ht.cn+'胜'&&r==='胜')||(pick===at.cn+'胜'&&r==='负')||(pick==='平局'&&r==='平'); }
+  if (type==='让球') { var rq=parseInt(JC_ODDS[mid]?.rq||'0'); var adj=act.homeScore+rq>act.awayScore?'胜':act.homeScore+rq===act.awayScore?'平':'负'; return pick==='让胜'?adj==='胜':pick==='让平'?adj==='平':adj==='负'; }
+  if (type==='总进球') { var tg=act.homeScore+act.awayScore,pg=pick==='7+'?7:parseInt(pick); return pg===7?tg>=7:tg===pg; }
+  if (type==='比分') { var parts=pick.split(':'); return act.homeScore===parseInt(parts[0])&&act.awayScore===parseInt(parts[1]); }
+  if (type==='半全场') { var r=act.homeScore>act.awayScore?'胜':act.homeScore===act.awayScore?'平':'负'; return pick.endsWith(r); }
+  return false;
+}
+function settleStrategy(strategy) {
+  if (strategy.mode === 'single') {
+    var profit = 0;
+    for (var i = 0; i < strategy.picks.length; i++) {
+      var p = strategy.picks[i];
+      var w = checkBetWin(p.mid, p.type, p.pick);
+      if (w === null) return {settled:false, profit:0}; // 有比赛未结束，暂不结算
+      var perStake = Math.floor(strategy.stake / strategy.picks.length);
+      if (w) profit += Math.round(perStake * p.odds - perStake);
+      else profit -= perStake;
+    }
+    return {settled:true, profit:profit};
+  } else {
+    // 串关：等待所有比赛结束
+    var allSettled = true;
+    for (var j = 0; j < strategy.legs.length; j++) {
+      var l = strategy.legs[j];
+      var w = checkBetWin(l.mid, l.type, l.pick);
+      if (w === null) return {settled:false, profit:0}; // 还有比赛未结束
+      if (!w) return {settled:true, profit: -strategy.stake}; // 一输全输，立即结算
+    }
+    return {settled:true, profit: Math.round(strategy.stake * strategy.odds - strategy.stake)};
+  }
+}
+function settleDuel(dateStr) {
+  var duel = getDuelState();
+  if (duel.settled[dateStr]) return;
+  var aiStrats = getStrategies('ai', dateStr);
+  var hStrats = getStrategies('human', dateStr);
+  if (aiStrats.length===0 && hStrats.length===0) return;
+  var aiProfit=0, aiHits=0, humanProfit=0, humanHits=0, allDone=true;
+  aiStrats.forEach(function(s){ var r=settleStrategy(s); if(!r.settled){allDone=false;return;} aiProfit+=r.profit; if(r.profit>0)aiHits++; });
+  hStrats.forEach(function(s){ var r=settleStrategy(s); if(!r.settled){allDone=false;return;} humanProfit+=r.profit; if(r.profit>0)humanHits++; });
+  if (!allDone) return;
+  duel.settled[dateStr] = {aiHits:aiHits,aiStrats:aiStrats.length,aiProfit:aiProfit,humanHits:humanHits,humanStrats:hStrats.length,humanProfit:humanProfit};
+  duel.aiBalance += aiProfit;
+  duel.humanBalance += humanProfit;
+  saveDuelState(duel);
+  // Generate AI reflection
+  generateAIReflection(dateStr, aiStrats, hStrats, aiProfit, humanProfit, aiHits, humanHits);
+  renderDuel();
+  var winner = aiProfit>humanProfit?'AI':humanProfit>aiProfit?'人类':'平局';
+  showToast(dateStr+' 结算: '+winner+'！AI '+(aiProfit>=0?'+':'')+'¥'+aiProfit+' vs 人类 '+(humanProfit>=0?'+':'')+'¥'+humanProfit);
+}
+
+// ========== AI反思引擎 ==========
+function generateAIReflection(dateStr, aiStrats, hStrats, aiProfit, humanProfit, aiHits, humanHits) {
+  var reflections = JSON.parse(localStorage.getItem('wc2026_ai_reflections') || '[]');
+  // Check if already reflected
+  if (reflections.find(function(r){return r.date===dateStr})) return;
+
+  var totalSingles = 0, totalParlays = 0, totalStake = 0;
+  aiStrats.forEach(function(s){
+    totalStake += s.stake;
+    if (s.mode==='single') totalSingles++; else totalParlays++;
+  });
+
+  var hTotalStake = 0;
+  hStrats.forEach(function(s){ hTotalStake += s.stake; });
+
+  // Analyze what went right/wrong
+  var analysis = [];
+  var hitRate = totalSingles > 0 ? (aiHits/totalSingles*100).toFixed(0) : 'N/A';
+
+  if (aiProfit > 0) {
+    analysis.push('本日盈利¥'+aiProfit+'，但需清醒认识到：短期盈利可能是运气，不代表策略长期有效');
+    analysis.push('命中率 '+hitRate+'%，单注风控在安全线内。不可因此放松风控参数');
+  } else if (aiProfit < 0) {
+    analysis.push('本日亏损¥'+Math.abs(aiProfit)+'，这是预期内的波动。竞猜返还率71%，长期必亏的数学规律未变');
+    if (totalSingles > 0 && aiHits === 0) {
+      analysis.push('全错预警：概率模型可能系统性高估，泊松lambda参数需要重新校准');
+    }
+    if (totalParlays > 0) {
+      analysis.push('串关未中属大概率事件——即使风控严格，串关仍有80%+失败率');
+    }
+  } else {
+    analysis.push('本日持平。在竞猜-29%的抽水率下，持平已是不错的结果');
+  }
+
+  // Risk control assessment
+  var riskRatio = totalStake / (totalStake + Math.abs(aiProfit) + 1) * 100;
+  analysis.push('总投入¥'+totalStake+'，占资金'+(totalStake/10).toFixed(0)+'%，风控纪律：坚守60%上限');
+
+  // Comparison with human — humble
+  if (aiProfit > humanProfit) {
+    analysis.push('本期AI盈亏优于人类，但这不代表AI"聪明"，概率模型的长期期望值才是关键');
+  } else if (humanProfit > aiProfit) {
+    analysis.push('本期人类优于AI。虚心学习：人类可能捕捉到了模型未纳入的信息（如临场伤病情报、士气等）');
+  } else {
+    analysis.push('本期双方持平');
+  }
+
+  // Lessons
+  var lessons = [];
+  lessons.push('核心原则：竞猜返还率71%意味着长期期望为负，任何"盈利"策略都需经受大数定律检验');
+  if (totalParlays > 0 && aiHits < totalSingles * 0.3) {
+    lessons.push('串关风险再次被验证——考虑仅在高确定性（单体概率>40%）时才启用2串1');
+  }
+  if (aiProfit < -totalStake * 0.3) {
+    lessons.push('单日亏损超30%触发风控警报，凯利系数可考虑从1/16进一步收紧到1/32');
+  }
+  if (hitRate !== 'N/A' && parseInt(hitRate) > 50) {
+    lessons.push('命中率暂好，但需警惕过度自信。回测表明：即使命中率60%+，竞猜抽水后长期收益率仍可能为负');
+  }
+  lessons.push('持续对照历史同指数数据库，确保泊松参数与实际赛果偏差在可控范围');
+
+  var reflection = {
+    date: dateStr,
+    aiProfit: aiProfit,
+    humanProfit: humanProfit,
+    aiHits: aiHits,
+    humanHits: humanHits,
+    totalStake: totalStake,
+    hitRate: hitRate,
+    analysis: analysis,
+    lessons: lessons,
+    timestamp: new Date().toISOString()
+  };
+
+  reflections.push(reflection);
+  if (reflections.length > 30) reflections = reflections.slice(-30);
+  localStorage.setItem('wc2026_ai_reflections', JSON.stringify(reflections));
+}
+
+var ledgerOpen = null;
+function toggleLedger(player) {
+  if (ledgerOpen === player) { document.getElementById('ledgerDetail').style.display='none'; ledgerOpen=null; return; }
+  ledgerOpen = player;
+  var duel = getDuelState();
+  var allDates = Object.keys(duel.settled).sort().reverse();
+  var key = player === 'ai' ? 'aiStrategies' : 'humanStrategies';
+  var name = player === 'ai' ? '🤖 AI' : '🧑 人类';
+  var color = player === 'ai' ? 'var(--accent)' : 'var(--green)';
+  var html = '<div class="card" style="border:1px solid '+color+'"><div class="card-header">'+name+' 竞猜明细账本</div><div style="max-height:400px;overflow-y:auto">';
+  var totalProfit = 0;
+
+  allDates.forEach(function(date){
+    var strats = getStrategies(player, date);
+    if (strats.length === 0) return;
+    var settled = duel.settled[date];
+    var dayProfit = player === 'ai' ? (settled?settled.aiProfit:0) : (settled?settled.humanProfit:0);
+    totalProfit += dayProfit;
+    var dayColor = dayProfit > 0 ? 'var(--green)' : dayProfit < 0 ? 'var(--red)' : 'var(--text3)';
+
+    html += '<div style="padding:8px;margin:4px 0;background:var(--surface2);border-radius:6px">';
+    html += '<div style="display:flex;justify-content:space-between;font-weight:700;font-size:.78rem;margin-bottom:6px"><span>📅 '+date+'</span><span style="color:'+dayColor+'">'+(dayProfit>=0?'+':'')+'¥'+dayProfit+'</span></div>';
+
+    strats.forEach(function(s,i){
+      if (s.mode === 'single') {
+        html += '<div style="font-size:.7rem;padding:3px 0 3px 8px;border-bottom:1px dotted rgba(255,255,255,.04)"><span style="color:var(--accent)">单关 ¥'+s.stake+'</span>';
+        s.picks.forEach(function(p){
+          var win = checkBetWin(p.mid, p.type, p.pick);
+          var icon = win===true?'✅':win===false?'❌':win===null?'⏳':'';
+          var perStake = Math.floor(s.stake / s.picks.length);
+          var pickResult = win===true ? ' +¥'+(Math.round(perStake*p.odds-perStake)) : win===false ? ' -¥'+perStake : '';
+          html += '<div style="font-size:.65rem;padding:1px 0 1px 16px;color:var(--text2)">'+icon+' '+p.type+' → '+p.pick+' @'+p.odds.toFixed(2)+pickResult+'</div>';
+        });
+        html += '</div>';
+      } else {
+        html += '<div style="font-size:.7rem;padding:3px 0 3px 8px;border-bottom:1px dotted rgba(255,255,255,.04);background:rgba(240,185,11,.05)"><span style="color:var(--gold)">'+s.type+' ¥'+s.stake+' @'+s.odds.toFixed(2)+'</span>';
+        var allWin = true; var anyNull = false;
+        s.legs.forEach(function(l){
+          var w = checkBetWin(l.mid, l.type, l.pick);
+          if (w===null) anyNull=true; if (!w) allWin=false;
+          html += '<div style="font-size:.65rem;padding:1px 0 1px 16px;color:var(--text2)">'+(w===true?'✅':w===false?'❌':'⏳')+' '+l.match+' → '+l.pick+' @'+l.odds.toFixed(2)+'</div>';
+        });
+        var parResult = anyNull ? ' [待结算]' : allWin ? ' +¥'+Math.round(s.stake*s.odds-s.stake) : ' -¥'+s.stake;
+        html += '<div style="font-size:.65rem;color:'+(allWin?'var(--green)':'var(--red)')+'">'+(allWin?'✅':'❌')+parResult+'</div>';
+        html += '</div>';
+      }
+    });
+    html += '</div>';
+  });
+
+  html += '<div style="padding:8px;text-align:right;font-weight:700;border-top:2px solid var(--border);margin-top:4px">累计盈亏: <span style="color:'+(totalProfit>=0?'var(--green)':'var(--red)')+'">'+(totalProfit>=0?'+':'')+'¥'+totalProfit+'</span></div>';
+  html += '</div></div>';
+  document.getElementById('ledgerDetail').innerHTML = html;
+  document.getElementById('ledgerDetail').style.display = 'block';
+}
+
+function renderReflections() {
+  var reflections = JSON.parse(localStorage.getItem('wc2026_ai_reflections') || '[]');
+  var div = document.getElementById('aiReflection');
+  if (!div) return;
+  if (reflections.length === 0) {
+    div.innerHTML = '<div class="empty-state" style="padding:20px"><p>🧠 AI尚未进行反思</p><p style="font-size:.75rem;color:var(--text2)">每日结算后自动生成</p></div>';
+    return;
+  }
+  div.innerHTML = reflections.slice().reverse().map(function(r){
+    var color = r.aiProfit > 0 ? 'var(--green)' : r.aiProfit < 0 ? 'var(--red)' : 'var(--text3)';
+    return '<div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:6px;border-left:3px solid '+color+'">'+
+      '<div style="display:flex;justify-content:space-between;margin-bottom:6px">'+
+        '<span style="font-weight:700;font-size:.8rem">📅 '+r.date+'</span>'+
+        '<span style="color:'+color+';font-weight:700">AI '+(r.aiProfit>=0?'+':'')+'¥'+r.aiProfit+' vs 人类 '+(r.humanProfit>=0?'+':'')+'¥'+r.humanProfit+'</span>'+
+      '</div>'+
+      '<div style="font-size:.7rem;color:var(--text2);margin-bottom:4px">命中率 '+r.hitRate+'% | 投入¥'+r.totalStake+'</div>'+
+      r.analysis.map(function(a){ return '<div style="font-size:.72rem;padding:2px 0;color:var(--text)">'+a+'</div>'; }).join('')+
+      '<div style="margin-top:4px;padding:6px 8px;background:rgba(139,92,246,.08);border-radius:4px;font-size:.68rem;color:var(--purple)">'+
+        '<span style="font-weight:600">💡 经验教训：</span>'+
+        r.lessons.map(function(l){ return '<div style="padding:1px 0 1px 10px">• '+l+'</div>'; }).join('')+
+      '</div>'+
+    '</div>';
+  }).join('');
+}
+
+
+function renderDuel() {
+  var ul=document.getElementById("duelUserLabel");if(ul)ul.textContent=currentUser?"👤 "+currentUser:"";
+  var duel=getDuelState();
+  var todayStr = getActiveJcDate();
+  var todayMatches = MATCH_SCHEDULE.filter(function(m){return m.date===todayStr && m.stage==='group';});
+  var allUpcoming = MATCH_SCHEDULE.filter(function(m){return m.stage==='group' && isMatchBettable(m.id) && m.date===getNextDayDate();});
+  var aiStrats = getStrategies('ai', todayStr);
+  var hStrats = getStrategies('human', todayStr);
+  var settledToday = duel.settled[todayStr];
+  if(aiStrats.length===0&&allUpcoming.length>0){var totalSpent=0;allUpcoming.forEach(function(m){var jc=JC_ODDS[m.id];if(!jc)return;var ht=TEAMS.find(function(t){return t.id===m.home}),at=TEAMS.find(function(t){return t.id===m.away});if(!ht||!at)return;var pred=predictMatch(ht,at);var opts=[];if(jc.spf[0]<=5)opts.push({t:"胜平负",p:ht.cn+"胜",o:jc.spf[0],prob:pred.homeWinProb});if(jc.spf[1]<=5)opts.push({t:"胜平负",p:"平局",o:jc.spf[1],prob:pred.drawProb});if(jc.spf[2]<=5)opts.push({t:"胜平负",p:at.cn+"胜",o:jc.spf[2],prob:pred.awayWinProb});opts.sort(function(a,b){return b.prob-a.prob});var best=opts[0];if(!best||best.prob<0.15)return;var stake=Math.round(duel.aiBalance*best.prob*0.08/10)*10;stake=Math.max(30,Math.min(stake,200));if(totalSpent+stake>duel.aiBalance*0.75)return;totalSpent+=stake;addStrategy("ai",todayStr,{mode:"single",stake:stake,picks:[{mid:m.id,type:best.t,pick:best.p,odds:best.o}],match:ht.cn+"vs"+at.cn})});aiStrats=getStrategies("ai",todayStr);duel=getDuelState()}
+
+  // Scoreboard
+  var aiEl = document.getElementById('aiBalance');
+  var humanEl = document.getElementById('humanBalance');
+  if (aiEl) aiEl.textContent = '¥' + duel.aiBalance.toLocaleString();
+  if (humanEl) humanEl.textContent = '¥' + duel.humanBalance.toLocaleString();
+  var aiPct = ((duel.aiBalance-1000)/1000*100).toFixed(1);
+  var hPct = ((duel.humanBalance-1000)/1000*100).toFixed(1);
+  var aiPnlEl = document.getElementById('aiPnl');
+  var humanPnlEl = document.getElementById('humanPnl');
+  if (aiPnlEl) aiPnlEl.innerHTML = '盈亏 ¥'+(duel.aiBalance-1000).toLocaleString()+' ('+(aiPct>0?'+':'')+aiPct+'%)';
+  if (humanPnlEl) humanPnlEl.innerHTML = '盈亏 ¥'+(duel.humanBalance-1000).toLocaleString()+' ('+(hPct>0?'+':'')+hPct+'%)';
+
+  // Today status
+  var aiTodayEl = document.getElementById('aiToday');
+  var humanTodayEl = document.getElementById('humanToday');
+  if (aiTodayEl) {
+    if (aiStrats.length > 0 && !settledToday) {
+      var ts = aiStrats.reduce(function(s,x){return s+x.stake;},0);
+      aiTodayEl.textContent = '今日: '+aiStrats.length+'策略 ¥'+ts+' [待结算]';
+    } else if (settledToday) {
+      aiTodayEl.textContent = '今日: '+(settledToday.aiProfit>=0?'+':'')+'¥'+settledToday.aiProfit;
+    }
+  }
+  if (humanTodayEl) {
+    if (hStrats.length > 0 && !settledToday) {
+      var ts2 = hStrats.reduce(function(s,x){return s+x.stake;},0);
+      humanTodayEl.textContent = '今日: '+hStrats.length+'策略 ¥'+ts2+' [待结算]';
+    } else if (settledToday) {
+      humanTodayEl.textContent = '今日: '+(settledToday.humanProfit>=0?'+':'')+'¥'+settledToday.humanProfit;
+    }
+  }
+
+  // AI section
+  var aiDiv = document.getElementById('aiDuelPick');
+    // AI auto-lock if not yet locked today
+  if (aiStrats.length === 0 && allUpcoming.length > 0) {
+    var best = aiBestPick(allUpcoming);
+    if (best.singles.length > 0 || best.parlays.length > 0) {
+      best.singles.forEach(function(b){
+        if (duel.aiBalance >= b.stake) addStrategy('ai', todayStr, {mode:'single',stake:b.stake,picks:[{mid:b.mid,type:b.type,pick:b.pick,odds:b.odds}],match:b.match});
+      });
+      best.parlays.forEach(function(p){
+        if (duel.aiBalance >= p.stake) addStrategy('ai', todayStr, {mode:'parlay',stake:p.stake,legs:p.legs,odds:p.odds});
+      });
+      aiStrats = getStrategies('ai', todayStr);
+      duel = getDuelState();
+    }
+  }
+
+  if (aiDiv) { if (!currentUser) aiDiv.innerHTML = '<div class="empty-state" style="padding:20px"><p>🔐 请先登录查看AI策略</p></div>'; else buildAISection(aiDiv, aiStrats, duel, todayMatches); }
+
+  // Human section
+  var hDiv = document.getElementById('humanDuelPick');
+  if (hDiv) { if (!currentUser) { hDiv.innerHTML = '<div class="empty-state" style="padding:30px"><p>请先登录后再参与竞猜</p><button class="btn btn-primary" onclick="loginUser()">点击登录</button></div>'; } else { buildHumanSection(hDiv, hStrats, duel, allUpcoming); } }
+
+  // History
+  var histDiv = document.getElementById('duelHistory');
+  if (histDiv) buildHistorySection(histDiv, duel);
+  // Reflections
+  renderReflections();
+}
+
+function buildAISection(div, strats, duel, todayMatches) {
+  var html = '';
+  if (strats.length > 0) {
+    var totalStake = strats.reduce(function(s,x){return s+x.stake;},0);
+    html += '<div style="padding:10px;background:var(--surface2);border-radius:8px"><span style="color:var(--text2)">AI已锁定 '+strats.length+'个策略 · 总¥'+totalStake+'</span><div style="margin-top:6px;max-height:220px;overflow-y:auto">';
+    strats.forEach(function(s,i){
+      if (s.mode === 'single') {
+        html += '<div style="font-size:.72rem;padding:6px 8px;margin:4px 0;background:var(--surface);border-radius:6px;border-left:3px solid var(--accent)"><span style="color:var(--accent);font-weight:700">策略'+(i+1)+' 单关 ¥'+s.stake+'</span>';
+        s.picks.forEach(function(p){
+          var m = MATCH_SCHEDULE.find(function(x){return x.id===p.mid});
+          var ht = m ? TEAMS.find(function(t){return t.id===m.home}) : null;
+          var at = m ? TEAMS.find(function(t){return t.id===m.away}) : null;
+          var mn = (ht&&at) ? ht.cn+' vs '+at.cn : '';
+          var jn = m ? (m.id||'') : '';
+          html += '<div style="font-size:.68rem;padding:3px 0 3px 12px;color:var(--text2)"><span style="color:var(--text3)">'+jn+'</span> '+mn+' → <span style="font-weight:600;color:var(--text)">'+p.pick+'</span> @'+p.odds.toFixed(2)+'</div>';
+        });
+        html += '</div>';
+      } else {
+        html += '<div style="font-size:.72rem;padding:6px 8px;margin:4px 0;background:var(--surface);border-radius:6px;border-left:3px solid var(--gold)"><span style="color:var(--gold);font-weight:700">策略'+(i+1)+' '+s.type+' ¥'+s.stake+' @'+s.odds.toFixed(2)+'</span>';
+        s.legs.forEach(function(l){ html += '<div style="font-size:.68rem;padding:3px 0 3px 12px;color:var(--text2)">'+l.match+' → <span style="font-weight:600;color:var(--text)">'+l.pick+'</span> @'+l.odds.toFixed(2)+'</div>'; });
+        html += '</div>';
+      }
+    });
+    html += '</div></div>';
+  } else {
+    var best = aiBestPick(todayMatches);
+    if (best && best.singles && best.singles.length > 0 || (best && best.parlays && best.parlays.length > 0)) {
+      html += '<div style="padding:10px;background:var(--surface2);border-radius:8px"><div style="color:var(--accent);font-weight:700;margin-bottom:4px">AI待锁定: '+best.singles.length+'单关'+(best.parlays.length>0?'+'+best.parlays.length+'串关':'')+'（风控过滤后）';
+      if (best.parlays.length>0) html += '+1串关';
+      html += ' · 余额¥'+duel.aiBalance+' · 日风控¥'+Math.round(duel.aiBalance*0.12)+'</div><div style="font-size:.62rem;color:var(--orange);margin-bottom:4px">⚠️ 1/16凯利 · 指数≤5 · 概率≥15% · 串关仅限高概2串1(≥30%腿×2,总概率≥12%)</div><div style="max-height:200px;overflow-y:auto;margin-bottom:6px">';
+      best.singles.forEach(function(b){ html += '<div style="font-size:.7rem;padding:3px 0;border-bottom:1px dashed rgba(255,255,255,.04)">'+b.type+' '+b.match+' → '+b.pick+' @'+b.odds.toFixed(2)+' ¥'+b.stake+' <span style="color:var(--green);font-size:.6rem">EV'+(b.ev>0?'+':'')+b.ev.toFixed(1)+'% P'+(b.prob*100).toFixed(0)+'%</span></div>'; });
+      if (best.parlays.length > 0) {
+        var p=best.parlays[0];
+        html += '<div style="font-size:.7rem;padding:4px;background:rgba(240,185,11,.08);border-radius:4px;margin-bottom:4px"><span style="color:var(--gold);font-weight:600">2串1 ¥'+p.stake+' @'+p.odds.toFixed(2)+' (概率'+(p.prob*100).toFixed(1)+'%)</span><br><span style="font-size:.65rem;color:var(--text2)">'+p.legs.map(function(l){return l.match+' '+l.pick}).join(' × ')+'</span></div>';
+      }
+      html += '</div><button class="btn btn-primary btn-sm" onclick="lockAIPick()">AI锁定（风控已生效）</button></div>';
+    } else {
+      html += '<div style="color:var(--text3);padding:10px">今日无正期望值策略</div>';
+    }
+  }
+  div.innerHTML = html;
+}
+
+function buildHumanSection(div, strats, duel, todayMatches) {
+  var html = '';
+  // 已有策略展示
+  if (strats.length > 0) {
+    var totalStake = strats.reduce(function(s,x){return s+x.stake;},0);
+    html += '<div style="padding:10px;margin-bottom:12px;background:var(--surface2);border-radius:8px;border:2px solid var(--green)"><div style="margin-bottom:8px"><span style="color:var(--green);font-weight:800;font-size:.85rem">已锁定 '+strats.length+'个策略 总¥'+totalStake+' | 余额¥'+duel.humanBalance+'</span></div>';
+    strats.forEach(function(s,i){
+      if (s.mode === 'single') {
+        html += '<div style="font-size:.7rem;padding:6px 8px;margin:3px 0;background:var(--surface);border-radius:5px;border-left:3px solid var(--accent)"><b>策略'+(i+1)+'</b> 单关 ¥'+s.stake+'<br>';
+        s.picks.forEach(function(p){
+          var m = MATCH_SCHEDULE.find(function(x){return x.id===p.mid});
+          var ht = m ? TEAMS.find(function(t){return t.id===m.home}) : null;
+          var at = m ? TEAMS.find(function(t){return t.id===m.away}) : null;
+          var mn = (ht&&at) ? ht.flag+' '+ht.cn+' vs '+at.cn+' '+at.flag : '';
+          var jn = m ? (m.id||'') : '';
+          html += '<span style="color:var(--text2);padding-left:12px">'+jn+' '+mn+' → <span style="font-weight:600;color:var(--text)">'+p.type+' '+p.pick+'</span> @'+p.odds.toFixed(2)+'</span><br>';
+        });
+        html += '</div>';
+      } else {
+        html += '<div style="font-size:.7rem;padding:6px 8px;margin:3px 0;background:var(--surface);border-radius:5px;border-left:3px solid var(--gold)"><b>策略'+(i+1)+'</b> '+(s.type||'串关')+' ¥'+s.stake+' @'+s.odds.toFixed(2)+'<br>';
+        s.legs.forEach(function(l){
+          html += '<span style="color:var(--text2);padding-left:12px">'+l.match+' → <span style="font-weight:600;color:var(--text)">'+(l.pick||'')+'</span> @'+l.odds.toFixed(2)+'</span><br>';
+        });
+        html += '</div>';
+      }
+    });
+    html += '</div>';
+  }
+  // 新增竞猜（始终显示）
+  html += '<div style="font-size:.75rem;color:var(--text2);margin-bottom:6px">'+(strats.length>0?'继续新增策略':'选择竞猜方案')+' | 余额¥'+duel.humanBalance+'</div>';
+  html += '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">';
+  html += '<span style="font-size:.75rem;color:var(--text2)">竞猜额 ¥</span>';
+  html += '<input type="number" id="humanStakeInput" value="100" min="2" max="20000" step="2" oninput="humanStakePer=Math.max(2,parseInt(this.value)||0);updateLockBtn()" style="width:80px;padding:4px 8px;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:4px;font-size:.72rem;text-align:center">';
+  html += '<span style="font-size:.75rem;color:var(--text2)">模式:</span>';
+  html += '<button id="btnSingle" class="btn btn-primary btn-sm" style="font-size:.68rem;padding:4px 8px" onclick="humanMode=\'single\';this.className=\'btn btn-primary btn-sm\';document.getElementById(\'btnParlay\').className=\'btn btn-outline btn-sm\';updateLockBtn()">单关</button>';
+  html += '<button id="btnParlay" class="btn btn-outline btn-sm" style="font-size:.68rem;padding:4px 8px" onclick="humanMode=\'parlay\';this.className=\'btn btn-primary btn-sm\';document.getElementById(\'btnSingle\').className=\'btn btn-outline btn-sm\';updateLockBtn()">串关</button>';
+  html += '</div>';
+  html += '<div style="font-size:.65rem;color:var(--text3);margin-bottom:8px">'+(humanMode==='parlay'?'串关：选多场不同比赛（每场限1项）':'单关：每项独立竞猜')+'</div>';
+
+  // 比赛选择
+  todayMatches.forEach(function(m, mi){
+    if (!isMatchBettable(m.id)) return;
+    var jc = JC_ODDS[m.id]; if (!jc) return;
+    var ht = TEAMS.find(function(t){return t.id===m.home}), at = TEAMS.find(function(t){return t.id===m.away});
+    if (!ht||!at) return;
+    var pred = predictMatch(ht,at);
+    var tg = calcTotalGoals(pred.expH,pred.expA); var bi=0,bp=0; tg.dist.forEach(function(p,i){if(p>bp){bp=p;bi=i;}}); var go=[10,4.2,3.2,3.5,5.5,9,18,35][bi];
+    var hf=calcHtFt(pred.expH,pred.expA);
+    var htc=[{l:'胜-胜',p:hf.htH*pred.homeWinProb},{l:'平-胜',p:hf.htD*pred.homeWinProb},{l:'负-负',p:hf.htA*pred.awayWinProb},{l:'平-平',p:hf.htD*pred.drawProb}];
+    var selId='human_sel_'+mi;
+
+    html += '<div style="padding:12px;background:var(--surface2);border-radius:10px;margin-bottom:10px;border:1px solid var(--border)">';
+    html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="font-size:1.2rem">'+ht.flag+'</span><span style="font-weight:700">'+ht.cn+'</span><span style="color:var(--text3)">vs</span><span style="font-size:1.2rem">'+at.flag+'</span><span style="font-weight:700">'+at.cn+'</span><span style="font-size:.65rem;background:var(--accent);color:#fff;padding:1px 6px;border-radius:8px;margin-left:auto">'+m.grp+'组</span></div>';
+    html += '<div style="display:flex;gap:6px;flex-wrap:wrap" id="'+selId+'">';
+    // SPF
+    html += '<div style="width:100%;font-size:.65rem;color:var(--text3);margin-top:2px">胜平负</div>';
+    [{type:'胜平负',pick:ht.cn+'胜',odds:jc.spf[0],prob:pred.homeWinProb},{type:'胜平负',pick:'平局',odds:jc.spf[1],prob:pred.drawProb},{type:'胜平负',pick:at.cn+'胜',odds:jc.spf[2],prob:pred.awayWinProb}].forEach(function(o){html+=optionBtn(selId,m.id,o)});
+    if(jc.rq&&jc.rqO){html+='<div style="width:100%;font-size:.65rem;color:var(--text3);margin-top:4px">让球('+jc.rq+')</div>';[{type:'让球',pick:'让胜',odds:jc.rqO[0],prob:pred.homeWinProb},{type:'让球',pick:'让平',odds:jc.rqO[1],prob:pred.drawProb},{type:'让球',pick:'让负',odds:jc.rqO[2],prob:pred.awayWinProb}].forEach(function(o){html+=optionBtn(selId,m.id,o)});}
+    html += '<div style="width:100%;font-size:.65rem;color:var(--text3);margin-top:4px">总进球</div>';
+    tg.dist.forEach(function(prob,i){if(prob<0.03)return;var label=i===7?'7+':i.toString();var godds=[10,4.2,3.2,3.5,5.5,9,18,35][i];html+=optionBtn(selId,m.id,{type:'总进球',pick:label+'球',odds:godds,prob:prob})});
+    html += '<div style="width:100%;font-size:.65rem;color:var(--text3);margin-top:4px">比分</div>';
+    topScores(pred.expH,pred.expA,4).forEach(function(s){var so=Math.max(4.5,1/s.prob*0.8);html+=optionBtn(selId,m.id,{type:'比分',pick:s.h+':'+s.a,odds:so,prob:s.prob})});
+    html += '<div style="width:100%;font-size:.65rem;color:var(--text3);margin-top:4px">半全场</div>';
+    htc.forEach(function(r){var ho=Math.max(2.5,1/(r.p+0.01)*0.85);html+=optionBtn(selId,m.id,{type:'半全场',pick:r.l,odds:ho,prob:r.p})});
+    html += '</div></div>';
+  });
+  html += '<button class="btn btn-primary" id="btnLockHuman" style="margin-top:8px;width:100%;padding:12px;font-size:.9rem" onclick="lockHumanPick()">选择方案后锁定</button>';
+  html += '<div style="font-size:.62rem;color:var(--text3);margin-top:4px;text-align:center">每次锁定=新增一个策略 · 余额实时扣减</div>';
+  div.innerHTML = html;
+}
+function buildHistorySection(div, duel) {
+  var histKeys = Object.keys(duel.settled).sort().reverse();
+  if (histKeys.length === 0) {
+    div.innerHTML = '<div class="empty-state" style="padding:20px"><p>暂无对决记录</p></div>';
+  } else {
+    div.innerHTML = histKeys.map(function(date){
+      var s = duel.settled[date];
+      var result = s.aiProfit > s.humanProfit ? 'AI胜出' : s.humanProfit > s.aiProfit ? '人类胜出' : '平局';
+      return '<div style="padding:8px;background:var(--surface2);border-radius:6px;margin-bottom:4px;font-size:.75rem;display:flex;justify-content:space-between"><span>'+date+'</span><span>'+result+'</span><span style="color:var(--accent)">AI '+(s.aiProfit>=0?'+':'')+'¥'+s.aiProfit+'</span><span style="color:var(--green)">人类 '+(s.humanProfit>=0?'+':'')+'¥'+s.humanProfit+'</span></div>';
+    }).join('');
+  }
+}
+
+function refreshAll() { renderTeamGrid(); renderHistory(); renderFullSchedule(); renderReview(); renderDuel(); }
+
+// =============================================================================
+// 5. MAIN CONTROLLER
+// =============================================================================
+
+function refreshAll() { renderDashboard(); renderGroups(); renderBracket(); renderTeamGrid(); renderHistory(); renderFullSchedule(); }
+
+async function runSimulation() {
+  const btn = document.getElementById('btnSim'), runs = parseInt(document.getElementById('simRuns').value);
+  const bar = document.getElementById('simProgress'), st = document.getElementById('simStatus');
+  btn.disabled = true; btn.textContent = '⏳ 模拟中...'; st.textContent = '初始化...'; bar.style.width = '0%';
+  await new Promise(r => setTimeout(r, 50));
+  const t0 = performance.now();
+  lastResult = runMonteCarlo(runs, p => { bar.style.width = (p*100).toFixed(0)+'%'; st.textContent = `已完成${(p*100).toFixed(0)}%...`; });
+  const el = ((performance.now()-t0)/1000).toFixed(1);
+  bar.style.width = '100%'; st.textContent = `✅ 完成！${el}秒`;
+
+  const hist = JSON.parse(localStorage.getItem('wc2026_hist') || '[]');
+  hist.push({ ts: lastResult.ts, runs: lastResult.runs, champProb: lastResult.champProb.slice(0,20), roundProbs: lastResult.roundProbs, grpCnt: lastResult.grpCnt, bestBracket: lastResult.bestBracket });
+  while (hist.length > 20) hist.shift();
+  localStorage.setItem('wc2026_hist', JSON.stringify(hist));
+  refreshAll();
+  btn.disabled = false; btn.textContent = '🚀 开始蒙特卡洛模拟';
+  showToast(`模拟完成！${runs.toLocaleString()}次，${el}秒`);
+}
+
+function loadLastResult() {
+  const hist = JSON.parse(localStorage.getItem('wc2026_hist') || '[]');
+  if (hist.length > 0) { lastResult = hist[hist.length-1]; refreshAll(); showToast('已加载最近结果'); }
+}
+
+function switchTab(tab) {
+  document.querySelectorAll('.tab-nav button').forEach(b => b.classList.remove('active'));
+  document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  if (tab === 'schedule') renderFullSchedule();
+  if (tab === 'today') renderDateSelector();
+  if (tab === 'review') renderReview();
+  if (tab === 'duel') renderDuel();
+  if (tab === 'standings') renderStandings();
+}
+
+// =============================================================================
+// 6. INIT
+// =============================================================================
+
+document.getElementById('tabNav').addEventListener('click', e => {
+  if (e.target.tagName === 'BUTTON') switchTab(e.target.dataset.tab);
+});
+
+document.getElementById('filterGroup').addEventListener('change', renderTeamGrid);
+document.getElementById('filterConfed').addEventListener('change', renderTeamGrid);
+document.getElementById('filterSort').addEventListener('change', renderTeamGrid);
+document.getElementById('filterSearch').addEventListener('input', renderTeamGrid);
+document.getElementById('schedFilter').addEventListener('change', renderFullSchedule);
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+  if (e.ctrlKey && e.key === 'Enter') { e.preventDefault(); runSimulation(); }
+});
+
+// News: load cached immediately, then do a live refresh
+loadCachedNews();
+refreshNews(false).then(() => scheduleNewsRefresh());
+
+// Every 2 hours, refresh predictions based on latest news & odds
+setInterval(function() {
+  var count = refreshAllPredictions();
+  console.log('Prediction refresh done: ' + count + ' matches');
+}, 7200000);
+
+// Start prediction schedule checker (release 12:00, lock 16:00, checks every minute)
+// Real-time sync active (24h rule)
+
+
+// Show lock status in today's tab header if locked
+const todayStr2 = getTodayStr();
+if (isPredictionLocked(todayStr2)) {
+  document.getElementById('tickerLabel').textContent = '🔒 已锁定';
+}
+
+// Today's date matches (using tournament clock)
+// 找到下一个有未开赛比赛的日期
+var now2 = getTournamentNow();
+var nextMatchDate = null;
+for (var i = 0; i < 30; i++) {
+  var checkD = new Date(now2.getTime() + i * 3600000);
+  var dStr = checkD.toLocaleDateString('en-CA', { timeZone: 'Asia/Shanghai' });
+  var upc = MATCH_SCHEDULE.filter(function(m){return m.date===dStr});
+  if (upc.length > 0) {
+    var hasNot = upc.some(function(m){return now2 < new Date(m.date+'T'+m.time+':00+08:00')});
+    if (hasNot) { nextMatchDate = dStr; break; }
+  }
+}
+var todayStr = nextMatchDate || getTournamentToday();
+// Log initial prediction snapshots before rendering (so update info is available)
+MATCH_SCHEDULE.forEach(function(m) {
+  if (m.stage !== 'group') return;
+  if (predChangeLog[m.id]) return; // Already have history, skip
+  var ht = TEAMS.find(function(t) { return t.id === m.home; });
+  var at = TEAMS.find(function(t) { return t.id === m.away; });
+  if (!ht || !at) return;
+  var pred = predictMatch(ht, at);
+  logPredictionSnapshot(m.id, pred);
+});
+renderDateSelector();
+renderTodayMatches(todayStr);
+renderTeams();
+renderHistory();
+renderFullSchedule();
+renderReview();
+renderDuel();
+setTimeout(() => loadLastResult(), 300);
+
+// Add manual publish and date advance controls to the header
+const headerEl = document.querySelector('.header');
+if (headerEl) {
+  const ctrlDiv = document.createElement('div');
+  ctrlDiv.style.cssText = 'display:flex;align-items:center;gap:6px;font-size:.7rem';
+  ctrlDiv.innerHTML = `
+    <span style="color:var(--text2)">⏰ 赛事时间:</span>
+    <span style="color:var(--accent);font-weight:700" id="tournamentClock">${tournamentTime.toLocaleString('zh-CN',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})}</span>
+    <button class="btn btn-outline btn-sm" style="font-size:.6rem;padding:2px 6px" onclick="advanceDay()" title="推进到下一天">⏩+1天</button>
+    <button class="btn btn-primary btn-sm" style="font-size:.6rem;padding:2px 8px" onclick="publishNow()" title="立即发布今日预测">📊 发布预测</button>
+  `;
+  headerEl.appendChild(ctrlDiv);
+}
+
+function advanceDay() {
+  const newDate = advanceTournamentDay();
+  document.getElementById('tournamentClock').textContent = newDate.toLocaleString('zh-CN',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'});
+  const ts = getTournamentDateStr();
+  renderDateSelector();
+  showDate(ts);
+  showToast('⏩ 已推进到 ' + ts);
+}
+
+function publishNow() {
+  const today = getTournamentDateStr();
+  const matchesToday = MATCH_SCHEDULE.filter(m => m.date === today && m.stage === 'group');
+  if (matchesToday.length === 0) { showToast('今日无比赛'); return; }
+  tournamentTime.setHours(12, 0, 0, 0);
+  setTournamentTime(tournamentTime);
+  document.getElementById('tournamentClock').textContent = tournamentTime.toLocaleString('zh-CN',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'});
+  renderDateSelector();
+  showDate(today);
+  renderTodayMatches(today);
+  showToast('📊 ' + today + ' 预测已发布！（共' + matchesToday.length + '场）');
+}
+</script>
+</body>
+</html>
