@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>世界杯数据管理</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#080c14;color:#e4e8f0;padding:20px}
+h1{text-align:center;margin-bottom:20px;color:#f0b90b}
+.info{text-align:center;color:#8899b4;margin-bottom:20px;font-size:14px}
+.toolbar{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;align-items:center}
+.toolbar input{padding:8px 12px;border:1px solid #1a2744;background:#0f1521;color:#e4e8f0;border-radius:6px;font-size:14px;flex:1;min-width:200px}
+.btn{padding:8px 16px;border:none;border-radius:6px;cursor:pointer;font-size:14px;font-weight:600;white-space:nowrap}
+.btn-primary{background:#4da6ff;color:#fff}
+.btn-gold{background:#f0b90b;color:#000}
+.btn-green{background:#00c853;color:#fff}
+.btn-outline{background:transparent;border:1px solid #1a2744;color:#8899b4}
+table{width:100%;border-collapse:collapse;margin-top:10px}
+th{background:#0f1521;padding:10px 8px;text-align:left;font-size:13px;border-bottom:2px solid #1a2744;position:sticky;top:0}
+td{padding:8px;border-bottom:1px solid #1a2744;font-size:13px}
+tr:hover{background:rgba(77,166,255,.04)}
+input[type="text"],textarea{background:#182032;border:1px solid #1a2744;color:#e4e8f0;padding:6px 8px;border-radius:4px;width:100%;font-size:13px;font-family:inherit}
+textarea{resize:vertical;min-height:28px}
+.flag{font-size:24px;text-align:center}
+.result{background:#0f1521;border:1px solid #1a2744;border-radius:8px;padding:16px;margin-top:20px;display:none}
+.result textarea{width:100%;height:200px;font-family:monospace;font-size:12px;margin:10px 0}
+.saved{color:#00c853;font-weight:700}
+</style>
+</head>
+<body>
+<h1>🏆 世界杯数据管理</h1>
+<p class="info">编辑球队伤病/新闻 → 生成代码 → 复制替换到 data.js 和 index.html</p>
+
+<div class="toolbar">
+  <input type="text" id="search" placeholder="🔍 搜索球队..." oninput="filterTeams()">
+  <button class="btn btn-outline" onclick="filterTeams()">筛选</button>
+  <button class="btn btn-primary" onclick="generateCode()">📋 生成代码</button>
+  <button class="btn btn-green" onclick="copyCode()">📋 复制全部</button>
+  <span id="status" style="color:#8899b4;font-size:13px"></span>
+</div>
+
+<table>
+<thead>
+<tr>
+  <th style="width:40px"></th>
+  <th style="width:100px">球队</th>
+  <th style="width:50px">组</th>
+  <th style="width:150px">伤病/停赛 (inj)</th>
+  <th style="width:200px">新闻/动态 (news)</th>
+  <th style="width:120px">核心球员</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+
+<div class="result" id="result">
+  <h3>生成的代码 <span class="saved" id="savedMsg"></span></h3>
+  <p style="font-size:12px;color:#8899b4">复制下面内容，替换对应文件中的球队数据行</p>
+  <textarea id="codeOutput" readonly></textarea>
+  <button class="btn btn-primary" onclick="copyCode()">📋 复制</button>
+</div>
+
+<script>
+// 48 teams data - extracted from the main data
+const TEAMS = [
+{id:"MEX",cn:"墨西哥",flag:"🇲🇽",grp:"A",stars:["Giménez","Lozano","Ochoa"]},
+{id:"RSA",cn:"南非",flag:"🇿🇦",grp:"A",stars:["Tau","Foster","Mokoena"]},
+{id:"KOR",cn:"韩国",flag:"🇰🇷",grp:"A",stars:["Son","Kim Min-jae","Lee Kang-in"]},
+{id:"CZE",cn:"捷克",flag:"🇨🇿",grp:"A",stars:["Schick","Souček","Hložek"]},
+{id:"CAN",cn:"加拿大",flag:"🇨🇦",grp:"B",stars:["Davies","David","Buchanan"]},
+{id:"BIH",cn:"波黑",flag:"🇧🇦",grp:"B",stars:["Džeko","Pjanić","Tahirović"]},
+{id:"QAT",cn:"卡塔尔",flag:"🇶🇦",grp:"B",stars:["Afif","Ali","Al-Haydos"]},
+{id:"SUI",cn:"瑞士",flag:"🇨🇭",grp:"B",stars:["Akanji","Xhaka","Embolo"]},
+{id:"BRA",cn:"巴西",flag:"🇧🇷",grp:"C",stars:["Vinícius Jr","Raphinha","Alisson"]},
+{id:"MAR",cn:"摩洛哥",flag:"🇲🇦",grp:"C",stars:["Hakimi","Brahim Díaz","El Khannouss"]},
+{id:"HAI",cn:"海地",flag:"🇭🇹",grp:"C",stars:["Pierrot","Nazon","Lambese"]},
+{id:"SCO",cn:"苏格兰",flag:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",grp:"C",stars:["Robertson","McGinn","McTominay"]},
+{id:"USA",cn:"美国",flag:"🇺🇸",grp:"D",stars:["Pulisic","McKennie","Reyna"]},
+{id:"PAR",cn:"巴拉圭",flag:"🇵🇾",grp:"D",stars:["Almirón","Enciso","Sosa"]},
+{id:"AUS",cn:"澳大利亚",flag:"🇦🇺",grp:"D",stars:["Souttar","Irankunda","Goodwin"]},
+{id:"TUR",cn:"土耳其",flag:"🇹🇷",grp:"D",stars:["Çalhanoğlu","Güler","Yıldız"]},
+{id:"GER",cn:"德国",flag:"🇩🇪",grp:"E",stars:["Musiala","Wirtz","Kimmich"]},
+{id:"CUW",cn:"库拉索",flag:"🇨🇼",grp:"E",stars:["Bacuna","Janga","Kastaneer"]},
+{id:"CIV",cn:"科特迪瓦",flag:"🇨🇮",grp:"E",stars:["Haller","Adingra","Fofana"]},
+{id:"ECU",cn:"厄瓜多尔",flag:"🇪🇨",grp:"E",stars:["Caicedo","Estupiñán","Páez"]},
+{id:"NED",cn:"荷兰",flag:"🇳🇱",grp:"F",stars:["van Dijk","Gakpo","de Jong"]},
+{id:"JPN",cn:"日本",flag:"🇯🇵",grp:"F",stars:["Kubo","Ueda","Tomiyasu"]},
+{id:"SWE",cn:"瑞典",flag:"🇸🇪",grp:"F",stars:["Isak","Kulusevski","Gyökeres"]},
+{id:"TUN",cn:"突尼斯",flag:"🇹🇳",grp:"F",stars:["Msakni","Talbi","Jaziri"]},
+{id:"BEL",cn:"比利时",flag:"🇧🇪",grp:"G",stars:["De Bruyne","Doku","Trossard"]},
+{id:"EGY",cn:"埃及",flag:"🇪🇬",grp:"G",stars:["Salah","Marmoush","Elneny"]},
+{id:"IRN",cn:"伊朗",flag:"🇮🇷",grp:"G",stars:["Taremi","Jahanbakhsh","Ghoddos"]},
+{id:"NZL",cn:"新西兰",flag:"🇳🇿",grp:"G",stars:["Wood","Cacace","Just"]},
+{id:"ESP",cn:"西班牙",flag:"🇪🇸",grp:"H",stars:["Rodri","Pedri","Yamal"]},
+{id:"CPV",cn:"佛得角",flag:"🇨🇻",grp:"H",stars:["Mendes","Tavares","Bebé"]},
+{id:"KSA",cn:"沙特",flag:"🇸🇦",grp:"H",stars:["Al-Dawsari","Al-Buraikan","Al-Shehri"]},
+{id:"URU",cn:"乌拉圭",flag:"🇺🇾",grp:"H",stars:["Valverde","Núñez","Bentancur"]},
+{id:"FRA",cn:"法国",flag:"🇫🇷",grp:"I",stars:["Mbappé","Dembélé","Olise"]},
+{id:"SEN",cn:"塞内加尔",flag:"🇸🇳",grp:"I",stars:["Mané","Jackson","Koulibaly"]},
+{id:"IRQ",cn:"伊拉克",flag:"🇮🇶",grp:"I",stars:["Ali Al-Hamadi","Hussein Ali","Amyn"]},
+{id:"NOR",cn:"挪威",flag:"🇳🇴",grp:"I",stars:["Haaland","Ødegaard","Sørloth"]},
+{id:"ARG",cn:"阿根廷",flag:"🇦🇷",grp:"J",stars:["Messi","Álvarez","Enzo"]},
+{id:"ALG",cn:"阿尔及利亚",flag:"🇩🇿",grp:"J",stars:["Mahrez","Amoura","Gouiri"]},
+{id:"AUT",cn:"奥地利",flag:"🇦🇹",grp:"J",stars:["Sabitzer","Baumgartner","Seiwald"]},
+{id:"JOR",cn:"约旦",flag:"🇯🇴",grp:"J",stars:["Al-Taamari","Olwan","Al-Naimat"]},
+{id:"POR",cn:"葡萄牙",flag:"🇵🇹",grp:"K",stars:["Ronaldo","B.Fernandes","Leão"]},
+{id:"COD",cn:"民主刚果",flag:"🇨🇩",grp:"K",stars:["Bakambu","Wissa","Kakuta"]},
+{id:"UZB",cn:"乌兹别克",flag:"🇺🇿",grp:"K",stars:["Shomurodov","Masharipov","Fayzullaev"]},
+{id:"COL",cn:"哥伦比亚",flag:"🇨🇴",grp:"K",stars:["Díaz","James","Durán"]},
+{id:"ENG",cn:"英格兰",flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",grp:"L",stars:["Kane","Bellingham","Saka"]},
+{id:"CRO",cn:"克罗地亚",flag:"🇭🇷",grp:"L",stars:["Modrić","Gvardiol","Kovačić"]},
+{id:"GHA",cn:"加纳",flag:"🇬🇭",grp:"L",stars:["Kudus","Partey","Williams"]},
+{id:"PAN",cn:"巴拿马",flag:"🇵🇦",grp:"L",stars:["Murillo","Carrasquilla","Waterman"]},
+];
+
+// Load current data
+let teamData = {};
+async function loadData() {
+  try {
+    // Try to load from scores.json to get latest
+    const resp = await fetch('index.html');
+    const html = await resp.text();
+    TEAMS.forEach(t => {
+      const re = new RegExp(`\\{id:"${t.id}",name:"[^"]+",cn:"[^"]+",flag:"[^"]+",grp:"[^"]+",seed:"[^"]+",rk:\\d+,att:\\d+,def:\\d+,best:"[^"]*",apps:\\d+,stars:\\[[^\\]]+\\],conf:"[^"]+",recent:"[^"]*",news:"([^"]*)",inj:"([^"]*)"\\}`);
+      const m = html.match(re);
+      if (m) {
+        teamData[t.id] = { news: m[1] || '', inj: m[2] || '' };
+      }
+    });
+  } catch(e) {}
+  render();
+}
+loadData();
+
+function render() {
+  const tbody = document.getElementById('tbody');
+  const search = (document.getElementById('search').value || '').toLowerCase();
+  tbody.innerHTML = TEAMS.filter(t => {
+    if (!search) return true;
+    return t.cn.includes(search) || t.id.toLowerCase().includes(search) || t.stars.some(s => s.toLowerCase().includes(search));
+  }).map(t => {
+    const td = teamData[t.id] || { news: '', inj: '' };
+    return `<tr>
+      <td class="flag">${t.flag}</td>
+      <td><b>${t.cn}</b><br><span style="color:#556680;font-size:11px">${t.id} · ${t.grp}组</span></td>
+      <td style="color:#f0b90b">${t.grp}组</td>
+      <td><input type="text" id="inj_${t.id}" value="${td.inj.replace(/"/g,'&quot;')}" placeholder="伤病/停赛"></td>
+      <td><textarea id="news_${t.id}" rows="2" placeholder="新闻/动态">${td.news}</textarea></td>
+      <td style="color:#8899b4;font-size:12px">${t.stars.join(' · ')}</td>
+    </tr>`;
+  }).join('');
+  document.getElementById('status').textContent = `共 ${TEAMS.length} 支球队`;
+}
+
+function filterTeams() { render(); }
+
+function generateCode() {
+  const dataJsLines = [];
+  const htmlLines = [];
+  TEAMS.forEach(t => {
+    const inj = document.getElementById('inj_' + t.id)?.value || '';
+    const news = document.getElementById('news_' + t.id)?.value || '';
+    teamData[t.id] = { inj, news };
+
+    // data.js format
+    dataJsLines.push(`GHA: inj="${inj}" -> {id:"${t.id}",...,inj:"${inj}"}`);
+
+    // Build the full line for search-replace
+    htmlLines.push(`${t.id}: news="${news}", inj="${inj}"`);
+  });
+
+  document.getElementById('codeOutput').value = htmlLines.join('\n');
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('savedMsg').textContent = `(${new Date().toLocaleTimeString('zh-CN')})`;
+}
+
+function copyCode() {
+  generateCode();
+  const ta = document.getElementById('codeOutput');
+  ta.select();
+  document.execCommand('copy');
+  alert('已复制！去 data.js 和 index.html 中搜索对应球队 ID 替换 inj/news 字段');
+}
+</script>
+</body>
+</html>
