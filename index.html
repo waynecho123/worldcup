@@ -2305,6 +2305,45 @@ function poissonPMF(lambda, k) {
   return Math.exp(logP);
 }
 
+function topScores(lambdaH, lambdaA, n) {
+  n = n || 8;
+  var scores = [];
+  for (var h = 0; h <= 7; h++) {
+    for (var a = 0; a <= 7; a++) {
+      scores.push({h: h, a: a, prob: poissonPMF(lambdaH, h) * poissonPMF(lambdaA, a)});
+    }
+  }
+  var sum = scores.reduce(function(s, v) { return s + v.prob; }, 0);
+  return scores.sort(function(a, b) { return b.prob - a.prob; }).slice(0, n).map(function(s) { return { home: s.h, away: s.a, prob: s.prob / sum }; });
+}
+
+function calcHtFt(homeLambda, awayLambda) {
+  var htLambdaH = homeLambda * 0.43, htLambdaA = awayLambda * 0.43;
+  var htH = 0, htD = 0, htA = 0;
+  for (var h = 0; h <= 6; h++) {
+    for (var a = 0; a <= 6; a++) {
+      var prob = poissonPMF(htLambdaH, h) * poissonPMF(htLambdaA, a);
+      if (h > a) htH += prob; else if (h === a) htD += prob; else htA += prob;
+    }
+  }
+  var htTotal = htH + htD + htA;
+  return { htH: htH/htTotal, htD: htD/htTotal, htA: htA/htTotal };
+}
+
+function calcTotalGoals(lambdaH, lambdaA) {
+  var dist = Array(8).fill(0);
+  for (var h = 0; h <= 7; h++) {
+    for (var a = 0; a <= 7; a++) {
+      var prob = poissonPMF(lambdaH, h) * poissonPMF(lambdaA, a);
+      var total = h + a;
+      if (total < 7) dist[total] += prob;
+      else dist[7] += prob;
+    }
+  }
+  var sum = dist.reduce(function(s, v) { return s + v; }, 0);
+  return { dist: dist.map(function(v) { return v / sum; }), labels: ['0','1','2','3','4','5','6','7+'] };
+}
+
 function predictMatch(homeTeam, awayTeam) {
   const hStr = getStrength(homeTeam);
   const aStr = getStrength(awayTeam);
