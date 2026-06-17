@@ -27,6 +27,8 @@ App({
     this.loadFromLocal();
     // Then try cloud DB for latest (async, will refresh UI when done)
     this.loadResults();
+    // Load news from cloud DB
+    this.loadNews();
 
     try {
 
@@ -97,6 +99,19 @@ App({
       m017: {homeScore:3,awayScore:1}, m018: {homeScore:1,awayScore:4},
       m019: {homeScore:3,awayScore:0}, m020: {homeScore:3,awayScore:1}
     };
+  },
+
+  loadNews() {
+    var that = this;
+    wx.cloud.database().collection('worldcup_news').doc('latest').get().then(res => {
+      if (res.data && res.data.items && res.data.items.length > 0) {
+        that.globalData.newsItems = res.data.items;
+        wx.setStorageSync('news_cache', JSON.stringify({ items: res.data.items }));
+        console.log('Loaded ' + res.data.items.length + ' news from cloud DB');
+      }
+    }).catch(e => {
+      console.log('News cloud load skipped:', e.message);
+    });
   },
 
   saveDuelState() {
