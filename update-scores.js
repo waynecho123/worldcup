@@ -118,7 +118,8 @@ function mapTeam(apiName) {
 function findOurMatchId(homeName, awayName, lookup) {
   const hid = mapTeam(homeName), aid = mapTeam(awayName);
   if (!hid || !aid) return null;
-  return lookup[hid + '-' + aid] || null;
+  // Try both directions (API order may differ from our schedule)
+  return lookup[hid + '-' + aid] || lookup[aid + '-' + hid] || null;
 }
 
 function loadMatchLookup() {
