@@ -71,6 +71,45 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .match-card .mc-prob .dot{width:6px;height:6px;border-radius:50%}
 .match-card .mc-news-tag{font-size:.7rem;color:var(--orange);margin-top:8px;padding:4px 8px;background:rgba(255,145,0,.1);border-radius:4px;display:flex;align-items:center;gap:4px}
 
+/* === REVISED MATCH CARD (web) === */
+/* 1. Teams row */
+.mc-teams-row{display:flex;align-items:center;justify-content:center;gap:10px;padding:6px 0 4px}
+.mc-teams-row .mc-team{flex:1;text-align:center}
+.mc-teams-row .mc-flag{font-size:2.6rem;display:block;margin-bottom:4px}
+.mc-teams-row .mc-name{font-weight:800;font-size:1rem}
+.mc-vs-text{font-size:1.3rem;font-weight:800;color:var(--text3);margin:0 4px;flex-shrink:0}
+.mc-result-tag{font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:4px}
+/* 2. Result banner */
+.mc-result-banner{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:8px;padding:12px;border:1px solid;border-radius:8px}
+.mc-result-icon{font-size:1.4rem}
+.mc-result-score{font-size:1.8rem;font-weight:800}
+.mc-result-label{font-size:.7rem;color:var(--text2)}
+/* 3. AI win prediction */
+.mc-ai-win{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px}
+.mc-ai-win .mc-label{font-size:.8rem;color:var(--text2)}
+.mc-ai-win .mc-value{font-size:1.05rem;font-weight:800;color:var(--gold)}
+.mc-ai-win .mc-correct{font-size:.72rem;font-weight:700;color:var(--green)}
+.mc-ai-win .mc-wrong{font-size:.72rem;font-weight:700;color:var(--red)}
+/* 4. AI score */
+.mc-ai-score{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:2px}
+.mc-ai-score .mc-label{font-size:.7rem;color:var(--text3)}
+.mc-ai-score .mc-value{font-size:.9rem;font-weight:700;color:var(--gold)}
+/* 5. News */
+.mc-news-section{margin-top:6px}
+.mc-news-line{display:block;font-size:.7rem;color:var(--orange);padding:3px 8px;margin-top:3px;background:rgba(255,145,0,.06);border-radius:4px;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mc-inj-line{display:block;font-size:.7rem;color:var(--red);padding:3px 8px;margin-top:3px;background:rgba(255,61,87,.06);border-radius:4px;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* 6. Probability bar */
+.mc-prob-bar{display:flex;height:20px;border-radius:6px;overflow:hidden;margin-top:6px;background:rgba(255,255,255,.03)}
+.mc-prob-seg{display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:700;color:#fff;min-width:0;overflow:hidden}
+.mc-prob-seg.home{background:var(--accent)}
+.mc-prob-seg.draw{background:var(--text3)}
+.mc-prob-seg.away{background:var(--red)}
+@media(max-width:480px){
+.mc-teams-row .mc-flag{font-size:1.9rem}
+.mc-teams-row .mc-name{font-size:.82rem}
+.mc-result-score{font-size:1.4rem}
+}
+
 /* ===== DASHBOARD ===== */
 .sim-bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
 .sim-bar select{padding:8px 16px;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:.85rem}
@@ -2760,6 +2799,19 @@ function renderTodayMatches(dateStr) {
   `;
 }
 
+/** Convert expected-goal diff to natural-language Chinese text */
+function getWinByNText(homeTeam, awayTeam, pred) {
+  var bestH = pred.predScore[0];
+  var bestA = pred.predScore[1];
+  var diff = bestH - bestA;
+  if (diff > 0) return homeTeam.cn + '赢' + diff + '球';
+  if (diff < 0) return awayTeam.cn + '赢' + Math.abs(diff) + '球';
+  var expDiff = pred.expH - pred.expA;
+  if (expDiff > 0.4) return homeTeam.cn + '小优（' + bestH + ':' + bestA + '）';
+  if (expDiff < -0.4) return awayTeam.cn + '小优（' + bestH + ':' + bestA + '）';
+  return '平局';
+}
+
 function renderMatchCard(m) {
   const ht = TEAMS.find(t => t.id === m.home);
   const at = TEAMS.find(t => t.id === m.away);
@@ -2773,171 +2825,170 @@ function renderMatchCard(m) {
     return '<div class="match-card' + (m.featured ? ' featured' : '') + '" style="opacity:0.7">' +
       '<div class="mc-header"><span class="mc-time">' + (m.time || '') + '</span>' +
       '<span class="mc-group">' + stageLabel + '</span></div>' +
-      '<div class="mc-teams" style="justify-content:center;padding:12px 0;font-size:.9rem;color:var(--text3)">' + tbdHome + ' vs ' + tbdAway + '</div>' +
+      '<div class="mc-tbd" style="justify-content:center;padding:12px 0;font-size:.9rem;color:var(--text3);text-align:center">' + tbdHome + ' vs ' + tbdAway + '</div>' +
       '<div style="text-align:center;font-size:.7rem;color:var(--text3);margin-top:4px">📍 ' + (m.venue || '待定场地') + '</div></div>';
   }
 
   const predStatus = getPredictionStatus(m.date);
   const showPrediction = predStatus === 'visible' || predStatus === 'locked' || predStatus === 'past';
 
-  // Use locked prediction only for pre-match without results; compute fresh for finished matches
+  // Compute prediction
   let pred = null;
   if (showPrediction) {
-    const hasResult = !!actualResults[m.id];
+    const hasResultCheck = !!actualResults[m.id];
     const lockedPred = getLockedPrediction(m.id);
-    // Finished matches or no locked pred: compute fresh
-    if (hasResult || !lockedPred) {
+    if (hasResultCheck || !lockedPred) {
       var mol = MATCH_ODDS[m.id];
       pred = predictMatch(ht, at, mol);
     } else {
-      // Use locked probabilities but compute fresh topScores for display
       const freshTopScores = predictMatch(ht, at).topScores;
       pred = { predScore: [lockedPred.homeScore, lockedPred.awayScore], homeWinProb: lockedPred.hProb, drawProb: lockedPred.dProb, awayWinProb: lockedPred.aProb, expH: lockedPred.homeScore, expA: lockedPred.awayScore, topScores: lockedPred.topScores || freshTopScores, locked: true };
     }
   }
-  const hProb = pred ? (pred.homeWinProb * 100).toFixed(1) : '';
-  const dProb = pred ? (pred.drawProb * 100).toFixed(1) : '';
-  const aProb = pred ? (pred.awayWinProb * 100).toFixed(1) : '';
+  const hProb = pred ? (pred.homeWinProb * 100).toFixed(0) : '';
+  const dProb = pred ? (pred.drawProb * 100).toFixed(0) : '';
+  const aProb = pred ? (pred.awayWinProb * 100).toFixed(0) : '';
 
   // Check if actual result exists
   const hasResult = !!actualResults[m.id];
-  let resultHTML = '', correctOutcome = false, correctExact = false;
+  let correctOutcome = false, correctExact = false;
   if (hasResult && showPrediction && pred) {
     const act = actualResults[m.id];
     correctOutcome = (pred.predScore[0] > pred.predScore[1] && act.homeScore > act.awayScore) ||
                      (pred.predScore[0] === pred.predScore[1] && act.homeScore === act.awayScore) ||
                      (pred.predScore[0] < pred.predScore[1] && act.homeScore < act.awayScore);
     correctExact = (pred.topScores || []).some(function(s) { return s.home === act.homeScore && s.away === act.awayScore; });
+  }
+
+  // Priority 2: Real score banner (post-match only)
+  var resultBanner = '';
+  if (hasResult && pred) {
+    const act = actualResults[m.id];
     const icon = correctExact ? '🎯' : correctOutcome ? '✅' : '❌';
     const resultColor = correctOutcome ? 'var(--green)' : 'var(--red)';
-    resultHTML = `
-      <div style="margin-top:12px;padding:12px;background:${correctOutcome?'rgba(0,200,83,.08)':'rgba(255,61,87,.08)'};border-radius:8px;border:1px solid ${resultColor}">
-        <div style="display:flex;align-items:center;justify-content:center;gap:20px;text-align:center">
-          <div><div style="font-size:.65rem;color:var(--text3);margin-bottom:2px">🤖 ${pred.locked?'🔒最终预测':'AI预测'}</div><div style="font-weight:700;font-size:.85rem;color:${pred.locked?'var(--gold)':'var(--accent)'}">${pred.topScores ? pred.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : pred.predScore[0]+':'+pred.predScore[1]}</div></div>
-          <div style="font-size:1.5rem">${icon}</div>
-          <div><div style="font-size:.65rem;color:var(--text3);margin-bottom:2px">📡 实际结果</div><div style="font-weight:700;font-size:1.1rem;color:${resultColor}">${act.homeScore} : ${act.awayScore}</div></div>
-        </div>
-        <div style="text-align:center;margin-top:6px;font-size:.75rem">
-          <span style="color:${resultColor};font-weight:600">${correctOutcome ? (correctExact ? '🎯 比分完全命中！' : '✅ 胜负预测正确') : '❌ 预测错误'}</span>
-          ${act.notes ? `<div style="color:var(--orange);margin-top:3px">📝 ${act.notes}</div>` : ''}
-        </div>
-      </div>`;
+    const bgColor = correctOutcome ? 'rgba(0,200,83,.08)' : 'rgba(255,61,87,.08)';
+    resultBanner = '<div class="mc-result-banner" style="background:' + bgColor + ';border-color:' + resultColor + '">' +
+      '<span class="mc-result-icon">' + icon + '</span>' +
+      '<span class="mc-result-score" style="color:' + resultColor + '">' + act.homeScore + ' : ' + act.awayScore + '</span>' +
+      '<span class="mc-result-label">最终比分</span></div>';
   }
 
-  // Betting odds for this match
-  // mol already set above
-  let oddsHTML = '';
-  if (mol && showPrediction && pred) {
-    const fair = oddsToFairProb(mol.h, mol.d, mol.a);
-    const hEdge = (pred.homeWinProb - fair.home) * 100;
-    const aEdge = (pred.awayWinProb - fair.away) * 100;
-    const dEdge = (pred.drawProb - fair.draw) * 100;
-    const bestEdge = Math.max(hEdge, aEdge, dEdge);
-    const edgeLabel = bestEdge > 5 ? (hEdge === bestEdge ? ht.cn + '胜' : aEdge === bestEdge ? at.cn + '胜' : '平局') : '';
-    oddsHTML = `
-      <div style="margin-top:${hasResult?'8px':'10px'};padding:${hasResult?'5px 10px':'8px 12px'};background:${hasResult?'rgba(240,185,11,.03)':'rgba(240,185,11,.06)'};border-radius:6px">
-        <div style="display:flex;align-items:center;gap:8px;font-size:.72rem">
-          <span style="color:var(--text2)">🏷️ 指数：</span>
-          <span style="color:var(--accent)">${mol.h.toFixed(2)}</span><span style="color:var(--text3)">${mol.d.toFixed(2)}</span><span style="color:var(--red)">${mol.a.toFixed(2)}</span>
-          <span style="color:var(--text3)">| 隐含：</span><span>${(fair.home*100).toFixed(0)}%/${(fair.draw*100).toFixed(0)}%/${(fair.away*100).toFixed(0)}%</span>
-          ${edgeLabel ? `<span style="color:var(--gold);font-weight:600">💰${edgeLabel}</span>` : ''}
-        </div>
-        ${renderHistoricalMini(mol.h, mol.d, mol.a, pred.homeWinProb, pred.drawProb, pred.awayWinProb)}
-      </div>`;
+  // Priority 3: AI win/loss prediction text
+  var winByNText = pred ? getWinByNText(ht, at, pred) : '';
+
+  // Priority 3 correctness indicator
+  var aiWinIndicator = '';
+  if (hasResult && pred) {
+    aiWinIndicator = correctExact
+      ? '<span class="mc-correct">🎯 命中</span>'
+      : correctOutcome
+        ? '<span class="mc-correct">✅ 正确</span>'
+        : '<span class="mc-wrong">❌ 错误</span>';
   }
 
-  // News/blurb for this match
-  let newsTag = '';
-  if (ht.inj) newsTag += `${ht.cn}: ${ht.inj.replace(/🔴|⚠️/g,'').trim()} `;
-  if (at.inj) newsTag += `${at.cn}: ${at.inj.replace(/🔴|⚠️/g,'').trim()}`;
-  if (newsTag) newsTag = `<div class="mc-news-tag">📰 ${newsTag.trim()}</div>`;
+  // Priority 4: AI predicted score display
+  var predScoreDisplay = '';
+  if (pred) {
+    predScoreDisplay = pred.topScores
+      ? pred.topScores.map(function(s){return s.home+':'+s.away}).join(' · ')
+      : pred.predScore[0]+':'+pred.predScore[1];
+    if (pred.locked) predScoreDisplay += ' 🔒';
+  }
+
+  // Priority 5: News (1-2 lines per team)
+  var newsHTML = '';
+  if (ht.news) newsHTML += '<span class="mc-news-line">📰 ' + ht.cn + '：' + ht.news + '</span>';
+  if (at.news) newsHTML += '<span class="mc-news-line">📰 ' + at.cn + '：' + at.news + '</span>';
+  if (ht.inj) newsHTML += '<span class="mc-inj-line">🏥 ' + ht.cn + '：' + (ht.inj || '').replace(/[🔴⚠️]/g, '').trim() + '</span>';
+  if (at.inj) newsHTML += '<span class="mc-inj-line">🏥 ' + at.cn + '：' + (at.inj || '').replace(/[🔴⚠️]/g, '').trim() + '</span>';
 
   // Live injuries from API
   var apiInfo = liveInfo[m.id];
   if (apiInfo && apiInfo.injuries && apiInfo.injuries.length > 0) {
     var injNames = apiInfo.injuries.map(function(i) { return i.playerName || i.player; }).join('、');
-    if (injNames) newsTag += '<div class="mc-news-tag" style="background:rgba(255,61,87,.08)">🏥 实时伤病: ' + injNames + '</div>';
+    if (injNames) newsHTML += '<span class="mc-inj-line" style="background:rgba(255,61,87,.1)">🏥 实时: ' + injNames + '</span>';
   }
 
-  // Live odds + consensus badge
-  var consensus = getMarketConsensus(m.id, pred ? pred.homeWinProb : 0, pred ? pred.drawProb : 0, pred ? pred.awayWinProb : 0);
-  var liveOddsBadge = '';
-  if (consensus) {
-    liveOddsBadge = '<div style="margin-top:6px;display:flex;gap:6px;align-items:center;font-size:.68rem">' +
-      '<span style="background:' + (consensus.agree ? 'rgba(0,200,83,.15)' : 'rgba(255,145,0,.15)') + ';color:' + (consensus.agree ? 'var(--green)' : 'var(--orange)') + ';padding:2px 8px;border-radius:8px;font-weight:600">' + consensus.label + '</span>' +
-      '<span style="color:var(--text3)">机构: ' + consensus.mktHome + '%/' + consensus.mktDraw + '%/' + consensus.mktAway + '%</span>' +
-      '<span style="color:var(--gold)">@' + consensus.oddsH + '/' + consensus.oddsD + '/' + consensus.oddsA + '</span></div>';
+  // Priority 6: Probability bar (pre-match only)
+  var probBar = '';
+  if (!hasResult && pred) {
+    probBar = '<div class="mc-prob-bar">' +
+      '<div class="mc-prob-seg home" style="width:' + hProb + '%">' + (+hProb > 15 ? '胜 ' + hProb + '%' : '') + '</div>' +
+      '<div class="mc-prob-seg draw" style="width:' + dProb + '%">' + (+dProb > 15 ? '平 ' + dProb + '%' : '') + '</div>' +
+      '<div class="mc-prob-seg away" style="width:' + aProb + '%">' + (+aProb > 15 ? '负 ' + aProb + '%' : '') + '</div>' +
+      '</div>';
   }
 
   const featuredCls = m.featured ? 'featured' : '';
+  var updateInfo = getPredUpdateInfo(m.id);
 
   // When prediction is hidden, show pre-match info without prediction
   if (!showPrediction) {
-    return `
-    <div class="match-card" onclick="showMatchDetail('${m.id}')">
-      <div class="mc-header">
-        <span class="mc-time">${(m.date || m.id)} ${m.time}</span>
-        <span class="mc-group">${m.grp ? m.grp + ' 组' : stageLabel}</span>
-        <span class="venue-badge">📍 ${m.venue || ''}</span>
-        <span style="font-size:.65rem;color:var(--text3);display:none">🔐 预测待发布</span>
-      </div>
-      <div class="mc-teams">
-        <div class="mc-team">
-          <span class="mc-flag">${ht.flag}</span>
-          <span class="mc-name">${ht.cn}</span>
-          <span class="mc-rank">FIFA #${ht.rk} | 实力 ${getStrength(ht).toFixed(0)}</span>
-        </div>
-        <div class="mc-vs">
-          <div style="font-size:1.5rem;font-weight:800;color:var(--text3)">VS</div>
-        </div>
-        <div class="mc-team">
-          <span class="mc-flag">${at.flag}</span>
-          <span class="mc-name">${at.cn}</span>
-          <span class="mc-rank">FIFA #${at.rk} | 实力 ${getStrength(at).toFixed(0)}</span>
-        </div>
-      </div>
-      ${newsTag}
-    </div>`;
+    return '<div class="match-card" onclick="showMatchDetail(\'' + m.id + '\')">' +
+      '<div class="mc-header">' +
+      '<span class="mc-time">' + (m.date || m.id) + ' ' + m.time + '</span>' +
+      '<span class="mc-group">' + (m.grp ? m.grp + ' 组' : stageLabel) + '</span></div>' +
+      '<div class="mc-teams-row">' +
+      '<div class="mc-team"><span class="mc-flag">' + ht.flag + '</span><span class="mc-name">' + ht.cn + '</span></div>' +
+      '<span class="mc-vs-text">VS</span>' +
+      '<div class="mc-team"><span class="mc-flag">' + at.flag + '</span><span class="mc-name">' + at.cn + '</span></div>' +
+      '</div>' +
+      (newsHTML ? '<div class="mc-news-section">' + newsHTML + '</div>' : '') +
+      '</div>';
   }
 
-  return `
-    <div class="match-card ${featuredCls}" onclick="showMatchDetail('${m.id}')">
-      <div class="mc-header">
-        <span class="mc-time">${(m.date || m.id)} ${m.time}</span>
-        <span class="mc-group">${m.grp ? m.grp + ' 组' : stageLabel}</span>
-        <span class="venue-badge">📍 ${m.venue || ''}</span>
-        ${hasResult ? `<span style="font-size:.65rem;color:${correctOutcome?'var(--green)':'var(--red)'};font-weight:700">${correctExact?'🎯':correctOutcome?'✅':'❌'} 已录入</span>` : isMatchLocked(m.id) ? `<span style="font-size:.62rem;color:var(--text3)">🔒 已停售</span>` : ''}
-      </div>
-      <div class="mc-teams">
-        <div class="mc-team">
-          <span class="mc-flag">${ht.flag}</span>
-          <span class="mc-name">${ht.cn}</span>
-          <span class="mc-rank">FIFA #${ht.rk} | 实力 ${getStrength(ht).toFixed(0)}</span>
-        </div>
-        <div class="mc-vs">
-          <div class="mc-pred-score">${pred.topScores ? pred.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : pred.predScore[0]+':'+pred.predScore[1]}${pred.locked?' 🔒':''}</div>
-          <span style="font-size:.7rem;color:${pred.locked?'var(--gold)':'var(--text3)'}">${pred.locked?'🔒最终预测':'AI预测'}</span>
-        </div>
-        <div class="mc-team">
-          <span class="mc-flag">${at.flag}</span>
-          <span class="mc-name">${at.cn}</span>
-          <span class="mc-rank">FIFA #${at.rk} | 实力 ${getStrength(at).toFixed(0)}</span>
-        </div>
-      </div>
-      ${resultHTML}
-      ${!hasResult ? `<div class="mc-probs">
-        <div class="mc-prob"><span class="dot" style="background:var(--accent)"></span>${ht.cn}胜 ${hProb}%</div>
-        <div class="mc-prob"><span class="dot" style="background:var(--text3)"></span>平 ${dProb}%</div>
-        <div class="mc-prob"><span class="dot" style="background:var(--red)"></span>${at.cn}胜 ${aProb}%</div>
-      </div>` : ''}
-      ${pred.upsetAlert ? `<div style="margin-top:4px;font-size:.7rem;color:#ff9100;font-weight:700;text-align:center">⚠️ 爆冷预警：${pred.upsetTeam}有冷门可能！</div>` : ''}
-      ${pred.oddsBlended ? `<div style="font-size:.62rem;color:#8b5cf6;text-align:center;margin-top:2px">🎯 已融合机构赔率</div>` : ''}
-      ${oddsHTML}
-      ${newsTag}
-      ${liveOddsBadge}
-      ${pred.tacAnalysis ? `<div style="margin-top:6px;font-size:.7rem;color:var(--text2);padding:4px 8px;background:var(--surface);border-radius:4px">⚔️ ${pred.tacAnalysis.narrative} <span style="color:${pred.tacticalAdj>0?'var(--green)':pred.tacticalAdj<0?'var(--red)':'var(--text3)'}">(${pred.tacAnalysis.adjPct})</span></div>` : ''}
-      <div style="margin-top:4px;text-align:right">${getPredUpdateInfo(m.id)}</div>
-    </div>`;
+  // === ASSEMBLE CARD ===
+  var card = '<div class="match-card ' + featuredCls + '" onclick="showMatchDetail(\'' + m.id + '\')">';
+
+  // Header: time + group/stage + result tag
+  card += '<div class="mc-header">';
+  card += '<span class="mc-time">' + (m.date || m.id) + ' ' + m.time + '</span>';
+  card += '<span class="mc-group">' + (m.grp ? m.grp + ' 组' : stageLabel) + '</span>';
+  if (hasResult) {
+    card += '<span class="mc-result-tag" style="color:' + (correctOutcome ? 'var(--green)' : 'var(--red)') + '">' + (correctExact ? '🎯' : correctOutcome ? '✅' : '❌') + ' 已录入</span>';
+  }
+  card += '</div>';
+
+  // 1. Teams
+  card += '<div class="mc-teams-row">';
+  card += '<div class="mc-team"><span class="mc-flag">' + ht.flag + '</span><span class="mc-name">' + ht.cn + '</span></div>';
+  card += '<span class="mc-vs-text">VS</span>';
+  card += '<div class="mc-team"><span class="mc-flag">' + at.flag + '</span><span class="mc-name">' + at.cn + '</span></div>';
+  card += '</div>';
+
+  // 2. Result banner (post-match)
+  card += resultBanner;
+
+  // 3. AI win prediction
+  if (pred) {
+    card += '<div class="mc-ai-win">';
+    card += '<span class="mc-label">🏆 AI预测：</span>';
+    card += '<span class="mc-value">' + winByNText + '</span>';
+    card += aiWinIndicator;
+    card += '</div>';
+
+    // 4. AI predicted score
+    card += '<div class="mc-ai-score">';
+    card += '<span class="mc-label">🤖 预测比分</span>';
+    card += '<span class="mc-value">' + predScoreDisplay + '</span>';
+    card += '</div>';
+  }
+
+  // 5. News
+  if (newsHTML) {
+    card += '<div class="mc-news-section">' + newsHTML + '</div>';
+  }
+
+  // 6. Probability bar
+  card += probBar;
+
+  // Update info (tiny)
+  if (updateInfo) {
+    card += '<div style="margin-top:4px;text-align:right">' + updateInfo + '</div>';
+  }
+
+  card += '</div>';
+  return card;
 }
 
 /** Generate ~500-word match analysis commentary */

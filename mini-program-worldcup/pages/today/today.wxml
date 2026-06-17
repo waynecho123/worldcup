@@ -35,45 +35,76 @@
   <view wx:for="{{matches}}" wx:key="id" class="match-card {{item.featured ? 'featured' : ''}}"
         data-id="{{item.id}}" bindtap="onMatchTap">
 
+    <!-- Header: time + group/stage -->
     <view class="mc-header">
       <text class="mc-time">{{item.time}}</text>
       <text wx:if="{{item.group}}" class="mc-group">{{item.group}} 组</text>
       <text wx:elif="{{item.stageLabel}}" class="mc-group">{{item.stageLabel}}</text>
+      <text wx:if="{{item.actual}}" class="mc-result-tag" style="color:{{item.actual.color}}">已录入</text>
     </view>
 
     <!-- TBD Match (KO with unknown teams) -->
-    <view wx:if="{{item.isTBD}}" class="mc-teams" style="justify-content:center;padding:12px 0">
+    <view wx:if="{{item.isTBD}}" class="mc-tbd">
       <text class="font-m text-muted">{{item.homeName}} vs {{item.awayName}}</text>
     </view>
 
     <!-- Normal Match -->
-    <view wx:else class="mc-teams">
-      <view class="mc-team">
-        <text class="mc-flag">{{item.homeFlag}}</text>
-        <text class="mc-name">{{item.homeName}}</text>
+    <block wx:else>
+      <!-- 1. TEAMS — large flags + names -->
+      <view class="mc-teams-row">
+        <view class="mc-team">
+          <text class="mc-flag">{{item.homeFlag}}</text>
+          <text class="mc-name">{{item.homeName}}</text>
+        </view>
+        <text class="mc-vs-text">VS</text>
+        <view class="mc-team">
+          <text class="mc-flag">{{item.awayFlag}}</text>
+          <text class="mc-name">{{item.awayName}}</text>
+        </view>
       </view>
-      <view class="mc-vs">
-        <text class="mc-pred-score">{{item.predScore}}</text>
-        <text class="font-xs" style="color:#4da6ff">AI预测</text>
-      </view>
-      <view class="mc-team">
-        <text class="mc-flag">{{item.awayFlag}}</text>
-        <text class="mc-name">{{item.awayName}}</text>
-      </view>
-    </view>
 
-    <view wx:if="{{!item.actual && !item.isTBD}}" class="mc-probs">
-      <text class="font-xs">{{item.homeName}}胜 {{item.homeProb}}%</text>
-      <text class="font-xs" style="margin:0 8px;color:#556680">平 {{item.drawProb}}%</text>
-      <text class="font-xs">{{item.awayName}}胜 {{item.awayProb}}%</text>
-      <text wx:if="{{item.upsetAlert}}" class="font-xs" style="display:block;margin-top:4px;color:#ff9100;font-weight:700">⚠️ 爆冷预警：{{item.upsetTeam}}有冷门可能！</text>
-      <text wx:if="{{item.oddsBlended}}" class="font-xs" style="display:block;margin-top:2px;color:#8b5cf6">🎯 已融合机构赔率</text>
-    </view>
+      <!-- 2. REAL SCORE (post-match only) -->
+      <view wx:if="{{item.actual}}" class="mc-result-banner" style="border-color:{{item.actual.color}}">
+        <text class="mc-result-icon">{{item.actual.icon}}</text>
+        <text class="mc-result-score" style="color:{{item.actual.color}}">{{item.actual.homeScore}} : {{item.actual.awayScore}}</text>
+        <text class="mc-result-label">最终比分</text>
+      </view>
 
-    <view wx:if="{{item.actual}}" style="margin-top:8px;padding:8px;background:rgba(255,61,87,.06);border-radius:6px;text-align:center">
-      <text class="font-xs">🤖AI {{item.predScore}} → 📡实际 </text>
-      <text class="font-m font-bold" style="color:{{item.actual.color}}">{{item.actual.homeScore}}:{{item.actual.awayScore}}</text>
-      <text class="font-xs" style="margin-left:4px">{{item.actual.icon}}</text>
-    </view>
+      <!-- 3. AI WIN/LOSS PREDICTION -->
+      <view class="mc-ai-win">
+        <text class="mc-ai-win-label">🏆 AI预测：</text>
+        <text class="mc-ai-win-value">{{item.winByNText}}</text>
+        <text wx:if="{{item.actual && item.actual.icon === '🎯'}}" class="mc-ai-win-correct">🎯 命中</text>
+        <text wx:elif="{{item.actual && item.actual.icon === '✅'}}" class="mc-ai-win-correct">✅ 正确</text>
+        <text wx:elif="{{item.actual && item.actual.icon === '❌'}}" class="mc-ai-win-wrong">❌ 错误</text>
+      </view>
+
+      <!-- 4. AI PREDICTED SCORE -->
+      <view class="mc-ai-score">
+        <text class="mc-ai-score-label">🤖 预测比分</text>
+        <text class="mc-ai-score-value">{{item.predScore}}</text>
+      </view>
+
+      <!-- 5. NEWS (1-2 lines per team) -->
+      <view wx:if="{{item.homeNews || item.awayNews || item.homeInjShort || item.awayInjShort}}" class="mc-news-section">
+        <text wx:if="{{item.homeNews}}" class="mc-news-line">📰 {{item.homeName}}：{{item.homeNews}}</text>
+        <text wx:if="{{item.awayNews}}" class="mc-news-line">📰 {{item.awayName}}：{{item.awayNews}}</text>
+        <text wx:if="{{item.homeInjShort}}" class="mc-inj-line">🏥 {{item.homeName}}：{{item.homeInjShort}}</text>
+        <text wx:if="{{item.awayInjShort}}" class="mc-inj-line">🏥 {{item.awayName}}：{{item.awayInjShort}}</text>
+      </view>
+
+      <!-- 6. WIN PROBABILITY — compact bar -->
+      <view wx:if="{{!item.isTBD}}" class="mc-prob-bar">
+        <view class="mc-prob-seg home" style="width:{{item.homeProb}}%">
+          <text wx:if="{{item.homeProb > 15}}">胜 {{item.homeProb}}%</text>
+        </view>
+        <view class="mc-prob-seg draw" style="width:{{item.drawProb}}%">
+          <text wx:if="{{item.drawProb > 15}}">平 {{item.drawProb}}%</text>
+        </view>
+        <view class="mc-prob-seg away" style="width:{{item.awayProb}}%">
+          <text wx:if="{{item.awayProb > 15}}">负 {{item.awayProb}}%</text>
+        </view>
+      </view>
+    </block>
   </view>
 </view>

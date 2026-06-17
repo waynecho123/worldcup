@@ -103,16 +103,15 @@ Page({
         return {
           id: m.id, time: m.time, group: m.grp, stage: m.stage,
           stageLabel: stageLabels[m.stage] || m.stage,
-          venue: m.venue || '', featured: m.featured || false,
+          featured: m.featured || false,
           homeFlag: ht ? ht.flag : '❓',
           homeName: ht ? ht.cn : (m.home === '?' ? '待定' : m.home),
-          homeRank: ht ? ht.rk : '?',
           awayFlag: at ? at.flag : '❓',
           awayName: at ? at.cn : (m.away === '?' ? '待定' : m.away),
-          awayRank: at ? at.rk : '?',
           predScore: '?:?',
+          winByNText: '待定',
           homeProb: '', drawProb: '', awayProb: '',
-          isTBD: true, updateInfo: ''
+          isTBD: true
         };
       }
 
@@ -120,17 +119,6 @@ Page({
       const pred = predict.predictMatch(ht, at, mol);
       const predLog = app.globalData.predLog || {};
       const logEntry = predLog[m.id];
-
-      let fairProbs = null;
-      if (mol) {
-        const fair = odds.oddsToFairProb(mol.h, mol.d, mol.a);
-        fairProbs = {
-          home: (fair.home * 100).toFixed(0),
-          draw: (fair.draw * 100).toFixed(0),
-          away: (fair.away * 100).toFixed(0)
-        };
-      }
-
       const actual = app.globalData.actualResults[m.id];
       let actualDisplay = null;
       if (actual) {
@@ -158,19 +146,23 @@ Page({
       return {
         id: m.id, time: m.time, group: m.grp, stage: m.stage,
         stageLabel: stageLabels[m.stage] || m.stage,
-        venue: m.venue || '', featured: m.featured || false,
-        homeFlag: ht.flag, homeName: ht.cn, homeRank: ht.rk, homeStrength: predict.getStrength(ht).toFixed(0),
-        awayFlag: at.flag, awayName: at.cn, awayRank: at.rk, awayStrength: predict.getStrength(at).toFixed(0),
+        featured: m.featured || false,
+        homeFlag: ht.flag, homeName: ht.cn,
+        awayFlag: at.flag, awayName: at.cn,
+        // Priority 3: AI win/loss prediction in natural language
+        winByNText: predict.getWinByNText(ht, at, pred),
+        // Priority 4: AI predicted score
         predScore: pred.topScores.map(function(s) { return s.home + ':' + s.away; }).join(' · '),
         predScores: pred.topScores,
+        // Priority 5: Team news (1-2 lines per team)
+        homeNews: ht.news || '',
+        awayNews: at.news || '',
+        homeInjShort: (ht.inj || '').replace(/[🔴⚠️]/g, '').trim(),
+        awayInjShort: (at.inj || '').replace(/[🔴⚠️]/g, '').trim(),
+        // Priority 6: Win probability
         homeProb: (pred.homeWinProb*100).toFixed(0), drawProb: (pred.drawProb*100).toFixed(0), awayProb: (pred.awayWinProb*100).toFixed(0),
-        oddsH: mol ? mol.h.toFixed(2) : '', oddsD: mol ? mol.d.toFixed(2) : '', oddsA: mol ? mol.a.toFixed(2) : '',
-        fairProbs, actual: actualDisplay, updateInfo,
-        upsetAlert: pred.upsetAlert, upsetTeam: pred.upsetTeam,
-        oddsBlended: pred.oddsBlended,
-        hasNews: !!(ht.inj || at.inj),
-        newsText: (ht.inj ? ht.cn+': '+ht.inj.replace(/[🔴⚠️]/g,'').trim()+' ' : '') +
-                  (at.inj ? at.cn+': '+at.inj.replace(/[🔴⚠️]/g,'').trim() : '')
+        actual: actualDisplay, updateInfo,
+        isTBD: false
       };
     }).filter(Boolean);
 

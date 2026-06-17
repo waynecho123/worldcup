@@ -83,64 +83,137 @@ page { background-color: #080c14; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 }
 
 .match-card .mc-time { font-size: 22rpx; color: #556680; font-weight: 600; }
 
-.match-card .mc-teams {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 0;
+.match-card .mc-group {
+  font-size: 20rpx;
+  color: #4da6ff;
+  background: rgba(77,166,255,.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
 }
 
-.match-card .mc-team { flex: 1; text-align: center; }
-.match-card .mc-flag { font-size: 60rpx; display: block; margin-bottom: 2px; }
-.match-card .mc-name { font-weight: 700; font-size: 26rpx; }
-.match-card .mc-rank { font-size: 20rpx; color: #8899b4; margin-top: 1px; }
-
-.match-card .mc-vs {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  min-width: 90px;
-}
-
-.match-card .mc-pred-score { font-size: 36rpx; font-weight: 800; color: #f0b90b; }
-
-.match-card .mc-probs {
-  display: flex;
-  justify-content: center;
-  gap: 4px;
-  margin-top: 6px;
-  padding: 5px;
-  background: rgba(240,185,11,.04);
-  border-radius: 6px;
-}
-
-.odds-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 6px;
-  padding: 5px 8px;
-  background: rgba(240,185,11,.03);
-  border-radius: 6px;
-}
-
-.jc-bar {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 3px;
-  padding: 3px 8px;
-}
-
-.news-tag {
-  margin-top: 4px;
-  padding: 3px 8px;
-  background: rgba(255,145,0,.06);
+.match-card .mc-result-tag {
+  font-size: 20rpx;
+  font-weight: 700;
+  padding: 2px 8px;
   border-radius: 4px;
 }
+
+/* 1. Teams row — large display */
+.mc-teams-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 0 4px;
+}
+.mc-teams-row .mc-team { flex: 1; text-align: center; }
+.mc-teams-row .mc-flag { font-size: 72rpx; display: block; margin-bottom: 4px; }
+.mc-teams-row .mc-name { font-weight: 800; font-size: 30rpx; }
+.mc-vs-text {
+  font-size: 32rpx;
+  font-weight: 800;
+  color: #556680;
+  margin: 0 2px;
+  flex-shrink: 0;
+}
+
+/* TBD match */
+.mc-tbd { justify-content: center; padding: 12px 0; }
+
+/* 2. Real score banner (post-match) */
+.mc-result-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+  padding: 10px;
+  background: rgba(255,61,87,.06);
+  border: 1px solid;
+  border-radius: 8px;
+}
+.mc-result-icon { font-size: 28rpx; }
+.mc-result-score { font-size: 44rpx; font-weight: 800; }
+.mc-result-label { font-size: 20rpx; color: #8899b4; }
+
+/* 3. AI win prediction text */
+.mc-ai-win {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+.mc-ai-win-label { font-size: 24rpx; color: #f0b90b; }
+.mc-ai-win-value { font-size: 30rpx; font-weight: 800; color: #f0b90b; }
+.mc-ai-win-correct { font-size: 22rpx; color: #00c853; font-weight: 700; }
+.mc-ai-win-wrong { font-size: 22rpx; color: #ff3d57; font-weight: 700; }
+
+/* 4. AI predicted score */
+.mc-ai-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+.mc-ai-score-label { font-size: 22rpx; color: #556680; }
+.mc-ai-score-value { font-size: 28rpx; font-weight: 700; color: #f0b90b; }
+
+/* 5. News section */
+.mc-news-section { margin-top: 6px; }
+.mc-news-line {
+  display: block;
+  font-size: 22rpx;
+  color: #ff9100;
+  padding: 3px 8px;
+  margin-top: 3px;
+  background: rgba(255,145,0,.06);
+  border-radius: 4px;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mc-inj-line {
+  display: block;
+  font-size: 22rpx;
+  color: #ff3d57;
+  padding: 3px 8px;
+  margin-top: 3px;
+  background: rgba(255,61,87,.06);
+  border-radius: 4px;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 6. Probability bar — compact horizontal bar */
+.mc-prob-bar {
+  display: flex;
+  height: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 6px;
+  background: rgba(255,255,255,.03);
+}
+.mc-prob-seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18rpx;
+  font-weight: 700;
+  color: #fff;
+  min-width: 0;
+  overflow: hidden;
+}
+.mc-prob-seg.home { background: #4da6ff; }
+.mc-prob-seg.draw { background: #556680; }
+.mc-prob-seg.away { background: #ff3d57; }

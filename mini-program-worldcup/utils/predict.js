@@ -167,6 +167,20 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
 }
 
 /** Check if actual score matches any of the top 3 predictions */
+/** Convert expected-goal diff to natural-language Chinese text */
+function getWinByNText(homeTeam, awayTeam, pred) {
+  var bestH = pred.predScore[0];
+  var bestA = pred.predScore[1];
+  var diff = bestH - bestA;
+  if (diff > 0) return homeTeam.cn + '赢' + diff + '球';
+  if (diff < 0) return awayTeam.cn + '赢' + Math.abs(diff) + '球';
+  // Most-likely score is a draw — check expected goals for pseudo-draws
+  var expDiff = pred.expH - pred.expA;
+  if (expDiff > 0.4) return homeTeam.cn + '小优（' + bestH + ':' + bestA + '）';
+  if (expDiff < -0.4) return awayTeam.cn + '小优（' + bestH + ':' + bestA + '）';
+  return '平局';
+}
+
 function isExactMatch(pred, actual) {
   if (!pred || !actual) return false;
   return (pred.topScores || []).some(function(s) {
@@ -358,5 +372,5 @@ module.exports = {
   getTacticalAdjustment, getTacticalAnalysis,
   getPredictionStatus, isMatchLocked, isMatchBettable,
   logPredictionSnapshot, getPredUpdateInfo, refreshAllPredictions,
-  isExactMatch
+  isExactMatch, getWinByNText
 };
