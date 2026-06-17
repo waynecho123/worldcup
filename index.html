@@ -2489,17 +2489,20 @@ function _dead_jc_advanced(mid, ht, at) {
 }
 
 function getStrength(t) {
-  // Base from FIFA rank (lower rank = higher score)
   const rankScore = Math.max(5, 95 - (t.rk - 1) * 1.5);
-  // Attack/defense average
   const perf = t.att * 0.5 + t.def * 0.5;
-  // Injury penalty (up to 8 points for key injuries)
   let injPenalty = 0;
   if (t.inj) {
     const redCount = (t.inj.match(/🔴/g) || []).length;
     const warnCount = (t.inj.match(/⚠️/g) || []).length;
     injPenalty = redCount * 4 + warnCount * 2;
   }
+  const news = t.news || '';
+  const negKW = /visa|passport|absent|out|missing|suspended|ban|injury|injured|ruled out|withdraw/i;
+  const posKW = /hat-trick|hero|brilliant|stunning|in form|confident|fit|ready|return/i;
+  if (negKW.test(news + (t.inj||''))) injPenalty += 3;
+  if (negKW.test(news) && /captain|key|star/i.test(news)) injPenalty += 1;
+  if (posKW.test(news)) injPenalty -= 2;
   return Math.max(10, rankScore * 0.40 + perf * 0.45 + 15 - injPenalty);
 }
 
@@ -2510,7 +2513,7 @@ function poissonPMF(lambda, k) {
   return Math.exp(logP);
 }
 
-function predictMatch(homeTeam, awayTeam) {
+function predictMatch(homeTeam, awayTeam, matchOdds) {
   const hStr = getStrength(homeTeam);
   const aStr = getStrength(awayTeam);
   // Home advantage for host nations and neutral venue adjustment
@@ -2537,7 +2540,30 @@ function predictMatch(homeTeam, awayTeam) {
   const bestS = [allScores[0].home, allScores[0].away];
   const topScores = allScores.slice(0, 3).map(function(s) { return { home: s.home, away: s.away, prob: s.prob }; });
   const t = hwp + dp + awp;
-  return { homeWinProb: hwp/t, drawProb: dp/t, awayWinProb: awp/t, expH: lambdaH, expA: lambdaA, predScore: bestS || [Math.round(lambdaH), Math.round(lambdaA)], topScores: topScores, hStr, aStr, tacticalAdj, tacAnalysis };
+  const aiProbs = { home: hwp/t, draw: dp/t, away: awp/t };
+  // Blend with market odds (45% weight)
+  let finalHome = aiProbs.home, finalDraw = aiProbs.draw, finalAway = aiProbs.away, oddsBlended = false;
+  if (matchOdds && matchOdds.h && matchOdds.d && matchOdds.a) {
+    var impH = 1/matchOdds.h, impD = 1/matchOdds.d, impA = 1/matchOdds.a;
+    var impTotal = impH + impD + impA;
+    finalHome = aiProbs.home * 0.55 + (impH/impTotal) * 0.45;
+    finalDraw = aiProbs.draw * 0.55 + (impD/impTotal) * 0.45;
+    finalAway = aiProbs.away * 0.55 + (impA/impTotal) * 0.45;
+    oddsBlended = true;
+  }
+  // Upset probability (Monte Carlo)
+  var upsets = 0, N = 200;
+  for (var ui = 0; ui < N; ui++) {
+    var hN = 1 + (Math.random() - 0.5) * 0.3, aN = 1 + (Math.random() - 0.5) * 0.3;
+    var hL = Math.exp(-Math.max(0.3, lambdaH * hN)), aL = Math.exp(-Math.max(0.3, lambdaA * aN));
+    var hk = 0, hp = 1; do { hk++; hp *= Math.random(); } while (hp > hL); hk--;
+    var ak = 0, ap = 1; do { ak++; ap *= Math.random(); } while (ap > aL); ak--;
+    if ((aStr < hStr && ak > hk) || (hStr < aStr && hk > ak)) upsets++;
+  }
+  var upsetProb = upsets / N;
+  var underdog = hStr > aStr ? awayTeam : homeTeam;
+  var isUpsetAlert = upsetProb > 0.25;
+  return { homeWinProb: finalHome, drawProb: finalDraw, awayWinProb: finalAway, expH: lambdaH, expA: lambdaA, predScore: bestS || [Math.round(lambdaH), Math.round(lambdaA)], topScores: topScores, hStr, aStr, tacticalAdj, tacAnalysis, marketConsensus: null, aiProbs, oddsBlended, upsetProb, upsetAlert: isUpsetAlert, upsetTeam: isUpsetAlert ? underdog.cn : null };
 }
 
 function sampleMatch(homeTeam, awayTeam) {
@@ -2761,7 +2787,8 @@ function renderMatchCard(m) {
     const lockedPred = getLockedPrediction(m.id);
     // Finished matches or no locked pred: compute fresh
     if (hasResult || !lockedPred) {
-      pred = predictMatch(ht, at);
+      var mol = MATCH_ODDS[m.id];
+      pred = predictMatch(ht, at, mol);
     } else {
       // Use locked probabilities but compute fresh topScores for display
       const freshTopScores = predictMatch(ht, at).topScores;
