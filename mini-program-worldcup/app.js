@@ -57,20 +57,22 @@ App({
   loadResults() {
     var that = this;
 
-    // 1. Cloud DB（云函数自动更新，最可靠）
-    wx.cloud.database().collection('match_results').doc('latest').get().then(res => {
-      if (res.data && res.data.results && Object.keys(res.data.results).length > 0) {
-        that.globalData.actualResults = res.data.results;
-        wx.setStorageSync('actual', JSON.stringify(res.data.results));
-        console.log('Loaded ' + Object.keys(res.data.results).length + ' scores from cloud DB');
-        // Refresh UI if pages are already loaded
-        var pages = getCurrentPages();
-        if (pages.length > 0 && pages[0].refresh) pages[0].refresh();
+    // GitHub Pages scores.json (GitHub Action 每30分钟更新)
+    wx.request({
+      url: 'https://waynecho123.github.io/worldcup/scores.json',
+      success: function(res) {
+        if (res.data && Object.keys(res.data).length > 0) {
+          that.globalData.actualResults = res.data;
+          wx.setStorageSync('actual', JSON.stringify(res.data));
+          console.log('Loaded ' + Object.keys(res.data).length + ' scores from GitHub');
+          var pages = getCurrentPages();
+          if (pages.length > 0 && pages[0].refresh) pages[0].refresh();
+        }
+      },
+      fail: function(e) {
+        console.log('GitHub scores fetch failed:', e);
+        that.loadFromLocal();
       }
-    }).catch(e => {
-      console.log('Cloud DB failed:', e);
-      // Fallback to local storage
-      that.loadFromLocal();
     });
   },
 
@@ -103,14 +105,15 @@ App({
 
   loadNews() {
     var that = this;
-    wx.cloud.database().collection('worldcup_news').doc('latest').get().then(res => {
-      if (res.data && res.data.items && res.data.items.length > 0) {
-        that.globalData.newsItems = res.data.items;
-        wx.setStorageSync('news_cache', JSON.stringify({ items: res.data.items }));
-        console.log('Loaded ' + res.data.items.length + ' news from cloud DB');
+    wx.request({
+      url: 'https://waynecho123.github.io/worldcup/news.json',
+      success: function(res) {
+        if (res.data && res.data.items && res.data.items.length > 0) {
+          that.globalData.newsItems = res.data.items;
+          wx.setStorageSync('news_cache', JSON.stringify({ items: res.data.items }));
+          console.log('Loaded ' + res.data.items.length + ' news from GitHub');
+        }
       }
-    }).catch(e => {
-      console.log('News cloud load skipped:', e.message);
     });
   },
 

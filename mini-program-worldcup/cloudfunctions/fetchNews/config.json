@@ -8,7 +8,7 @@
     {
       "name": "newsTimer",
       "type": "timer",
-      "config": "0 */30 * * * * *"
+      "config": "0 0,30 * * * * *"
     }
   ]
 }
