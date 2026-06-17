@@ -1671,7 +1671,7 @@ function lockPrediction(dateStr) {
     const at = TEAMS.find(t => t.id === m.away);
     if (ht && at) {
       const p = predictMatch(ht, at);
-      preds[m.id] = { homeScore: p.predScore[0], awayScore: p.predScore[1], hProb: p.homeWinProb, dProb: p.drawProb, aProb: p.awayWinProb };
+      preds[m.id] = { homeScore: p.predScore[0], awayScore: p.predScore[1], hProb: p.homeWinProb, dProb: p.drawProb, aProb: p.awayWinProb, topScores: p.topScores };
     }
   });
   locked[dateStr] = { preds, lockedAt: new Date().toISOString(), matchCount: matches.length };
@@ -2744,13 +2744,16 @@ function renderMatchCard(m) {
   const predStatus = getPredictionStatus(m.date);
   const showPrediction = predStatus === 'visible' || predStatus === 'locked' || predStatus === 'past';
 
-  // Use locked prediction if available, otherwise compute fresh (only if visible)
+  // Use locked prediction for pre-match (visible/locked), compute fresh for past matches
   let pred = null;
   if (showPrediction) {
     const lockedPred = getLockedPrediction(m.id);
-    pred = lockedPred
-      ? { predScore: [lockedPred.homeScore, lockedPred.awayScore], homeWinProb: lockedPred.hProb, drawProb: lockedPred.dProb, awayWinProb: lockedPred.aProb, expH: lockedPred.homeScore, expA: lockedPred.awayScore, locked: true }
-      : predictMatch(ht, at);
+    // Past matches: always compute fresh to get topScores for accuracy check
+    if (predStatus === 'past' || !lockedPred) {
+      pred = predictMatch(ht, at);
+    } else {
+      pred = { predScore: [lockedPred.homeScore, lockedPred.awayScore], homeWinProb: lockedPred.hProb, drawProb: lockedPred.dProb, awayWinProb: lockedPred.aProb, expH: lockedPred.homeScore, expA: lockedPred.awayScore, topScores: lockedPred.topScores || [{home: lockedPred.homeScore, away: lockedPred.awayScore}], locked: true };
+    }
   }
   const hProb = pred ? (pred.homeWinProb * 100).toFixed(1) : '';
   const dProb = pred ? (pred.drawProb * 100).toFixed(1) : '';
