@@ -70,7 +70,7 @@ const TEAMS = [
   // ===== GROUP L =====
   {id:"ENG",name:"England",cn:"英格兰",flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",grp:"L",seed:"1",rk:4,att:87,def:84,best:"冠军(1966)",apps:16,stars:["Kane","Bellingham","Saka"],conf:"UEFA",recent:"图赫尔执教, 2024欧洲杯亚军",news:"福登+帕尔默落选引争议！阵容€1.51B",inj:"🔴 Ben White MCL"},
   {id:"CRO",name:"Croatia",cn:"克罗地亚",flag:"🇭🇷",grp:"L",seed:"2",rk:11,att:79,def:79,best:"亚军(2018)",apps:6,stars:["Modrić","Gvardiol","Kovačić"],conf:"UEFA",recent:"2024欧洲杯小组赛",news:"莫德里奇最后一届世界杯",inj:""},
-  {id:"GHA",name:"Ghana",cn:"加纳",flag:"🇬🇭",grp:"L",seed:"3",rk:43,att:70,def:67,best:"8强(2010)",apps:4,stars:["Kudus","Partey","Williams"],conf:"CAF",recent:"2023非洲杯小组赛",news:"非洲劲旅",inj:""},
+  {id:"GHA",name:"Ghana",cn:"加纳",flag:"🇬🇭",grp:"L",seed:"3",rk:43,att:70,def:67,best:"8强(2010)",apps:4,stars:["Kudus","Partey","Williams"],conf:"CAF",recent:"2023非洲杯小组赛",news:"帕尔特伊签证问题缺席首战",inj:"🔴 Partey签证问题缺席"},
   {id:"PAN",name:"Panama",cn:"巴拿马",flag:"🇵🇦",grp:"L",seed:"4",rk:48,att:65,def:64,best:"小组赛",apps:1,stars:["Murillo","Carrasquilla","Waterman"],conf:"CONCACAF",recent:"2024美洲杯8强",news:"美洲杯8强证明实力",inj:""},
 ]
 
