@@ -1,69 +1,83 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>世界杯数据管理</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#080c14;color:#e4e8f0;padding:20px}
-h1{text-align:center;margin-bottom:20px;color:#f0b90b}
-.info{text-align:center;color:#8899b4;margin-bottom:20px;font-size:14px}
-.toolbar{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;align-items:center}
-.toolbar input{padding:8px 12px;border:1px solid #1a2744;background:#0f1521;color:#e4e8f0;border-radius:6px;font-size:14px;flex:1;min-width:200px}
-.btn{padding:8px 16px;border:none;border-radius:6px;cursor:pointer;font-size:14px;font-weight:600;white-space:nowrap}
+h1{text-align:center;margin-bottom:6px;color:#f0b90b}
+.info{text-align:center;color:#8899b4;margin-bottom:16px;font-size:13px}
+.toolbar{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap;align-items:center}
+.toolbar input{padding:8px 12px;border:1px solid #1a2744;background:#0f1521;color:#e4e8f0;border-radius:6px;font-size:14px;flex:1;min-width:180px}
+.btn{padding:8px 16px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;white-space:nowrap}
 .btn-primary{background:#4da6ff;color:#fff}
 .btn-gold{background:#f0b90b;color:#000}
 .btn-green{background:#00c853;color:#fff}
 .btn-outline{background:transparent;border:1px solid #1a2744;color:#8899b4}
-table{width:100%;border-collapse:collapse;margin-top:10px}
-th{background:#0f1521;padding:10px 8px;text-align:left;font-size:13px;border-bottom:2px solid #1a2744;position:sticky;top:0}
-td{padding:8px;border-bottom:1px solid #1a2744;font-size:13px}
+.tabs{display:flex;gap:2px;margin-bottom:16px}
+.tab{padding:8px 20px;background:#0f1521;border:1px solid #1a2744;color:#8899b4;border-radius:6px 6px 0 0;cursor:pointer;font-weight:600;font-size:14px}
+.tab.active{background:#4da6ff;color:#fff;border-color:#4da6ff}
+table{width:100%;border-collapse:collapse}
+th{background:#0f1521;padding:10px 6px;text-align:left;font-size:12px;border-bottom:2px solid #1a2744;position:sticky;top:0}
+td{padding:6px;border-bottom:1px solid #1a2744;font-size:12px;vertical-align:top}
 tr:hover{background:rgba(77,166,255,.04)}
-input[type="text"],textarea{background:#182032;border:1px solid #1a2744;color:#e4e8f0;padding:6px 8px;border-radius:4px;width:100%;font-size:13px;font-family:inherit}
-textarea{resize:vertical;min-height:28px}
-.flag{font-size:24px;text-align:center}
+input[type="text"],textarea{background:#182032;border:1px solid #1a2744;color:#e4e8f0;padding:5px 6px;border-radius:4px;width:100%;font-size:12px;font-family:inherit}
+textarea{resize:vertical;min-height:22px}
+.lp-row{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+.lp-row input{width:100px}
+.lp-row .lp-label{color:#556680;font-size:11px;min-width:20px}
+.flag{font-size:20px;text-align:center}
 .result{background:#0f1521;border:1px solid #1a2744;border-radius:8px;padding:16px;margin-top:20px;display:none}
-.result textarea{width:100%;height:200px;font-family:monospace;font-size:12px;margin:10px 0}
-.saved{color:#00c853;font-weight:700}
+.result textarea{width:100%;height:180px;font-family:monospace;font-size:11px;margin:8px 0}
+.tab-content{display:none}
+.tab-content.active{display:block}
 </style>
 </head>
 <body>
 <h1>🏆 世界杯数据管理</h1>
-<p class="info">编辑球队伤病/新闻 → 生成代码 → 复制替换到 data.js 和 index.html</p>
+<p class="info">编辑 → 复制生成的代码 → 替换 data.js 和 index.html 中对应球队行</p>
 
-<div class="toolbar">
-  <input type="text" id="search" placeholder="🔍 搜索球队..." oninput="filterTeams()">
-  <button class="btn btn-outline" onclick="filterTeams()">筛选</button>
-  <button class="btn btn-primary" onclick="generateCode()">📋 生成代码</button>
-  <button class="btn btn-green" onclick="copyCode()">📋 复制全部</button>
-  <span id="status" style="color:#8899b4;font-size:13px"></span>
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('injuries')">🏥 伤停/新闻</div>
+  <div class="tab" onclick="switchTab('lineups')">📋 首发阵容</div>
 </div>
 
-<table>
-<thead>
-<tr>
-  <th style="width:40px"></th>
-  <th style="width:100px">球队</th>
-  <th style="width:50px">组</th>
-  <th style="width:150px">伤病/停赛 (inj)</th>
-  <th style="width:200px">新闻/动态 (news)</th>
-  <th style="width:120px">核心球员</th>
-</tr>
-</thead>
-<tbody id="tbody"></tbody>
-</table>
+<div class="toolbar">
+  <input type="text" id="search" placeholder="🔍 搜索球队..." oninput="render()">
+  <select id="groupFilter" onchange="render()" style="padding:8px;background:#0f1521;border:1px solid #1a2744;color:#e4e8f0;border-radius:6px">
+    <option value="">全部组别</option>
+  </select>
+  <button class="btn btn-primary" onclick="genCode()">📋 生成代码</button>
+  <button class="btn btn-green" onclick="copyAll()">📋 复制</button>
+  <span id="status"></span>
+</div>
+
+<div id="tab-injuries" class="tab-content active">
+  <table><thead><tr>
+    <th style="width:36px"></th><th style="width:90px">球队</th><th style="width:40px">组</th>
+    <th style="width:200px">伤病/停赛 (inj)</th><th style="width:220px">新闻/动态 (news)</th><th style="width:100px">球星</th>
+  </tr></thead><tbody id="tbody-inj"></tbody></table>
+</div>
+
+<div id="tab-lineups" class="tab-content">
+  <table><thead><tr>
+    <th style="width:36px"></th><th style="width:70px">球队</th><th style="width:60px">阵型</th>
+    <th style="width:110px">门将</th><th style="width:260px">后卫</th><th style="width:260px">中场</th>
+    <th style="width:220px">前锋</th><th style="width:180px">替补</th><th style="width:180px">备注</th>
+  </tr></thead><tbody id="tbody-lp"></tbody></table>
+</div>
 
 <div class="result" id="result">
-  <h3>生成的代码 <span class="saved" id="savedMsg"></span></h3>
-  <p style="font-size:12px;color:#8899b4">复制下面内容，替换对应文件中的球队数据行</p>
+  <h3>生成的代码</h3>
+  <p style="font-size:12px;color:#8899b4">替换 data.js 和 index.html 中的对应行</p>
   <textarea id="codeOutput" readonly></textarea>
-  <button class="btn btn-primary" onclick="copyCode()">📋 复制</button>
+  <button class="btn btn-primary" onclick="copyAll()">📋 复制</button>
+  <button class="btn btn-outline" onclick="document.getElementById('result').style.display='none'">关闭</button>
 </div>
 
 <script>
-// 48 teams data - extracted from the main data
-const TEAMS = [
+const TEAMS=[
 {id:"MEX",cn:"墨西哥",flag:"🇲🇽",grp:"A",stars:["Giménez","Lozano","Ochoa"]},
 {id:"RSA",cn:"南非",flag:"🇿🇦",grp:"A",stars:["Tau","Foster","Mokoena"]},
 {id:"KOR",cn:"韩国",flag:"🇰🇷",grp:"A",stars:["Son","Kim Min-jae","Lee Kang-in"]},
@@ -114,74 +128,114 @@ const TEAMS = [
 {id:"PAN",cn:"巴拿马",flag:"🇵🇦",grp:"L",stars:["Murillo","Carrasquilla","Waterman"]},
 ];
 
-// Load current data
-let teamData = {};
+let teamData = {}; // { id: { inj, news, lineup: { f, g, d, m, fwd, subs, note } } }
+
 async function loadData() {
   try {
-    // Try to load from scores.json to get latest
     const resp = await fetch('index.html');
     const html = await resp.text();
     TEAMS.forEach(t => {
-      const re = new RegExp(`\\{id:"${t.id}",name:"[^"]+",cn:"[^"]+",flag:"[^"]+",grp:"[^"]+",seed:"[^"]+",rk:\\d+,att:\\d+,def:\\d+,best:"[^"]*",apps:\\d+,stars:\\[[^\\]]+\\],conf:"[^"]+",recent:"[^"]*",news:"([^"]*)",inj:"([^"]*)"\\}`);
-      const m = html.match(re);
-      if (m) {
-        teamData[t.id] = { news: m[1] || '', inj: m[2] || '' };
-      }
+      // Extract inj/news
+      const reNJ = new RegExp(`id:"${t.id}"[^}]*news:"([^"]*)",inj:"([^"]*)"`);
+      const mNJ = html.match(reNJ);
+      // Extract lineup
+      const reLP = new RegExp(`${t.id}:\\s*\\{f:'([^']+)',g:'([^']+)',d:\\[([^\\]]+)\\],m:\\[([^\\]]+)\\],fwd:\\[([^\\]]+)\\],subs:'([^']*)',note:'([^']*)'\\}`);
+      const mLP = html.match(reLP);
+      teamData[t.id] = {
+        inj: mNJ ? mNJ[2] : '',
+        news: mNJ ? mNJ[1] : '',
+        lp: mLP ? { f: mLP[1], g: mLP[2], d: mLP[3].replace(/'/g,'').split(','), m: mLP[4].replace(/'/g,'').split(','), fwd: mLP[5].replace(/'/g,'').split(','), subs: mLP[6], note: mLP[7] } : null
+      };
     });
-  } catch(e) {}
+  } catch(e) { console.warn(e); }
+  initFilters();
   render();
 }
 loadData();
 
+function initFilters() {
+  const groups = [...new Set(TEAMS.map(t => t.grp))].sort();
+  document.getElementById('groupFilter').innerHTML = '<option value="">全部组别</option>' + groups.map(g => `<option>${g}</option>`).join('');
+}
+
+function switchTab(t) {
+  document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelector(`.tab:${t==='injuries'?'first':t==='lineups'?'last':''}-child`);
+  document.querySelectorAll('.tab')[t==='injuries'?0:1].classList.add('active');
+  document.getElementById('tab-'+t).classList.add('active');
+  render();
+}
+
 function render() {
-  const tbody = document.getElementById('tbody');
   const search = (document.getElementById('search').value || '').toLowerCase();
-  tbody.innerHTML = TEAMS.filter(t => {
+  const grp = document.getElementById('groupFilter').value;
+  const filtered = TEAMS.filter(t => {
+    if (grp && t.grp !== grp) return false;
     if (!search) return true;
     return t.cn.includes(search) || t.id.toLowerCase().includes(search) || t.stars.some(s => s.toLowerCase().includes(search));
-  }).map(t => {
-    const td = teamData[t.id] || { news: '', inj: '' };
-    return `<tr>
-      <td class="flag">${t.flag}</td>
-      <td><b>${t.cn}</b><br><span style="color:#556680;font-size:11px">${t.id} · ${t.grp}组</span></td>
-      <td style="color:#f0b90b">${t.grp}组</td>
-      <td><input type="text" id="inj_${t.id}" value="${td.inj.replace(/"/g,'&quot;')}" placeholder="伤病/停赛"></td>
-      <td><textarea id="news_${t.id}" rows="2" placeholder="新闻/动态">${td.news}</textarea></td>
-      <td style="color:#8899b4;font-size:12px">${t.stars.join(' · ')}</td>
-    </tr>`;
-  }).join('');
-  document.getElementById('status').textContent = `共 ${TEAMS.length} 支球队`;
-}
-
-function filterTeams() { render(); }
-
-function generateCode() {
-  const dataJsLines = [];
-  const htmlLines = [];
-  TEAMS.forEach(t => {
-    const inj = document.getElementById('inj_' + t.id)?.value || '';
-    const news = document.getElementById('news_' + t.id)?.value || '';
-    teamData[t.id] = { inj, news };
-
-    // data.js format
-    dataJsLines.push(`GHA: inj="${inj}" -> {id:"${t.id}",...,inj:"${inj}"}`);
-
-    // Build the full line for search-replace
-    htmlLines.push(`${t.id}: news="${news}", inj="${inj}"`);
   });
 
-  document.getElementById('codeOutput').value = htmlLines.join('\n');
-  document.getElementById('result').style.display = 'block';
-  document.getElementById('savedMsg').textContent = `(${new Date().toLocaleTimeString('zh-CN')})`;
+  // Injury tab
+  document.getElementById('tbody-inj').innerHTML = filtered.map(t => {
+    const d = teamData[t.id] || { inj:'', news:'' };
+    return `<tr>
+      <td class="flag">${t.flag}</td>
+      <td><b>${t.cn}</b><br><span style="color:#556680;font-size:10px">${t.id}·${t.grp}组</span></td>
+      <td style="color:#f0b90b">${t.grp}</td>
+      <td><input id="inj_${t.id}" value="${esc(d.inj)}" placeholder="伤病/停赛"></td>
+      <td><textarea id="news_${t.id}" rows="2" placeholder="新闻/动态">${esc(d.news)}</textarea></td>
+      <td style="color:#8899b4;font-size:11px">${t.stars.join(' · ')}</td>
+    </tr>`;
+  }).join('');
+
+  // Lineup tab
+  document.getElementById('tbody-lp').innerHTML = filtered.map(t => {
+    const lp = (teamData[t.id] || {}).lp || { f:'?', g:'', d:[], m:[], fwd:[], subs:'', note:'' };
+    return `<tr>
+      <td class="flag">${t.flag}</td>
+      <td><b>${t.cn}</b><br><span style="font-size:10px;color:#556680">${t.id}</span></td>
+      <td><input id="lp_${t.id}_f" value="${lp.f}" style="width:50px"></td>
+      <td><input id="lp_${t.id}_g" value="${lp.g}" style="width:90px"></td>
+      <td><input id="lp_${t.id}_d" value="${(lp.d||[]).join(',')}" style="width:240px"></td>
+      <td><input id="lp_${t.id}_m" value="${(lp.m||[]).join(',')}" style="width:240px"></td>
+      <td><input id="lp_${t.id}_fwd" value="${(lp.fwd||[]).join(',')}" style="width:200px"></td>
+      <td><input id="lp_${t.id}_subs" value="${lp.subs}" style="width:160px"></td>
+      <td><input id="lp_${t.id}_note" value="${esc(lp.note)}" style="width:160px"></td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('status').textContent = `显示 ${filtered.length}/${TEAMS.length} 队`;
 }
 
-function copyCode() {
-  generateCode();
-  const ta = document.getElementById('codeOutput');
-  ta.select();
-  document.execCommand('copy');
-  alert('已复制！去 data.js 和 index.html 中搜索对应球队 ID 替换 inj/news 字段');
+function esc(s) { return (s||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+
+function genCode() {
+  const lines = [];
+  TEAMS.forEach(t => {
+    const inj = document.getElementById('inj_'+t.id)?.value || '';
+    const news = document.getElementById('news_'+t.id)?.value || '';
+    const f = document.getElementById('lp_'+t.id+'_f')?.value || '?';
+    const g = document.getElementById('lp_'+t.id+'_g')?.value || '';
+    const d = document.getElementById('lp_'+t.id+'_d')?.value || '';
+    const m = document.getElementById('lp_'+t.id+'_m')?.value || '';
+    const fwd = document.getElementById('lp_'+t.id+'_fwd')?.value || '';
+    const subs = document.getElementById('lp_'+t.id+'_subs')?.value || '';
+    const note = document.getElementById('lp_'+t.id+'_note')?.value || '';
+    const dArr = d ? d.split(',').map(s => "'"+s.trim()+"'").join(',') : '';
+    const mArr = m ? m.split(',').map(s => "'"+s.trim()+"'").join(',') : '';
+    const fArr = fwd ? fwd.split(',').map(s => "'"+s.trim()+"'").join(',') : '';
+    lines.push(`// ${t.cn} (${t.id}) — news & inj`);
+    lines.push(`{id:"${t.id}",...,news:"${news}",inj:"${inj}"}`);
+    lines.push(`// ${t.cn} (${t.id}) — lineup`);
+    lines.push(`${t.id}: {f:'${f}',g:'${g}',d:[${dArr}],m:[${mArr}],fwd:[${fArr}],subs:'${subs}',note:'${note}'},`);
+    lines.push('');
+  });
+  document.getElementById('codeOutput').value = lines.join('\n');
+  document.getElementById('result').style.display = 'block';
 }
+
+function copyAll() { genCode(); const ta = document.getElementById('codeOutput'); ta.select(); document.execCommand('copy'); alert('已复制！'); }
 </script>
 </body>
 </html>
