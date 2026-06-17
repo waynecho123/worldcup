@@ -1,8 +1,9 @@
 {
+  "_id": "latest",
   "items": [
     "📰 <![CDATA[England bowl first vs New Zealand as Root stands in as captain for Stokes LIVE!]]>",
     "📰 <![CDATA[Ballon d'Or on the line - has Kane saved his best World Cup dance for last?]]>",
-    "🔥 <![CDATA[Hat-trick hero Messi writes himself into history as Argentina beat Algeria]]>",
+    "📰 <![CDATA[Hat-trick hero Messi writes himself into history as Argentina beat Algeria]]>",
     "📰 <![CDATA[Argentina vs Algeria: Should Messi have been sent off? VOTE!]]>",
     "🔥 <![CDATA[Sciver-Brunt fitness scare as England beat Ireland to maintain winning start]]>",
     "🔥 <![CDATA[Brilliant Mbappe becomes France's top scorer in win over Senegal]]>",
@@ -10,5 +11,7 @@
     "📰 <![CDATA[The records Ronaldo can break at the World Cup]]>"
   ],
   "total": 8,
-  "updatedAt": "2026-06-17T10:44:03.575Z"
+  "source": "rss",
+  "rssCount": 8,
+  "updatedAt": "2026-06-17T10:48:09.834Z"
 }
