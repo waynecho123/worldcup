@@ -151,6 +151,7 @@ Page({
         // Priority 6: Win probability
         homeProb: (pred.homeWinProb*100).toFixed(0), drawProb: (pred.drawProb*100).toFixed(0), awayProb: (pred.awayWinProb*100).toFixed(0),
         upsetAlert: pred.upsetAlert, upsetProb: (pred.upsetProb*100).toFixed(0), upsetTeam: pred.upsetTeam,
+        isLocked: predict.isMatchLocked(m.id),
         actual: actualDisplay,
         isTBD: false
       };

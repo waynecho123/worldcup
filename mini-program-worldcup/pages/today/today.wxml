@@ -90,8 +90,8 @@
         <text>⚠️ 爆冷预警：{{item.upsetTeam}}有{{item.upsetProb}}%冷门可能</text>
       </view>
 
-      <!-- 5. NEWS (1-2 lines per team) -->
-      <view wx:if="{{item.homeNews || item.awayNews || item.homeInjShort || item.awayInjShort}}" class="mc-news-section">
+      <!-- 5. NEWS (hidden when match locked) -->
+      <view wx:if="{{!item.isLocked && (item.homeNews || item.awayNews || item.homeInjShort || item.awayInjShort)}}" class="mc-news-section">
         <text wx:if="{{item.homeNews}}" class="mc-news-line">📰 {{item.homeName}}：{{item.homeNews}}</text>
         <text wx:if="{{item.awayNews}}" class="mc-news-line">📰 {{item.awayName}}：{{item.awayNews}}</text>
         <text wx:if="{{item.homeInjShort}}" class="mc-inj-line">🏥 {{item.homeName}}：{{item.homeInjShort}}</text>

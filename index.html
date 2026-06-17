@@ -3100,8 +3100,8 @@ function renderMatchCard(m) {
   // Upset alert
   card += upsetHTML;
 
-  // 5. News
-  if (newsHTML) {
+  // 5. News (hidden for locked matches — prediction is frozen)
+  if (newsHTML && !isMatchLocked(m.id)) {
     card += '<div class="mc-news-section">' + newsHTML + '</div>';
   }
 
