@@ -1813,7 +1813,7 @@ function lockPrediction(dateStr) {
     const at = TEAMS.find(t => t.id === m.away);
     if (ht && at) {
       const p = predictMatch(ht, at);
-      preds[m.id] = { homeScore: p.predScore[0], awayScore: p.predScore[1], hProb: p.homeWinProb, dProb: p.drawProb, aProb: p.awayWinProb, topScores: p.topScores };
+      preds[m.id] = { homeScore: p.predScore[0], awayScore: p.predScore[1], hProb: p.homeWinProb, dProb: p.drawProb, aProb: p.awayWinProb, topScores: p.topScores, upsetAlert: p.upsetAlert, upsetProb: p.upsetProb, upsetTeam: p.upsetTeam };
     }
   });
   locked[dateStr] = { preds, lockedAt: new Date().toISOString(), matchCount: matches.length };
@@ -2944,7 +2944,7 @@ function renderMatchCard(m) {
       pred = predictMatch(ht, at, mol);
     } else {
       var freshPred = predictMatch(ht, at);
-      pred = { predScore: [lockedPred.homeScore, lockedPred.awayScore], homeWinProb: lockedPred.hProb, drawProb: lockedPred.dProb, awayWinProb: lockedPred.aProb, expH: lockedPred.homeScore, expA: lockedPred.awayScore, topScores: lockedPred.topScores || freshPred.topScores, upsetAlert: freshPred.upsetAlert, upsetProb: freshPred.upsetProb, upsetTeam: freshPred.upsetTeam, locked: true };
+      pred = { predScore: [lockedPred.homeScore, lockedPred.awayScore], homeWinProb: lockedPred.hProb, drawProb: lockedPred.dProb, awayWinProb: lockedPred.aProb, expH: lockedPred.homeScore, expA: lockedPred.awayScore, topScores: lockedPred.topScores || freshPred.topScores, upsetAlert: lockedPred.upsetAlert, upsetProb: lockedPred.upsetProb, upsetTeam: lockedPred.upsetTeam, locked: true };
     }
   }
   const hProb = pred ? (pred.homeWinProb * 100).toFixed(0) : '';
