@@ -1,5 +1,6 @@
 {
   "env": "cloud1-d1ggmx6ur18b296fc",
+  "timeout": 60,
   "permissions": {
     "openapi": []
   },

@@ -1,24 +1,113 @@
 <view class="page bg-dark" style="padding:14px" wx:if="{{team}}">
+  <!-- Header -->
   <view style="text-align:center;margin-bottom:14px">
     <text style="font-size:80rpx">{{team.flag}}</text>
     <text class="font-xxl font-extrabold" style="display:block">{{team.cn}}</text>
     <text class="font-s text-secondary">{{team.name}} · {{team.group}}组 · {{team.seed}}档</text>
   </view>
 
+  <!-- Data Overview -->
   <view class="card">
     <view class="card-header">📊 数据概览</view>
-    <view class="strength-row">
+    <view class="strength-row" style="display:flex;gap:10px;text-align:center;margin-bottom:10px">
       <view class="stat-box" style="flex:1"><text class="num">#{{team.rank}}</text><text class="lbl">FIFA排名</text></view>
       <view class="stat-box" style="flex:1"><text class="num" style="color:#4da6ff">{{team.strength}}</text><text class="lbl">AI实力</text></view>
       <view class="stat-box" style="flex:1"><text class="num gold">{{team.odds}}</text><text class="lbl">夺冠指数</text></view>
     </view>
-    <view class="font-s" style="margin-top:10px">
+    <view class="font-s">
       <text>⚔ 进攻: {{team.att}} | 🛡 防守: {{team.def}}</text>
       <text style="display:block" class="text-secondary">🏆 最佳: {{team.best}} | 参赛: {{team.apps}}次 | 洲际: {{team.conf}}</text>
       <text style="display:block" class="text-secondary">📊 近期: {{team.recent}}</text>
       <text style="display:block" class="text-gold">⭐ {{team.stars.join(' · ')}}</text>
       <text wx:if="{{team.news}}" style="display:block" class="text-orange">📰 {{team.news}}</text>
       <text wx:if="{{team.inj}}" style="display:block" class="text-red">🏥 {{team.inj}}</text>
+    </view>
+  </view>
+
+  <!-- Group Table -->
+  <view wx:if="{{groupTable.length > 0}}" class="card">
+    <view class="card-header">📋 {{team.group}}组 同组对手</view>
+    <view wx:for="{{groupTable}}" wx:key="id" style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:{{index < groupTable.length-1 ? '1px solid var(--border)' : 'none'}};background:{{item.isCurrent ? 'rgba(77,166,255,.08)' : 'transparent'}};border-radius:8px;padding:8px">
+      <text style="font-size:36rpx">{{item.flag}}</text>
+      <text class="font-m font-bold" style="flex:1">{{item.cn}}</text>
+      <text class="font-s text-secondary">#{{item.rk}}</text>
+      <text class="font-s" style="color:#4da6ff;min-width:50px;text-align:right">{{item.strength}}</text>
+      <text wx:if="{{item.isCurrent}}" class="font-xs" style="background:#4da6ff;color:#fff;padding:2px 6px;border-radius:4px">当前</text>
+    </view>
+  </view>
+
+  <!-- Group Matches -->
+  <view wx:if="{{matches.length > 0}}" class="card">
+    <view class="card-header">⚽ 小组赛战况</view>
+    <view wx:for="{{matches}}" wx:key="id" style="display:flex;align-items:center;gap:8px;padding:6px 0;font-size:26rpx;border-bottom:{{index < matches.length-1 ? '1px solid var(--border)' : 'none'}}">
+      <text class="font-xs text-secondary" style="min-width:60px">{{item.date.slice(5)}} {{item.time}}</text>
+      <text style="font-size:28rpx">{{item.oppFlag}}</text>
+      <text style="flex:1">{{item.isHome ? 'vs' : '@'}} {{item.oppName}}</text>
+      <text wx:if="{{item.scoreDisplay}}" class="font-m font-bold" style="color:{{item.resultColor}}">{{item.scoreDisplay}}</text>
+      <text wx:else class="font-xs text-muted">待定</text>
+    </view>
+  </view>
+
+  <!-- Starting XI -->
+  <view wx:if="{{lineup}}" class="card">
+    <view class="card-header">
+      📋 首发阵容
+      <text class="font-xs text-accent" style="margin-left:8px">{{lineup.formation}}</text>
+    </view>
+
+    <!-- Goalkeeper -->
+    <view style="text-align:center;margin-bottom:8px">
+      <view wx:for="{{lineup.gk}}" wx:key="name" style="display:inline-block;text-align:center;padding:4px 12px;background:rgba(240,185,11,.08);border-radius:8px;margin:2px">
+        <text class="font-m font-bold">{{item.num}}</text>
+        <text class="font-s" style="display:block">{{item.cn}}</text>
+        <text class="font-xs text-muted">🧤 {{item.pos}}</text>
+      </view>
+    </view>
+
+    <!-- Defenders -->
+    <view style="display:flex;justify-content:center;gap:4px;flex-wrap:wrap;margin-bottom:8px">
+      <view wx:for="{{lineup.defs}}" wx:key="name" style="text-align:center;padding:4px 10px;background:rgba(77,166,255,.08);border-radius:8px;min-width:70px">
+        <text class="font-m font-bold">{{item.num}}</text>
+        <text class="font-s" style="display:block">{{item.cn}}</text>
+        <text class="font-xs text-muted">{{item.pos}}</text>
+      </view>
+    </view>
+
+    <!-- Midfielders -->
+    <view style="display:flex;justify-content:center;gap:4px;flex-wrap:wrap;margin-bottom:8px">
+      <view wx:for="{{lineup.mids}}" wx:key="name" style="text-align:center;padding:4px 10px;background:rgba(0,200,83,.08);border-radius:8px;min-width:70px">
+        <text class="font-m font-bold">{{item.num}}</text>
+        <text class="font-s" style="display:block">{{item.cn}}</text>
+        <text class="font-xs text-muted">{{item.pos}}</text>
+      </view>
+    </view>
+
+    <!-- Forwards -->
+    <view style="display:flex;justify-content:center;gap:4px;flex-wrap:wrap;margin-bottom:8px">
+      <view wx:for="{{lineup.fwds}}" wx:key="name" style="text-align:center;padding:4px 10px;background:rgba(255,61,87,.08);border-radius:8px;min-width:70px">
+        <text class="font-m font-bold">{{item.num}}</text>
+        <text class="font-s" style="display:block">{{item.cn}}</text>
+        <text class="font-xs text-muted">{{item.pos}}</text>
+      </view>
+    </view>
+
+    <!-- Subs -->
+    <view wx:if="{{lineup.subs.length > 0}}" style="border-top:1px dashed var(--border);padding-top:8px;margin-top:4px">
+      <text class="font-xs text-secondary">🔄 替补: </text>
+      <text wx:for="{{lineup.subs}}" wx:key="name" class="font-xs" style="margin-right:8px">{{item.num}}.{{item.cn}}</text>
+    </view>
+
+    <view wx:if="{{lineup.note}}" class="font-xs text-orange" style="margin-top:6px">📝 {{lineup.note}}</view>
+  </view>
+
+  <!-- All Players -->
+  <view wx:if="{{players.length > 0 && !lineup}}" class="card">
+    <view class="card-header">👥 球员名单</view>
+    <view style="display:flex;flex-wrap:wrap;gap:6px">
+      <view wx:for="{{players}}" wx:key="name" style="text-align:center;padding:4px 8px;background:var(--surface2);border-radius:6px;min-width:60px">
+        <text class="font-m font-bold">{{item.num}}</text>
+        <text class="font-xs" style="display:block">{{item.cn}}</text>
+      </view>
     </view>
   </view>
 </view>

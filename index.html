@@ -1507,22 +1507,39 @@ async function fetchRSSFeed(rssUrl) {
 
 /** Fetch all news sources and merge results */
 async function fetchAllNews() {
-  const results = await Promise.allSettled(NEWS_SOURCES.map(url => fetchRSSFeed(url)));
-  const allItems = [];
-  results.forEach(r => {
-    if (r.status === 'fulfilled' && r.value.length > 0) {
-      allItems.push(...r.value);
+  // Primary: cloud function HTTP endpoint (same as mini-program)
+  try {
+    const resp = await fetch(CLOUD_BASE + '/fetchNews', { cache: 'no-cache' });
+    if (resp.ok) {
+      const data = await resp.json();
+      const items = Array.isArray(data) ? data : (data.items || []);
+      if (items.length > 0) {
+        console.log('News loaded from cloud: ' + items.length + ' items');
+        return items.slice(0, 25);
+      }
     }
-  });
-  // Deduplicate and limit
-  const seen = new Set();
-  const unique = allItems.filter(item => {
-    const key = item.slice(0, 40);
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-  return unique.slice(0, 25);
+  } catch(e) { console.warn('Cloud news failed:', e.message); }
+
+  // Fallback: try RSS feeds (may fail due to CORS)
+  try {
+    const results = await Promise.allSettled(NEWS_SOURCES.map(url => fetchRSSFeed(url)));
+    const allItems = [];
+    results.forEach(r => {
+      if (r.status === 'fulfilled' && r.value.length > 0) {
+        allItems.push(...r.value);
+      }
+    });
+    const seen = new Set();
+    const unique = allItems.filter(item => {
+      const key = item.slice(0, 40);
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+    return unique.slice(0, 25);
+  } catch(e) { console.warn('RSS fallback failed:', e.message); }
+
+  return [];
 }
 
 /** Main news refresh function */
@@ -1968,22 +1985,44 @@ const MATCH_SCHEDULE = [
   {id:"m070",date:"2026-06-28",time:"06:00",home:"COD",away:"UZB",grp:"K",stage:"group",matchday:3,venue:"Lincoln Financial, Philadelphia",simul:"K"},
   {id:"m071",date:"2026-06-28",time:"09:00",home:"ENG",away:"PAN",grp:"L",stage:"group",matchday:3,venue:"AT&T Stadium, Dallas",simul:"L"},
   {id:"m072",date:"2026-06-28",time:"09:00",home:"CRO",away:"GHA",grp:"L",stage:"group",matchday:3,venue:"Levi's Stadium, SF Bay",simul:"L"},
-  // === Knockout: Round of 32 (June 29 - July 4) ===
-  {id:"k01",date:"2026-06-29",time:"TBD",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Various"},
-  // ... (16 knockout slots filled after group stage)
-  {id:"k02",date:"2026-07-04",time:"TBD",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Various"},
-  // Round of 16
-  {id:"k17",date:"2026-07-05",time:"TBD",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"Various"},
-  {id:"k24",date:"2026-07-08",time:"TBD",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"Various"},
-  // Quarter-finals
-  {id:"k25",date:"2026-07-10",time:"TBD",home:"?",away:"?",grp:"",stage:"qf",matchday:null,venue:""},
-  {id:"k28",date:"2026-07-12",time:"TBD",home:"?",away:"?",grp:"",stage:"qf",matchday:null,venue:""},
-  // Semi-finals
-  {id:"k29",date:"2026-07-15",time:"TBD",home:"?",away:"?",grp:"",stage:"sf",matchday:null,venue:"AT&T Stadium, Dallas"},
-  {id:"k30",date:"2026-07-16",time:"TBD",home:"?",away:"?",grp:"",stage:"sf",matchday:null,venue:"Mercedes-Benz Stadium, Atlanta"},
-  // 3rd place + Final
-  {id:"k31",date:"2026-07-18",time:"TBD",home:"?",away:"?",grp:"",stage:"tpp",matchday:null,venue:"Hard Rock Stadium, Miami"},
-  {id:"k32",date:"2026-07-20",time:"03:00",home:"?",away:"?",grp:"",stage:"final",matchday:null,venue:"MetLife Stadium, NY/NJ",featured:true},
+  // === Knockout: Round of 32 (June 30 - July 3) ===
+  {id:"k01",date:"2026-06-30",time:"00:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Hard Rock Stadium, Miami"},
+  {id:"k02",date:"2026-06-30",time:"03:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"MetLife Stadium, NY/NJ"},
+  {id:"k03",date:"2026-06-30",time:"06:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"AT&T Stadium, Dallas"},
+  {id:"k04",date:"2026-06-30",time:"09:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"SoFi Stadium, Los Angeles"},
+  {id:"k05",date:"2026-07-01",time:"00:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"NRG Stadium, Houston"},
+  {id:"k06",date:"2026-07-01",time:"03:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Mercedes-Benz Stadium, Atlanta"},
+  {id:"k07",date:"2026-07-01",time:"06:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Arrowhead Stadium, Kansas City"},
+  {id:"k08",date:"2026-07-01",time:"09:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Lumen Field, Seattle"},
+  {id:"k09",date:"2026-07-02",time:"00:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Gillette Stadium, Boston"},
+  {id:"k10",date:"2026-07-02",time:"03:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"BMO Field, Toronto"},
+  {id:"k11",date:"2026-07-02",time:"06:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"BC Place, Vancouver"},
+  {id:"k12",date:"2026-07-02",time:"09:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Levi's Stadium, SF Bay"},
+  {id:"k13",date:"2026-07-03",time:"00:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Estadio Banorte, Mexico City"},
+  {id:"k14",date:"2026-07-03",time:"03:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Lincoln Financial, Philadelphia"},
+  {id:"k15",date:"2026-07-03",time:"06:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Hard Rock Stadium, Miami"},
+  {id:"k16",date:"2026-07-03",time:"09:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"MetLife Stadium, NY/NJ"},
+  // === Round of 16 (July 5-8) ===
+  {id:"k17",date:"2026-07-05",time:"00:00",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"AT&T Stadium, Dallas"},
+  {id:"k18",date:"2026-07-05",time:"03:00",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"SoFi Stadium, Los Angeles"},
+  {id:"k19",date:"2026-07-06",time:"00:00",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"Mercedes-Benz Stadium, Atlanta"},
+  {id:"k20",date:"2026-07-06",time:"03:00",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"MetLife Stadium, NY/NJ"},
+  {id:"k21",date:"2026-07-07",time:"00:00",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"NRG Stadium, Houston"},
+  {id:"k22",date:"2026-07-07",time:"03:00",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"Arrowhead Stadium, Kansas City"},
+  {id:"k23",date:"2026-07-08",time:"00:00",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"Lumen Field, Seattle"},
+  {id:"k24",date:"2026-07-08",time:"03:00",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"BMO Field, Toronto"},
+  // === Quarter-finals (July 10-12) ===
+  {id:"k25",date:"2026-07-10",time:"00:00",home:"?",away:"?",grp:"",stage:"qf",matchday:null,venue:"Hard Rock Stadium, Miami"},
+  {id:"k26",date:"2026-07-10",time:"03:00",home:"?",away:"?",grp:"",stage:"qf",matchday:null,venue:"SoFi Stadium, Los Angeles"},
+  {id:"k27",date:"2026-07-11",time:"00:00",home:"?",away:"?",grp:"",stage:"qf",matchday:null,venue:"AT&T Stadium, Dallas"},
+  {id:"k28",date:"2026-07-12",time:"00:00",home:"?",away:"?",grp:"",stage:"qf",matchday:null,venue:"MetLife Stadium, NY/NJ"},
+  // === Semi-finals (July 14-15) ===
+  {id:"k29",date:"2026-07-14",time:"03:00",home:"?",away:"?",grp:"",stage:"sf",matchday:null,venue:"AT&T Stadium, Dallas"},
+  {id:"k30",date:"2026-07-15",time:"03:00",home:"?",away:"?",grp:"",stage:"sf",matchday:null,venue:"Mercedes-Benz Stadium, Atlanta"},
+  // === Third Place (July 18) ===
+  {id:"k31",date:"2026-07-18",time:"02:00",home:"?",away:"?",grp:"",stage:"tpp",matchday:null,venue:"Hard Rock Stadium, Miami"},
+  // === Final (July 19) ===
+  {id:"k32",date:"2026-07-19",time:"03:00",home:"?",away:"?",grp:"",stage:"final",matchday:null,venue:"MetLife Stadium, NY/NJ",featured:true},
 ];
 
 // Date range for the tournament
@@ -3437,7 +3476,49 @@ function showTeamDetail(id) {
   const str=getStrength(t),cp=lastResult?lastResult.champProb.find(x=>x.id===id):null,rp=lastResult?lastResult.roundProbs.find(x=>x.id===id):null;
   const todds = getTeamOdds(t.id);
   const oddsP = (1 / todds.odds * 100);
-  document.getElementById('teamModalContent').innerHTML=`<button class="mclose" onclick="closeModal()">✕</button><h3>${t.flag} ${t.cn} <span style="color:var(--text2)">${t.name}</span></h3><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:14px 0"><div class="stat-box"><div class="num">#${t.rk}</div><div class="lbl">FIFA排名</div></div><div class="stat-box"><div class="num">${str.toFixed(1)}</div><div class="lbl">AI综合实力</div></div><div class="stat-box"><div class="num" style="color:var(--gold)">${todds.odds.toFixed(1)}</div><div class="lbl">夺冠指数</div></div></div><div style="padding:10px;background:var(--surface2);border-radius:var(--radius-sm);margin-bottom:14px"><div style="display:flex;justify-content:space-around;text-align:center"><div><div style="font-size:.75rem;color:var(--text2)">参考概率</div><div style="font-size:1.2rem;font-weight:700;color:var(--accent)">${oddsP.toFixed(1)}%</div></div><div><div style="font-size:.75rem;color:var(--text2)">Opta超级计算机</div><div style="font-size:1.2rem;font-weight:700;color:var(--purple)">${todds.opta.toFixed(1)}%</div></div>${cp?`<div><div style="font-size:.75rem;color:var(--text2)">AI蒙特卡洛模拟</div><div style="font-size:1.2rem;font-weight:700;color:var(--gold)">${(cp.prob*100).toFixed(1)}%</div></div>`:'<div></div>'}</div></div><p><strong>进攻：</strong>${t.att} | <strong>防守：</strong>${t.def}</p><p><strong>世界杯最佳：</strong>${t.best}</p><p><strong>参赛次数：</strong>${t.apps}次 | <strong>洲际：</strong>${t.conf}</p><p><strong>近期：</strong>${t.recent}</p><p><strong>核心球员：</strong>${t.stars.join('、')}</p>${t.news?`<p style="color:var(--orange)"><strong>📰 最新动态：</strong>${t.news}</p>`:''}${t.inj?`<p style="color:var(--red)"><strong>🏥 伤病情况：</strong>${t.inj}</p>`:''}${rp?`<div style="margin-top:10px;padding:10px;background:var(--surface2);border-radius:var(--radius-sm)"><p style="font-weight:700;margin-bottom:6px">📊 AI预测晋级各轮概率</p><div style="display:flex;gap:6px;flex-wrap:wrap"><span style="background:#4da6ff;padding:2px 8px;border-radius:3px;font-size:.75rem">32强 ${(rp.r32*100).toFixed(1)}%</span><span style="background:#00c853;padding:2px 8px;border-radius:3px;font-size:.75rem">16强 ${(rp.r16*100).toFixed(1)}%</span><span style="background:#f0b90b;padding:2px 8px;border-radius:3px;font-size:.75rem">8强 ${(rp.qf*100).toFixed(1)}%</span><span style="background:#ff9100;padding:2px 8px;border-radius:3px;font-size:.75rem">4强 ${(rp.sf*100).toFixed(1)}%</span><span style="background:#ff3d57;padding:2px 8px;border-radius:3px;font-size:.75rem">决赛 ${(rp.final*100).toFixed(1)}%</span><span style="background:#ffd700;padding:2px 8px;border-radius:3px;font-size:.75rem">冠军 ${(rp.champ*100).toFixed(1)}%</span></div></div>`:''}`;
+
+  // Build lineup HTML
+  const lu = STARTING_XI[id];
+  let lineupHtml = '';
+  if (lu) {
+    const playerTag = (n, pos, color) => {
+      const clean = n.replace('(C)','').trim();
+      const cname = cnName(clean);
+      const num = JERSEY_NUM[clean] || JERSEY_NUM[n] || '?';
+      const cap = n.includes('(C)') ? '⭐' : '';
+      return `<span style="display:inline-block;text-align:center;padding:4px 8px;background:${color};border-radius:4px;margin:2px;min-width:64px"><b>${num}${cap}</b><br><span style="font-size:.7rem">${cname}</span><br><span style="font-size:.6rem;color:var(--text3)">${pos}</span></span>`;
+    };
+    lineupHtml = `<div style="margin-top:10px;padding:10px;background:var(--surface2);border-radius:var(--radius-sm)"><p style="font-weight:700;margin-bottom:6px">📋 首发阵容 <span style="color:var(--accent)">${lu.f}</span></p>
+<div style="text-align:center;margin-bottom:4px">${(lu.g ? playerTag(lu.g,'GK','rgba(240,185,11,.12)') : '')}</div>
+<div style="text-align:center;margin-bottom:4px">${(lu.d||[]).map(function(n){return playerTag(n,'DF','rgba(77,166,255,.1)');}).join(' ')}</div>
+<div style="text-align:center;margin-bottom:4px">${(lu.m||[]).map(function(n){return playerTag(n,'MF','rgba(0,200,83,.1)');}).join(' ')}</div>
+<div style="text-align:center;margin-bottom:4px">${(lu.fwd||[]).map(function(n){return playerTag(n,'FW','rgba(255,61,87,.1)');}).join(' ')}</div>
+${lu.subs?`<div style="border-top:1px dashed var(--border);padding-top:6px;font-size:.72rem;color:var(--text2)">🔄 替补: ${lu.subs.split(',').map(function(n){const c=cnName(n.trim());return c;}).join('、')}</div>`:''}
+${lu.note?`<div style="font-size:.7rem;color:var(--orange);margin-top:4px">📝 ${lu.note}</div>`:''}</div>`;
+  }
+
+  // Build group matches HTML
+  const teamMatches = MATCH_SCHEDULE.filter(function(m){return (m.home===id||m.away===id)&&m.stage==='group';});
+  let matchesHtml = '';
+  if (teamMatches.length > 0) {
+    matchesHtml = '<div style="margin-top:10px;padding:10px;background:var(--surface2);border-radius:var(--radius-sm)"><p style="font-weight:700;margin-bottom:6px">⚽ 小组赛战况</p>';
+    teamMatches.forEach(function(m){
+      const opp = m.home===id ? TEAMS.find(function(x){return x.id===m.away;}) : TEAMS.find(function(x){return x.id===m.home;});
+      const isHome = m.home===id;
+      const result = actualResults[m.id];
+      let score = '<span style="color:var(--text3);font-size:.7rem">待定</span>';
+      if (result) {
+        var ms = isHome ? result.homeScore : result.awayScore;
+        var os = isHome ? result.awayScore : result.homeScore;
+        var col = ms>os?'var(--green)':ms===os?'var(--gold)':'var(--red)';
+        score = '<b style="color:'+col+'">'+ms+':'+os+'</b>';
+      }
+      matchesHtml += '<div style="display:flex;align-items:center;gap:8px;padding:4px 0;font-size:.78rem;border-bottom:1px solid var(--border)"><span style="color:var(--text3);min-width:58px">'+m.date.slice(5)+' '+m.time+'</span><span>'+ (opp?opp.flag:'?') +'</span><span style="flex:1">'+(isHome?'vs':'@')+' '+(opp?opp.cn:'待定')+'</span>'+score+'</div>';
+    });
+    matchesHtml += '</div>';
+  }
+
+  document.getElementById('teamModalContent').innerHTML=`<button class="mclose" onclick="closeModal()">✕</button><h3>${t.flag} ${t.cn} <span style="color:var(--text2)">${t.name}</span></h3><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:14px 0"><div class="stat-box"><div class="num">#${t.rk}</div><div class="lbl">FIFA排名</div></div><div class="stat-box"><div class="num">${str.toFixed(1)}</div><div class="lbl">AI综合实力</div></div><div class="stat-box"><div class="num" style="color:var(--gold)">${todds.odds.toFixed(1)}</div><div class="lbl">夺冠指数</div></div></div><div style="padding:10px;background:var(--surface2);border-radius:var(--radius-sm);margin-bottom:14px"><div style="display:flex;justify-content:space-around;text-align:center"><div><div style="font-size:.75rem;color:var(--text2)">参考概率</div><div style="font-size:1.2rem;font-weight:700;color:var(--accent)">${oddsP.toFixed(1)}%</div></div><div><div style="font-size:.75rem;color:var(--text2)">Opta超级计算机</div><div style="font-size:1.2rem;font-weight:700;color:var(--purple)">${todds.opta.toFixed(1)}%</div></div>${cp?`<div><div style="font-size:.75rem;color:var(--text2)">AI蒙特卡洛模拟</div><div style="font-size:1.2rem;font-weight:700;color:var(--gold)">${(cp.prob*100).toFixed(1)}%</div></div>`:'<div></div>'}</div></div><p><strong>进攻：</strong>${t.att} | <strong>防守：</strong>${t.def}</p><p><strong>世界杯最佳：</strong>${t.best}</p><p><strong>参赛次数：</strong>${t.apps}次 | <strong>洲际：</strong>${t.conf}</p><p><strong>近期：</strong>${t.recent}</p><p><strong>核心球员：</strong>${t.stars.join('、')}</p>${t.news?`<p style="color:var(--orange)"><strong>📰 最新动态：</strong>${t.news}</p>`:''}${t.inj?`<p style="color:var(--red)"><strong>🏥 伤病情况：</strong>${t.inj}</p>`:''}${matchesHtml}${lineupHtml}${rp?`<div style="margin-top:10px;padding:10px;background:var(--surface2);border-radius:var(--radius-sm)"><p style="font-weight:700;margin-bottom:6px">📊 AI预测晋级各轮概率</p><div style="display:flex;gap:6px;flex-wrap:wrap"><span style="background:#4da6ff;padding:2px 8px;border-radius:3px;font-size:.75rem">32强 ${(rp.r32*100).toFixed(1)}%</span><span style="background:#00c853;padding:2px 8px;border-radius:3px;font-size:.75rem">16强 ${(rp.r16*100).toFixed(1)}%</span><span style="background:#f0b90b;padding:2px 8px;border-radius:3px;font-size:.75rem">8强 ${(rp.qf*100).toFixed(1)}%</span><span style="background:#ff9100;padding:2px 8px;border-radius:3px;font-size:.75rem">4强 ${(rp.sf*100).toFixed(1)}%</span><span style="background:#ff3d57;padding:2px 8px;border-radius:3px;font-size:.75rem">决赛 ${(rp.final*100).toFixed(1)}%</span><span style="background:#ffd700;padding:2px 8px;border-radius:3px;font-size:.75rem">冠军 ${(rp.champ*100).toFixed(1)}%</span></div></div>`:''}`;
   document.getElementById('teamModal').style.display='flex';
 }
 
@@ -3653,8 +3734,8 @@ async function initResults() {
   // 2. Cloud function HTTP (primary source)
   await loadFromCloud();
 
-  // 3. News from cloud
-  loadNewsFromCloud().catch(function(){});
+  // 3. News will be loaded by refreshNews (uses cloud function)
+  // (already triggered by page init)
 
   // 4. Fallback: if nothing loaded, use demo seed
   if (Object.keys(actualResults).length === 0) {

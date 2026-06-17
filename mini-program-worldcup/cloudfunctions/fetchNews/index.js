@@ -1,4 +1,4 @@
-// Cloud function: fetch latest World Cup news from RSS feeds
+// Cloud function: fetch World Cup news from API-Football (primary) + RSS (fallback)
 const cloud = require('wx-server-sdk');
 const https = require('https');
 
@@ -6,39 +6,33 @@ cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV });
 const db = cloud.database();
 
 // ========== CONFIG ==========
+const APIFOOTBALL_KEY = process.env.APIFOOTBALL_KEY || '';
+const APIFOOTBALL_HOST = 'v3.football.api-sports.io';
+
 const RSS_SOURCES = [
   'https://feeds.bbci.co.uk/sport/football/rss.xml',
   'https://www.espn.com/espn/rss/soccer/news',
   'https://www.skysports.com/rss/12040',
 ];
 
-const WC_KEYWORDS = [
-  'world cup', 'World Cup', 'World Cup 2026', '2026 World Cup',
-  '世界杯', 'FIFA', 'fifa',
-  'Mexico', 'Canada', 'United States', 'USA',
-  'Argentina', 'Brazil', 'France', 'England', 'Germany', 'Spain',
-  'Portugal', 'Netherlands', 'Japan', 'Korea', 'Croatia', 'Belgium',
-  'Uruguay', 'Colombia', 'Senegal', 'Morocco', 'Sweden', 'Norway',
-  'Mbappe', 'Messi', 'Ronaldo', 'Haaland', 'Neymar', 'Salah',
-  'Bellingham', 'Vinicius', 'Yamal', 'Kane', 'De Bruyne',
-  'group stage', 'knockout', 'semifinal', 'final',
-  'tournament', 'stadium', 'host', 'qualify',
-  'injury', 'squad', 'lineup', 'manager'
-];
+// ========== HTTP helpers ==========
+function fetchJSON(host, path, headers) {
+  return new Promise((resolve, reject) => {
+    https.get({ host, path, headers, timeout: 15000 }, res => {
+      let body = '';
+      res.on('data', c => body += c);
+      res.on('end', () => { try { resolve(JSON.parse(body)); } catch(e) { reject(e); } });
+    }).on('error', reject);
+  });
+}
 
-const MIN_WC_KEYWORD_MATCH = 1;
-
-// ========== RSS FETCH ==========
-function fetchRSS(url) {
+function fetchText(url) {
   return new Promise((resolve, reject) => {
     const req = https.get(url, { timeout: 10000 }, res => {
-      // Follow redirects (301/302)
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        return fetchRSS(res.headers.location).then(resolve).catch(reject);
+        return fetchText(res.headers.location).then(resolve).catch(reject);
       }
-      if (res.statusCode !== 200) {
-        return reject(new Error(`HTTP ${res.statusCode}`));
-      }
+      if (res.statusCode !== 200) return reject(new Error(`HTTP ${res.statusCode}`));
       let body = '';
       res.on('data', c => body += c);
       res.on('end', () => resolve(body));
@@ -48,45 +42,96 @@ function fetchRSS(url) {
   });
 }
 
-function parseRSSItems(xml) {
-  const items = [];
-  // Extract <item>...</item> blocks
-  const itemRegex = /<item>([\s\S]*?)<\/item>/gi;
-  let match;
-  while ((match = itemRegex.exec(xml)) !== null) {
-    const block = match[1];
-    const title = extractTag(block, 'title');
-    const link = extractTag(block, 'link');
-    const desc = extractTag(block, 'description') || '';
-    const pubDate = extractTag(block, 'pubDate') || extractTag(block, 'dc:date') || '';
-    if (title) {
-      items.push({ title: decodeXML(title), link, desc: decodeXML(desc).replace(/<[^>]*>/g, '').slice(0, 200), pubDate });
-    }
+// ========== Source 1: API-Football /v3/news ==========
+async function fetchFromAPIFootball() {
+  if (!APIFOOTBALL_KEY) {
+    console.log('No APIFOOTBALL_KEY set, skipping API-Football');
+    return [];
   }
-  return items;
+
+  const newsItems = [];
+
+  try {
+    // Fetch WC news (competition=2000) + general football news
+    const endpoints = [
+      `/news?league=2000`,              // World Cup specific
+      `/news?league=2000&season=2026`,  // 2026 WC season
+      `/news?team=`,                     // will be skipped, placeholder
+    ];
+
+    for (const ep of endpoints.slice(0, 2)) {
+      const data = await fetchJSON(APIFOOTBALL_HOST, '/v3' + ep, {
+        'x-apisports-key': APIFOOTBALL_KEY,
+        'x-apisports-host': APIFOOTBALL_HOST,
+      });
+
+      const articles = data.response || data.articles || [];
+      for (const a of articles) {
+        newsItems.push({
+          title: a.title || '',
+          summary: a.summary || a.description || '',
+          source: a.source?.name || a.source || 'API-Football',
+          url: a.url || '',
+          pubDate: a.publishedAt || a.publishDate || a.date || '',
+          image: a.image || a.thumbnail || '',
+          matchName: a.match?.name || '',
+        });
+      }
+    }
+  } catch(e) {
+    console.log('API-Football failed:', e.message);
+  }
+
+  return newsItems;
 }
 
-function extractTag(block, tag) {
-  const regex = new RegExp(`<${tag}[^>]*>([\\s\\S]*?)</${tag}>`, 'i');
-  const m = block.match(regex);
-  return m ? m[1].trim() : '';
+// ========== Source 2: RSS feeds (fallback) ==========
+async function fetchFromRSS() {
+  const WC_KEYWORDS = [
+    'world cup', 'World Cup', 'World Cup 2026', '2026 World Cup',
+    'FIFA', 'fifa', 'Mexico', 'Canada', 'United States',
+    'Argentina', 'Brazil', 'France', 'England', 'Germany', 'Spain',
+    'Portugal', 'Netherlands', 'Japan', 'Korea', 'Croatia', 'Belgium',
+    'Uruguay', 'Colombia', 'Senegal', 'Morocco', 'Sweden', 'Norway',
+    'Mbappe', 'Messi', 'Ronaldo', 'Haaland', 'Neymar', 'Salah',
+    'Bellingham', 'Vinicius', 'Kane', 'De Bruyne',
+    'group stage', 'knockout', 'semifinal', 'final', 'tournament',
+  ];
+
+  const allItems = [];
+  for (const url of RSS_SOURCES) {
+    try {
+      const xml = await fetchText(url);
+      const itemRegex = /<item>([\s\S]*?)<\/item>/gi;
+      let match;
+      while ((match = itemRegex.exec(xml)) !== null) {
+        const block = match[1];
+        const title = (block.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '';
+        const desc = ((block.match(/<description[^>]*>([\s\S]*?)<\/description>/i) || [])[1] || '').replace(/<[^>]*>/g, '').slice(0, 200);
+        if (!title) continue;
+
+        const text = (title + ' ' + desc).toLowerCase();
+        const hits = WC_KEYWORDS.filter(kw => text.includes(kw.toLowerCase())).length;
+        if (hits >= 1) {
+          allItems.push({ title: decodeXML(title), summary: desc, source: 'RSS', pubDate: '' });
+        }
+      }
+    } catch(e) { /* skip */ }
+  }
+
+  const seen = new Set();
+  return allItems.filter(item => {
+    const key = item.title.slice(0, 60).toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  }).slice(0, 30);
 }
 
 function decodeXML(str) {
-  return str
-    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+  return str.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"').replace(/&apos;/g, "'")
     .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)));
-}
-
-function isWorldCup(item) {
-  const text = (item.title + ' ' + item.desc).toLowerCase();
-  let hits = 0;
-  for (const kw of WC_KEYWORDS) {
-    if (text.includes(kw.toLowerCase())) hits++;
-    if (hits >= MIN_WC_KEYWORD_MATCH) return true;
-  }
-  return false;
 }
 
 // ========== FALLBACK SEED ==========
@@ -95,9 +140,6 @@ const FALLBACK_NEWS = [
   '🔴 阿根廷梅西腿筋管理出场时间，帕雷德斯伤缺，塔利亚菲科疑缺',
   '🔴 伊朗阿兹蒙因签证落选大名单，贾汉巴赫什等多人伤疑',
   '🔴 乌拉圭阿劳霍+希门尼斯双双缺阵首战，贝尔萨防线告急',
-  '🔴 塞内加尔库利巴利大腿血肿出战成疑，盖耶也存疑',
-  '🔴 阿尔及利亚本塞拜尼足部伤缺，齐达内戴护面出战',
-  '🔴 奥地利鲍姆加特纳整届赛事报销，阿拉巴疑缺',
   '🔴 荷兰西蒙斯ACL+廷贝尔腹股沟+德利赫特背伤三主力缺阵',
   '🔴 日本三笘薰腘绳肌伤缺，远藤航足部伤退出国家队',
   '🔴 巴西罗德里戈ACL报销，内马尔小腿伤疑',
@@ -113,7 +155,7 @@ const FALLBACK_NEWS = [
   '📊 夺冠指数更新：西班牙5.50居首，法国6.00紧随其后',
   '🏟️ 2026世界杯48队首次扩军，12组×4队全新赛制',
   '⭐ 姆巴佩戴法国队长袖标，德尚确认最后一届执教',
-  '🔥 挪威26年来首次晋级，哈兰德预选赛轰入16球'
+  '🔥 挪威26年来首次晋级，哈兰德预选赛轰入16球',
 ];
 
 // ========== MAIN ==========
@@ -138,46 +180,49 @@ exports.main = async (event) => {
 
   const now = new Date();
   const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
+
+  // Ensure collection exists
+  try { await db.createCollection('worldcup_news'); } catch(e) {}
+
   console.log(`[${ts}] Fetching World Cup news...`);
 
   let allItems = [];
 
-  // Fetch from all RSS sources
-  for (const url of RSS_SOURCES) {
-    try {
-      console.log(`[${ts}] Fetching: ${url}`);
-      const xml = await fetchRSS(url);
-      const items = parseRSSItems(xml);
-      const wcItems = items.filter(isWorldCup);
-      console.log(`[${ts}]   -> ${items.length} total, ${wcItems.length} WC-related`);
-      allItems = allItems.concat(wcItems);
-    } catch (e) {
-      console.log(`[${ts}]   -> Failed: ${e.message}`);
-    }
+  // Source 1: API-Football (primary, has real news articles)
+  console.log(`[${ts}] Trying API-Football...`);
+  const apiItems = await fetchFromAPIFootball();
+  console.log(`[${ts}] API-Football: ${apiItems.length} articles`);
+  allItems = allItems.concat(apiItems);
+
+  // Source 2: RSS (fallback)
+  if (allItems.length < 5) {
+    console.log(`[${ts}] Trying RSS fallback...`);
+    const rssItems = await fetchFromRSS();
+    console.log(`[${ts}] RSS: ${rssItems.length} items`);
+    // Deduplicate vs API items
+    const seen = new Set(allItems.map(i => i.title.slice(0, 40).toLowerCase()));
+    rssItems.forEach(i => {
+      if (!seen.has(i.title.slice(0, 40).toLowerCase())) {
+        allItems.push(i);
+        seen.add(i.title.slice(0, 40).toLowerCase());
+      }
+    });
   }
 
-  // Deduplicate by title similarity
-  const seen = new Set();
-  const unique = [];
-  for (const item of allItems) {
-    const key = item.title.slice(0, 60).toLowerCase();
-    if (seen.has(key)) continue;
-    seen.add(key);
-    unique.push(item);
-  }
-
-  console.log(`[${ts}] Total unique WC news: ${unique.length}`);
-
-  // Build news texts: use RSS items if available, otherwise fallback
+  // Build display texts
   let newsTexts;
-  if (unique.length >= 5) {
-    newsTexts = unique.slice(0, 30).map(item => {
-      const icon = item.title.toLowerCase().includes('injury') || item.title.includes('伤') ? '🔴' :
-                   item.title.toLowerCase().includes('win') || item.title.includes('胜') ? '🔥' : '📰';
-      return `${icon} ${item.title}`;
+  if (allItems.length >= 5) {
+    newsTexts = allItems.slice(0, 30).map(item => {
+      const t = item.title.toLowerCase();
+      let icon = '📰';
+      if (t.includes('injury') || t.includes('injured') || item.title.includes('伤')) icon = '🔴';
+      else if (t.includes('win') || t.includes('beat') || t.includes('goal') || item.title.includes('胜')) icon = '🔥';
+      else if (t.includes('transfer') || t.includes('sign')) icon = '🔄';
+      else if (t.includes('final') || t.includes('champion') || item.title.includes('冠军')) icon = '🏆';
+      return `${icon} ${item.title}${item.summary ? ' — ' + item.summary.slice(0, 80) : ''}`;
     });
   } else {
-    console.log(`[${ts}] Insufficient RSS news (${unique.length}), using fallback seed`);
+    console.log(`[${ts}] Insufficient news (${allItems.length}), using fallback seed`);
     newsTexts = FALLBACK_NEWS;
   }
 
@@ -186,21 +231,19 @@ exports.main = async (event) => {
     _id: 'latest',
     items: newsTexts,
     total: newsTexts.length,
-    source: unique.length >= 5 ? 'rss' : 'fallback',
-    rssCount: unique.length,
+    source: allItems.length >= 5 ? 'api-football' : 'fallback',
+    liveCount: allItems.length,
     updatedAt: now.toISOString()
   };
 
-  try {
-    await db.collection('worldcup_news').doc('latest').remove();
-  } catch (e) { /* first time */ }
+  try { await db.collection('worldcup_news').doc('latest').remove(); } catch(e) {}
   await db.collection('worldcup_news').add({ data });
 
   return {
     ok: true,
     source: data.source,
     total: newsTexts.length,
-    rssCount: unique.length,
+    liveCount: allItems.length,
     updatedAt: data.updatedAt
   };
 };

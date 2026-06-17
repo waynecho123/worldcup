@@ -803,22 +803,45 @@ const MATCH_SCHEDULE = [
   {id:"m070",date:"2026-06-28",time:"06:00",home:"COD",away:"UZB",grp:"K",stage:"group",matchday:3,venue:"Lincoln Financial, Philadelphia",simul:"K"},
   {id:"m071",date:"2026-06-28",time:"09:00",home:"ENG",away:"PAN",grp:"L",stage:"group",matchday:3,venue:"AT&T Stadium, Dallas",simul:"L"},
   {id:"m072",date:"2026-06-28",time:"09:00",home:"CRO",away:"GHA",grp:"L",stage:"group",matchday:3,venue:"Levi's Stadium, SF Bay",simul:"L"},
-  // === Knockout: Round of 32 (June 29 - July 4) ===
-  {id:"k01",date:"2026-06-29",time:"TBD",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Various"},
-  // ... (16 knockout slots filled after group stage)
-  {id:"k02",date:"2026-07-04",time:"TBD",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Various"},
-  // Round of 16
-  {id:"k17",date:"2026-07-05",time:"TBD",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"Various"},
-  {id:"k24",date:"2026-07-08",time:"TBD",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"Various"},
-  // Quarter-finals
-  {id:"k25",date:"2026-07-10",time:"TBD",home:"?",away:"?",grp:"",stage:"qf",matchday:null,venue:""},
-  {id:"k28",date:"2026-07-12",time:"TBD",home:"?",away:"?",grp:"",stage:"qf",matchday:null,venue:""},
-  // Semi-finals
-  {id:"k29",date:"2026-07-15",time:"TBD",home:"?",away:"?",grp:"",stage:"sf",matchday:null,venue:"AT&T Stadium, Dallas"},
-  {id:"k30",date:"2026-07-16",time:"TBD",home:"?",away:"?",grp:"",stage:"sf",matchday:null,venue:"Mercedes-Benz Stadium, Atlanta"},
-  // 3rd place + Final
-  {id:"k31",date:"2026-07-18",time:"TBD",home:"?",away:"?",grp:"",stage:"tpp",matchday:null,venue:"Hard Rock Stadium, Miami"},
-  {id:"k32",date:"2026-07-20",time:"03:00",home:"?",away:"?",grp:"",stage:"final",matchday:null,venue:"MetLife Stadium, NY/NJ",featured:true},
+  // === Knockout: Round of 32 (June 30 - July 3) ===
+  // 16 matches — teams determined by group results
+  {id:"k01",date:"2026-06-30",time:"00:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Hard Rock Stadium, Miami"},
+  {id:"k02",date:"2026-06-30",time:"03:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"MetLife Stadium, NY/NJ"},
+  {id:"k03",date:"2026-06-30",time:"06:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"AT&T Stadium, Dallas"},
+  {id:"k04",date:"2026-06-30",time:"09:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"SoFi Stadium, Los Angeles"},
+  {id:"k05",date:"2026-07-01",time:"00:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"NRG Stadium, Houston"},
+  {id:"k06",date:"2026-07-01",time:"03:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Mercedes-Benz Stadium, Atlanta"},
+  {id:"k07",date:"2026-07-01",time:"06:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Arrowhead Stadium, Kansas City"},
+  {id:"k08",date:"2026-07-01",time:"09:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Lumen Field, Seattle"},
+  {id:"k09",date:"2026-07-02",time:"00:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Gillette Stadium, Boston"},
+  {id:"k10",date:"2026-07-02",time:"03:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"BMO Field, Toronto"},
+  {id:"k11",date:"2026-07-02",time:"06:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"BC Place, Vancouver"},
+  {id:"k12",date:"2026-07-02",time:"09:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Levi's Stadium, SF Bay"},
+  {id:"k13",date:"2026-07-03",time:"00:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Estadio Banorte, Mexico City"},
+  {id:"k14",date:"2026-07-03",time:"03:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Lincoln Financial, Philadelphia"},
+  {id:"k15",date:"2026-07-03",time:"06:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Hard Rock Stadium, Miami"},
+  {id:"k16",date:"2026-07-03",time:"09:00",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"MetLife Stadium, NY/NJ"},
+  // === Round of 16 (July 5-8) ===
+  {id:"k17",date:"2026-07-05",time:"00:00",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"AT&T Stadium, Dallas"},
+  {id:"k18",date:"2026-07-05",time:"03:00",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"SoFi Stadium, Los Angeles"},
+  {id:"k19",date:"2026-07-06",time:"00:00",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"Mercedes-Benz Stadium, Atlanta"},
+  {id:"k20",date:"2026-07-06",time:"03:00",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"MetLife Stadium, NY/NJ"},
+  {id:"k21",date:"2026-07-07",time:"00:00",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"NRG Stadium, Houston"},
+  {id:"k22",date:"2026-07-07",time:"03:00",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"Arrowhead Stadium, Kansas City"},
+  {id:"k23",date:"2026-07-08",time:"00:00",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"Lumen Field, Seattle"},
+  {id:"k24",date:"2026-07-08",time:"03:00",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"BMO Field, Toronto"},
+  // === Quarter-finals (July 10-12) ===
+  {id:"k25",date:"2026-07-10",time:"00:00",home:"?",away:"?",grp:"",stage:"qf",matchday:null,venue:"Hard Rock Stadium, Miami"},
+  {id:"k26",date:"2026-07-10",time:"03:00",home:"?",away:"?",grp:"",stage:"qf",matchday:null,venue:"SoFi Stadium, Los Angeles"},
+  {id:"k27",date:"2026-07-11",time:"00:00",home:"?",away:"?",grp:"",stage:"qf",matchday:null,venue:"AT&T Stadium, Dallas"},
+  {id:"k28",date:"2026-07-12",time:"00:00",home:"?",away:"?",grp:"",stage:"qf",matchday:null,venue:"MetLife Stadium, NY/NJ"},
+  // === Semi-finals (July 14-15) ===
+  {id:"k29",date:"2026-07-14",time:"03:00",home:"?",away:"?",grp:"",stage:"sf",matchday:null,venue:"AT&T Stadium, Dallas"},
+  {id:"k30",date:"2026-07-15",time:"03:00",home:"?",away:"?",grp:"",stage:"sf",matchday:null,venue:"Mercedes-Benz Stadium, Atlanta"},
+  // === Third Place (July 18) ===
+  {id:"k31",date:"2026-07-18",time:"02:00",home:"?",away:"?",grp:"",stage:"tpp",matchday:null,venue:"Hard Rock Stadium, Miami"},
+  // === Final (July 19) ===
+  {id:"k32",date:"2026-07-19",time:"03:00",home:"?",away:"?",grp:"",stage:"final",matchday:null,venue:"MetLife Stadium, NY/NJ",featured:true},
 ]
 
 var JC_NUMBERS = {
