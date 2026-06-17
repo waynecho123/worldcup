@@ -2930,6 +2930,8 @@ function renderMatchCard(m) {
         <div class="mc-prob"><span class="dot" style="background:var(--text3)"></span>平 ${dProb}%</div>
         <div class="mc-prob"><span class="dot" style="background:var(--red)"></span>${at.cn}胜 ${aProb}%</div>
       </div>` : ''}
+      ${pred.upsetAlert ? `<div style="margin-top:4px;font-size:.7rem;color:#ff9100;font-weight:700;text-align:center">⚠️ 爆冷预警：${pred.upsetTeam}有冷门可能！</div>` : ''}
+      ${pred.oddsBlended ? `<div style="font-size:.62rem;color:#8b5cf6;text-align:center;margin-top:2px">🎯 已融合机构赔率</div>` : ''}
       ${oddsHTML}
       ${newsTag}
       ${liveOddsBadge}
@@ -3183,6 +3185,7 @@ function showMatchDetail(mid) {
   var updInfo = getPredUpdateInfo(mid);
   if (updInfo) html += '<div style="text-align:right;margin-top:4px">'+updInfo+'</div>';
   html += '</div>';
+  if (pred.upsetAlert) html += '<div style="padding:8px;margin-top:8px;background:rgba(255,145,0,.1);border:1px solid rgba(255,145,0,.3);border-radius:8px;text-align:center;font-weight:700;color:#ff9100;font-size:.78rem">⚠️ 爆冷预警：${pred.upsetTeam}存在${(pred.upsetProb*100).toFixed(0)}%冷门概率！</div>';
 
   // 10. AI深度分析 (~500字)
   html += generateMatchAnalysis(m, ht, at, pred, mol);
