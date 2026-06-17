@@ -7,6 +7,14 @@
 <title>CHO的世界杯小站</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js">
 </script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MNBR11EK01"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MNBR11EK01');
+</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -4243,10 +4251,10 @@ function renderReview() {
     <div class="stat-box"><div class="num" style="color:var(--gold)">${stats.exactAccuracy.toFixed(1)}%</div><div class="lbl">比分完全正确率</div></div>
     <div class="stat-box"><div class="num">${stats.avgGoalDiffError.toFixed(2)}</div><div class="lbl">平均净胜球误差</div></div>
     <div class="stat-box"><div class="num">${stats.avgTotalGoalError.toFixed(2)}</div><div class="lbl">平均总进球误差</div></div>
-    <div class="stat-box"><div class="num">${stats.brierScore.toFixed(3)}</div><div class="lbl">Brier评分(越低越好)</div></div>
-    <div class="stat-box"><div class="num" style="color:var(--accent)">${(stats.avgConfOnCorrect*100).toFixed(0)}%</div><div class="lbl">正确预测置信度</div></div>
-    <div class="stat-box"><div class="num" style="color:var(--red)">${(stats.avgConfOnWrong*100).toFixed(0)}%</div><div class="lbl">错误预测置信度</div></div>
-    ${stats.upsetTotal>0 ? `<div class="stat-box"><div class="num" style="color:var(--orange)">${(stats.upsetCorrect/stats.upsetTotal*100).toFixed(0)}%</div><div class="lbl">⚠️ 冷门预警准确率</div><div style="font-size:.58rem;color:var(--text3);margin-top:2px">${stats.upsetTotal}场 | 误报${stats.upsetFalsePos} | 漏报${stats.upsetFalseNeg}</div></div>` : ''}
+    <div class="stat-box"><div class="num">${stats.brierScore.toFixed(3)}</div><div class="lbl">Brier评分</div><div style="font-size:.55rem;color:var(--text3);margin-top:2px">概率校准度，越低越准</div></div>
+    <div class="stat-box"><div class="num" style="color:var(--accent)">${(stats.avgConfOnCorrect*100).toFixed(0)}%</div><div class="lbl">正确预测置信度</div><div style="font-size:.55rem;color:var(--text3);margin-top:2px">猜对时平均概率，越高越自信</div></div>
+    <div class="stat-box"><div class="num" style="color:var(--red)">${(stats.avgConfOnWrong*100).toFixed(0)}%</div><div class="lbl">错误预测置信度</div><div style="font-size:.55rem;color:var(--text3);margin-top:2px">猜错时平均概率，越低越清醒</div></div>
+    ${stats.upsetTotal>0 ? `<div class="stat-box"><div class="num" style="color:var(--orange)">${(stats.upsetCorrect/stats.upsetTotal*100).toFixed(0)}%</div><div class="lbl">⚠️ 冷门预警准确率</div><div style="font-size:.55rem;color:var(--text3);margin-top:2px">预警冷门是否应验 | 误报${stats.upsetFalsePos} 漏报${stats.upsetFalseNeg}</div></div>` : ''}
   `;
 
   // Accuracy trend chart
