@@ -15,6 +15,7 @@
     "📰 Highlights: Mbappe stars as France beat Senegal",
     "📰 How to watch the World Cup on the BBC and ITV",
     "📰 Catch up on the World Cup without any spoilers",
+    "🤝 葡萄牙 1-1 民主刚果 — 葡萄牙 1-1 民主刚果，双方激战成和",
     "⚽ 法国 3-1 塞内加尔 — 法国 3-1 取胜，关键3分",
     "🔥 伊拉克 1-4 挪威 — 挪威 4-1 大胜，强势表现",
     "🔥 阿根廷 3-0 阿尔及利亚 — 阿根廷 3-0 大胜，强势表现",
@@ -37,6 +38,18 @@
     "⚽ 墨西哥 2-0 南非 — 墨西哥 2-0 取胜，关键3分"
   ],
   "matchNews": [
+    {
+      "mid": "m021",
+      "icon": "🤝",
+      "title": "🤝 葡萄牙 1-1 民主刚果 — 葡萄牙 1-1 民主刚果，双方激战成和",
+      "homeTeam": "POR",
+      "awayTeam": "COD",
+      "homeScore": 1,
+      "awayScore": 1,
+      "matchDate": "2026-06-18",
+      "sentiment": "neutral",
+      "updatedAt": "2026-06-17T19:35:02.305Z"
+    },
     {
       "mid": "m017",
       "icon": "⚽",
@@ -335,6 +348,6 @@
       "📰 Highlights: Mbappe stars as France beat Senegal"
     ]
   },
-  "total": 35,
-  "updatedAt": "2026-06-17T19:32:57.941Z"
+  "total": 36,
+  "updatedAt": "2026-06-17T19:35:03.606Z"
 }
