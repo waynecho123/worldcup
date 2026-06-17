@@ -1,18 +1,18 @@
 {
   "items": [
     "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
-    "📰 Rate the players in England's World Cup opener against Croatia",
-    "📰 DR Congo earn World Cup point against Portugal",
+    "📰 Who was the biggest attacking threat? England player ratings",
+    "📰 Bellingham scores early in second half to put England 3-2 up",
     "📰 Can Bellingham become England's superstar once more at the World Cup?",
     "📰 How sweltering Scotland can handle World Cup heat",
     "📰 Extraordinary Messi makes more history in masterclass for the ages",
     "📰 No stage too big - Haaland arrives in style at World Cup",
     "📰 England won't change style despite US heat - Tuchel",
     "📰 Emotional Messi explains tears after Argentina goal",
+    "📰 Musa strikes for Croatia to make it 2-2 against England",
+    "📰 DR Congo earn World Cup point against Portugal",
     "📰 Messi stays humble after hat-trick performance",
     "📰 'Magnificent' - Messi scores hat-trick to equal Klose scoring record",
-    "📰 Highlights: Messi equals Klose scoring record with hat-trick against Algeria ",
-    "📰 Highlights: Haaland scores twice in Norway win over Iraq  ",
     "📰 How to watch the World Cup on the BBC and ITV",
     "📰 Catch up on the World Cup without any spoilers",
     "🤝 葡萄牙 1-1 民主刚果 — 葡萄牙 1-1 民主刚果，双方激战成和",
@@ -293,18 +293,18 @@
   ],
   "generalNews": [
     "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
-    "📰 Rate the players in England's World Cup opener against Croatia",
-    "📰 DR Congo earn World Cup point against Portugal",
+    "📰 Who was the biggest attacking threat? England player ratings",
+    "📰 Bellingham scores early in second half to put England 3-2 up",
     "📰 Can Bellingham become England's superstar once more at the World Cup?",
     "📰 How sweltering Scotland can handle World Cup heat",
     "📰 Extraordinary Messi makes more history in masterclass for the ages",
     "📰 No stage too big - Haaland arrives in style at World Cup",
     "📰 England won't change style despite US heat - Tuchel",
     "📰 Emotional Messi explains tears after Argentina goal",
+    "📰 Musa strikes for Croatia to make it 2-2 against England",
+    "📰 DR Congo earn World Cup point against Portugal",
     "📰 Messi stays humble after hat-trick performance",
     "📰 'Magnificent' - Messi scores hat-trick to equal Klose scoring record",
-    "📰 Highlights: Messi equals Klose scoring record with hat-trick against Algeria ",
-    "📰 Highlights: Haaland scores twice in Norway win over Iraq  ",
     "📰 How to watch the World Cup on the BBC and ITV",
     "📰 Catch up on the World Cup without any spoilers"
   ],
@@ -314,15 +314,9 @@
       "📰 DR Congo earn World Cup point against Portugal"
     ],
     "ENG": [
-      "📰 Rate the players in England's World Cup opener against Croatia",
-      "📰 Can Bellingham become England's superstar once more at the World Cup?",
-      "📰 England won't change style despite US heat - Tuchel"
-    ],
-    "CRO": [
-      "📰 Rate the players in England's World Cup opener against Croatia"
-    ],
-    "COD": [
-      "📰 DR Congo earn World Cup point against Portugal"
+      "📰 Who was the biggest attacking threat? England player ratings",
+      "📰 Bellingham scores early in second half to put England 3-2 up",
+      "📰 Can Bellingham become England's superstar once more at the World Cup?"
     ],
     "SCO": [
       "📰 How sweltering Scotland can handle World Cup heat"
@@ -333,19 +327,19 @@
       "📰 Messi stays humble after hat-trick performance"
     ],
     "NOR": [
-      "📰 No stage too big - Haaland arrives in style at World Cup",
-      "📰 Highlights: Haaland scores twice in Norway win over Iraq  "
+      "📰 No stage too big - Haaland arrives in style at World Cup"
     ],
     "USA": [
-      "📰 England won't change style despite US heat - Tuchel"
+      "📰 England won't change style despite US heat - Tuchel",
+      "📰 Musa strikes for Croatia to make it 2-2 against England"
     ],
-    "ALG": [
-      "📰 Highlights: Messi equals Klose scoring record with hat-trick against Algeria "
+    "CRO": [
+      "📰 Musa strikes for Croatia to make it 2-2 against England"
     ],
-    "IRQ": [
-      "📰 Highlights: Haaland scores twice in Norway win over Iraq  "
+    "COD": [
+      "📰 DR Congo earn World Cup point against Portugal"
     ]
   },
   "total": 36,
-  "updatedAt": "2026-06-17T21:52:49.924Z"
+  "updatedAt": "2026-06-17T22:03:16.205Z"
 }
