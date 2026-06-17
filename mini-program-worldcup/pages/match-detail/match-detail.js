@@ -427,17 +427,40 @@ Page({
       parts.push('⚠️ 【冷门复盘】赛前Monte Carlo冷门概率' + upsetPct + '%。' + upsetVerdict);
     }
 
-    // 9. Overall summary
-    const dimensions = [outcomeCorrect, exactCorrect, Math.abs(strGap) <= 4 || (strGap > 0 === actualOutcome === 'home')];
-    const score = dimensions.filter(Boolean).length;
+    // 9. Root cause analysis (when prediction was wrong)
+    if (!outcomeCorrect) {
+      var favTeam = hStr > aStr ? ht : at;
+      var underTeam = hStr > aStr ? at : ht;
+      var gap = Math.abs(hStr - aStr);
+      var rootCauses = [];
+      if (gap > 15 && underTeam.news && /黑马|崛起|强劲|势头|impressive|surprise|giant.killer/i.test(underTeam.news)) {
+        rootCauses.push('弱队' + underTeam.cn + '赛前标签"' + underTeam.news + '"被严重低估');
+      }
+      if (gap > 10) {
+        rootCauses.push('实力差距' + gap.toFixed(1) + '分过大，模型对强弱悬殊比赛的冷门概率天然偏低');
+      }
+      if (favTeam.cn === '葡萄牙' || (favTeam.stars && favTeam.stars.some(function(s){return /Ronaldo|Messi|Modric|Suarez/i.test(s)}))) {
+        rootCauses.push(favTeam.cn + '核心球星年龄偏大，模型未对老将状态衰减建模');
+      }
+      if (underTeam.recent && /4强|亚军|冠军|决赛|semi|final/i.test(underTeam.recent)) {
+        rootCauses.push(underTeam.cn + '近期成绩"' + underTeam.recent + '"表明其状态远超标称排名');
+      }
+      if (/CAF|AFC/.test(underTeam.conf) && gap > 10) {
+        rootCauses.push(underTeam.cn + '来自' + (underTeam.conf === 'CAF' ? '非洲' : '亚洲') + '，世界杯历史上该洲球队常以弱胜强');
+      }
+      if (rootCauses.length === 0) rootCauses.push('实力评分与战术矩阵未能捕捉到本场关键变量');
+      parts.push('🔬 【偏差归因】' + rootCauses.join('；') + '。改进方向：引入洲际爆冷先验、动态年龄衰减、近期大赛成绩权重。');
+    }
+
+    // 10. Overall summary
     const overallVerdict = exactCorrect ? 'A+ 完美预测' :
                            outcomeCorrect && goalDiffErr <= 1 ? 'A 方向准确，比分接近' :
                            outcomeCorrect ? 'B+ 胜负正确，比分有偏差' :
                            goalDiffErr <= 1 ? 'B 比分接近但方向错误' : 'C 预测出现较大偏差';
     parts.push('🔮 【综合总结】本次预测综合评级：' + overallVerdict + '。' +
-      (exactCorrect ? '模型在所有维度上表现优秀，泊松模型+战术矩阵+赔率融合的框架在本场得到了充分验证。' :
-       outcomeCorrect ? '方向判断准确，但在具体比分/进球数上存在偏差，泊松模型的lambda参数可能需要根据实时信息（如首发名单、天气）做微调。' :
-       '本场暴露了模型的局限性：实力评分和战术矩阵可能未能充分反映某些关键因素（如临场状态、裁判尺度、意外事件）。建议关注赛后数据以优化模型参数。'));
+      (exactCorrect ? '模型在所有维度上表现优秀。' :
+       outcomeCorrect ? '方向判断准确，比分有偏差。' :
+       '模型出现偏差，详见偏差归因分析。'));
 
     return parts;
   }
