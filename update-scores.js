@@ -403,7 +403,7 @@ async function updateNews() {
       });
       if (newsResp.articles) {
         newsResp.articles.forEach(a => {
-          if (a.title) rssItems.push(a.title);
+          if (a.title) rssItems.push(a.title.replace(/<!\[CDATA\[|\]\]>/g, ''));
         });
         console.log(`[${ts}]   NewsAPI: ${newsResp.articles.length} articles`);
       }
@@ -442,9 +442,11 @@ async function updateNews() {
       return (tl.includes('injury') || tl.includes('injured') ? '🔴 ' : '📰 ') + t;
     });
 
+  const items = [...generalNews, ...matchNews.map(m => m.title)];
   const data = {
-    matchNews, generalNews: generalNews.length > 0 ? generalNews : [],
-    total: matchNews.length + generalNews.length,
+    items,
+    matchNews, generalNews,
+    total: items.length,
     updatedAt: now.toISOString()
   };
 
