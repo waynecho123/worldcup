@@ -71,42 +71,22 @@ const TEAM_MAP = {
   'Korea Republic':'KOR','Congo DR':'COD','United States of America':'USA',
 };
 
-// ========== RSA SIGN ==========
-function sign(apiKey, params) {
-  const ts = Date.now();
-  const sorted = Object.keys(params).sort();
-  const parts = [`apiKey=${apiKey}`, `timestamp=${ts}`];
-  sorted.forEach(k => { if (params[k] != null) parts.push(`${k}=${params[k]}`); });
-  const sig = crypto.sign('sha256', Buffer.from(parts.join('&'), 'utf-8'), {
-    key: Buffer.from(PRIVATE_KEY_B64, 'base64'), format: 'der', type: 'pkcs8',
-    padding: crypto.constants.RSA_PKCS1_PADDING,
-  });
-  return { ts, sig: sig.toString('base64') };
-}
+// ========== football-data.org API ==========
+const FD_TOKEN = process.env.FD_TOKEN;
+if (!FD_TOKEN) { console.error('Set FD_TOKEN environment variable'); process.exit(1); }
+const FD_BASE = 'https://api.football-data.org/v4';
 
-function apiGet(path, params = {}) {
+function fetchFD(path) {
   return new Promise((resolve, reject) => {
-    const { ts, sig } = sign(API_KEY, params);
-    const qs = Object.keys(params).filter(k => params[k] != null).sort()
-      .map(k => `${k}=${encodeURIComponent(params[k])}`).join('&');
-    const fullPath = qs ? `${path}?${qs}` : path;
-
-    https.get(`https://www.firoapi.com${fullPath}`, {
-      headers: { 'X-API-Key': API_KEY, 'X-Signature': sig, 'X-Timestamp': String(ts) },
-      rejectUnauthorized: false, timeout: 15000
+    https.get(`${FD_BASE}${path}`, {
+      headers: { 'X-Auth-Token': FD_TOKEN },
+      timeout: 15000
     }, res => {
       let d = '';
       res.on('data', c => d += c);
       res.on('end', () => { try { resolve(JSON.parse(d)); } catch(e) { reject(e); } });
     }).on('error', reject);
   });
-}
-
-// Get WC match IDs from sports-lottery/list
-async function getWCMatches() {
-  const resp = await apiGet('/firo/sports-lottery/list');
-  if (resp.code !== 200) throw new Error('list API failed');
-  return (resp.data || []).filter(m => m.matchMain?.leagueName === '世界杯');
 }
 
 // Map API team name to our team ID
@@ -188,38 +168,32 @@ async function updateScores() {
   const todayStr = now.toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
   const yesterdayStr = new Date(now.getTime() - 86400000).toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
 
-  // Minimal pre-check: only skip on true rest days (no matches in 2-day window)
   const sched = getMatchSchedule();
-  if (!sched.some(m => m.date === todayStr || m.date === yesterdayStr)) {
-    console.log(`[${ts}] Rest day. Skipping.`);
-    return false;
-  }
-
   const lookup = loadMatchLookup();
   const existing = loadJSON(SCORES_FILE);
 
+  // Fetch today + yesterday from football-data.org
   let allMatches = [];
-  // Fetch today + yesterday (BJT)
-  for (let off = 0; off <= 1; off++) {
-    const d = new Date(now.getTime() - off * 86400000).toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
+  for (const d of [yesterdayStr, todayStr]) {
     try {
-      const resp = await apiGet('/firo/tsd/soccer-events', { date: d, isJc: 1 });
-      if (resp.code === 200 && resp.data?.matches) {
-        allMatches = allMatches.concat(resp.data.matches);
-      }
-    } catch(e) {}
-    if (off > 0) await new Promise(r => setTimeout(r, 300));
+      const data = await fetchFD(`/competitions/2000/matches?dateFrom=${d}&dateTo=${d}`);
+      if (data.matches) allMatches = allMatches.concat(data.matches);
+    } catch(e) {
+      console.error(`[${ts}] API fetch failed for ${d}:`, e.message);
+    }
   }
 
   let n = 0, u = 0;
-  const seen = new Set();
   allMatches.forEach(m => {
-    if (!['FT','AET','PEN'].includes(m.strStatus)) return;
-    if (m.intHomeScore == null || m.intAwayScore == null) return;
-    const mid = findOurMatchId(m.strHomeTeam, m.strAwayTeam, lookup);
-    if (!mid || seen.has(mid)) return;
-    seen.add(mid);
-    const s = { homeScore: parseInt(m.intHomeScore), awayScore: parseInt(m.intAwayScore), recordedAt: now.toISOString() };
+    if (m.status !== 'FINISHED') return;
+    const homeScore = m.score?.fullTime?.home, awayScore = m.score?.fullTime?.away;
+    if (homeScore == null || awayScore == null) return;
+    // Use TLA codes (match our team IDs directly)
+    const htla = m.homeTeam?.tla, atla = m.awayTeam?.tla;
+    if (!htla || !atla) return;
+    const mid = lookup[htla + '-' + atla] || lookup[atla + '-' + htla];
+    if (!mid) return;
+    const s = { homeScore, awayScore, recordedAt: now.toISOString() };
     if (!existing[mid]) { existing[mid] = s; n++; }
     else if (existing[mid].homeScore !== s.homeScore || existing[mid].awayScore !== s.awayScore) { existing[mid] = s; u++; }
   });
