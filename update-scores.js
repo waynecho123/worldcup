@@ -389,8 +389,28 @@ async function updateNews() {
   // Sort by date desc
   matchNews.sort((a, b) => b.matchDate.localeCompare(a.matchDate));
 
-  // Also try RSS for general news
+  // Source 1: NewsAPI (free 100 req/day, works from GitHub Actions)
   let rssItems = [];
+  const NEWS_API_KEY = process.env.NEWS_API_KEY || '';
+  if (NEWS_API_KEY) {
+    try {
+      console.log(`[${ts}] Trying NewsAPI...`);
+      const newsResp = await new Promise((resolve, reject) => {
+        https.get(`https://newsapi.org/v2/everything?q=World+Cup+2026+football&language=en&pageSize=20&sortBy=publishedAt&apiKey=${NEWS_API_KEY}`, { timeout: 15000 }, res => {
+          let b = ''; res.on('data', c => b += c);
+          res.on('end', () => { try { resolve(JSON.parse(b)); } catch(e) { reject(e); } });
+        }).on('error', reject);
+      });
+      if (newsResp.articles) {
+        newsResp.articles.forEach(a => {
+          if (a.title) rssItems.push(a.title);
+        });
+        console.log(`[${ts}]   NewsAPI: ${newsResp.articles.length} articles`);
+      }
+    } catch(e) { console.log(`[${ts}]   NewsAPI failed: ${e.message}`); }
+  }
+
+  // Source 2: RSS for general news (fallback)
   const RSS_SOURCES = [
     'https://feeds.bbci.co.uk/sport/football/rss.xml',
     'https://www.espn.com/espn/rss/soccer/news',
@@ -444,11 +464,12 @@ const args = process.argv.slice(2);
 const watchMode = args.includes('--watch') || args.includes('-w');
 
 async function main() {
-  if (args.includes('--scores')) await updateScores();
-  else if (args.includes('--news')) await updateNews();
-  else if (args.includes('--odds')) await updateOdds();
-  else if (args.includes('--info')) await updateInfo();
-  else await updateAll();
+  let ran = false;
+  if (args.includes('--scores')) { await updateScores(); ran = true; }
+  if (args.includes('--news')) { await updateNews(); ran = true; }
+  if (args.includes('--odds')) { await updateOdds(); ran = true; }
+  if (args.includes('--info')) { await updateInfo(); ran = true; }
+  if (!ran) await updateAll();
 }
 
 if (watchMode) {
