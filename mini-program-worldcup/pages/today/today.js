@@ -47,9 +47,12 @@ Page({
       return { date: d, label: d.slice(5) + ' ' + dayNames[dObj.getDay()] };
     });
 
-    // Find default: first upcoming match date (today or next)
-    var todayStr = new Date().toISOString().slice(0, 10);
-    let defaultIdx = dates.findIndex(d => d.date >= todayStr);
+    // Find default: first date with >=1 unplayed match (next upcoming)
+    const actual = app.globalData.actualResults || {};
+    let defaultIdx = dates.findIndex(d => {
+      const dayMatches = data.MATCH_SCHEDULE.filter(m => m.date === d.date && m.stage === 'group');
+      return dayMatches.some(m => !actual[m.id]);
+    });
     if (defaultIdx < 0) defaultIdx = 0;
 
     this.setData({ dates, activeIdx: defaultIdx, activeDate: dates[defaultIdx].date });
