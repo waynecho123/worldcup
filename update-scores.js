@@ -185,45 +185,18 @@ function saveJSON(file, data) {
 async function updateScores() {
   const now = new Date();
   const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
-  // 用北京时间，因为赛程日期是BJT
   const todayStr = now.toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
-
-  // Pre-check: look at matches from the last 2 days (BJT) — robust against workflow delays
-  const sched = getMatchSchedule();
   const yesterdayStr = new Date(now.getTime() - 86400000).toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
-  const checkDates = [...new Set([todayStr, yesterdayStr])]; // unique dates
-  const checkMatches = sched.filter(m => checkDates.includes(m.date));
 
-  if (checkMatches.length === 0) {
-    const futureMatches = sched.filter(m => m.date > todayStr);
-    const nextDate = futureMatches.length > 0 ? futureMatches[0].date : 'none';
-    console.log(`[${ts}] No matches in ${checkDates.join('/')}. Next: ${nextDate}. Skipping.`);
-    return false;
-  }
-
-  // Pre-check: skip if no matches have ended yet, or all ended matches already scored
-  const existing = loadJSON(SCORES_FILE);
-  let endedCount = 0, scoredCount = 0;
-  checkMatches.forEach(m => {
-    if (!m.time) return;
-    const [h, min] = m.time.split(':').map(Number);
-    const kickoff = new Date(m.date + 'T' + String(h).padStart(2,'0') + ':' + String(min||0).padStart(2,'0') + ':00+08:00');
-    const endTime = new Date(kickoff.getTime() + 135 * 60000); // ~2h15m for match
-    if (now > endTime) {
-      endedCount++;
-      if (existing[m.id]) scoredCount++;
-    }
-  });
-  if (endedCount === 0) {
-    console.log(`[${ts}] No matches ended yet (checking ${checkDates.join('/')}: ${checkMatches.length} matches). Skipping.`);
-    return false;
-  }
-  if (scoredCount === endedCount && endedCount > 0) {
-    console.log(`[${ts}] All ${endedCount} ended matches already scored. Skipping.`);
+  // Minimal pre-check: only skip on true rest days (no matches in 2-day window)
+  const sched = getMatchSchedule();
+  if (!sched.some(m => m.date === todayStr || m.date === yesterdayStr)) {
+    console.log(`[${ts}] Rest day. Skipping.`);
     return false;
   }
 
   const lookup = loadMatchLookup();
+  const existing = loadJSON(SCORES_FILE);
 
   let allMatches = [];
   // Fetch today + yesterday (BJT)
