@@ -57,7 +57,7 @@ Page({
 
         let scoreHtml = { type: 'normal', predText: '-:-', actualText: '', pending: true };
         if (pred) {
-          scoreHtml.predText = pred.predScore[0] + ':' + pred.predScore[1];
+          scoreHtml.predText = pred.topScores.map(function(s) { return s.home + ':' + s.away; }).join(' · ');
         }
         if (result) {
           scoreHtml.actualText = result.homeScore + ':' + result.awayScore;

@@ -76,7 +76,7 @@ Page({
         spf: jc ? jc.spf.map(function(x) { return x.toFixed(2); }) : null,
         rq: jc ? jc.rq : null,
         rqO: jc && jc.rqO ? jc.rqO.map(function(x) { return x.toFixed(2); }) : null,
-        predScore: pred ? pred.predScore[0] + ':' + pred.predScore[1] : '?:?',
+        predScore: pred ? pred.topScores.map(function(s) { return s.home + ':' + s.away; }).join(' · ') : '?:?',
         homeProb: pred ? (pred.homeWinProb * 100).toFixed(0) : '',
         drawProb: pred ? (pred.drawProb * 100).toFixed(0) : '',
         awayProb: pred ? (pred.awayWinProb * 100).toFixed(0) : '',

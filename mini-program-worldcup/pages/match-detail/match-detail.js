@@ -165,7 +165,8 @@ Page({
         awayNews: at.news || '', awayInj: at.inj || ''
       },
       pred: {
-        score: pred.predScore[0] + ':' + pred.predScore[1],
+        score: pred.topScores.map(function(s) { return s.home + ':' + s.away; }).join(' · '),
+        scores: pred.topScores,
         homeProb: (pred.homeWinProb * 100).toFixed(0),
         drawProb: (pred.drawProb * 100).toFixed(0),
         awayProb: (pred.awayWinProb * 100).toFixed(0),
@@ -189,7 +190,7 @@ Page({
       topScores: topScoresList.slice(0, 6).map(s => ({
         score: s.h + ':' + s.a,
         prob: (s.prob * 100).toFixed(1),
-        isBest: s.h === pred.predScore[0] && s.a === pred.predScore[1]
+        isBest: pred.topScores.some(function(t) { return t.home === s.h && t.away === s.a; })
       })),
       htFT: htftResults.slice(0, 5).map(r => ({
         label: r.label, prob: (r.prob * 100).toFixed(1)
@@ -247,7 +248,8 @@ Page({
       parts.push('🏷️ 【机构参考】' + pred.marketConsensus.label + '。机构隐含概率：' + ht.cn + '胜' + pred.marketConsensus.mktHome + '% / 平' + pred.marketConsensus.mktDraw + '% / ' + at.cn + '胜' + pred.marketConsensus.mktAway + '%。');
     }
 
-    parts.push('🎯 【比分预测】AI预期进球' + pred.expH.toFixed(1) + '-' + pred.expA.toFixed(1) + '，最可能比分' + pred.predScore[0] + ':' + pred.predScore[1] + '。模型推演' + ht.cn + '胜' + (pred.homeWinProb*100).toFixed(0) + '% / 平' + (pred.drawProb*100).toFixed(0) + '% / ' + at.cn + '胜' + (pred.awayWinProb*100).toFixed(0) + '%。');
+    var topStr = pred.topScores.map(function(s) { return s.home + ':' + s.away; }).join(' · ');
+    parts.push('🎯 【比分预测】AI预期进球' + pred.expH.toFixed(1) + '-' + pred.expA.toFixed(1) + '，最可能比分TOP3：' + topStr + '。模型推演' + ht.cn + '胜' + (pred.homeWinProb*100).toFixed(0) + '% / 平' + (pred.drawProb*100).toFixed(0) + '% / ' + at.cn + '胜' + (pred.awayWinProb*100).toFixed(0) + '%。');
 
     // Live injuries from API
     if (apiInfo && apiInfo.injuries && apiInfo.injuries.length > 0) {
