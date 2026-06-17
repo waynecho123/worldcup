@@ -2288,12 +2288,12 @@ function getJCRecommendation(mid,ht,at){
   const gd=pred.predScore[0]-pred.predScore[1];if(jc.rq&&jc.rqO&&Math.abs(gd)>Math.abs(parseInt(jc.rq))+1)s.push({type:'进取',pick:gd>0?'让胜':'让负',odds:gd>0?jc.rqO[0]:jc.rqO[2],reason:'预测净胜'+Math.abs(gd)+'球'});
   const risk=Math.abs(best.dev)>10?'进取型':Math.abs(best.dev)>5?'均衡型':'保守型';
   const riskC=risk==='进取型'?'var(--red)':risk==='均衡型'?'var(--orange)':'var(--green)';
-  return{spf:jc.spf,fair,devs,best,s,risk,riskC,rq:jc.rq,rqO:jc.rqO||[],predScore:pred.predScore,totalG:pred.predScore[0]+pred.predScore[1]};
+  return{spf:jc.spf,fair,devs,best,s,risk,riskC,rq:jc.rq,rqO:jc.rqO||[],predScore:pred.predScore,topScores:pred.topScores,totalG:pred.predScore[0]+pred.predScore[1]};
 }
 
 function renderJCAnalysis(mid,ht,at){
   const r=getJCRecommendation(mid,ht,at);if(!r)return'';
-  return`<div style="margin:14px 0;padding:14px;background:rgba(240,185,11,.05);border:1px solid rgba(240,185,11,.2);border-radius:10px"><div style="font-weight:700;font-size:.85rem;margin-bottom:12px;color:var(--gold);display:flex;align-items:center;gap:8px"><span style="background:var(--red);color:#fff;padding:2px 8px;border-radius:10px;font-size:.65rem">竞猜</span>中国竞猜指数分析</div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center;margin-bottom:10px"><div style="padding:8px;background:var(--surface2);border-radius:6px"><div style="font-size:.7rem;color:var(--text2)">${ht.cn}胜</div><div style="font-size:1.2rem;font-weight:700;color:var(--accent)">${r.spf[0].toFixed(2)}</div><div style="font-size:.62rem;color:var(--text3)">隐含${(r.fair.home*100).toFixed(0)}%</div></div><div style="padding:8px;background:var(--surface2);border-radius:6px"><div style="font-size:.7rem;color:var(--text2)">平局</div><div style="font-size:1.2rem;font-weight:700;color:var(--text3)">${r.spf[1].toFixed(2)}</div><div style="font-size:.62rem;color:var(--text3)">隐含${(r.fair.draw*100).toFixed(0)}%</div></div><div style="padding:8px;background:var(--surface2);border-radius:6px"><div style="font-size:.7rem;color:var(--text2)">${at.cn}胜</div><div style="font-size:1.2rem;font-weight:700;color:var(--red)">${r.spf[2].toFixed(2)}</div><div style="font-size:.62rem;color:var(--text3)">隐含${(r.fair.away*100).toFixed(0)}%</div></div></div><div style="font-size:.7rem;color:var(--text2);margin-bottom:8px;display:flex;justify-content:space-around"><span>🤖AI:${(r.devs[0].prob*100).toFixed(0)}% ${r.devs[0].dev>0?'📈+':r.devs[0].dev<0?'📉':''}${Math.abs(r.devs[0].dev).toFixed(1)}%</span><span>🤖AI:${(r.devs[1].prob*100).toFixed(0)}% ${r.devs[1].dev>0?'📈+':r.devs[1].dev<0?'📉':''}${Math.abs(r.devs[1].dev).toFixed(1)}%</span><span>🤖AI:${(r.devs[2].prob*100).toFixed(0)}% ${r.devs[2].dev>0?'📈+':r.devs[2].dev<0?'📉':''}${Math.abs(r.devs[2].dev).toFixed(1)}%</span></div>${r.rq?`<div style="padding:8px;background:var(--surface2);border-radius:6px;margin-bottom:10px"><div style="font-size:.72rem;font-weight:600;margin-bottom:4px">🎯 让球盘(${r.rq})</div><div style="display:flex;gap:12px;font-size:.72rem"><span>让胜 ${r.rqO[0]?.toFixed(2)||'-'}</span><span>让平 ${r.rqO[1]?.toFixed(2)||'-'}</span><span>让负 ${r.rqO[2]?.toFixed(2)||'-'}</span></div></div>`:''}<div style="padding:10px;background:var(--surface2);border-radius:6px;border-left:3px solid var(--gold)"><div style="font-weight:700;font-size:.75rem;margin-bottom:8px">💡 竞猜建议 <span style="color:${r.riskC};font-size:.68rem">[${r.risk}]</span></div>${r.s.map(s=>`<div style="display:flex;align-items:center;justify-content:space-between;padding:4px 0;font-size:.72rem;border-bottom:1px dashed rgba(255,255,255,.05)"><span style="color:var(--text2)">${s.type==='保守'?'🛡️':s.type==='均衡'?'⚖️':'🚀'} ${s.type}</span><span style="font-weight:700">${s.pick}</span><span style="color:var(--gold)">@${s.odds.toFixed(2)}</span><span style="color:var(--text3);font-size:.65rem">${s.reason}</span></div>`).join('')}<div style="margin-top:6px;font-size:.65rem;color:var(--text3)">⚽ AI预测比分${r.predScore[0]}:${r.predScore[1]} 总进球${r.totalG}球</div></div><div style="font-size:.58rem;color:var(--text3);margin-top:4px;text-align:right">*AI概率模型估算 · 仅供参考</div></div>`;}
+  return`<div style="margin:14px 0;padding:14px;background:rgba(240,185,11,.05);border:1px solid rgba(240,185,11,.2);border-radius:10px"><div style="font-weight:700;font-size:.85rem;margin-bottom:12px;color:var(--gold);display:flex;align-items:center;gap:8px"><span style="background:var(--red);color:#fff;padding:2px 8px;border-radius:10px;font-size:.65rem">竞猜</span>中国竞猜指数分析</div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center;margin-bottom:10px"><div style="padding:8px;background:var(--surface2);border-radius:6px"><div style="font-size:.7rem;color:var(--text2)">${ht.cn}胜</div><div style="font-size:1.2rem;font-weight:700;color:var(--accent)">${r.spf[0].toFixed(2)}</div><div style="font-size:.62rem;color:var(--text3)">隐含${(r.fair.home*100).toFixed(0)}%</div></div><div style="padding:8px;background:var(--surface2);border-radius:6px"><div style="font-size:.7rem;color:var(--text2)">平局</div><div style="font-size:1.2rem;font-weight:700;color:var(--text3)">${r.spf[1].toFixed(2)}</div><div style="font-size:.62rem;color:var(--text3)">隐含${(r.fair.draw*100).toFixed(0)}%</div></div><div style="padding:8px;background:var(--surface2);border-radius:6px"><div style="font-size:.7rem;color:var(--text2)">${at.cn}胜</div><div style="font-size:1.2rem;font-weight:700;color:var(--red)">${r.spf[2].toFixed(2)}</div><div style="font-size:.62rem;color:var(--text3)">隐含${(r.fair.away*100).toFixed(0)}%</div></div></div><div style="font-size:.7rem;color:var(--text2);margin-bottom:8px;display:flex;justify-content:space-around"><span>🤖AI:${(r.devs[0].prob*100).toFixed(0)}% ${r.devs[0].dev>0?'📈+':r.devs[0].dev<0?'📉':''}${Math.abs(r.devs[0].dev).toFixed(1)}%</span><span>🤖AI:${(r.devs[1].prob*100).toFixed(0)}% ${r.devs[1].dev>0?'📈+':r.devs[1].dev<0?'📉':''}${Math.abs(r.devs[1].dev).toFixed(1)}%</span><span>🤖AI:${(r.devs[2].prob*100).toFixed(0)}% ${r.devs[2].dev>0?'📈+':r.devs[2].dev<0?'📉':''}${Math.abs(r.devs[2].dev).toFixed(1)}%</span></div>${r.rq?`<div style="padding:8px;background:var(--surface2);border-radius:6px;margin-bottom:10px"><div style="font-size:.72rem;font-weight:600;margin-bottom:4px">🎯 让球盘(${r.rq})</div><div style="display:flex;gap:12px;font-size:.72rem"><span>让胜 ${r.rqO[0]?.toFixed(2)||'-'}</span><span>让平 ${r.rqO[1]?.toFixed(2)||'-'}</span><span>让负 ${r.rqO[2]?.toFixed(2)||'-'}</span></div></div>`:''}<div style="padding:10px;background:var(--surface2);border-radius:6px;border-left:3px solid var(--gold)"><div style="font-weight:700;font-size:.75rem;margin-bottom:8px">💡 竞猜建议 <span style="color:${r.riskC};font-size:.68rem">[${r.risk}]</span></div>${r.s.map(s=>`<div style="display:flex;align-items:center;justify-content:space-between;padding:4px 0;font-size:.72rem;border-bottom:1px dashed rgba(255,255,255,.05)"><span style="color:var(--text2)">${s.type==='保守'?'🛡️':s.type==='均衡'?'⚖️':'🚀'} ${s.type}</span><span style="font-weight:700">${s.pick}</span><span style="color:var(--gold)">@${s.odds.toFixed(2)}</span><span style="color:var(--text3);font-size:.65rem">${s.reason}</span></div>`).join('')}<div style="margin-top:6px;font-size:.65rem;color:var(--text3)">⚽ AI预测比分${r.topScores ? r.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : r.predScore[0]+':'+r.predScore[1]} 总进球${r.totalG}球</div></div><div style="font-size:.58rem;color:var(--text3);margin-top:4px;text-align:right">*AI概率模型估算 · 仅供参考</div></div>`;}
 
 /** 竞猜串关组合推荐 */
 function renderJCCombo(matches) {
@@ -2444,7 +2444,7 @@ function renderJCAdvanced(mid, ht, at) {
       <div style="display:flex;gap:6px;flex-wrap:wrap">
         ${scores.map(s => `
         <div style="padding:4px 10px;background:var(--surface2);border-radius:4px;text-align:center;font-size:.7rem;min-width:55px">
-          <div style="font-weight:700;color:${s.h===pred.predScore[0]&&s.a===pred.predScore[1]?'var(--gold)':'var(--text)'}">${s.h}:${s.a}</div>
+          <div style="font-weight:700;color:${pred.topScores && pred.topScores.some(function(t){return t.home===s.h&&t.away===s.a})?'var(--gold)':'var(--text)'}">${s.h}:${s.a}</div>
           <div style="font-size:.62rem;color:var(--accent)">${(s.prob*100).toFixed(1)}%</div>
         </div>`).join('')}
       </div>
@@ -2945,9 +2945,9 @@ function generateMatchAnalysis(m, ht, at, pred, mol) {
   parts.push('⭐ 【核心球员】' + ht.cn + '方面，' + hStars + '是当仁不让的核心，他们的发挥将直接影响比赛走向。' + at.cn + '则需要' + aStars + '挺身而出，在关键时刻为球队攻城拔寨。');
 
   // 5. Score prediction reasoning
-  var predScore = pred.predScore[0] + ':' + pred.predScore[1];
+  var topScoresStr = pred.topScores ? pred.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : (pred.predScore[0] + ':' + pred.predScore[1]);
   var xG = pred.expH.toFixed(1) + ' - ' + pred.expA.toFixed(1);
-  parts.push('🎯 【比分预测】基于泊松分布模型，AI预期进球为' + xG + '（' + ht.cn + '-' + at.cn + '），最可能比分' + predScore + '。' + ht.cn + '的进攻火力（攻' + ht.att + '/防' + ht.def + '）与' + at.cn + '的攻防体系（攻' + at.att + '/防' + at.def + '）对比，模型推演出' + ht.cn + '胜' + (pred.homeWinProb*100).toFixed(0) + '% / 平' + (pred.drawProb*100).toFixed(0) + '% / ' + at.cn + '胜' + (pred.awayWinProb*100).toFixed(0) + '%的概率分布。');
+  parts.push('🎯 【比分预测】基于泊松分布模型，AI预期进球为' + xG + '（' + ht.cn + '-' + at.cn + '），最可能比分TOP3为' + topScoresStr + '。' + ht.cn + '的进攻火力（攻' + ht.att + '/防' + ht.def + '）与' + at.cn + '的攻防体系（攻' + at.att + '/防' + at.def + '）对比，模型推演出' + ht.cn + '胜' + (pred.homeWinProb*100).toFixed(0) + '% / 平' + (pred.drawProb*100).toFixed(0) + '% / ' + at.cn + '胜' + (pred.awayWinProb*100).toFixed(0) + '%的概率分布。');
 
   // 5.5 Market consensus
   var consensus = getMarketConsensus(m.id, pred.homeWinProb, pred.drawProb, pred.awayWinProb);
@@ -3246,7 +3246,7 @@ function renderGroups() {
     const tl = getGroupTeams(g);
     const pairs = []; for(let i=0;i<tl.length;i++)for(let j=i+1;j<tl.length;j++)pairs.push([tl[i],tl[j]]);
     mtHTML = `<div class="card"><div class="card-header">📅 小组赛预测</div>
-      ${pairs.map(([h,a])=>{const p=predictMatch(h,a);return`<div class="match-item"><span style="min-width:55px;font-size:.78rem">${h.flag} ${h.cn}</span><div class="prob-bar"><div class="hw" style="width:${(p.homeWinProb*100).toFixed(0)}%"></div><div class="dr" style="width:${(p.drawProb*100).toFixed(0)}%"></div><div class="aw" style="width:${(p.awayWinProb*100).toFixed(0)}%"></div></div><span style="min-width:55px;text-align:right;font-size:.78rem">${a.cn} ${a.flag}</span><span class="score-pred">${p.predScore[0]}:${p.predScore[1]}</span></div>`;}).join('')}</div>`;
+      ${pairs.map(([h,a])=>{const p=predictMatch(h,a);return`<div class="match-item"><span style="min-width:55px;font-size:.78rem">${h.flag} ${h.cn}</span><div class="prob-bar"><div class="hw" style="width:${(p.homeWinProb*100).toFixed(0)}%"></div><div class="dr" style="width:${(p.drawProb*100).toFixed(0)}%"></div><div class="aw" style="width:${(p.awayWinProb*100).toFixed(0)}%"></div></div><span style="min-width:55px;text-align:right;font-size:.78rem">${a.cn} ${a.flag}</span><span class="score-pred">${p.topScores ? p.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : p.predScore[0]+':'+p.predScore[1]}</span></div>`;}).join('')}</div>`;
 
     return `<div class="group-panel${GROUPS.indexOf(g)===0?' active':''}" id="grp-${g}">${stHTML}${mtHTML}${!lastResult?'<div class="empty-state"><p>👆 请先运行模拟</p></div>':''}</div>`;
   }).join('');
@@ -3474,12 +3474,14 @@ function renderFullSchedule() {
         var scoreHtml = '';
         if (result) {
           // Has actual result: show prediction + actual
-          scoreHtml = '<span class="sm-pred">' + (pred ? pred.predScore[0]+':'+ pred.predScore[1] : '-:-') + '</span>' +
+          var predStr = pred && pred.topScores ? pred.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : (pred ? pred.predScore[0]+':'+pred.predScore[1] : '-:-');
+          scoreHtml = '<span class="sm-pred">' + predStr + '</span>' +
             '<span class="sm-sep">→</span>' +
             '<span class="sm-actual">' + result.homeScore + ':' + result.awayScore + '</span>';
         } else {
           // No result yet: show prediction + pending
-          scoreHtml = '<span class="sm-pred">' + (pred ? pred.predScore[0]+':'+ pred.predScore[1] : '-:-') + '</span>' +
+          var predStr2 = pred && pred.topScores ? pred.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : (pred ? pred.predScore[0]+':'+pred.predScore[1] : '-:-');
+          scoreHtml = '<span class="sm-pred">' + predStr2 + '</span>' +
             '<span class="sm-sep">|</span>' +
             '<span class="sm-pending">? : ?</span>';
         }
@@ -3811,7 +3813,7 @@ function compareMatch(matchId) {
   return {
     matchId, date: m.date, time: m.time, grp: m.grp,
     homeTeam: ht, awayTeam: at,
-    predScore: pred.predScore, actScore: [actHome, actAway],
+    predScore: pred.predScore, topScores: pred.topScores, actScore: [actHome, actAway],
     correctOutcome, correctExact, goalDiffError, totalGoalError,
     predOutcomeProb, predHomeProb: pred.homeWinProb, predDrawProb: pred.drawProb, predAwayProb: pred.awayWinProb,
     notes: actual.notes
@@ -4009,7 +4011,7 @@ function renderReviewMatchList(comps) {
         <div style="flex:1"><span style="font-size:.85rem">${c.homeTeam.flag} ${c.homeTeam.cn}</span></div>
         <div>
           <div style="font-size:.7rem;color:var(--text3)">AI预测</div>
-          <div style="font-weight:700;color:var(--accent)">${c.predScore[0]}:${c.predScore[1]}</div>
+          <div style="font-weight:700;color:var(--accent)">${c.topScores ? c.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : c.predScore[0]+':'+c.predScore[1]}</div>
         </div>
         <div style="font-size:1.5rem;font-weight:800;color:var(--text3)">→</div>
         <div>
@@ -4074,7 +4076,8 @@ function submitResult() {
   renderReview();
   // Also refresh today tab if needed
   const c = compareMatch(mid);
-  const msg = c ? (c.correctOutcome ? '✅ AI预测正确！' : `❌ AI预测错误（预测${c.predScore[0]}:${c.predScore[1]}）`) : '';
+  var topStr = c && c.topScores ? c.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : (c ? c.predScore[0]+':'+c.predScore[1] : '');
+  const msg = c ? (c.correctOutcome ? '✅ AI预测正确！' : '❌ AI预测错误（预测' + topStr + '）') : '';
   showToast('结果已保存！' + msg);
 }
 
