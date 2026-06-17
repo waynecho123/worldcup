@@ -1,20 +1,20 @@
 {
   "items": [
-    "📰 World Cup VAR review: Should Messi have been sent ...",
-    "📰 Messi rolls back the clock for Argentina to start ...",
-    "📰 Haaland: I'm not 'statistically' No.1 goalscorer",
-    "📰 World Cup daily attendance record broken",
-    "📰 Key issues for England at 2026 World Cup: Fatigue,...",
-    "📰 On the World Cup's day of stars, Messi towers over Haaland and Mbappe",
-    "📰 World Cup Daily: NFL star Winston dresses goat as ...",
-    "📰 What if Reyna's World Cup wonder goal is only the ...",
-    "📰 USMNT in World Cup quarterfinals? There's a real c...",
-    "📰 Copy of Mbappé rewrites France, World Cup history books as...",
-    "📰 Haaland on World Cup debut for Norway? Goals were ...",
-    "📰 Mahomes, Jay Z top celebrities at 2026 World Cup",
-    "📰 Copy of Are World Cup hydration breaks important? Or do th...",
-    "📰 Copy of Spain won't panic yet about Cape Verde draw, but t...",
-    "📰 Every team's odds to win the World Cup: Mbappé hel...",
+    "📰 Bellingham set to start for England against Croatia",
+    "📰 Can Bellingham become England's superstar once more at the World Cup?",
+    "📰 How sweltering Scotland can handle World Cup heat",
+    "📰 Extraordinary Messi makes more history in masterclass for the ages",
+    "📰 England won't change style despite US heat - Tuchel",
+    "📰 Messi stays humble after hat-trick performance",
+    "📰 Emotional Messi explains tears after Argentina goal",
+    "📰 No stage too big - Haaland arrives in style at World Cup",
+    "📰 Who would you start against Croatia? Pick your England XI",
+    "📰 Who could Lionesses face in World Cup play-offs? ",
+    "📰 'Magnificent' - Messi scores hat-trick to equal Klose scoring record",
+    "📰 Highlights: Messi equals Klose scoring record with hat-trick against Algeria ",
+    "📰 Highlights: Haaland scores twice in Norway win over Iraq  ",
+    "📰 Highlights: Mbappe stars as France beat Senegal",
+    "📰 How to watch the World Cup on the BBC and ITV",
     "🔥 葡萄牙 3-0 民主刚果 — 葡萄牙 3-0 大胜，强势表现",
     "⚽ 英格兰 1-2 克罗地亚 — 克罗地亚 2-1 取胜，关键3分",
     "⚽ 法国 3-1 塞内加尔 — 法国 3-1 取胜，关键3分",
@@ -305,51 +305,60 @@
     }
   ],
   "generalNews": [
-    "📰 World Cup VAR review: Should Messi have been sent ...",
-    "📰 Messi rolls back the clock for Argentina to start ...",
-    "📰 Haaland: I'm not 'statistically' No.1 goalscorer",
-    "📰 World Cup daily attendance record broken",
-    "📰 Key issues for England at 2026 World Cup: Fatigue,...",
-    "📰 On the World Cup's day of stars, Messi towers over Haaland and Mbappe",
-    "📰 World Cup Daily: NFL star Winston dresses goat as ...",
-    "📰 What if Reyna's World Cup wonder goal is only the ...",
-    "📰 USMNT in World Cup quarterfinals? There's a real c...",
-    "📰 Copy of Mbappé rewrites France, World Cup history books as...",
-    "📰 Haaland on World Cup debut for Norway? Goals were ...",
-    "📰 Mahomes, Jay Z top celebrities at 2026 World Cup",
-    "📰 Copy of Are World Cup hydration breaks important? Or do th...",
-    "📰 Copy of Spain won't panic yet about Cape Verde draw, but t...",
-    "📰 Every team's odds to win the World Cup: Mbappé hel..."
+    "📰 Bellingham set to start for England against Croatia",
+    "📰 Can Bellingham become England's superstar once more at the World Cup?",
+    "📰 How sweltering Scotland can handle World Cup heat",
+    "📰 Extraordinary Messi makes more history in masterclass for the ages",
+    "📰 England won't change style despite US heat - Tuchel",
+    "📰 Messi stays humble after hat-trick performance",
+    "📰 Emotional Messi explains tears after Argentina goal",
+    "📰 No stage too big - Haaland arrives in style at World Cup",
+    "📰 Who would you start against Croatia? Pick your England XI",
+    "📰 Who could Lionesses face in World Cup play-offs? ",
+    "📰 'Magnificent' - Messi scores hat-trick to equal Klose scoring record",
+    "📰 Highlights: Messi equals Klose scoring record with hat-trick against Algeria ",
+    "📰 Highlights: Haaland scores twice in Norway win over Iraq  ",
+    "📰 Highlights: Mbappe stars as France beat Senegal",
+    "📰 How to watch the World Cup on the BBC and ITV"
   ],
   "teamNews": {
-    "ARG": [
-      "📰 World Cup VAR review: Should Messi have been sent ...",
-      "📰 Messi rolls back the clock for Argentina to start ...",
-      "📰 On the World Cup's day of stars, Messi towers over Haaland and Mbappe"
-    ],
-    "NOR": [
-      "📰 Haaland: I'm not 'statistically' No.1 goalscorer",
-      "📰 On the World Cup's day of stars, Messi towers over Haaland and Mbappe",
-      "📰 Haaland on World Cup debut for Norway? Goals were ..."
-    ],
     "ENG": [
-      "📰 Key issues for England at 2026 World Cup: Fatigue,..."
+      "📰 Bellingham set to start for England against Croatia",
+      "📰 Can Bellingham become England's superstar once more at the World Cup?",
+      "📰 England won't change style despite US heat - Tuchel"
     ],
-    "FRA": [
-      "📰 On the World Cup's day of stars, Messi towers over Haaland and Mbappe",
-      "📰 Copy of Mbappé rewrites France, World Cup history books as...",
-      "📰 Every team's odds to win the World Cup: Mbappé hel..."
+    "CRO": [
+      "📰 Bellingham set to start for England against Croatia",
+      "📰 Who would you start against Croatia? Pick your England XI"
+    ],
+    "SCO": [
+      "📰 How sweltering Scotland can handle World Cup heat"
+    ],
+    "ARG": [
+      "📰 Extraordinary Messi makes more history in masterclass for the ages",
+      "📰 Messi stays humble after hat-trick performance",
+      "📰 Emotional Messi explains tears after Argentina goal"
     ],
     "USA": [
-      "📰 USMNT in World Cup quarterfinals? There's a real c..."
+      "📰 England won't change style despite US heat - Tuchel"
     ],
-    "ESP": [
-      "📰 Copy of Spain won't panic yet about Cape Verde draw, but t..."
+    "NOR": [
+      "📰 No stage too big - Haaland arrives in style at World Cup",
+      "📰 Highlights: Haaland scores twice in Norway win over Iraq  "
     ],
-    "CPV": [
-      "📰 Copy of Spain won't panic yet about Cape Verde draw, but t..."
+    "ALG": [
+      "📰 Highlights: Messi equals Klose scoring record with hat-trick against Algeria "
+    ],
+    "IRQ": [
+      "📰 Highlights: Haaland scores twice in Norway win over Iraq  "
+    ],
+    "FRA": [
+      "📰 Highlights: Mbappe stars as France beat Senegal"
+    ],
+    "SEN": [
+      "📰 Highlights: Mbappe stars as France beat Senegal"
     ]
   },
   "total": 37,
-  "updatedAt": "2026-06-17T16:48:30.762Z"
+  "updatedAt": "2026-06-17T16:52:38.459Z"
 }
