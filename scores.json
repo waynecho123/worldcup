@@ -99,14 +99,14 @@
     "awayScore": 1,
     "recordedAt": "2026-06-17T06:10:00.000Z"
   },
-  "m022": {
-    "homeScore": 1,
-    "awayScore": 2,
-    "recordedAt": "2026-06-18T06:00:00.000Z"
-  },
   "m021": {
     "homeScore": 3,
     "awayScore": 0,
     "recordedAt": "2026-06-18T03:00:00.000Z"
+  },
+  "m022": {
+    "homeScore": 1,
+    "awayScore": 2,
+    "recordedAt": "2026-06-18T06:00:00.000Z"
   }
 }
