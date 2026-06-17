@@ -182,23 +182,6 @@
       </view>
     </view>
 
-    <!-- JC Recommendation -->
-    <view wx:if="{{jcRec}}" class="card" style="border-color:rgba(240,185,11,.2)">
-      <view class="card-header">
-        <text style="background:#ff3d57;color:#fff;padding:2px 8px;border-radius:6px;font-size:20rpx">竞猜</text>
-        中国竞猜分析
-      </view>
-      <view style="display:flex;text-align:center;margin-bottom:8px">
-        <view style="flex:1"><text class="font-xs text-secondary">{{match.homeName}}胜</text><text class="font-l text-accent font-bold" style="display:block">{{jcRec.spf[0]}}</text></view>
-        <view style="flex:1"><text class="font-xs text-secondary">平局</text><text class="font-l text-muted font-bold" style="display:block">{{jcRec.spf[1]}}</text></view>
-        <view style="flex:1"><text class="font-xs text-secondary">{{match.awayName}}胜</text><text class="font-l text-red font-bold" style="display:block">{{jcRec.spf[2]}}</text></view>
-      </view>
-      <view wx:if="{{jcRec.s && jcRec.s.length}}" class="font-s">
-        <text class="font-xs text-gold font-bold">💡 建议：</text>
-        <text wx:for="{{jcRec.s}}" wx:key="type" class="font-xs" style="display:block;padding:2px 0">→ {{item.pick}} @{{item.odds}} ({{item.reason}})</text>
-      </view>
-    </view>
-
     <!-- Advanced Plays -->
     <view class="card">
       <view class="card-header">🎲 进阶玩法</view>

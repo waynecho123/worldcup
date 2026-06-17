@@ -3532,13 +3532,13 @@ function showToast(msg) {
 // =============================================================================
 
 // =============================================================================
-// DATA LOADING — Multi-source with auto-refresh
-// Priority: Firebase RTDB > scores.json > localStorage > demo seed
+// DATA LOADING — Cloud function HTTP endpoints as single source of truth
+// Priority: Cloud DB > localStorage > demo seed
 // =============================================================================
 let actualResults = {};
 let _resultsLoaded = false;
 const SCORES_CACHE_KEY = 'wc2026_actual';
-const SCORES_TS_KEY = 'wc2026_scores_ts';
+const CLOUD_BASE = 'https://cloud1-d1ggmx6ur18b296fc.service.tcloudbase.com';
 
 // Demo seed data (last resort fallback)
 const DEMO_RESULTS = {
@@ -3567,37 +3567,38 @@ function loadFromLocalStorage() {
   return false;
 }
 
-/** Step 2: Fetch from scores.json (source of truth on server) */
-async function loadFromServerJSON() {
+/** Step 2: Fetch from cloud function HTTP endpoint (primary source) */
+async function loadFromCloud() {
   try {
-    var resp = await fetch('scores.json?_t=' + Date.now(), { cache: 'no-cache' });
+    var resp = await fetch(CLOUD_BASE + '/fetchScores', { cache: 'no-cache' });
     if (!resp.ok) throw new Error('HTTP ' + resp.status);
     var data = await resp.json();
     if (data && Object.keys(data).length > 0) {
-      mergeResults(data, 'server');
+      mergeResults(data, 'cloud');
       return true;
     }
-  } catch(e) { console.warn('scores.json fetch failed:', e.message); }
+  } catch(e) { console.warn('Cloud fetch failed:', e.message); }
   return false;
 }
 
-/** Step 3: Listen to Firebase Realtime Database for live updates */
-function loadFromFirebase() {
+/** Step 3: Fetch news from cloud function */
+async function loadNewsFromCloud() {
   try {
-    if (typeof fireDB === 'undefined') return;
-    var scoresRef = fireDB.ref('match_results');
-    scoresRef.on('value', function(snapshot) {
-      var data = snapshot.val();
-      if (data && typeof data === 'object') {
-        // Flatten if stored as {m001: {homeScore, awayScore}, ...}
-        var results = data.results || data;
-        if (Object.keys(results).length > 0) {
-          mergeResults(results, 'firebase');
-        }
-      }
-    });
-    console.log('Firebase RTDB listener active');
-  } catch(e) { console.warn('Firebase init failed:', e.message); }
+    var resp = await fetch(CLOUD_BASE + '/fetchNews', { cache: 'no-cache' });
+    if (!resp.ok) return false;
+    var data = await resp.json();
+    var items = Array.isArray(data) ? data : (data.items || []);
+    if (items.length > 0) {
+      newsItemsCache = items;
+      localStorage.setItem(NEWS_CACHE_KEY, JSON.stringify({ items: items, ts: Date.now() }));
+      var timeEl = document.getElementById('newsTime');
+      if (timeEl) timeEl.textContent = '更新于 ' + new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
+      document.getElementById('tickerLabel').textContent = '📰 实时';
+      startNewsRotation();
+      return true;
+    }
+  } catch(e) { console.warn('News cloud fetch failed:', e.message); }
+  return false;
 }
 
 /** Merge incoming results into actualResults (newer data wins) */
@@ -3644,77 +3645,18 @@ function refreshUI() {
   if (tabId === 'teams') renderTeams();
 }
 
-/** Step 4: Fetch from TheSportsDB (free API, no key required) */
-async function loadFromAPI() {
-  try {
-    var resp = await fetch('https://www.thesportsdb.com/api/v1/json/3/eventsseason.php?id=4429&s=2026', { cache: 'no-cache' });
-    if (!resp.ok) throw new Error('HTTP ' + resp.status);
-    var data = await resp.json();
-    if (!data || !data.events) return false;
-
-    // Team name → our ID mapping
-    var nameMap = {
-      'Mexico':'MEX','South Africa':'RSA','South Korea':'KOR','Czech Republic':'CZE','Czechia':'CZE',
-      'Canada':'CAN','Bosnia and Herzegovina':'BIH','Qatar':'QAT','Switzerland':'SUI',
-      'Brazil':'BRA','Morocco':'MAR','Haiti':'HAI','Scotland':'SCO',
-      'United States':'USA','Paraguay':'PAR','Australia':'AUS','Turkey':'TUR','Türkiye':'TUR',
-      'Germany':'GER','Curacao':'CUW','Curaçao':'CUW','Ivory Coast':'CIV',"Côte d'Ivoire":'CIV','Ecuador':'ECU',
-      'Netherlands':'NED','Japan':'JPN','Sweden':'SWE','Tunisia':'TUN',
-      'Belgium':'BEL','Egypt':'EGY','Iran':'IRN','New Zealand':'NZL',
-      'Spain':'ESP','Cape Verde':'CPV','Saudi Arabia':'KSA','Uruguay':'URU',
-      'France':'FRA','Senegal':'SEN','Iraq':'IRQ','Norway':'NOR',
-      'Argentina':'ARG','Algeria':'ALG','Austria':'AUT','Jordan':'JOR',
-      'Portugal':'POR','DR Congo':'COD','Uzbekistan':'UZB','Colombia':'COL',
-      'England':'ENG','Croatia':'CRO','Ghana':'GHA','Panama':'PAN',
-      'Korea Republic':'KOR','Bosnia & Herz.':'BIH','Congo DR':'COD'
-    };
-
-    // Build match lookup from MATCH_SCHEDULE
-    var matchLookup = {};
-    MATCH_SCHEDULE.forEach(function(m) {
-      if (m.home === '?' || m.away === '?') return;
-      matchLookup[m.home + '-' + m.away] = m.id;
-    });
-
-    var results = {};
-    data.events.forEach(function(evt) {
-      if (evt.strStatus !== 'FT' && evt.strStatus !== 'AET' && evt.strStatus !== 'PEN') return;
-      if (evt.intHomeScore == null || evt.intAwayScore == null) return;
-      var hid = nameMap[evt.strHomeTeam] || nameMap[evt.strHomeTeam?.trim()];
-      var aid = nameMap[evt.strAwayTeam] || nameMap[evt.strAwayTeam?.trim()];
-      if (!hid || !aid) return;
-      var mid = matchLookup[hid + '-' + aid];
-      if (!mid) return;
-      results[mid] = {
-        homeScore: parseInt(evt.intHomeScore), awayScore: parseInt(evt.intAwayScore),
-        recordedAt: new Date().toISOString()
-      };
-    });
-
-    if (Object.keys(results).length > 0) {
-      mergeResults(results, 'api');
-      return true;
-    }
-  } catch(e) { console.warn('Live API fetch failed:', e.message); }
-  return false;
-}
-
-/** Main initialization: load from all sources */
+/** Main initialization: load from cloud function + localStorage */
 async function initResults() {
-  // 1. LocalStorage first (instant sync)
-  var hasLocal = loadFromLocalStorage();
+  // 1. LocalStorage first (instant sync, offline support)
+  loadFromLocalStorage();
 
-  // 2. Firebase RTDB (real-time listener, persistent)
-  loadFromFirebase();
+  // 2. Cloud function HTTP (primary source)
+  await loadFromCloud();
 
-  // 3. Server JSON (authoritative)
-  var hasServer = await loadFromServerJSON();
+  // 3. News from cloud
+  loadNewsFromCloud().catch(function(){});
 
-  // 4. Live API (worldcup26.ir, may need CORS proxy in production)
-  //    Fire-and-forget — if it works, data updates via mergeResults → refreshUI
-  loadFromAPI().catch(function(){});
-
-  // 5. Fallback: if nothing loaded, use demo seed
+  // 4. Fallback: if nothing loaded, use demo seed
   if (Object.keys(actualResults).length === 0) {
     mergeResults(DEMO_RESULTS, 'demo');
   }
@@ -3722,10 +3664,10 @@ async function initResults() {
   _resultsLoaded = true;
   console.log('Results initialized: ' + Object.keys(actualResults).length + ' matches loaded');
 
-  // Auto-refresh from multiple sources every 5 minutes
+  // Auto-refresh every 5 minutes from cloud
   setInterval(async function() {
-    await loadFromServerJSON();
-    loadFromAPI().catch(function(){});
+    await loadFromCloud();
+    loadNewsFromCloud().catch(function(){});
     loadOddsJSON().catch(function(){});
     loadInfoJSON().catch(function(){});
   }, 300000);

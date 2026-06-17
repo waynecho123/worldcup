@@ -182,5 +182,5 @@ exports.main = async (event) => {
     console.log(`[${ts}] Cloud storage upload:`, e.message);
   });
 
-  return { ok: true, source: 'firo-api', new: n, updated: u, total: Object.keys(existing).length };
+  return { ok: true, source: 'football-data', new: n, updated: u, total: Object.keys(existing).length };
 };

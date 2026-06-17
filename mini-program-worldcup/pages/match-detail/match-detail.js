@@ -18,7 +18,6 @@ Page({
     topScores: [],
     htFT: [],
     goalDist: [],
-    jcRec: null,
     histData: null,
     homeLineup: null,
     awayLineup: null,
@@ -46,7 +45,6 @@ Page({
     const apiOdds = liveOdds[matchId] || null;
     const pred = predict.predictMatch(ht, at, apiOdds);
     const mol = data.MATCH_ODDS[matchId];
-    const jc = data.JC_ODDS[matchId];
 
     // Top scores
     const topScoresList = odds.topScores(pred.expH, pred.expA, 6);
@@ -69,17 +67,6 @@ Page({
 
     // Total goals distribution
     const totG = odds.calcTotalGoals(pred.expH, pred.expA);
-
-    // JC Recommendation
-    const rawJcRec = odds.getJCRecommendation(matchId, ht, at);
-    let jcRec = null;
-    if (rawJcRec) {
-      jcRec = {
-        spf: rawJcRec.spf.map(function(x){ return x.toFixed(2); }),
-        s: rawJcRec.s ? rawJcRec.s.map(function(x){ return { type: x.type, pick: x.pick, odds: x.odds.toFixed(2), reason: x.reason }; }) : [],
-        risk: rawJcRec.risk || ''
-      };
-    }
 
     // Historical data
     let histData = null;
@@ -200,7 +187,6 @@ Page({
         isExpected: i === Math.round(pred.expH + pred.expA)
       })),
       expTotalGoals: (pred.expH + pred.expA).toFixed(1),
-      jcRec,
       histData,
       homeLineup: hLu || null,
       awayLineup: aLu || null,

@@ -7,9 +7,9 @@ function getTournamentNow() {
 
 function getTournamentDateStr() {
   var now = new Date();
-  // Use BJT for tournament date
-  var bjt = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Shanghai' }));
-  return bjt.getFullYear() + '-' + String(bjt.getMonth() + 1).padStart(2, '0') + '-' + String(bjt.getDate()).padStart(2, '0');
+  // Use UTC+8 (BJT) — add 8 hours to UTC
+  var bjt = new Date(now.getTime() + 8 * 3600000);
+  return bjt.toISOString().slice(0, 10);
 }
 
 function getTodayStr() {

@@ -115,7 +115,6 @@ Page({
 
       const pred = predict.predictMatch(ht, at);
       const mol = data.MATCH_ODDS[m.id];
-      const jc = data.JC_ODDS[m.id];
       const predLog = app.globalData.predLog || {};
       const logEntry = predLog[m.id];
 
@@ -163,8 +162,7 @@ Page({
         predScores: pred.topScores,
         homeProb: (pred.homeWinProb*100).toFixed(0), drawProb: (pred.drawProb*100).toFixed(0), awayProb: (pred.awayWinProb*100).toFixed(0),
         oddsH: mol ? mol.h.toFixed(2) : '', oddsD: mol ? mol.d.toFixed(2) : '', oddsA: mol ? mol.a.toFixed(2) : '',
-        fairProbs, jcSPF: jc ? jc.spf.map(x => x.toFixed(2)) : null,
-        actual: actualDisplay, updateInfo,
+        fairProbs, actual: actualDisplay, updateInfo,
         hasNews: !!(ht.inj || at.inj),
         newsText: (ht.inj ? ht.cn+': '+ht.inj.replace(/[🔴⚠️]/g,'').trim()+' ' : '') +
                   (at.inj ? at.cn+': '+at.inj.replace(/[🔴⚠️]/g,'').trim() : '')

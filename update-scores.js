@@ -1,81 +1,40 @@
 #!/usr/bin/env node
 /**
- * Auto-update WC data from FiroAPI (500 calls/day)
+ * Auto-update WC data from free APIs
+ *
+ * APIs used:
+ *   football-data.org — scores, standings, H2H (free tier, 10 req/min)
+ *   the-odds-api.com  — odds (free tier, 500 req/month)
  *
  * Outputs:
  *   scores.json     — match results
- *   odds.json       — latest odds (HAD/HHAD/HAFU/TTG/CRS)
- *   match-info.json — history, injuries, features, standings
+ *   odds.json       — latest odds (optional, needs ODDS_API_KEY)
+ *   match-info.json — standings, H2H history
  *
  * Usage:
  *   node update-scores.js              # update all
  *   node update-scores.js --scores     # scores only
  *   node update-scores.js --odds       # odds only
- *   node update-scores.js --info       # match-info only
+ *   node update-scores.js --info       # match-info only (standings+H2H)
  *   node update-scores.js --watch      # auto every 3h
- *
- * Cron (recommended):
- *   # Scores: 4x/day after matches (00:00, 06:00, 12:00, 18:00 UTC+8)
- *   0 0,6,12,18 * * * node update-scores.js --scores
- *   # Odds: 1x/day at 10:00
- *   0 10 * * * node update-scores.js --odds
- *   # Info: 2x/day at 08:00, 20:00
- *   0 8,20 * * * node update-scores.js --info
  */
-// 每天消耗:
-//   scores 4 + odds ~16 + info ~8 + list 0.5 = ~29次/天，500额度安全
 
 const fs = require('fs');
 const path = require('path');
-const crypto = require('crypto');
 const https = require('https');
 
 // ========== CONFIG ==========
-const API_KEY = process.env.FIRO_API_KEY || '8YBEztjVsPeG7cTNV5m3bPfUU1GHVqLr';
-const PRIVATE_KEY_B64 = process.env.FIRO_PRIVATE_KEY || 'MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQClBYzHcspDIKxOE56o1S4+cYgkkS2oenFZUPIPzNuVKpZpRoyvFNlMOO1Jgnzl63TiNyeIoyay+TNs1HOpau5jkO6el8QLBMF7c7/sLjcVM75tblf9lzwvBxrubGm+Q7chNhfFKiPQfcldVEqjRSNwbZa8bQiTVNgCV+qUJqxyWhA2WjlRN1+XVT2yDq6VkYJfkiBkIMuuSUaPVJ9LK97j926gdE//9KyOrR7cqWfT1MRMBH43tZHJ5czlP5RVl/DDcGUg6aoWTlYOIGDYREIi92/zFeAZl836iSYjKJrdDTYS7zAZ+NJipcGzX4TInfXg64EhElDbW0p0rhYqAIn5AgMBAAECggEAHuvDTTv9GkbtAlQ6znfjil/Lms55N7B5vLqmIL/KBVFNjbxicAwAC4A/Nh71OD++TwT2q2umvLJlKGdGpOAcexuVGrJlUYs6ld9CfwbJ23cun2KlqibEaCt0qGg4CCa4EckI+zDCNTbcnFhHBADYeyCNthDYIoMrVoUSt1/nwCVCx65hHHu4Le0G8Rg4Xek/rfOf7fMZxTm6fERWizRioiR6cs2Sr5ESUSYpu1w+024ikx8IsSmZRuX5Qxu0hIHHi/olfj/9poLfONS93cA4iWqDEBUmFaEh504fojLWGHtxeg0jjbKKjD+AdbTWCkJ6g3xIIuV6oN6Orj5Bf8cq4QKBgQDfmlr6dv9l8DeLTaOsh9ui+IqQJEAKzCbOpy3/mO4jIT6VlBG+F6+bnpo8zxaZSE2UhPN0LtYaN07rv0IfQKBPoaEy9vhuyl/qCLNIf99qd8FOdVoVUiFk+Cy7GGJ6f1mxSvnF+eoE+1w200ec7yP4TjBtDx8aTRUc31ajU5g1EwKBgQC87lwfcGHnxgcUqXr87Cep4l/U7Zg2SUuq+1rEEBMVhDMqSGx2SEEGN8bwso5s0k3bh6iO80+n7VSqlyB86nmhLcgpJlNhhPUj5af+cXM4h/VUIwDgEYbuQOayakjfQSaNgXELgSkl0dBdkhlUGwIleZKkrm9YchB8XjPuSs2CQwKBgQCsMyxTbWc88yVjg5REH5CXTn8viKtFZXmRdpBnIjhrF4QiH5kWYxlbaGZx5C4MN/F/KnBvDk7We7esuGtMtDGBggEpxacHc5UwICkp8Uh2rulQ6fFJMCoFn1abc6kLm53QeuQmglOmKIoYsteY1VZHOLf0lUunrqtOw/Tt7UfvvwKBgBx+Zm5naJyoBRFcrivPAfxhI8rdOoOVclALMJk5Q2ePVJgf7Bu6sfPaHarXgxtubEebohRNJcpRxN8lg8TTKBzi5rkuCo0+nCoZzMhXG+V+u8VAsjUY75ynNSPbW7ov/TyCNSZjCG2nwyEZk7BXkm9Mco1bsXdJXKslGffqWCw5AoGAA/Lfb6mQ3B3RBbj7jWV5JDZSGWjTvw5z0MtQJg5MHRCu7AFpeQCHfncRTb/oMOaSn5EqGqjwNvZNJAJqif3KzFtwb0BdmQeBNtt9QaVgVUnjrWQU4erBOMaEOQpH7xVeFHeBt0tpTpAeVUh9ZCqUfxQSbhFrJ3XNvR/Q0XHIsKo=';
+const FD_TOKEN = process.env.FD_TOKEN;
+const ODDS_API_KEY = process.env.ODDS_API_KEY || '';
+const FD_BASE = 'https://api.football-data.org/v4';
+const ODDS_BASE = 'https://api.the-odds-api.com/v4';
 
 const BASE_DIR = __dirname;
 const SCORES_FILE = path.join(BASE_DIR, 'scores.json');
 const ODDS_FILE = path.join(BASE_DIR, 'odds.json');
 const INFO_FILE = path.join(BASE_DIR, 'match-info.json');
 
-// Team name → our ID
-const TEAM_MAP = {
-  // Chinese
-  '墨西哥':'MEX','南非':'RSA','韩国':'KOR','捷克':'CZE',
-  '加拿大':'CAN','波黑':'BIH','卡塔尔':'QAT','瑞士':'SUI',
-  '巴西':'BRA','摩洛哥':'MAR','海地':'HAI','苏格兰':'SCO',
-  '美国':'USA','巴拉圭':'PAR','澳大利亚':'AUS','土耳其':'TUR',
-  '德国':'GER','库拉索':'CUW','科特迪瓦':'CIV','厄瓜多尔':'ECU',
-  '荷兰':'NED','日本':'JPN','瑞典':'SWE','突尼斯':'TUN',
-  '比利时':'BEL','埃及':'EGY','伊朗':'IRN','新西兰':'NZL',
-  '西班牙':'ESP','佛得角':'CPV','沙特阿拉伯':'KSA','乌拉圭':'URU',
-  '法国':'FRA','塞内加尔':'SEN','伊拉克':'IRQ','挪威':'NOR',
-  '阿根廷':'ARG','阿尔及利亚':'ALG','奥地利':'AUT','约旦':'JOR',
-  '葡萄牙':'POR','刚果(金)':'COD','乌兹别克斯坦':'UZB','哥伦比亚':'COL',
-  '英格兰':'ENG','克罗地亚':'CRO','加纳':'GHA','巴拿马':'PAN',
-  '捷克共和国':'CZE','刚果':'COD','沙特':'KSA','韩国(南韩)':'KOR',
-  // English (API returns English names)
-  'Mexico':'MEX','South Africa':'RSA','South Korea':'KOR','Czech Republic':'CZE','Czechia':'CZE',
-  'Canada':'CAN','Bosnia and Herzegovina':'BIH','Qatar':'QAT','Switzerland':'SUI',
-  'Brazil':'BRA','Morocco':'MAR','Haiti':'HAI','Scotland':'SCO',
-  'United States':'USA','Paraguay':'PAR','Australia':'AUS','Turkey':'TUR','Türkiye':'TUR',
-  'Germany':'GER','Curacao':'CUW','Curaçao':'CUW','Ivory Coast':'CIV',"Côte d'Ivoire":'CIV','Ecuador':'ECU',
-  'Netherlands':'NED','Japan':'JPN','Sweden':'SWE','Tunisia':'TUN',
-  'Belgium':'BEL','Egypt':'EGY','Iran':'IRN','New Zealand':'NZL',
-  'Spain':'ESP','Cape Verde':'CPV','Saudi Arabia':'KSA','Uruguay':'URU',
-  'France':'FRA','Senegal':'SEN','Iraq':'IRQ','Norway':'NOR',
-  'Argentina':'ARG','Algeria':'ALG','Austria':'AUT','Jordan':'JOR',
-  'Portugal':'POR','DR Congo':'COD','Uzbekistan':'UZB','Colombia':'COL',
-  'England':'ENG','Croatia':'CRO','Ghana':'GHA','Panama':'PAN',
-  'Korea Republic':'KOR','Congo DR':'COD','United States of America':'USA',
-};
-
-// ========== football-data.org API ==========
-const FD_TOKEN = process.env.FD_TOKEN;
-if (!FD_TOKEN) { console.error('Set FD_TOKEN environment variable'); process.exit(1); }
-const FD_BASE = 'https://api.football-data.org/v4';
-
+// ========== football-data.org helpers ==========
 function fetchFD(path) {
   return new Promise((resolve, reject) => {
     https.get(`${FD_BASE}${path}`, {
@@ -89,26 +48,18 @@ function fetchFD(path) {
   });
 }
 
-// Map API team name to our team ID
-function mapTeam(apiName) {
-  return TEAM_MAP[apiName] || TEAM_MAP[apiName?.replace('(南韩)','').trim()] || null;
+// ========== Odds API helpers ==========
+function fetchOdds(path) {
+  return new Promise((resolve, reject) => {
+    https.get(`${ODDS_BASE}${path}&apiKey=${ODDS_API_KEY}`, { timeout: 15000 }, res => {
+      let d = '';
+      res.on('data', c => d += c);
+      res.on('end', () => { try { resolve(JSON.parse(d)); } catch(e) { reject(e); } });
+    }).on('error', reject);
+  });
 }
 
-// Find our matchId from home+away team names
-function findOurMatchId(homeName, awayName, lookup) {
-  const hid = mapTeam(homeName), aid = mapTeam(awayName);
-  if (!hid || !aid) return null;
-  // Try both directions (API order may differ from our schedule)
-  return lookup[hid + '-' + aid] || lookup[aid + '-' + hid] || null;
-}
-
-function loadMatchLookup() {
-  const sched = getMatchSchedule();
-  const lookup = {};
-  sched.forEach(m => { if (m.home !== '?' && m.away !== '?') lookup[m.home + '-' + m.away] = m.id; });
-  return lookup;
-}
-
+// ========== Match Schedule ==========
 function getMatchSchedule() { return [
   {id:"m001",date:"2026-06-11",time:"03:00",home:"MEX",away:"RSA"},{id:"m002",date:"2026-06-12",time:"10:00",home:"KOR",away:"CZE"},
   {id:"m003",date:"2026-06-13",time:"03:00",home:"CAN",away:"BIH"},{id:"m004",date:"2026-06-13",time:"09:00",home:"USA",away:"PAR"},
@@ -148,6 +99,14 @@ function getMatchSchedule() { return [
   {id:"m071",date:"2026-06-28",time:"09:00",home:"ENG",away:"PAN"},{id:"m072",date:"2026-06-28",time:"09:00",home:"CRO",away:"GHA"},
 ];}
 
+function loadMatchLookup() {
+  const sched = getMatchSchedule();
+  const lookup = {};
+  sched.forEach(m => { if (m.home !== '?' && m.away !== '?') lookup[m.home + '-' + m.away] = m.id; });
+  return lookup;
+}
+
+// ========== File I/O ==========
 function loadJSON(file, fallback = {}) {
   try { if (fs.existsSync(file)) return JSON.parse(fs.readFileSync(file, 'utf-8')); }
   catch(e) {}
@@ -160,26 +119,23 @@ function saveJSON(file, data) {
   fs.writeFileSync(file, JSON.stringify(sorted, null, 2) + '\n', 'utf-8');
 }
 
-// ========== UPDATE FUNCTIONS ==========
-
+// ========== UPDATE: Scores (football-data.org) ==========
 async function updateScores() {
   const now = new Date();
   const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
   const todayStr = now.toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
   const yesterdayStr = new Date(now.getTime() - 86400000).toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
 
-  const sched = getMatchSchedule();
   const lookup = loadMatchLookup();
   const existing = loadJSON(SCORES_FILE);
 
-  // Fetch today + yesterday from football-data.org
   let allMatches = [];
   for (const d of [yesterdayStr, todayStr]) {
     try {
       const data = await fetchFD(`/competitions/2000/matches?dateFrom=${d}&dateTo=${d}`);
       if (data.matches) allMatches = allMatches.concat(data.matches);
     } catch(e) {
-      console.error(`[${ts}] API fetch failed for ${d}:`, e.message);
+      console.error(`[${ts}] Scores fetch failed for ${d}:`, e.message);
     }
   }
 
@@ -188,7 +144,6 @@ async function updateScores() {
     if (m.status !== 'FINISHED') return;
     const homeScore = m.score?.fullTime?.home, awayScore = m.score?.fullTime?.away;
     if (homeScore == null || awayScore == null) return;
-    // Use TLA codes (match our team IDs directly)
     const htla = m.homeTeam?.tla, atla = m.awayTeam?.tla;
     if (!htla || !atla) return;
     const mid = lookup[htla + '-' + atla] || lookup[atla + '-' + htla];
@@ -202,147 +157,173 @@ async function updateScores() {
   console.log(`[${ts}] Scores: ${n} new, ${u} updated (total: ${Object.keys(existing).length})`);
 }
 
+// ========== UPDATE: Odds (the-odds-api.com, free 500 req/month) ==========
 async function updateOdds() {
+  if (!ODDS_API_KEY) {
+    const ts = new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
+    console.log(`[${ts}] Odds: skipped (set ODDS_API_KEY env var to enable)`);
+    return false;
+  }
+
   const now = new Date();
   const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
-  const todayO = now.toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
-  const tomorrow = new Date(now.getTime() + 86400000).toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
 
-  // Skip if no matches today or tomorrow
-  const sched = getMatchSchedule();
-  if (!sched.some(m => m.date === todayO || m.date === tomorrow)) {
-    console.log(`[${ts}] No matches today/tomorrow. Skipping odds update.`);
+  // the-odds-api.com: get soccer/World Cup winner odds + upcoming match odds
+  // Free tier: 500 req/month, use sparingly
+  const sport = 'soccer_fifa_world_cup_winner';
+  const regions = 'eu';  // European bookmakers
+  const markets = 'h2h'; // 1X2
+
+  let oddsData;
+  try {
+    oddsData = await fetchOdds(`/sports/${sport}/odds/?regions=${regions}&markets=${markets}`);
+  } catch(e) {
+    console.error(`[${ts}] Odds fetch failed:`, e.message);
+    return false;
+  }
+
+  if (!oddsData || !Array.isArray(oddsData)) {
+    console.log(`[${ts}] Odds: no data returned`);
     return false;
   }
 
   const existing = loadJSON(ODDS_FILE);
-  const lookup = loadMatchLookup();
-
-  let wcMatches;
-  try { wcMatches = await getWCMatches(); } catch(e) { console.error('list API failed:', e.message); return; }
-
-  // Fetch odds for today + tomorrow's matches (robust against delays)
-  const targets = wcMatches.filter(m => {
-    const d = m.matchMain?.matchDate;
-    return d === todayO || d === tomorrow;
-  });
-
   let n = 0;
-  for (const m of targets) {
-    const mm = m.matchMain;
-    const mid = findOurMatchId(mm.homeTeamName, mm.awayTeamName, lookup);
-    if (!mid) continue;
 
-    try {
-      const resp = await apiGet('/firo/sports-lottery/odds', { matchId: String(mm.matchId) });
-      if (resp.code !== 200) continue;
-      const data = resp.data;
-      // Keep only the latest snapshot for each odds type
-      existing[mid] = {
-        homeTeam: mm.homeTeamName, awayTeam: mm.awayTeamName,
-        matchDate: mm.matchDate, matchTime: mm.matchTime,
-        apiMatchId: mm.matchId,
-        updatedAt: now.toISOString(),
-        had: data.hadOddsList?.[0] || null,
-        hhad: data.hhadOddsList?.[0] || null,
-        hafu: data.hafuOddsList?.[0] || null,
-        ttg: data.ttgOddsList?.[0] || null,
-        crs: data.crsOddsList?.[0] || null,
-      };
-      n++;
-    } catch(e) {}
-    await new Promise(r => setTimeout(r, 200)); // rate limit
+  for (const event of oddsData) {
+    const home = event.home_team, away = event.away_team;
+    // Try to find a bookmarker with 1X2 odds
+    const bookmaker = event.bookmakers?.find(b => b.markets?.some(m => m.key === 'h2h'));
+    if (!bookmaker) continue;
+    const h2h = bookmaker.markets.find(m => m.key === 'h2h');
+    if (!h2h) continue;
+
+    const outcomes = {};
+    h2h.outcomes.forEach(o => { outcomes[o.name] = o.price; });
+
+    const key = `${home} vs ${away}`;
+    existing[key] = {
+      home, away,
+      commence_time: event.commence_time,
+      bookmaker: bookmaker.title,
+      homeOdds: outcomes[home] || null,
+      drawOdds: outcomes['Draw'] || null,
+      awayOdds: outcomes[away] || null,
+      updatedAt: now.toISOString()
+    };
+    n++;
   }
 
   saveJSON(ODDS_FILE, existing);
-  // Also generate JS module for mini-program
-  const jsContent = '// Auto-generated by update-scores.js — DO NOT EDIT\n// Last updated: ' + now.toISOString() + '\nmodule.exports = ' + JSON.stringify(existing, null, 2) + ';\n';
-  fs.writeFileSync(path.join(BASE_DIR, 'mini-program-worldcup/utils/odds-data.js'), jsContent);
-  console.log(`[${ts}] Odds: ${n} matches updated (total: ${Object.keys(existing).length})`);
+  console.log(`[${ts}] Odds: ${n} events updated (total: ${Object.keys(existing).length})`);
+  return true;
 }
 
+// ========== UPDATE: Match Info (football-data.org standings + H2H) ==========
 async function updateInfo() {
   const now = new Date();
   const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
-  const today = now.toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
-  const tmr = new Date(now.getTime() + 86400000).toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
-
-  // Skip if no matches today or tomorrow
-  const sched = getMatchSchedule();
-  if (!sched.some(m => m.date === today || m.date === tmr)) {
-    console.log(`[${ts}] No matches today/tomorrow. Skipping info update.`);
-    return false;
-  }
 
   const existing = loadJSON(INFO_FILE);
-  const lookup = loadMatchLookup();
+  let updated = 0;
 
-  let wcMatches;
-  try { wcMatches = await getWCMatches(); } catch(e) { console.error('list API failed:', e.message); return; }
-
-  // Focus on today and tomorrow's matches for news/intel
-  const targets = wcMatches.filter(m => {
-    const d = m.matchMain?.matchDate;
-    return d === today || d === tmr;
-  });
-
-  let n = 0;
-  for (const m of targets) {
-    const mm = m.matchMain;
-    const mid = findOurMatchId(mm.homeTeamName, mm.awayTeamName, lookup);
-    if (!mid) continue;
-
-    try {
-      const resp = await apiGet('/firo/sports-lottery/football-info', { matchId: String(mm.matchId) });
-      if (resp.code !== 200) continue;
-      const data = resp.data;
-
-      // Extract key info
-      const info = {
-        homeTeam: mm.homeTeamName, awayTeam: mm.awayTeamName,
-        matchDate: mm.matchDate, matchTime: mm.matchTime,
-        apiMatchId: mm.matchId,
-        updatedAt: now.toISOString(),
-        history: data.history || null,
-        feature: data.feature || null,
-        injuries: data.injuries || [],
-        recentForm: { home: data.result || null, away: null },
-        standings: data.tables || null,
-        futureDetails: (data.futureDetails || []).slice(0, 5),
-      };
-
-      // Merge with existing (keep older injury data if new is empty)
-      if (existing[mid]) {
-        if (!info.injuries.length) info.injuries = existing[mid].injuries || [];
-        Object.assign(existing[mid], info);
-      } else {
-        existing[mid] = info;
+  // 1. Fetch group standings
+  try {
+    const standingsData = await fetchFD('/competitions/2000/standings');
+    if (standingsData.standings) {
+      for (const group of standingsData.standings) {
+        const groupName = group.group?.replace('GROUP_', '') || group.group;
+        const key = `standings_${groupName}`;
+        existing[key] = {
+          type: 'standings',
+          group: groupName,
+          table: group.table?.map(row => ({
+            position: row.position,
+            team: row.team?.tla || row.team?.name,
+            played: row.playedGames,
+            won: row.won,
+            draw: row.draw,
+            lost: row.lost,
+            goalsFor: row.goalsFor,
+            goalsAgainst: row.goalsAgainst,
+            goalDiff: row.goalDifference,
+            points: row.points
+          })),
+          updatedAt: now.toISOString()
+        };
+        updated++;
       }
-      n++;
-    } catch(e) {}
-    await new Promise(r => setTimeout(r, 200));
+    }
+    console.log(`[${ts}] Info: standings updated (${updated} groups)`);
+  } catch(e) {
+    console.error(`[${ts}] Standings fetch failed:`, e.message);
   }
 
+  // 2. Fetch H2H for upcoming matches (today + tomorrow)
+  const todayStr = now.toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
+  const tomorrowStr = new Date(now.getTime() + 86400000).toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
+
+  try {
+    const matchesData = await fetchFD(`/competitions/2000/matches?dateFrom=${todayStr}&dateTo=${tomorrowStr}`);
+    if (matchesData.matches) {
+      const upcoming = matchesData.matches.filter(m => m.status === 'SCHEDULED' || m.status === 'TIMED');
+      for (const m of upcoming) {
+        const htla = m.homeTeam?.tla, atla = m.awayTeam?.tla;
+        if (!htla || !atla) continue;
+        const key = `h2h_${htla}_${atla}`;
+
+        // Check if we already have recent H2H data
+        if (existing[key] && Date.now() - new Date(existing[key].updatedAt).getTime() < 86400000) continue;
+
+        try {
+          const h2hData = await fetchFD(`/teams/${m.homeTeam.id}/matches?limit=10&competitions=2000`);
+          existing[key] = {
+            type: 'h2h',
+            home: htla,
+            away: atla,
+            recentMatches: (h2hData.matches || []).map(h => ({
+              date: h.utcDate,
+              home: h.homeTeam?.tla,
+              away: h.awayTeam?.tla,
+              score: `${h.score?.fullTime?.home}-${h.score?.fullTime?.away}`,
+              winner: h.score?.winner
+            })),
+            updatedAt: now.toISOString()
+          };
+          updated++;
+        } catch(e) {
+          // H2H not available for this team pair, skip
+        }
+      }
+    }
+    console.log(`[${ts}] Info: H2H data updated (total info entries: ${Object.keys(existing).length})`);
+  } catch(e) {
+    console.error(`[${ts}] H2H fetch failed:`, e.message);
+  }
+
+  // Save to file
   saveJSON(INFO_FILE, existing);
-  // Also generate JS module for mini-program
-  const infoJS = '// Auto-generated by update-scores.js — DO NOT EDIT\n// Last updated: ' + now.toISOString() + '\nmodule.exports = ' + JSON.stringify(existing, null, 2) + ';\n';
-  fs.writeFileSync(path.join(BASE_DIR, 'mini-program-worldcup/utils/info-data.js'), infoJS);
-  console.log(`[${ts}] Info: ${n} matches updated (total: ${Object.keys(existing).length})`);
+
+  // Generate JS modules for mini-program (if the directory exists)
+  const mpUtilsDir = path.join(BASE_DIR, 'mini-program-worldcup', 'utils');
+  if (fs.existsSync(mpUtilsDir)) {
+    const jsHeader = '// Auto-generated by update-scores.js — DO NOT EDIT\n// Last updated: ' + now.toISOString() + '\nmodule.exports = ';
+    const scoresData = loadJSON(SCORES_FILE);
+    try {
+      fs.writeFileSync(path.join(mpUtilsDir, 'scores-data.js'), jsHeader + JSON.stringify(scoresData, null, 2) + ';\n');
+      fs.writeFileSync(path.join(mpUtilsDir, 'info-data.js'), jsHeader + JSON.stringify(existing, null, 2) + ';\n');
+      console.log(`[${ts}] Generated JS modules for mini-program`);
+    } catch(e) {
+      console.error(`[${ts}] JS module generation failed:`, e.message);
+    }
+  }
 }
 
+// ========== Update All ==========
 async function updateAll() {
-  // Batch all updates, respecting rate limits
   await updateScores();
-  await new Promise(r => setTimeout(r, 500));
-  await updateOdds();
-  await new Promise(r => setTimeout(r, 500));
   await updateInfo();
-
-  // Show usage
-  try {
-    const r = await apiGet('/firo/basic/usage/remaining');
-    if (r.code === 200) console.log(`API: ${r.data.usedCount}/${r.data.totalLimit} used (${r.data.remainingCount} left)`);
-  } catch(e) {}
+  await updateOdds(); // will skip silently if no ODDS_API_KEY
 }
 
 // ========== CLI ==========

@@ -61,7 +61,7 @@ Page({
       const ht = data.TEAMS.find(function(t) { return t.id === m.home; });
       const at = data.TEAMS.find(function(t) { return t.id === m.away; });
       const pred = (ht && at) ? predict.predictMatch(ht, at) : null;
-      const jc = data.JC_ODDS[m.id];
+      const mol = data.MATCH_ODDS[m.id];
       const actual = app.globalData.actualResults[m.id];
 
       return {
@@ -73,9 +73,7 @@ Page({
         homeName: ht ? ht.cn : m.home,
         awayFlag: at ? at.flag : '?',
         awayName: at ? at.cn : m.away,
-        spf: jc ? jc.spf.map(function(x) { return x.toFixed(2); }) : null,
-        rq: jc ? jc.rq : null,
-        rqO: jc && jc.rqO ? jc.rqO.map(function(x) { return x.toFixed(2); }) : null,
+        spf: mol ? [mol.h.toFixed(2), mol.d.toFixed(2), mol.a.toFixed(2)] : null,
         predScore: pred ? pred.topScores.map(function(s) { return s.home + ':' + s.away; }).join(' · ') : '?:?',
         homeProb: pred ? (pred.homeWinProb * 100).toFixed(0) : '',
         drawProb: pred ? (pred.drawProb * 100).toFixed(0) : '',
