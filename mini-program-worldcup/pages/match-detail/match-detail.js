@@ -24,7 +24,14 @@ Page({
     liveOdds: null,
     liveInjuries: null,
     marketConsensus: null,
+    postReview: null,
+    actualResult: null,
+    showPreMatch: false,
     loading: true
+  },
+
+  togglePreMatch() {
+    this.setData({ showPreMatch: !this.data.showPreMatch });
   },
 
   onLoad(options) {
@@ -140,6 +147,13 @@ Page({
     // Generate textual analysis with live data
     const analysis = this.generateAnalysis(m, ht, at, pred, mol, apiInfo);
 
+    // Post-match review: only for finished matches with actual results
+    const actualResult = app.globalData.actualResults[matchId];
+    let postReview = null;
+    if (actualResult && actualResult.homeScore !== undefined) {
+      postReview = this.generatePostMatchReview(m, ht, at, pred, actualResult, apiInfo);
+    }
+
     // Update info
     const predLog = app.globalData.predLog || {};
     const logEntry = predLog[matchId];
@@ -223,6 +237,8 @@ Page({
       homeLineup: hLu || null,
       awayLineup: aLu || null,
       analysis,
+      postReview,
+      actualResult,
       updateInfo,
       loading: false
     });
@@ -292,6 +308,136 @@ Page({
     const closeResult = closeProb === pred.homeWinProb ? ht.cn+'取胜' : closeProb === pred.awayWinProb ? at.cn+'取胜' : '平局收场';
     const confidence = closeProb > 0.6 ? '较高信心' : closeProb > 0.45 ? '中等信心' : '偏低信心';
     parts.push('🔮 【综合研判】模型倾向' + closeResult + '（' + confidence + '）。走势将由' + (gap > 8 ? fav+'的发挥决定' : '双方临场和中场争夺决定') + '。');
+
+    return parts;
+  },
+
+  /** Post-match review: AI reflects on its prediction vs actual result */
+  generatePostMatchReview(m, ht, at, pred, actual, apiInfo) {
+    const parts = [];
+    const actH = actual.homeScore, actA = actual.awayScore;
+    const predH = pred.predScore[0], predA = pred.predScore[1];
+    const actualDiff = actH - actA;
+    const predDiff = predH - predA;
+    const goalErr = Math.abs(actH - pred.expH) + Math.abs(actA - pred.expA);
+    const totalGoals = actH + actA;
+    const predTotal = pred.expH + pred.expA;
+
+    // Outcome correctness
+    const predOutcome = predH > predA ? 'home' : predH === predA ? 'draw' : 'away';
+    const actualOutcome = actH > actA ? 'home' : actH === actA ? 'draw' : 'away';
+    const outcomeCorrect = predOutcome === actualOutcome;
+    const exactCorrect = predH === actH && predA === actA;
+
+    // Which probability did AI assign to the actual outcome?
+    const actualProb = actualOutcome === 'home' ? pred.homeWinProb :
+                       actualOutcome === 'draw' ? pred.drawProb : pred.awayWinProb;
+    const probPct = (actualProb * 100).toFixed(0);
+    const probLevel = actualProb > 0.5 ? '高置信区间(>50%)' :
+                      actualProb > 0.35 ? '中等置信区间(35-50%)' :
+                      actualProb > 0.2 ? '低置信区间(20-35%)' : '极低概率(<20%)';
+
+    // Overview
+    const resultDesc = actH + ':' + actA;
+    const predDesc = predH + ':' + predA;
+    const icon = exactCorrect ? '🎯' : outcomeCorrect ? '✅' : '❌';
+    const verdict = exactCorrect ? '比分完全命中！AI模型精准捕捉了本场比赛。' :
+                    outcomeCorrect ? '胜负方向判断正确，但比分有偏差。' :
+                    '预测错误，模型对本场判断出现较大偏差。';
+    parts.push('📋 【赛后复盘】' + ht.cn + ' ' + resultDesc + ' ' + at.cn + '。AI赛前预测' + predDesc + '。' + icon + ' ' + verdict);
+
+    // 1. Strength review
+    const hStr = predict.getStrength(ht), aStr = predict.getStrength(at);
+    const strGap = hStr - aStr;
+    const strPredictedFav = strGap > 4 ? ht.cn : strGap < -4 ? at.cn : '势均力敌';
+    const strAssessment = (strGap > 4 && actualOutcome === 'home') || (strGap < -4 && actualOutcome === 'away')
+      ? '✅ 准确：实力较强一方顺利取胜，模型评分合理。'
+      : (strGap > 4 && actualOutcome !== 'home')
+        ? '❌ 偏差：实力占优的' + ht.cn + '未能取胜，模型可能高估了实力差距（' + strGap.toFixed(1) + '分）。'
+        : (strGap < -4 && actualOutcome !== 'away')
+          ? '❌ 偏差：实力占优的' + at.cn + '未能取胜，模型可能高估了实力差距。'
+          : '⚖️ 双方实力接近（差距' + Math.abs(strGap).toFixed(1) + '分），比赛结果在合理范围内。';
+    parts.push('📊 【实力复盘】AI评分 ' + ht.cn + ' ' + hStr.toFixed(1) + ' vs ' + at.cn + ' ' + aStr.toFixed(1) + '，预判' + strPredictedFav + '占优。实际：' + strAssessment);
+
+    // 2. Tactical review
+    if (pred.tacAnalysis) {
+      const tacAdj = pred.tacticalAdj || 0;
+      const tacDir = tacAdj > 0.02 ? ht.cn + '战术占优' : tacAdj < -0.02 ? at.cn + '战术占优' : '战术层面互有制衡';
+      const tacCheck = (tacAdj > 0.02 && actualOutcome === 'home') || (tacAdj < -0.02 && actualOutcome === 'away')
+        ? '✅ 战术克制关系被实际比赛验证。'
+        : (tacAdj > 0.02 && actualOutcome !== 'home')
+          ? '⚠️ 预测' + ht.cn + '战术占优，但未能转化为胜势，战术克制可能被高估。'
+          : (tacAdj < -0.02 && actualOutcome !== 'away')
+            ? '⚠️ 预测' + at.cn + '战术占优，但未能转化为胜势。'
+            : '⚖️ 战术层面预测基本中性，与实际走势一致。';
+      parts.push('⚔️ 【战术复盘】赛前分析：' + pred.tacAnalysis.narrative + '（调整' + pred.tacAnalysis.adjPct + '）。实际：' + tacCheck);
+    }
+
+    // 3. Score review
+    const goalDiffErr = Math.abs(actualDiff - predDiff);
+    const totalGoalErr = Math.abs(totalGoals - predTotal);
+    const scoreVerdict = exactCorrect ? '🎯 完美命中！AI精确预测了比分。' :
+                         goalDiffErr === 0 ? '✅ 净胜球差预测正确（' + (predDiff > 0 ? ht.cn + '赢' + predDiff + '球' : predDiff === 0 ? '平局' : at.cn + '赢' + Math.abs(predDiff) + '球') + '）。' :
+                         '⚠️ 净胜球差偏差' + goalDiffErr + '球，总进球偏差' + totalGoalErr.toFixed(1) + '球（预测' + predTotal.toFixed(1) + ' vs 实际' + totalGoals + '）。';
+    parts.push('🎯 【比分复盘】AI预测' + predDesc + '（期望进球' + pred.expH.toFixed(1) + '-' + pred.expA.toFixed(1) + '），实际' + resultDesc + '。' + scoreVerdict);
+
+    // 4. Probability review
+    parts.push('📈 【概率复盘】AI给出' + ht.cn + '胜' + (pred.homeWinProb * 100).toFixed(0) + '% / 平' + (pred.drawProb * 100).toFixed(0) + '% / ' + at.cn + '胜' + (pred.awayWinProb * 100).toFixed(0) + '%。实际结果为' + (actualOutcome === 'home' ? ht.cn + '胜' : actualOutcome === 'draw' ? '平局' : at.cn + '胜') + '，该结果落在' + probLevel + '（AI赋概率' + probPct + '%）。' + (actualProb > 0.35 ? '模型对此结果有充分预期。' : '这是一个小概率结果，模型对此准备不足。'));
+
+    // 5. Star players
+    const hStars = ht.stars ? ht.stars.slice(0, 2).join('、') : '核心球员';
+    const aStars = at.stars ? at.stars.slice(0, 2).join('、') : '核心球员';
+    parts.push('⭐ 【球星复盘】赛前关注' + ht.cn + '的' + hStars + '与' + at.cn + '的' + aStars + '。球星临场发挥往往是预测偏差的重要来源，建议赛后关注球员评分数据以完善此维度。');
+
+    // 6. Injury impact
+    const hasInjuries = (ht.inj || at.inj || (apiInfo && apiInfo.injuries && apiInfo.injuries.length > 0));
+    if (hasInjuries) {
+      const injSummary = [];
+      if (ht.inj) injSummary.push(ht.cn + '：' + ht.inj.replace(/[🔴⚠️]/g, '').trim());
+      if (at.inj) injSummary.push(at.cn + '：' + at.inj.replace(/[🔴⚠️]/g, '').trim());
+      const injPenalty = ((ht.inj || '').match(/🔴/g) || []).length * 4 + ((ht.inj || '').match(/⚠️/g) || []).length * 2 +
+                         ((at.inj || '').match(/🔴/g) || []).length * 4 + ((at.inj || '').match(/⚠️/g) || []).length * 2;
+      const injVerdict = (injPenalty >= 6 && actualOutcome !== (strGap > 0 ? 'home' : 'away'))
+        ? '⚠️ 伤病影响较大，可能是预测偏差的重要原因。'
+        : '伤病影响在可控范围内，未显著改变比赛走势。';
+      parts.push('🏥 【伤病复盘】赛前伤停：' + injSummary.join('；') + '。伤病扣分合计' + injPenalty + '分。' + injVerdict);
+    } else {
+      parts.push('🏥 【伤病复盘】本场双方阵容齐整，无重大伤病影响预测准确性。');
+    }
+
+    // 7. Market consensus review
+    if (pred.marketConsensus) {
+      const mc = pred.marketConsensus;
+      const mktDirection = mc.mktFav === 'home' ? ht.cn + '胜' : mc.mktFav === 'away' ? at.cn + '胜' : '平局';
+      const whoRight = mc.agree
+        ? (actualOutcome === mc.aiFav ? '✅ AI与机构方向一致且均正确。' : '❌ AI与机构方向一致但均判断错误，市场也存在系统性偏差。')
+        : (actualOutcome === mc.aiFav ? '💡 AI判断正确而机构方向有误，模型捕捉到了市场未充分定价的信息。' :
+           actualOutcome === mc.mktFav ? '⚠️ 机构方向正确而AI判断失误，市场信息（如赔率变动）可能包含了模型未捕捉到的关键信号。' :
+           '❌ AI和机构方向均错误，本场结果超出常规预期。');
+      parts.push('🏷️ 【机构复盘】赛前' + mc.label + '。机构方向：' + mktDirection + '，AI方向：' + (mc.aiFav === 'home' ? ht.cn + '胜' : mc.aiFav === 'away' ? at.cn + '胜' : '平局') + '。实际：' + whoRight);
+    }
+
+    // 8. Upset review
+    if (pred.upsetProb !== undefined) {
+      const upsetPct = (pred.upsetProb * 100).toFixed(0);
+      const isUpset = (hStr > aStr && actualOutcome !== 'home') || (aStr > hStr && actualOutcome !== 'away') || (Math.abs(strGap) <= 4 && actualOutcome === 'away');
+      const upsetVerdict = pred.upsetAlert
+        ? (isUpset ? '⚠️ 模型成功预警了冷门风险（' + upsetPct + '%），实际确实出现冷门。' : '模型预警了冷门风险（' + upsetPct + '%），但强队顺利取胜，属于过度预警。')
+        : (isUpset ? '❌ 模型未预警冷门（风险仅' + upsetPct + '%），但实际爆冷。模型对冷门信号捕捉不足。' : '✅ 模型判断冷门概率低（' + upsetPct + '%），比赛正常走势。');
+      parts.push('⚠️ 【冷门复盘】赛前Monte Carlo冷门概率' + upsetPct + '%。' + upsetVerdict);
+    }
+
+    // 9. Overall summary
+    const dimensions = [outcomeCorrect, exactCorrect, Math.abs(strGap) <= 4 || (strGap > 0 === actualOutcome === 'home')];
+    const score = dimensions.filter(Boolean).length;
+    const overallVerdict = exactCorrect ? 'A+ 完美预测' :
+                           outcomeCorrect && goalDiffErr <= 1 ? 'A 方向准确，比分接近' :
+                           outcomeCorrect ? 'B+ 胜负正确，比分有偏差' :
+                           goalDiffErr <= 1 ? 'B 比分接近但方向错误' : 'C 预测出现较大偏差';
+    parts.push('🔮 【综合总结】本次预测综合评级：' + overallVerdict + '。' +
+      (exactCorrect ? '模型在所有维度上表现优秀，泊松模型+战术矩阵+赔率融合的框架在本场得到了充分验证。' :
+       outcomeCorrect ? '方向判断准确，但在具体比分/进球数上存在偏差，泊松模型的lambda参数可能需要根据实时信息（如首发名单、天气）做微调。' :
+       '本场暴露了模型的局限性：实力评分和战术矩阵可能未能充分反映某些关键因素（如临场状态、裁判尺度、意外事件）。建议关注赛后数据以优化模型参数。'));
 
     return parts;
   }

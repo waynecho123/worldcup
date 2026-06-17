@@ -108,6 +108,21 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .mc-teams-row .mc-flag{font-size:1.9rem}
 .mc-teams-row .mc-name{font-size:.82rem}
 .mc-result-score{font-size:1.4rem}
+.match-card{padding:10px}
+.match-card .mc-name{font-size:.78rem}
+.main{padding:6px}
+.header{padding:6px;gap:4px}
+.tab-nav button{padding:6px 8px;font-size:.68rem}
+.modal{padding:12px;width:98%;border-radius:8px}
+.stat-row{grid-template-columns:1fr 1fr;gap:6px}
+.stat-box{padding:8px}
+.stat-box .num{font-size:1rem}
+.btn{padding:8px 14px;font-size:.72rem}
+.st-row{font-size:.68rem;padding:6px 4px}
+.sti-flag{font-size:1rem}
+.st-header{font-size:.58rem}
+.st-col{font-size:.58rem!important}
+canvas{max-height:200px}
 }
 
 /* ===== DASHBOARD ===== */
@@ -250,23 +265,70 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .pitch .center-circle{position:absolute;border:2px solid rgba(255,255,255,.15);border-radius:50%}
 .pitch .subs-row{font-size:.62rem;color:var(--text3);text-align:center;padding:4px 8px}
 @media(max-width:768px){
+  /* Header & Navigation */
+  .header{flex-direction:column;height:auto;padding:10px;gap:8px}
+  .tab-nav{overflow-x:auto;width:100%;-webkit-overflow-scrolling:touch}
+  .tab-nav button{padding:8px 12px;font-size:.75rem;white-space:nowrap;flex-shrink:0}
+  .main{padding:10px}
+  /* Match cards */
+  .match-card{padding:12px;margin-bottom:8px}
+  .match-card .mc-header{margin-bottom:6px}
+  .match-card .mc-time{font-size:.68rem}
+  .match-card .mc-group{font-size:.62rem;padding:2px 6px}
+  .match-card .mc-flag{font-size:1.6rem}
+  .match-card .mc-name{font-size:.82rem}
+  .mc-teams-row{gap:6px;padding:4px 0}
+  .mc-teams-row .mc-flag{font-size:1.9rem}
+  .mc-teams-row .mc-name{font-size:.85rem}
+  .mc-vs-text{font-size:1rem}
+  .mc-result-score{font-size:1.5rem}
+  .mc-result-banner{padding:8px;gap:8px;margin-top:6px}
+  .mc-ai-win .mc-value{font-size:.9rem}
+  .mc-ai-win .mc-label{font-size:.72rem}
+  .mc-ai-score .mc-value{font-size:.8rem}
+  .mc-prob-bar{height:18px}
+  .mc-prob-seg{font-size:.58rem}
+  .mc-news-line,.mc-inj-line{font-size:.65rem}
+  /* Bracket */
+  .bracket{min-width:900px;gap:8px}
+  .br-round{min-width:120px}
+  /* Team grid & standings */
+  .team-grid{grid-template-columns:1fr}
+  .stat-row{grid-template-columns:repeat(2,1fr)}
+  .st-col{font-size:.65rem!important}
+  .st-row{font-size:.72rem;padding:8px 6px}
+  .sti-flag{font-size:1.2rem}
+  .sti-name{font-size:.75rem}
+  .st-header{font-size:.62rem;padding:8px 6px}
+  .st-stat{width:36px}
+  .st-pts{width:40px}
+  .st-pos{width:28px}
+  /* Modal / Detail */
+  .modal{padding:16px;width:96%;max-height:90vh;border-radius:10px}
+  .mclose{top:8px;right:8px;font-size:1.4rem;width:32px;height:32px}
+  /* Pitch / Lineup */
   .pitch-wrapper{grid-template-columns:1fr}
   .pitch .player-dot .dot{width:24px;height:24px;font-size:.6rem}
   .pitch .player-dot .pname{font-size:.5rem;max-width:48px}
-}
-
-@media(max-width:768px){
-  .header{flex-direction:column;height:auto;padding:10px;gap:8px}
-  .tab-nav{overflow-x:auto;width:100%}
-  .tab-nav button{padding:5px 10px;font-size:.72rem}
-  .main{padding:10px}
-  .bracket{min-width:900px;gap:8px}
-  .br-round{min-width:120px}
-  .team-grid{grid-template-columns:1fr}
-  .stat-row{grid-template-columns:repeat(2,1fr)}
-  .match-card .mc-flag{font-size:1.6rem}
-  .match-card .mc-name{font-size:.82rem}
-  .st-col{font-size:.65rem!important}
+  /* Buttons */
+  .btn{padding:10px 18px;font-size:.8rem}
+  .btn-sm{padding:6px 14px;font-size:.7rem}
+  /* Sim bar */
+  .sim-bar{gap:8px}
+  .sim-bar select{padding:6px 12px;font-size:.78rem}
+  /* Charts */
+  canvas{max-height:250px}
+  /* Date nav */
+  .date-nav{padding:6px 8px;margin:6px 8px;gap:4px}
+  .date-chip{padding:5px 10px;font-size:.68rem}
+  .date-badge{font-size:.72rem;padding:4px 10px}
+  /* Tabs */
+  .tabs{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .tabs button{white-space:nowrap;flex-shrink:0}
+  /* Stat boxes */
+  .stat-box{padding:10px}
+  .stat-box .num{font-size:1.2rem}
+  .stat-box .lbl{font-size:.62rem}
 }
 /* ===== GROUP STANDINGS ===== */
 .standings-table{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:14px}
@@ -3104,6 +3166,98 @@ function generateMatchAnalysis(m, ht, at, pred, mol) {
     '<div style="font-size:.6rem;color:var(--text3);text-align:right;margin-top:8px">*基于泊松模型+战术矩阵+历史同赔+新闻情绪综合生成' + syncNote + '</div></div>';
 }
 
+/** Post-match review: AI reflects on its prediction vs actual result. Returns HTML string. */
+function generatePostMatchReview(m, ht, at, pred, actual, apiInfo) {
+  var parts = [];
+  var actH = actual.homeScore, actA = actual.awayScore;
+  var predH = pred.predScore[0], predA = pred.predScore[1];
+  var actualDiff = actH - actA;
+  var predDiff = predH - predA;
+  var goalErr = Math.abs(actH - pred.expH) + Math.abs(actA - pred.expA);
+  var totalGoals = actH + actA;
+  var predTotal = pred.expH + pred.expA;
+  var predOutcome = predH > predA ? 'home' : predH === predA ? 'draw' : 'away';
+  var actualOutcome = actH > actA ? 'home' : actH === actA ? 'draw' : 'away';
+  var outcomeCorrect = predOutcome === actualOutcome;
+  var exactCorrect = predH === actH && predA === actA;
+  var actualProb = actualOutcome === 'home' ? pred.homeWinProb : actualOutcome === 'draw' ? pred.drawProb : pred.awayWinProb;
+  var probPct = (actualProb * 100).toFixed(0);
+  var probLevel = actualProb > 0.5 ? '高置信区间(>50%)' : actualProb > 0.35 ? '中等置信区间(35-50%)' : actualProb > 0.2 ? '低置信区间(20-35%)' : '极低概率(<20%)';
+  var hStr = getStrength(ht), aStr = getStrength(at);
+  var strGap = hStr - aStr;
+
+  var resultDesc = actH + ':' + actA;
+  var predDesc = predH + ':' + predA;
+  var icon = exactCorrect ? '🎯' : outcomeCorrect ? '✅' : '❌';
+  var verdict = exactCorrect ? '比分完全命中！AI模型精准捕捉了本场比赛。' : outcomeCorrect ? '胜负方向判断正确，但比分有偏差。' : '预测错误，模型对本场判断出现较大偏差。';
+  parts.push('📋 【赛后复盘】' + ht.cn + ' ' + resultDesc + ' ' + at.cn + '。AI赛前预测' + predDesc + '。' + icon + ' ' + verdict);
+
+  // Strength
+  var strPredictedFav = strGap > 4 ? ht.cn : strGap < -4 ? at.cn : '势均力敌';
+  var strAssessment = (strGap > 4 && actualOutcome === 'home') || (strGap < -4 && actualOutcome === 'away') ? '✅ 准确：实力较强一方顺利取胜，模型评分合理。' : (strGap > 4 && actualOutcome !== 'home') ? '❌ 偏差：实力占优的' + ht.cn + '未能取胜，模型可能高估了实力差距（' + strGap.toFixed(1) + '分）。' : (strGap < -4 && actualOutcome !== 'away') ? '❌ 偏差：实力占优的' + at.cn + '未能取胜，模型可能高估了实力差距。' : '⚖️ 双方实力接近（差距' + Math.abs(strGap).toFixed(1) + '分），比赛结果在合理范围内。';
+  parts.push('📊 【实力复盘】AI评分 ' + ht.cn + ' ' + hStr.toFixed(1) + ' vs ' + at.cn + ' ' + aStr.toFixed(1) + '，预判' + strPredictedFav + '占优。实际：' + strAssessment);
+
+  // Tactical
+  if (pred.tacAnalysis) {
+    var tacAdj = pred.tacticalAdj || 0;
+    var tacCheck = (tacAdj > 0.02 && actualOutcome === 'home') || (tacAdj < -0.02 && actualOutcome === 'away') ? '✅ 战术克制关系被实际比赛验证。' : (tacAdj > 0.02 && actualOutcome !== 'home') ? '⚠️ 预测' + ht.cn + '战术占优，但未能转化为胜势，战术克制可能被高估。' : (tacAdj < -0.02 && actualOutcome !== 'away') ? '⚠️ 预测' + at.cn + '战术占优，但未能转化为胜势。' : '⚖️ 战术层面预测基本中性，与实际走势一致。';
+    parts.push('⚔️ 【战术复盘】赛前分析：' + pred.tacAnalysis.narrative + '（调整' + pred.tacAnalysis.adjPct + '）。实际：' + tacCheck);
+  }
+
+  // Score
+  var goalDiffErr = Math.abs(actualDiff - predDiff);
+  var totalGoalErr = Math.abs(totalGoals - predTotal);
+  var scoreVerdict = exactCorrect ? '🎯 完美命中！AI精确预测了比分。' : goalDiffErr === 0 ? '✅ 净胜球差预测正确（' + (predDiff > 0 ? ht.cn + '赢' + predDiff + '球' : predDiff === 0 ? '平局' : at.cn + '赢' + Math.abs(predDiff) + '球') + '）。' : '⚠️ 净胜球差偏差' + goalDiffErr + '球，总进球偏差' + totalGoalErr.toFixed(1) + '球（预测' + predTotal.toFixed(1) + ' vs 实际' + totalGoals + '）。';
+  parts.push('🎯 【比分复盘】AI预测' + predDesc + '（期望进球' + pred.expH.toFixed(1) + '-' + pred.expA.toFixed(1) + '），实际' + resultDesc + '。' + scoreVerdict);
+
+  // Probability
+  parts.push('📈 【概率复盘】AI给出' + ht.cn + '胜' + (pred.homeWinProb * 100).toFixed(0) + '% / 平' + (pred.drawProb * 100).toFixed(0) + '% / ' + at.cn + '胜' + (pred.awayWinProb * 100).toFixed(0) + '%。实际结果为' + (actualOutcome === 'home' ? ht.cn + '胜' : actualOutcome === 'draw' ? '平局' : at.cn + '胜') + '，该结果落在' + probLevel + '（AI赋概率' + probPct + '%）。' + (actualProb > 0.35 ? '模型对此结果有充分预期。' : '这是一个小概率结果，模型对此准备不足。'));
+
+  // Stars
+  var hStars = ht.stars ? ht.stars.slice(0, 2).join('、') : '核心球员';
+  var aStars = at.stars ? at.stars.slice(0, 2).join('、') : '核心球员';
+  parts.push('⭐ 【球星复盘】赛前关注' + ht.cn + '的' + hStars + '与' + at.cn + '的' + aStars + '。球星临场发挥往往是预测偏差的重要来源，建议赛后关注球员评分数据以完善此维度。');
+
+  // Injuries
+  if (ht.inj || at.inj || (apiInfo && apiInfo.injuries && apiInfo.injuries.length > 0)) {
+    var injSummary = [];
+    if (ht.inj) injSummary.push(ht.cn + '：' + ht.inj.replace(/[🔴⚠️]/g, '').trim());
+    if (at.inj) injSummary.push(at.cn + '：' + at.inj.replace(/[🔴⚠️]/g, '').trim());
+    parts.push('🏥 【伤病复盘】赛前伤停：' + injSummary.join('；') + '。伤病因素在复盘时需结合临场表现综合评判。');
+  } else {
+    parts.push('🏥 【伤病复盘】本场双方阵容齐整，无重大伤病影响预测准确性。');
+  }
+
+  // Market consensus
+  if (pred.marketConsensus) {
+    var mc = pred.marketConsensus;
+    var mktDirection = mc.mktFav === 'home' ? ht.cn + '胜' : mc.mktFav === 'away' ? at.cn + '胜' : '平局';
+    var whoRight = mc.agree ? (actualOutcome === mc.aiFav ? '✅ AI与机构方向一致且均正确。' : '❌ AI与机构方向一致但均判断错误，市场也存在系统性偏差。') : (actualOutcome === mc.aiFav ? '💡 AI判断正确而机构方向有误，模型捕捉到了市场未充分定价的信息。' : actualOutcome === mc.mktFav ? '⚠️ 机构方向正确而AI判断失误，市场信息可能包含了模型未捕捉到的关键信号。' : '❌ AI和机构方向均错误，本场结果超出常规预期。');
+    parts.push('🏷️ 【机构复盘】赛前' + mc.label + '。机构方向：' + mktDirection + '，AI方向：' + (mc.aiFav === 'home' ? ht.cn + '胜' : mc.aiFav === 'away' ? at.cn + '胜' : '平局') + '。实际：' + whoRight);
+  }
+
+  // Upset
+  if (pred.upsetProb !== undefined) {
+    var upsetPct = (pred.upsetProb * 100).toFixed(0);
+    var isUpset = (hStr > aStr && actualOutcome !== 'home') || (aStr > hStr && actualOutcome !== 'away');
+    var upsetVerdict = pred.upsetAlert ? (isUpset ? '⚠️ 模型成功预警了冷门风险（' + upsetPct + '%），实际确实出现冷门。' : '模型预警了冷门风险（' + upsetPct + '%），但强队顺利取胜，属于过度预警。') : (isUpset ? '❌ 模型未预警冷门（风险仅' + upsetPct + '%），但实际爆冷。模型对冷门信号捕捉不足。' : '✅ 模型判断冷门概率低（' + upsetPct + '%），比赛正常走势。');
+    parts.push('⚠️ 【冷门复盘】赛前Monte Carlo冷门概率' + upsetPct + '%。' + upsetVerdict);
+  }
+
+  // Overall
+  var overallVerdict = exactCorrect ? 'A+ 完美预测' : outcomeCorrect && goalDiffErr <= 1 ? 'A 方向准确，比分接近' : outcomeCorrect ? 'B+ 胜负正确，比分有偏差' : goalDiffErr <= 1 ? 'B 比分接近但方向错误' : 'C 预测出现较大偏差';
+  parts.push('🔮 【综合总结】本次预测综合评级：' + overallVerdict + '。' + (exactCorrect ? '模型在所有维度上表现优秀，泊松模型+战术矩阵+赔率融合的框架在本场得到了充分验证。' : outcomeCorrect ? '方向判断准确，但在具体比分/进球数上存在偏差，泊松模型的lambda参数可能需要根据实时信息做微调。' : '本场暴露了模型的局限性：实力评分和战术矩阵可能未能充分反映某些关键因素。建议关注赛后数据以优化模型参数。'));
+
+  var html = '<div style="margin-top:12px;padding:14px;background:linear-gradient(180deg,rgba(240,185,11,.06) 0%,rgba(240,185,11,.01) 100%);border-radius:10px;border:2px solid rgba(240,185,11,.25);line-height:1.9;font-size:.78rem;color:#bcc8e0">';
+  html += '<div style="font-weight:800;font-size:.9rem;margin-bottom:8px;color:#f0b90b">🔮 AI赛后复盘</div>';
+  html += '<div style="text-align:center;padding:10px;border:2px solid ' + (actualOutcome === 'home' ? 'var(--accent)' : actualOutcome === 'draw' ? '#8b5cf6' : 'var(--red)') + ';border-radius:10px;margin-bottom:10px;background:' + (actualOutcome === 'home' ? 'rgba(77,166,255,.08)' : actualOutcome === 'draw' ? 'rgba(139,92,246,.08)' : 'rgba(255,61,87,.08)') + '">';
+  html += '<span style="font-size:1.6rem;font-weight:800">' + actH + ' : ' + actA + '</span>';
+  html += '<div style="font-size:.65rem;color:var(--text3)">最终比分</div></div>';
+  html += parts.map(function(p){ return '<p style="margin-bottom:8px;text-indent:0">' + p + '</p>'; }).join('');
+  html += '<div style="font-size:.6rem;color:var(--text3);text-align:right;margin-top:8px">*AI基于赛前预测各维度逐一复盘检讨</div></div>';
+  return html;
+}
+
 function showMatchDetail(mid) {
   var m = MATCH_SCHEDULE.find(function(x){return x.id===mid});
   if (!m) return;
@@ -3117,6 +3271,15 @@ function showMatchDetail(mid) {
   // Weather simulation based on venue
   var weathers = ['☀️ 晴 28°C','⛅ 多云 24°C','🌤️ 晴间多云 26°C','🌧️ 阵雨 22°C','☁️ 阴 20°C','☀️ 晴 31°C','⛅ 多云 25°C'];
   var weather = weathers[Math.floor(m.id.charCodeAt(m.id.length-1)) % weathers.length];
+
+  // Check if match has actual result for post-match review
+  var actualResult = actualResults[mid];
+  var hasActual = actualResult && actualResult.homeScore !== undefined;
+  var reviewHTML = '';
+  if (hasActual) {
+    var apiInfo2 = liveInfo[mid];
+    reviewHTML = generatePostMatchReview(m, ht, at, pred, actualResult, apiInfo2);
+  }
 
   var html = '';
   html += '<button class="mclose" onclick="closeModal()">✕</button>';
@@ -3141,6 +3304,13 @@ function showMatchDetail(mid) {
   if (ht.inj) html += '<div style="font-size:.7rem;color:var(--red);margin-top:2px">🏥 '+ht.cn+'：'+ht.inj+'</div>';
   if (at.inj) html += '<div style="font-size:.7rem;color:var(--red);margin-top:2px">🏥 '+at.cn+'：'+at.inj+'</div>';
   html += '</div>';
+
+  // Post-match review (finished matches only)
+  if (hasActual) {
+    html += reviewHTML;
+    html += '<div id="preMatchToggle" style="text-align:center;padding:8px;margin:8px 0;background:var(--surface2);border-radius:8px;border:1px solid rgba(240,185,11,.2);cursor:pointer;font-size:.78rem;color:var(--gold)" onclick="var p=document.getElementById(\'preMatchContent\');var t=this;if(p.style.display===\'none\'){p.style.display=\'block\';t.innerHTML=\'🔽 收起赛前预测详情\';}else{p.style.display=\'none\';t.innerHTML=\'▶️ 展开赛前预测详情\';}">▶️ 展开赛前预测详情</div>';
+    html += '<div id="preMatchContent" style="display:none">';
+  }
 
   // 3. 双方实力评分
   var hStr = getStrength(ht), aStr = getStrength(at);
@@ -3240,6 +3410,8 @@ function showMatchDetail(mid) {
 
   // 10. AI深度分析 (~500字)
   html += generateMatchAnalysis(m, ht, at, pred, mol);
+
+  if (hasActual) html += '</div>'; // close preMatchContent
 
   document.getElementById('teamModalContent').innerHTML = html;
   document.getElementById('teamModal').style.display = 'flex';

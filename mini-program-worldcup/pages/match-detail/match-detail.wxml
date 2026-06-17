@@ -26,6 +26,24 @@
       <text wx:if="{{match.awayInj}}" class="font-xs text-red">🏥 {{match.awayName}}：{{match.awayInj}}</text>
     </view>
 
+    <!-- Post-Match Review (finished matches only) -->
+    <view wx:if="{{postReview}}" class="card review-card">
+      <view class="card-header review-header">🔮 AI赛后复盘</view>
+      <view class="review-result-badge" style="background:{{actualResult.homeScore > actualResult.awayScore ? 'rgba(77,166,255,.15)' : actualResult.homeScore === actualResult.awayScore ? 'rgba(139,92,246,.15)' : 'rgba(255,61,87,.15)'}};border-color:{{actualResult.homeScore > actualResult.awayScore ? '#4da6ff' : actualResult.homeScore === actualResult.awayScore ? '#8b5cf6' : '#ff3d57'}}">
+        <text class="font-xxl font-extrabold">{{actualResult.homeScore}} : {{actualResult.awayScore}}</text>
+        <text class="font-xs text-secondary" style="display:block">最终比分</text>
+      </view>
+      <text wx:for="{{postReview}}" wx:key="*this" class="font-s review-text" style="display:block;margin-bottom:8px">{{item}}</text>
+      <text class="font-xs text-muted" style="text-align:right;display:block;margin-top:8px">*AI基于赛前预测各维度逐一复盘检讨</text>
+    </view>
+
+    <!-- Pre-match prediction sections (collapsible when review exists) -->
+    <view wx:if="{{postReview}}" class="card" style="border-color:rgba(240,185,11,.15);text-align:center;padding:8px" bindtap="togglePreMatch">
+      <text class="font-xs text-gold">{{showPreMatch ? '🔽 收起赛前预测' : '▶️ 展开赛前预测详情'}}</text>
+    </view>
+
+    <block wx:if="{{!postReview || showPreMatch}}">
+
     <!-- Strength Comparison -->
     <view class="card">
       <view class="card-header">📊 实力评分对比</view>
@@ -213,6 +231,8 @@
       <text wx:for="{{analysis}}" wx:key="*this" class="font-s" style="display:block;margin-bottom:8px">{{item}}</text>
       <text class="font-xs text-muted" style="text-align:right;display:block;margin-top:8px">*基于泊松模型+战术矩阵+历史同赔+新闻情绪综合生成</text>
     </view>
+
+    </block><!-- end pre-match sections -->
 
   </view>
 </scroll-view>

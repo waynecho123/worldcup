@@ -1,3 +1,25 @@
 .info-bar{display:flex;gap:12px;flex-wrap:wrap;padding:8px 12px;background:#182032;border-radius:8px;margin-bottom:8px}
 .strength-row{display:flex;justify-content:space-around;text-align:center;margin:6px 0}
 .strength-col{text-align:center}
+
+/* Post-match review card */
+.review-card {
+  border-color: rgba(240,185,11,.25) !important;
+  background: linear-gradient(180deg, rgba(240,185,11,.04) 0%, rgba(240,185,11,.01) 100%);
+}
+.review-header {
+  color: #f0b90b !important;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+.review-result-badge {
+  text-align: center;
+  padding: 10px;
+  border: 2px solid;
+  border-radius: 10px;
+  margin: 8px 0 12px;
+}
+.review-text {
+  line-height: 1.9;
+  color: #bcc8e0;
+}
