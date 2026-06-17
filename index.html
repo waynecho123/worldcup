@@ -3940,12 +3940,8 @@ function refreshUI() {
   if (!activeTab) return;
   var tabId = activeTab.id.replace('tab-', '');
   if (tabId === 'today') {
-    var activeBtn = document.querySelector('#dateSelector button.active');
-    if (activeBtn) {
-      var btnText = activeBtn.textContent.trim();
-      var dateMatch = btnText.match(/(\d{2}-\d{2})/);
-      if (dateMatch) renderTodayMatches('2026-' + dateMatch[1]);
-    }
+    var nextDate = findNextMatchDate();
+    if (nextDate) { showDate(nextDate); renderDateSelector(); }
   }
   if (tabId === 'standings') renderStandings();
   if (tabId === 'review') renderReview();
@@ -3969,18 +3965,12 @@ async function initResults() {
   _resultsLoaded = true;
   console.log('Results initialized: ' + Object.keys(actualResults).length + ' matches loaded');
 
-  // Re-render the currently displayed date with fresh results
-  var activeBtn = document.querySelector('#dateSelector button.active');
-  var currentDate = activeBtn ? null : todayStr; // will be resolved inside renderTodayMatches
-  if (activeBtn) {
-    // Extract date from button text (format: "06-17 周二")
-    var btnText = activeBtn.textContent.trim();
-    var dateMatch = btnText.match(/(\d{2}-\d{2})/);
-    if (dateMatch) {
-      currentDate = '2026-' + dateMatch[1];
-    }
+  // Jump to the next unplayed match date (results may have advanced the tournament)
+  var nextDate = findNextMatchDate();
+  if (nextDate) {
+    showDate(nextDate);
+    renderDateSelector();
   }
-  if (currentDate) renderTodayMatches(currentDate);
   // Also refresh standings/review if visible
   var activeTab = document.querySelector('.tab-content.active');
   if (activeTab) {
