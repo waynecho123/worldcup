@@ -24,7 +24,9 @@ App({
   },
 
   onLaunch() {
-    // Try cloud DB first, then local storage, then demo seed
+    // Load from local cache immediately (fast), cloud DB will update later
+    this.loadFromLocal();
+    // Then try cloud DB for latest (async, will refresh UI when done)
     this.loadResults();
 
     try {
@@ -94,24 +96,38 @@ App({
   },
 
   loadResults() {
-    // 1. Try cloud DB first
+    var that = this;
+
+    // 1. Cloud DB（云函数自动更新，最可靠）
     wx.cloud.database().collection('match_results').doc('latest').get().then(res => {
-      if (res.data && res.data.results) {
-        this.globalData.actualResults = res.data.results;
-        return;
+      if (res.data && res.data.results && Object.keys(res.data.results).length > 0) {
+        that.globalData.actualResults = res.data.results;
+        wx.setStorageSync('actual', JSON.stringify(res.data.results));
+        console.log('Loaded ' + Object.keys(res.data.results).length + ' scores from cloud DB');
+        // Refresh UI if pages are already loaded
+        var pages = getCurrentPages();
+        if (pages.length > 0 && pages[0].refresh) pages[0].refresh();
       }
-    }).catch(() => {});
+    }).catch(e => {
+      console.log('Cloud DB failed:', e);
+      // Fallback to local storage
+      that.loadFromLocal();
+    });
+  },
 
-    // 2. Try live fetch from API
-    this.fetchLiveScores();
-
-    // 3. Fallback: local storage
+  loadFromLocal() {
     try {
       var raw = wx.getStorageSync('actual');
-      if (raw) { this.globalData.actualResults = JSON.parse(raw); return; }
+      if (raw) {
+        var data = JSON.parse(raw);
+        if (Object.keys(data).length > 0) {
+          this.globalData.actualResults = data;
+          return;
+        }
+      }
     } catch(e) {}
 
-    // 4. Last resort: demo seed
+    // Last resort: demo seed (only m001-m016)
     this.globalData.actualResults = {
       m001: {homeScore:2,awayScore:0}, m002: {homeScore:2,awayScore:1},
       m003: {homeScore:1,awayScore:1}, m004: {homeScore:4,awayScore:1},
