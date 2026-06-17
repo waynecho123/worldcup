@@ -67,7 +67,7 @@ function computeUpsetProb(homeStr, awayStr) {
     var aLambda = Math.max(0.3, awayStr / 28 * aNoise);
     var hg = poissonSample(hLambda);
     var ag = poissonSample(aLambda);
-    if ((awayStr < homeStr && ag > hg) || (homeStr < awayStr && hg > ag)) upsets++;
+    if ((awayStr < homeStr && ag >= hg) || (homeStr < awayStr && hg >= ag)) upsets++;
   }
   var result = upsets / N;
   upsetCache[key] = result;

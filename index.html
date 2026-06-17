@@ -2712,7 +2712,7 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
       var hL = Math.exp(-Math.max(0.3, lambdaH * hN)), aL = Math.exp(-Math.max(0.3, lambdaA * aN));
       var hk = 0, hp = 1; do { hk++; hp *= Math.random(); } while (hp > hL); hk--;
       var ak = 0, ap = 1; do { ak++; ap *= Math.random(); } while (ap > aL); ak--;
-      if ((aStr < hStr && ak > hk) || (hStr < aStr && hk > ak)) upsets++;
+      if ((aStr < hStr && ak >= hk) || (hStr < aStr && hk >= ak)) upsets++;
     }
     upsetProb = upsets / N;
     predictMatch._upsetCache[cacheKey] = upsetProb;
@@ -4113,7 +4113,7 @@ function compareMatch(matchId) {
 
   // Upset detection
   const hStr = getStrength(ht), aStr = getStrength(at);
-  const upsetHappened = (hStr > aStr && actHome < actAway) || (hStr < aStr && actHome > actAway);
+  const upsetHappened = (hStr > aStr && actHome <= actAway) || (hStr < aStr && actHome >= actAway);
   const strongerTeam = hStr > aStr ? ht.cn : at.cn;
   const weakerTeam = hStr > aStr ? at.cn : ht.cn;
 
@@ -4345,7 +4345,7 @@ function renderReviewMatchList(comps) {
         <span>预测概率：胜${(c.predHomeProb*100).toFixed(0)}% 平${(c.predDrawProb*100).toFixed(0)}% 负${(c.predAwayProb*100).toFixed(0)}%</span>
         <span>→ 实际：${diffNote}</span>
         <span>进球误差：${c.totalGoalError.toFixed(1)}球</span>
-        ${c.date >= '2026-06-18' && c.upsetAlert !== undefined ? `<span style="color:${(c.upsetAlert && c.upsetHappened) || (!c.upsetAlert && !c.upsetHappened) ? 'var(--green)' : 'var(--red)'}">⚠冷门：${c.upsetAlert ? '预警'+(c.upsetProb*100).toFixed(0)+'%' : '未预警'} → ${c.upsetHappened ? c.weakerTeam+'爆冷胜' : '正常'}</span>` : ''}
+        ${c.date >= '2026-06-18' && c.upsetAlert !== undefined ? `<span style="color:${(c.upsetAlert && c.upsetHappened) || (!c.upsetAlert && !c.upsetHappened) ? 'var(--green)' : 'var(--red)'}">⚠冷门：${c.upsetAlert ? '预警'+(c.upsetProb*100).toFixed(0)+'%' : '未预警'} → ${c.upsetHappened ? (c.actScore[0]===c.actScore[1] ? c.weakerTeam+'爆冷逼平' : c.weakerTeam+'爆冷胜') : '正常'}</span>` : ''}
       </div>
       ${c.notes ? `<div style="font-size:.75rem;color:var(--orange);margin-top:4px">📝 ${c.notes}</div>` : ''}
     </div>`;
