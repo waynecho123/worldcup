@@ -188,20 +188,23 @@ async function updateScores() {
   // 用北京时间，因为赛程日期是BJT
   const todayStr = now.toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
 
-  // Pre-check: skip if no matches today
+  // Pre-check: look at matches from the last 2 days (BJT) — robust against workflow delays
   const sched = getMatchSchedule();
-  const todayMatches = sched.filter(m => m.date === todayStr);
-  if (todayMatches.length === 0) {
+  const yesterdayStr = new Date(now.getTime() - 86400000).toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
+  const checkDates = [...new Set([todayStr, yesterdayStr])]; // unique dates
+  const checkMatches = sched.filter(m => checkDates.includes(m.date));
+
+  if (checkMatches.length === 0) {
     const futureMatches = sched.filter(m => m.date > todayStr);
     const nextDate = futureMatches.length > 0 ? futureMatches[0].date : 'none';
-    console.log(`[${ts}] Rest day — no matches. Next: ${nextDate}. Skipping.`);
+    console.log(`[${ts}] No matches in ${checkDates.join('/')}. Next: ${nextDate}. Skipping.`);
     return false;
   }
 
   // Pre-check: skip if no matches have ended yet, or all ended matches already scored
   const existing = loadJSON(SCORES_FILE);
   let endedCount = 0, scoredCount = 0;
-  todayMatches.forEach(m => {
+  checkMatches.forEach(m => {
     if (!m.time) return;
     const [h, min] = m.time.split(':').map(Number);
     const kickoff = new Date(m.date + 'T' + String(h).padStart(2,'0') + ':' + String(min||0).padStart(2,'0') + ':00+08:00');
@@ -212,7 +215,7 @@ async function updateScores() {
     }
   });
   if (endedCount === 0) {
-    console.log(`[${ts}] No matches ended yet (today: ${todayMatches.length}). Skipping.`);
+    console.log(`[${ts}] No matches ended yet (checking ${checkDates.join('/')}: ${checkMatches.length} matches). Skipping.`);
     return false;
   }
   if (scoredCount === endedCount && endedCount > 0) {
@@ -255,12 +258,13 @@ async function updateScores() {
 async function updateOdds() {
   const now = new Date();
   const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
+  const todayO = now.toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
   const tomorrow = new Date(now.getTime() + 86400000).toLocaleString('en-CA', { timeZone: 'Asia/Shanghai' }).slice(0, 10);
 
-  // Skip if no matches tomorrow
+  // Skip if no matches today or tomorrow
   const sched = getMatchSchedule();
-  if (!sched.some(m => m.date === tomorrow)) {
-    console.log(`[${ts}] No matches tomorrow. Skipping odds update.`);
+  if (!sched.some(m => m.date === todayO || m.date === tomorrow)) {
+    console.log(`[${ts}] No matches today/tomorrow. Skipping odds update.`);
     return false;
   }
 
@@ -270,8 +274,11 @@ async function updateOdds() {
   let wcMatches;
   try { wcMatches = await getWCMatches(); } catch(e) { console.error('list API failed:', e.message); return; }
 
-  // Only fetch odds for tomorrow's matches
-  const targets = wcMatches.filter(m => m.matchMain?.matchDate === tomorrow);
+  // Fetch odds for today + tomorrow's matches (robust against delays)
+  const targets = wcMatches.filter(m => {
+    const d = m.matchMain?.matchDate;
+    return d === todayO || d === tomorrow;
+  });
 
   let n = 0;
   for (const m of targets) {
