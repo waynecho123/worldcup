@@ -4237,10 +4237,6 @@ function renderReview() {
   }
 
   // Stats
-  var upsetHTML = '';
-  if (stats.upsetTotal > 0) {
-    upsetHTML = `<div class="stat-box" style="border:1px solid rgba(255,145,0,.3)"><div class="num" style="color:var(--orange)">${(stats.upsetCorrect/stats.upsetTotal*100).toFixed(0)}%</div><div class="lbl">⚠️ 冷门预警准确率</div><div style="font-size:.58rem;color:var(--text3);margin-top:2px">${stats.upsetTotal}场 | 误报${stats.upsetFalsePos} | 漏报${stats.upsetFalseNeg}</div></div>`;
-  }
   document.getElementById('reviewStats').innerHTML = `
     <div class="stat-box"><div class="num">${stats.total}</div><div class="lbl">已录入比赛</div></div>
     <div class="stat-box"><div class="num" style="color:${stats.outcomeAccuracy>=60?'var(--green)':'var(--red)'}">${stats.outcomeAccuracy.toFixed(1)}%</div><div class="lbl">胜负预测准确率</div></div>
@@ -4248,9 +4244,12 @@ function renderReview() {
     <div class="stat-box"><div class="num">${stats.avgGoalDiffError.toFixed(2)}</div><div class="lbl">平均净胜球误差</div></div>
     <div class="stat-box"><div class="num">${stats.avgTotalGoalError.toFixed(2)}</div><div class="lbl">平均总进球误差</div></div>
     <div class="stat-box"><div class="num">${stats.brierScore.toFixed(3)}</div><div class="lbl">Brier评分(越低越好)</div></div>
-    <div class="stat-box"><div class="num" style="color:var(--accent)">${(stats.avgConfOnCorrect*100).toFixed(0)}%</div><div class="lbl">正确预测平均置信度</div></div>
-    <div class="stat-box"><div class="num" style="color:var(--red)">${(stats.avgConfOnWrong*100).toFixed(0)}%</div><div class="lbl">错误预测平均置信度</div></div>
-    ${upsetHTML}
+    <div class="stat-box" style="${stats.upsetTotal>0?'border:1px solid rgba(255,145,0,.25)':''}">
+      <div class="num" style="color:var(--accent)">${(stats.avgConfOnCorrect*100).toFixed(0)}%</div>
+      <div class="lbl">正确预测置信度</div>
+      ${stats.upsetTotal>0 ? `<div style="font-size:.58rem;color:var(--orange);margin-top:2px">⚠冷门预警 ${(stats.upsetCorrect/stats.upsetTotal*100).toFixed(0)}% | 误${stats.upsetFalsePos} 漏${stats.upsetFalseNeg}</div>` : ''}
+    </div>
+    <div class="stat-box"><div class="num" style="color:var(--red)">${(stats.avgConfOnWrong*100).toFixed(0)}%</div><div class="lbl">错误预测置信度</div></div>
   `;
 
   // Accuracy trend chart
