@@ -15,8 +15,6 @@
     "📰 Highlights: Haaland scores twice in Norway win over Iraq  ",
     "📰 Highlights: Mbappe stars as France beat Senegal",
     "📰 How to watch the World Cup on the BBC and ITV",
-    "🔥 葡萄牙 3-0 民主刚果 — 葡萄牙 3-0 大胜，强势表现",
-    "⚽ 英格兰 1-2 克罗地亚 — 克罗地亚 2-1 取胜，关键3分",
     "⚽ 法国 3-1 塞内加尔 — 法国 3-1 取胜，关键3分",
     "🔥 伊拉克 1-4 挪威 — 挪威 4-1 大胜，强势表现",
     "🔥 阿根廷 3-0 阿尔及利亚 — 阿根廷 3-0 大胜，强势表现",
@@ -39,30 +37,6 @@
     "⚽ 墨西哥 2-0 南非 — 墨西哥 2-0 取胜，关键3分"
   ],
   "matchNews": [
-    {
-      "mid": "m021",
-      "icon": "🔥",
-      "title": "🔥 葡萄牙 3-0 民主刚果 — 葡萄牙 3-0 大胜，强势表现",
-      "homeTeam": "POR",
-      "awayTeam": "COD",
-      "homeScore": 3,
-      "awayScore": 0,
-      "matchDate": "2026-06-18",
-      "sentiment": "home_strong",
-      "updatedAt": "2026-06-18T03:00:00.000Z"
-    },
-    {
-      "mid": "m022",
-      "icon": "⚽",
-      "title": "⚽ 英格兰 1-2 克罗地亚 — 克罗地亚 2-1 取胜，关键3分",
-      "homeTeam": "ENG",
-      "awayTeam": "CRO",
-      "homeScore": 1,
-      "awayScore": 2,
-      "matchDate": "2026-06-18",
-      "sentiment": "neutral",
-      "updatedAt": "2026-06-18T06:00:00.000Z"
-    },
     {
       "mid": "m017",
       "icon": "⚽",
@@ -359,6 +333,6 @@
       "📰 Highlights: Mbappe stars as France beat Senegal"
     ]
   },
-  "total": 37,
-  "updatedAt": "2026-06-17T16:53:29.829Z"
+  "total": 35,
+  "updatedAt": "2026-06-17T17:00:48.044Z"
 }
