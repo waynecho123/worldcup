@@ -1,14 +1,15 @@
 // Tournament clock management
-// The tournament clock is hardcoded to June 16, 2026 with real-time hours
+// Uses real date (BJT timezone) — the clock function adapts to current time
 
 function getTournamentNow() {
-  var real = new Date();
-  return new Date(2026, 5, 16, real.getHours(), real.getMinutes(), real.getSeconds());
+  return new Date();
 }
 
 function getTournamentDateStr() {
-  var d = getTournamentNow();
-  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  var now = new Date();
+  // Use BJT for tournament date
+  var bjt = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Shanghai' }));
+  return bjt.getFullYear() + '-' + String(bjt.getMonth() + 1).padStart(2, '0') + '-' + String(bjt.getDate()).padStart(2, '0');
 }
 
 function getTodayStr() {

@@ -2,6 +2,7 @@ const app = getApp();
 const review = require('../../utils/review');
 const data = require('../../utils/data');
 const predict = require('../../utils/predict');
+const time = require('../../utils/time');
 
 Page({
   data: {
@@ -36,9 +37,11 @@ Page({
     const comps = [];
     let correct = 0, exact = 0;
 
+    const today = time.getTournamentDateStr();
     Object.keys(actual).forEach(matchId => {
       const m = data.MATCH_SCHEDULE.find(x => x.id === matchId);
-      if (!m) return;
+      if (!m) return; // skip phantom matches not in our schedule
+      if (m.date > today) return; // skip future matches (API may return bad data)
       const ht = data.TEAMS.find(t => t.id === m.home);
       const at = data.TEAMS.find(t => t.id === m.away);
       if (!ht || !at) return;
