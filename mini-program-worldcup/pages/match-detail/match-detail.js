@@ -98,9 +98,28 @@ Page({
       };
     }
 
-    // Lineups
-    const hLu = data.STARTING_XI[m.home];
-    const aLu = data.STARTING_XI[m.away];
+    // Lineups — process player names to Chinese + jersey
+    const fmtLineup = (lu) => {
+      if (!lu) return null;
+      const toP = (n) => {
+        const clean = n.replace('(C)', '').trim();
+        return {
+          name: clean,
+          cn: data.cnName(clean),
+          num: data.JERSEY_NUM[clean] || data.JERSEY_NUM[n] || '?',
+          isCaptain: n.includes('(C)')
+        };
+      };
+      const all = [];
+      if (lu.g) all.push(toP(lu.g));
+      (lu.d || []).forEach(n => all.push(toP(n)));
+      (lu.m || []).forEach(n => all.push(toP(n)));
+      (lu.fwd || []).forEach(n => all.push(toP(n)));
+      if (lu.subs) lu.subs.split(',').forEach(n => all.push(toP(n.trim())));
+      return { f: lu.f, players: all, note: lu.note || '' };
+    };
+    const hLu = fmtLineup(data.STARTING_XI[m.home]);
+    const aLu = fmtLineup(data.STARTING_XI[m.away]);
 
     // Generate textual analysis with live data
     const analysis = this.generateAnalysis(m, ht, at, pred, mol, apiInfo);

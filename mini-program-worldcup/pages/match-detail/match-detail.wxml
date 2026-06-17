@@ -182,26 +182,29 @@
       </view>
     </view>
 
-    <!-- Advanced Plays -->
-    <view class="card">
-      <view class="card-header">🎲 进阶玩法</view>
-      <!-- Half-Time/Full-Time -->
-      <text class="font-s text-secondary">⏱️ 半全场 Top5</text>
-      <view style="display:flex;gap:6px;flex-wrap:wrap;margin:6px 0">
-        <view wx:for="{{htFT}}" wx:key="label" style="padding:4px 10px;background:#182032;border-radius:4px;text-align:center">
-          <text class="font-s font-bold">{{item.label}}</text>
-          <text class="font-xs text-accent" style="display:block">{{item.prob}}%</text>
+    <!-- Predicted Lineups -->
+    <view wx:if="{{homeLineup && awayLineup}}" class="card">
+      <view class="card-header">📋 预测首发</view>
+      <view style="display:flex;gap:10px">
+        <view style="flex:1">
+          <text class="font-s font-bold text-accent">{{match.homeFlag}} {{match.homeName}}</text>
+          <text class="font-xs text-muted" style="display:block">⚽ {{homeLineup.f}}</text>
+          <view class="font-xs" style="margin-top:4px">
+            <text wx:for="{{homeLineup.players}}" wx:key="name" style="display:inline-block;margin:1px 2px;padding:2px 4px;background:var(--surface2);border-radius:3px">
+              {{item.num}}.{{item.cn}}<text wx:if="{{item.isCaptain}}">⭐</text>
+            </text>
+          </view>
+        </view>
+        <view style="flex:1">
+          <text class="font-s font-bold" style="color:#ff3d57">{{match.awayFlag}} {{match.awayName}}</text>
+          <text class="font-xs text-muted" style="display:block">⚽ {{awayLineup.f}}</text>
+          <view class="font-xs" style="margin-top:4px">
+            <text wx:for="{{awayLineup.players}}" wx:key="name" style="display:inline-block;margin:1px 2px;padding:2px 4px;background:var(--surface2);border-radius:3px">
+              {{item.num}}.{{item.cn}}<text wx:if="{{item.isCaptain}}">⭐</text>
+            </text>
+          </view>
         </view>
       </view>
-      <!-- Total Goals -->
-      <text class="font-s text-secondary" style="margin-top:10px">🔢 总进球分布</text>
-      <view style="display:flex;gap:2px;margin-top:4px">
-        <view wx:for="{{goalDist}}" wx:key="label" style="flex:1;text-align:center;padding:4px 2px;border-radius:4px;background:{{item.isExpected?'rgba(240,185,11,.15)':'#182032'}}">
-          <text class="font-xs font-bold">{{item.label}}</text>
-          <text class="font-xs {{item.prob>15?'text-gold':'text-accent'}}" style="display:block">{{item.prob}}%</text>
-        </view>
-      </view>
-      <text class="font-xs text-muted" style="margin-top:4px">预期总进球 {{expTotalGoals}} 球</text>
     </view>
 
     <!-- AI Analysis -->
