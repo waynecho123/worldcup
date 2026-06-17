@@ -7,9 +7,9 @@
     "📰 Messi stays humble after hat-trick performance",
     "📰 England won't change style despite US heat - Tuchel",
     "📰 Emotional Messi explains tears after Argentina goal",
+    "📰 Clichy on Mbappe, Henderson and France 2010",
     "📰 No stage too big - Haaland arrives in style at World Cup",
     "📰 Who would you start against Croatia? Pick your England XI",
-    "📰 Who am I? Guess World Cup star No 10",
     "📰 'Magnificent' - Messi scores hat-trick to equal Klose scoring record",
     "📰 Highlights: Messi equals Klose scoring record with hat-trick against Algeria ",
     "📰 Highlights: Haaland scores twice in Norway win over Iraq  ",
@@ -286,9 +286,9 @@
     "📰 Messi stays humble after hat-trick performance",
     "📰 England won't change style despite US heat - Tuchel",
     "📰 Emotional Messi explains tears after Argentina goal",
+    "📰 Clichy on Mbappe, Henderson and France 2010",
     "📰 No stage too big - Haaland arrives in style at World Cup",
     "📰 Who would you start against Croatia? Pick your England XI",
-    "📰 Who am I? Guess World Cup star No 10",
     "📰 'Magnificent' - Messi scores hat-trick to equal Klose scoring record",
     "📰 Highlights: Messi equals Klose scoring record with hat-trick against Algeria ",
     "📰 Highlights: Haaland scores twice in Norway win over Iraq  ",
@@ -316,6 +316,13 @@
     "USA": [
       "📰 England won't change style despite US heat - Tuchel"
     ],
+    "KOR": [
+      "📰 Clichy on Mbappe, Henderson and France 2010"
+    ],
+    "FRA": [
+      "📰 Clichy on Mbappe, Henderson and France 2010",
+      "📰 Highlights: Mbappe stars as France beat Senegal"
+    ],
     "NOR": [
       "📰 No stage too big - Haaland arrives in style at World Cup",
       "📰 Highlights: Haaland scores twice in Norway win over Iraq  "
@@ -326,13 +333,10 @@
     "IRQ": [
       "📰 Highlights: Haaland scores twice in Norway win over Iraq  "
     ],
-    "FRA": [
-      "📰 Highlights: Mbappe stars as France beat Senegal"
-    ],
     "SEN": [
       "📰 Highlights: Mbappe stars as France beat Senegal"
     ]
   },
   "total": 35,
-  "updatedAt": "2026-06-17T17:32:44.348Z"
+  "updatedAt": "2026-06-17T17:37:41.006Z"
 }
