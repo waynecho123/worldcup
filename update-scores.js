@@ -319,6 +319,98 @@ async function updateInfo() {
   }
 }
 
+// ========== UPDATE: News (RSS feeds → news.json) ==========
+async function updateNews() {
+  const now = new Date();
+  const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
+  const NEWS_FILE = path.join(BASE_DIR, 'news.json');
+
+  const RSS_SOURCES = [
+    'https://feeds.bbci.co.uk/sport/football/rss.xml',
+    'https://www.espn.com/espn/rss/soccer/news',
+    'https://www.skysports.com/rss/12040',
+  ];
+
+  const WC_KEYWORDS = [
+    'world cup', 'World Cup', 'World Cup 2026', '2026 World Cup',
+    'FIFA', 'fifa', 'Mexico', 'Canada', 'United States',
+    'Argentina', 'Brazil', 'France', 'England', 'Germany', 'Spain',
+    'Portugal', 'Netherlands', 'Japan', 'Korea', 'Croatia', 'Belgium',
+    'Mbappe', 'Messi', 'Ronaldo', 'Haaland', 'Neymar', 'Salah',
+    'Bellingham', 'Vinicius', 'Kane', 'De Bruyne',
+    'group stage', 'knockout', 'semifinal', 'final', 'tournament',
+  ];
+
+  const FALLBACK = [
+    '🔥 德国7-1狂胜库拉索，哈弗茨梅开二度',
+    '🔥 日本2-2逼平荷兰，89分钟镰田大地绝平',
+    '🔥 美国4-1大胜巴拉圭，巴洛贡梅开二度',
+    '🔥 巴西1-1平摩洛哥，维尼修斯破门难救主',
+    '🔥 法国3-1塞内加尔，姆巴佩梅开二度',
+    '🔥 阿根廷3-0阿尔及利亚，梅西传射建功',
+    '🔥 挪威4-1伊拉克，哈兰德帽子戏法',
+    '🔴 西班牙亚马尔+尼科·威廉斯首战不会首发',
+    '🔴 荷兰西蒙斯+廷贝尔+德利赫特三主力缺阵',
+    '🔴 巴西罗德里戈ACL报销，内马尔小腿伤疑',
+    '⭐ C罗41岁第6届世界杯',
+    '📊 夺冠指数：西班牙5.50居首，法国6.00紧随其后',
+  ];
+
+  console.log(`[${ts}] Fetching news from RSS...`);
+
+  let allItems = [];
+  for (const url of RSS_SOURCES) {
+    try {
+      const resp = await new Promise((resolve, reject) => {
+        https.get(url, { timeout: 15000 }, res => {
+          if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+            https.get(res.headers.location, { timeout: 15000 }, r2 => {
+              let b = ''; r2.on('data', c => b += c);
+              r2.on('end', () => resolve(b));
+            }).on('error', reject);
+            return;
+          }
+          let b = ''; res.on('data', c => b += c);
+          res.on('end', () => resolve(b));
+        }).on('error', reject);
+      });
+      const re = /<item>([\s\S]*?)<\/item>/gi;
+      let m;
+      while ((m = re.exec(resp)) !== null) {
+        const t = (m[1].match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1];
+        if (t) {
+          const title = t.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+            .replace(/&quot;/g, '"').replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)));
+          const text = title.toLowerCase();
+          if (WC_KEYWORDS.some(k => text.includes(k.toLowerCase()))) {
+            allItems.push(title);
+          }
+        }
+      }
+      console.log(`[${ts}]   ${url.split('/')[2]}: ${allItems.length} items so far`);
+    } catch(e) { console.log(`[${ts}]   ${url.split('/')[2]}: failed (${e.message})`); }
+  }
+
+  // Dedup
+  const seen = new Set();
+  const unique = allItems.filter(t => { const k = t.slice(0, 50).toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; });
+
+  let items;
+  if (unique.length >= 5) {
+    items = unique.slice(0, 25).map(t => {
+      const tl = t.toLowerCase();
+      const icon = tl.includes('injury') ? '🔴' : tl.includes('win') || tl.includes('goal') ? '🔥' : '📰';
+      return icon + ' ' + t;
+    });
+  } else {
+    console.log(`[${ts}] Insufficient RSS news (${unique.length}), using fallback`);
+    items = FALLBACK;
+  }
+
+  fs.writeFileSync(NEWS_FILE, JSON.stringify({ items, total: items.length, updatedAt: now.toISOString() }, null, 2) + '\n');
+  console.log(`[${ts}] News: ${items.length} items written to news.json`);
+}
+
 // ========== Update All ==========
 async function updateAll() {
   await updateScores();
@@ -332,6 +424,7 @@ const watchMode = args.includes('--watch') || args.includes('-w');
 
 async function main() {
   if (args.includes('--scores')) await updateScores();
+  else if (args.includes('--news')) await updateNews();
   else if (args.includes('--odds')) await updateOdds();
   else if (args.includes('--info')) await updateInfo();
   else await updateAll();

@@ -1507,27 +1507,25 @@ async function fetchRSSFeed(rssUrl) {
 
 /** Fetch all news sources and merge results */
 async function fetchAllNews() {
-  // Primary: cloud function HTTP endpoint (same as mini-program)
+  // Primary: news.json from server (auto-updated by GitHub Action)
   try {
-    const resp = await fetch(CLOUD_BASE + '/fetchNews', { cache: 'no-cache' });
+    const resp = await fetch('news.json?_t=' + Date.now(), { cache: 'no-cache' });
     if (resp.ok) {
       const data = await resp.json();
       const items = Array.isArray(data) ? data : (data.items || []);
       if (items.length > 0) {
-        console.log('News loaded from cloud: ' + items.length + ' items');
+        console.log('News loaded from news.json: ' + items.length + ' items');
         return items.slice(0, 25);
       }
     }
-  } catch(e) { console.warn('Cloud news failed:', e.message); }
+  } catch(e) { console.warn('news.json failed:', e.message); }
 
-  // Fallback: try RSS feeds (may fail due to CORS)
+  // Fallback: try RSS feeds directly
   try {
     const results = await Promise.allSettled(NEWS_SOURCES.map(url => fetchRSSFeed(url)));
     const allItems = [];
     results.forEach(r => {
-      if (r.status === 'fulfilled' && r.value.length > 0) {
-        allItems.push(...r.value);
-      }
+      if (r.status === 'fulfilled' && r.value.length > 0) allItems.push(...r.value);
     });
     const seen = new Set();
     const unique = allItems.filter(item => {
@@ -1536,7 +1534,7 @@ async function fetchAllNews() {
       seen.add(key);
       return true;
     });
-    return unique.slice(0, 25);
+    if (unique.length > 0) return unique.slice(0, 25);
   } catch(e) { console.warn('RSS fallback failed:', e.message); }
 
   return [];
