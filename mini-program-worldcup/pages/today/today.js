@@ -47,9 +47,9 @@ Page({
       return { date: d, label: d.slice(5) + ' ' + dayNames[dObj.getDay()] };
     });
 
-    // Find default: first date with >=1 match not yet kicked off (not past)
-    // Tournament clock is June 16, so default to June 17
-    let defaultIdx = dates.findIndex(d => d.date >= '2026-06-17');
+    // Find default: first upcoming match date (today or next)
+    var todayStr = new Date().toISOString().slice(0, 10);
+    let defaultIdx = dates.findIndex(d => d.date >= todayStr);
     if (defaultIdx < 0) defaultIdx = 0;
 
     this.setData({ dates, activeIdx: defaultIdx, activeDate: dates[defaultIdx].date });
