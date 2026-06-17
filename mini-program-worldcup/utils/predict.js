@@ -39,28 +39,39 @@ function getStrength(t) {
   return Math.max(10, rankScore * 0.40 + perf * 0.45 + 15 - injPenalty);
 }
 
-// Compute upset probability via Monte Carlo
+// Simple seeded PRNG (mulberry32) for deterministic results
+function seededRandom(seed) {
+  return function() {
+    seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+    var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+
+// Compute upset probability — deterministic per matchup
 function computeUpsetProb(homeStr, awayStr) {
-  let upsets = 0;
-  const N = 200;
-  for (let i = 0; i < N; i++) {
-    // Add noise to simulate match-day variance
-    const hNoise = 1 + (Math.random() - 0.5) * 0.3;
-    const aNoise = 1 + (Math.random() - 0.5) * 0.3;
-    const hLambda = Math.max(0.3, homeStr / 28 * hNoise);
-    const aLambda = Math.max(0.3, awayStr / 28 * aNoise);
-    // Simulate one match
-    const hg = poissonSample(hLambda);
-    const ag = poissonSample(aLambda);
+  // Seed from rounded strength values: same matchup always gives same result
+  var seed = Math.floor(homeStr * 100) * 10000 + Math.floor(awayStr * 100);
+  var rand = seededRandom(seed);
+  var upsets = 0;
+  var N = 200;
+  for (var i = 0; i < N; i++) {
+    var hNoise = 1 + (rand() - 0.5) * 0.3;
+    var aNoise = 1 + (rand() - 0.5) * 0.3;
+    var hLambda = Math.max(0.3, homeStr / 28 * hNoise);
+    var aLambda = Math.max(0.3, awayStr / 28 * aNoise);
+    var hg = poissonSample(hLambda, rand);
+    var ag = poissonSample(aLambda, rand);
     if ((awayStr < homeStr && ag > hg) || (homeStr < awayStr && hg > ag)) upsets++;
   }
   return upsets / N;
 }
 
-function poissonSample(lambda) {
-  const L = Math.exp(-lambda);
-  let k = 0, p = 1;
-  do { k++; p *= Math.random(); } while (p > L);
+function poissonSample(lambda, rand) {
+  var L = Math.exp(-lambda);
+  var k = 0, p = 1;
+  do { k++; p *= rand(); } while (p > L);
   return k - 1;
 }
 
