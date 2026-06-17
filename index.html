@@ -2678,7 +2678,7 @@ function getMatchDates() {
 }
 function renderDateSelector() {
   var dates = getMatchDates();
-  var activeDate = (typeof nextMatchDate !== 'undefined' && nextMatchDate) ? nextMatchDate : getTournamentDateStr();
+  var activeDate = findNextMatchDate();
   var dayNames = ['周日','周一','周二','周三','周四','周五','周六'];
   document.getElementById('dateSelector').innerHTML = dates.map(function(d){
     var dObj = new Date(d + 'T00:00:00');
@@ -4806,18 +4806,18 @@ if (isPredictionLocked(todayStr2)) {
 }
 
 // Today's date matches (using tournament clock)
-// 找到下一个有未开赛比赛的日期
-var now2 = getTournamentNow();
-var nextMatchDate = null;
-for (var i = 0; i < 30; i++) {
-  var checkD = new Date(now2.getTime() + i * 3600000);
-  var dStr = checkD.toLocaleDateString('en-CA', { timeZone: 'Asia/Shanghai' });
-  var upc = MATCH_SCHEDULE.filter(function(m){return m.date===dStr});
-  if (upc.length > 0) {
-    var hasNot = upc.some(function(m){return now2 < new Date(m.date+'T'+m.time+':00+08:00')});
-    if (hasNot) { nextMatchDate = dStr; break; }
+// Find next date with unplayed matches (use actualResults, not just time)
+function findNextMatchDate() {
+  var allDates = [...new Set(MATCH_SCHEDULE.filter(function(m){return m.stage==='group'}).map(function(m){return m.date;}))].sort();
+  for (var i = 0; i < allDates.length; i++) {
+    var d = allDates[i];
+    var ms = MATCH_SCHEDULE.filter(function(m){return m.date===d && m.stage==='group'});
+    var allPlayed = ms.every(function(m){return actualResults[m.id]});
+    if (!allPlayed) return d;
   }
+  return allDates[allDates.length-1]; // fallback to last date
 }
+var nextMatchDate = findNextMatchDate();
 var todayStr = nextMatchDate || getTournamentToday();
 // Log initial prediction snapshots before rendering (so update info is available)
 MATCH_SCHEDULE.forEach(function(m) {
