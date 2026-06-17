@@ -2825,7 +2825,7 @@ function renderMatchCard(m) {
   }
 
   // Betting odds for this match
-  const mol = MATCH_ODDS[m.id];
+  // mol already set above
   let oddsHTML = '';
   if (mol && showPrediction && pred) {
     const fair = oddsToFairProb(mol.h, mol.d, mol.a);

@@ -120,6 +120,19 @@ Page({
     };
     const hLu = fmtLineup(data.STARTING_XI[m.home]);
     const aLu = fmtLineup(data.STARTING_XI[m.away]);
+    // Cross-reference injuries with lineup: mark absent players
+    const markInjured = (lu, team) => {
+      if (!lu || !team.inj) return;
+      const injNames = team.inj.toLowerCase();
+      lu.players.forEach(p => {
+        if (injNames.includes(p.name.toLowerCase()) || injNames.includes(p.cn)) {
+          p.isInjured = true;
+        }
+      });
+      if (team.inj && lu.note) lu.note = team.inj + ' | ' + lu.note;
+    };
+    markInjured(hLu, ht);
+    markInjured(aLu, at);
 
     // Generate textual analysis with live data
     const analysis = this.generateAnalysis(m, ht, at, pred, mol, apiInfo);
