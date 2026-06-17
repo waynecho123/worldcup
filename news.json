@@ -5,16 +5,16 @@
     "📰 How sweltering Scotland can handle World Cup heat",
     "📰 Extraordinary Messi makes more history in masterclass for the ages",
     "📰 England won't change style despite US heat - Tuchel",
-    "📰 Emotional Messi explains tears after Argentina goal",
     "📰 Messi stays humble after hat-trick performance",
+    "📰 Emotional Messi explains tears after Argentina goal",
     "📰 No stage too big - Haaland arrives in style at World Cup",
     "📰 Who would you start against Croatia? Pick your England XI",
     "📰 Who could Lionesses face in World Cup play-offs? ",
-    "📰 Why has Erling Haaland added 'Braut' to Norway shirt?",
     "📰 'Nearly men of Asian football' - Uzbekistan's rise to the World Cup",
     "📰 'Magnificent' - Messi scores hat-trick to equal Klose scoring record",
     "📰 Highlights: Messi equals Klose scoring record with hat-trick against Algeria ",
     "📰 Highlights: Haaland scores twice in Norway win over Iraq  ",
+    "📰 Highlights: Mbappe stars as France beat Senegal",
     "⚽ 法国 3-1 塞内加尔 — 法国 3-1 取胜，关键3分",
     "🔥 伊拉克 1-4 挪威 — 挪威 4-1 大胜，强势表现",
     "🔥 阿根廷 3-0 阿尔及利亚 — 阿根廷 3-0 大胜，强势表现",
@@ -284,16 +284,16 @@
     "📰 How sweltering Scotland can handle World Cup heat",
     "📰 Extraordinary Messi makes more history in masterclass for the ages",
     "📰 England won't change style despite US heat - Tuchel",
-    "📰 Emotional Messi explains tears after Argentina goal",
     "📰 Messi stays humble after hat-trick performance",
+    "📰 Emotional Messi explains tears after Argentina goal",
     "📰 No stage too big - Haaland arrives in style at World Cup",
     "📰 Who would you start against Croatia? Pick your England XI",
     "📰 Who could Lionesses face in World Cup play-offs? ",
-    "📰 Why has Erling Haaland added 'Braut' to Norway shirt?",
     "📰 'Nearly men of Asian football' - Uzbekistan's rise to the World Cup",
     "📰 'Magnificent' - Messi scores hat-trick to equal Klose scoring record",
     "📰 Highlights: Messi equals Klose scoring record with hat-trick against Algeria ",
-    "📰 Highlights: Haaland scores twice in Norway win over Iraq  "
+    "📰 Highlights: Haaland scores twice in Norway win over Iraq  ",
+    "📰 Highlights: Mbappe stars as France beat Senegal"
   ],
   "teamNews": {
     "ENG": [
@@ -309,15 +309,14 @@
     ],
     "ARG": [
       "📰 Extraordinary Messi makes more history in masterclass for the ages",
-      "📰 Emotional Messi explains tears after Argentina goal",
-      "📰 Messi stays humble after hat-trick performance"
+      "📰 Messi stays humble after hat-trick performance",
+      "📰 Emotional Messi explains tears after Argentina goal"
     ],
     "USA": [
       "📰 England won't change style despite US heat - Tuchel"
     ],
     "NOR": [
       "📰 No stage too big - Haaland arrives in style at World Cup",
-      "📰 Why has Erling Haaland added 'Braut' to Norway shirt?",
       "📰 Highlights: Haaland scores twice in Norway win over Iraq  "
     ],
     "CRO": [
@@ -331,8 +330,14 @@
     ],
     "IRQ": [
       "📰 Highlights: Haaland scores twice in Norway win over Iraq  "
+    ],
+    "FRA": [
+      "📰 Highlights: Mbappe stars as France beat Senegal"
+    ],
+    "SEN": [
+      "📰 Highlights: Mbappe stars as France beat Senegal"
     ]
   },
   "total": 35,
-  "updatedAt": "2026-06-17T15:59:18.640Z"
+  "updatedAt": "2026-06-17T16:02:34.713Z"
 }
