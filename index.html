@@ -2750,11 +2750,13 @@ function renderMatchCard(m) {
   if (showPrediction) {
     const hasResult = !!actualResults[m.id];
     const lockedPred = getLockedPrediction(m.id);
-    // Finished matches or no locked pred: compute fresh to get topScores for accuracy check
+    // Finished matches or no locked pred: compute fresh
     if (hasResult || !lockedPred) {
       pred = predictMatch(ht, at);
     } else {
-      pred = { predScore: [lockedPred.homeScore, lockedPred.awayScore], homeWinProb: lockedPred.hProb, drawProb: lockedPred.dProb, awayWinProb: lockedPred.aProb, expH: lockedPred.homeScore, expA: lockedPred.awayScore, topScores: lockedPred.topScores || [{home: lockedPred.homeScore, away: lockedPred.awayScore}], locked: true };
+      // Use locked probabilities but compute fresh topScores for display
+      const freshTopScores = predictMatch(ht, at).topScores;
+      pred = { predScore: [lockedPred.homeScore, lockedPred.awayScore], homeWinProb: lockedPred.hProb, drawProb: lockedPred.dProb, awayWinProb: lockedPred.aProb, expH: lockedPred.homeScore, expA: lockedPred.awayScore, topScores: lockedPred.topScores || freshTopScores, locked: true };
     }
   }
   const hProb = pred ? (pred.homeWinProb * 100).toFixed(1) : '';
