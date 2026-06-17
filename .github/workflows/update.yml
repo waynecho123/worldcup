@@ -15,8 +15,8 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Update scores + news
-        run: node update-scores.js --scores && node update-scores.js --news
+      - name: Update scores
+        run: node update-scores.js --scores
         env:
           FD_TOKEN: ${{ secrets.FD_TOKEN }}
 
@@ -24,5 +24,5 @@ jobs:
         run: |
           git config user.name 'wc-bot'
           git config user.email 'bot@worldcup'
-          git add scores.json news.json
-          git diff --staged --quiet || (git commit -m "⚽ scores+news $(TZ='Asia/Shanghai' date +%m-%d_%H:%M)" && git push)
+          git add scores.json
+          git diff --staged --quiet || (git commit -m "⚽ scores $(TZ='Asia/Shanghai' date +%m-%d_%H:%M)" && git push)

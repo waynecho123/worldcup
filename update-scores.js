@@ -319,96 +319,117 @@ async function updateInfo() {
   }
 }
 
-// ========== UPDATE: News (RSS feeds → news.json) ==========
+// ========== UPDATE: News (match results → news.json) ==========
+// Generates match-specific news from actual scores + team data
 async function updateNews() {
   const now = new Date();
   const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
   const NEWS_FILE = path.join(BASE_DIR, 'news.json');
+  const existing = loadJSON(SCORES_FILE);
 
+  // Team data for generating news
+  const TEAMS = {
+    MEX:{cn:'墨西哥',flag:'🇲🇽'},RSA:{cn:'南非',flag:'🇿🇦'},KOR:{cn:'韩国',flag:'🇰🇷'},CZE:{cn:'捷克',flag:'🇨🇿'},
+    CAN:{cn:'加拿大',flag:'🇨🇦'},BIH:{cn:'波黑',flag:'🇧🇦'},QAT:{cn:'卡塔尔',flag:'🇶🇦'},SUI:{cn:'瑞士',flag:'🇨🇭'},
+    BRA:{cn:'巴西',flag:'🇧🇷'},MAR:{cn:'摩洛哥',flag:'🇲🇦'},HAI:{cn:'海地',flag:'🇭🇹'},SCO:{cn:'苏格兰',flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'},
+    USA:{cn:'美国',flag:'🇺🇸'},PAR:{cn:'巴拉圭',flag:'🇵🇾'},AUS:{cn:'澳大利亚',flag:'🇦🇺'},TUR:{cn:'土耳其',flag:'🇹🇷'},
+    GER:{cn:'德国',flag:'🇩🇪'},CUW:{cn:'库拉索',flag:'🇨🇼'},CIV:{cn:'科特迪瓦',flag:'🇨🇮'},ECU:{cn:'厄瓜多尔',flag:'🇪🇨'},
+    NED:{cn:'荷兰',flag:'🇳🇱'},JPN:{cn:'日本',flag:'🇯🇵'},SWE:{cn:'瑞典',flag:'🇸🇪'},TUN:{cn:'突尼斯',flag:'🇹🇳'},
+    BEL:{cn:'比利时',flag:'🇧🇪'},EGY:{cn:'埃及',flag:'🇪🇬'},IRN:{cn:'伊朗',flag:'🇮🇷'},NZL:{cn:'新西兰',flag:'🇳🇿'},
+    ESP:{cn:'西班牙',flag:'🇪🇸'},CPV:{cn:'佛得角',flag:'🇨🇻'},KSA:{cn:'沙特',flag:'🇸🇦'},URU:{cn:'乌拉圭',flag:'🇺🇾'},
+    FRA:{cn:'法国',flag:'🇫🇷'},SEN:{cn:'塞内加尔',flag:'🇸🇳'},IRQ:{cn:'伊拉克',flag:'🇮🇶'},NOR:{cn:'挪威',flag:'🇳🇴'},
+    ARG:{cn:'阿根廷',flag:'🇦🇷'},ALG:{cn:'阿尔及利亚',flag:'🇩🇿'},AUT:{cn:'奥地利',flag:'🇦🇹'},JOR:{cn:'约旦',flag:'🇯🇴'},
+    POR:{cn:'葡萄牙',flag:'🇵🇹'},COD:{cn:'民主刚果',flag:'🇨🇩'},UZB:{cn:'乌兹别克',flag:'🇺🇿'},COL:{cn:'哥伦比亚',flag:'🇨🇴'},
+    ENG:{cn:'英格兰',flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},CRO:{cn:'克罗地亚',flag:'🇭🇷'},GHA:{cn:'加纳',flag:'🇬🇭'},PAN:{cn:'巴拿马',flag:'🇵🇦'},
+  };
+
+  const sched = getMatchSchedule();
+
+  // Generate match news from results
+  const matchNews = [];
+  Object.keys(existing).forEach(mid => {
+    const score = existing[mid];
+    const m = sched.find(x => x.id === mid);
+    if (!m) return;
+    const ht = TEAMS[m.home], at = TEAMS[m.away];
+    if (!ht || !at) return;
+    const hs = score.homeScore, as = score.awayScore;
+    const diff = Math.abs(hs - as);
+    let icon = '⚽', desc = '';
+
+    if (diff === 0) {
+      icon = '🤝';
+      desc = hs === 0 ? `${ht.cn}${as?'':'与'+at.cn}互交白卷` : `${ht.cn} ${hs}-${hs} ${at.cn}，双方激战成和`;
+    } else if (diff >= 5) {
+      icon = '💥';
+      const winner = hs > as ? ht.cn : at.cn;
+      const loser = hs > as ? at.cn : ht.cn;
+      desc = `${winner} ${hs}-${as} 狂胜${loser}，一边倒的碾压局`;
+    } else if (diff >= 3) {
+      icon = '🔥';
+      const winner = hs > as ? ht.cn : at.cn;
+      desc = `${winner} ${Math.max(hs,as)}-${Math.min(hs,as)} 大胜，强势表现`;
+    } else {
+      icon = '⚽';
+      const winner = hs > as ? ht.cn : at.cn;
+      desc = `${winner} ${Math.max(hs,as)}-${Math.min(hs,as)} 取胜，关键3分`;
+    }
+
+    matchNews.push({
+      mid, icon,
+      title: `${icon} ${ht.cn} ${hs}-${as} ${at.cn} — ${desc}`,
+      homeTeam: m.home, awayTeam: m.away,
+      homeScore: hs, awayScore: as,
+      matchDate: m.date,
+      sentiment: diff >= 3 ? (hs > as ? 'home_strong' : 'away_strong') : 'neutral',
+      updatedAt: score.recordedAt || score.updatedAt || now.toISOString()
+    });
+  });
+
+  // Sort by date desc
+  matchNews.sort((a, b) => b.matchDate.localeCompare(a.matchDate));
+
+  // Also try RSS for general news
+  let rssItems = [];
   const RSS_SOURCES = [
     'https://feeds.bbci.co.uk/sport/football/rss.xml',
     'https://www.espn.com/espn/rss/soccer/news',
-    'https://www.skysports.com/rss/12040',
   ];
-
-  const WC_KEYWORDS = [
-    'world cup', 'World Cup', 'World Cup 2026', '2026 World Cup',
-    'FIFA', 'fifa', 'Mexico', 'Canada', 'United States',
-    'Argentina', 'Brazil', 'France', 'England', 'Germany', 'Spain',
-    'Portugal', 'Netherlands', 'Japan', 'Korea', 'Croatia', 'Belgium',
-    'Mbappe', 'Messi', 'Ronaldo', 'Haaland', 'Neymar', 'Salah',
-    'Bellingham', 'Vinicius', 'Kane', 'De Bruyne',
-    'group stage', 'knockout', 'semifinal', 'final', 'tournament',
-  ];
-
-  const FALLBACK = [
-    '🔥 德国7-1狂胜库拉索，哈弗茨梅开二度',
-    '🔥 日本2-2逼平荷兰，89分钟镰田大地绝平',
-    '🔥 美国4-1大胜巴拉圭，巴洛贡梅开二度',
-    '🔥 巴西1-1平摩洛哥，维尼修斯破门难救主',
-    '🔥 法国3-1塞内加尔，姆巴佩梅开二度',
-    '🔥 阿根廷3-0阿尔及利亚，梅西传射建功',
-    '🔥 挪威4-1伊拉克，哈兰德帽子戏法',
-    '🔴 西班牙亚马尔+尼科·威廉斯首战不会首发',
-    '🔴 荷兰西蒙斯+廷贝尔+德利赫特三主力缺阵',
-    '🔴 巴西罗德里戈ACL报销，内马尔小腿伤疑',
-    '⭐ C罗41岁第6届世界杯',
-    '📊 夺冠指数：西班牙5.50居首，法国6.00紧随其后',
-  ];
-
-  console.log(`[${ts}] Fetching news from RSS...`);
-
-  let allItems = [];
+  const WC_KW = ['World Cup','world cup','FIFA','fifa','Argentina','Brazil','France','England','Germany','Spain','Portugal','Netherlands','Mbappe','Messi','Ronaldo','Haaland'];
   for (const url of RSS_SOURCES) {
     try {
       const resp = await new Promise((resolve, reject) => {
-        https.get(url, { timeout: 15000 }, res => {
-          if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-            https.get(res.headers.location, { timeout: 15000 }, r2 => {
-              let b = ''; r2.on('data', c => b += c);
-              r2.on('end', () => resolve(b));
-            }).on('error', reject);
-            return;
-          }
+        https.get(url, { timeout: 10000 }, res => {
           let b = ''; res.on('data', c => b += c);
           res.on('end', () => resolve(b));
         }).on('error', reject);
       });
-      const re = /<item>([\s\S]*?)<\/item>/gi;
-      let m;
+      const re = /<item>([\s\S]*?)<\/item>/gi; let m;
       while ((m = re.exec(resp)) !== null) {
         const t = (m[1].match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1];
-        if (t) {
-          const title = t.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
-            .replace(/&quot;/g, '"').replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)));
-          const text = title.toLowerCase();
-          if (WC_KEYWORDS.some(k => text.includes(k.toLowerCase()))) {
-            allItems.push(title);
-          }
+        if (t && WC_KW.some(k => t.includes(k))) {
+          rssItems.push(t.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>'));
         }
       }
-      console.log(`[${ts}]   ${url.split('/')[2]}: ${allItems.length} items so far`);
-    } catch(e) { console.log(`[${ts}]   ${url.split('/')[2]}: failed (${e.message})`); }
+    } catch(e) { /* skip */ }
   }
 
   // Dedup
   const seen = new Set();
-  const unique = allItems.filter(t => { const k = t.slice(0, 50).toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; });
-
-  let items;
-  if (unique.length >= 5) {
-    items = unique.slice(0, 25).map(t => {
+  const generalNews = rssItems.filter(t => { const k = t.slice(0,50); if (seen.has(k)) return false; seen.add(k); return true; })
+    .slice(0, 15).map(t => {
       const tl = t.toLowerCase();
-      const icon = tl.includes('injury') ? '🔴' : tl.includes('win') || tl.includes('goal') ? '🔥' : '📰';
-      return icon + ' ' + t;
+      return (tl.includes('injury') || tl.includes('injured') ? '🔴 ' : '📰 ') + t;
     });
-  } else {
-    console.log(`[${ts}] Insufficient RSS news (${unique.length}), using fallback`);
-    items = FALLBACK;
-  }
 
-  fs.writeFileSync(NEWS_FILE, JSON.stringify({ items, total: items.length, updatedAt: now.toISOString() }, null, 2) + '\n');
-  console.log(`[${ts}] News: ${items.length} items written to news.json`);
+  const data = {
+    matchNews, generalNews: generalNews.length > 0 ? generalNews : [],
+    total: matchNews.length + generalNews.length,
+    updatedAt: now.toISOString()
+  };
+
+  fs.writeFileSync(NEWS_FILE, JSON.stringify(data, null, 2) + '\n');
+  console.log(`[${ts}] News: ${matchNews.length} match + ${generalNews.length} general written to news.json`);
 }
 
 // ========== Update All ==========
