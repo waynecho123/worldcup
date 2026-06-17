@@ -303,9 +303,10 @@ function isMatchLocked(matchId) {
   var m = MATCH_SCHEDULE.find(function(x){return x.id === matchId});
   if (!m) return false;
   var now = getTournamentNow();
-  // Lock at 21:00 the day BEFORE the match
-  var matchDate = new Date(m.date + 'T00:00:00+08:00');
-  var lockTime = new Date(matchDate.getTime() - 3 * 3600000); // 21:00 = 24:00 - 3h
+  // Lock 3 hours before kickoff
+  var timeParts = (m.time || '00:00').split(':');
+  var matchTime = new Date(m.date + 'T' + m.time + ':00+08:00');
+  var lockTime = new Date(matchTime.getTime() - 3 * 3600000);
   return now >= lockTime;
 }
 
