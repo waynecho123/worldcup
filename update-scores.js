@@ -428,7 +428,7 @@ async function updateNews() {
       while ((m = re.exec(resp)) !== null) {
         const t = (m[1].match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1];
         if (t && WC_KW.some(k => t.includes(k))) {
-          rssItems.push(t.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>'));
+          rssItems.push(t.replace(/<!\[CDATA\[|\]\]>/g, '').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>'));
         }
       }
     } catch(e) { /* skip */ }
