@@ -1,0 +1,13 @@
+<view class="page bg-dark" style="padding:14px">
+  <view wx:if="{{items.length===0}}" class="empty-state">
+    <text class="icon">📭</text>
+    <text>暂无模拟记录</text>
+  </view>
+  <view wx:for="{{items}}" wx:key="time" class="card" style="padding:14px">
+    <view class="flex-between font-xs text-muted" style="margin-bottom:6px">
+      <text class="text-accent font-bold">🎲 {{item.runs}}次</text>
+      <text>{{item.time}}</text>
+    </view>
+    <text class="font-s text-secondary">🏆 {{item.top3}}</text>
+  </view>
+</view>

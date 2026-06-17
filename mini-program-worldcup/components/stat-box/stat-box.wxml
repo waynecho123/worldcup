@@ -1,0 +1,20 @@
+<!-- Stat Box Component -->
+<view class="stat-box {{sizeClass}} {{clickable ? 'clickable' : ''}}" bindtap="onTap"
+      style="border-color: {{colorMap[color]}}20">
+
+  <!-- Icon -->
+  <text wx:if="{{icon}}" class="sb-icon">{{icon}}</text>
+
+  <!-- Value + Trend -->
+  <view class="sb-value-row">
+    <text class="sb-value" style="color: {{colorMap[color]}}">{{value}}</text>
+    <text wx:if="{{trend === 'up'}}" class="sb-trend up">↑</text>
+    <text wx:if="{{trend === 'down'}}" class="sb-trend down">↓</text>
+  </view>
+
+  <!-- Label -->
+  <text class="sb-label">{{label}}</text>
+
+  <!-- Sublabel -->
+  <text wx:if="{{sublabel}}" class="sb-sublabel">{{sublabel}}</text>
+</view>

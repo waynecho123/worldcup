@@ -1,0 +1,75 @@
+<!-- Bracket View - Knockout Tournament Bracket -->
+<view class="bracket-container">
+
+  <!-- Stage tabs -->
+  <view class="bracket-tabs scroll-x">
+    <scroll-view scroll-x enhanced show-scrollbar="{{false}}">
+      <view class="bracket-tab-list">
+        <view wx:for="{{stages}}" wx:key="*this"
+              class="bracket-tab {{activeStage === item ? 'active' : ''}}"
+              data-stage="{{item}}" bindtap="onStageChange">
+          {{item === 'r32' ? '1/16' : item === 'r16' ? '1/8' : item === 'qf' ? '1/4' : item === 'sf' ? '半决赛' : item === 'tpp' ? '季军' : '🏆决赛'}}
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- Bracket rounds -->
+  <view class="bracket-rounds">
+    <view wx:for="{{rounds}}" wx:key="stage" class="bracket-round">
+      <view class="br-header">
+        <text class="br-title">{{item.stageLabel}}</text>
+        <text class="br-count">{{item.matches.length}}场</text>
+      </view>
+
+      <!-- Match slots -->
+      <view wx:for="{{item.matches}}" wx:key="id" class="bracket-slot {{item.played ? 'played' : ''}}"
+            data-id="{{item.id}}" bindtap="onMatchTap">
+
+        <!-- Date/Time -->
+        <view class="bs-meta">
+          <text class="bs-date">{{item.dateShort || item.date || '待定'}}</text>
+          <text class="bs-time">{{item.time || ''}}</text>
+        </view>
+
+        <!-- Home team -->
+        <view class="bs-team {{item.winner === 'home' ? 'winner' : ''}} {{item.played && item.winner === 'away' ? 'loser' : ''}}">
+          <text class="bs-flag">{{item.homeFlag}}</text>
+          <text class="bs-name">{{item.homeName}}</text>
+          <text wx:if="{{item.played}}" class="bs-score">{{item.homeScore}}</text>
+          <text wx:else class="bs-tbd">?</text>
+        </view>
+
+        <!-- Connector line -->
+        <view class="bs-connector">
+          <view class="bs-line"></view>
+        </view>
+
+        <!-- Away team -->
+        <view class="bs-team {{item.winner === 'away' ? 'winner' : ''}} {{item.played && item.winner === 'home' ? 'loser' : ''}}">
+          <text class="bs-flag">{{item.awayFlag}}</text>
+          <text class="bs-name">{{item.awayName}}</text>
+          <text wx:if="{{item.played}}" class="bs-score">{{item.awayScore}}</text>
+          <text wx:else class="bs-tbd">?</text>
+        </view>
+
+        <!-- PK marker -->
+        <view wx:if="{{item.pkText}}" class="bs-pk">
+          <text>{{item.pkText}}</text>
+        </view>
+
+        <!-- Venue -->
+        <view wx:if="{{item.venue}}" class="bs-venue">
+          <text>📍 {{item.venue}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- Empty state -->
+  <view wx:if="{{rounds.length === 0}}" class="empty-state">
+    <text class="icon">🏟️</text>
+    <text>淘汰赛对阵尚未确定</text>
+    <text class="font-xs text-muted">小组赛结束后将自动生成</text>
+  </view>
+</view>

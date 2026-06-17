@@ -1,0 +1,40 @@
+<!-- Team Analysis - 球队分析 -->
+<view class="page bg-dark">
+  <!-- Group Tabs -->
+  <scroll-view scroll-x class="group-scroll" style="padding:10px 14px">
+    <view class="group-tabs">
+      <view wx:for="{{groups}}" wx:key="*this" class="group-tab {{activeGroup===item?'active':''}}"
+            data-group="{{item}}" bindtap="onGroupTap">{{item==='all'?'全部':item+'组'}}</view>
+    </view>
+  </scroll-view>
+
+  <!-- Sort Tabs -->
+  <view class="sort-bar">
+    <view class="sort-tab {{sortBy==='rank'?'active':''}}" data-sort="rank" bindtap="onSortTap">FIFA排名</view>
+    <view class="sort-tab {{sortBy==='strength'?'active':''}}" data-sort="strength" bindtap="onSortTap">AI实力</view>
+    <view class="sort-tab {{sortBy==='attack'?'active':''}}" data-sort="attack" bindtap="onSortTap">进攻力</view>
+  </view>
+
+  <!-- Team Grid -->
+  <view class="team-grid">
+    <view wx:for="{{filtered}}" wx:key="id" class="team-card" data-id="{{item.id}}" bindtap="onTeamTap">
+      <view class="tc-header">
+        <text class="tc-flag">{{item.flag}}</text>
+        <view style="flex:1">
+          <text class="font-m font-bold">{{item.cn}}</text>
+          <text class="font-xs text-secondary"> {{item.name}}</text>
+        </view>
+        <text class="tc-group-badge">{{item.grp}}组</text>
+      </view>
+      <view class="tc-stats">
+        <view class="tc-stat"><text class="text-secondary">FIFA</text><text class="font-bold">#{{item.rk}}</text></view>
+        <view class="tc-stat"><text class="text-secondary">实力</text><text class="text-accent font-bold">{{item.strength}}</text></view>
+        <view class="tc-stat"><text class="text-secondary">攻/防</text><text>{{item.att}}/{{item.def}}</text></view>
+      </view>
+      <view wx:if="{{item.stars}}" class="tc-stars font-xs text-secondary">
+        ⭐ {{item.stars[0]}}{{item.stars[1]?' · '+item.stars[1]:''}}
+      </view>
+      <view wx:if="{{item.hasInjury}}" class="font-xs text-red" style="margin-top:2px">🏥 {{item.inj}}</view>
+    </view>
+  </view>
+</view>

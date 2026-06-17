@@ -1,0 +1,53 @@
+<!-- Full Schedule - 完整赛程 -->
+<view class="page bg-dark">
+  <!-- Filter Bar -->
+  <view class="filter-bar">
+    <view class="filter-btn {{filter==='all'?'active':''}}" data-filter="all" bindtap="onFilterChange">全部</view>
+    <view class="filter-btn {{filter==='group'?'active':''}}" data-filter="group" bindtap="onFilterChange">小组赛</view>
+    <view class="filter-btn {{filter==='r32'?'active':''}}" data-filter="r32" bindtap="onFilterChange">1/16</view>
+    <view class="filter-btn {{filter==='r16'?'active':''}}" data-filter="r16" bindtap="onFilterChange">1/8</view>
+    <view class="filter-btn {{filter==='qf'?'active':''}}" data-filter="qf" bindtap="onFilterChange">1/4</view>
+    <view class="filter-btn {{filter==='sf'?'active':''}}" data-filter="sf" bindtap="onFilterChange">半决赛</view>
+    <view class="filter-btn {{filter==='f'?'active':''}}" data-filter="f" bindtap="onFilterChange">决赛</view>
+  </view>
+
+  <!-- Legend -->
+  <view wx:if="{{showLegend}}" class="legend-bar">
+    <text class="font-s font-bold" style="margin-right:8px">图例:</text>
+    <view class="leg-item"><view class="leg-dot pred"></view><text class="font-xs text-secondary">AI预测</text></view>
+    <view class="leg-item"><view class="leg-dot actual"></view><text class="font-xs text-secondary">实际结果</text></view>
+    <view class="leg-item"><view class="leg-dot pending"></view><text class="font-xs text-secondary">待比赛</text></view>
+  </view>
+
+  <!-- Schedule by Date -->
+  <block wx:for="{{groupedSchedule}}" wx:key="date">
+    <view class="schedule-day">
+      <view class="sd-header">
+        <text>📅 {{item.date}} {{item.dayName}}</text>
+        <text class="font-s text-accent">{{item.stages}}</text>
+      </view>
+
+      <view wx:for="{{item.matches}}" wx:for-item="m" wx:key="id"
+            class="schedule-match" data-id="{{m.id}}" bindtap="onMatchTap">
+        <text class="sm-time">{{m.time}}</text>
+        <text class="flex-1 font-s">{{m.homeFlag}} {{m.homeName}} vs {{m.awayName}} {{m.awayFlag}}</text>
+        <text class="sm-badge">{{m.badge}}</text>
+
+        <block wx:if="{{!m.score.pending}}">
+          <text class="sm-pred">{{m.score.predText}}</text>
+          <text class="font-xs text-muted">→</text>
+          <text class="sm-actual">{{m.score.actualText}}</text>
+        </block>
+        <block wx:else>
+          <text class="sm-pred">{{m.score.predText}}</text>
+          <text class="font-xs text-muted">|</text>
+          <text class="sm-pending">? : ?</text>
+        </block>
+      </view>
+
+      <view wx:if="{{m.updateInfo}}" style="text-align:right;padding:2px 12px 4px">
+        <text class="font-xs text-muted">{{m.updateInfo}}</text>
+      </view>
+    </view>
+  </block>
+</view>

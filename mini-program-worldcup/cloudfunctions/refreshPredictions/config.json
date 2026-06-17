@@ -1,0 +1,13 @@
+{
+  "env": "cloud1-d1ggmx6ur18b296fc",
+  "permissions": {
+    "openapi": []
+  },
+  "triggers": [
+    {
+      "name": "predictionTimer",
+      "type": "timer",
+      "config": "0 0 */6 * * * *"
+    }
+  ]
+}

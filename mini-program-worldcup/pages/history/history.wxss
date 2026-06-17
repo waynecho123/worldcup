@@ -1,0 +1,92 @@
+/* History - Simulation Records */
+
+.page { padding: 16px; min-height: 100vh; }
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: 800;
+  color: #e4e8f0;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #556680;
+}
+
+.empty-state .es-icon {
+  font-size: 96rpx;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.empty-state .es-text {
+  font-size: 28rpx;
+}
+
+/* History List */
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.history-item {
+  background: #0f1521;
+  border: 1px solid #1a2744;
+  border-radius: 12px;
+  padding: 16px;
+  transition: background .15s;
+}
+
+.history-item .hi-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.history-item .hi-runs {
+  font-size: 22rpx;
+  background: #4da6ff;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.history-item .hi-time {
+  font-size: 22rpx;
+  color: #556680;
+}
+
+.history-item .hi-top3 {
+  font-size: 26rpx;
+  color: #e4e8f0;
+  line-height: 1.5;
+}
+
+.history-item .hi-top3 .gold-highlight {
+  color: #f0b90b;
+  font-weight: 700;
+}
+
+/* Back button */
+.back-btn {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.back-btn button {
+  background: transparent;
+  color: #4da6ff;
+  border: 1px solid #4da6ff;
+  border-radius: 8px;
+  padding: 10px 30px;
+  font-size: 28rpx;
+}

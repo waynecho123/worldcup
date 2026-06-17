@@ -1,0 +1,102 @@
+<!-- Group Standings - 小组积分榜 -->
+<view class="page bg-dark">
+
+  <!-- Group Navigator -->
+  <view class="group-nav">
+    <view class="group-nav-arrow" bindtap="onPrevGroup" wx:if="{{activeGroup !== 'A'}}">◀</view>
+    <view style="width:32px" wx:else></view>
+    <scroll-view scroll-x enhanced show-scrollbar="{{false}}" class="group-scroll">
+      <view class="group-tabs">
+        <view wx:for="{{groups}}" wx:key="*this"
+              class="group-tab {{activeGroup === item ? 'active' : ''}}"
+              data-group="{{item}}" bindtap="onGroupTap">{{item}} 组</view>
+      </view>
+    </scroll-view>
+    <view class="group-nav-arrow" bindtap="onNextGroup" wx:if="{{activeGroup !== 'L'}}">▶</view>
+    <view style="width:32px" wx:else></view>
+  </view>
+
+  <!-- Group Info -->
+  <view class="group-info">
+    <text class="gi-title">{{activeGroup}} 组</text>
+    <text class="gi-meta">已赛 {{groupData.length > 0 ? groupData[0].played + groupData[1].played + groupData[2].played + groupData[3].played : 0}}/12 场</text>
+  </view>
+
+  <!-- Standings Table -->
+  <view class="standings-table">
+    <!-- Table Header -->
+    <view class="st-header">
+      <text class="st-col st-pos">#</text>
+      <text class="st-col st-team">球队</text>
+      <text class="st-col st-stat">赛</text>
+      <text class="st-col st-stat">胜</text>
+      <text class="st-col st-stat">平</text>
+      <text class="st-col st-stat">负</text>
+      <text class="st-col st-stat">GF</text>
+      <text class="st-col st-stat">GA</text>
+      <text class="st-col st-stat">GD</text>
+      <text class="st-col st-pts">分</text>
+    </view>
+
+    <!-- Team Rows -->
+    <view wx:for="{{groupData}}" wx:key="id" class="st-row {{index < 2 ? 'qualify' : ''}} {{index === 2 ? 'third' : ''}}"
+          data-id="{{item.id}}" bindtap="onTeamTap">
+      <text class="st-col st-pos">
+        <text wx:if="{{index === 0}}">🥇</text>
+        <text wx:elif="{{index === 1}}">🥈</text>
+        <text wx:elif="{{index === 2}}">🥉</text>
+        <text wx:else>{{index + 1}}</text>
+      </text>
+      <view class="st-col st-team-info">
+        <text class="sti-flag">{{item.flag}}</text>
+        <view class="sti-text">
+          <text class="sti-name">{{item.cn}}</text>
+          <text class="sti-rank">FIFA #{{item.rank}}</text>
+        </view>
+      </view>
+      <text class="st-col st-stat">{{item.played}}</text>
+      <text class="st-col st-stat">{{item.won}}</text>
+      <text class="st-col st-stat">{{item.drawn}}</text>
+      <text class="st-col st-stat">{{item.lost}}</text>
+      <text class="st-col st-stat">{{item.gf}}</text>
+      <text class="st-col st-stat">{{item.ga}}</text>
+      <text class="st-col st-stat {{item.gd > 0 ? 'text-green' : item.gd < 0 ? 'text-red' : ''}}">{{item.gd > 0 ? '+' : ''}}{{item.gd}}</text>
+      <text class="st-col st-pts font-bold text-gold">{{item.pts}}</text>
+    </view>
+  </view>
+
+  <!-- Qualification Legend -->
+  <view class="qual-legend">
+    <view class="ql-item qualify"><view class="ql-dot"></view><text>直接晋级</text></view>
+    <view class="ql-item third"><view class="ql-dot"></view><text>小组第3 (待定)</text></view>
+  </view>
+
+  <!-- Group Matches Summary -->
+  <view class="card" style="margin-top:12px">
+    <view class="card-header">📋 {{activeGroup}}组比赛</view>
+    <view wx:if="{{groupMatches && groupMatches.length > 0}}" class="group-matches-list">
+      <view wx:for="{{groupMatches}}" wx:key="id" class="gm-item">
+        <text class="gm-date">{{item.date.slice(5)}} {{item.time}}</text>
+        <text class="gm-teams">{{item.homeFlag}} {{item.homeName}} vs {{item.awayName}} {{item.awayFlag}}</text>
+        <text wx:if="{{item.played}}" class="gm-score {{item.homeScore > item.awayScore ? 'text-accent' : item.homeScore < item.awayScore ? 'text-red' : 'text-muted'}}">
+          {{item.homeScore}}:{{item.awayScore}}
+        </text>
+        <text wx:else class="gm-pending">未赛</text>
+      </view>
+    </view>
+    <view wx:else class="font-xs text-muted" style="text-align:center;padding:12px">暂无比赛数据</view>
+  </view>
+
+  <!-- Third Place Ranking (across all groups) -->
+  <view wx:if="{{thirdPlace.length > 0}}" class="card" style="margin-top:12px">
+    <view class="card-header">🏅 小组第三排名 (前8晋级)</view>
+    <view wx:for="{{thirdPlace}}" wx:key="id" class="tp-row {{index < 8 ? 'tp-qualify' : 'tp-out'}}">
+      <text class="tp-pos">{{index + 1}}</text>
+      <text class="tp-group">{{item.group}}组</text>
+      <text class="tp-flag">{{item.flag}}</text>
+      <text class="tp-name">{{item.cn}}</text>
+      <text class="tp-pts">{{item.pts}}分</text>
+      <text class="tp-gd">{{item.gd >= 0 ? '+' : ''}}{{item.gd}}</text>
+    </view>
+  </view>
+</view>

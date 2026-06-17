@@ -1,0 +1,73 @@
+/* Stat Box Component */
+
+.stat-box {
+  background: #182032;
+  border: 1px solid #1a2744;
+  border-radius: 10px;
+  padding: 14px 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: all .15s;
+}
+
+.stat-box.clickable:active {
+  background: #1a2538;
+  border-color: #4da6ff;
+}
+
+/* Sizes */
+.stat-sm { padding: 10px 8px; min-width: 60px; }
+.stat-md { padding: 14px 10px; min-width: 80px; }
+.stat-lg { padding: 20px 14px; min-width: 100px; }
+
+/* Icon */
+.sb-icon {
+  font-size: 36rpx;
+  display: block;
+}
+
+.stat-sm .sb-icon { font-size: 28rpx; }
+.stat-lg .sb-icon { font-size: 48rpx; }
+
+/* Value */
+.sb-value-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sb-value {
+  font-size: 50rpx;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.stat-sm .sb-value { font-size: 36rpx; }
+.stat-lg .sb-value { font-size: 64rpx; }
+
+.sb-trend {
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.sb-trend.up { color: #00c853; }
+.sb-trend.down { color: #ff3d57; }
+
+/* Label */
+.sb-label {
+  font-size: 24rpx;
+  color: #8899b4;
+}
+
+.stat-sm .sb-label { font-size: 20rpx; }
+.stat-lg .sb-label { font-size: 28rpx; }
+
+/* Sublabel */
+.sb-sublabel {
+  font-size: 20rpx;
+  color: #556680;
+  margin-top: 2px;
+}

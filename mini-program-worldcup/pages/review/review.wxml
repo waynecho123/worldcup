@@ -1,0 +1,60 @@
+<!-- Review - 复盘分析 -->
+<view class="page bg-dark" style="padding:14px">
+
+  <!-- Stats -->
+  <view class="card">
+    <view class="card-header">📊 预测准确率统计</view>
+    <view class="strength-row">
+      <view class="stat-box" style="flex:1">
+        <text class="num">{{total}}</text>
+        <text class="lbl">已录入比赛</text>
+      </view>
+      <view class="stat-box" style="flex:1">
+        <text class="num" style="color:#00c853">{{correct}}</text>
+        <text class="lbl">胜负预测正确</text>
+      </view>
+      <view class="stat-box" style="flex:1">
+        <text class="num gold">{{exact}}</text>
+        <text class="lbl">比分完全命中</text>
+      </view>
+    </view>
+    <view wx:if="{{hasResults}}" class="font-s text-secondary" style="text-align:center;margin-top:8px">
+      胜率：{{winRate}}% | 比分命中率：{{exactRate}}%
+    </view>
+  </view>
+
+  <!-- Bias Analysis -->
+  <view wx:if="{{bias}}" class="card">
+    <view class="card-header">🧠 AI偏差分析</view>
+    <view wx:for="{{bias}}" wx:key="type" class="font-s" style="padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.05)">
+      <text class="font-bold text-accent">{{item.type}}：</text>
+      <text class="text-secondary">{{item.detail}}</text>
+    </view>
+  </view>
+
+  <!-- Empty -->
+  <view wx:if="{{total===0}}" class="empty-state">
+    <text class="icon">📭</text>
+    <text>暂无已录入的实际结果</text>
+    <text class="font-xs text-secondary">录入至少5场后可查看偏差分析</text>
+  </view>
+
+  <!-- Comparison List -->
+  <view wx:if="{{hasResults}}" class="card">
+    <view class="card-header">🔍 预测 vs 实际 对比详情</view>
+    <view wx:for="{{comparisons}}" wx:key="id" class="comp-item" style="border-left:3px solid {{item.ok?'#00c853':'#ff3d57'}}">
+      <view class="flex-between font-xs text-muted">
+        <text>{{item.date}} {{item.time}} | {{item.group}}组</text>
+        <text>{{item.exact?'🎯':item.ok?'✅':'❌'}} {{item.ok?'正确':'错误'}}</text>
+      </view>
+      <view style="display:flex;align-items:center;justify-content:center;gap:16px;text-align:center;margin-top:6px">
+        <text>{{item.homeFlag}} {{item.homeName}}</text>
+        <view>
+          <text class="font-s text-gold">AI {{item.predScore}}</text>
+          <text class="font-xs" style="display:block;color:{{item.ok?'#00c853':'#ff3d57'}}">实际 {{item.actScore[0]}}:{{item.actScore[1]}}</text>
+        </view>
+        <text>{{item.awayFlag}} {{item.awayName}}</text>
+      </view>
+    </view>
+  </view>
+</view>

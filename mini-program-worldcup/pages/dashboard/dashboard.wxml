@@ -1,0 +1,32 @@
+<view class="page bg-dark" style="padding:14px">
+  <!-- Controls -->
+  <view class="card">
+    <view class="card-header">🎲 蒙特卡洛模拟</view>
+    <view class="flex gap" style="margin-bottom:10px">
+      <picker mode="selector" range="{{[1000,2500,5000,10000,25000]}}" bindchange="onRunsChange">
+        <view class="btn btn-outline btn-sm">{{runs}} 次</view>
+      </picker>
+      <button class="btn btn-primary btn-sm" bindtap="startSim" disabled="{{running}}">
+        {{running?'模拟中...':'开始模拟'}}
+      </button>
+    </view>
+
+    <!-- Progress -->
+    <view wx:if="{{running}}" class="progress-wrap">
+      <view class="progress-fill" style="width:{{progress}}%"></view>
+    </view>
+    <text wx:if="{{running}}" class="font-xs text-secondary">进度: {{progress}}%</text>
+  </view>
+
+  <!-- Results -->
+  <view wx:if="{{result}}" class="card">
+    <view class="card-header">🏆 夺冠概率 Top5</view>
+    <view wx:for="{{top5}}" wx:key="name" class="flex-between" style="padding:10px;margin:4px 0;background:#182032;border-radius:8px">
+      <text class="font-m">{{item.flag}} {{item.name}}</text>
+      <text class="font-l text-gold font-extrabold">{{item.prob}}%</text>
+    </view>
+    <text class="font-xs text-muted" style="display:block;text-align:center;margin-top:8px">{{runsDone}} 次模拟完成</text>
+  </view>
+
+  <button class="btn btn-outline btn-sm" bindtap="openHistory" style="margin-top:10px">📋 模拟记录</button>
+</view>

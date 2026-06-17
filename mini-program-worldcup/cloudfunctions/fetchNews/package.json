@@ -1,0 +1,9 @@
+{
+  "name": "fetchNews",
+  "version": "1.0.0",
+  "description": "Fetch World Cup news updates",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  }
+}

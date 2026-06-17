@@ -1,0 +1,263 @@
+/* Match Card Component */
+
+.match-card {
+  background: #182032;
+  border: 1px solid #1a2744;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 10px;
+  transition: all .15s;
+}
+
+.match-card:active {
+  background: #1a2538;
+  border-color: #4da6ff;
+}
+
+.match-card.featured {
+  border-left: 3px solid #f0b90b;
+  background: linear-gradient(90deg, rgba(240,185,11,.04), #182032 30%);
+}
+
+.match-card.compact {
+  padding: 12px;
+  margin-bottom: 6px;
+}
+
+/* Header */
+.mc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.mc-time-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mc-time {
+  font-size: 28rpx;
+  color: #e4e8f0;
+  font-weight: 700;
+}
+
+.mc-date {
+  font-size: 22rpx;
+  color: #556680;
+}
+
+.mc-badges {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.mc-group-badge {
+  font-size: 22rpx;
+  background: #4da6ff;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.mc-stage-badge {
+  font-size: 20rpx;
+  background: #182032;
+  color: #8899b4;
+  padding: 2px 8px;
+  border-radius: 8px;
+  border: 1px solid #1a2744;
+}
+
+.mc-md-badge {
+  font-size: 20rpx;
+  color: #556680;
+}
+
+/* Teams row */
+.mc-teams {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mc-team {
+  flex: 1;
+  text-align: center;
+}
+
+.mc-team.home { text-align: center; }
+.mc-team.away { text-align: center; }
+
+.mc-flag {
+  font-size: 68rpx;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.mc-name {
+  font-weight: 700;
+  font-size: 30rpx;
+  color: #e4e8f0;
+  display: block;
+}
+
+.mc-rank {
+  font-size: 20rpx;
+  color: #8899b4;
+  display: block;
+  margin-top: 2px;
+}
+
+/* Center: prediction / actual */
+.mc-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.mc-prediction {
+  text-align: center;
+}
+
+.mc-pred-score {
+  font-size: 42rpx;
+  font-weight: 800;
+  color: #f0b90b;
+  display: block;
+}
+
+.mc-pred-label {
+  font-size: 20rpx;
+  color: #4da6ff;
+}
+
+.mc-actual-score {
+  text-align: center;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.mc-actual-score.correct {
+  background: rgba(0,200,83,.08);
+}
+
+.mc-actual-score.wrong {
+  background: rgba(255,61,87,.08);
+}
+
+.mc-act-num {
+  font-size: 42rpx;
+  font-weight: 800;
+}
+
+.mc-actual-score.correct .mc-act-num { color: #00c853; }
+.mc-actual-score.wrong .mc-act-num { color: #ff3d57; }
+
+.mc-act-icon {
+  font-size: 24rpx;
+  margin-left: 4px;
+}
+
+.mc-vs-text {
+  font-size: 36rpx;
+  font-weight: 800;
+  color: #556680;
+}
+
+/* Probabilities */
+.mc-probs {
+  margin-top: 10px;
+}
+
+.mc-prob-bar {
+  height: 6px;
+  background: #0f1521;
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+}
+
+.mc-prob-fill.home {
+  height: 100%;
+  background: #4da6ff;
+  border-radius: 3px 0 0 3px;
+}
+
+.mc-prob-fill.draw {
+  height: 100%;
+  background: #556680;
+}
+
+.mc-prob-fill.away {
+  height: 100%;
+  background: #ff3d57;
+  border-radius: 0 3px 3px 0;
+}
+
+.mc-prob-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.mc-prob-label {
+  font-size: 20rpx;
+  color: #8899b4;
+}
+
+.mc-prob-label.draw {
+  color: #556680;
+}
+
+/* Odds */
+.mc-odds {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #1a2744;
+}
+
+.mc-odds-label {
+  font-size: 22rpx;
+  background: #182032;
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: #8899b4;
+}
+
+.mc-odds-val {
+  font-size: 24rpx;
+  color: #f0b90b;
+  font-weight: 600;
+}
+
+/* Venue */
+.mc-venue {
+  margin-top: 8px;
+  font-size: 22rpx;
+  color: #556680;
+}
+
+/* News alert */
+.mc-news-alert {
+  margin-top: 8px;
+  padding: 8px 10px;
+  background: rgba(255,61,87,.06);
+  border-radius: 6px;
+  font-size: 22rpx;
+  color: #ff3d57;
+}
+
+/* Empty */
+.match-card-empty {
+  padding: 20px;
+  text-align: center;
+}

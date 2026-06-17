@@ -1,0 +1,227 @@
+/* Team Detail Page Styles */
+
+.page { padding: 16px; min-height: 100vh; }
+
+/* Hero Banner */
+.team-hero {
+  background: linear-gradient(135deg, #0a1628 0%, #132044 50%, #0f1521 100%);
+  border: 1px solid #1a2744;
+  border-radius: 16px;
+  padding: 24px 18px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.team-hero .th-flag {
+  font-size: 120rpx;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.team-hero .th-name {
+  font-size: 44rpx;
+  font-weight: 800;
+  color: #e4e8f0;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.team-hero .th-name-en {
+  font-size: 26rpx;
+  color: #8899b4;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Stat Row */
+.stat-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.stat-row .stat-cell {
+  flex: 1;
+  background: #182032;
+  border: 1px solid #1a2744;
+  border-radius: 10px;
+  padding: 12px 8px;
+  text-align: center;
+}
+
+.stat-cell .sc-val {
+  font-size: 36rpx;
+  font-weight: 800;
+  color: #4da6ff;
+  display: block;
+}
+
+.stat-cell .sc-val.gold { color: #f0b90b; }
+.stat-cell .sc-val.green { color: #00c853; }
+.stat-cell .sc-val.red { color: #ff3d57; }
+
+.stat-cell .sc-lbl {
+  font-size: 22rpx;
+  color: #8899b4;
+  margin-top: 2px;
+}
+
+/* Info Cards */
+.info-card {
+  background: #0f1521;
+  border: 1px solid #1a2744;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.info-card .ic-title {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #e4e8f0;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-card .ic-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 26rpx;
+  color: #8899b4;
+  border-bottom: 1px solid rgba(26,39,68,.5);
+}
+
+.info-card .ic-row:last-child { border-bottom: none; }
+.info-card .ic-row .icr-val { color: #e4e8f0; font-weight: 600; }
+
+/* Stars List */
+.stars-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.star-chip {
+  background: rgba(240,185,11,.1);
+  border: 1px solid rgba(240,185,11,.2);
+  color: #f0b90b;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+/* Injury Tag */
+.injury-tag {
+  display: inline-block;
+  background: rgba(255,61,87,.1);
+  border: 1px solid rgba(255,61,87,.2);
+  color: #ff3d57;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 24rpx;
+  margin-top: 4px;
+}
+
+/* News block */
+.news-block {
+  background: rgba(77,166,255,.04);
+  border-left: 3px solid #4da6ff;
+  padding: 12px 14px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 8px;
+  font-size: 26rpx;
+  color: #8899b4;
+  line-height: 1.6;
+}
+
+/* Lineup Section */
+.lineup-section {
+  margin-bottom: 14px;
+}
+
+.lineup-section .ls-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.lineup-section .ls-formation {
+  background: #4da6ff;
+  color: #fff;
+  font-size: 22rpx;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.lineup-field {
+  background: #0d3b1e;
+  border: 2px solid #1a5c30;
+  border-radius: 12px;
+  padding: 14px;
+  position: relative;
+  min-height: 200px;
+}
+
+.lineup-row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.lineup-player {
+  text-align: center;
+  flex: 1;
+  max-width: 80px;
+}
+
+.lineup-player .lp-num {
+  font-size: 20rpx;
+  color: #f0b90b;
+  font-weight: 800;
+  display: block;
+}
+
+.lineup-player .lp-name {
+  font-size: 22rpx;
+  color: #e4e8f0;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lineup-player .lp-note {
+  font-size: 18rpx;
+  color: #556680;
+}
+
+.lineup-divider {
+  border-top: 1px dashed rgba(255,255,255,.15);
+  margin: 8px 0;
+}
+
+/* Subs bench */
+.subs-bench {
+  background: #182032;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 8px;
+}
+
+.subs-bench .sb-title {
+  font-size: 22rpx;
+  color: #556680;
+  margin-bottom: 6px;
+}
+
+.subs-bench .sb-list {
+  font-size: 22rpx;
+  color: #8899b4;
+}

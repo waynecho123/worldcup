@@ -1,0 +1,50 @@
+<!-- Football Pitch Visual Component -->
+<view class="pitch-container">
+  <!-- Tab switcher if both teams are shown -->
+  <view wx:if="{{homeTeam && awayTeam && mode === 'comparison'}}" class="pitch-tabs">
+    <view class="pitch-tab {{activeTab === 'home' ? 'active' : ''}}" data-tab="home" bindtap="switchTab">
+      <text>{{homeTeam.flag}} {{homeTeam.cn}}</text>
+    </view>
+    <view class="pitch-tab {{activeTab === 'away' ? 'active' : ''}}" data-tab="away" bindtap="switchTab">
+      <text>{{awayTeam.flag}} {{awayTeam.cn}}</text>
+    </view>
+  </view>
+
+  <!-- Formation label -->
+  <view class="pitch-formation-label" wx:if="{{activeTab === 'home' && homeTeam}}">
+    <text class="pitch-team-name">{{homeTeam.flag}} {{homeTeam.cn}}</text>
+    <text class="pitch-formation-badge">{{homeTeam.formation || '4-3-3'}}</text>
+  </view>
+  <view class="pitch-formation-label" wx:elif="{{activeTab === 'away' && awayTeam}}">
+    <text class="pitch-team-name">{{awayTeam.flag}} {{awayTeam.cn}}</text>
+    <text class="pitch-formation-badge">{{awayTeam.formation || '4-3-3'}}</text>
+  </view>
+
+  <!-- The Pitch -->
+  <view class="pitch">
+    <!-- Pitch markings -->
+    <view class="pitch-center-line"></view>
+    <view class="pitch-center-circle"></view>
+
+    <!-- Home formation -->
+    <view wx:if="{{activeTab === 'home'}}" class="pitch-rows">
+      <view wx:for="{{homeRows}}" wx:key="label" class="pitch-row pitch-row-{{item.cols}}">
+        <view wx:for="{{item.players}}" wx:key="name" wx:for-item="p" class="pitch-player">
+          <text class="pp-num">{{p.num || '?'}}</text>
+          <text class="pp-name">{{p.name}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- Away formation -->
+    <view wx:elif="{{activeTab === 'away'}}" class="pitch-rows pitch-away">
+      <view wx:for="{{awayRows}}" wx:key="label" class="pitch-row pitch-row-{{item.cols}}"
+            style="flex-direction: column-reverse;">
+        <view wx:for="{{item.players}}" wx:key="name" wx:for-item="p" class="pitch-player">
+          <text class="pp-num">{{p.num || '?'}}</text>
+          <text class="pp-name">{{p.name}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+<!-- News Ticker Component -->
+<view wx:if="{{currentText}}" class="news-ticker" bindtap="onTap">
+  <text class="ticker-label">🔥 快讯</text>
+  <view class="ticker-content">
+    <text class="ticker-text">{{currentText}}</text>
+  </view>
+</view>

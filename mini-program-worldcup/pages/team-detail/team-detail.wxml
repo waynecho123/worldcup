@@ -1,0 +1,24 @@
+<view class="page bg-dark" style="padding:14px" wx:if="{{team}}">
+  <view style="text-align:center;margin-bottom:14px">
+    <text style="font-size:80rpx">{{team.flag}}</text>
+    <text class="font-xxl font-extrabold" style="display:block">{{team.cn}}</text>
+    <text class="font-s text-secondary">{{team.name}} · {{team.group}}组 · {{team.seed}}档</text>
+  </view>
+
+  <view class="card">
+    <view class="card-header">📊 数据概览</view>
+    <view class="strength-row">
+      <view class="stat-box" style="flex:1"><text class="num">#{{team.rank}}</text><text class="lbl">FIFA排名</text></view>
+      <view class="stat-box" style="flex:1"><text class="num" style="color:#4da6ff">{{team.strength}}</text><text class="lbl">AI实力</text></view>
+      <view class="stat-box" style="flex:1"><text class="num gold">{{team.odds}}</text><text class="lbl">夺冠指数</text></view>
+    </view>
+    <view class="font-s" style="margin-top:10px">
+      <text>⚔ 进攻: {{team.att}} | 🛡 防守: {{team.def}}</text>
+      <text style="display:block" class="text-secondary">🏆 最佳: {{team.best}} | 参赛: {{team.apps}}次 | 洲际: {{team.conf}}</text>
+      <text style="display:block" class="text-secondary">📊 近期: {{team.recent}}</text>
+      <text style="display:block" class="text-gold">⭐ {{team.stars.join(' · ')}}</text>
+      <text wx:if="{{team.news}}" style="display:block" class="text-orange">📰 {{team.news}}</text>
+      <text wx:if="{{team.inj}}" style="display:block" class="text-red">🏥 {{team.inj}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,146 @@
+/* Today's Matches - 世界杯赛程 */
+page { background-color: #080c14; }
+
+/* Date Navigation */
+.date-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  background: #0f1521;
+  margin: 8px 14px;
+  border-radius: 10px;
+}
+
+.date-nav-arrow {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  color: #8899b4;
+  flex-shrink: 0;
+}
+
+.date-scroll {
+  flex: 1;
+  white-space: nowrap;
+}
+
+.date-list {
+  display: inline-flex;
+  gap: 6px;
+  padding: 2px 0;
+}
+
+.date-chip {
+  padding: 6px 14px;
+  border: 1px solid #1a2744;
+  border-radius: 16px;
+  font-size: 22rpx;
+  color: #8899b4;
+  background: #0f1521;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.date-chip.active {
+  background: #4da6ff;
+  color: #fff;
+  border-color: #4da6ff;
+}
+
+.date-chip.past {
+  opacity: 0.5;
+}
+
+/* Date Header */
+.date-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 14px 10px;
+  padding: 10px 14px;
+  flex-wrap: wrap;
+}
+
+.date-badge {
+  background: #4da6ff;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 24rpx;
+  white-space: nowrap;
+}
+
+/* Match Cards */
+.match-card { margin: 0 14px 10px; }
+.match-card.featured { border-left: 3px solid #f0b90b; }
+
+.match-card .mc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.match-card .mc-time { font-size: 22rpx; color: #556680; font-weight: 600; }
+
+.match-card .mc-teams {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+}
+
+.match-card .mc-team { flex: 1; text-align: center; }
+.match-card .mc-flag { font-size: 60rpx; display: block; margin-bottom: 2px; }
+.match-card .mc-name { font-weight: 700; font-size: 26rpx; }
+.match-card .mc-rank { font-size: 20rpx; color: #8899b4; margin-top: 1px; }
+
+.match-card .mc-vs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 90px;
+}
+
+.match-card .mc-pred-score { font-size: 36rpx; font-weight: 800; color: #f0b90b; }
+
+.match-card .mc-probs {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 6px;
+  padding: 5px;
+  background: rgba(240,185,11,.04);
+  border-radius: 6px;
+}
+
+.odds-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 5px 8px;
+  background: rgba(240,185,11,.03);
+  border-radius: 6px;
+}
+
+.jc-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 3px;
+  padding: 3px 8px;
+}
+
+.news-tag {
+  margin-top: 4px;
+  padding: 3px 8px;
+  background: rgba(255,145,0,.06);
+  border-radius: 4px;
+}

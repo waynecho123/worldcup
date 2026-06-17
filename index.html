@@ -2760,7 +2760,7 @@ function renderMatchCard(m) {
     correctOutcome = (pred.predScore[0] > pred.predScore[1] && act.homeScore > act.awayScore) ||
                      (pred.predScore[0] === pred.predScore[1] && act.homeScore === act.awayScore) ||
                      (pred.predScore[0] < pred.predScore[1] && act.homeScore < act.awayScore);
-    correctExact = pred.predScore[0] === act.homeScore && pred.predScore[1] === act.awayScore;
+    correctExact = (pred.topScores || []).some(function(s) { return s.home === act.homeScore && s.away === act.awayScore; });
     const icon = correctExact ? '🎯' : correctOutcome ? '✅' : '❌';
     const resultColor = correctOutcome ? 'var(--green)' : 'var(--red)';
     resultHTML = `
@@ -2868,7 +2868,7 @@ function renderMatchCard(m) {
           <span class="mc-rank">FIFA #${ht.rk} | 实力 ${getStrength(ht).toFixed(0)}</span>
         </div>
         <div class="mc-vs">
-          <div class="mc-pred-score">${pred.predScore[0]} : ${pred.predScore[1]}${pred.locked?' 🔒':''}</div>
+          <div class="mc-pred-score">${pred.topScores ? pred.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : pred.predScore[0]+':'+pred.predScore[1]}${pred.locked?' 🔒':''}</div>
           <span style="font-size:.7rem;color:${pred.locked?'var(--gold)':'var(--text3)'}">${pred.locked?'🔒最终预测':'AI预测'}</span>
         </div>
         <div class="mc-team">
@@ -3793,7 +3793,7 @@ function compareMatch(matchId) {
   const correctOutcome = (predHome > predAway && actHome > actAway) ||
                          (predHome === predAway && actHome === actAway) ||
                          (predHome < predAway && actHome < actAway);
-  const correctExact = predHome === actHome && predAway === actAway;
+  const correctExact = (pred.topScores || []).some(function(s) { return s.home === actHome && s.away === actAway; });
   const goalDiffError = Math.abs((actHome - actAway) - (predHome - predAway));
   const totalGoalError = Math.abs(actHome - predHome) + Math.abs(actAway - predAway);
 

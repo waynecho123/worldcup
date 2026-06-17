@@ -1,0 +1,82 @@
+<!-- Reusable Match Card -->
+<view wx:if="{{!loading && matchInfo}}" class="match-card {{featured || matchInfo.stage === 'final' ? 'featured' : ''}} {{compact ? 'compact' : ''}}"
+      data-id="{{matchInfo.id}}" bindtap="onTap">
+
+  <!-- Header: time + group/stage -->
+  <view class="mc-header">
+    <view class="mc-time-box">
+      <text class="mc-time">{{matchInfo.time}}</text>
+      <text wx:if="{{matchInfo.date}}" class="mc-date">{{matchInfo.date.slice(5)}}</text>
+    </view>
+    <view class="mc-badges">
+      <text wx:if="{{matchInfo.group}}" class="mc-group-badge">{{matchInfo.group}}组</text>
+      <text class="mc-stage-badge">{{matchInfo.stageLabel}}</text>
+      <text wx:if="{{matchInfo.matchday}}" class="mc-md-badge">第{{matchInfo.matchday}}轮</text>
+    </view>
+  </view>
+
+  <!-- Teams + Score -->
+  <view class="mc-teams">
+    <view class="mc-team home">
+      <text class="mc-flag">{{matchInfo.homeFlag}}</text>
+      <text class="mc-name">{{matchInfo.homeName}}</text>
+      <text class="mc-rank">FIFA #{{matchInfo.homeRank}}</text>
+    </view>
+
+    <view class="mc-center">
+      <!-- AI Prediction Score -->
+      <view wx:if="{{showPrediction}}" class="mc-prediction">
+        <text class="mc-pred-score">{{matchInfo.predScore}}</text>
+        <text class="mc-pred-label">AI预测</text>
+      </view>
+      <!-- Actual Score -->
+      <view wx:if="{{matchInfo.actual}}" class="mc-actual-score {{matchInfo.actual.correct ? 'correct' : 'wrong'}}">
+        <text class="mc-act-num">{{matchInfo.actual.home}}:{{matchInfo.actual.away}}</text>
+        <text class="mc-act-icon">{{matchInfo.actual.icon}}</text>
+      </view>
+      <view wx:else class="mc-vs-text">
+        <text>VS</text>
+      </view>
+    </view>
+
+    <view class="mc-team away">
+      <text class="mc-flag">{{matchInfo.awayFlag}}</text>
+      <text class="mc-name">{{matchInfo.awayName}}</text>
+      <text class="mc-rank">FIFA #{{matchInfo.awayRank}}</text>
+    </view>
+  </view>
+
+  <!-- Probabilities -->
+  <view wx:if="{{showPrediction && !matchInfo.actual}}" class="mc-probs">
+    <view class="mc-prob-bar">
+      <view class="mc-prob-fill home" style="width:{{matchInfo.homeProb}}%"></view>
+      <view class="mc-prob-fill draw" style="width:{{matchInfo.drawProb}}%"></view>
+      <view class="mc-prob-fill away" style="width:{{matchInfo.awayProb}}%"></view>
+    </view>
+    <view class="mc-prob-labels">
+      <text class="mc-prob-label">{{matchInfo.homeProb}}%</text>
+      <text class="mc-prob-label draw">{{matchInfo.drawProb}}%</text>
+      <text class="mc-prob-label">{{matchInfo.awayProb}}%</text>
+    </view>
+  </view>
+
+  <!-- Odds row -->
+  <view wx:if="{{showOdds && matchInfo.oddsH}}" class="mc-odds">
+    <text class="mc-odds-label">欧赔</text>
+    <text class="mc-odds-val">{{matchInfo.oddsH}} / {{matchInfo.oddsD}} / {{matchInfo.oddsA}}</text>
+  </view>
+
+  <!-- Venue -->
+  <view wx:if="{{matchInfo.venue && !compact}}" class="mc-venue">
+    <text>📍 {{matchInfo.venue}}</text>
+  </view>
+
+  <!-- Injury Alert -->
+  <view wx:if="{{matchInfo.hasNews && !compact}}" class="mc-news-alert">
+    <text>🏥 {{matchInfo.newsText}}</text>
+  </view>
+</view>
+
+<view wx:elif="{{!loading}}" class="match-card-empty">
+  <text class="font-xs text-muted">比赛数据加载中...</text>
+</view>

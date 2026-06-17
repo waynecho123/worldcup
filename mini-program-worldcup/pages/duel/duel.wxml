@@ -1,0 +1,211 @@
+<!-- Human vs AI Duel - 人机对决 -->
+<view class="page bg-dark">
+
+  <!-- Scoreboard -->
+  <view class="duel-scoreboard">
+    <view class="ds-side ai">
+      <text class="ds-icon">🤖</text>
+      <text class="ds-label">AI 资金</text>
+      <text class="ds-balance text-accent">¥{{aiBalance}}</text>
+    </view>
+    <view class="ds-center">
+      <text class="ds-vs-icon">⚔️</text>
+      <text class="ds-vs-text">对决</text>
+    </view>
+    <view class="ds-side human">
+      <text class="ds-icon">{{user ? '🧑' : '❓'}}</text>
+      <text class="ds-label">{{user || '未登录'}}</text>
+      <text class="ds-balance text-green">¥{{humanBalance}}</text>
+    </view>
+  </view>
+
+  <!-- Action Bar -->
+  <view class="duel-actions">
+    <button wx:if="{{!user}}" class="btn btn-primary btn-sm" bindtap="onLogin">👤 点击登录</button>
+    <button wx:if="{{user}}" class="btn btn-outline btn-sm" bindtap="onLogout">退出 {{user}}</button>
+    <button class="btn btn-outline btn-sm" bindtap="onLockAI" style="margin-left:8px">🔒 AI锁定策略</button>
+    <button class="btn btn-outline btn-sm" bindtap="onSettle" style="margin-left:8px">💰 结算</button>
+  </view>
+
+  <!-- Today Settlement -->
+  <view wx:if="{{todaySettled}}" class="settlement-card">
+    <view class="sc-header">📊 {{todayDate}} 结算结果</view>
+    <view class="sc-row">
+      <text>🤖 AI</text>
+      <text class="{{todaySettled.aiProfit >= 0 ? 'text-green' : 'text-red'}}">
+        {{todaySettled.aiProfit >= 0 ? '+' : ''}}¥{{todaySettled.aiProfit}}
+        ({{todaySettled.aiHits}}/{{todaySettled.aiTotal}})
+      </text>
+    </view>
+    <view class="sc-row">
+      <text>🧑 我</text>
+      <text class="{{todaySettled.humanProfit >= 0 ? 'text-green' : 'text-red'}}">
+        {{todaySettled.humanProfit >= 0 ? '+' : ''}}¥{{todaySettled.humanProfit}}
+        ({{todaySettled.humanHits}}/{{todaySettled.humanTotal}})
+      </text>
+    </view>
+  </view>
+
+  <!-- AI Strategies -->
+  <view class="card">
+    <view class="card-header">
+      <text>🤖 AI 今日策略</text>
+      <text class="font-xs text-muted">{{aiStrategies.length}} 单</text>
+    </view>
+    <view wx:if="{{aiStrategies.length === 0}}" class="strategy-empty">
+      <text>AI 尚未锁定今日策略，点击上方 🔒 按钮触发</text>
+    </view>
+    <view wx:for="{{aiStrategies}}" wx:key="id" class="strategy-item ai">
+      <view class="si-header">
+        <text class="si-label">#{{index + 1}} {{item.pickLabel}}</text>
+        <text class="si-stake">¥{{item.stake}}</text>
+      </view>
+      <view class="si-detail">
+        <text class="si-odds text-gold">@{{item.oddsDisplay}}</text>
+        <text wx:if="{{item.evDisplay}}" class="si-ev {{item.evClass}}">EV {{item.evDisplay}}</text>
+        <text wx:if="{{item.settled}}" class="si-result {{item.settleClass}}">{{item.settleDisplay}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Human Strategies -->
+  <view wx:if="{{user}}" class="card">
+    <view class="card-header">
+      <text>🧑 我的竞猜</text>
+      <text class="font-xs text-muted">{{humanStrategies.length}} 单</text>
+    </view>
+    <view wx:if="{{humanStrategies.length === 0}}" class="strategy-empty">
+      <text>暂无竞猜，在下方的比赛中点击"竞猜"开始</text>
+    </view>
+    <view wx:for="{{humanStrategies}}" wx:key="id" class="strategy-item human">
+      <view class="si-header">
+        <text class="si-label">#{{index + 1}} {{item.pickLabel}}</text>
+        <text class="si-stake">¥{{item.stake}}</text>
+      </view>
+      <view class="si-detail">
+        <text class="si-odds text-gold">@{{item.oddsDisplay}}</text>
+        <text wx:if="{{item.settleDisplay}}" class="si-result {{item.settleClass}}">{{item.settleDisplay}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Available Matches -->
+  <view class="card">
+    <view class="card-header">
+      <text>📅 可竞猜比赛</text>
+      <text class="font-xs text-muted">{{allMatches.length}} 场</text>
+    </view>
+    <view wx:if="{{allMatches.length === 0}}" class="strategy-empty">
+      <text>暂无可用比赛</text>
+    </view>
+    <view wx:for="{{allMatches}}" wx:key="id" class="duel-match-card {{item.played ? 'played' : ''}}">
+      <view class="dm-header">
+        <text class="dm-date">{{item.date.slice(5)}} {{item.time}}</text>
+        <text wx:if="{{item.group}}" class="dm-group">{{item.group}}组</text>
+      </view>
+      <view class="dm-teams">
+        <view class="dm-team">
+          <text class="dm-flag">{{item.homeFlag}}</text>
+          <text class="dm-name">{{item.homeName}}</text>
+        </view>
+        <text class="dm-vs">VS</text>
+        <view class="dm-team">
+          <text class="dm-flag">{{item.awayFlag}}</text>
+          <text class="dm-name">{{item.awayName}}</text>
+        </view>
+      </view>
+      <view class="dm-prediction">
+        <text class="font-xs text-muted">AI预测 {{item.predScore}}</text>
+        <text wx:if="{{!item.played && item.spf}}" class="font-xs text-accent">胜{{item.homeProb}}% 平{{item.drawProb}}% 负{{item.awayProb}}%</text>
+      </view>
+      <view wx:if="{{item.spf && !item.played}}" class="dm-odds-row">
+        <view class="dm-odd-item">
+          <text class="dm-odd-label">胜</text>
+          <text class="dm-odd-val">{{item.spf[0]}}</text>
+        </view>
+        <view class="dm-odd-item">
+          <text class="dm-odd-label">平</text>
+          <text class="dm-odd-val">{{item.spf[1]}}</text>
+        </view>
+        <view class="dm-odd-item">
+          <text class="dm-odd-label">负</text>
+          <text class="dm-odd-val">{{item.spf[2]}}</text>
+        </view>
+      </view>
+      <button wx:if="{{!item.played && item.spf && user}}"
+              class="btn btn-primary btn-sm dm-bet-btn" data-id="{{item.id}}"
+              bindtap="onMatchBetTap">💰 竞猜</button>
+    </view>
+  </view>
+
+  <!-- History -->
+  <view wx:if="{{history.length > 0}}" class="card">
+    <view class="card-header">📋 结算记录</view>
+    <view wx:for="{{history}}" wx:key="date" class="history-item">
+      <text class="hi-date">{{item.date}}</text>
+      <text class="hi-result {{item.result.aiProfit > item.result.humanProfit ? 'text-accent' : 'text-green'}}">
+        {{item.result.aiProfit > item.result.humanProfit ? '🤖 AI胜' : item.result.humanProfit > item.result.aiProfit ? '🧑 人类胜' : '🤝 平局'}}
+      </text>
+    </view>
+  </view>
+
+  <!-- Betting Modal -->
+  <view wx:if="{{showBetModal}}" class="modal-overlay" catchtap="closeBetModal">
+    <view class="modal" catchtap="stopPropagation">
+      <view class="modal-header">
+        <text class="modal-title">💰 竞猜</text>
+        <text class="modal-close" bindtap="closeBetModal">✕</text>
+      </view>
+
+      <!-- Match Info -->
+      <view class="bet-match-info">
+        <text class="bmi-teams">{{betMatch.homeFlag}} {{betMatch.homeName}} vs {{betMatch.awayName}} {{betMatch.awayFlag}}</text>
+        <text class="bmi-meta">{{betMatch.date}} {{betMatch.time}} · 余额 ¥{{humanBalance}}</text>
+      </view>
+
+      <!-- Pick Selection -->
+      <view class="bet-picks">
+        <view class="bet-pick {{betPick === '胜' ? 'active' : ''}}" data-pick="胜" bindtap="onPickTap">
+          <text class="bp-label">{{betMatch.homeName}}胜</text>
+          <text class="bp-odds">{{betMatch.spf ? betMatch.spf[0] : '-'}}</text>
+        </view>
+        <view class="bet-pick {{betPick === '平' ? 'active' : ''}}" data-pick="平" bindtap="onPickTap">
+          <text class="bp-label">平局</text>
+          <text class="bp-odds">{{betMatch.spf ? betMatch.spf[1] : '-'}}</text>
+        </view>
+        <view class="bet-pick {{betPick === '负' ? 'active' : ''}}" data-pick="负" bindtap="onPickTap">
+          <text class="bp-label">{{betMatch.awayName}}胜</text>
+          <text class="bp-odds">{{betMatch.spf ? betMatch.spf[2] : '-'}}</text>
+        </view>
+      </view>
+
+      <!-- Stake -->
+      <view class="bet-stake">
+        <text class="bs-label">竞猜金额</text>
+        <view class="bs-quick">
+          <text class="bs-chip {{betStake === 10 ? 'active' : ''}}" data-val="10" bindtap="onStakeQuick">¥10</text>
+          <text class="bs-chip {{betStake === 30 ? 'active' : ''}}" data-val="30" bindtap="onStakeQuick">¥30</text>
+          <text class="bs-chip {{betStake === 50 ? 'active' : ''}}" data-val="50" bindtap="onStakeQuick">¥50</text>
+          <text class="bs-chip {{betStake === 100 ? 'active' : ''}}" data-val="100" bindtap="onStakeQuick">¥100</text>
+          <text class="bs-chip {{betStake === 200 ? 'active' : ''}}" data-val="200" bindtap="onStakeQuick">¥200</text>
+        </view>
+        <input class="bs-input" type="number" value="{{betStake}}" bindinput="onStakeInput"
+               placeholder="输入金额 (10-500)" />
+      </view>
+
+      <!-- Potential return -->
+      <view wx:if="{{betPick && betStake >= 10}}" class="bet-return">
+        <text>预估回报: </text>
+        <text class="text-gold font-bold">¥{{betReturn}}</text>
+        <text class="font-xs text-muted"> (返还率71%)</text>
+      </view>
+
+      <view wx:if="{{betError}}" class="bet-error">{{betError}}</view>
+
+      <view class="bet-submit">
+        <button class="btn btn-outline btn-sm" bindtap="closeBetModal">取消</button>
+        <button class="btn btn-primary btn-sm" bindtap="submitBet">确认竞猜 ¥{{betStake}}</button>
+      </view>
+    </view>
+  </view>
+</view>

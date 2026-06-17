@@ -1,0 +1,9 @@
+{
+  "name": "refreshPredictions",
+  "version": "1.0.0",
+  "description": "Refresh AI match predictions",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  }
+}

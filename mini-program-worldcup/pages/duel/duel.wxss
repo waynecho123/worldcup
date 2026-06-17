@@ -1,0 +1,437 @@
+/* Duel Page - Full Betting Interface */
+
+.page { padding: 12px; min-height: 100vh; }
+
+/* Scoreboard */
+.duel-scoreboard {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 12px;
+  background: linear-gradient(135deg, #0a1628, #132044);
+  border: 1px solid #1a2744;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+.ds-side {
+  text-align: center;
+  flex: 1;
+}
+
+.ds-icon {
+  font-size: 48rpx;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.ds-label {
+  font-size: 24rpx;
+  color: #8899b4;
+  display: block;
+}
+
+.ds-balance {
+  font-size: 40rpx;
+  font-weight: 800;
+  display: block;
+  margin-top: 4px;
+}
+
+.ds-center {
+  text-align: center;
+  padding: 0 8px;
+}
+
+.ds-vs-icon {
+  font-size: 48rpx;
+  display: block;
+}
+
+.ds-vs-text {
+  font-size: 24rpx;
+  color: #f0b90b;
+  font-weight: 700;
+}
+
+/* Actions */
+.duel-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+/* Settlement Card */
+.settlement-card {
+  background: linear-gradient(90deg, rgba(77,166,255,.06), rgba(0,200,83,.06));
+  border: 1px solid #1a2744;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.sc-header {
+  font-size: 28rpx;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #e4e8f0;
+}
+
+.sc-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 26rpx;
+  color: #8899b4;
+}
+
+/* Strategy Items */
+.strategy-empty {
+  text-align: center;
+  padding: 16px;
+  color: #556680;
+  font-size: 24rpx;
+}
+
+.strategy-item {
+  padding: 10px 12px;
+  margin: 4px 0;
+  background: #0f1521;
+  border-radius: 8px;
+  border-left: 3px solid #4da6ff;
+}
+
+.strategy-item.human {
+  border-left-color: #00c853;
+}
+
+.si-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.si-label {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #e4e8f0;
+}
+
+.si-stake {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #f0b90b;
+}
+
+.si-detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+  font-size: 24rpx;
+}
+
+.si-odds { font-weight: 600; }
+.si-ev { font-weight: 600; }
+.si-result { font-weight: 700; }
+
+/* Duel Match Cards */
+.duel-match-card {
+  background: #182032;
+  border: 1px solid #1a2744;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 8px;
+  transition: all .15s;
+}
+
+.duel-match-card.played {
+  opacity: 0.5;
+}
+
+.dm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.dm-date {
+  font-size: 24rpx;
+  color: #8899b4;
+  font-weight: 600;
+}
+
+.dm-group {
+  font-size: 22rpx;
+  background: #4da6ff;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.dm-teams {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.dm-team {
+  flex: 1;
+  text-align: center;
+}
+
+.dm-flag {
+  font-size: 52rpx;
+  display: block;
+}
+
+.dm-name {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #e4e8f0;
+  display: block;
+}
+
+.dm-vs {
+  font-size: 32rpx;
+  font-weight: 800;
+  color: #556680;
+}
+
+.dm-prediction {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+/* Odds Row */
+.dm-odds-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.dm-odd-item {
+  flex: 1;
+  text-align: center;
+  background: #0f1521;
+  border-radius: 6px;
+  padding: 6px 4px;
+}
+
+.dm-odd-label {
+  font-size: 20rpx;
+  color: #8899b4;
+  display: block;
+}
+
+.dm-odd-val {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #f0b90b;
+  display: block;
+}
+
+.dm-bet-btn {
+  width: 100%;
+  margin-top: 6px;
+}
+
+/* History Items */
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #182032;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  font-size: 24rpx;
+}
+
+.hi-date { color: #8899b4; }
+.hi-result { font-weight: 700; }
+
+/* ===== Betting Modal ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.8);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: #0f1521;
+  border: 1px solid #1a2744;
+  border-radius: 14px;
+  padding: 24px;
+  max-width: 600px;
+  width: 92%;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.modal-title {
+  font-size: 32rpx;
+  font-weight: 800;
+  color: #e4e8f0;
+}
+
+.modal-close {
+  font-size: 36rpx;
+  color: #556680;
+  padding: 4px 8px;
+}
+
+.bet-match-info {
+  text-align: center;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #182032;
+  border-radius: 8px;
+}
+
+.bmi-teams {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #e4e8f0;
+  display: block;
+}
+
+.bmi-meta {
+  font-size: 22rpx;
+  color: #8899b4;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Bet Picks */
+.bet-picks {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.bet-pick {
+  flex: 1;
+  text-align: center;
+  padding: 12px 8px;
+  background: #182032;
+  border: 1px solid #1a2744;
+  border-radius: 10px;
+  transition: all .2s;
+}
+
+.bet-pick.active {
+  background: rgba(77,166,255,.12);
+  border-color: #4da6ff;
+}
+
+.bp-label {
+  font-size: 24rpx;
+  color: #8899b4;
+  display: block;
+}
+
+.bet-pick.active .bp-label {
+  color: #4da6ff;
+  font-weight: 700;
+}
+
+.bp-odds {
+  font-size: 32rpx;
+  font-weight: 800;
+  color: #f0b90b;
+  display: block;
+  margin-top: 4px;
+}
+
+/* Stake */
+.bet-stake {
+  margin-bottom: 12px;
+}
+
+.bs-label {
+  font-size: 26rpx;
+  color: #8899b4;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.bs-quick {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.bs-chip {
+  padding: 6px 14px;
+  background: #182032;
+  border: 1px solid #1a2744;
+  border-radius: 16px;
+  font-size: 24rpx;
+  color: #8899b4;
+  transition: all .15s;
+}
+
+.bs-chip.active {
+  background: #4da6ff;
+  border-color: #4da6ff;
+  color: #fff;
+  font-weight: 700;
+}
+
+.bs-input {
+  padding: 10px 14px;
+  background: #182032;
+  border: 1px solid #1a2744;
+  border-radius: 8px;
+  color: #e4e8f0;
+  font-size: 28rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Return display */
+.bet-return {
+  padding: 10px;
+  background: rgba(240,185,11,.04);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 26rpx;
+  color: #8899b4;
+}
+
+.bet-error {
+  color: #ff3d57;
+  font-size: 24rpx;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.bet-submit {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.bet-submit button {
+  flex: 1;
+}
