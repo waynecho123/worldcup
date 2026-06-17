@@ -39,39 +39,34 @@ function getStrength(t) {
   return Math.max(10, rankScore * 0.40 + perf * 0.45 + 15 - injPenalty);
 }
 
-// Simple seeded PRNG (mulberry32) for deterministic results
-function seededRandom(seed) {
-  return function() {
-    seed |= 0; seed = seed + 0x6D2B79F5 | 0;
-    var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
-    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
-    return ((t ^ t >>> 14) >>> 0) / 4294967296;
-  };
-}
+// Cache for upset probability: key = "homeStr_awayStr", only recompute when strengths change
+var upsetCache = {};
 
-// Compute upset probability — deterministic per matchup
+// Compute upset probability — runs 200 Monte Carlo sims once, caches result by strength values
 function computeUpsetProb(homeStr, awayStr) {
-  // Seed from rounded strength values: same matchup always gives same result
-  var seed = Math.floor(homeStr * 100) * 10000 + Math.floor(awayStr * 100);
-  var rand = seededRandom(seed);
+  var key = homeStr.toFixed(1) + '_' + awayStr.toFixed(1);
+  if (upsetCache[key] !== undefined) return upsetCache[key];
+
   var upsets = 0;
   var N = 200;
   for (var i = 0; i < N; i++) {
-    var hNoise = 1 + (rand() - 0.5) * 0.3;
-    var aNoise = 1 + (rand() - 0.5) * 0.3;
+    var hNoise = 1 + (Math.random() - 0.5) * 0.3;
+    var aNoise = 1 + (Math.random() - 0.5) * 0.3;
     var hLambda = Math.max(0.3, homeStr / 28 * hNoise);
     var aLambda = Math.max(0.3, awayStr / 28 * aNoise);
-    var hg = poissonSample(hLambda, rand);
-    var ag = poissonSample(aLambda, rand);
+    var hg = poissonSample(hLambda);
+    var ag = poissonSample(aLambda);
     if ((awayStr < homeStr && ag > hg) || (homeStr < awayStr && hg > ag)) upsets++;
   }
-  return upsets / N;
+  var result = upsets / N;
+  upsetCache[key] = result;
+  return result;
 }
 
-function poissonSample(lambda, rand) {
+function poissonSample(lambda) {
   var L = Math.exp(-lambda);
   var k = 0, p = 1;
-  do { k++; p *= rand(); } while (p > L);
+  do { k++; p *= Math.random(); } while (p > L);
   return k - 1;
 }
 
