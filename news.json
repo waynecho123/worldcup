@@ -1,21 +1,22 @@
 {
   "items": [
-    "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
+    "📰 England hit four in World Cup opener against Croatia ",
     "📰 Who was the biggest attacking threat? England player ratings",
-    "📰 Bellingham scores early in second half to put England 3-2 up",
-    "📰 Can Bellingham become England's superstar once more at the World Cup?",
-    "📰 How sweltering Scotland can handle World Cup heat",
+    "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
     "📰 Extraordinary Messi makes more history in masterclass for the ages",
+    "📰 How sweltering Scotland can handle World Cup heat",
     "📰 No stage too big - Haaland arrives in style at World Cup",
-    "📰 England won't change style despite US heat - Tuchel",
-    "📰 Emotional Messi explains tears after Argentina goal",
+    "📰 Substitute Rashford guides home England's fourth against Croatia",
+    "📰 Bellingham scores early in second half to put England 3-2 up",
+    "📰 Kane heads England into 2-1 lead against Croatia",
+    "📰 Kane puts England ahead against Croatia with retaken penalty",
     "📰 Musa strikes for Croatia to make it 2-2 against England",
-    "📰 DR Congo earn World Cup point against Portugal",
-    "📰 Messi stays humble after hat-trick performance",
-    "📰 'Magnificent' - Messi scores hat-trick to equal Klose scoring record",
     "📰 How to watch the World Cup on the BBC and ITV",
     "📰 Catch up on the World Cup without any spoilers",
+    "📰 Emotional Messi explains tears after Argentina goal",
+    "📰 Clichy on Mbappe, Henderson and France 2010",
     "🤝 葡萄牙 1-1 民主刚果 — 葡萄牙 1-1 民主刚果，双方激战成和",
+    "⚽ 英格兰 4-2 克罗地亚 — 英格兰 4-2 取胜，关键3分",
     "⚽ 法国 3-1 塞内加尔 — 法国 3-1 取胜，关键3分",
     "🔥 伊拉克 1-4 挪威 — 挪威 4-1 大胜，强势表现",
     "🔥 阿根廷 3-0 阿尔及利亚 — 阿根廷 3-0 大胜，强势表现",
@@ -49,6 +50,18 @@
       "matchDate": "2026-06-18",
       "sentiment": "neutral",
       "updatedAt": "2026-06-17T19:35:02.305Z"
+    },
+    {
+      "mid": "m022",
+      "icon": "⚽",
+      "title": "⚽ 英格兰 4-2 克罗地亚 — 英格兰 4-2 取胜，关键3分",
+      "homeTeam": "ENG",
+      "awayTeam": "CRO",
+      "homeScore": 4,
+      "awayScore": 2,
+      "matchDate": "2026-06-18",
+      "sentiment": "neutral",
+      "updatedAt": "2026-06-17T23:16:08.086Z"
     },
     {
       "mid": "m017",
@@ -292,54 +305,56 @@
     }
   ],
   "generalNews": [
-    "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
+    "📰 England hit four in World Cup opener against Croatia ",
     "📰 Who was the biggest attacking threat? England player ratings",
-    "📰 Bellingham scores early in second half to put England 3-2 up",
-    "📰 Can Bellingham become England's superstar once more at the World Cup?",
-    "📰 How sweltering Scotland can handle World Cup heat",
+    "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
     "📰 Extraordinary Messi makes more history in masterclass for the ages",
+    "📰 How sweltering Scotland can handle World Cup heat",
     "📰 No stage too big - Haaland arrives in style at World Cup",
-    "📰 England won't change style despite US heat - Tuchel",
-    "📰 Emotional Messi explains tears after Argentina goal",
+    "📰 Substitute Rashford guides home England's fourth against Croatia",
+    "📰 Bellingham scores early in second half to put England 3-2 up",
+    "📰 Kane heads England into 2-1 lead against Croatia",
+    "📰 Kane puts England ahead against Croatia with retaken penalty",
     "📰 Musa strikes for Croatia to make it 2-2 against England",
-    "📰 DR Congo earn World Cup point against Portugal",
-    "📰 Messi stays humble after hat-trick performance",
-    "📰 'Magnificent' - Messi scores hat-trick to equal Klose scoring record",
     "📰 How to watch the World Cup on the BBC and ITV",
-    "📰 Catch up on the World Cup without any spoilers"
+    "📰 Catch up on the World Cup without any spoilers",
+    "📰 Emotional Messi explains tears after Argentina goal",
+    "📰 Clichy on Mbappe, Henderson and France 2010"
   ],
   "teamNews": {
-    "POR": [
-      "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
-      "📰 DR Congo earn World Cup point against Portugal"
-    ],
     "ENG": [
+      "📰 England hit four in World Cup opener against Croatia ",
       "📰 Who was the biggest attacking threat? England player ratings",
-      "📰 Bellingham scores early in second half to put England 3-2 up",
-      "📰 Can Bellingham become England's superstar once more at the World Cup?"
+      "📰 Substitute Rashford guides home England's fourth against Croatia"
     ],
-    "SCO": [
-      "📰 How sweltering Scotland can handle World Cup heat"
+    "CRO": [
+      "📰 England hit four in World Cup opener against Croatia ",
+      "📰 Substitute Rashford guides home England's fourth against Croatia",
+      "📰 Kane heads England into 2-1 lead against Croatia"
+    ],
+    "POR": [
+      "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle"
     ],
     "ARG": [
       "📰 Extraordinary Messi makes more history in masterclass for the ages",
-      "📰 Emotional Messi explains tears after Argentina goal",
-      "📰 Messi stays humble after hat-trick performance"
+      "📰 Emotional Messi explains tears after Argentina goal"
+    ],
+    "SCO": [
+      "📰 How sweltering Scotland can handle World Cup heat"
     ],
     "NOR": [
       "📰 No stage too big - Haaland arrives in style at World Cup"
     ],
     "USA": [
-      "📰 England won't change style despite US heat - Tuchel",
       "📰 Musa strikes for Croatia to make it 2-2 against England"
     ],
-    "CRO": [
-      "📰 Musa strikes for Croatia to make it 2-2 against England"
+    "KOR": [
+      "📰 Clichy on Mbappe, Henderson and France 2010"
     ],
-    "COD": [
-      "📰 DR Congo earn World Cup point against Portugal"
+    "FRA": [
+      "📰 Clichy on Mbappe, Henderson and France 2010"
     ]
   },
-  "total": 36,
-  "updatedAt": "2026-06-17T22:03:16.205Z"
+  "total": 37,
+  "updatedAt": "2026-06-17T23:16:08.752Z"
 }
