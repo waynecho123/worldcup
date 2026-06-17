@@ -102,8 +102,8 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
 
   // Market consensus: compare AI prediction with live odds (if available)
   let marketConsensus = null;
-  if (liveOdds && liveOdds.had) {
-    const had = liveOdds.had;
+  if (matchOdds && matchOdds.h && matchOdds.d && matchOdds.a) {
+    const had = { homeWinOdds: matchOdds.h, drawOdds: matchOdds.d, awayWinOdds: matchOdds.a };
     // Convert odds to implied probability (removing margin)
     const impH = 1 / had.homeWinOdds, impD = 1 / had.drawOdds, impA = 1 / had.awayWinOdds;
     const impTotal = impH + impD + impA;
