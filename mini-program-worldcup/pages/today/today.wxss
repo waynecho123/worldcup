@@ -166,6 +166,19 @@ page { background-color: #080c14; }
 .mc-ai-score-label { font-size: 22rpx; color: #556680; }
 .mc-ai-score-value { font-size: 28rpx; font-weight: 700; color: #f0b90b; }
 
+/* Upset alert */
+.mc-upset-alert {
+  text-align: center;
+  margin-top: 6px;
+  padding: 6px 10px;
+  font-size: 22rpx;
+  font-weight: 700;
+  color: #ff9100;
+  background: rgba(255,145,0,.08);
+  border: 1px solid rgba(255,145,0,.2);
+  border-radius: 6px;
+}
+
 /* 5. News section */
 .mc-news-section { margin-top: 6px; }
 .mc-news-line {

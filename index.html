@@ -95,6 +95,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .mc-ai-score .mc-label{font-size:.7rem;color:var(--text3)}
 .mc-ai-score .mc-value{font-size:.9rem;font-weight:700;color:var(--gold)}
 /* 5. News */
+.mc-upset-alert{text-align:center;margin-top:6px;padding:6px 10px;font-size:.72rem;font-weight:700;color:#ff9100;background:rgba(255,145,0,.08);border:1px solid rgba(255,145,0,.2);border-radius:6px}
 .mc-news-section{margin-top:6px}
 .mc-news-line{display:block;font-size:.7rem;color:var(--orange);padding:3px 8px;margin-top:3px;background:rgba(255,145,0,.06);border-radius:4px;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .mc-inj-line{display:block;font-size:.7rem;color:var(--red);padding:3px 8px;margin-top:3px;background:rgba(255,61,87,.06);border-radius:4px;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -2971,6 +2972,12 @@ function renderMatchCard(m) {
     if (injNames) newsHTML += '<span class="mc-inj-line" style="background:rgba(255,61,87,.1)">🏥 实时: ' + injNames + '</span>';
   }
 
+  // Upset alert
+  var upsetHTML = '';
+  if (pred && pred.upsetAlert) {
+    upsetHTML = '<div class="mc-upset-alert">⚠️ 爆冷预警：' + pred.upsetTeam + '有' + (pred.upsetProb * 100).toFixed(0) + '%冷门可能</div>';
+  }
+
   // Priority 6: Probability bar (pre-match only)
   var probBar = '';
   if (!hasResult && pred) {
@@ -3035,6 +3042,9 @@ function renderMatchCard(m) {
     card += '<span class="mc-value">' + predScoreDisplay + '</span>';
     card += '</div>';
   }
+
+  // Upset alert
+  card += upsetHTML;
 
   // 5. News
   if (newsHTML) {

@@ -85,6 +85,11 @@
         <text class="mc-ai-score-value">{{item.predScore}}</text>
       </view>
 
+      <!-- Upset Alert -->
+      <view wx:if="{{item.upsetAlert}}" class="mc-upset-alert">
+        <text>⚠️ 爆冷预警：{{item.upsetTeam}}有{{item.upsetProb}}%冷门可能</text>
+      </view>
+
       <!-- 5. NEWS (1-2 lines per team) -->
       <view wx:if="{{item.homeNews || item.awayNews || item.homeInjShort || item.awayInjShort}}" class="mc-news-section">
         <text wx:if="{{item.homeNews}}" class="mc-news-line">📰 {{item.homeName}}：{{item.homeNews}}</text>
