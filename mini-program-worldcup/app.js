@@ -113,6 +113,21 @@ App({
           wx.setStorageSync('news_cache', JSON.stringify({ items: res.data.items }));
           console.log('Loaded ' + res.data.items.length + ' news from GitHub');
         }
+        // Apply team-specific news to TEAMS data
+        if (res.data && res.data.teamNews) {
+          var data = require('./utils/data');
+          var updated = 0;
+          Object.keys(res.data.teamNews).forEach(function(tid) {
+            var team = data.TEAMS.find(function(t) { return t.id === tid; });
+            if (!team) return;
+            var items = res.data.teamNews[tid];
+            if (items.length > 0) {
+              var news = items[0].replace(/^[🔴📰]\s*/, '').slice(0, 80);
+              if (team.news !== news) { team.news = news; updated++; }
+            }
+          });
+          if (updated > 0) console.log('Team news updated for ' + updated + ' teams');
+        }
       }
     });
   },

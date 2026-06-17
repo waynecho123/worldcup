@@ -442,10 +442,74 @@ async function updateNews() {
       return (tl.includes('injury') || tl.includes('injured') ? '🔴 ' : '📰 ') + t;
     });
 
+  // Match general news to teams via keywords
+  const TEAM_KEYWORDS = {
+    MEX: ['Mexico','Mexican','El Tri'],
+    RSA: ['South Africa','Bafana'],
+    KOR: ['Korea','Korean','Son Heung-min','Son ', 'Taegeuk'],
+    CZE: ['Czech','Czechia'],
+    CAN: ['Canada','Canadian','Davies','Jonathan David'],
+    BIH: ['Bosnia','Herzegovina'],
+    QAT: ['Qatar','Qatari'],
+    SUI: ['Swiss','Switzerland'],
+    BRA: ['Brazil','Brazilian','Neymar','Vinicius','Vini Jr','Rodrygo','Seleção'],
+    MAR: ['Morocco','Moroccan','Hakimi','Atlas Lions'],
+    HAI: ['Haiti','Haitian'],
+    SCO: ['Scotland','Scottish','Robertson','McTominay'],
+    USA: ['USA','US ','United States','American','Pulisic','McKennie','USMNT'],
+    PAR: ['Paraguay','Paraguayan'],
+    AUS: ['Australia','Australian','Socceroos'],
+    TUR: ['Turkey','Turkish','Calhanoglu','Guler'],
+    GER: ['Germany','German','Musiala','Wirtz','Nagelsmann'],
+    CUW: ['Curacao','Curaçao'],
+    CIV: ['Ivory Coast','Ivorian','Côte d\'Ivoire','Cote d\'Ivoire','Haller'],
+    ECU: ['Ecuador','Ecuadorian','Caicedo'],
+    NED: ['Netherlands','Dutch','Van Dijk','De Jong','Gakpo','Oranje','Koeman'],
+    JPN: ['Japan','Japanese','Mitoma','Kubo','Samurai Blue'],
+    SWE: ['Sweden','Swedish','Gyokeres','Isak','Kulusevski'],
+    TUN: ['Tunisia','Tunisian'],
+    BEL: ['Belgium','Belgian','De Bruyne','Lukaku','Doku','Red Devils'],
+    EGY: ['Egypt','Egyptian','Salah'],
+    IRN: ['Iran','Iranian','Taremi','Team Melli'],
+    NZL: ['New Zealand','All Whites','Chris Wood'],
+    ESP: ['Spain','Spanish','Yamal','Pedri','Rodri','La Roja','Gavi','Olmo'],
+    CPV: ['Cape Verde','Cabo Verde','Cape Verdean'],
+    KSA: ['Saudi Arabia','Saudi'],
+    URU: ['Uruguay','Uruguayan','Valverde','Nunez','Nuñez','Bielsa'],
+    FRA: ['France','French','Mbappe','Mbappé','Griezmann','Les Bleus','Deschamps'],
+    SEN: ['Senegal','Senegalese','Mane','Mané'],
+    IRQ: ['Iraq','Iraqi'],
+    NOR: ['Norway','Norwegian','Haaland','Odegaard','Ødegaard'],
+    ARG: ['Argentina','Argentine','Messi','Alvarez','Álvarez','La Albiceleste','Scaloni'],
+    ALG: ['Algeria','Algerian','Mahrez'],
+    AUT: ['Austria','Austrian','Alaba'],
+    JOR: ['Jordan','Jordanian'],
+    POR: ['Portugal','Portuguese','Ronaldo','Fernandes','Leao','Leão','Martinez'],
+    COD: ['DR Congo','Congo','Congolese'],
+    UZB: ['Uzbekistan','Uzbek'],
+    COL: ['Colombia','Colombian','Diaz','Díaz','James Rodriguez'],
+    ENG: ['England','English','Bellingham','Kane','Foden','Saka','Three Lions','Tuchel','Southgate'],
+    CRO: ['Croatia','Croatian','Modric','Modrić','Gvardiol','Kovacic'],
+    GHA: ['Ghana','Ghanaian','Partey','Kudus'],
+    PAN: ['Panama','Panamanian'],
+  };
+
+  const teamNews = {};
+  generalNews.forEach(item => {
+    const text = item.toLowerCase();
+    Object.keys(TEAM_KEYWORDS).forEach(tid => {
+      const matched = TEAM_KEYWORDS[tid].some(kw => text.includes(kw.toLowerCase()));
+      if (matched) {
+        if (!teamNews[tid]) teamNews[tid] = [];
+        if (teamNews[tid].length < 3) teamNews[tid].push(item); // max 3 per team
+      }
+    });
+  });
+
   const items = [...generalNews, ...matchNews.map(m => m.title)];
   const data = {
     items,
-    matchNews, generalNews,
+    matchNews, generalNews, teamNews,
     total: items.length,
     updatedAt: now.toISOString()
   };

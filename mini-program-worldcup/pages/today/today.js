@@ -117,8 +117,6 @@ Page({
 
       const mol = data.MATCH_ODDS[m.id];
       const pred = predict.predictMatch(ht, at, mol);
-      const predLog = app.globalData.predLog || {};
-      const logEntry = predLog[m.id];
       const actual = app.globalData.actualResults[m.id];
       let actualDisplay = null;
       if (actual) {
@@ -132,15 +130,6 @@ Page({
           icon: correctExact ? '🎯' : correctOutcome ? '✅' : '❌',
           color: correctOutcome ? '#00c853' : '#ff3d57'
         };
-      }
-
-      let updateInfo = '';
-      if (logEntry && logEntry.lastUpdate) {
-        const lu = new Date(logEntry.lastUpdate);
-        const now = new Date();
-        const diffMin = Math.floor((now - lu) / 60000);
-        const ago = diffMin < 3 ? '刚刚' : diffMin < 60 ? diffMin+'分钟前' : Math.floor(diffMin/60)+'小时前';
-        updateInfo = '🕐 ' + ago + '更新' + (logEntry.reason && logEntry.reason !== '定期更新' ? ' · '+logEntry.reason : '');
       }
 
       return {
@@ -162,7 +151,7 @@ Page({
         // Priority 6: Win probability
         homeProb: (pred.homeWinProb*100).toFixed(0), drawProb: (pred.drawProb*100).toFixed(0), awayProb: (pred.awayWinProb*100).toFixed(0),
         upsetAlert: pred.upsetAlert, upsetProb: (pred.upsetProb*100).toFixed(0), upsetTeam: pred.upsetTeam,
-        actual: actualDisplay, updateInfo,
+        actual: actualDisplay,
         isTBD: false
       };
     }).filter(Boolean);

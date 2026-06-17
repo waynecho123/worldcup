@@ -1607,7 +1607,7 @@ async function fetchRSSFeed(rssUrl) {
   }
 }
 
-/** Fetch all news sources and merge results */
+/** Fetch all news sources and merge results. Returns {items, teamNews} */
 async function fetchAllNews() {
   // Primary: news.json from server (auto-updated by GitHub Action)
   try {
@@ -1615,9 +1615,11 @@ async function fetchAllNews() {
     if (resp.ok) {
       const data = await resp.json();
       const items = Array.isArray(data) ? data : (data.items || []);
+      // Apply team-specific news to TEAMS data
+      if (data.teamNews) applyTeamNews(data.teamNews);
       if (items.length > 0) {
         console.log('News loaded from news.json: ' + items.length + ' items');
-        return items.slice(0, 25);
+        return { items: items.slice(0, 25), teamNews: data.teamNews || {} };
       }
     }
   } catch(e) { console.warn('news.json failed:', e.message); }
@@ -1636,10 +1638,31 @@ async function fetchAllNews() {
       seen.add(key);
       return true;
     });
-    if (unique.length > 0) return unique.slice(0, 25);
+    if (unique.length > 0) return { items: unique.slice(0, 25), teamNews: {} };
   } catch(e) { console.warn('RSS fallback failed:', e.message); }
 
-  return [];
+  return { items: [], teamNews: {} };
+}
+
+/** Apply team-specific news from server to TEAMS data for AI to pick up */
+function applyTeamNews(teamNews) {
+  if (!teamNews || Object.keys(teamNews).length === 0) return;
+  var updated = 0;
+  Object.keys(teamNews).forEach(function(tid) {
+    var team = TEAMS.find(function(t) { return t.id === tid; });
+    if (!team) return;
+    // Take the first (most relevant) news item and set as team.news
+    var newsItems = teamNews[tid];
+    if (newsItems.length > 0) {
+      // Strip emoji prefix and keep first 80 chars
+      var news = newsItems[0].replace(/^[🔴📰]\s*/, '').slice(0, 80);
+      if (team.news !== news) {
+        team.news = news;
+        updated++;
+      }
+    }
+  });
+  if (updated > 0) console.log('Team news updated for ' + updated + ' teams');
 }
 
 /** Main news refresh function */
@@ -1654,7 +1677,8 @@ async function refreshNews(showToastFlag = false) {
   if (btn) btn.textContent = '⏳';
   if (label) label.textContent = '📡 刷新中';
 
-  let newsItems = await fetchAllNews();
+  var result = await fetchAllNews();
+  var newsItems = result.items || [];
 
   if (newsItems.length === 0) {
     const cached = JSON.parse(localStorage.getItem(NEWS_CACHE_KEY) || 'null');
@@ -3004,7 +3028,6 @@ function renderMatchCard(m) {
   }
 
   const featuredCls = m.featured ? 'featured' : '';
-  var updateInfo = getPredUpdateInfo(m.id);
 
   // When prediction is hidden, show pre-match info without prediction
   if (!showPrediction) {
@@ -3068,11 +3091,6 @@ function renderMatchCard(m) {
 
   // 6. Probability bar
   card += probBar;
-
-  // Update info (tiny)
-  if (updateInfo) {
-    card += '<div style="margin-top:4px;text-align:right">' + updateInfo + '</div>';
-  }
 
   card += '</div>';
   return card;

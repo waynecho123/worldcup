@@ -1,20 +1,20 @@
 {
   "items": [
-    "📰 Can Bellingham become England's superstar once more at the World Cup?",
-    "📰 How sweltering Scotland can handle World Cup heat",
-    "📰 Extraordinary Messi makes more history in masterclass for the ages",
-    "📰 No stage too big - Haaland arrives in style at World Cup",
-    "📰 England won't change style despite US heat - Tuchel",
-    "📰 Emotional Messi explains tears after Argentina goal",
-    "📰 Messi stays humble after hat-trick performance",
-    "📰 Who would you start against Croatia? Pick your England XI",
-    "📰 Why has Erling Haaland added 'Braut' to Norway shirt?",
-    "📰 Who am I? Guess World Cup star No 10",
-    "📰 'Nearly men of Asian football' - Uzbekistan's rise to the World Cup",
-    "📰 Are Portugal better without Ronaldo - and is he undroppable?",
-    "📰 'Magnificent' - Messi scores hat-trick to equal Klose scoring record",
-    "📰 Highlights: Messi equals Klose scoring record with hat-trick against Algeria ",
-    "📰 Highlights: Haaland scores twice in Norway win over Iraq  ",
+    "📰 World Cup VAR review: Should Messi have been sent ...",
+    "📰 Messi rolls back the clock for Argentina to start ...",
+    "📰 Haaland: I'm not 'statistically' No.1 goalscorer",
+    "📰 World Cup daily attendance record broken",
+    "📰 Ronaldo has youthful enthusiasm in sixth WCup",
+    "📰 Mbappé scores twice, sets France record in win",
+    "📰 🎩 Who has scored a men's World Cup hat trick?",
+    "📰 World Cup Daily: NFL star Winston dresses goat as ...",
+    "📰 On the World Cup's day of stars, Messi towers over Haaland and Mbappe",
+    "📰 Key issues for England at 2026 World Cup: Fatigue,...",
+    "📰 What if Reyna's World Cup wonder goal is only the ...",
+    "📰 USMNT in World Cup quarterfinals? There's a real c...",
+    "📰 Copy of Mbappé rewrites France, World Cup history books as...",
+    "📰 Haaland on World Cup debut for Norway? Goals were ...",
+    "📰 Welcome to 'Tehrangeles': Watching Iran at a World Cup with L.A.'s Iranian community",
     "⚽ 法国 3-1 塞内加尔 — 法国 3-1 取胜，关键3分",
     "🔥 伊拉克 1-4 挪威 — 挪威 4-1 大胜，强势表现",
     "🔥 阿根廷 3-0 阿尔及利亚 — 阿根廷 3-0 大胜，强势表现",
@@ -279,22 +279,51 @@
     }
   ],
   "generalNews": [
-    "📰 Can Bellingham become England's superstar once more at the World Cup?",
-    "📰 How sweltering Scotland can handle World Cup heat",
-    "📰 Extraordinary Messi makes more history in masterclass for the ages",
-    "📰 No stage too big - Haaland arrives in style at World Cup",
-    "📰 England won't change style despite US heat - Tuchel",
-    "📰 Emotional Messi explains tears after Argentina goal",
-    "📰 Messi stays humble after hat-trick performance",
-    "📰 Who would you start against Croatia? Pick your England XI",
-    "📰 Why has Erling Haaland added 'Braut' to Norway shirt?",
-    "📰 Who am I? Guess World Cup star No 10",
-    "📰 'Nearly men of Asian football' - Uzbekistan's rise to the World Cup",
-    "📰 Are Portugal better without Ronaldo - and is he undroppable?",
-    "📰 'Magnificent' - Messi scores hat-trick to equal Klose scoring record",
-    "📰 Highlights: Messi equals Klose scoring record with hat-trick against Algeria ",
-    "📰 Highlights: Haaland scores twice in Norway win over Iraq  "
+    "📰 World Cup VAR review: Should Messi have been sent ...",
+    "📰 Messi rolls back the clock for Argentina to start ...",
+    "📰 Haaland: I'm not 'statistically' No.1 goalscorer",
+    "📰 World Cup daily attendance record broken",
+    "📰 Ronaldo has youthful enthusiasm in sixth WCup",
+    "📰 Mbappé scores twice, sets France record in win",
+    "📰 🎩 Who has scored a men's World Cup hat trick?",
+    "📰 World Cup Daily: NFL star Winston dresses goat as ...",
+    "📰 On the World Cup's day of stars, Messi towers over Haaland and Mbappe",
+    "📰 Key issues for England at 2026 World Cup: Fatigue,...",
+    "📰 What if Reyna's World Cup wonder goal is only the ...",
+    "📰 USMNT in World Cup quarterfinals? There's a real c...",
+    "📰 Copy of Mbappé rewrites France, World Cup history books as...",
+    "📰 Haaland on World Cup debut for Norway? Goals were ...",
+    "📰 Welcome to 'Tehrangeles': Watching Iran at a World Cup with L.A.'s Iranian community"
   ],
+  "teamNews": {
+    "ARG": [
+      "📰 World Cup VAR review: Should Messi have been sent ...",
+      "📰 Messi rolls back the clock for Argentina to start ...",
+      "📰 On the World Cup's day of stars, Messi towers over Haaland and Mbappe"
+    ],
+    "NOR": [
+      "📰 Haaland: I'm not 'statistically' No.1 goalscorer",
+      "📰 On the World Cup's day of stars, Messi towers over Haaland and Mbappe",
+      "📰 Haaland on World Cup debut for Norway? Goals were ..."
+    ],
+    "POR": [
+      "📰 Ronaldo has youthful enthusiasm in sixth WCup"
+    ],
+    "FRA": [
+      "📰 Mbappé scores twice, sets France record in win",
+      "📰 On the World Cup's day of stars, Messi towers over Haaland and Mbappe",
+      "📰 Copy of Mbappé rewrites France, World Cup history books as..."
+    ],
+    "ENG": [
+      "📰 Key issues for England at 2026 World Cup: Fatigue,..."
+    ],
+    "USA": [
+      "📰 USMNT in World Cup quarterfinals? There's a real c..."
+    ],
+    "IRN": [
+      "📰 Welcome to 'Tehrangeles': Watching Iran at a World Cup with L.A.'s Iranian community"
+    ]
+  },
   "total": 35,
-  "updatedAt": "2026-06-17T14:07:04.221Z"
+  "updatedAt": "2026-06-17T15:25:51.614Z"
 }
