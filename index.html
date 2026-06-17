@@ -2025,30 +2025,6 @@ const MATCH_SCHEDULE = [
   {id:"k32",date:"2026-07-19",time:"03:00",home:"?",away:"?",grp:"",stage:"final",matchday:null,venue:"MetLife Stadium, NY/NJ",featured:true},
 ];
 
-// Date range for the tournament
-// 竞猜真实编号（中国体彩官方编号）
-var JC_NUMBERS = {
-  m001:'周四001',m002:'周四002',m003:'周五003',m004:'周五004',
-  m005:'周六005',m006:'周六006',m007:'周六007',m008:'周六008',
-  m009:'周日009',m010:'周日010',m011:'周日011',m012:'周日012',
-  m013:'周一013',m014:'周一014',m015:'周一015',m016:'周一016',
-  m017:'周二017',m018:'周二018',m019:'周二019',m020:'周二020',
-  m021:'周三021',m022:'周三022',m023:'周三023',m024:'周三024',
-  m025:'周五025',m026:'周五026',m027:'周五027',m028:'周五028',
-  m029:'周六029',m030:'周六030',m031:'周六031',m032:'周六032',
-  m033:'周日033',m034:'周日034',m035:'周日035',m036:'周日036',
-  m037:'周一037',m038:'周一038',m039:'周一039',m040:'周一040',
-  m041:'周二041',m042:'周二042',m043:'周二043',m044:'周二044',
-  m045:'周三045',m046:'周三046',m047:'周三047',m048:'周三048',
-  m049:'周四049',m050:'周四050',m051:'周四051',m052:'周四052',
-  m053:'周五053',m054:'周五054',m055:'周五055',m056:'周五056',m057:'周五057',m058:'周五058',m059:'周五059',m060:'周五060',
-  m061:'周六061',m062:'周六062',m063:'周六063',m064:'周六064',m065:'周六065',m066:'周六066',
-  m067:'周日067',m068:'周日068',m069:'周日069',m070:'周日070',m071:'周日071',m072:'周日072',
-};
-function getJcNumber(match) {
-  return JC_NUMBERS[match.id] || match.id;
-}
-
 const TOURNAMENT_START = new Date('2026-06-12');
 const TOURNAMENT_END = new Date('2026-07-20');
 
@@ -2307,10 +2283,7 @@ function renderHistoricalMini(oddsH, oddsD, oddsA, aiH, aiD, aiA) {
 }
 
 // =============================================================================
-// 2f. 中国竞猜指数 + 竞猜建议引擎
 // =============================================================================
-const JC_RETURN_RATE = 0.71;
-const JC_ODDS = {m001:{spf:[1.85,3.25,3.60]},m002:{spf:[2.05,3.10,3.20]},m003:{spf:[2.00,3.15,3.30]},m004:{spf:[2.10,3.05,3.50]},m005:{spf:[5.80,3.70,1.47],rq:'+1',rqO:[2.55,3.25,2.30]},m006:{spf:[1.53,3.55,5.30],rq:'-1',rqO:[2.80,3.30,2.10]},m007:{spf:[5.50,3.80,1.48],rq:'+1',rqO:[2.35,3.30,2.45]},m008:{spf:[3.80,3.30,1.80],rq:'+1',rqO:[1.82,3.35,3.45]},m009:{spf:[1.00,9.00,35.0],rq:'-3',rqO:[2.10,4.80,2.25]},m010:{spf:[1.80,3.35,3.60],rq:'-1',rqO:[3.45,3.45,1.78]},m011:{spf:[3.30,2.80,2.15],rq:'+1',rqO:[1.62,3.50,4.20]},m012:{spf:[1.75,3.40,3.80],rq:'-1',rqO:[3.20,3.50,1.85]},m013:{spf:[1.00,7.50,18.0],rq:'-2',rqO:[1.82,4.55,2.85]},m014:{spf:[1.43,3.92,5.90],rq:'-1',rqO:[2.56,3.40,2.35]},m015:{spf:[7.65,4.30,1.31],rq:'+1',rqO:[2.87,3.30,2.11]},m016:{spf:[1.59,3.30,5.10],rq:'-1',rqO:[3.11,3.20,2.02]},m017:{spf:[1.38,4.10,6.30],rq:'-1',rqO:[2.25,3.35,2.55]},m018:{spf:[9.50,5.20,1.22],rq:'+1',rqO:[3.50,3.40,1.78]},m019:{spf:[1.35,4.15,6.80],rq:'-1',rqO:[2.15,3.35,2.65]},m020:{spf:[1.28,4.60,8.00],rq:'-1',rqO:[1.95,3.40,3.00]},m021:{spf:[1.22,5.00,9.20],rq:'-1',rqO:[1.75,3.60,3.35]},m022:{spf:[1.65,3.50,4.25],rq:'-1',rqO:[3.05,3.35,1.95]},m023:{spf:[1.85,3.25,3.55],rq:'-1',rqO:[3.65,3.40,1.75]},m024:{spf:[8.00,4.50,1.30],rq:'+1',rqO:[3.20,3.35,1.90]},m025:{spf:[2.30,3.10,2.70]},m026:{spf:[1.82,3.30,3.65],rq:'-1',rqO:[3.40,3.40,1.80]},m027:{spf:[1.30,4.50,7.50],rq:'-1',rqO:[2.05,3.40,2.80]},m028:{spf:[1.75,3.40,3.85],rq:'-1',rqO:[3.20,3.50,1.85]},m029:{spf:[2.05,3.20,3.05]},m030:{spf:[1.68,3.55,4.00],rq:'-1',rqO:[3.10,3.35,1.92]},m031:{spf:[1.06,8.00,20.0],rq:'-2',rqO:[1.90,4.50,2.65]},m032:{spf:[1.50,3.70,5.40],rq:'-1',rqO:[2.70,3.40,2.10]},m033:{spf:[1.25,4.80,8.80],rq:'-1',rqO:[1.95,3.50,2.90]},m034:{spf:[1.15,6.00,13.0],rq:'-2',rqO:[2.70,4.40,1.88]},m035:{spf:[1.68,3.50,4.10],rq:'-1',rqO:[3.20,3.35,1.88]},m036:{spf:[1.32,4.40,7.00],rq:'-1',rqO:[2.15,3.40,2.60]},m037:{spf:[1.40,4.00,6.20],rq:'-1',rqO:[2.40,3.40,2.32]},m038:{spf:[1.12,6.50,14.0],rq:'-2',rqO:[2.50,4.30,2.00]},m039:{spf:[1.03,9.00,26.0],rq:'-2',rqO:[1.55,5.00,3.45]},m040:{spf:[1.06,8.00,21.0],rq:'-2',rqO:[1.75,4.80,2.85]},m041:{spf:[1.03,10.0,30.0],rq:'-3',rqO:[2.30,5.20,2.00]},m042:{spf:[2.30,3.15,2.65]},m043:{spf:[1.33,4.40,7.00],rq:'-1',rqO:[2.15,3.40,2.60]},m044:{spf:[1.75,3.40,3.80],rq:'-1',rqO:[3.30,3.40,1.83]},m045:{spf:[1.06,8.00,20.0],rq:'-2',rqO:[1.88,4.60,2.70]},m046:{spf:[1.32,4.50,7.00],rq:'-1',rqO:[2.10,3.45,2.65]},m047:{spf:[1.22,5.00,9.50],rq:'-1',rqO:[1.80,3.60,3.25]},m048:{spf:[1.50,3.80,5.20],rq:'-1',rqO:[2.70,3.40,2.08]}};
 
 function jcFair(spf){const r=1/spf[0]+1/spf[1]+1/spf[2];return{home:(1/spf[0])/r,draw:(1/spf[1])/r,away:(1/spf[2])/r}}
 
@@ -2879,7 +2852,7 @@ function renderMatchCard(m) {
     return `
     <div class="match-card" onclick="showMatchDetail('${m.id}')">
       <div class="mc-header">
-        <span class="mc-time">${getJcNumber(m)} ${m.time}</span>
+        <span class="mc-time">${(m.id||'')} ${m.time}</span>
         <span class="mc-group">${m.grp ? m.grp + ' 组' : stageLabel}</span>
         <span class="venue-badge">📍 ${m.venue || ''}</span>
         <span style="font-size:.65rem;color:var(--text3);display:none">🔐 预测待发布</span>
@@ -2906,7 +2879,7 @@ function renderMatchCard(m) {
   return `
     <div class="match-card ${featuredCls}" onclick="showMatchDetail('${m.id}')">
       <div class="mc-header">
-        <span class="mc-time">${getJcNumber(m)} ${m.time}</span>
+        <span class="mc-time">${(m.id||'')} ${m.time}</span>
         <span class="mc-group">${m.grp ? m.grp + ' 组' : stageLabel}</span>
         <span class="venue-badge">📍 ${m.venue || ''}</span>
         ${hasResult ? `<span style="font-size:.65rem;color:${correctOutcome?'var(--green)':'var(--red)'};font-weight:700">${correctExact?'🎯':correctOutcome?'✅':'❌'} 已录入</span>` : isMatchLocked(m.id) ? `<span style="font-size:.62rem;color:var(--text3)">🔒 已停售</span>` : ''}
@@ -3076,7 +3049,7 @@ function showMatchDetail(mid) {
   html += '<span style="font-size:2.5rem">'+ht.flag+'</span> <span style="font-weight:800;font-size:1.3rem">'+ht.cn+'</span>';
   html += ' <span style="color:var(--text3);font-size:1rem">vs</span> ';
   html += '<span style="font-weight:800;font-size:1.3rem">'+at.cn+'</span> <span style="font-size:2.5rem">'+at.flag+'</span>';
-  html += '<div style="color:var(--gold);font-size:.85rem;margin-top:4px">'+getJcNumber(m)+'</div>';
+  html += '<div style="color:var(--gold);font-size:.85rem;margin-top:4px">'+(m.id||'')+'</div>';
   html += '</div>';
 
   // 2. 比赛时间 场地 天气 双方新闻
@@ -3571,7 +3544,7 @@ function renderFullSchedule() {
         }
         var updInfo = getPredUpdateInfo(m.id);
         return '<div class="schedule-match" style="flex-wrap:wrap">' +
-          '<span class="sm-time">' + getJcNumber(m) + '<br>' + m.time + '</span>' +
+          '<span class="sm-time">' + (m.id||'') + '<br>' + m.time + '</span>' +
           '<span class="sm-teams">' + (ht?ht.flag:'❓') + ' ' + (ht?ht.cn:m.home) + ' vs ' + (at?at.cn:m.away) + ' ' + (at?at.flag:'❓') + '</span>' +
           (m.grp ? '<span class="sm-group">' + m.grp + '组</span>' : '<span class="sm-group">' + (stageLabels[m.stage]||m.stage) + '</span>') +
           scoreHtml +
@@ -3614,12 +3587,11 @@ function showToast(msg) {
 
 // =============================================================================
 // DATA LOADING — Cloud function HTTP endpoints as single source of truth
-// Priority: Cloud DB > localStorage > demo seed
+// Priority: scores.json (GitHub Action auto-update) > localStorage > demo seed
 // =============================================================================
 let actualResults = {};
 let _resultsLoaded = false;
 const SCORES_CACHE_KEY = 'wc2026_actual';
-const CLOUD_BASE = 'https://cloud1-d1ggmx6ur18b296fc.service.tcloudbase.com';
 
 // Demo seed data (last resort fallback)
 const DEMO_RESULTS = {
@@ -3648,37 +3620,17 @@ function loadFromLocalStorage() {
   return false;
 }
 
-/** Step 2: Fetch from cloud function HTTP endpoint (primary source) */
-async function loadFromCloud() {
+/** Step 2: Fetch from scores.json (auto-updated by GitHub Action every 30min) */
+async function loadFromServerJSON() {
   try {
-    var resp = await fetch(CLOUD_BASE + '/fetchScores', { cache: 'no-cache' });
+    var resp = await fetch('scores.json?_t=' + Date.now(), { cache: 'no-cache' });
     if (!resp.ok) throw new Error('HTTP ' + resp.status);
     var data = await resp.json();
     if (data && Object.keys(data).length > 0) {
-      mergeResults(data, 'cloud');
+      mergeResults(data, 'server');
       return true;
     }
-  } catch(e) { console.warn('Cloud fetch failed:', e.message); }
-  return false;
-}
-
-/** Step 3: Fetch news from cloud function */
-async function loadNewsFromCloud() {
-  try {
-    var resp = await fetch(CLOUD_BASE + '/fetchNews', { cache: 'no-cache' });
-    if (!resp.ok) return false;
-    var data = await resp.json();
-    var items = Array.isArray(data) ? data : (data.items || []);
-    if (items.length > 0) {
-      newsItemsCache = items;
-      localStorage.setItem(NEWS_CACHE_KEY, JSON.stringify({ items: items, ts: Date.now() }));
-      var timeEl = document.getElementById('newsTime');
-      if (timeEl) timeEl.textContent = '更新于 ' + new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
-      document.getElementById('tickerLabel').textContent = '📰 实时';
-      startNewsRotation();
-      return true;
-    }
-  } catch(e) { console.warn('News cloud fetch failed:', e.message); }
+  } catch(e) { console.warn('scores.json fetch failed:', e.message); }
   return false;
 }
 
@@ -3726,18 +3678,15 @@ function refreshUI() {
   if (tabId === 'teams') renderTeams();
 }
 
-/** Main initialization: load from cloud function + localStorage */
+/** Main initialization: scores.json (GitHub Action) + localStorage */
 async function initResults() {
-  // 1. LocalStorage first (instant sync, offline support)
+  // 1. LocalStorage first (instant sync)
   loadFromLocalStorage();
 
-  // 2. Cloud function HTTP (primary source)
-  await loadFromCloud();
+  // 2. scores.json from server (auto-updated by GitHub Action)
+  await loadFromServerJSON();
 
-  // 3. News will be loaded by refreshNews (uses cloud function)
-  // (already triggered by page init)
-
-  // 4. Fallback: if nothing loaded, use demo seed
+  // 3. Fallback: if nothing loaded, use demo seed
   if (Object.keys(actualResults).length === 0) {
     mergeResults(DEMO_RESULTS, 'demo');
   }
@@ -3745,13 +3694,12 @@ async function initResults() {
   _resultsLoaded = true;
   console.log('Results initialized: ' + Object.keys(actualResults).length + ' matches loaded');
 
-  // Auto-refresh every 5 minutes from cloud
+  // Auto-refresh every 3 minutes from scores.json
   setInterval(async function() {
-    await loadFromCloud();
-    loadNewsFromCloud().catch(function(){});
+    await loadFromServerJSON();
     loadOddsJSON().catch(function(){});
     loadInfoJSON().catch(function(){});
-  }, 300000);
+  }, 180000);
 }
 
 // ========== LIVE ODDS & INFO ==========
@@ -4665,7 +4613,7 @@ function buildAISection(div, strats, duel, todayMatches) {
           var ht = m ? TEAMS.find(function(t){return t.id===m.home}) : null;
           var at = m ? TEAMS.find(function(t){return t.id===m.away}) : null;
           var mn = (ht&&at) ? ht.cn+' vs '+at.cn : '';
-          var jn = m ? getJcNumber(m) : '';
+          var jn = m ? (m.id||'') : '';
           html += '<div style="font-size:.68rem;padding:3px 0 3px 12px;color:var(--text2)"><span style="color:var(--text3)">'+jn+'</span> '+mn+' → <span style="font-weight:600;color:var(--text)">'+p.pick+'</span> @'+p.odds.toFixed(2)+'</div>';
         });
         html += '</div>';
@@ -4709,7 +4657,7 @@ function buildHumanSection(div, strats, duel, todayMatches) {
           var ht = m ? TEAMS.find(function(t){return t.id===m.home}) : null;
           var at = m ? TEAMS.find(function(t){return t.id===m.away}) : null;
           var mn = (ht&&at) ? ht.flag+' '+ht.cn+' vs '+at.cn+' '+at.flag : '';
-          var jn = m ? getJcNumber(m) : '';
+          var jn = m ? (m.id||'') : '';
           html += '<span style="color:var(--text2);padding-left:12px">'+jn+' '+mn+' → <span style="font-weight:600;color:var(--text)">'+p.type+' '+p.pick+'</span> @'+p.odds.toFixed(2)+'</span><br>';
         });
         html += '</div>';
