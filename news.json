@@ -6,7 +6,7 @@
     "📰 Fans boo, players adapt - the view on World Cup hydration breaks",
     "📰 Who am I? Guess World Cup star No 11",
     "📰 'If we lose, we lose in our way' - how Tuchel inspired 'fearful' England",
-    "📰 Messi, Mbappe & Vini jr - best World Cup goals from round one",
+    "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one",
     "📰 Are goalkeepers struggling with the World Cup ball?",
     "📰 Fayzullaev scores Uzbekistan's first-ever World Cup goal",
     "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
@@ -337,7 +337,7 @@
     "📰 Fans boo, players adapt - the view on World Cup hydration breaks",
     "📰 Who am I? Guess World Cup star No 11",
     "📰 'If we lose, we lose in our way' - how Tuchel inspired 'fearful' England",
-    "📰 Messi, Mbappe & Vini jr - best World Cup goals from round one",
+    "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one",
     "📰 Are goalkeepers struggling with the World Cup ball?",
     "📰 Fayzullaev scores Uzbekistan's first-ever World Cup goal",
     "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
@@ -357,13 +357,16 @@
       "📰 England hit four in World Cup opener against Croatia "
     ],
     "BRA": [
-      "📰 Messi, Mbappe & Vini jr - best World Cup goals from round one"
+      "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one"
+    ],
+    "USA": [
+      "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one"
     ],
     "FRA": [
-      "📰 Messi, Mbappe & Vini jr - best World Cup goals from round one"
+      "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one"
     ],
     "ARG": [
-      "📰 Messi, Mbappe & Vini jr - best World Cup goals from round one"
+      "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one"
     ],
     "UZB": [
       "📰 Fayzullaev scores Uzbekistan's first-ever World Cup goal"
@@ -376,5 +379,5 @@
     ]
   },
   "total": 39,
-  "updatedAt": "2026-06-18T06:00:52.364Z"
+  "updatedAt": "2026-06-18T06:05:38.424Z"
 }
