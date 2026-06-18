@@ -488,14 +488,22 @@ async function updateNews() {
     'https://feeds.bbci.co.uk/sport/football/rss.xml',
     'https://www.espn.com/espn/rss/soccer/news',
     'https://www.skysports.com/rss/12040',
+    'https://www.skysports.com/rss/11095',
     'https://www.theguardian.com/football/rss',
     // English football-specific
     'https://www.goal.com/en/feeds/news',
     'https://www.soccernews.com/feed/',
     'https://soccer.nbcsports.com/feed/',
     'https://www.mirror.co.uk/sport/football/?service=rss',
+    'https://www.90min.com/feed',
+    'https://www.football-italia.net/feed',
+    'https://www.101greatgoals.com/feed',
     // US sports media
     'https://api.foxsports.com/v1/rss',
+    // RSSHub routes (may work from GH Actions US IP)
+    'https://rsshub.app/dongqiudi/news',
+    'https://rsshub.app/theathletic/football',
+    'https://rsshub.app/hupu/soccer/news',
     // European languages (covers smaller teams)
     'https://www.marca.com/en/football/rss.xml',
     'https://www.lequipe.fr/rss/football.xml',
