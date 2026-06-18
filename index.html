@@ -4348,6 +4348,7 @@ async function initResults() {
     loadOddsJSON().catch(function(){});
     loadInfoJSON().catch(function(){});
     loadMatchDetailsJSON().catch(function(){});
+    loadInjuriesJSON().catch(function(){});
   }, 180000);
 }
 
@@ -4355,6 +4356,25 @@ async function initResults() {
 let liveOdds = {};
 let liveInfo = {};
 let matchDetails = {};
+let liveInjuries = {};
+
+async function loadInjuriesJSON() {
+  try {
+    var resp = await fetch('injuries.json?v=' + Date.now(), { cache: 'no-store' });
+    if (!resp.ok) return;
+    var data = await resp.json();
+    if (data && Object.keys(data).length > 0) {
+      liveInjuries = data;
+      // Apply to TEAMS data
+      Object.keys(data).forEach(function(tid) {
+        var team = TEAMS.find(function(t){return t.id === tid});
+        if (!team || data[tid].length === 0) return;
+        var injPlayers = data[tid].map(function(i){return i.player + '(' + (i.reason || i.type || '伤病') + ')';});
+        team.inj = '🔴 ' + injPlayers.join(',');
+      });
+    }
+  } catch(e) {}
+}
 
 async function loadMatchDetailsJSON() {
   try {
@@ -4405,6 +4425,7 @@ initResults();
 loadOddsJSON();
 loadInfoJSON();
 loadMatchDetailsJSON();
+loadInjuriesJSON();
 
 // Keep old API for admin panel compatibility
 function saveActualResult(matchId, homeScore, awayScore, notes) {

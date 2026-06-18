@@ -664,6 +664,43 @@ async function updateMatchDetails() {
   console.log(`[${ts}] Match details: ${n} updated (total: ${Object.keys(existing).length})`);
 }
 
+// ========== UPDATE: Injuries (via API-Sports) ==========
+async function updateInjuries() {
+  if (!APISPORTS_KEY) { console.log('APISPORTS_KEY not set, skipping injuries'); return; }
+  const now = new Date();
+  const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
+  const INJURIES_FILE = path.join(BASE_DIR, 'injuries.json');
+
+  const data = await new Promise((resolve, reject) => {
+    https.get(`${APISPORTS_BASE}/injuries?league=1&season=2026`, {
+      headers: { 'x-apisports-key': APISPORTS_KEY }, timeout: 15000
+    }, res => {
+      let d = ''; res.on('data', c => d += c);
+      res.on('end', () => { try { resolve(JSON.parse(d)); } catch(e) { reject(e); } });
+    }).on('error', reject);
+  });
+
+  if (!data.response) return;
+  const injuries = {};
+  data.response.forEach(function(item) {
+    var teamName = item.team?.name;
+    var tid = Object.keys(TEAMS).find(function(k) {
+      return TEAMS[k].cn === teamName || TEAMS[k].name === teamName;
+    });
+    if (!tid) return;
+    if (!injuries[tid]) injuries[tid] = [];
+    injuries[tid].push({
+      player: item.player?.name,
+      type: item.player?.type || '',
+      reason: item.player?.reason || '',
+      fixture: item.fixture?.date || ''
+    });
+  });
+
+  fs.writeFileSync(INJURIES_FILE, JSON.stringify(injuries, null, 2) + '\n');
+  console.log(`[${ts}] Injuries: ${Object.keys(injuries).length} teams updated`);
+}
+
 // ========== Update All ==========
 async function updateAll() {
   await updateScores();
@@ -682,6 +719,7 @@ async function main() {
   if (args.includes('--odds')) { await updateOdds(); ran = true; }
   if (args.includes('--info')) { await updateInfo(); ran = true; }
   if (args.includes('--details')) { await updateMatchDetails(); ran = true; }
+  if (args.includes('--injuries')) { await updateInjuries(); ran = true; }
   if (!ran) await updateAll();
 }
 
