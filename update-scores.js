@@ -427,36 +427,36 @@ async function updateNews() {
   // Sort by date desc
   matchNews.sort((a, b) => (b.matchDate || '').localeCompare(a.matchDate || ''));
 
-  // Source 1: NewsAPI — team-specific queries covering all 48 teams
+  // Source 1: GNews.io — 48-team coverage, 100 req/day, US-based no block
   let rssItems = [];
-  const NEWS_API_KEY = process.env.NEWS_API_KEY || '';
-  if (NEWS_API_KEY) {
-    // 6 batches of 8 teams each — all 48 teams get real news coverage
+  const GNEWS_KEY = process.env.GNEWS_KEY || '';
+  if (GNEWS_KEY) {
+    // 6 batches of 8 teams each — covers all 48 teams
     const TEAM_BATCHES = [
-      'Argentina OR Brazil OR France OR England OR Germany OR Spain OR Portugal OR Netherlands',
-      'Mexico OR USA OR Canada OR "South Korea" OR Japan OR Australia OR "New Zealand" OR Qatar',
-      'Morocco OR Senegal OR Ghana OR "Ivory Coast" OR Egypt OR Algeria OR Tunisia OR "South Africa"',
-      'Croatia OR Belgium OR Switzerland OR Austria OR Sweden OR Norway OR Turkey OR Scotland',
-      'Uruguay OR Colombia OR Paraguay OR Ecuador OR Chile OR "Saudi Arabia" OR Iran OR Iraq',
-      '"Czech Republic" OR "Bosnia Herzegovina" OR Haiti OR Curacao OR "Cape Verde" OR Panama OR Uzbekistan OR "Congo DR"',
+      'Argentina Brazil France England Germany Spain Portugal Netherlands',
+      'Mexico USA Canada "South Korea" Japan Australia "New Zealand" Qatar',
+      'Morocco Senegal Ghana "Ivory Coast" Egypt Algeria Tunisia "South Africa"',
+      'Croatia Belgium Switzerland Austria Sweden Norway Turkey Scotland',
+      'Uruguay Colombia Paraguay Ecuador "Saudi Arabia" Iran Iraq Jordan',
+      '"Czech Republic" "Bosnia Herzegovina" Haiti Curacao "Cape Verde" Panama Uzbekistan "Congo DR"',
     ];
     for (const batch of TEAM_BATCHES) {
       try {
-        const q = encodeURIComponent(`(${batch}) AND (World Cup 2026 OR FIFA World Cup)`);
+        const q = encodeURIComponent(`(${batch}) World Cup 2026`);
         const newsResp = await new Promise((resolve, reject) => {
-          https.get(`https://newsapi.org/v2/everything?q=${q}&language=en&pageSize=10&sortBy=publishedAt&apiKey=${NEWS_API_KEY}`, { timeout: 15000 }, res => {
+          https.get(`https://gnews.io/api/v4/search?q=${q}&lang=en&max=10&token=${GNEWS_KEY}`, { timeout: 15000 }, res => {
             let b = ''; res.on('data', c => b += c);
             res.on('end', () => { try { resolve(JSON.parse(b)); } catch(e) { reject(e); } });
           }).on('error', reject);
         });
         if (newsResp.articles) {
           newsResp.articles.forEach(a => {
-            if (a.title) rssItems.push(a.title.replace(/<!\[CDATA\[|\]\]>/g, ''));
+            if (a.title) rssItems.push(a.title);
           });
         }
       } catch(e) { /* skip batch */ }
     }
-    console.log(`[${ts}]   NewsAPI: ${rssItems.length} team articles`);
+    console.log(`[${ts}]   GNews: ${rssItems.length} team articles`);
   }
 
   // Source 2: RSS feeds (English + Chinese + Google News)
