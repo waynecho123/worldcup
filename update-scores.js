@@ -410,12 +410,31 @@ async function updateNews() {
     } catch(e) { console.log(`[${ts}]   NewsAPI failed: ${e.message}`); }
   }
 
-  // Source 2: RSS for general news (fallback)
+  // Source 2: RSS feeds (English + Chinese via RSSHub)
   const RSS_SOURCES = [
+    // English
     'https://feeds.bbci.co.uk/sport/football/rss.xml',
     'https://www.espn.com/espn/rss/soccer/news',
+    // Chinese via RSSHub (free, no quota)
+    'https://rsshub.app/sina/sports',
+    'https://rsshub.app/baidu/s?wd=2026世界杯+足球&tn=news',
+    'https://rsshub.app/toutiao/trending?keyword=世界杯',
   ];
-  const WC_KW = ['World Cup','world cup','FIFA','fifa','Argentina','Brazil','France','England','Germany','Spain','Portugal','Netherlands','Mbappe','Messi','Ronaldo','Haaland'];
+  const WC_KW = [
+    // English
+    'World Cup','world cup','FIFA','fifa',
+    // Teams + stars
+    'Argentina','Brazil','France','England','Germany','Spain','Portugal','Netherlands',
+    'Mbappe','Messi','Ronaldo','Haaland',
+    // Chinese
+    '世界杯','世足','足球',
+    '阿根廷','巴西','法国','英格兰','德国','西班牙','葡萄牙','荷兰',
+    '梅西','姆巴佩','C罗','哈兰德','内马尔','贝林厄姆','莫德里奇',
+    '墨西哥','韩国','日本','加拿大','美国','卡塔尔','瑞士','摩洛哥',
+    '苏格兰','澳大利亚','土耳其','科特迪瓦','瑞典','比利时','伊朗',
+    '沙特','克罗地亚','加纳','挪威','塞尔维亚','乌拉圭','丹麦','波兰',
+    '塞内加尔','厄瓜多尔','威尔士','突尼斯','喀麦隆','哥斯达黎加',
+  ];
   for (const url of RSS_SOURCES) {
     try {
       const resp = await new Promise((resolve, reject) => {
