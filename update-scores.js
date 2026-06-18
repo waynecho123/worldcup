@@ -447,7 +447,14 @@ async function updateNews() {
   for (const url of RSS_SOURCES) {
     try {
       const resp = await new Promise((resolve, reject) => {
-        https.get(url, { timeout: 10000 }, res => {
+        https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; WC2026Bot/1.0)' }, timeout: 10000 }, res => {
+          if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+            https.get(res.headers.location, { headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 10000 }, res2 => {
+              let b2 = ''; res2.on('data', c => b2 += c);
+              res2.on('end', () => resolve(b2));
+            }).on('error', reject);
+            return;
+          }
           let b = ''; res.on('data', c => b += c);
           res.on('end', () => resolve(b));
         }).on('error', reject);
