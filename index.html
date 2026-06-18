@@ -2847,7 +2847,9 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
     try { localStorage.setItem('wc_upset_cache_v2', JSON.stringify(predictMatch._upsetCache)); } catch(e) {}
   }
   var underdog = hStr > aStr ? awayTeam : homeTeam;
-  var isUpsetAlert = upsetProb > 0.25;
+  var strGap = Math.abs(hStr - aStr);
+  // Only alert when gap is meaningful (>15) AND upset probability > 25%
+  var isUpsetAlert = strGap > 15 && upsetProb > 0.25;
   return { homeWinProb: finalHome, drawProb: finalDraw, awayWinProb: finalAway, expH: lambdaH, expA: lambdaA, predScore: bestS || [Math.round(lambdaH), Math.round(lambdaA)], topScores: topScores, hStr, aStr, tacticalAdj, tacAnalysis, marketConsensus: null, aiProbs, oddsBlended, upsetProb, upsetAlert: isUpsetAlert, upsetTeam: isUpsetAlert ? underdog.cn : null };
 }
 
@@ -2905,13 +2907,13 @@ function learnFromMatch(matchId) {
     predGoals: pred.expH, actualGoals: actual.homeScore,
     actualAgainst: actual.awayScore,
     xG: hxG || pred.expH, shots: hShots,
-    wasUpset: (hStr > aStr && actual.homeScore <= actual.awayScore) || (hStr < aStr && actual.homeScore >= actual.awayScore)
+    wasUpset: Math.abs(hStr - aStr) > 15 && ((hStr > aStr && actual.homeScore <= actual.awayScore) || (hStr < aStr && actual.homeScore >= actual.awayScore))
   });
   recordTeamPerformance(m.away, {
     predGoals: pred.expA, actualGoals: actual.awayScore,
     actualAgainst: actual.homeScore,
     xG: axG || pred.expA, shots: aShots,
-    wasUpset: (aStr > hStr && actual.awayScore <= actual.homeScore) || (aStr < hStr && actual.awayScore >= actual.homeScore)
+    wasUpset: Math.abs(hStr - aStr) > 15 && ((aStr > hStr && actual.awayScore <= actual.homeScore) || (aStr < hStr && actual.awayScore >= actual.homeScore))
   });
 }
 
