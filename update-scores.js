@@ -427,35 +427,41 @@ async function updateNews() {
   // Sort by date desc
   matchNews.sort((a, b) => (b.matchDate || '').localeCompare(a.matchDate || ''));
 
-  // Source 1: GNews.io — rotate 4 teams per run, full 48-team coverage every 24h
+  // Source 1: GNews.io — 2 batches × 3 teams per run, full 48-team coverage every 16h
   let rssItems = [];
   const GNEWS_KEY = process.env.GNEWS_KEY || '';
   if (GNEWS_KEY) {
-    // All 48 teams grouped by region (12 groups of 4, full coverage every 24h)
+    // All 48 teams in 16 groups of 3 (balanced: each group has at least 1 news-worthy team)
     const ALL_TEAMS = [
-      'Argentina Brazil Uruguay Colombia','France England Germany Spain','Portugal Netherlands Belgium Croatia',
-      'Switzerland Austria Sweden Norway','Turkey Scotland Czech Bosnia','Mexico USA Canada Panama',
-      'Korea Japan Australia New Zealand','Qatar Saudi Arabia Iran Iraq',
-      'Morocco Senegal Ghana Ivory Coast','Egypt Algeria Tunisia South Africa',
-      'Ecuador Paraguay Curacao Haiti','Cape Verde Congo DR Uzbekistan Jordan',
+      'Argentina Brazil France','England Germany Spain','Portugal Netherlands Croatia',
+      'Belgium Uruguay Colombia','Mexico USA Canada','Switzerland Austria Sweden',
+      'Norway Turkey Scotland','Korea Japan Australia',
+      'Morocco Senegal Ghana','Egypt Algeria Tunisia',
+      'Ivory Coast South Africa Qatar','Iran Saudi Arabia Iraq',
+      'Ecuador Paraguay Panama','New Zealand Jordan Haiti',
+      'Czech Bosnia Cape Verde','Curacao Congo DR Uzbekistan',
     ];
-    var idx = Math.floor(Date.now() / 7200000) % ALL_TEAMS.length;
-    var batch = ALL_TEAMS[idx];
-    try {
-      var q = encodeURIComponent(batch + ' World Cup 2026');
-      var newsResp = await new Promise((resolve, reject) => {
-        https.get(`https://gnews.io/api/v4/search?q=${q}&lang=en&max=10&token=${GNEWS_KEY}`, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; WC2026Bot/1.0)' }, timeout: 15000 }, res => {
-          let b = ''; res.on('data', c => b += c);
-          res.on('end', () => { try { resolve(JSON.parse(b)); } catch(e) { reject(e); } });
-        }).on('error', reject);
-      });
-      if (newsResp.articles) {
-        newsResp.articles.forEach(a => {
-          if (a.title) rssItems.push(a.title);
+    var baseIdx = Math.floor(Date.now() / 7200000) % ALL_TEAMS.length;
+    // 2 batches per run (spread apart), 8 runs = 16h for full coverage
+    var batches = [ALL_TEAMS[baseIdx], ALL_TEAMS[(baseIdx + 8) % ALL_TEAMS.length]];
+    var totalGnews = 0;
+    for (var bi = 0; bi < batches.length; bi++) {
+      try {
+        var q = encodeURIComponent(batches[bi] + ' World Cup 2026');
+        var newsResp = await new Promise((resolve, reject) => {
+          https.get(`https://gnews.io/api/v4/search?q=${q}&lang=en&max=10&token=${GNEWS_KEY}`, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; WC2026Bot/1.0)' }, timeout: 15000 }, res => {
+            let b = ''; res.on('data', c => b += c);
+            res.on('end', () => { try { resolve(JSON.parse(b)); } catch(e) { reject(e); } });
+          }).on('error', reject);
         });
-      }
-      console.log(`[${ts}]   GNews[${idx}]: ${batch} → ${newsResp.articles ? newsResp.articles.length : 0} articles`);
-    } catch(e) { console.log(`[${ts}]   GNews failed: ${e.message}`); }
+        if (newsResp.articles) {
+          newsResp.articles.forEach(a => { if (a.title) rssItems.push(a.title); });
+          totalGnews += newsResp.articles.length;
+        }
+        console.log(`[${ts}]   GNews[${(baseIdx + bi*8) % 16}]: ${batches[bi]} → ${newsResp.articles ? newsResp.articles.length : 0} articles`);
+      } catch(e) { console.log(`[${ts}]   GNews batch ${bi} failed: ${e.message}`); }
+    }
+    console.log(`[${ts}]   GNews total: ${totalGnews} articles from 2 batches`);
   }
 
   // Source 2: RSS feeds (English + Chinese + Google News)
