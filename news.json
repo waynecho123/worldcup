@@ -1,11 +1,11 @@
 {
   "items": [
+    "📰 'If we lose, we lose in our way' - how Tuchel inspired England at half-time",
     "📰 England hit four in World Cup opener against Croatia ",
-    "📰 Who was the biggest attacking threat? England player ratings",
     "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
-    "📰 Extraordinary Messi makes more history in masterclass for the ages",
+    "📰 Who was the biggest attacking threat? England player ratings",
     "📰 How sweltering Scotland can handle World Cup heat",
-    "📰 No stage too big - Haaland arrives in style at World Cup",
+    "📰 Extraordinary Messi makes more history in masterclass for the ages",
     "📰 Substitute Rashford guides home England's fourth against Croatia",
     "📰 Bellingham scores early in second half to put England 3-2 up",
     "📰 Kane heads England into 2-1 lead against Croatia",
@@ -13,8 +13,8 @@
     "📰 Musa strikes for Croatia to make it 2-2 against England",
     "📰 How to watch the World Cup on the BBC and ITV",
     "📰 Catch up on the World Cup without any spoilers",
+    "📰 No stage too big - Haaland arrives in style at World Cup",
     "📰 Emotional Messi explains tears after Argentina goal",
-    "📰 Clichy on Mbappe, Henderson and France 2010",
     "🤝 葡萄牙 1-1 民主刚果 — 葡萄牙 1-1 民主刚果，双方激战成和",
     "⚽ 英格兰 4-2 克罗地亚 — 英格兰 4-2 取胜，关键3分",
     "⚽ 法国 3-1 塞内加尔 — 法国 3-1 取胜，关键3分",
@@ -305,12 +305,12 @@
     }
   ],
   "generalNews": [
+    "📰 'If we lose, we lose in our way' - how Tuchel inspired England at half-time",
     "📰 England hit four in World Cup opener against Croatia ",
-    "📰 Who was the biggest attacking threat? England player ratings",
     "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
-    "📰 Extraordinary Messi makes more history in masterclass for the ages",
+    "📰 Who was the biggest attacking threat? England player ratings",
     "📰 How sweltering Scotland can handle World Cup heat",
-    "📰 No stage too big - Haaland arrives in style at World Cup",
+    "📰 Extraordinary Messi makes more history in masterclass for the ages",
     "📰 Substitute Rashford guides home England's fourth against Croatia",
     "📰 Bellingham scores early in second half to put England 3-2 up",
     "📰 Kane heads England into 2-1 lead against Croatia",
@@ -318,14 +318,14 @@
     "📰 Musa strikes for Croatia to make it 2-2 against England",
     "📰 How to watch the World Cup on the BBC and ITV",
     "📰 Catch up on the World Cup without any spoilers",
-    "📰 Emotional Messi explains tears after Argentina goal",
-    "📰 Clichy on Mbappe, Henderson and France 2010"
+    "📰 No stage too big - Haaland arrives in style at World Cup",
+    "📰 Emotional Messi explains tears after Argentina goal"
   ],
   "teamNews": {
     "ENG": [
+      "📰 'If we lose, we lose in our way' - how Tuchel inspired England at half-time",
       "📰 England hit four in World Cup opener against Croatia ",
-      "📰 Who was the biggest attacking threat? England player ratings",
-      "📰 Substitute Rashford guides home England's fourth against Croatia"
+      "📰 Who was the biggest attacking threat? England player ratings"
     ],
     "CRO": [
       "📰 England hit four in World Cup opener against Croatia ",
@@ -335,26 +335,20 @@
     "POR": [
       "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle"
     ],
+    "SCO": [
+      "📰 How sweltering Scotland can handle World Cup heat"
+    ],
     "ARG": [
       "📰 Extraordinary Messi makes more history in masterclass for the ages",
       "📰 Emotional Messi explains tears after Argentina goal"
     ],
-    "SCO": [
-      "📰 How sweltering Scotland can handle World Cup heat"
-    ],
-    "NOR": [
-      "📰 No stage too big - Haaland arrives in style at World Cup"
-    ],
     "USA": [
       "📰 Musa strikes for Croatia to make it 2-2 against England"
     ],
-    "KOR": [
-      "📰 Clichy on Mbappe, Henderson and France 2010"
-    ],
-    "FRA": [
-      "📰 Clichy on Mbappe, Henderson and France 2010"
+    "NOR": [
+      "📰 No stage too big - Haaland arrives in style at World Cup"
     ]
   },
   "total": 37,
-  "updatedAt": "2026-06-17T23:16:08.752Z"
+  "updatedAt": "2026-06-18T00:13:10.039Z"
 }
