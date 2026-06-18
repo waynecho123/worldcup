@@ -5555,6 +5555,7 @@ MATCH_SCHEDULE.forEach(function(m) {
   var pred = predictMatch(ht, at);
   logPredictionSnapshot(m.id, pred);
 });
+try {
 renderDateSelector();
 renderTodayMatches(todayStr);
 renderTeams();
@@ -5562,6 +5563,10 @@ renderHistory();
 renderFullSchedule();
 renderReview();
 renderDuel();
+} catch(e) {
+  document.body.innerHTML = '<div style="padding:40px;color:#ff3d57;font-size:1.2rem"><h2>初始化错误</h2><pre>' + e.message + '</pre><pre>' + e.stack + '</pre></div>';
+  console.error(e);
+}
 setTimeout(() => loadLastResult(), 300);
 
 // Add manual publish and date advance controls to the header
