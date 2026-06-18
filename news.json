@@ -6,15 +6,15 @@
     "📰 Fans boo, players adapt - the view on World Cup hydration breaks",
     "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
     "📰 'If we lose, we lose in our way' - how Tuchel inspired England at half-time",
-    "📰 Substitute Rashford guides home England's fourth against Croatia",
-    "📰 Bellingham scores early in second half to put England 3-2 up",
-    "📰 Kane heads England into 2-1 lead against Croatia",
+    "📰 Messi, Mbappe & Vini jr - best World Cup goals from round one",
+    "📰 Fayzullaev scores Uzbekistan's first-ever World Cup goal",
     "📰 Who was the biggest attacking threat? England player ratings",
     "📰 How sweltering Scotland can handle World Cup heat",
     "📰 How to watch the World Cup on the BBC and ITV",
     "📰 Catch up on the World Cup without any spoilers",
     "📰 What are the patches on some shirts at the World Cup?",
     "📰 Extraordinary Messi makes more history in masterclass for the ages",
+    "📰 Who am I? Guess World Cup star No 10",
     "🤝 葡萄牙 1-1 民主刚果 — 葡萄牙 1-1 民主刚果，双方激战成和",
     "⚽ 英格兰 4-2 克罗地亚 — 英格兰 4-2 取胜，关键3分",
     "⚽ 加纳 1-0 巴拿马 — 加纳 1-0 取胜，关键3分",
@@ -337,15 +337,15 @@
     "📰 Fans boo, players adapt - the view on World Cup hydration breaks",
     "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
     "📰 'If we lose, we lose in our way' - how Tuchel inspired England at half-time",
-    "📰 Substitute Rashford guides home England's fourth against Croatia",
-    "📰 Bellingham scores early in second half to put England 3-2 up",
-    "📰 Kane heads England into 2-1 lead against Croatia",
+    "📰 Messi, Mbappe & Vini jr - best World Cup goals from round one",
+    "📰 Fayzullaev scores Uzbekistan's first-ever World Cup goal",
     "📰 Who was the biggest attacking threat? England player ratings",
     "📰 How sweltering Scotland can handle World Cup heat",
     "📰 How to watch the World Cup on the BBC and ITV",
     "📰 Catch up on the World Cup without any spoilers",
     "📰 What are the patches on some shirts at the World Cup?",
-    "📰 Extraordinary Messi makes more history in masterclass for the ages"
+    "📰 Extraordinary Messi makes more history in masterclass for the ages",
+    "📰 Who am I? Guess World Cup star No 10"
   ],
   "teamNews": {
     "ENG": [
@@ -354,20 +354,28 @@
       "📰 'If we lose, we lose in our way' - how Tuchel inspired England at half-time"
     ],
     "CRO": [
-      "📰 England hit four in World Cup opener against Croatia ",
-      "📰 Substitute Rashford guides home England's fourth against Croatia",
-      "📰 Kane heads England into 2-1 lead against Croatia"
+      "📰 England hit four in World Cup opener against Croatia "
     ],
     "POR": [
       "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle"
     ],
-    "SCO": [
-      "📰 How sweltering Scotland can handle World Cup heat"
+    "BRA": [
+      "📰 Messi, Mbappe & Vini jr - best World Cup goals from round one"
+    ],
+    "FRA": [
+      "📰 Messi, Mbappe & Vini jr - best World Cup goals from round one"
     ],
     "ARG": [
+      "📰 Messi, Mbappe & Vini jr - best World Cup goals from round one",
       "📰 Extraordinary Messi makes more history in masterclass for the ages"
+    ],
+    "UZB": [
+      "📰 Fayzullaev scores Uzbekistan's first-ever World Cup goal"
+    ],
+    "SCO": [
+      "📰 How sweltering Scotland can handle World Cup heat"
     ]
   },
   "total": 39,
-  "updatedAt": "2026-06-18T05:05:48.712Z"
+  "updatedAt": "2026-06-18T05:10:48.425Z"
 }
