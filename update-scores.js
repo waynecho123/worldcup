@@ -32,6 +32,22 @@ const ODDS_BASE = 'https://api.the-odds-api.com/v4';
 const APISPORTS_BASE = 'https://v3.football.api-sports.io';
 
 const BASE_DIR = __dirname;
+
+// Team data (shared by news + details functions)
+const TEAMS = {
+  MEX:{cn:'墨西哥',name:'Mexico'},RSA:{cn:'南非',name:'South Africa'},KOR:{cn:'韩国',name:'South Korea'},CZE:{cn:'捷克',name:'Czech Republic'},
+  CAN:{cn:'加拿大',name:'Canada'},BIH:{cn:'波黑',name:'Bosnia & Herzegovina'},QAT:{cn:'卡塔尔',name:'Qatar'},SUI:{cn:'瑞士',name:'Switzerland'},
+  BRA:{cn:'巴西',name:'Brazil'},MAR:{cn:'摩洛哥',name:'Morocco'},HAI:{cn:'海地',name:'Haiti'},SCO:{cn:'苏格兰',name:'Scotland'},
+  USA:{cn:'美国',name:'United States'},PAR:{cn:'巴拉圭',name:'Paraguay'},AUS:{cn:'澳大利亚',name:'Australia'},TUR:{cn:'土耳其',name:'Turkey'},
+  GER:{cn:'德国',name:'Germany'},CUW:{cn:'库拉索',name:'Curacao'},CIV:{cn:'科特迪瓦',name:'Ivory Coast'},ECU:{cn:'厄瓜多尔',name:'Ecuador'},
+  NED:{cn:'荷兰',name:'Netherlands'},JPN:{cn:'日本',name:'Japan'},SWE:{cn:'瑞典',name:'Sweden'},TUN:{cn:'突尼斯',name:'Tunisia'},
+  BEL:{cn:'比利时',name:'Belgium'},EGY:{cn:'埃及',name:'Egypt'},IRN:{cn:'伊朗',name:'Iran'},NZL:{cn:'新西兰',name:'New Zealand'},
+  ESP:{cn:'西班牙',name:'Spain'},CPV:{cn:'佛得角',name:'Cape Verde'},KSA:{cn:'沙特',name:'Saudi Arabia'},URU:{cn:'乌拉圭',name:'Uruguay'},
+  FRA:{cn:'法国',name:'France'},SEN:{cn:'塞内加尔',name:'Senegal'},IRQ:{cn:'伊拉克',name:'Iraq'},NOR:{cn:'挪威',name:'Norway'},
+  ARG:{cn:'阿根廷',name:'Argentina'},ALG:{cn:'阿尔及利亚',name:'Algeria'},AUT:{cn:'奥地利',name:'Austria'},JOR:{cn:'约旦',name:'Jordan'},
+  POR:{cn:'葡萄牙',name:'Portugal'},COD:{cn:'民主刚果',name:'Congo DR'},UZB:{cn:'乌兹别克',name:'Uzbekistan'},COL:{cn:'哥伦比亚',name:'Colombia'},
+  ENG:{cn:'英格兰',name:'England'},CRO:{cn:'克罗地亚',name:'Croatia'},GHA:{cn:'加纳',name:'Ghana'},PAN:{cn:'巴拿马',name:'Panama'},
+};
 const SCORES_FILE = path.join(BASE_DIR, 'scores.json');
 const ODDS_FILE = path.join(BASE_DIR, 'odds.json');
 const INFO_FILE = path.join(BASE_DIR, 'match-info.json');
@@ -329,22 +345,6 @@ async function updateNews() {
   const NEWS_FILE = path.join(BASE_DIR, 'news.json');
   const existing = loadJSON(SCORES_FILE);
 
-  // Team data for generating news
-  const TEAMS = {
-    MEX:{cn:'墨西哥',flag:'🇲🇽'},RSA:{cn:'南非',flag:'🇿🇦'},KOR:{cn:'韩国',flag:'🇰🇷'},CZE:{cn:'捷克',flag:'🇨🇿'},
-    CAN:{cn:'加拿大',flag:'🇨🇦'},BIH:{cn:'波黑',flag:'🇧🇦'},QAT:{cn:'卡塔尔',flag:'🇶🇦'},SUI:{cn:'瑞士',flag:'🇨🇭'},
-    BRA:{cn:'巴西',flag:'🇧🇷'},MAR:{cn:'摩洛哥',flag:'🇲🇦'},HAI:{cn:'海地',flag:'🇭🇹'},SCO:{cn:'苏格兰',flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'},
-    USA:{cn:'美国',flag:'🇺🇸'},PAR:{cn:'巴拉圭',flag:'🇵🇾'},AUS:{cn:'澳大利亚',flag:'🇦🇺'},TUR:{cn:'土耳其',flag:'🇹🇷'},
-    GER:{cn:'德国',flag:'🇩🇪'},CUW:{cn:'库拉索',flag:'🇨🇼'},CIV:{cn:'科特迪瓦',flag:'🇨🇮'},ECU:{cn:'厄瓜多尔',flag:'🇪🇨'},
-    NED:{cn:'荷兰',flag:'🇳🇱'},JPN:{cn:'日本',flag:'🇯🇵'},SWE:{cn:'瑞典',flag:'🇸🇪'},TUN:{cn:'突尼斯',flag:'🇹🇳'},
-    BEL:{cn:'比利时',flag:'🇧🇪'},EGY:{cn:'埃及',flag:'🇪🇬'},IRN:{cn:'伊朗',flag:'🇮🇷'},NZL:{cn:'新西兰',flag:'🇳🇿'},
-    ESP:{cn:'西班牙',flag:'🇪🇸'},CPV:{cn:'佛得角',flag:'🇨🇻'},KSA:{cn:'沙特',flag:'🇸🇦'},URU:{cn:'乌拉圭',flag:'🇺🇾'},
-    FRA:{cn:'法国',flag:'🇫🇷'},SEN:{cn:'塞内加尔',flag:'🇸🇳'},IRQ:{cn:'伊拉克',flag:'🇮🇶'},NOR:{cn:'挪威',flag:'🇳🇴'},
-    ARG:{cn:'阿根廷',flag:'🇦🇷'},ALG:{cn:'阿尔及利亚',flag:'🇩🇿'},AUT:{cn:'奥地利',flag:'🇦🇹'},JOR:{cn:'约旦',flag:'🇯🇴'},
-    POR:{cn:'葡萄牙',flag:'🇵🇹'},COD:{cn:'民主刚果',flag:'🇨🇩'},UZB:{cn:'乌兹别克',flag:'🇺🇿'},COL:{cn:'哥伦比亚',flag:'🇨🇴'},
-    ENG:{cn:'英格兰',flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},CRO:{cn:'克罗地亚',flag:'🇭🇷'},GHA:{cn:'加纳',flag:'🇬🇭'},PAN:{cn:'巴拿马',flag:'🇵🇦'},
-  };
-
   const sched = getMatchSchedule();
 
   // Generate match news from results
@@ -548,13 +548,23 @@ async function updateMatchDetails() {
   const existing = loadJSON(DETAILS_FILE);
   const scores = loadJSON(SCORES_FILE);
 
-  // Fetch fixtures for a date range
-  async function fetchFixtures(dateStr) {
+  // Step 1: get fixture IDs by date
+  async function fetchFixturesByDate(dateStr) {
     return new Promise((resolve, reject) => {
-      const url = `${APISPORTS_BASE}/fixtures?date=${dateStr}&league=1&season=2026`;
-      https.get(url, {
-        headers: { 'x-apisports-key': APISPORTS_KEY },
-        timeout: 15000
+      https.get(`${APISPORTS_BASE}/fixtures?date=${dateStr}`, {
+        headers: { 'x-apisports-key': APISPORTS_KEY }, timeout: 15000
+      }, res => {
+        let d = ''; res.on('data', c => d += c);
+        res.on('end', () => { try { resolve(JSON.parse(d)); } catch(e) { reject(e); } });
+      }).on('error', reject);
+    });
+  }
+
+  // Step 2: get detailed data for a single fixture (free plan limitation)
+  async function fetchFixtureById(id) {
+    return new Promise((resolve, reject) => {
+      https.get(`${APISPORTS_BASE}/fixtures?id=${id}`, {
+        headers: { 'x-apisports-key': APISPORTS_KEY }, timeout: 15000
       }, res => {
         let d = ''; res.on('data', c => d += c);
         res.on('end', () => { try { resolve(JSON.parse(d)); } catch(e) { reject(e); } });
@@ -572,53 +582,78 @@ async function updateMatchDetails() {
 
   for (const date of dates) {
     try {
-      const data = await fetchFixtures(date);
+      const data = await fetchFixturesByDate(date);
       if (!data.response) continue;
-      for (const fixture of data.response) {
-        const teams = fixture.teams;
-        const homeId = teams?.home?.name, awayId = teams?.away?.name;
-        // Map to our match ID via team names
+      const wcFixtures = data.response.filter(f => f.league?.name === 'World Cup');
+      if (wcFixtures.length === 0) continue;
+
+      // Collect fixture IDs and map to our match IDs
+      const idMap = {};
+      for (const fixture of wcFixtures) {
+        const homeName = fixture.teams?.home?.name, awayName = fixture.teams?.away?.name;
         const m = getMatchSchedule().find(x => {
           const ht = TEAMS[x.home], at = TEAMS[x.away];
           return ht && at && (
-            (ht.cn === homeId || ht.name === homeId) &&
-            (at.cn === awayId || at.name === awayId)
+            (ht.cn === homeName || ht.name === homeName || ht.name.toLowerCase() === homeName?.toLowerCase()) &&
+            (at.cn === awayName || at.name === awayName || at.name.toLowerCase() === awayName?.toLowerCase())
           );
         });
-        if (!m) continue;
+        if (m) idMap[fixture.fixture.id] = m.id;
+      }
+
+      if (Object.keys(idMap).length === 0) continue;
+
+      // Step 2: fetch details one by one (free plan limits batch)
+      for (const [fid, mid] of Object.entries(idMap)) {
+        try {
+          const detailResp = await fetchFixtureById(fid);
+          if (!detailResp.response || detailResp.response.length === 0) continue;
+          const fixture = detailResp.response[0];
+        if (!mid) continue;
+        const homeName = fixture.teams?.home?.name, awayName = fixture.teams?.away?.name;
+        const status = fixture.fixture?.status?.long;
+        // Only save if match is finished (lineups + events are final)
+        if (status !== 'Match Finished' && status !== 'Match Finished AET' && status !== 'Match Finished AP') continue;
 
         const detail = {
           fixtureId: fixture.fixture?.id,
           date: fixture.fixture?.date,
           venue: fixture.fixture?.venue?.name,
-          status: fixture.fixture?.status?.long,
+          status: status,
+          homeTeam: homeName, awayTeam: awayName,
+          score: { home: fixture.goals?.home, away: fixture.goals?.away },
           // Lineups
           lineups: {
-            home: (fixture.lineups || []).find(l => l.team?.name === homeId) || null,
-            away: (fixture.lineups || []).find(l => l.team?.name === awayId) || null
+            home: (fixture.lineups || []).find(l => l.team?.name === homeName) || null,
+            away: (fixture.lineups || []).find(l => l.team?.name === awayName) || null
           },
           // Events (goals, cards, subs)
           events: (fixture.events || []).map(e => ({
-            time: e.time?.elapsed,
-            extra: e.time?.extra,
+            time: e.time?.elapsed + (e.time?.extra ? '+' + e.time.extra : ''),
             team: e.team?.name,
             player: e.player?.name,
-            assist: e.assist?.name,
+            assist: e.assist?.name || null,
             type: e.type,
             detail: e.detail,
-            comments: e.comments
+            comments: e.comments || ''
           })),
-          // Stats
-          statistics: (fixture.statistics || []).map(s => ({
-            team: s.team?.name,
-            stats: s.statistics
+          // Player statistics
+          players: (fixture.players || []).map(p => ({
+            team: p.team?.name,
+            players: (p.players || []).map(pl => ({
+              name: pl.player?.name,
+              number: pl.player?.number,
+              position: pl.player?.pos,
+              rating: pl.statistics?.[0]?.games?.rating || null,
+              goals: pl.statistics?.[0]?.goals?.total || 0,
+              assists: pl.statistics?.[0]?.goals?.assists || 0
+            }))
           }))
         };
 
-        if (!existing[m.id] || (fixture.fixture?.date > existing[m.id].date)) {
-          existing[m.id] = detail;
-          n++;
-        }
+        existing[mid] = detail;
+        n++;
+        } catch(e) { console.error(`[${ts}] Details fetch failed for fixture ${fid}:`, e.message); }
       }
     } catch(e) { console.error(`[${ts}] Details fetch failed for ${date}:`, e.message); }
   }
