@@ -4,6 +4,7 @@
     "📰 From one to 48 - every World Cup team ranked after first game",
     "📰 England hit four in World Cup opener against Croatia ",
     "📰 Fans boo, players adapt - the view on World Cup hydration breaks",
+    "📰 Christie chases dream on same stage as idol Messi",
     "📰 Who am I? Guess World Cup star No 11",
     "📰 'If we lose, we lose in our way' - how Tuchel inspired 'fearful' England",
     "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one",
@@ -14,7 +15,6 @@
     "📰 How sweltering Scotland can handle World Cup heat",
     "📰 How to watch the World Cup on the BBC and ITV",
     "📰 Catch up on the World Cup without any spoilers",
-    "📰 What are the patches on some shirts at the World Cup?",
     "🤝 葡萄牙 1-1 民主刚果 — 葡萄牙 1-1 民主刚果，双方激战成和",
     "⚽ 英格兰 4-2 克罗地亚 — 英格兰 4-2 取胜，关键3分",
     "⚽ 加纳 1-0 巴拿马 — 加纳 1-0 取胜，关键3分",
@@ -335,6 +335,7 @@
     "📰 From one to 48 - every World Cup team ranked after first game",
     "📰 England hit four in World Cup opener against Croatia ",
     "📰 Fans boo, players adapt - the view on World Cup hydration breaks",
+    "📰 Christie chases dream on same stage as idol Messi",
     "📰 Who am I? Guess World Cup star No 11",
     "📰 'If we lose, we lose in our way' - how Tuchel inspired 'fearful' England",
     "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one",
@@ -344,8 +345,7 @@
     "📰 Who was the biggest attacking threat? England player ratings",
     "📰 How sweltering Scotland can handle World Cup heat",
     "📰 How to watch the World Cup on the BBC and ITV",
-    "📰 Catch up on the World Cup without any spoilers",
-    "📰 What are the patches on some shirts at the World Cup?"
+    "📰 Catch up on the World Cup without any spoilers"
   ],
   "teamNews": {
     "ENG": [
@@ -356,6 +356,10 @@
     "CRO": [
       "📰 England hit four in World Cup opener against Croatia "
     ],
+    "ARG": [
+      "📰 Christie chases dream on same stage as idol Messi",
+      "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one"
+    ],
     "BRA": [
       "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one"
     ],
@@ -363,9 +367,6 @@
       "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one"
     ],
     "FRA": [
-      "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one"
-    ],
-    "ARG": [
       "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one"
     ],
     "UZB": [
@@ -379,5 +380,5 @@
     ]
   },
   "total": 39,
-  "updatedAt": "2026-06-18T06:35:46.343Z"
+  "updatedAt": "2026-06-18T06:40:46.037Z"
 }
