@@ -385,10 +385,6 @@ canvas{max-height:200px}
   <span id="newsTime" style="font-size:.65rem;color:var(--text3);white-space:nowrap"></span>
 </div>
 
-<!-- Key News (match-impact only, affects AI predictions) -->
-<div id="keyNews" style="background:linear-gradient(90deg,#1a0a0a,#0d0d1a);border-bottom:1px solid var(--border);padding:4px 16px;display:none;gap:12px;flex-wrap:wrap;font-size:.7rem">
-</div>
-
 <main class="main">
 
 <!-- ========== TODAY TAB ========== -->
@@ -1673,43 +1669,6 @@ function updateNewsModifiers(newsItems) {
   }
   NEWS_MODIFIERS = mods;
   NEWS_SENTIMENT = teamSentiment;
-  renderKeyNews(); // update key news section on homepage
-}
-
-/** Show match-impact news on homepage (skip fluff/gossip) */
-function renderKeyNews() {
-  var container = document.getElementById('keyNews');
-  if (!container) return;
-  var items = [];
-  for (var tid in NEWS_SENTIMENT) {
-    var sent = NEWS_SENTIMENT[tid];
-    if (!sent || sent.score === 0) continue;
-    var team = TEAMS.find(function(t){return t.id === tid;});
-    if (!team) continue;
-    var allNews = [...(sent.positive||[]), ...(sent.negative||[])];
-    if (allNews.length === 0) continue;
-    var label = sent.score > 3 ? '📈' : sent.score > 0 ? '↗' : sent.score < -3 ? '📉' : '↘';
-    var change = (sent.score > 0 ? '+' : '') + sent.score;
-    items.push({
-      team: team,
-      label: label,
-      change: change,
-      news: allNews[0],
-      score: Math.abs(sent.score)
-    });
-  }
-  if (items.length === 0) { container.style.display = 'none'; return; }
-  // Sort by impact, show top 5
-  items.sort(function(a,b){return b.score - a.score;});
-  items = items.slice(0, 5);
-
-  var html = '<span style="color:var(--red);font-weight:700;white-space:nowrap">⚡ 影响预测</span>';
-  items.forEach(function(item){
-    html += '<span style="color:var(--text2);white-space:nowrap;max-width:300px;overflow:hidden;text-overflow:ellipsis">'
-      + item.label + ' ' + item.team.flag + item.team.cn + '(' + item.change + ')：' + item.news.slice(0,50) + '</span>';
-  });
-  container.innerHTML = html;
-  container.style.display = 'flex';
 }
 
 // Override getStrength to incorporate news modifiers
