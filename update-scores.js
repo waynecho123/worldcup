@@ -427,18 +427,17 @@ async function updateNews() {
   // Sort by date desc
   matchNews.sort((a, b) => (b.matchDate || '').localeCompare(a.matchDate || ''));
 
-  // Source 1: GNews.io — rotate 3 teams per run, full 48-team coverage every 32h
+  // Source 1: GNews.io — rotate 4 teams per run, full 48-team coverage every 24h
   let rssItems = [];
   const GNEWS_KEY = process.env.GNEWS_KEY || '';
   if (GNEWS_KEY) {
-    // All 48 teams grouped by region (16 groups of 3)
+    // All 48 teams grouped by region (12 groups of 4, full coverage every 24h)
     const ALL_TEAMS = [
-      'Argentina Brazil France','England Germany Spain','Portugal Netherlands Croatia',
-      'Belgium Switzerland Austria','Sweden Norway Turkey','Scotland Czech Bosnia',
-      'Mexico USA Canada','Korea Japan Australia','New Zealand Qatar',
-      'Morocco Senegal Ghana','Ivory Coast Egypt Algeria','Tunisia South Africa',
-      'Uruguay Colombia Paraguay','Ecuador Saudi Arabia Iran','Iraq Jordan Haiti',
-      'Curacao Cape Verde Panama','Uzbekistan Congo DR',
+      'Argentina Brazil Uruguay Colombia','France England Germany Spain','Portugal Netherlands Belgium Croatia',
+      'Switzerland Austria Sweden Norway','Turkey Scotland Czech Bosnia','Mexico USA Canada Panama',
+      'Korea Japan Australia New Zealand','Qatar Saudi Arabia Iran Iraq',
+      'Morocco Senegal Ghana Ivory Coast','Egypt Algeria Tunisia South Africa',
+      'Ecuador Paraguay Curacao Haiti','Cape Verde Congo DR Uzbekistan Jordan',
     ];
     var idx = Math.floor(Date.now() / 7200000) % ALL_TEAMS.length;
     var batch = ALL_TEAMS[idx];
