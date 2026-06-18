@@ -432,7 +432,12 @@ async function updateNews() {
   const GNEWS_KEY = process.env.GNEWS_KEY || '';
   if (GNEWS_KEY) {
     console.log(`[${ts}] GNews key loaded: ${GNEWS_KEY.slice(0,8)}...`);
-    // All 48 teams in 16 groups of 3 (balanced: each group has at least 1 news-worthy team)
+    // Priority big-team batches (guaranteed news every run)
+    const BIG_BATCHES = [
+      'Argentina Brazil France','England Germany Spain','Portugal Netherlands Belgium',
+      'Uruguay Colombia Mexico USA',
+    ];
+    // Full 16-group rotation for 48-team coverage
     const ALL_TEAMS = [
       'Argentina Brazil France','England Germany Spain','Portugal Netherlands Croatia',
       'Belgium Uruguay Colombia','Mexico USA Canada','Switzerland Austria Sweden',
@@ -442,9 +447,10 @@ async function updateNews() {
       'Ecuador Paraguay Panama','New Zealand Jordan Haiti',
       'Czech Bosnia Cape Verde','Curacao Congo DR Uzbekistan',
     ];
-    var baseIdx = Math.floor(Date.now() / 7200000) % ALL_TEAMS.length;
-    // 2 batches per run (spread apart), 8 runs = 16h for full coverage
-    var batches = [ALL_TEAMS[baseIdx], ALL_TEAMS[(baseIdx + 8) % ALL_TEAMS.length]];
+    var bigIdx = Math.floor(Date.now() / 7200000) % BIG_BATCHES.length;
+    var regularIdx = Math.floor(Date.now() / 7200000) % ALL_TEAMS.length;
+    // 1 big-team batch + 1 rotating batch per run, ensures at least 1 hit every run
+    var batches = [BIG_BATCHES[bigIdx], ALL_TEAMS[regularIdx]];
     var totalGnews = 0;
     for (var bi = 0; bi < batches.length; bi++) {
       try {
