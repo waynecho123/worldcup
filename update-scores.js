@@ -548,22 +548,10 @@ async function updateMatchDetails() {
   const existing = loadJSON(DETAILS_FILE);
   const scores = loadJSON(SCORES_FILE);
 
-  // Step 1: get fixture IDs by date
-  async function fetchFixturesByDate(dateStr) {
+  // Fetch fixtures with full details (paid plan: league+season supported)
+  async function fetchFixtures(dateStr) {
     return new Promise((resolve, reject) => {
-      https.get(`${APISPORTS_BASE}/fixtures?date=${dateStr}`, {
-        headers: { 'x-apisports-key': APISPORTS_KEY }, timeout: 15000
-      }, res => {
-        let d = ''; res.on('data', c => d += c);
-        res.on('end', () => { try { resolve(JSON.parse(d)); } catch(e) { reject(e); } });
-      }).on('error', reject);
-    });
-  }
-
-  // Step 2: get detailed data for a single fixture (free plan limitation)
-  async function fetchFixtureById(id) {
-    return new Promise((resolve, reject) => {
-      https.get(`${APISPORTS_BASE}/fixtures?id=${id}`, {
+      https.get(`${APISPORTS_BASE}/fixtures?date=${dateStr}&league=1&season=2026`, {
         headers: { 'x-apisports-key': APISPORTS_KEY }, timeout: 15000
       }, res => {
         let d = ''; res.on('data', c => d += c);

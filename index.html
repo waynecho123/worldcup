@@ -3303,6 +3303,44 @@ function generatePostMatchReview(m, ht, at, pred, actual, apiInfo) {
     parts.push('⚠️ 【冷门复盘】赛前Monte Carlo冷门概率' + upsetPct + '%。' + upsetVerdict);
   }
 
+  // 9. Match events & lineups from API-Sports
+  var detail = matchDetails[m.id];
+  if (detail && detail.events && detail.events.length > 0) {
+    var goals = detail.events.filter(function(e){return e.type === 'Goal'});
+    var cards = detail.events.filter(function(e){return e.type === 'Card'});
+    var subs = detail.events.filter(function(e){return e.type === 'subst'});
+    var eventLines = [];
+    if (goals.length > 0) {
+      var goalText = goals.map(function(g){
+        var pen = g.detail === 'Penalty' ? '(点)' : '';
+        return g.time + '\' ' + g.player + pen + (g.assist ? '(助:' + g.assist + ')' : '');
+      }).join('，');
+      eventLines.push('⚽ 进球：' + goalText);
+    }
+    if (cards.length > 0) {
+      var cardText = cards.map(function(c){return c.time + '\' ' + c.player + ' ' + (c.detail||'') ;}).join('，');
+      eventLines.push('🟨 黄牌：' + cardText);
+    }
+    if (subs.length > 0) {
+      var subText = subs.slice(0,6).map(function(s){return s.time + '\' ' + s.player + '↑';}).join('，');
+      eventLines.push('🔄 换人：' + subText);
+    }
+    if (eventLines.length > 0) parts.push('📺 【赛事过程】' + eventLines.join(' | '));
+  }
+  if (detail && detail.lineups) {
+    var fmtLu = function(lu) {
+      if (!lu || !lu.startXI) return '';
+      var formation = lu.formation || '';
+      var players = lu.startXI.map(function(p){return p.player.number + '.' + p.player.name;}).join(' ');
+      return formation + ' [' + players + ']';
+    };
+    var hLu = fmtLu(detail.lineups.home);
+    var aLu = fmtLu(detail.lineups.away);
+    if (hLu || aLu) {
+      parts.push('📋 【实际首发】' + ht.cn + ' ' + hLu + ' | ' + at.cn + ' ' + aLu);
+    }
+  }
+
   // Deep dive on prediction errors when wrong
   if (!outcomeCorrect) {
     var gap = Math.abs(hStr - aStr);
@@ -4058,12 +4096,23 @@ async function initResults() {
     await loadFromServerJSON();
     loadOddsJSON().catch(function(){});
     loadInfoJSON().catch(function(){});
+    loadMatchDetailsJSON().catch(function(){});
   }, 180000);
 }
 
 // ========== LIVE ODDS & INFO ==========
 let liveOdds = {};
 let liveInfo = {};
+let matchDetails = {};
+
+async function loadMatchDetailsJSON() {
+  try {
+    var resp = await fetch('match-details.json?v=' + Date.now(), { cache: 'no-store' });
+    if (!resp.ok) return;
+    var data = await resp.json();
+    if (data && Object.keys(data).length > 0) { matchDetails = data; }
+  } catch(e) { console.warn('match-details.json failed:', e.message); }
+}
 
 async function loadOddsJSON() {
   try {
@@ -4104,6 +4153,7 @@ function getMarketConsensus(mid, hwp, dp, awp) {
 initResults();
 loadOddsJSON();
 loadInfoJSON();
+loadMatchDetailsJSON();
 
 // Keep old API for admin panel compatibility
 function saveActualResult(matchId, homeScore, awayScore, notes) {
