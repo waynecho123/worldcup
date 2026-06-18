@@ -701,6 +701,56 @@ async function updateInjuries() {
   console.log(`[${ts}] Injuries: ${Object.keys(injuries).length} teams updated`);
 }
 
+// ========== UPDATE: Standings (via API-Sports) ==========
+async function updateStandings() {
+  if (!APISPORTS_KEY) { console.log('APISPORTS_KEY not set'); return; }
+  const now = new Date();
+  const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
+  const STANDINGS_FILE = path.join(BASE_DIR, 'standings.json');
+
+  const data = await new Promise((resolve, reject) => {
+    https.get(`${APISPORTS_BASE}/standings?league=1&season=2026`, {
+      headers: { 'x-apisports-key': APISPORTS_KEY }, timeout: 15000
+    }, res => {
+      let d = ''; res.on('data', c => d += c);
+      res.on('end', () => { try { resolve(JSON.parse(d)); } catch(e) { reject(e); } });
+    }).on('error', reject);
+  });
+
+  if (!data.response || data.response.length === 0) return;
+
+  const standings = {};
+  data.response.forEach(function(leagueData) {
+    var league = leagueData.league;
+    (league.standings || []).forEach(function(groupRows) {
+      groupRows.forEach(function(row) {
+        var teamName = row.team?.name;
+        var tid = Object.keys(TEAMS).find(function(k) {
+          return TEAMS[k].cn === teamName || TEAMS[k].name === teamName;
+        });
+        if (!tid) return;
+        standings[tid] = {
+          group: row.group || '',
+          rank: row.rank,
+          played: row.all?.played || 0,
+          won: row.all?.win || 0,
+          drawn: row.all?.draw || 0,
+          lost: row.all?.lose || 0,
+          goalsFor: row.all?.goals?.for || 0,
+          goalsAgainst: row.all?.goals?.against || 0,
+          goalDiff: row.goalsDiff || 0,
+          points: row.points || 0,
+          form: row.form || '',
+          status: row.status || ''
+        };
+      });
+    });
+  });
+
+  fs.writeFileSync(STANDINGS_FILE, JSON.stringify(standings, null, 2) + '\n');
+  console.log(`[${ts}] Standings: ${Object.keys(standings).length} teams updated`);
+}
+
 // ========== Update All ==========
 async function updateAll() {
   await updateScores();
@@ -720,6 +770,7 @@ async function main() {
   if (args.includes('--info')) { await updateInfo(); ran = true; }
   if (args.includes('--details')) { await updateMatchDetails(); ran = true; }
   if (args.includes('--injuries')) { await updateInjuries(); ran = true; }
+  if (args.includes('--standings')) { await updateStandings(); ran = true; }
   if (!ran) await updateAll();
 }
 

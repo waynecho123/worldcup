@@ -2732,8 +2732,63 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
   var hStrEff = Math.max(10, hStr + hDelta);
   var aStrEff = Math.max(10, aStr + aDelta);
 
-  const lambdaH = Math.max(0.3, Math.min(hStrEff / 28 * homeBoost * (1 + tacticalAdj) * (hStrEff / (aStrEff * 0.55 + hStrEff * 0.45)), 5.5));
-  const lambdaA = Math.max(0.3, Math.min(aStrEff / 28 * (1 - tacticalAdj * 0.5) * (aStrEff / (hStrEff * 0.55 + aStrEff * 0.45)), 5.5));
+  // === LAYER 1: Continental cold-start bias ===
+  var contBiasH = 0, contBiasA = 0;
+  if (homeTeam.conf === 'CAF' || homeTeam.conf === 'AFC') contBiasH = 0.08;
+  if (awayTeam.conf === 'CAF' || awayTeam.conf === 'AFC') contBiasA = 0.08;
+  // Stronger African/Asian teams get extra boost vs higher-ranked opponents
+  if (contBiasH > 0 && hStr < aStr) contBiasH += 0.04;
+  if (contBiasA > 0 && aStr < hStr) contBiasA += 0.04;
+
+  // === LAYER 2: Tournament context (standings motivation) ===
+  var motH = 0, motA = 0;
+  var sh = getStandings(homeTeam.id), sa = getStandings(awayTeam.id);
+  if (sh && sh.played >= 1) {
+    if (sh.points === 0) motH = 0.12;       // must-win
+    else if (sh.points === 1) motH = 0.08;  // need result
+    else if (sh.points >= 6) motH = -0.06;  // qualified, may rotate
+  }
+  if (sa && sa.played >= 1) {
+    if (sa.points === 0) motA = 0.12;
+    else if (sa.points === 1) motA = 0.08;
+    else if (sa.points >= 6) motA = -0.06;
+  }
+
+  // === LAYER 3: Venue factor ===
+  var venueAdjH = 0, venueAdjA = 0;
+  var venue = (m && m.venue) ? m.venue.toLowerCase() : '';
+  if (/aztec|mexico/i.test(venue)) { venueAdjA = -0.04; }       // high altitude
+  if (/houston|miami|dallas/i.test(venue)) { venueAdjA -= 0.02; venueAdjH -= 0.02; } // heat
+
+  // === LAYER 4: Global Poisson calibration ===
+  var calibrationBoost = 1.0;
+  var totalMatches = Object.keys(actualResults).length;
+  if (totalMatches >= 5) {
+    var totalActualGoals = 0, totalPredGoals = 0;
+    Object.keys(actualResults).forEach(function(mid) {
+      var act = actualResults[mid];
+      var mt = MATCH_SCHEDULE.find(function(x){return x.id === mid;});
+      if (!act || !mt) return;
+      var htcal = TEAMS.find(function(t){return t.id === mt.home;});
+      var atcal = TEAMS.find(function(t){return t.id === mt.away;});
+      if (!htcal || !atcal) return;
+      totalActualGoals += act.homeScore + act.awayScore;
+      // Use base strength for calibration estimate
+      var p = {expH: getStrength(htcal)/28, expA: getStrength(atcal)/28};
+      totalPredGoals += p.expH + p.expA;
+    });
+    if (totalPredGoals > 0) {
+      var globalAvg = totalActualGoals / totalMatches;
+      var predAvg = totalPredGoals / totalMatches;
+      calibrationBoost = Math.max(0.85, Math.min(1.15, globalAvg / Math.max(0.5, predAvg)));
+    }
+  }
+
+  // Apply all adjustments to lambda
+  var lambdaH = hStrEff / 28 * homeBoost * (1 + tacticalAdj + motH + contBiasH + venueAdjH) * (hStrEff / (aStrEff * 0.55 + hStrEff * 0.45)) * calibrationBoost;
+  var lambdaA = aStrEff / 28 * (1 - tacticalAdj * 0.5 + motA + contBiasA + venueAdjA) * (aStrEff / (hStrEff * 0.55 + aStrEff * 0.45)) * calibrationBoost;
+  lambdaH = Math.max(0.3, Math.min(5.5, lambdaH));
+  lambdaA = Math.max(0.3, Math.min(5.5, lambdaA));
 
   let hwp = 0, dp = 0, awp = 0;
   const allScores = [];
@@ -4354,6 +4409,7 @@ async function initResults() {
     loadInfoJSON().catch(function(){});
     loadMatchDetailsJSON().catch(function(){});
     loadInjuriesJSON().catch(function(){});
+    loadStandingsJSON().catch(function(){});
   }, 180000);
 }
 
@@ -4362,6 +4418,20 @@ let liveOdds = {};
 let liveInfo = {};
 let matchDetails = {};
 let liveInjuries = {};
+let standingsData = {};
+
+async function loadStandingsJSON() {
+  try {
+    var resp = await fetch('standings.json?v=' + Date.now(), { cache: 'no-store' });
+    if (!resp.ok) return;
+    var data = await resp.json();
+    if (data && Object.keys(data).length > 0) standingsData = data;
+  } catch(e) {}
+}
+
+function getStandings(teamId) {
+  return standingsData[teamId] || null;
+}
 
 async function loadInjuriesJSON() {
   try {
@@ -4431,6 +4501,7 @@ loadOddsJSON();
 loadInfoJSON();
 loadMatchDetailsJSON();
 loadInjuriesJSON();
+loadStandingsJSON();
 
 // Keep old API for admin panel compatibility
 function saveActualResult(matchId, homeScore, awayScore, notes) {
