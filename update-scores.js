@@ -26,8 +26,10 @@ const https = require('https');
 // ========== CONFIG ==========
 const FD_TOKEN = process.env.FD_TOKEN;
 const ODDS_API_KEY = process.env.ODDS_API_KEY || '';
+const APISPORTS_KEY = process.env.APISPORTS_KEY || '';
 const FD_BASE = 'https://api.football-data.org/v4';
 const ODDS_BASE = 'https://api.the-odds-api.com/v4';
+const APISPORTS_BASE = 'https://v3.football.api-sports.io';
 
 const BASE_DIR = __dirname;
 const SCORES_FILE = path.join(BASE_DIR, 'scores.json');
@@ -537,6 +539,94 @@ async function updateNews() {
   console.log(`[${ts}] News: ${matchNews.length} match + ${generalNews.length} general written to news.json`);
 }
 
+// ========== UPDATE: Match Details (lineups + events via API-Sports) ==========
+async function updateMatchDetails() {
+  if (!APISPORTS_KEY) { console.log('APISPORTS_KEY not set, skipping match details'); return; }
+  const now = new Date();
+  const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
+  const DETAILS_FILE = path.join(BASE_DIR, 'match-details.json');
+  const existing = loadJSON(DETAILS_FILE);
+  const scores = loadJSON(SCORES_FILE);
+
+  // Fetch fixtures for a date range
+  async function fetchFixtures(dateStr) {
+    return new Promise((resolve, reject) => {
+      const url = `${APISPORTS_BASE}/fixtures?date=${dateStr}&league=1&season=2026`;
+      https.get(url, {
+        headers: { 'x-apisports-key': APISPORTS_KEY },
+        timeout: 15000
+      }, res => {
+        let d = ''; res.on('data', c => d += c);
+        res.on('end', () => { try { resolve(JSON.parse(d)); } catch(e) { reject(e); } });
+      }).on('error', reject);
+    });
+  }
+
+  let n = 0;
+  // Get all match dates from scores
+  const matchIds = Object.keys(scores).filter(k => k.match(/^m\d+$/));
+  const dates = [...new Set(matchIds.map(mid => {
+    const m = getMatchSchedule().find(x => x.id === mid);
+    return m ? m.date : null;
+  }).filter(Boolean))];
+
+  for (const date of dates) {
+    try {
+      const data = await fetchFixtures(date);
+      if (!data.response) continue;
+      for (const fixture of data.response) {
+        const teams = fixture.teams;
+        const homeId = teams?.home?.name, awayId = teams?.away?.name;
+        // Map to our match ID via team names
+        const m = getMatchSchedule().find(x => {
+          const ht = TEAMS[x.home], at = TEAMS[x.away];
+          return ht && at && (
+            (ht.cn === homeId || ht.name === homeId) &&
+            (at.cn === awayId || at.name === awayId)
+          );
+        });
+        if (!m) continue;
+
+        const detail = {
+          fixtureId: fixture.fixture?.id,
+          date: fixture.fixture?.date,
+          venue: fixture.fixture?.venue?.name,
+          status: fixture.fixture?.status?.long,
+          // Lineups
+          lineups: {
+            home: (fixture.lineups || []).find(l => l.team?.name === homeId) || null,
+            away: (fixture.lineups || []).find(l => l.team?.name === awayId) || null
+          },
+          // Events (goals, cards, subs)
+          events: (fixture.events || []).map(e => ({
+            time: e.time?.elapsed,
+            extra: e.time?.extra,
+            team: e.team?.name,
+            player: e.player?.name,
+            assist: e.assist?.name,
+            type: e.type,
+            detail: e.detail,
+            comments: e.comments
+          })),
+          // Stats
+          statistics: (fixture.statistics || []).map(s => ({
+            team: s.team?.name,
+            stats: s.statistics
+          }))
+        };
+
+        if (!existing[m.id] || (fixture.fixture?.date > existing[m.id].date)) {
+          existing[m.id] = detail;
+          n++;
+        }
+      }
+    } catch(e) { console.error(`[${ts}] Details fetch failed for ${date}:`, e.message); }
+  }
+
+  fs.writeFileSync(DETAILS_FILE, JSON.stringify(existing, null, 2) + '\n');
+  console.log(`[${ts}] Match details: ${n} updated (total: ${Object.keys(existing).length})`);
+}
+
 // ========== Update All ==========
 async function updateAll() {
   await updateScores();
@@ -554,6 +644,7 @@ async function main() {
   if (args.includes('--news')) { await updateNews(); ran = true; }
   if (args.includes('--odds')) { await updateOdds(); ran = true; }
   if (args.includes('--info')) { await updateInfo(); ran = true; }
+  if (args.includes('--details')) { await updateMatchDetails(); ran = true; }
   if (!ran) await updateAll();
 }
 

@@ -17,11 +17,12 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Update scores + news
-        run: node update-scores.js --scores || true; node update-scores.js --news || true
+      - name: Update scores + news + details
+        run: node update-scores.js --scores || true; node update-scores.js --news || true; node update-scores.js --details || true
         env:
           FD_TOKEN: ${{ secrets.FD_TOKEN }}
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+          APISPORTS_KEY: ${{ secrets.APISPORTS_KEY }}
 
       - name: Commit & push
         run: |
