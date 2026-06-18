@@ -492,6 +492,10 @@ async function updateNews() {
     // English football-specific
     'https://www.goal.com/en/feeds/news',
     'https://www.soccernews.com/feed/',
+    'https://soccer.nbcsports.com/feed/',
+    'https://www.mirror.co.uk/sport/football/?service=rss',
+    // US sports media
+    'https://api.foxsports.com/v1/rss',
     // European languages (covers smaller teams)
     'https://www.marca.com/en/football/rss.xml',
     'https://www.lequipe.fr/rss/football.xml',
