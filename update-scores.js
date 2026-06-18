@@ -506,17 +506,19 @@ async function updateNews() {
 
   // Relevance filter: keep only prediction-useful news
   const RELEVANT_KW = [
-    'injury','injured','injuries','squad','lineup','line-up','formation','tactics','tactical',
-    'player','players','star','stars','coach','manager','train','camp','team news',
-    'win','won','lose','lost','drew','draw','beat','defeat','defeated','victory',
-    'goal','goals','score','scored','hat-trick','hat trick','brace','penalty',
-    'performance','form','struggle','struggling','sparkle','brilliant','impressive',
-    'fitness','return','returns','back','recover','recovered','fit','ready',
-    'miss','missing','out','doubt','doubtful','absent','suspended','suspension',
-    'red card','yellow card','sent off','dismissed','ban','banned',
-    'upset','shock','surprise','giant killing','underdog',
-    'record','records','history','historic','first','ever','first-ever',
-    'angry','furious','rage','blast','slams','hits out','war of words',
+    'World Cup','world cup','FIFA','fifa','2026',
+    'injury','injured','squad','lineup','formation','tactics',
+    'player','star','stars','coach','manager','train',
+    'win','won','lose','lost','drew','draw','beat','defeat','victory',
+    'goal','goals','score','hat-trick','brace','penalty',
+    'performance','form','struggle','sparkle','brilliant','impressive',
+    'fitness','return','back','recover','fit','ready',
+    'miss','out','doubt','absent','suspended','ban',
+    'red card','yellow card','sent off',
+    'upset','shock','surprise','giant','underdog',
+    'record','history','historic','first','first-ever',
+    'angry','furious','blast','slams',
+    'reacts','reaction','reveals','says','speaks','opens up',
   ];
   const JUNK_KW = [
     'how to watch','watch on tv','tv schedule','broadcast','free-to-air','live stream',
