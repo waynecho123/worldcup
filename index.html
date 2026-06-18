@@ -3630,6 +3630,7 @@ function generatePostMatchReview(m, ht, at, pred, actual, apiInfo) {
 }
 
 function showMatchDetail(mid) {
+  try {
   var m = MATCH_SCHEDULE.find(function(x){return x.id===mid});
   if (!m) return;
   var ht = TEAMS.find(function(t){return t.id===m.home}), at = TEAMS.find(function(t){return t.id===m.away});
@@ -3644,6 +3645,7 @@ function showMatchDetail(mid) {
   } else {
     pred = predictMatch(ht,at);
   }
+  } catch(e) { console.error('showMatchDetail error:', e); return; }
   var mol = MATCH_ODDS[mid];
   var top3 = topScores(pred.expH, pred.expA, 3);
   var now = new Date();
@@ -3795,6 +3797,7 @@ function showMatchDetail(mid) {
 
   document.getElementById('teamModalContent').innerHTML = html;
   document.getElementById('teamModal').style.display = 'flex';
+  } catch(e) { document.getElementById('teamModalContent').innerHTML = '<div style=\'padding:20px;color:var(--red)\'>加载失败，请刷新页面重试</div>'; document.getElementById('teamModal').style.display = 'flex'; }
 }
 
 function renderDashboard() {
