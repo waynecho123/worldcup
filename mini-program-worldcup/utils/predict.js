@@ -168,7 +168,9 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
   // Compute upset probability via Monte Carlo
   const upsetProb = computeUpsetProb(hStr, aStr);
   const underdog = hStr > aStr ? awayTeam : homeTeam;
-  const isUpsetAlert = upsetProb > 0.25;
+  const strGap = Math.abs(hStr - aStr);
+  // Only alert when strength gap > 15 AND upset probability > 25%
+  const isUpsetAlert = strGap > 15 && upsetProb > 0.25;
 
   return {
     homeWinProb: finalHome, drawProb: finalDraw, awayWinProb: finalAway,
