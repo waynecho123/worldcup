@@ -474,7 +474,8 @@ async function updateNews() {
         } else if (newsResp.errors) {
           console.log(`[${ts}] GNews API errors: ${JSON.stringify(newsResp.errors)}`);
         }
-        console.log(`[${ts}]   GNews[${(baseIdx + bi*8) % 16}]: ${batches[bi]} → ${newsResp.articles ? newsResp.articles.length : 0} articles`);
+        var gidx = bi === 0 ? bigIdx : regularIdx;
+        console.log(`[${ts}]   GNews[${gidx}]: ${batches[bi]} → ${newsResp.articles ? newsResp.articles.length : 0} articles`);
       } catch(e) { console.log(`[${ts}]   GNews batch ${bi} FAILED: ${e.message}`); }
     }
     console.log(`[${ts}]   GNews total: ${totalGnews} articles from 2 batches`);
@@ -597,6 +598,7 @@ async function updateNews() {
   console.log(`[${ts}]   RSS: ${RSS_SOURCES.length} feeds → ${rssItems.length} items`);
 
   // Source 2b: Sina sports JSON feed (Chinese news, free, no key)
+  var SINA_FEED = 'https://feed.mix.sina.com.cn/api/roll/get?pageid=155&lid=1204&num=30';
   try {
     const sinaResp = await new Promise((resolve, reject) => {
       https.get(SINA_FEED, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; WC2026Bot/1.0)' }, timeout: 8000 }, res => {
