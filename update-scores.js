@@ -665,12 +665,17 @@ async function updateNews() {
   ];
 
   // Simple Google Translate (free, no key)
+  function cleanText(t) {
+    return (t || '').replace(/�/g, '').replace(/[​‌‍﻿]/g, '').trim();
+  }
   async function translateToChinese(text) {
+    var cleaned = cleanText(text);
+    if (!cleaned) return text;
     // Skip if already mostly Chinese
-    const cjk = (text.match(/[一-鿿]/g) || []).length;
-    if (cjk > text.length * 0.3) return text;
+    const cjk = (cleaned.match(/[一-鿿]/g) || []).length;
+    if (cjk > cleaned.length * 0.3) return cleaned;
     try {
-      const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=zh-CN&dt=t&q=${encodeURIComponent(text)}`;
+      const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=zh-CN&dt=t&q=${encodeURIComponent(cleaned)}`;
       const resp = await new Promise((resolve, reject) => {
         https.get(url, { timeout: 5000 }, res => {
           let b = ''; res.on('data', c => b += c);
@@ -679,10 +684,11 @@ async function updateNews() {
       });
       const parsed = JSON.parse(resp);
       if (parsed && parsed[0]) {
-        return parsed[0].map(p => p[0]).join('');
+        var result = parsed[0].map(p => p[0]).join('');
+        return cleanText(result) || text;
       }
     } catch(e) { /* keep original on error */ }
-    return text;
+    return cleaned || text;
   }
 
   const seen = new Set();
