@@ -1969,7 +1969,7 @@ function getPredUpdateInfo(matchId) {
 /** Refresh all upcoming match predictions (called every 2h) */
 function refreshAllPredictions() {
   var allUpcoming = MATCH_SCHEDULE.filter(function(m) {
-    return m.stage === 'group' && getPredictionStatus(m.date) !== 'past' && !isMatchLocked(m.id);
+    return m.stage === 'group' && !actualResults[m.id] && !isMatchLocked(m.id);
   });
   var changedCount = 0;
   allUpcoming.forEach(function(m) {
@@ -3638,7 +3638,16 @@ function showMatchDetail(mid) {
   if (!m) return;
   var ht = TEAMS.find(function(t){return t.id===m.home}), at = TEAMS.find(function(t){return t.id===m.away});
   if (!ht||!at) return;
-  var pred = predictMatch(ht,at);
+  // For finished matches, use original locked prediction (not recomputed with learning)
+  var actualRes = actualResults[mid];
+  var lockedP = actualRes ? getLockedPrediction(mid) : null;
+  var pred;
+  if (lockedP) {
+    var freshTop = predictMatch(ht,at).topScores;
+    pred = { predScore: [lockedP.homeScore, lockedP.awayScore], homeWinProb: lockedP.hProb, drawProb: lockedP.dProb, awayWinProb: lockedP.aProb, expH: lockedP.homeScore, expA: lockedP.awayScore, topScores: lockedP.topScores || freshTop, upsetAlert: lockedP.upsetAlert, upsetProb: lockedP.upsetProb, upsetTeam: lockedP.upsetTeam, locked: true };
+  } else {
+    pred = predictMatch(ht,at);
+  }
   var mol = MATCH_ODDS[mid];
   var top3 = topScores(pred.expH, pred.expA, 3);
   var now = new Date();
