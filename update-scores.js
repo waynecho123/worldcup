@@ -619,27 +619,48 @@ async function updateNews() {
   } catch(e) { console.log(`[${ts}]   Sina failed: ${e.message}`); }
 
   // Relevance filter: keep only prediction-useful news
+  // Match-impact keywords (both EN + CN) — these affect predictions
   const RELEVANT_KW = [
+    // EN: core football
     'World Cup','world cup','FIFA','fifa','2026',
     'injury','injured','squad','lineup','formation','tactics',
-    'player','star','stars','coach','manager','train',
-    'win','won','lose','lost','drew','draw','beat','defeat','victory',
+    'player','star','coach','manager','train',
+    'win','won','lose','lost','drew','beat','defeat','victory',
     'goal','goals','score','hat-trick','brace','penalty',
-    'performance','form','struggle','sparkle','brilliant','impressive',
-    'fitness','return','back','recover','fit','ready',
+    'performance','form','struggle','brilliant','impressive',
+    'fitness','return','recover','fit','ready',
     'miss','out','doubt','absent','suspended','ban',
     'red card','yellow card','sent off',
-    'upset','shock','surprise','giant','underdog',
+    'upset','shock','surprise','underdog',
     'record','history','historic','first','first-ever',
-    'angry','furious','blast','slams',
-    'reacts','reaction','reveals','says','speaks','opens up',
+    // CN: match-impact only (no gossip)
+    '伤病','受伤','缺阵','缺席','报销','退队','落选',
+    '阵容','首发','替补','换人','战术','阵型','变阵',
+    '进球','帽子','梅开','独造','破门','得分','大胜','惨败',
+    '表现','状态','低迷','火热','闪耀','顶级',
+    '复出','回归','恢复','痊愈','解禁',
+    '红牌','黄牌','停赛','禁赛',
+    '纪录','历史','首次','创造历史',
+    '关键','决定性','致命',
   ];
+  // Non-match-factors (fluff, betting, broadcast, gossip) — keep out of AI predictions
   const JUNK_KW = [
+    // EN
     'how to watch','watch on tv','tv schedule','broadcast','free-to-air','live stream',
     'betting','odds','favourites','favorites','predictions game','tipping',
     'quiz','guess who','vote','poll','pick your','fans choose','fantasy',
     'sponsor','advertisement','promoted','partner content',
     'tickets','travel guide','where to stay','fan zone',
+    'girlfriend','wife','wag','dating','married','divorce',
+    'instagram','tweeted','viral','trending',
+    'fashion','hairstyle','tattoo','car','watch','jewelry',
+    // CN: fluff/gossip (don't affect match outcome)
+    '如何观看','转播','直播平台','收视','彩票','赔率','竞猜','投票',
+    '赞助','广告','推广','门票','旅游','球迷区',
+    '女友','妻子','约会','离婚','婚礼','恋情',
+    '穿搭','发型','纹身','豪车','名表','珠宝',
+    '发了','推特','热搜','网红',
+    '美食','旅游','度假','派对',
   ];
 
   // Simple Google Translate (free, no key)
