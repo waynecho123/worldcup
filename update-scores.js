@@ -799,11 +799,56 @@ async function updateNews() {
     ];
     if (EXPIRED_KW.some(k => cnText.includes(k.toLowerCase()))) return;
 
+    // Non-football country context: if article is about military/police/government
+    // NOT about the football team, exclude that country's team
+    var NON_FOOTBALL_CTX = ['军方','警方','警察','军队','政府','外交部','总统','总理',
+      'military','police','army','government','president','prime minister','authorities',
+      'customs','visa','embassy','领事','大使馆','签证',
+    ];
+    // But if training camp/stadium/team context present, it IS football-related
+    var FOOTBALL_CTX = ['训练','training','camp','stadium','球场','体育场','更衣室','locker','球队','team',
+      'squad','阵容','fifa','world cup','世界杯','教练','coach','manager',
+    ];
+    var isFootCtx = FOOTBALL_CTX.some(function(k){ return text.includes(k.toLowerCase()) || cnText.includes(k.toLowerCase()); });
+    var hasNonFootCtx = !isFootCtx && NON_FOOTBALL_CTX.some(function(k){ return text.includes(k.toLowerCase()) || cnText.includes(k.toLowerCase()); });
+
+    // Country name + non-football modifier = country, not team. e.g. "墨西哥军方" ≠ "墨西哥队"
+    var COUNTRY_NON_FOOT = ['军方','警方','警察','军队','政府','外交部','总统','总理',
+      'military','police','army','government','authorities','president','minister',
+    ];
+    function isCountryContext(tid) {
+      var team = TEAMS[tid];
+      if (!team) return false;
+      var countryNames = [team.cn, team.name, team.name.toLowerCase()];
+      for (var ci = 0; ci < countryNames.length; ci++) {
+        for (var ni = 0; ni < COUNTRY_NON_FOOT.length; ni++) {
+          // Check raw English text and Chinese text for "country + non-football" adjacency
+          var pattern1 = countryNames[ci] + COUNTRY_NON_FOOT[ni]; // "墨西哥军方"
+          var pattern2 = COUNTRY_NON_FOOT[ni] + ' ' + countryNames[ci]; // "Mexican military"
+          if (text.includes(pattern1.toLowerCase()) || text.includes(pattern2.toLowerCase()) ||
+              cnText.includes(pattern1) || cnText.includes(pattern2)) {
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+
     // Find all matching teams with hit counts
     var candidates = [];
     Object.keys(TEAM_KEYWORDS).forEach(tid => {
-      var hits = TEAM_KEYWORDS[tid].filter(kw => text.includes(kw.toLowerCase())).length;
-      if (hits > 0) candidates.push({tid: tid, hits: hits});
+      var kws = TEAM_KEYWORDS[tid];
+      var hits = kws.filter(kw => text.includes(kw.toLowerCase())).length;
+      if (hits === 0) return;
+      // Exclude team if country name is used in non-football governmental context
+      // AND no football-specific keywords (player names, etc.) are present
+      if (hasNonFootCtx || isCountryContext(tid)) {
+        var footballKws = kws.filter(function(k){ return k.length > 10 || k.indexOf(' ') >= 0; });
+        if (footballKws.length === 0 || !footballKws.some(function(k){ return text.includes(k.toLowerCase()); })) {
+          return; // country name only, not the football team
+        }
+      }
+      candidates.push({tid: tid, hits: hits});
     });
     if (candidates.length === 0) return;
 
