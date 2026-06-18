@@ -5691,15 +5691,15 @@ document.addEventListener('keydown', e => {
 loadCachedNews();
 refreshNews(false).then(() => scheduleNewsRefresh());
 
-// Every 2 hours: refresh news → update strength → refresh predictions → re-render
+// Every 1 hour: refresh news → update strength → refresh predictions → re-render
 setInterval(async function() {
   await refreshNews(false).catch(function(){});
   loadPlayerStats().catch(function(){});
   var d = findNextMatchDate();
   if (d) renderTodayMatches(d);
   var count = refreshAllPredictions();
-  console.log('2h cycle done: ' + count + ' predictions refreshed');
-}, 7200000);
+  console.log('1h cycle done: ' + count + ' predictions refreshed');
+}, 3600000);
 
 // Start prediction schedule checker (release 12:00, lock 16:00, checks every minute)
 // Real-time sync active (24h rule)

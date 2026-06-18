@@ -444,7 +444,7 @@ async function updateNews() {
     try {
       var q = encodeURIComponent(batch + ' World Cup 2026');
       var newsResp = await new Promise((resolve, reject) => {
-        https.get(`https://gnews.io/api/v4/search?q=${q}&lang=en&max=10&token=${GNEWS_KEY}`, { timeout: 15000 }, res => {
+        https.get(`https://gnews.io/api/v4/search?q=${q}&lang=en&max=10&token=${GNEWS_KEY}`, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; WC2026Bot/1.0)' }, timeout: 15000 }, res => {
           let b = ''; res.on('data', c => b += c);
           res.on('end', () => { try { resolve(JSON.parse(b)); } catch(e) { reject(e); } });
         }).on('error', reject);
