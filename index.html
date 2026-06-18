@@ -4552,7 +4552,10 @@ loadInfoJSON();
 loadMatchDetailsJSON();
 loadInjuriesJSON();
 loadStandingsJSON();
-loadWeather();
+loadWeather().then(function() {
+  // Refresh weather every 3 hours
+  setInterval(function() { loadWeather(); }, 10800000);
+});
 
 // Keep old API for admin panel compatibility
 function saveActualResult(matchId, homeScore, awayScore, notes) {
