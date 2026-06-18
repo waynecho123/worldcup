@@ -723,13 +723,15 @@ async function updateNews() {
     GHA: ['Ghana','Ghanaian','Partey','Kudus'],
     PAN: ['Panama','Panamanian'],
   };
-  generalNews.forEach(item => {
-    const text = item.toLowerCase();
+  // Match teams using RAW (untranslated) titles for keyword accuracy
+  generalNewsRaw.forEach((rawItem, i) => {
+    const text = rawItem.toLowerCase();
+    const translatedItem = generalNews[i]; // Chinese version for display
     Object.keys(TEAM_KEYWORDS).forEach(tid => {
       const matched = TEAM_KEYWORDS[tid].some(kw => text.includes(kw.toLowerCase()));
       if (matched) {
         if (!teamNews[tid]) teamNews[tid] = [];
-        if (teamNews[tid].length < 3) teamNews[tid].push(item); // max 3 per team
+        if (teamNews[tid].length < 3) teamNews[tid].push(translatedItem); // store Chinese
       }
     });
   });
