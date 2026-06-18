@@ -2673,7 +2673,7 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
   const allScores = [];
   for (let h = 0; h <= 9; h++) {
     for (let a = 0; a <= 9; a++) {
-      const prob = poissonPMF(lambdaH, h) * poissonPMF(lambdaA, a);
+      const prob = poissonPMF(lambdaH_final, h) * poissonPMF(lambdaA_final, a);
       if (h > a) hwp += prob; else if (h === a) dp += prob; else awp += prob;
       allScores.push({ home: h, away: a, prob: prob });
     }
@@ -2683,6 +2683,19 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
   const topScores = allScores.slice(0, 3).map(function(s) { return { home: s.home, away: s.away, prob: s.prob }; });
   const t = hwp + dp + awp;
   const aiProbs = { home: hwp/t, draw: dp/t, away: awp/t };
+
+  // Apply learned performance adjustments
+  var hAdj = getTeamLearning(homeTeam.id);
+  var aAdj = getTeamLearning(awayTeam.id);
+  var hStrAdj = hStr + (hAdj ? hAdj.strengthDelta || 0 : 0);
+  var aStrAdj = aStr + (aAdj ? aAdj.strengthDelta || 0 : 0);
+  // Recalculate lambdas with adjusted strengths
+  var lambdaH2 = Math.max(0.3, Math.min(hStrAdj / 28 * homeBoost * (1 + tacticalAdj) * (hStrAdj / (aStrAdj * 0.55 + hStrAdj * 0.45)), 5.5));
+  var lambdaA2 = Math.max(0.3, Math.min(aStrAdj / 28 * (1 - tacticalAdj * 0.5) * (aStrAdj / (hStrAdj * 0.55 + aStrAdj * 0.45)), 5.5));
+  // Weighted blend: 70% original model + 30% learned adjustment
+  var lambdaH_final = lambdaH * 0.70 + lambdaH2 * 0.30;
+  var lambdaA_final = lambdaA * 0.70 + lambdaA2 * 0.30;
+
   // Blend with market odds (45% weight)
   let finalHome = aiProbs.home, finalDraw = aiProbs.draw, finalAway = aiProbs.away, oddsBlended = false;
   if (matchOdds && matchOdds.h && matchOdds.d && matchOdds.a) {
@@ -2720,7 +2733,71 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
   }
   var underdog = hStr > aStr ? awayTeam : homeTeam;
   var isUpsetAlert = upsetProb > 0.25;
-  return { homeWinProb: finalHome, drawProb: finalDraw, awayWinProb: finalAway, expH: lambdaH, expA: lambdaA, predScore: bestS || [Math.round(lambdaH), Math.round(lambdaA)], topScores: topScores, hStr, aStr, tacticalAdj, tacAnalysis, marketConsensus: null, aiProbs, oddsBlended, upsetProb, upsetAlert: isUpsetAlert, upsetTeam: isUpsetAlert ? underdog.cn : null };
+  return { homeWinProb: finalHome, drawProb: finalDraw, awayWinProb: finalAway, expH: lambdaH_final, expA: lambdaA_final, predScore: bestS || [Math.round(lambdaH_final), Math.round(lambdaA_final)], topScores: topScores, hStr, aStr, tacticalAdj, tacAnalysis, marketConsensus: null, aiProbs, oddsBlended, upsetProb, upsetAlert: isUpsetAlert, upsetTeam: isUpsetAlert ? underdog.cn : null };
+}
+
+// ========== TEAM LEARNING SYSTEM ==========
+var TEAM_LEARNING = {};
+var LEARNING_KEY = 'wc_team_learning_v1';
+
+function loadLearning() {
+  try {
+    var saved = localStorage.getItem(LEARNING_KEY);
+    if (saved) TEAM_LEARNING = JSON.parse(saved);
+  } catch(e) {}
+}
+loadLearning();
+
+function saveLearning() {
+  try { localStorage.setItem(LEARNING_KEY, JSON.stringify(TEAM_LEARNING)); } catch(e) {}
+}
+
+function getTeamLearning(teamId) {
+  return TEAM_LEARNING[teamId] || null;
+}
+
+/** Record a team's performance after a match and adjust future predictions */
+function recordTeamPerformance(teamId, matchData) {
+  var entry = TEAM_LEARNING[teamId] || { matches: 0, strengthDelta: 0, avgGoals: 0, avgGoalsConceded: 0, upsetCount: 0 };
+  entry.matches++;
+  var predictedGoals = matchData.predGoals || 0;
+  var actualGoals = matchData.actualGoals || 0;
+  var goalDiff = actualGoals - predictedGoals;
+  // Delta: if team consistently over/underperforms expected goals, adjust strength
+  entry.strengthDelta = (entry.strengthDelta * (entry.matches - 1) + goalDiff * 4) / entry.matches;
+  entry.avgGoals = (entry.avgGoals * (entry.matches - 1) + actualGoals) / entry.matches;
+  entry.avgGoalsConceded = (entry.avgGoalsConceded * (entry.matches - 1) + (matchData.actualAgainst || 0)) / entry.matches;
+  if (matchData.wasUpset) entry.upsetCount++;
+  // Clamp adjustment
+  entry.strengthDelta = Math.max(-8, Math.min(8, entry.strengthDelta));
+  TEAM_LEARNING[teamId] = entry;
+  saveLearning();
+}
+
+/** After a match finishes, learn from the result */
+function learnFromMatch(matchId) {
+  var m = MATCH_SCHEDULE.find(function(x){return x.id === matchId});
+  if (!m) return;
+  var actual = actualResults[matchId];
+  if (!actual) return;
+  var ht = TEAMS.find(function(t){return t.id === m.home});
+  var at = TEAMS.find(function(t){return t.id === m.away});
+  if (!ht || !at) return;
+  var pred = predictMatch(ht, at, MATCH_ODDS[matchId]);
+  var hStr = getStrength(ht), aStr = getStrength(at);
+
+  // Record home team
+  recordTeamPerformance(m.home, {
+    predGoals: pred.expH, actualGoals: actual.homeScore,
+    actualAgainst: actual.awayScore,
+    wasUpset: (hStr > aStr && actual.homeScore <= actual.awayScore) || (hStr < aStr && actual.homeScore >= actual.awayScore)
+  });
+  // Record away team
+  recordTeamPerformance(m.away, {
+    predGoals: pred.expA, actualGoals: actual.awayScore,
+    actualAgainst: actual.homeScore,
+    wasUpset: (aStr > hStr && actual.awayScore <= actual.homeScore) || (aStr < hStr && actual.awayScore >= actual.homeScore)
+  });
 }
 
 function sampleMatch(homeTeam, awayTeam) {
@@ -3303,41 +3380,124 @@ function generatePostMatchReview(m, ht, at, pred, actual, apiInfo) {
     parts.push('⚠️ 【冷门复盘】赛前Monte Carlo冷门概率' + upsetPct + '%。' + upsetVerdict);
   }
 
-  // 9. Match events & lineups from API-Sports
+  // 9. Match events & lineup analysis from API-Sports
   var detail = matchDetails[m.id];
-  if (detail && detail.events && detail.events.length > 0) {
-    var goals = detail.events.filter(function(e){return e.type === 'Goal'});
-    var cards = detail.events.filter(function(e){return e.type === 'Card'});
-    var subs = detail.events.filter(function(e){return e.type === 'subst'});
-    var eventLines = [];
-    if (goals.length > 0) {
-      var goalText = goals.map(function(g){
-        var pen = g.detail === 'Penalty' ? '(点)' : '';
-        return g.time + '\' ' + g.player + pen + (g.assist ? '(助:' + g.assist + ')' : '');
-      }).join('，');
-      eventLines.push('⚽ 进球：' + goalText);
+  if (detail) {
+    // ---- Lineup analysis: compare actual vs predicted ----
+    if (detail.lineups && detail.lineups.home && detail.lineups.away) {
+      var actualHLu = detail.lineups.home;
+      var actualALu = detail.lineups.away;
+      var predHLu = data ? data.STARTING_XI[m.home] : null;
+      var predALu = data ? data.STARTING_XI[m.away] : null;
+
+      // Count changes from predicted lineup
+      var hFormation = actualHLu.formation || '?';
+      var aFormation = actualALu.formation || '?';
+      var hChanged = ''; var aChanged = '';
+      if (predHLu && predHLu.f && predHLu.f !== hFormation) {
+        hChanged = '（预测' + predHLu.f + '→实际' + hFormation + '）';
+      }
+      if (predALu && predALu.f && predALu.f !== aFormation) {
+        aChanged = '（预测' + aFormation + '→实际' + aFormation + '）';
+      }
+      // Check for missing key players
+      var actualNames = (actualHLu.startXI || []).map(function(p){return p.player.name.toLowerCase();});
+      var injuryImpact = ht.inj ? '赛前伤病' + ht.inj.replace(/[🔴⚠️]/g,'').trim() + '，实际首发是否受影响需对照' : '';
+      parts.push('📋 【阵容分析】' + ht.cn + ' ' + hFormation + hChanged + '，' + at.cn + ' ' + aFormation + aChanged + '。' + injuryImpact);
     }
-    if (cards.length > 0) {
-      var cardText = cards.map(function(c){return c.time + '\' ' + c.player + ' ' + (c.detail||'') ;}).join('，');
-      eventLines.push('🟨 黄牌：' + cardText);
-    }
-    if (subs.length > 0) {
-      var subText = subs.slice(0,6).map(function(s){return s.time + '\' ' + s.player + '↑';}).join('，');
-      eventLines.push('🔄 换人：' + subText);
-    }
-    if (eventLines.length > 0) parts.push('📺 【赛事过程】' + eventLines.join(' | '));
-  }
-  if (detail && detail.lineups) {
-    var fmtLu = function(lu) {
-      if (!lu || !lu.startXI) return '';
-      var formation = lu.formation || '';
-      var players = lu.startXI.map(function(p){return p.player.number + '.' + p.player.name;}).join(' ');
-      return formation + ' [' + players + ']';
-    };
-    var hLu = fmtLu(detail.lineups.home);
-    var aLu = fmtLu(detail.lineups.away);
-    if (hLu || aLu) {
-      parts.push('📋 【实际首发】' + ht.cn + ' ' + hLu + ' | ' + at.cn + ' ' + aLu);
+
+    // ---- Match flow analysis ----
+    if (detail.events && detail.events.length > 0) {
+      var goals = detail.events.filter(function(e){return e.type === 'Goal'});
+      var cards = detail.events.filter(function(e){return e.type === 'Card' && e.detail === 'Yellow Card'});
+      var reds = detail.events.filter(function(e){return e.type === 'Card' && e.detail === 'Red Card'});
+      var subs = detail.events.filter(function(e){return e.type === 'subst'});
+
+      // Goal timing analysis
+      var hGoals = goals.filter(function(g){return g.team === detail.homeTeam;});
+      var aGoals = goals.filter(function(g){return g.team === detail.awayTeam;});
+
+      var flowAnalysis = [];
+      if (goals.length > 0) {
+        var earlyGoals = goals.filter(function(g){return parseInt(g.time) <= 30;}).length;
+        var lateGoals = goals.filter(function(g){return parseInt(g.time) >= 75;}).length;
+        var goalDesc = hGoals.length + '-' + aGoals.length;
+        var timingNote = '';
+        if (earlyGoals > 0) timingNote += '，' + earlyGoals + '球发生在前30分钟（开局节奏快）';
+        if (lateGoals > 0) timingNote += '，' + lateGoals + '球在75分钟后（末段体能或战术调整影响大）';
+        flowAnalysis.push('比分' + goalDesc + timingNote);
+      }
+
+      // Card impact
+      if (reds.length > 0) {
+        flowAnalysis.push('红牌' + reds.length + '张（' + reds.map(function(r){return r.player + ' ' + r.time + '\'';}).join('、') + '），人数劣势显著改变比赛走势');
+      } else if (cards.length > 0) {
+        var hCards = cards.filter(function(c){return c.team === detail.homeTeam;}).length;
+        var aCards = cards.filter(function(c){return c.team === detail.awayTeam;}).length;
+        if (Math.abs(hCards - aCards) >= 2) {
+          flowAnalysis.push('黄牌' + hCards + '-' + aCards + '，一方纪律压力明显更大');
+        }
+      }
+
+      // Substitution pattern
+      if (subs.length > 0) {
+        var earlySubs = subs.filter(function(s){return parseInt(s.time) <= 46;}).length;
+        if (earlySubs > 0) {
+          flowAnalysis.push('半场即调整' + earlySubs + '人，说明首发战术效果不佳');
+        }
+      }
+
+      if (flowAnalysis.length > 0) {
+        parts.push('📺 【赛事分析】' + flowAnalysis.join('；') + '。');
+      }
+
+      // Goal details
+      if (goals.length > 0) {
+        var goalText = goals.map(function(g){
+          var pen = g.detail === 'Penalty' ? '(点球)' : '';
+          return g.time + '\' ' + g.player + pen + (g.assist ? ' 助攻:' + g.assist : '');
+        }).join('，');
+        parts.push('⚽ 【进球详情】' + goalText);
+      }
+
+      // Victory attribution: explain why the winning team won
+      var hScore = detail.score?.home || 0, aScore = detail.score?.away || 0;
+      var winner = hScore > aScore ? ht : aScore > hScore ? at : null;
+      var loser = hScore > aScore ? at : hScore < aScore ? ht : null;
+      var winReasons = [];
+      if (winner) {
+        // Early lead
+        var firstGoal = goals[0];
+        if (firstGoal && parseInt(firstGoal.time) <= 25 && firstGoal.team === detail[winner === ht ? 'homeTeam' : 'awayTeam']) {
+          winReasons.push(winner.cn + '开局' + firstGoal.time + '分钟即取得领先，掌握了比赛主动权');
+        }
+        // Comeback
+        if (goals.length >= 2) {
+          var oppGoals = goals.filter(function(g){return g.team !== detail[winner === ht ? 'homeTeam' : 'awayTeam'];});
+          var winGoals = goals.filter(function(g){return g.team === detail[winner === ht ? 'homeTeam' : 'awayTeam'];});
+          if (oppGoals.length >= 1 && winGoals[winGoals.length-1] && parseInt(winGoals[winGoals.length-1].time) > parseInt(oppGoals[0].time)) {
+            winReasons.push(winner.cn + '在被对手进球后实现逆转，展现了强大的心理素质和调整能力');
+          }
+        }
+        // Multiple scorers
+        var scorers = [...new Set(winGoals.map(function(g){return g.player;}))];
+        if (scorers.length >= 2) {
+          winReasons.push('多名球员贡献进球（' + scorers.join('、') + '），进攻点多令对手难以防守');
+        }
+        // Disciplinary advantage
+        var oppCards = cards.filter(function(c){return c.team !== detail[winner === ht ? 'homeTeam' : 'awayTeam'];}).length;
+        var winCards = cards.filter(function(c){return c.team === detail[winner === ht ? 'homeTeam' : 'awayTeam'];}).length;
+        if (oppCards >= 2 && oppCards > winCards * 1.5) {
+          winReasons.push('对手' + (oppCards) + '张黄牌，防守动作受限');
+        }
+        if (winReasons.length === 0) {
+          winReasons.push(winner.cn + '在关键时刻把握住了机会');
+        }
+        parts.push('🏆 【胜负归因】' + winner.cn + '获胜关键：' + winReasons.join('；') + '。');
+      } else {
+        // Draw analysis
+        parts.push('🤝 【平局分析】双方各入' + hScore + '球，' + (Math.abs(hStr-aStr) > 10 ? '实力较强一方未能将控球优势转化为胜势' : '实力接近，平局是合理结果') + '。');
+      }
     }
   }
 
@@ -4075,6 +4235,11 @@ async function initResults() {
 
   _resultsLoaded = true;
   console.log('Results initialized: ' + Object.keys(actualResults).length + ' matches loaded');
+
+  // Learn from finished matches
+  try {
+    Object.keys(actualResults).forEach(function(mid) { learnFromMatch(mid); });
+  } catch(e) {}
 
   // Jump to the next unplayed match date (results may have advanced the tournament)
   var nextDate = findNextMatchDate();
