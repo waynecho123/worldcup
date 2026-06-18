@@ -1811,7 +1811,9 @@ function applyTeamNews(teamNews) {
     if (!team) return;
     var newsItems = teamNews[tid];
     if (newsItems.length > 0) {
-      var news = newsItems[0].replace(/^[🔴📰]\s*/, '').slice(0, 80);
+      // Prefer real news over auto-generated "上轮" match results
+      var realItem = newsItems.find(function(n){ return n.indexOf('上轮') < 0; });
+      var news = (realItem || newsItems[0]).replace(/^[🔴📰]\s*/, '').slice(0, 80);
       if (team.news !== news) {
         team.news = news;
         updated++;
