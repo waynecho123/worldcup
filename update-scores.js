@@ -427,13 +427,24 @@ async function updateNews() {
   // Sort by date desc
   matchNews.sort((a, b) => (b.matchDate || '').localeCompare(a.matchDate || ''));
 
-  // Source 1: GNews.io — 1 query, 10 articles, TEAM_KEYWORDS distributes to teams
+  // Source 1: GNews.io — rotate 3 teams per run, full 48-team coverage every 32h
   let rssItems = [];
   const GNEWS_KEY = process.env.GNEWS_KEY || '';
   if (GNEWS_KEY) {
+    // All 48 teams grouped by region (16 groups of 3)
+    const ALL_TEAMS = [
+      'Argentina Brazil France','England Germany Spain','Portugal Netherlands Croatia',
+      'Belgium Switzerland Austria','Sweden Norway Turkey','Scotland Czech Bosnia',
+      'Mexico USA Canada','Korea Japan Australia','New Zealand Qatar',
+      'Morocco Senegal Ghana','Ivory Coast Egypt Algeria','Tunisia South Africa',
+      'Uruguay Colombia Paraguay','Ecuador Saudi Arabia Iran','Iraq Jordan Haiti',
+      'Curacao Cape Verde Panama','Uzbekistan Congo DR',
+    ];
+    var idx = Math.floor(Date.now() / 7200000) % ALL_TEAMS.length;
+    var batch = ALL_TEAMS[idx];
     try {
-      const q = encodeURIComponent('World Cup 2026 football');
-      const newsResp = await new Promise((resolve, reject) => {
+      var q = encodeURIComponent(batch + ' World Cup 2026');
+      var newsResp = await new Promise((resolve, reject) => {
         https.get(`https://gnews.io/api/v4/search?q=${q}&lang=en&max=10&token=${GNEWS_KEY}`, { timeout: 15000 }, res => {
           let b = ''; res.on('data', c => b += c);
           res.on('end', () => { try { resolve(JSON.parse(b)); } catch(e) { reject(e); } });
@@ -444,7 +455,7 @@ async function updateNews() {
           if (a.title) rssItems.push(a.title);
         });
       }
-      console.log(`[${ts}]   GNews: ${newsResp.articles ? newsResp.articles.length : 0} articles`);
+      console.log(`[${ts}]   GNews[${idx}]: ${batch} → ${newsResp.articles ? newsResp.articles.length : 0} articles`);
     } catch(e) { console.log(`[${ts}]   GNews failed: ${e.message}`); }
   }
 
@@ -493,9 +504,38 @@ async function updateNews() {
     } catch(e) { /* skip */ }
   }
 
-  // Dedup external news
+  // Relevance filter: keep only prediction-useful news
+  const RELEVANT_KW = [
+    'injury','injured','injuries','squad','lineup','line-up','formation','tactics','tactical',
+    'player','players','star','stars','coach','manager','train','camp','team news',
+    'win','won','lose','lost','drew','draw','beat','defeat','defeated','victory',
+    'goal','goals','score','scored','hat-trick','hat trick','brace','penalty',
+    'performance','form','struggle','struggling','sparkle','brilliant','impressive',
+    'fitness','return','returns','back','recover','recovered','fit','ready',
+    'miss','missing','out','doubt','doubtful','absent','suspended','suspension',
+    'red card','yellow card','sent off','dismissed','ban','banned',
+    'upset','shock','surprise','giant killing','underdog',
+    'record','records','history','historic','first','ever','first-ever',
+    'angry','furious','rage','blast','slams','hits out','war of words',
+  ];
+  const JUNK_KW = [
+    'how to watch','watch on tv','tv schedule','broadcast','free-to-air','live stream',
+    'betting','odds','favourites','favorites','predictions game','tipping',
+    'quiz','guess who','vote','poll','pick your','fans choose','fantasy',
+    'sponsor','advertisement','promoted','partner content',
+    'tickets','travel guide','where to stay','fan zone',
+  ];
+
   const seen = new Set();
   const generalNews = rssItems.filter(t => { const k = t.slice(0,50); if (seen.has(k)) return false; seen.add(k); return true; })
+    .filter(t => {
+      const tl = t.toLowerCase();
+      // Must contain at least one relevant keyword
+      const isRelevant = RELEVANT_KW.some(k => tl.includes(k));
+      // Must NOT contain junk keyword
+      const isJunk = JUNK_KW.some(k => tl.includes(k));
+      return isRelevant && !isJunk;
+    })
     .slice(0, 40).map(t => {
       const tl = t.toLowerCase();
       return (tl.includes('injury') || tl.includes('injured') ? '🔴 ' : '📰 ') + t;
