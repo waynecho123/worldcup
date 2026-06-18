@@ -157,13 +157,6 @@
       "matches": 1
     },
     {
-      "name": "Marco Pasalic",
-      "photo": "https://media.api-sports.io/football/players/260865.png",
-      "team": "Croatia",
-      "assists": 2,
-      "matches": 6
-    },
-    {
       "name": "R. Gravenberch",
       "photo": "https://media.api-sports.io/football/players/542.png",
       "team": "Netherlands",
@@ -199,6 +192,13 @@
       "matches": 1
     },
     {
+      "name": "V. Gyökeres",
+      "photo": "https://media.api-sports.io/football/players/18979.png",
+      "team": "Sweden",
+      "assists": 1,
+      "matches": 1
+    },
+    {
       "name": "R. Rezaeian",
       "photo": "https://media.api-sports.io/football/players/2691.png",
       "team": "Iran",
@@ -206,9 +206,9 @@
       "matches": 1
     },
     {
-      "name": "V. Gyökeres",
-      "photo": "https://media.api-sports.io/football/players/18979.png",
-      "team": "Sweden",
+      "name": "L. Díaz",
+      "photo": "https://media.api-sports.io/football/players/2489.png",
+      "team": "Colombia",
       "assists": 1,
       "matches": 1
     },
@@ -223,6 +223,20 @@
       "name": "I. Ndiaye",
       "photo": "https://media.api-sports.io/football/players/18592.png",
       "team": "Senegal",
+      "assists": 1,
+      "matches": 1
+    },
+    {
+      "name": "B. Saka",
+      "photo": "https://media.api-sports.io/football/players/1460.png",
+      "team": "England",
+      "assists": 1,
+      "matches": 1
+    },
+    {
+      "name": "C. Hernández",
+      "photo": "https://media.api-sports.io/football/players/47582.png",
+      "team": "Colombia",
       "assists": 1,
       "matches": 1
     },
@@ -265,20 +279,6 @@
       "name": "Brahim Díaz",
       "photo": "https://media.api-sports.io/football/players/744.png",
       "team": "Morocco",
-      "assists": 1,
-      "matches": 1
-    },
-    {
-      "name": "Pedro Neto",
-      "photo": "https://media.api-sports.io/football/players/1864.png",
-      "team": "Portugal",
-      "assists": 1,
-      "matches": 1
-    },
-    {
-      "name": "D. Møller Wolfe",
-      "photo": "https://media.api-sports.io/football/players/265782.png",
-      "team": "Norway",
       "assists": 1,
       "matches": 1
     }
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-06-18T16:11:53.582Z"
+  "updatedAt": "2026-06-18T18:11:28.786Z"
 }
