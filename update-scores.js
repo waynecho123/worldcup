@@ -448,6 +448,7 @@ async function updateNews() {
     var totalGnews = 0;
     for (var bi = 0; bi < batches.length; bi++) {
       try {
+        if (bi > 0) await new Promise(r => setTimeout(r, 3000)); // avoid 429 rate limit
         var q = encodeURIComponent(batches[bi] + ' World Cup 2026');
         var gnewsUrl = `https://gnews.io/api/v4/search?q=${q}&lang=en&max=10&token=${GNEWS_KEY}`;
         console.log(`[${ts}] GNews fetching[${bi}]: ${batches[bi]}`);
@@ -560,6 +561,7 @@ async function updateNews() {
     });
 
   // Generate match result news for ALL teams with scores (guarantees 100% coverage)
+  const teamNews = {};
   const resultTeamNews = {};
   Object.keys(existing).forEach(function(mid) {
     var score = existing[mid];
@@ -629,8 +631,6 @@ async function updateNews() {
     GHA: ['Ghana','Ghanaian','Partey','Kudus'],
     PAN: ['Panama','Panamanian'],
   };
-
-  const teamNews = {};
   generalNews.forEach(item => {
     const text = item.toLowerCase();
     Object.keys(TEAM_KEYWORDS).forEach(tid => {
