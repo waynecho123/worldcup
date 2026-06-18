@@ -3,9 +3,6 @@ name: Update Scores
 on:
   push:
     branches: [main]
-  schedule:
-    # Every 30 minutes (UTC)
-    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:

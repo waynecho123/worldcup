@@ -1,8 +1,6 @@
 name: Update Deep Data
 
 on:
-  schedule:
-    - cron: '7 */2 * * *'  # Every 2 hours at :07
   workflow_dispatch:
 
 jobs:

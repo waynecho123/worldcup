@@ -482,50 +482,107 @@ async function updateNews() {
     console.log(`[${ts}] GNews SKIPPED: no GNEWS_KEY in env`);
   }
 
-  // Source 2: RSS feeds (English + Chinese + Google News)
+  // Source 2: RSS feeds — multi-language, multi-region (free, no key, no quota)
   const RSS_SOURCES = [
+    // English mainstream
     'https://feeds.bbci.co.uk/sport/football/rss.xml',
     'https://www.espn.com/espn/rss/soccer/news',
+    'https://www.skysports.com/rss/12040',
+    'https://www.theguardian.com/football/rss',
+    // English football-specific
+    'https://www.goal.com/en/feeds/news',
+    'https://www.soccernews.com/feed/',
+    // European languages (covers smaller teams)
+    'https://www.marca.com/en/football/rss.xml',
+    'https://www.lequipe.fr/rss/football.xml',
+    'https://www.kicker.de/fussball/rss.xml',
+    // Google News (multi-region)
+    'https://news.google.com/rss/search?q=World+Cup+2026&hl=en-US&gl=US&ceid=US:en',
+    'https://news.google.com/rss/search?q=%E4%B8%96%E7%95%8C%E6%9D%AF+%E8%B6%B3%E7%90%83+2026&hl=zh-CN&gl=CN&ceid=CN:zh-Hans',
+    'https://news.google.com/rss/search?q=Copa+del+Mundo+2026&hl=es-ES&gl=ES&ceid=ES:es',
+    'https://news.google.com/rss/search?q=Coupe+du+Monde+2026&hl=fr-FR&gl=FR&ceid=FR:fr',
+    'https://news.google.com/rss/search?q=WM+2026+Fussball&hl=de-DE&gl=DE&ceid=DE:de',
   ];
   const WC_KW = [
-    // English
-    'World Cup','world cup','FIFA','fifa',
-    // Teams + stars
+    // Core terms (multi-language)
+    'World Cup','world cup','FIFA','fifa','World Cup 2026',
+    'Copa del Mundo','Coupe du Monde','WM 2026','Mundial',
+    '世界杯','足球','世足',
+    // === ALL 48 teams (English + Chinese) ===
     'Argentina','Brazil','France','England','Germany','Spain','Portugal','Netherlands',
-    'Mbappe','Messi','Ronaldo','Haaland',
-    // Chinese
-    '世界杯','世足','足球',
+    'Croatia','Belgium','Switzerland','Austria','Sweden','Norway','Turkey','Scotland',
+    'Mexico','USA','Canada','South Korea','Japan','Australia','New Zealand',
+    'Morocco','Senegal','Ghana','Ivory Coast','Egypt','Algeria','Tunisia',
+    'Uruguay','Colombia','Paraguay','Ecuador','Saudi Arabia','Iran','Iraq',
+    'Czech','Bosnia','Qatar','South Africa','Haiti','Jordan','Panama',
+    'Curacao','Cape Verde','Congo','Uzbekistan',
     '阿根廷','巴西','法国','英格兰','德国','西班牙','葡萄牙','荷兰',
-    '梅西','姆巴佩','C罗','哈兰德','内马尔','贝林厄姆','莫德里奇',
-    '墨西哥','韩国','日本','加拿大','美国','卡塔尔','瑞士','摩洛哥',
-    '苏格兰','澳大利亚','土耳其','科特迪瓦','瑞典','比利时','伊朗',
-    '沙特','克罗地亚','加纳','挪威','塞尔维亚','乌拉圭','丹麦','波兰',
-    '塞内加尔','厄瓜多尔','威尔士','突尼斯','喀麦隆','哥斯达黎加',
+    '克罗地亚','比利时','瑞士','奥地利','瑞典','挪威','土耳其','苏格兰',
+    '墨西哥','美国','加拿大','韩国','日本','澳大利亚','新西兰',
+    '摩洛哥','塞内加尔','加纳','科特迪瓦','埃及','阿尔及利亚','突尼斯',
+    '乌拉圭','哥伦比亚','巴拉圭','厄瓜多尔','沙特','伊朗','伊拉克',
+    '捷克','波黑','卡塔尔','南非','海地','约旦','巴拿马',
+    '库拉索','佛得角','民主刚果','乌兹别克','刚果',
+    // Spanish (Marca, Google News ES)
+    'Brasil','Francia','Inglaterra','Alemania','España','Países Bajos','Holanda',
+    'Croacia','Bélgica','Suiza','Suecia','Noruega','Turquía','Escocia',
+    'México','Estados Unidos','Canadá','Corea del Sur','Japón','Nueva Zelanda',
+    'Marruecos','Costa de Marfil','Egipto','Argelia','Túnez',
+    'Uruguay','Colombia','Paraguay','Ecuador','Arabia Saudí','Irán','Irak',
+    'Checa','Bosnia','Catar','Sudáfrica','Haití','Jordania','Panamá',
+    'Curazao','Cabo Verde','Uzbekistán',
+    // French (L\'Equipe, Google News FR)
+    'Brésil','Angleterre','Allemagne','Espagne','Pays-Bas',
+    'Croatie','Belgique','Suisse','Autriche','Suède','Norvège','Turquie','Écosse',
+    'Mexique','États-Unis','Canada','Corée du Sud','Japon','Australie','Nouvelle-Zélande',
+    'Maroc','Sénégal','Ghana','Côte d\'Ivoire','Égypte','Algérie','Tunisie',
+    'Colombie','Équateur','Arabie Saoudite','Iran','Irak',
+    'Tchéquie','Bosnie','Qatar','Afrique du Sud','Haïti','Jordanie','Panama',
+    'Curaçao','Cap-Vert','Ouzbékistan',
+    // German (Kicker, Google News DE)
+    'Brasilien','Frankreich','England','Deutschland','Spanien','Niederlande',
+    'Kroatien','Belgien','Schweiz','Österreich','Schweden','Norwegen','Türkei','Schottland',
+    'Mexiko','Kanada','Südkorea','Japan','Australien','Neuseeland',
+    'Marokko','Senegal','Ghana','Elfenbeinküste','Ägypten','Algerien','Tunesien',
+    'Uruguay','Kolumbien','Paraguay','Saudi-Arabien','Iran','Irak',
+    'Tschechien','Bosnien','Katar','Südafrika','Haiti','Jordanien','Panama',
+    'Usbekistan','Demokratische Republik Kongo',
+    // Star players (universal names)
+    'Mbappe','Messi','Ronaldo','Haaland','Neymar','Bellingham','Modric',
+    'Son Heung-min','Davies','Salah','Vinicius','De Bruyne','Kane',
+    '姆巴佩','梅西','C罗','哈兰德','内马尔','贝林厄姆','莫德里奇',
+    '孙兴慜','戴维斯','萨拉赫','德布劳内','凯恩',
   ];
-  for (const url of RSS_SOURCES) {
-    try {
-      const resp = await new Promise((resolve, reject) => {
-        https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; WC2026Bot/1.0)' }, timeout: 10000 }, res => {
-          if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-            https.get(res.headers.location, { headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 10000 }, res2 => {
-              let b2 = ''; res2.on('data', c => b2 += c);
-              res2.on('end', () => resolve(b2));
-            }).on('error', reject);
-            return;
-          }
-          let b = ''; res.on('data', c => b += c);
-          res.on('end', () => resolve(b));
-        }).on('error', reject);
-      });
+  // Parallel fetch all RSS sources
+  const rssResults = await Promise.allSettled(RSS_SOURCES.map(url =>
+    new Promise((resolve, reject) => {
+      https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; WC2026Bot/1.0)' }, timeout: 8000 }, res => {
+        if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+          https.get(res.headers.location, { headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 8000 }, res2 => {
+            let b2 = ''; res2.on('data', c => b2 += c);
+            res2.on('end', () => resolve(b2));
+          }).on('error', reject);
+          return;
+        }
+        let b = ''; res.on('data', c => b += c);
+        res.on('end', () => resolve(b));
+      }).on('error', reject);
+    }).then(resp => {
       const re = /<item>([\s\S]*?)<\/item>/gi; let m;
+      const items = [];
       while ((m = re.exec(resp)) !== null) {
         const t = (m[1].match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1];
         if (t && WC_KW.some(k => t.includes(k))) {
-          rssItems.push(t.replace(/<!\[CDATA\[|\]\]>/g, '').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>'));
+          items.push(t.replace(/<!\[CDATA\[|\]\]>/g, '').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>'));
         }
       }
-    } catch(e) { /* skip */ }
-  }
+      return items;
+    }).catch(() => [])
+  ));
+  rssResults.forEach(r => {
+    if (r.status === 'fulfilled' && r.value) rssItems.push(...r.value);
+  });
+  console.log(`[${ts}]   RSS: ${RSS_SOURCES.length} feeds → ${rssItems.length} items`);
 
   // Relevance filter: keep only prediction-useful news
   const RELEVANT_KW = [
