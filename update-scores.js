@@ -425,7 +425,7 @@ async function updateNews() {
   });
 
   // Sort by date desc
-  matchNews.sort((a, b) => b.matchDate.localeCompare(a.matchDate));
+  matchNews.sort((a, b) => (b.matchDate || '').localeCompare(a.matchDate || ''));
 
   // Source 1: NewsAPI (free 100 req/day, works from GitHub Actions)
   let rssItems = [];
