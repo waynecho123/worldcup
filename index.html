@@ -5694,6 +5694,7 @@ refreshNews(false).then(() => scheduleNewsRefresh());
 // Every 2 hours: refresh news → update strength → refresh predictions → re-render
 setInterval(async function() {
   await refreshNews(false).catch(function(){});
+  loadPlayerStats().catch(function(){});
   var d = findNextMatchDate();
   if (d) renderTodayMatches(d);
   var count = refreshAllPredictions();
