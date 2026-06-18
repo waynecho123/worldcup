@@ -1714,16 +1714,31 @@ async function fetchAllNews() {
 function applyTeamNews(teamNews) {
   if (!teamNews || Object.keys(teamNews).length === 0) return;
   var updated = 0;
+  // Track which teams got fresh news
+  var gotFresh = {};
   Object.keys(teamNews).forEach(function(tid) {
     var team = TEAMS.find(function(t) { return t.id === tid; });
     if (!team) return;
-    // Take the first (most relevant) news item and set as team.news
     var newsItems = teamNews[tid];
     if (newsItems.length > 0) {
-      // Strip emoji prefix and keep first 80 chars
       var news = newsItems[0].replace(/^[🔴📰]\s*/, '').slice(0, 80);
       if (team.news !== news) {
         team.news = news;
+        updated++;
+      }
+      gotFresh[tid] = true;
+    }
+  });
+  // Clear stale hardcoded news for teams without fresh API news
+  TEAMS.forEach(function(team) {
+    if (!gotFresh[team.id] && team.news) {
+      // Check if this team has already played (news is outdated)
+      var hasPlayed = Object.keys(actualResults).some(function(mid) {
+        var m = MATCH_SCHEDULE.find(function(x) { return x.id === mid; });
+        return m && (m.home === team.id || m.away === team.id);
+      });
+      if (hasPlayed) {
+        team.news = '';
         updated++;
       }
     }
@@ -4440,6 +4455,13 @@ async function loadWeather() {
       var temp = d.current?.temperature_2m || '?';
       weatherCache[v] = {temp: Math.round(temp), emoji: WEATHER_EMOJI[code] || '⛅'};
     } catch(e) {}
+  }
+  // Re-render after weather loads
+  var ad = document.querySelector('#dateSelector button.active');
+  if (ad) {
+    var bt = ad.textContent.trim();
+    var dm = bt.match(/(\d{2}-\d{2})/);
+    if (dm) renderTodayMatches('2026-' + dm[1]);
   }
 }
 
