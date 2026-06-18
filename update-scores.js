@@ -431,6 +431,7 @@ async function updateNews() {
   let rssItems = [];
   const GNEWS_KEY = process.env.GNEWS_KEY || '';
   if (GNEWS_KEY) {
+    console.log(`[${ts}] GNews key loaded: ${GNEWS_KEY.slice(0,8)}...`);
     // All 48 teams in 16 groups of 3 (balanced: each group has at least 1 news-worthy team)
     const ALL_TEAMS = [
       'Argentina Brazil France','England Germany Spain','Portugal Netherlands Croatia',
@@ -448,20 +449,30 @@ async function updateNews() {
     for (var bi = 0; bi < batches.length; bi++) {
       try {
         var q = encodeURIComponent(batches[bi] + ' World Cup 2026');
+        var gnewsUrl = `https://gnews.io/api/v4/search?q=${q}&lang=en&max=10&token=${GNEWS_KEY}`;
+        console.log(`[${ts}] GNews fetching[${bi}]: ${batches[bi]}`);
         var newsResp = await new Promise((resolve, reject) => {
-          https.get(`https://gnews.io/api/v4/search?q=${q}&lang=en&max=10&token=${GNEWS_KEY}`, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; WC2026Bot/1.0)' }, timeout: 15000 }, res => {
+          var req = https.get(gnewsUrl, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; WC2026Bot/1.0)' }, timeout: 15000 }, res => {
             let b = ''; res.on('data', c => b += c);
-            res.on('end', () => { try { resolve(JSON.parse(b)); } catch(e) { reject(e); } });
-          }).on('error', reject);
+            res.on('end', () => {
+              console.log(`[${ts}] GNews HTTP ${res.statusCode}, body: ${b.slice(0,200)}`);
+              try { resolve(JSON.parse(b)); } catch(e) { reject(new Error('Parse: ' + b.slice(0,100))); }
+            });
+          }).on('error', e => { console.log(`[${ts}] GNews socket error[${bi}]: ${e.message}`); reject(e); });
+          req.on('timeout', () => { req.destroy(); reject(new Error('timeout')); });
         });
         if (newsResp.articles) {
           newsResp.articles.forEach(a => { if (a.title) rssItems.push(a.title); });
           totalGnews += newsResp.articles.length;
+        } else if (newsResp.errors) {
+          console.log(`[${ts}] GNews API errors: ${JSON.stringify(newsResp.errors)}`);
         }
         console.log(`[${ts}]   GNews[${(baseIdx + bi*8) % 16}]: ${batches[bi]} → ${newsResp.articles ? newsResp.articles.length : 0} articles`);
-      } catch(e) { console.log(`[${ts}]   GNews batch ${bi} failed: ${e.message}`); }
+      } catch(e) { console.log(`[${ts}]   GNews batch ${bi} FAILED: ${e.message}`); }
     }
     console.log(`[${ts}]   GNews total: ${totalGnews} articles from 2 batches`);
+  } else {
+    console.log(`[${ts}] GNews SKIPPED: no GNEWS_KEY in env`);
   }
 
   // Source 2: RSS feeds (English + Chinese + Google News)
