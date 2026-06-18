@@ -654,13 +654,14 @@ async function updateNews() {
     'girlfriend','wife','wag','dating','married','divorce',
     'instagram','tweeted','viral','trending',
     'fashion','hairstyle','tattoo','car','watch','jewelry',
-    // CN: fluff/gossip (don't affect match outcome)
+    // CN: fluff/gossip + expired qualifier news
     '如何观看','转播','直播平台','收视','彩票','赔率','竞猜','投票',
     '赞助','广告','推广','门票','旅游','球迷区',
     '女友','妻子','约会','离婚','婚礼','恋情',
     '穿搭','发型','纹身','豪车','名表','珠宝',
     '发了','推特','热搜','网红',
     '美食','旅游','度假','派对',
+    '附加赛','预选赛','资格赛','出线','热身赛','友谊赛',
   ];
 
   // Simple Google Translate (free, no key)
@@ -778,17 +779,41 @@ async function updateNews() {
     GHA: ['Ghana','Ghanaian','Partey','Kudus'],
     PAN: ['Panama','Panamanian'],
   };
-  // Match teams using RAW (untranslated) titles for keyword accuracy
+  // Match teams using RAW (untranslated) titles — pick PRIMARY team only
+  // Avoid cross-assignment: "Mexico police shoot drone at Korea camp" → only Korea
   generalNewsRaw.forEach((rawItem, i) => {
     const text = rawItem.toLowerCase();
     const translatedItem = generalNews[i]; // Chinese version for display
+    // Also check Chinese version for outdated qualifier news
+    const cnText = translatedItem.toLowerCase();
+
+    // Skip outdated qualifier/pre-tournament news
+    const EXPIRED_KW = ['附加赛','预选赛','资格赛','出线','晋级之路','热身赛','友谊赛',
+      'qualifying','qualifier','playoff','warm-up','friendly','preview','preview:',
+    ];
+    if (EXPIRED_KW.some(k => cnText.includes(k.toLowerCase()))) return;
+
+    // Find all matching teams with hit counts
+    var candidates = [];
     Object.keys(TEAM_KEYWORDS).forEach(tid => {
-      const matched = TEAM_KEYWORDS[tid].some(kw => text.includes(kw.toLowerCase()));
-      if (matched) {
-        if (!teamNews[tid]) teamNews[tid] = [];
-        if (teamNews[tid].length < 3) teamNews[tid].push(translatedItem); // store Chinese
-      }
+      var hits = TEAM_KEYWORDS[tid].filter(kw => text.includes(kw.toLowerCase())).length;
+      if (hits > 0) candidates.push({tid: tid, hits: hits});
     });
+    if (candidates.length === 0) return;
+
+    // Pick team with most keyword hits; tie-break: first mentioned in title
+    candidates.sort((a,b) => b.hits - a.hits);
+    if (candidates.length > 1 && candidates[0].hits === candidates[1].hits) {
+      // Tie: sort by first appearance position in text
+      candidates.sort((a,b) => {
+        var posA = text.indexOf(TEAM_KEYWORDS[a.tid][0].toLowerCase());
+        var posB = text.indexOf(TEAM_KEYWORDS[b.tid][0].toLowerCase());
+        return (posA >= 0 ? posA : 999) - (posB >= 0 ? posB : 999);
+      });
+    }
+    var bestTid = candidates[0].tid;
+    if (!teamNews[bestTid]) teamNews[bestTid] = [];
+    if (teamNews[bestTid].length < 3) teamNews[bestTid].push(translatedItem);
   });
 
   // Generate match result news for ALL teams (100% coverage)
