@@ -1,8 +1,9 @@
 {
   "items": [
     "📰 This was an England we haven't seen for years - and it was fun",
-    "📰 Fans boo, players adapt - the view on World Cup hydration breaks",
+    "📰 Best to worst - every World Cup team ranked after one game",
     "📰 England hit four in World Cup opener against Croatia ",
+    "📰 Fans boo, players adapt - the view on World Cup hydration breaks",
     "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
     "📰 'If we lose, we lose in our way' - how Tuchel inspired England at half-time",
     "📰 Who was the biggest attacking threat? England player ratings",
@@ -14,7 +15,6 @@
     "📰 Catch up on the World Cup without any spoilers",
     "📰 What are the patches on some shirts at the World Cup?",
     "📰 Extraordinary Messi makes more history in masterclass for the ages",
-    "📰 Who am I? Guess World Cup star No 10",
     "🤝 葡萄牙 1-1 民主刚果 — 葡萄牙 1-1 民主刚果，双方激战成和",
     "⚽ 英格兰 4-2 克罗地亚 — 英格兰 4-2 取胜，关键3分",
     "⚽ 加纳 1-0 巴拿马 — 加纳 1-0 取胜，关键3分",
@@ -332,8 +332,9 @@
   ],
   "generalNews": [
     "📰 This was an England we haven't seen for years - and it was fun",
-    "📰 Fans boo, players adapt - the view on World Cup hydration breaks",
+    "📰 Best to worst - every World Cup team ranked after one game",
     "📰 England hit four in World Cup opener against Croatia ",
+    "📰 Fans boo, players adapt - the view on World Cup hydration breaks",
     "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
     "📰 'If we lose, we lose in our way' - how Tuchel inspired England at half-time",
     "📰 Who was the biggest attacking threat? England player ratings",
@@ -344,8 +345,7 @@
     "📰 How to watch the World Cup on the BBC and ITV",
     "📰 Catch up on the World Cup without any spoilers",
     "📰 What are the patches on some shirts at the World Cup?",
-    "📰 Extraordinary Messi makes more history in masterclass for the ages",
-    "📰 Who am I? Guess World Cup star No 10"
+    "📰 Extraordinary Messi makes more history in masterclass for the ages"
   ],
   "teamNews": {
     "ENG": [
@@ -369,5 +369,5 @@
     ]
   },
   "total": 39,
-  "updatedAt": "2026-06-18T04:30:52.053Z"
+  "updatedAt": "2026-06-18T04:35:48.683Z"
 }
