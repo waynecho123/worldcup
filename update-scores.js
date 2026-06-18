@@ -508,7 +508,7 @@ async function updateNews() {
   // Dedup external news
   const seen = new Set();
   const generalNews = rssItems.filter(t => { const k = t.slice(0,50); if (seen.has(k)) return false; seen.add(k); return true; })
-    .slice(0, 15).map(t => {
+    .slice(0, 40).map(t => {
       const tl = t.toLowerCase();
       return (tl.includes('injury') || tl.includes('injured') ? '🔴 ' : '📰 ') + t;
     });
