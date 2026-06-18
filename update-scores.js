@@ -584,6 +584,26 @@ async function updateNews() {
   });
   console.log(`[${ts}]   RSS: ${RSS_SOURCES.length} feeds → ${rssItems.length} items`);
 
+  // Source 2b: Sina sports JSON feed (Chinese news, free, no key)
+  try {
+    const sinaResp = await new Promise((resolve, reject) => {
+      https.get(SINA_FEED, { headers: { 'User-Agent': 'Mozilla/5.0 (compatible; WC2026Bot/1.0)' }, timeout: 8000 }, res => {
+        let b = ''; res.on('data', c => b += c);
+        res.on('end', () => { try { resolve(JSON.parse(b)); } catch(e) { reject(e); } });
+      }).on('error', reject);
+    });
+    if (sinaResp && sinaResp.result && sinaResp.result.data) {
+      let sinaCount = 0;
+      sinaResp.result.data.forEach(item => {
+        if (item.title && item.title.length > 5) {
+          rssItems.push(item.title);
+          sinaCount++;
+        }
+      });
+      console.log(`[${ts}]   Sina: ${sinaCount} articles`);
+    }
+  } catch(e) { console.log(`[${ts}]   Sina failed: ${e.message}`); }
+
   // Relevance filter: keep only prediction-useful news
   const RELEVANT_KW = [
     'World Cup','world cup','FIFA','fifa','2026',
