@@ -1584,23 +1584,52 @@ function getPlayerImportance(name) {
 
 // 新闻影响系数：自动扫描新闻标题，调整球队实力
 var NEWS_MODIFIERS = {};
+var NEWS_SENTIMENT = {};
 function updateNewsModifiers(newsItems) {
   var mods = {};
+  // Sentiment + value analysis rules (Chinese news focus)
   var rules = [
-    {kw:['重伤','报销','缺席','赛季报销','ACL','Achilles','错过','无缘','退队','被移出','落选','移除国家队'],baseVal:-6,scope:'any'},
-    {kw:['伤缺','受伤','腿筋','hamstring','肌肉','伤势','伤疑','疑缺','出战成疑','doubtful','questionable'],baseVal:-4,scope:'any'},
-    {kw:['不会首发','替补','管理时间','managing','恢复训练','伤愈'],baseVal:-2,scope:'any'},
-    {kw:['复出','回归','恢复','伤愈复出','痊愈'],baseVal:2,scope:'any'},
-    {kw:['大胜','狂胜','屠杀','血洗','横扫'],baseVal:2,scope:'winner'},
-    {kw:['惨败','被屠','溃败'],baseVal:-2,scope:'loser'},
+    // === 🏥 伤病负面 (severe injury → big downgrade) ===
+    {kw:['重伤','赛季报销','ACL','跟腱','骨折','缺席整届','退出国家队','移除国家队','落选','被开除'],baseVal:-7,scope:'any'},
+    {kw:['受伤','腿筋','肌肉撕裂','伤势','伤疑','出战成疑','缺阵','伤缺','缺席','无缘'],baseVal:-4,scope:'any'},
+    {kw:['不会首发','替补出战','管理出场时间','带伤','尚未痊愈'],baseVal:-2,scope:'any'},
+    // === 🏃 伤病正面 (recovery → upgrade) ===
+    {kw:['复出','回归','伤愈','痊愈','恢复完整训练','重返赛场','解禁复出','恢复训练'],baseVal:3,scope:'any'},
+    // === ⚽ 比赛状态正面 ===
+    {kw:['大胜','狂胜','屠杀','血洗','横扫','完胜','轻取','碾压','大比分'],baseVal:3,scope:'winner'},
+    {kw:['逆转','绝杀','顽强','韧性','气势如虹','势不可挡','火力全开'],baseVal:2,scope:'winner'},
+    {kw:['创造历史','首次','纪录','破纪录','里程碑','历史性'],baseVal:2,scope:'any'},
+    {kw:['统治','主宰','掌控','主导','压倒性','全面压制'],baseVal:2,scope:'winner'},
+    // === 😞 比赛状态负面 ===
+    {kw:['惨败','溃败','被屠','惨遭','崩盘','崩了','溃不成军'],baseVal:-4,scope:'loser'},
+    {kw:['失利','落败','不敌','告负','未能取胜','仅获','勉强','艰难'],baseVal:-2,scope:'loser'},
+    {kw:['挣扎','低迷','状态不佳','表现平平','毫无亮点','哑火'],baseVal:-2,scope:'any'},
+    // === 🎯 战术/教练正面 ===
+    {kw:['战术成功','阵型奏效','变阵','调整得当','临场指挥','奇兵','战术大师'],baseVal:2,scope:'any'},
+    {kw:['激发了','激励','振奋','鼓舞','注入信心','找回自信'],baseVal:2,scope:'any'},
+    // === ⚡ 战术/教练负面 ===
+    {kw:['战术失败','排兵布阵失误','换人错误','临场失误','更衣室','内讧','矛盾'],baseVal:-3,scope:'any'},
+    {kw:['下课压力','信任危机','质疑声','批评','炮轰','指责'],baseVal:-2,scope:'any'},
+    // === 🌟 球星正面 ===
+    {kw:['闪耀','闪耀全场','顶级表现','一己之力','扛着','carry','神级'],baseVal:2,scope:'any'},
+    {kw:['入选最佳','获评最佳','帽子戏法','梅开二度','独造'],baseVal:2,scope:'any'},
+    // === 💔 球星负面 ===
+    {kw:['哑火','隐身','低迷','失误','送礼','乌龙','红牌','被罚下','停赛'],baseVal:-3,scope:'any'},
+    // === 🔥 士气/氛围 ===
+    {kw:['士气高涨','信心爆棚','团结','凝聚力','众志成城','化学反应'],baseVal:2,scope:'any'},
+    {kw:['担忧','紧张','焦虑','压力巨大','恐惧','畏惧','缺乏信心'],baseVal:-1,scope:'any'},
   ];
-  // Team name matching
+  // Team name matching (English + Chinese)
   var teamNames = {};
   TEAMS.forEach(function(t){
     teamNames[t.cn] = t.id;
     teamNames[t.name] = t.id;
-    if (t.cn.length === 2) teamNames[t.cn] = t.id;
+    teamNames[t.name.toLowerCase()] = t.id;
+    if (t.cn.length <= 3) teamNames[t.cn] = t.id;
   });
+  // Per-team accumulated sentiment
+  var teamSentiment = {}; // {tid: {positive:[], negative:[], score:0}}
+
   newsItems.forEach(function(item){
     var matchedTeam = null;
     for (var name in teamNames) {
@@ -1608,29 +1637,38 @@ function updateNewsModifiers(newsItems) {
     }
     if (!matchedTeam) return;
     if (!mods[matchedTeam]) mods[matchedTeam] = 0;
+    if (!teamSentiment[matchedTeam]) teamSentiment[matchedTeam] = {positive:[], negative:[], score:0};
 
     // Find mentioned players and their importance
-    var playerImp = 2; // default
+    var playerImp = 2;
     for (var pname in PLAYER_IMPORTANCE) {
       if (item.indexOf(pname) >= 0) {
         playerImp = Math.max(playerImp, PLAYER_IMPORTANCE[pname]);
       }
     }
-    // Weight: importance/5 (so a level-5 star gets full weight, level-1 bench gets 20%)
     var weight = playerImp / 5;
 
     rules.forEach(function(rule){
       var hit = rule.kw.some(function(kw){return item.indexOf(kw) >= 0});
       if (!hit) return;
-      if (rule.scope === 'winner' && item.indexOf('胜') < 0 && item.indexOf('win') < 0) return;
-      if (rule.scope === 'loser' && item.indexOf('败') < 0 && item.indexOf('lose') < 0 && item.indexOf('loss') < 0) return;
-      mods[matchedTeam] += Math.round(rule.baseVal * weight);
+      if (rule.scope === 'winner' && item.indexOf('胜') < 0 && item.indexOf('击败') < 0 && item.indexOf('赢') < 0) return;
+      if (rule.scope === 'loser' && item.indexOf('败') < 0 && item.indexOf('负') < 0 && item.indexOf('输') < 0) return;
+      var impact = Math.round(rule.baseVal * weight);
+      mods[matchedTeam] += impact;
+      if (impact > 0) teamSentiment[matchedTeam].positive.push(item.slice(0,60));
+      else if (impact < 0) teamSentiment[matchedTeam].negative.push(item.slice(0,60));
+      teamSentiment[matchedTeam].score += impact;
     });
   });
+  // Clamp and store
   for (var tid in mods) {
-    mods[tid] = Math.max(-10, Math.min(5, mods[tid]));
+    mods[tid] = Math.max(-15, Math.min(12, mods[tid]));
+    if (teamSentiment[tid]) {
+      teamSentiment[tid].score = Math.max(-15, Math.min(12, teamSentiment[tid].score));
+    }
   }
   NEWS_MODIFIERS = mods;
+  NEWS_SENTIMENT = teamSentiment; // exposed for display
 }
 
 // Override getStrength to incorporate news modifiers
@@ -3183,7 +3221,7 @@ function renderMatchCard(m) {
     if (pred.locked) predScoreDisplay += ' 🔒';
   }
 
-  // Priority 5: News (1-2 lines per team)
+  // Priority 5: Team news (from server, influences prediction via NEWS_MODIFIERS)
   var newsHTML = '';
   if (ht.news) newsHTML += '<span class="mc-news-line">📰 ' + ht.cn + '：' + ht.news + '</span>';
   if (at.news) newsHTML += '<span class="mc-news-line">📰 ' + at.cn + '：' + at.news + '</span>';
