@@ -412,15 +412,20 @@ async function updateNews() {
     } catch(e) { console.log(`[${ts}]   NewsAPI failed: ${e.message}`); }
   }
 
-  // Source 2: RSS feeds (English + Chinese via RSSHub)
+  // Source 2: RSS feeds (English + Chinese + Google News)
   const RSS_SOURCES = [
-    // English
+    // English major sources
     'https://feeds.bbci.co.uk/sport/football/rss.xml',
     'https://www.espn.com/espn/rss/soccer/news',
-    // Chinese via RSSHub (free, no quota)
+    // Google News: all 48 teams (free, no quota)
+    'https://news.google.com/rss/search?q=World+Cup+2026+football&hl=en-US',
+    'https://news.google.com/rss/search?q=World+Cup+2026+Argentina+Brazil+France+England+Germany+Spain+Portugal&hl=en-US',
+    'https://news.google.com/rss/search?q=World+Cup+2026+Mexico+USA+Canada+Japan+Korea+Australia+New+Zealand&hl=en-US',
+    'https://news.google.com/rss/search?q=World+Cup+2026+Morocco+Senegal+Ghana+Ivory+Coast+Egypt+Algeria+Tunisia+South+Africa&hl=en-US',
+    'https://news.google.com/rss/search?q=World+Cup+2026+Netherlands+Belgium+Croatia+Switzerland+Austria+Sweden+Norway+Denmark&hl=en-US',
+    'https://news.google.com/rss/search?q=World+Cup+2026+Uruguay+Colombia+Paraguay+Ecuador+Chile+Peru+Qatar+Saudi+Iran+Iraq&hl=en-US',
+    // Chinese via RSSHub
     'https://rsshub.app/sina/sports',
-    'https://rsshub.app/baidu/s?wd=2026世界杯+足球&tn=news',
-    'https://rsshub.app/toutiao/trending?keyword=世界杯',
   ];
   const WC_KW = [
     // English
