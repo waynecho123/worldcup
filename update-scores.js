@@ -608,13 +608,32 @@ async function updateNews() {
     'tickets','travel guide','where to stay','fan zone',
   ];
 
+  // Simple Google Translate (free, no key)
+  async function translateToChinese(text) {
+    // Skip if already mostly Chinese
+    const cjk = (text.match(/[一-鿿]/g) || []).length;
+    if (cjk > text.length * 0.3) return text;
+    try {
+      const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=zh-CN&dt=t&q=${encodeURIComponent(text)}`;
+      const resp = await new Promise((resolve, reject) => {
+        https.get(url, { timeout: 5000 }, res => {
+          let b = ''; res.on('data', c => b += c);
+          res.on('end', () => resolve(b));
+        }).on('error', reject);
+      });
+      const parsed = JSON.parse(resp);
+      if (parsed && parsed[0]) {
+        return parsed[0].map(p => p[0]).join('');
+      }
+    } catch(e) { /* keep original on error */ }
+    return text;
+  }
+
   const seen = new Set();
-  const generalNews = rssItems.filter(t => { const k = t.slice(0,50); if (seen.has(k)) return false; seen.add(k); return true; })
+  const generalNewsRaw = rssItems.filter(t => { const k = t.slice(0,50); if (seen.has(k)) return false; seen.add(k); return true; })
     .filter(t => {
       const tl = t.toLowerCase();
-      // Must contain at least one relevant keyword
       const isRelevant = RELEVANT_KW.some(k => tl.includes(k));
-      // Must NOT contain junk keyword
       const isJunk = JUNK_KW.some(k => tl.includes(k));
       return isRelevant && !isJunk;
     })
@@ -622,6 +641,16 @@ async function updateNews() {
       const tl = t.toLowerCase();
       return (tl.includes('injury') || tl.includes('injured') ? '🔴 ' : '📰 ') + t;
     });
+
+  // Translate all non-Chinese news to Chinese (with delay to avoid rate-limit)
+  const generalNews = [];
+  for (const item of generalNewsRaw) {
+    const icon = item.slice(0, 3); // emoji + space
+    const text = item.slice(3);
+    const translated = await translateToChinese(text);
+    generalNews.push(icon + translated);
+    await new Promise(r => setTimeout(r, 200)); // 200ms delay
+  }
 
   // Generate match result news for ALL teams with scores (guarantees 100% coverage)
   const teamNews = {};
