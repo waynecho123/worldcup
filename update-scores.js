@@ -418,14 +418,15 @@ async function updateNews() {
     'https://feeds.bbci.co.uk/sport/football/rss.xml',
     'https://www.espn.com/espn/rss/soccer/news',
     // Google News: all 48 teams (free, no quota)
-    'https://news.google.com/rss/search?q=World+Cup+2026+football&hl=en-US',
-    'https://news.google.com/rss/search?q=World+Cup+2026+Argentina+Brazil+France+England+Germany+Spain+Portugal&hl=en-US',
-    'https://news.google.com/rss/search?q=World+Cup+2026+Mexico+USA+Canada+Japan+Korea+Australia+New+Zealand&hl=en-US',
-    'https://news.google.com/rss/search?q=World+Cup+2026+Morocco+Senegal+Ghana+Ivory+Coast+Egypt+Algeria+Tunisia+South+Africa&hl=en-US',
-    'https://news.google.com/rss/search?q=World+Cup+2026+Netherlands+Belgium+Croatia+Switzerland+Austria+Sweden+Norway+Denmark&hl=en-US',
-    'https://news.google.com/rss/search?q=World+Cup+2026+Uruguay+Colombia+Paraguay+Ecuador+Qatar+Saudi+Iran+Iraq+Jordan&hl=en-US',
-    'https://news.google.com/rss/search?q=World+Cup+2026+Czech+Republic+Bosnia+Herzegovina+Scotland+Turkey+Haiti+Curacao+Cape+Verde&hl=en-US',
-    'https://news.google.com/rss/search?q=World+Cup+2026+Panama+Uzbekistan+Congo+DR+Bolivia+Finland+Ukraine+Romania&hl=en-US',
+    // Google News via RSSHub proxy (bypasses GitHub Actions IP blocks)
+    'https://rsshub.app/google/news/search?q=World+Cup+2026+football&hl=en-US&gl=US&ceid=US:en',
+    'https://rsshub.app/google/news/search?q=2026+World+Cup+Argentina+Brazil+France+England+Germany+Spain+Portugal&hl=en-US&gl=US&ceid=US:en',
+    'https://rsshub.app/google/news/search?q=2026+World+Cup+Mexico+USA+Canada+Japan+Korea+Australia+New+Zealand&hl=en-US&gl=US&ceid=US:en',
+    'https://rsshub.app/google/news/search?q=2026+World+Cup+Morocco+Senegal+Ghana+Ivory+Coast+Egypt+Algeria+Tunisia+South+Africa&hl=en-US&gl=US&ceid=US:en',
+    'https://rsshub.app/google/news/search?q=2026+World+Cup+Netherlands+Belgium+Croatia+Switzerland+Austria+Sweden+Norway&hl=en-US&gl=US&ceid=US:en',
+    'https://rsshub.app/google/news/search?q=2026+World+Cup+Uruguay+Colombia+Paraguay+Ecuador+Qatar+Saudi+Iran+Iraq+Jordan&hl=en-US&gl=US&ceid=US:en',
+    'https://rsshub.app/google/news/search?q=2026+World+Cup+Czech+Republic+Bosnia+Herzegovina+Scotland+Turkey+Haiti+Curacao+Cape+Verde&hl=en-US&gl=US&ceid=US:en',
+    'https://rsshub.app/google/news/search?q=2026+World+Cup+Panama+Uzbekistan+Congo+DR&hl=en-US&gl=US&ceid=US:en',
     // Chinese via RSSHub
     'https://rsshub.app/sina/sports',
   ];
