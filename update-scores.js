@@ -470,13 +470,32 @@ async function updateNews() {
     } catch(e) { /* skip */ }
   }
 
-  // Dedup
+  // Dedup external news
   const seen = new Set();
   const generalNews = rssItems.filter(t => { const k = t.slice(0,50); if (seen.has(k)) return false; seen.add(k); return true; })
     .slice(0, 15).map(t => {
       const tl = t.toLowerCase();
       return (tl.includes('injury') || tl.includes('injured') ? '🔴 ' : '📰 ') + t;
     });
+
+  // Generate match result news for ALL teams with scores (guarantees 100% coverage)
+  const resultTeamNews = {};
+  Object.keys(existing).forEach(function(mid) {
+    var score = existing[mid];
+    var m = sched.find(function(x) { return x.id === mid; });
+    if (!m) return;
+    var ht = TEAMS[m.home], at = TEAMS[m.away];
+    if (!ht || !at) return;
+    var gf = score.homeScore, ga = score.awayScore;
+    var hResult = gf > ga ? '胜' : gf === ga ? '平' : '负';
+    var aResult = ga > gf ? '胜' : ga === gf ? '平' : '负';
+    var hNews = '📰 上轮' + hResult + ' ' + at.cn + ' ' + gf + '-' + ga;
+    var aNews = '📰 上轮' + aResult + ' ' + ht.cn + ' ' + ga + '-' + gf;
+    if (!teamNews[m.home]) teamNews[m.home] = [];
+    if (!teamNews[m.away]) teamNews[m.away] = [];
+    if (teamNews[m.home].length < 2) teamNews[m.home].push(hNews);
+    if (teamNews[m.away].length < 2) teamNews[m.away].push(aNews);
+  });
 
   // Match general news to teams via keywords
   const TEAM_KEYWORDS = {
@@ -540,6 +559,22 @@ async function updateNews() {
         if (teamNews[tid].length < 3) teamNews[tid].push(item); // max 3 per team
       }
     });
+  });
+
+  // Generate match result news for ALL teams (100% coverage)
+  Object.keys(existing).forEach(function(mid) {
+    var score = existing[mid];
+    var m = sched.find(function(x) { return x.id === mid; });
+    if (!m) return;
+    var ht = TEAMS[m.home], at = TEAMS[m.away];
+    if (!ht || !at) return;
+    var gf = score.homeScore, ga = score.awayScore;
+    var hResult = gf > ga ? '胜' : gf === ga ? '平' : '负';
+    var aResult = ga > gf ? '胜' : ga === gf ? '平' : '负';
+    if (!teamNews[m.home]) teamNews[m.home] = [];
+    if (!teamNews[m.away]) teamNews[m.away] = [];
+    if (teamNews[m.home].length < 2) teamNews[m.home].push('📰 上轮' + hResult + ' ' + at.cn + ' ' + gf + '-' + ga);
+    if (teamNews[m.away].length < 2) teamNews[m.away].push('📰 上轮' + aResult + ' ' + ht.cn + ' ' + ga + '-' + gf);
   });
 
   const items = [...generalNews, ...matchNews.map(m => m.title)];
