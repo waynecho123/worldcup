@@ -3469,8 +3469,8 @@ function generatePostMatchReview(m, ht, at, pred, actual, apiInfo) {
     if (detail.lineups && detail.lineups.home && detail.lineups.away) {
       var actualHLu = detail.lineups.home;
       var actualALu = detail.lineups.away;
-      var predHLu = data ? data.STARTING_XI[m.home] : null;
-      var predALu = data ? data.STARTING_XI[m.away] : null;
+      var predHLu = typeof STARTING_XI !== 'undefined' ? STARTING_XI[m.home] : null;
+      var predALu = typeof STARTING_XI !== 'undefined' ? STARTING_XI[m.away] : null;
 
       // Count changes from predicted lineup
       var hFormation = actualHLu.formation || '?';
