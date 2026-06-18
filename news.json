@@ -1,12 +1,12 @@
 {
   "items": [
     "📰 This was an England we haven't seen for years - and it was fun",
+    "📰 Fans boo, players adapt - the view on World Cup hydration breaks",
     "📰 England hit four in World Cup opener against Croatia ",
     "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
     "📰 'If we lose, we lose in our way' - how Tuchel inspired England at half-time",
     "📰 Who was the biggest attacking threat? England player ratings",
     "📰 How sweltering Scotland can handle World Cup heat",
-    "📰 Extraordinary Messi makes more history in masterclass for the ages",
     "📰 Substitute Rashford guides home England's fourth against Croatia",
     "📰 Bellingham scores early in second half to put England 3-2 up",
     "📰 Kane heads England into 2-1 lead against Croatia",
@@ -14,7 +14,7 @@
     "📰 Musa strikes for Croatia to make it 2-2 against England",
     "📰 How to watch the World Cup on the BBC and ITV",
     "📰 Catch up on the World Cup without any spoilers",
-    "📰 No stage too big - Haaland arrives in style at World Cup",
+    "📰 Extraordinary Messi makes more history in masterclass for the ages",
     "🤝 葡萄牙 1-1 民主刚果 — 葡萄牙 1-1 民主刚果，双方激战成和",
     "⚽ 英格兰 4-2 克罗地亚 — 英格兰 4-2 取胜，关键3分",
     "⚽ 加纳 1-0 巴拿马 — 加纳 1-0 取胜，关键3分",
@@ -319,12 +319,12 @@
   ],
   "generalNews": [
     "📰 This was an England we haven't seen for years - and it was fun",
+    "📰 Fans boo, players adapt - the view on World Cup hydration breaks",
     "📰 England hit four in World Cup opener against Croatia ",
     "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
     "📰 'If we lose, we lose in our way' - how Tuchel inspired England at half-time",
     "📰 Who was the biggest attacking threat? England player ratings",
     "📰 How sweltering Scotland can handle World Cup heat",
-    "📰 Extraordinary Messi makes more history in masterclass for the ages",
     "📰 Substitute Rashford guides home England's fourth against Croatia",
     "📰 Bellingham scores early in second half to put England 3-2 up",
     "📰 Kane heads England into 2-1 lead against Croatia",
@@ -332,7 +332,7 @@
     "📰 Musa strikes for Croatia to make it 2-2 against England",
     "📰 How to watch the World Cup on the BBC and ITV",
     "📰 Catch up on the World Cup without any spoilers",
-    "📰 No stage too big - Haaland arrives in style at World Cup"
+    "📰 Extraordinary Messi makes more history in masterclass for the ages"
   ],
   "teamNews": {
     "ENG": [
@@ -351,16 +351,13 @@
     "SCO": [
       "📰 How sweltering Scotland can handle World Cup heat"
     ],
-    "ARG": [
-      "📰 Extraordinary Messi makes more history in masterclass for the ages"
-    ],
     "USA": [
       "📰 Musa strikes for Croatia to make it 2-2 against England"
     ],
-    "NOR": [
-      "📰 No stage too big - Haaland arrives in style at World Cup"
+    "ARG": [
+      "📰 Extraordinary Messi makes more history in masterclass for the ages"
     ]
   },
   "total": 38,
-  "updatedAt": "2026-06-18T02:22:35.267Z"
+  "updatedAt": "2026-06-18T02:25:46.251Z"
 }
