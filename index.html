@@ -1858,9 +1858,9 @@ function isMatchLocked(matchId) {
   var m = MATCH_SCHEDULE.find(function(x){return x.id === matchId});
   if (!m) return false;
   var now = getTournamentNow();
-  // Lock 3 hours before kickoff
+  // Lock 2 hours before kickoff
   var matchTime = new Date(m.date + 'T' + m.time + ':00+08:00');
-  var lockTime = new Date(matchTime.getTime() - 3 * 3600000);
+  var lockTime = new Date(matchTime.getTime() - 2 * 3600000);
   return now >= lockTime;
 }
 function isMatchBettable(matchId) {
@@ -2096,14 +2096,14 @@ function getTeamOdds(teamId) {
 // 72 matches from API-Sports, Beijing time
 const MATCH_SCHEDULE = [
   {id:"m001",date:"2026-06-12",time:"03:00",home:"MEX",away:"RSA",grp:"A",stage:"group",matchday:1,venue:"Estadio Azteca, Mexico City",featured:true},
-  {id:"m002",date:"2026-06-12",time:"10:00",home:"KOR",away:"?",grp:"A",stage:"group",matchday:1,venue:"Estadio Akron, Guadalajara",featured:true},
+  {id:"m002",date:"2026-06-12",time:"10:00",home:"KOR",away:"CZE",grp:"A",stage:"group",matchday:1,venue:"Estadio Akron, Guadalajara",featured:true},
   {id:"m003",date:"2026-06-13",time:"03:00",home:"CAN",away:"BIH",grp:"B",stage:"group",matchday:1,venue:"BMO Field, Toronto",featured:true},
   {id:"m004",date:"2026-06-13",time:"09:00",home:"USA",away:"PAR",grp:"D",stage:"group",matchday:1,venue:"SoFi Stadium, Inglewood",featured:true},
   {id:"m005",date:"2026-06-14",time:"03:00",home:"QAT",away:"SUI",grp:"B",stage:"group",matchday:1,venue:"Levi's Stadium, Santa Clara"},
   {id:"m006",date:"2026-06-14",time:"06:00",home:"BRA",away:"MAR",grp:"C",stage:"group",matchday:1,venue:"MetLife Stadium, East Rutherford"},
   {id:"m007",date:"2026-06-14",time:"09:00",home:"HAI",away:"SCO",grp:"C",stage:"group",matchday:1,venue:"Gillette Stadium, Boston"},
   {id:"m008",date:"2026-06-14",time:"12:00",home:"AUS",away:"TUR",grp:"D",stage:"group",matchday:1,venue:"BC Place, Vancouver"},
-  {id:"m009",date:"2026-06-15",time:"01:00",home:"GER",away:"?",grp:"E",stage:"group",matchday:1,venue:"NRG Stadium, Houston"},
+  {id:"m009",date:"2026-06-15",time:"01:00",home:"GER",away:"CUW",grp:"E",stage:"group",matchday:1,venue:"NRG Stadium, Houston"},
   {id:"m010",date:"2026-06-15",time:"04:00",home:"NED",away:"JPN",grp:"F",stage:"group",matchday:1,venue:"AT&T Stadium, Arlington"},
   {id:"m011",date:"2026-06-15",time:"07:00",home:"CIV",away:"ECU",grp:"E",stage:"group",matchday:1,venue:"Lincoln Financial Field, Philadelphia"},
   {id:"m012",date:"2026-06-15",time:"10:00",home:"SWE",away:"TUN",grp:"F",stage:"group",matchday:1,venue:"Estadio BBVA, Monterrey"},
@@ -2119,27 +2119,27 @@ const MATCH_SCHEDULE = [
   {id:"m022",date:"2026-06-18",time:"04:00",home:"ENG",away:"CRO",grp:"L",stage:"group",matchday:1,venue:"AT&T Stadium, Arlington"},
   {id:"m023",date:"2026-06-18",time:"07:00",home:"GHA",away:"PAN",grp:"L",stage:"group",matchday:1,venue:"BMO Field, Toronto"},
   {id:"m024",date:"2026-06-18",time:"10:00",home:"UZB",away:"COL",grp:"K",stage:"group",matchday:1,venue:"Estadio Azteca, Mexico City"},
-  {id:"m025",date:"2026-06-19",time:"00:00",home:"?",away:"RSA",grp:"?",stage:"group",matchday:2,venue:"Mercedes-Benz Stadium, Atlanta",featured:true},
+  {id:"m025",date:"2026-06-19",time:"00:00",home:"CZE",away:"RSA",grp:"A",stage:"group",matchday:2,venue:"Mercedes-Benz Stadium, Atlanta",featured:true},
   {id:"m026",date:"2026-06-19",time:"03:00",home:"SUI",away:"BIH",grp:"B",stage:"group",matchday:2,venue:"SoFi Stadium, Los Angeles"},
   {id:"m027",date:"2026-06-19",time:"06:00",home:"CAN",away:"QAT",grp:"B",stage:"group",matchday:2,venue:"BC Place, Vancouver"},
   {id:"m028",date:"2026-06-19",time:"09:00",home:"MEX",away:"KOR",grp:"A",stage:"group",matchday:2,venue:"Estadio Akron, Guadalajara"},
-  {id:"m029",date:"2026-06-20",time:"03:00",home:"USA",away:"AUS",grp:"D",stage:"group",matchday:2,venue:"Lumen Field, Seattle",featured:true},
+  {id:"m029",date:"2026-06-20",time:"03:00",home:"USA",away:"AUS",grp:"D",stage:"group",matchday:2,venue:"Lumen Field, Seattle"},
   {id:"m030",date:"2026-06-20",time:"06:00",home:"SCO",away:"MAR",grp:"C",stage:"group",matchday:2,venue:"Gillette Stadium, Boston"},
   {id:"m031",date:"2026-06-20",time:"08:30",home:"BRA",away:"HAI",grp:"C",stage:"group",matchday:2,venue:"Lincoln Financial Field, Philadelphia"},
   {id:"m032",date:"2026-06-20",time:"11:00",home:"TUR",away:"PAR",grp:"D",stage:"group",matchday:2,venue:"Levi's Stadium, San Francisco Bay Area"},
-  {id:"m033",date:"2026-06-21",time:"01:00",home:"NED",away:"SWE",grp:"F",stage:"group",matchday:2,venue:"NRG Stadium, Houston",featured:true},
+  {id:"m033",date:"2026-06-21",time:"01:00",home:"NED",away:"SWE",grp:"F",stage:"group",matchday:2,venue:"NRG Stadium, Houston"},
   {id:"m034",date:"2026-06-21",time:"04:00",home:"GER",away:"CIV",grp:"E",stage:"group",matchday:2,venue:"BMO Field, Toronto"},
-  {id:"m035",date:"2026-06-21",time:"08:00",home:"ECU",away:"?",grp:"E",stage:"group",matchday:2,venue:"Arrowhead Stadium, Kansas City"},
+  {id:"m035",date:"2026-06-21",time:"08:00",home:"ECU",away:"CUW",grp:"E",stage:"group",matchday:2,venue:"Arrowhead Stadium, Kansas City"},
   {id:"m036",date:"2026-06-21",time:"12:00",home:"TUN",away:"JPN",grp:"F",stage:"group",matchday:2,venue:"Estadio BBVA, Monterrey"},
-  {id:"m037",date:"2026-06-22",time:"00:00",home:"ESP",away:"KSA",grp:"H",stage:"group",matchday:2,venue:"Mercedes-Benz Stadium, Atlanta",featured:true},
+  {id:"m037",date:"2026-06-22",time:"00:00",home:"ESP",away:"KSA",grp:"H",stage:"group",matchday:2,venue:"Mercedes-Benz Stadium, Atlanta"},
   {id:"m038",date:"2026-06-22",time:"03:00",home:"BEL",away:"IRN",grp:"G",stage:"group",matchday:2,venue:"SoFi Stadium, Los Angeles"},
   {id:"m039",date:"2026-06-22",time:"06:00",home:"URU",away:"CPV",grp:"H",stage:"group",matchday:2,venue:"Hard Rock Stadium, Miami"},
   {id:"m040",date:"2026-06-22",time:"09:00",home:"NZL",away:"EGY",grp:"G",stage:"group",matchday:2,venue:"BC Place, Vancouver"},
-  {id:"m041",date:"2026-06-23",time:"01:00",home:"ARG",away:"AUT",grp:"J",stage:"group",matchday:2,venue:"AT&T Stadium, Dallas",featured:true},
+  {id:"m041",date:"2026-06-23",time:"01:00",home:"ARG",away:"AUT",grp:"J",stage:"group",matchday:2,venue:"AT&T Stadium, Dallas"},
   {id:"m042",date:"2026-06-23",time:"05:00",home:"FRA",away:"IRQ",grp:"I",stage:"group",matchday:2,venue:"Lincoln Financial Field, Philadelphia"},
   {id:"m043",date:"2026-06-23",time:"08:00",home:"NOR",away:"SEN",grp:"I",stage:"group",matchday:2,venue:"MetLife Stadium, New York New Jersey"},
   {id:"m044",date:"2026-06-23",time:"11:00",home:"JOR",away:"ALG",grp:"J",stage:"group",matchday:2,venue:"Levi's Stadium, San Francisco Bay Area"},
-  {id:"m045",date:"2026-06-24",time:"01:00",home:"POR",away:"UZB",grp:"K",stage:"group",matchday:2,venue:"NRG Stadium, Houston",featured:true},
+  {id:"m045",date:"2026-06-24",time:"01:00",home:"POR",away:"UZB",grp:"K",stage:"group",matchday:2,venue:"NRG Stadium, Houston"},
   {id:"m046",date:"2026-06-24",time:"04:00",home:"ENG",away:"GHA",grp:"L",stage:"group",matchday:2,venue:"Gillette Stadium, Boston"},
   {id:"m047",date:"2026-06-24",time:"07:00",home:"PAN",away:"CRO",grp:"L",stage:"group",matchday:2,venue:"BMO Field, Toronto"},
   {id:"m048",date:"2026-06-24",time:"10:00",home:"COL",away:"COD",grp:"K",stage:"group",matchday:2,venue:"Estadio Akron, Guadalajara"},
@@ -2147,10 +2147,10 @@ const MATCH_SCHEDULE = [
   {id:"m050",date:"2026-06-25",time:"03:00",home:"BIH",away:"QAT",grp:"B",stage:"group",matchday:3,venue:"Lumen Field, Seattle"},
   {id:"m051",date:"2026-06-25",time:"06:00",home:"MAR",away:"HAI",grp:"C",stage:"group",matchday:3,venue:"Mercedes-Benz Stadium, Atlanta"},
   {id:"m052",date:"2026-06-25",time:"06:00",home:"SCO",away:"BRA",grp:"C",stage:"group",matchday:3,venue:"Hard Rock Stadium, Miami"},
-  {id:"m053",date:"2026-06-25",time:"09:00",home:"?",away:"MEX",grp:"?",stage:"group",matchday:3,venue:"Estadio Azteca, Mexico City"},
+  {id:"m053",date:"2026-06-25",time:"09:00",home:"CZE",away:"MEX",grp:"A",stage:"group",matchday:3,venue:"Estadio Azteca, Mexico City"},
   {id:"m054",date:"2026-06-25",time:"09:00",home:"RSA",away:"KOR",grp:"A",stage:"group",matchday:3,venue:"Estadio BBVA, Monterrey"},
   {id:"m055",date:"2026-06-26",time:"04:00",home:"ECU",away:"GER",grp:"E",stage:"group",matchday:3,venue:"MetLife Stadium, New York New Jersey"},
-  {id:"m056",date:"2026-06-26",time:"04:00",home:"?",away:"CIV",grp:"?",stage:"group",matchday:3,venue:"Lincoln Financial Field, Philadelphia"},
+  {id:"m056",date:"2026-06-26",time:"04:00",home:"CUW",away:"CIV",grp:"E",stage:"group",matchday:3,venue:"Lincoln Financial Field, Philadelphia"},
   {id:"m057",date:"2026-06-26",time:"07:00",home:"JPN",away:"SWE",grp:"F",stage:"group",matchday:3,venue:"AT&T Stadium, Dallas"},
   {id:"m058",date:"2026-06-26",time:"07:00",home:"TUN",away:"NED",grp:"F",stage:"group",matchday:3,venue:"Arrowhead Stadium, Kansas City"},
   {id:"m059",date:"2026-06-26",time:"10:00",home:"TUR",away:"USA",grp:"D",stage:"group",matchday:3,venue:"SoFi Stadium, Los Angeles"},
@@ -2700,12 +2700,6 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
     else if (sa.points >= 6) motA = -0.06;
   }
 
-  // === LAYER 3: Venue factor ===
-  var venueAdjH = 0, venueAdjA = 0;
-  var venue = (m && m.venue) ? m.venue.toLowerCase() : '';
-  if (/aztec|mexico/i.test(venue)) { venueAdjA = -0.04; }       // high altitude
-  if (/houston|miami|dallas/i.test(venue)) { venueAdjA -= 0.02; venueAdjH -= 0.02; } // heat
-
   // === LAYER 4: Global Poisson calibration ===
   var calibrationBoost = 1.0;
   var totalMatches = Object.keys(actualResults).length;
@@ -2731,8 +2725,8 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
   }
 
   // Apply all adjustments to lambda
-  var lambdaH = hStrEff / 28 * homeBoost * (1 + tacticalAdj + motH + contBiasH + venueAdjH) * (hStrEff / (aStrEff * 0.55 + hStrEff * 0.45)) * calibrationBoost;
-  var lambdaA = aStrEff / 28 * (1 - tacticalAdj * 0.5 + motA + contBiasA + venueAdjA) * (aStrEff / (hStrEff * 0.55 + aStrEff * 0.45)) * calibrationBoost;
+  var lambdaH = hStrEff / 28 * homeBoost * (1 + tacticalAdj + motH + contBiasH) * (hStrEff / (aStrEff * 0.55 + hStrEff * 0.45)) * calibrationBoost;
+  var lambdaA = aStrEff / 28 * (1 - tacticalAdj * 0.5 + motA + contBiasA) * (aStrEff / (hStrEff * 0.55 + aStrEff * 0.45)) * calibrationBoost;
   lambdaH = Math.max(0.3, Math.min(5.5, lambdaH));
   lambdaA = Math.max(0.3, Math.min(5.5, lambdaA));
 
@@ -3211,6 +3205,12 @@ function renderMatchCard(m) {
   card += '<div class="mc-team"><span class="mc-flag">' + at.flag + '</span><span class="mc-name">' + at.cn + '</span></div>';
   card += '</div>';
 
+  // Venue + weather
+  if (m.venue) {
+    var w = getWeather(m.venue);
+    card += '<div style="text-align:center;font-size:.62rem;color:var(--text3);margin-top:2px">📍 ' + m.venue.split(',')[0] + ' ' + w.emoji + ' ' + w.temp + '°C</div>';
+  }
+
   // 2. Result banner (post-match)
   card += resultBanner;
 
@@ -3267,7 +3267,11 @@ function generateMatchAnalysis(m, ht, at, pred, mol) {
     var hForm = apiInfo.recentForm.home;
     var aForm = apiInfo.recentForm.away || {};
     var feat = apiInfo.feature || {};
-    parts.push('📊 【近期战绩】' + ht.cn + '：近' + (parseInt(hForm.homeTeamWins||0) + parseInt(hForm.homeTeamDraws||0) + parseInt(hForm.homeTeamLosses||0)) + '场 ' + hForm.homeTeamWins + '胜' + hForm.homeTeamDraws + '平' + hForm.homeTeamLosses + '负，胜率' + (hForm.homeTeamWinRate || '?') + '，场均进' + (feat.homeTeamAvgGoals || '?') + '球。' + at.cn + '：近' + (parseInt(aForm.awayTeamWins||0) + parseInt(aForm.awayTeamDraws||0) + parseInt(aForm.awayTeamLosses||0)) + '场 ' + (aForm.awayTeamWins||'?') + '胜' + (aForm.awayTeamDraws||'?') + '平' + (aForm.awayTeamLosses||'?') + '负，胜率' + (aForm.awayTeamWinRate || '?') + '。');
+    var hTotal = parseInt(hForm.homeTeamWins||0) + parseInt(hForm.homeTeamDraws||0) + parseInt(hForm.homeTeamLosses||0);
+    var aTotal = parseInt(aForm.awayTeamWins||0) + parseInt(aForm.awayTeamDraws||0) + parseInt(aForm.awayTeamLosses||0);
+    var hPart = hTotal > 0 ? '近' + hTotal + '场 ' + hForm.homeTeamWins + '胜' + hForm.homeTeamDraws + '平' + hForm.homeTeamLosses + '负，胜率' + (hForm.homeTeamWinRate || '?') + '，场均进' + (feat.homeTeamAvgGoals || '?') + '球' : '近期数据暂无';
+    var aPart = aTotal > 0 ? '近' + aTotal + '场 ' + aForm.awayTeamWins + '胜' + aForm.awayTeamDraws + '平' + aForm.awayTeamLosses + '负，胜率' + (aForm.awayTeamWinRate || '?') : '近期数据暂无';
+    parts.push('📊 【近期战绩】' + ht.cn + '：' + hPart + '。' + at.cn + '：' + aPart + '。');
   }
 
   // 2. Strengths & weaknesses
@@ -3330,6 +3334,39 @@ function generateMatchAnalysis(m, ht, at, pred, mol) {
     }
     oddsAnalysis += '综合来看，' + edgeSide + '。';
     parts.push('📊 【指数与数据】' + oddsAnalysis);
+  }
+
+  // 7.5 Previous match performance
+  if (matchDetails && Object.keys(matchDetails).length > 0) {
+    var prevH = null, prevA = null;
+    Object.keys(matchDetails).forEach(function(k) {
+      var d = matchDetails[k];
+      if (!d || !d.score) return;
+      if (d.homeTeam === ht.name || d.awayTeam === ht.name) {
+        if (!prevH || d.date > prevH.date) prevH = d;
+      }
+      if (d.homeTeam === at.name || d.awayTeam === at.name) {
+        if (!prevA || d.date > prevA.date) prevA = d;
+      }
+    });
+    if (prevH) {
+      var hIsHome = prevH.homeTeam === ht.name;
+      var hSc = hIsHome ? prevH.score.home + '-' + prevH.score.away : prevH.score.away + '-' + prevH.score.home;
+      parts.push('📜 【上轮回顾】' + ht.cn + '上轮' + (hIsHome ? '主场' : '客场') + hSc + ' ' + (prevH.status || '') + '。');
+    }
+    if (prevA) {
+      var aIsHome = prevA.homeTeam === at.name;
+      var aSc = aIsHome ? prevA.score.home + '-' + prevA.score.away : prevA.score.away + '-' + prevA.score.home;
+      parts.push('📜 【上轮回顾】' + at.cn + '上轮' + (aIsHome ? '主场' : '客场') + aSc + ' ' + (prevA.status || '') + '。');
+    }
+  }
+
+  // 7.6 Group standings context
+  var sh = getStandings(ht.id), sa = getStandings(at.id);
+  if (sh && sa) {
+    parts.push('📊 【小组形势】' + ht.cn + ' ' + sh.points + '分（' + sh.won + '胜' + sh.drawn + '平' + sh.lost + '负）进' + sh.goalsFor + '失' + sh.goalsAgainst + '；' + at.cn + ' ' + sa.points + '分（' + sa.won + '胜' + sa.drawn + '平' + sa.lost + '负）进' + sa.goalsFor + '失' + sa.goalsAgainst + '。');
+    if (sh.points === 0 && sa.points > 0) parts.push('⚠️ ' + ht.cn + '已无退路，本场必须拿分。');
+    if (sa.points === 0 && sh.points > 0) parts.push('⚠️ ' + at.cn + '已无退路，本场必须拿分。');
   }
 
   // 8. Closing verdict
@@ -4365,6 +4402,51 @@ let liveInfo = {};
 let matchDetails = {};
 let liveInjuries = {};
 let standingsData = {};
+let weatherCache = {};
+
+// Venue coordinates for weather lookup
+var VENUE_COORDS = {
+  'Estadio Azteca': {lat:19.30, lng:-99.15},
+  'Estadio Akron': {lat:20.68, lng:-103.46},
+  'BMO Field': {lat:43.63, lng:-79.42},
+  'SoFi Stadium': {lat:33.95, lng:-118.34},
+  'Levi\'s Stadium': {lat:37.40, lng:-121.97},
+  'MetLife Stadium': {lat:40.81, lng:-74.07},
+  'Gillette Stadium': {lat:42.09, lng:-71.26},
+  'BC Place': {lat:49.28, lng:-123.11},
+  'NRG Stadium': {lat:29.68, lng:-95.41},
+  'AT&T Stadium': {lat:32.75, lng:-97.09},
+  'Lincoln Financial Field': {lat:39.90, lng:-75.17},
+  'Estadio BBVA': {lat:25.67, lng:-100.26},
+  'Mercedes-Benz Stadium': {lat:33.76, lng:-84.40},
+  'Lumen Field': {lat:47.60, lng:-122.33},
+  'Hard Rock Stadium': {lat:25.96, lng:-80.24},
+  'Arrowhead Stadium': {lat:39.05, lng:-94.48},
+};
+
+var WEATHER_EMOJI = {0:'☀️',1:'☀️',2:'⛅',3:'☁️',45:'🌫️',48:'🌫️',51:'🌦️',53:'🌦️',55:'🌧️',61:'🌧️',63:'🌧️',65:'🌧️',71:'❄️',73:'❄️',75:'❄️',80:'🌦️',81:'🌦️',82:'🌧️',95:'⛈️',96:'⛈️',99:'⛈️'};
+
+async function loadWeather() {
+  var venues = Object.keys(VENUE_COORDS);
+  for (var i = 0; i < venues.length; i++) {
+    var v = venues[i];
+    if (weatherCache[v]) continue;
+    try {
+      var c = VENUE_COORDS[v];
+      var resp = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + c.lat + '&longitude=' + c.lng + '&current=temperature_2m,weather_code', {cache:'no-store'});
+      if (!resp.ok) continue;
+      var d = await resp.json();
+      var code = d.current?.weather_code || 0;
+      var temp = d.current?.temperature_2m || '?';
+      weatherCache[v] = {temp: Math.round(temp), emoji: WEATHER_EMOJI[code] || '⛅'};
+    } catch(e) {}
+  }
+}
+
+function getWeather(venue) {
+  var key = Object.keys(VENUE_COORDS).find(function(k){return venue && venue.indexOf(k) >= 0;});
+  return weatherCache[key || ''] || {temp:'?', emoji:'⛅'};
+}
 
 async function loadStandingsJSON() {
   try {
@@ -4448,6 +4530,7 @@ loadInfoJSON();
 loadMatchDetailsJSON();
 loadInjuriesJSON();
 loadStandingsJSON();
+loadWeather();
 
 // Keep old API for admin panel compatibility
 function saveActualResult(matchId, homeScore, awayScore, notes) {
@@ -5515,10 +5598,13 @@ document.addEventListener('keydown', e => {
 loadCachedNews();
 refreshNews(false).then(() => scheduleNewsRefresh());
 
-// Every 2 hours, refresh predictions based on latest news & odds
-setInterval(function() {
+// Every 2 hours: refresh news → update strength → refresh predictions → re-render
+setInterval(async function() {
+  await refreshNews(false).catch(function(){});
+  var d = findNextMatchDate();
+  if (d) renderTodayMatches(d);
   var count = refreshAllPredictions();
-  console.log('Prediction refresh done: ' + count + ' matches');
+  console.log('2h cycle done: ' + count + ' predictions refreshed');
 }, 7200000);
 
 // Start prediction schedule checker (release 12:00, lock 16:00, checks every minute)
