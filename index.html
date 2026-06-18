@@ -2821,24 +2821,7 @@ function getTeamLearning(teamId) {
 }
 
 /** Record a team's performance after a match and adjust future predictions */
-function recordTeamPerformance(teamId, matchData) {
-  var entry = TEAM_LEARNING[teamId] || { matches: 0, strengthDelta: 0, avgGoals: 0, avgGoalsConceded: 0, upsetCount: 0 };
-  entry.matches++;
-  var predictedGoals = matchData.predGoals || 0;
-  var actualGoals = matchData.actualGoals || 0;
-  var goalDiff = actualGoals - predictedGoals;
-  // Delta: if team consistently over/underperforms expected goals, adjust strength
-  entry.strengthDelta = (entry.strengthDelta * (entry.matches - 1) + goalDiff * 4) / entry.matches;
-  entry.avgGoals = (entry.avgGoals * (entry.matches - 1) + actualGoals) / entry.matches;
-  entry.avgGoalsConceded = (entry.avgGoalsConceded * (entry.matches - 1) + (matchData.actualAgainst || 0)) / entry.matches;
-  if (matchData.wasUpset) entry.upsetCount++;
-  // Clamp adjustment
-  entry.strengthDelta = Math.max(-8, Math.min(8, entry.strengthDelta));
-  TEAM_LEARNING[teamId] = entry;
-  saveLearning();
-}
-
-/** After a match finishes, learn from the result */
+/** After a match finishes, learn from the result + advanced stats */
 function learnFromMatch(matchId) {
   var m = MATCH_SCHEDULE.find(function(x){return x.id === matchId});
   if (!m) return;
@@ -2850,18 +2833,53 @@ function learnFromMatch(matchId) {
   var pred = predictMatch(ht, at, MATCH_ODDS[matchId]);
   var hStr = getStrength(ht), aStr = getStrength(at);
 
-  // Record home team
+  // Augment with advanced stats from match-details
+  var detail = matchDetails[matchId];
+  var hxG = 0, axG = 0, hShots = 0, aShots = 0;
+  if (detail && detail.statistics) {
+    var hStats = detail.statistics[detail.homeTeam];
+    var aStats = detail.statistics[detail.awayTeam];
+    if (hStats) {
+      hxG = parseFloat(hStats['Expected Goals'] || hStats['expected_goals'] || pred.expH);
+      hShots = parseInt(hStats['Total Shots'] || hStats['Shots on Goal'] || 0);
+    }
+    if (aStats) {
+      axG = parseFloat(aStats['Expected Goals'] || aStats['expected_goals'] || pred.expA);
+      aShots = parseInt(aStats['Total Shots'] || aStats['Shots on Goal'] || 0);
+    }
+  }
+
+  // Record with enriched data
   recordTeamPerformance(m.home, {
     predGoals: pred.expH, actualGoals: actual.homeScore,
     actualAgainst: actual.awayScore,
+    xG: hxG || pred.expH, shots: hShots,
     wasUpset: (hStr > aStr && actual.homeScore <= actual.awayScore) || (hStr < aStr && actual.homeScore >= actual.awayScore)
   });
-  // Record away team
   recordTeamPerformance(m.away, {
     predGoals: pred.expA, actualGoals: actual.awayScore,
     actualAgainst: actual.homeScore,
+    xG: axG || pred.expA, shots: aShots,
     wasUpset: (aStr > hStr && actual.awayScore <= actual.homeScore) || (aStr < hStr && actual.awayScore >= actual.homeScore)
   });
+}
+
+// Enhance strength delta with xG data
+function recordTeamPerformance(teamId, data) {
+  var entry = TEAM_LEARNING[teamId] || { matches: 0, strengthDelta: 0, avgGoals: 0, avgGoalsConceded: 0, upsetCount: 0, avgxG: 0 };
+  entry.matches++;
+  var goalDiff = data.actualGoals - data.predGoals;
+  // xG efficiency: if team consistently over/under performs xG, adjust
+  var xG = data.xG || data.predGoals;
+  var xGdiff = data.actualGoals - xG;
+  entry.strengthDelta = (entry.strengthDelta * (entry.matches - 1) + goalDiff * 3 + xGdiff * 2) / entry.matches;
+  entry.avgGoals = (entry.avgGoals * (entry.matches - 1) + data.actualGoals) / entry.matches;
+  entry.avgGoalsConceded = (entry.avgGoalsConceded * (entry.matches - 1) + (data.actualAgainst || 0)) / entry.matches;
+  entry.avgxG = (entry.avgxG * (entry.matches - 1) + xG) / entry.matches;
+  if (data.wasUpset) entry.upsetCount++;
+  entry.strengthDelta = Math.max(-8, Math.min(8, entry.strengthDelta || 0));
+  TEAM_LEARNING[teamId] = entry;
+  saveLearning();
 }
 
 function sampleMatch(homeTeam, awayTeam) {
