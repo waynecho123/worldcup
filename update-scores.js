@@ -751,6 +751,49 @@ async function updateStandings() {
   console.log(`[${ts}] Standings: ${Object.keys(standings).length} teams updated`);
 }
 
+// ========== UPDATE: Player Stats (via API-Sports) ==========
+async function updatePlayerStats() {
+  if (!APISPORTS_KEY) { console.log('APISPORTS_KEY not set'); return; }
+  const now = new Date();
+  const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
+  const PLAYERS_FILE = path.join(BASE_DIR, 'players.json');
+
+  async function fetchAPI(endpoint) {
+    return new Promise((resolve, reject) => {
+      https.get(`${APISPORTS_BASE}${endpoint}&league=1&season=2026`, {
+        headers: { 'x-apisports-key': APISPORTS_KEY }, timeout: 15000
+      }, res => {
+        let d = ''; res.on('data', c => d += c);
+        res.on('end', () => { try { resolve(JSON.parse(d)); } catch(e) { reject(e); } });
+      }).on('error', reject);
+    });
+  }
+
+  var scorers = [], assists = [], cards = [];
+  try {
+    var sData = await fetchAPI('/players/topscorers?');
+    scorers = (sData.response || []).slice(0, 20).map(function(r) {
+      return { name: r.player?.name, photo: r.player?.photo, team: r.statistics?.[0]?.team?.name, goals: r.statistics?.[0]?.goals?.total || 0, matches: r.statistics?.[0]?.games?.appearences || 0 };
+    });
+  } catch(e) {}
+  try {
+    var aData = await fetchAPI('/players/topassists?');
+    assists = (aData.response || []).slice(0, 20).map(function(r) {
+      return { name: r.player?.name, photo: r.player?.photo, team: r.statistics?.[0]?.team?.name, assists: r.statistics?.[0]?.goals?.assists || 0, matches: r.statistics?.[0]?.games?.appearences || 0 };
+    });
+  } catch(e) {}
+  try {
+    var cData = await fetchAPI('/players/topyellowcards?');
+    cards = (cData.response || []).slice(0, 20).map(function(r) {
+      return { name: r.player?.name, photo: r.player?.photo, team: r.statistics?.[0]?.team?.name, yellow: r.statistics?.[0]?.cards?.yellow || 0, red: r.statistics?.[0]?.cards?.red || 0 };
+    });
+  } catch(e) {}
+
+  var data = { scorers, assists, cards, updatedAt: now.toISOString() };
+  fs.writeFileSync(PLAYERS_FILE, JSON.stringify(data, null, 2) + '\n');
+  console.log(`[${ts}] Players: ${scorers.length} scorers + ${assists.length} assists + ${cards.length} cards`);
+}
+
 // ========== Update All ==========
 async function updateAll() {
   await updateScores();
@@ -771,6 +814,7 @@ async function main() {
   if (args.includes('--details')) { await updateMatchDetails(); ran = true; }
   if (args.includes('--injuries')) { await updateInjuries(); ran = true; }
   if (args.includes('--standings')) { await updateStandings(); ran = true; }
+  if (args.includes('--players')) { await updatePlayerStats(); ran = true; }
   if (!ran) await updateAll();
 }
 

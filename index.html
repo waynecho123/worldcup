@@ -371,6 +371,7 @@ canvas{max-height:200px}
     <button data-tab="teams">⭐ 球队分析</button>
 	    <button data-tab="standings">🏆 积分榜</button>
     <button data-tab="schedule">📅 完整赛程</button>
+    <button data-tab="players">👕 球员榜</button>
     <button data-tab="review">🔍 复盘分析</button>
     <button data-tab="history" style="display:none">📋 模拟记录</button>
   </nav>
@@ -467,6 +468,16 @@ canvas{max-height:200px}
 </section>
 
 <!-- ========== SCHEDULE TAB ========== -->
+<!-- ========== PLAYERS TAB ========== -->
+<section class="tab-content" id="tab-players">
+  <div style="margin-bottom:14px;display:flex;gap:8px">
+    <button class="btn btn-sm" onclick="renderPlayerTab('scorers')" id="btnScorers" style="background:var(--accent);color:#fff">⚽ 射手榜</button>
+    <button class="btn btn-sm" onclick="renderPlayerTab('assists')" id="btnAssists">🎯 助攻榜</button>
+    <button class="btn btn-sm" onclick="renderPlayerTab('cards')" id="btnCards">🟨 纪律榜</button>
+  </div>
+  <div id="playerTabContent"><div class="empty-state">加载中...</div></div>
+</section>
+
 <section class="tab-content" id="tab-schedule">
   <div style="margin-bottom:14px;display:flex;gap:10px;flex-wrap:wrap">
     <select id="schedFilter" style="padding:7px 14px;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:.82rem">
@@ -4501,6 +4512,41 @@ function getStandings(teamId) {
   return standingsData[teamId] || null;
 }
 
+var playerStats = {scorers:[], assists:[], cards:[]};
+async function loadPlayerStats() {
+  try {
+    var resp = await fetch('players.json?v=' + Date.now(), {cache:'no-store'});
+    if (!resp.ok) return;
+    var data = await resp.json();
+    if (data) playerStats = data;
+  } catch(e) {}
+}
+
+function renderPlayerTab(type) {
+  document.querySelectorAll('#tab-players .btn-sm').forEach(function(b){b.style.background='transparent';b.style.color='var(--text2)';});
+  var btn = document.getElementById(type === 'scorers' ? 'btnScorers' : type === 'assists' ? 'btnAssists' : 'btnCards');
+  if (btn) { btn.style.background = 'var(--accent)'; btn.style.color = '#fff'; }
+  var list = playerStats[type] || [];
+  if (list.length === 0) {
+    document.getElementById('playerTabContent').innerHTML = '<div class="empty-state">暂无数据</div>';
+    return;
+  }
+  var html = '<div style="display:flex;flex-direction:column;gap:4px">';
+  list.forEach(function(p, i) {
+    var rank = i + 1;
+    var medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : rank;
+    var stat = type === 'scorers' ? p.goals + '球' : type === 'assists' ? p.assists + '助' : '🟨' + (p.yellow||0) + ' 🟥' + (p.red||0);
+    html += '<div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--surface2);border-radius:8px">';
+    html += '<span style="width:28px;text-align:center;font-weight:700;font-size:.9rem">' + medal + '</span>';
+    html += '<span style="flex:1;font-weight:600">' + p.name + '</span>';
+    html += '<span style="font-size:.75rem;color:var(--text2)">' + (p.team || '') + '</span>';
+    html += '<span style="font-weight:700;color:var(--gold)">' + stat + '</span>';
+    html += '</div>';
+  });
+  html += '</div>';
+  document.getElementById('playerTabContent').innerHTML = html;
+}
+
 async function loadInjuriesJSON() {
   try {
     var resp = await fetch('injuries.json?v=' + Date.now(), { cache: 'no-store' });
@@ -4570,6 +4616,7 @@ loadInfoJSON();
 loadMatchDetailsJSON();
 loadInjuriesJSON();
 loadStandingsJSON();
+loadPlayerStats();
 loadWeather().then(function() {
   // Refresh weather every 3 hours
   setInterval(function() { loadWeather(); }, 10800000);
