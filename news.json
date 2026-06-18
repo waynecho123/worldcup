@@ -354,28 +354,155 @@
       "📰 England hit four in World Cup opener against Croatia "
     ],
     "CRO": [
-      "📰 England hit four in World Cup opener against Croatia "
+      "📰 England hit four in World Cup opener against Croatia ",
+      "📰 上轮负 英格兰 2-4"
     ],
     "ARG": [
       "📰 Christie chases dream on same stage as idol Messi",
-      "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one"
+      "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one",
+      "📰 上轮胜 阿尔及利亚 3-0"
     ],
     "BRA": [
-      "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one"
+      "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one",
+      "📰 上轮平 摩洛哥 1-1"
     ],
     "USA": [
-      "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one"
+      "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one",
+      "📰 上轮胜 巴拉圭 4-1"
     ],
     "FRA": [
-      "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one"
+      "📰 Messi, Mbappe & Vinicius Jr - best World Cup goals from round one",
+      "📰 上轮胜 塞内加尔 3-1"
     ],
     "UZB": [
-      "📰 Fayzullaev scores Uzbekistan's first-ever World Cup goal"
+      "📰 Fayzullaev scores Uzbekistan's first-ever World Cup goal",
+      "📰 上轮负 哥伦比亚 1-3"
     ],
     "POR": [
-      "📰 'The team needs to score, not you' - Ronaldo struggles as rivals sparkle "
+      "📰 'The team needs to score, not you' - Ronaldo struggles as rivals sparkle ",
+      "📰 上轮平 民主刚果 1-1"
+    ],
+    "MEX": [
+      "📰 上轮胜 南非 2-0"
+    ],
+    "RSA": [
+      "📰 上轮负 墨西哥 0-2"
+    ],
+    "KOR": [
+      "📰 上轮胜 捷克 2-1"
+    ],
+    "CZE": [
+      "📰 上轮负 韩国 1-2"
+    ],
+    "CAN": [
+      "📰 上轮平 波黑 1-1"
+    ],
+    "BIH": [
+      "📰 上轮平 加拿大 1-1"
+    ],
+    "PAR": [
+      "📰 上轮负 美国 1-4"
+    ],
+    "QAT": [
+      "📰 上轮平 瑞士 1-1"
+    ],
+    "SUI": [
+      "📰 上轮平 卡塔尔 1-1"
+    ],
+    "MAR": [
+      "📰 上轮平 巴西 1-1"
+    ],
+    "HAI": [
+      "📰 上轮负 苏格兰 0-1"
+    ],
+    "SCO": [
+      "📰 上轮胜 海地 1-0"
+    ],
+    "AUS": [
+      "📰 上轮胜 土耳其 2-0"
+    ],
+    "TUR": [
+      "📰 上轮负 澳大利亚 0-2"
+    ],
+    "GER": [
+      "📰 上轮胜 库拉索 7-1"
+    ],
+    "CUW": [
+      "📰 上轮负 德国 1-7"
+    ],
+    "NED": [
+      "📰 上轮平 日本 2-2"
+    ],
+    "JPN": [
+      "📰 上轮平 荷兰 2-2"
+    ],
+    "CIV": [
+      "📰 上轮胜 厄瓜多尔 1-0"
+    ],
+    "ECU": [
+      "📰 上轮负 科特迪瓦 0-1"
+    ],
+    "SWE": [
+      "📰 上轮胜 突尼斯 5-1"
+    ],
+    "TUN": [
+      "📰 上轮负 瑞典 1-5"
+    ],
+    "ESP": [
+      "📰 上轮平 佛得角 0-0"
+    ],
+    "CPV": [
+      "📰 上轮平 西班牙 0-0"
+    ],
+    "BEL": [
+      "📰 上轮平 埃及 1-1"
+    ],
+    "EGY": [
+      "📰 上轮平 比利时 1-1"
+    ],
+    "KSA": [
+      "📰 上轮平 乌拉圭 1-1"
+    ],
+    "URU": [
+      "📰 上轮平 沙特 1-1"
+    ],
+    "IRN": [
+      "📰 上轮平 新西兰 2-2"
+    ],
+    "NZL": [
+      "📰 上轮平 伊朗 2-2"
+    ],
+    "SEN": [
+      "📰 上轮负 法国 1-3"
+    ],
+    "IRQ": [
+      "📰 上轮负 挪威 1-4"
+    ],
+    "NOR": [
+      "📰 上轮胜 伊拉克 4-1"
+    ],
+    "ALG": [
+      "📰 上轮负 阿根廷 0-3"
+    ],
+    "AUT": [
+      "📰 上轮胜 约旦 3-1"
+    ],
+    "JOR": [
+      "📰 上轮负 奥地利 1-3"
+    ],
+    "COD": [
+      "📰 上轮平 葡萄牙 1-1"
+    ],
+    "GHA": [
+      "📰 上轮胜 巴拿马 1-0"
+    ],
+    "PAN": [
+      "📰 上轮负 加纳 0-1"
+    ],
+    "COL": [
+      "📰 上轮胜 乌兹别克 3-1"
     ]
   },
-  "total": 39,
-  "updatedAt": "2026-06-18T10:00:50.252Z"
+  "total": 97,
+  "updatedAt": "2026-06-18T10:28:20.573866+00:00"
 }
