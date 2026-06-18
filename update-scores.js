@@ -423,7 +423,9 @@ async function updateNews() {
     'https://news.google.com/rss/search?q=World+Cup+2026+Mexico+USA+Canada+Japan+Korea+Australia+New+Zealand&hl=en-US',
     'https://news.google.com/rss/search?q=World+Cup+2026+Morocco+Senegal+Ghana+Ivory+Coast+Egypt+Algeria+Tunisia+South+Africa&hl=en-US',
     'https://news.google.com/rss/search?q=World+Cup+2026+Netherlands+Belgium+Croatia+Switzerland+Austria+Sweden+Norway+Denmark&hl=en-US',
-    'https://news.google.com/rss/search?q=World+Cup+2026+Uruguay+Colombia+Paraguay+Ecuador+Chile+Peru+Qatar+Saudi+Iran+Iraq&hl=en-US',
+    'https://news.google.com/rss/search?q=World+Cup+2026+Uruguay+Colombia+Paraguay+Ecuador+Qatar+Saudi+Iran+Iraq+Jordan&hl=en-US',
+    'https://news.google.com/rss/search?q=World+Cup+2026+Czech+Republic+Bosnia+Herzegovina+Scotland+Turkey+Haiti+Curacao+Cape+Verde&hl=en-US',
+    'https://news.google.com/rss/search?q=World+Cup+2026+Panama+Uzbekistan+Congo+DR+Bolivia+Finland+Ukraine+Romania&hl=en-US',
     // Chinese via RSSHub
     'https://rsshub.app/sina/sports',
   ];
