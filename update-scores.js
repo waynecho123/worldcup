@@ -432,17 +432,18 @@ async function updateNews() {
   const GNEWS_KEY = process.env.GNEWS_KEY || '';
   if (GNEWS_KEY) {
     // 6 batches of 8 teams each — covers all 48 teams
+    // GNews free tier: 100 req/day, supports simple queries (no OR)
     const TEAM_BATCHES = [
-      'Argentina Brazil France England Germany Spain Portugal Netherlands',
-      'Mexico USA Canada "South Korea" Japan Australia "New Zealand" Qatar',
-      'Morocco Senegal Ghana "Ivory Coast" Egypt Algeria Tunisia "South Africa"',
-      'Croatia Belgium Switzerland Austria Sweden Norway Turkey Scotland',
-      'Uruguay Colombia Paraguay Ecuador "Saudi Arabia" Iran Iraq Jordan',
-      '"Czech Republic" "Bosnia Herzegovina" Haiti Curacao "Cape Verde" Panama Uzbekistan "Congo DR"',
+      'Argentina Brazil France England Germany Spain Portugal Netherlands World Cup 2026',
+      'Mexico USA Canada Korea Japan Australia New Zealand Qatar World Cup 2026',
+      'Morocco Senegal Ghana Ivory Coast Egypt Algeria Tunisia South Africa World Cup 2026',
+      'Croatia Belgium Switzerland Austria Sweden Norway Turkey Scotland World Cup 2026',
+      'Uruguay Colombia Paraguay Ecuador Saudi Arabia Iran Iraq Jordan World Cup 2026',
+      'Czech Bosnia Herzegovina Haiti Curacao Cape Verde Panama Uzbekistan Congo DR World Cup 2026',
     ];
     for (const batch of TEAM_BATCHES) {
       try {
-        const q = encodeURIComponent(`(${batch}) World Cup 2026`);
+        const q = encodeURIComponent(batch);
         const newsResp = await new Promise((resolve, reject) => {
           https.get(`https://gnews.io/api/v4/search?q=${q}&lang=en&max=10&token=${GNEWS_KEY}`, { timeout: 15000 }, res => {
             let b = ''; res.on('data', c => b += c);
