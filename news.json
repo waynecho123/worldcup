@@ -1,8 +1,9 @@
 {
   "items": [
-    "📰 'If we lose, we lose in our way' - how Tuchel inspired England at half-time",
+    "📰 This was an England we haven't seen for years - and it was fun",
     "📰 England hit four in World Cup opener against Croatia ",
     "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
+    "📰 'If we lose, we lose in our way' - how Tuchel inspired England at half-time",
     "📰 Who was the biggest attacking threat? England player ratings",
     "📰 How sweltering Scotland can handle World Cup heat",
     "📰 Extraordinary Messi makes more history in masterclass for the ages",
@@ -14,7 +15,6 @@
     "📰 How to watch the World Cup on the BBC and ITV",
     "📰 Catch up on the World Cup without any spoilers",
     "📰 No stage too big - Haaland arrives in style at World Cup",
-    "📰 Emotional Messi explains tears after Argentina goal",
     "🤝 葡萄牙 1-1 民主刚果 — 葡萄牙 1-1 民主刚果，双方激战成和",
     "⚽ 英格兰 4-2 克罗地亚 — 英格兰 4-2 取胜，关键3分",
     "⚽ 法国 3-1 塞内加尔 — 法国 3-1 取胜，关键3分",
@@ -305,9 +305,10 @@
     }
   ],
   "generalNews": [
-    "📰 'If we lose, we lose in our way' - how Tuchel inspired England at half-time",
+    "📰 This was an England we haven't seen for years - and it was fun",
     "📰 England hit four in World Cup opener against Croatia ",
     "📰 'Scared to take him off' - Ronaldo struggles after fellow superstars sparkle",
+    "📰 'If we lose, we lose in our way' - how Tuchel inspired England at half-time",
     "📰 Who was the biggest attacking threat? England player ratings",
     "📰 How sweltering Scotland can handle World Cup heat",
     "📰 Extraordinary Messi makes more history in masterclass for the ages",
@@ -318,14 +319,13 @@
     "📰 Musa strikes for Croatia to make it 2-2 against England",
     "📰 How to watch the World Cup on the BBC and ITV",
     "📰 Catch up on the World Cup without any spoilers",
-    "📰 No stage too big - Haaland arrives in style at World Cup",
-    "📰 Emotional Messi explains tears after Argentina goal"
+    "📰 No stage too big - Haaland arrives in style at World Cup"
   ],
   "teamNews": {
     "ENG": [
-      "📰 'If we lose, we lose in our way' - how Tuchel inspired England at half-time",
+      "📰 This was an England we haven't seen for years - and it was fun",
       "📰 England hit four in World Cup opener against Croatia ",
-      "📰 Who was the biggest attacking threat? England player ratings"
+      "📰 'If we lose, we lose in our way' - how Tuchel inspired England at half-time"
     ],
     "CRO": [
       "📰 England hit four in World Cup opener against Croatia ",
@@ -339,8 +339,7 @@
       "📰 How sweltering Scotland can handle World Cup heat"
     ],
     "ARG": [
-      "📰 Extraordinary Messi makes more history in masterclass for the ages",
-      "📰 Emotional Messi explains tears after Argentina goal"
+      "📰 Extraordinary Messi makes more history in masterclass for the ages"
     ],
     "USA": [
       "📰 Musa strikes for Croatia to make it 2-2 against England"
@@ -350,5 +349,5 @@
     ]
   },
   "total": 37,
-  "updatedAt": "2026-06-18T00:13:10.039Z"
+  "updatedAt": "2026-06-18T01:43:33.571Z"
 }
