@@ -5371,8 +5371,8 @@ function renderDuel() {
   // Scoreboard
   var aiEl = document.getElementById('aiBalance');
   var humanEl = document.getElementById('humanBalance');
-  if (aiEl) aiEl.textContent = '¥' + duel.aiBalance.toLocaleString();
-  if (humanEl) humanEl.textContent = '¥' + duel.humanBalance.toLocaleString();
+  if (aiEl) aiEl.textContent = '¥' + (duel.aiBalance || 0).toLocaleString();
+  if (humanEl) humanEl.textContent = '¥' + (duel.humanBalance || 0).toLocaleString();
   var aiPct = ((duel.aiBalance-1000)/1000*100).toFixed(1);
   var hPct = ((duel.humanBalance-1000)/1000*100).toFixed(1);
   var aiPnlEl = document.getElementById('aiPnl');
