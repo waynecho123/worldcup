@@ -882,9 +882,67 @@ const STARTING_XI = {
   PAN: {f:'5-4-1',g:'Mejía',d:['Murillo','Córdoba','Escobar','Cummings','Davis'],m:['Carrasquilla','Godoy','Martínez','Waterman'],st:'Díaz',subs:'Gondola,Yanis',note:'美洲杯8强 五后卫大巴'},
 };
 
-// Find a team's predicted lineup
+// Track suspensions across matches (World Cup: red=1 match, 2 yellow=1 match)
+function getSuspendedPlayers(teamId) {
+  var suspended = [];
+  var yellows = {}; // player -> count
+  var team = TEAMS.find(function(t){return t.id === teamId});
+  // Scan all finished matches for this team
+  Object.keys(matchDetails).forEach(function(mid) {
+    var d = matchDetails[mid];
+    if (!d || !d.events) return;
+    if (d.homeTeam !== (team ? team.name : '') && d.awayTeam !== (team ? team.name : '')) return;
+    d.events.forEach(function(e) {
+      if (e.type === 'Card' && e.detail === 'Red Card') {
+        suspended.push(e.player);
+      }
+      if (e.type === 'Card' && e.detail === 'Yellow Card') {
+        yellows[e.player] = (yellows[e.player] || 0) + 1;
+        if (yellows[e.player] >= 2) suspended.push(e.player);
+      }
+    });
+  });
+  return [...new Set(suspended)];
+}
+
+// Find a team's predicted lineup (use last match actual lineup, minus suspended players)
 function getLineup(teamId) {
-  return STARTING_XI[teamId] || null;
+  var suspended = getSuspendedPlayers(teamId);
+  var suspensionNote = suspended.length > 0 ? '停赛:' + suspended.join(',') : '';
+  // 1. Check match-details.json for latest actual lineup
+  var latestLu = null;
+  var latestDate = '';
+  var team = TEAMS.find(function(t){return t.id === teamId});
+  Object.keys(matchDetails).forEach(function(mid) {
+    var d = matchDetails[mid];
+    if (!d || !d.lineups) return;
+    var hLu = d.lineups.home, aLu = d.lineups.away;
+    var lu = null;
+    if (hLu && d.homeTeam === (team ? team.name : '')) lu = hLu;
+    if (aLu && d.awayTeam === (team ? team.name : '')) lu = aLu;
+    if (lu && d.date > latestDate) {
+      latestDate = d.date;
+      latestLu = lu;
+    }
+  });
+  if (latestLu && latestLu.startXI && latestLu.startXI.length > 0) {
+    var gk = '', defs = [], mids = [], fwds = [];
+    latestLu.startXI.forEach(function(p) {
+      var pos = p.player.pos || '';
+      var name = p.player.name;
+      if (suspended.indexOf(name) >= 0) return; // skip suspended
+      if (pos === 'G') gk = name;
+      else if (pos === 'D') defs.push(name);
+      else if (pos === 'M') mids.push(name);
+      else if (pos === 'F') fwds.push(name);
+      else mids.push(name);
+    });
+    return { f: latestLu.formation || '?', g: gk, d: defs, m: mids, fwd: fwds, source: suspensionNote || '上轮实际首发', date: latestDate };
+  }
+  // 2. Fallback to hardcoded
+  var hc = STARTING_XI[teamId];
+  if (hc && suspensionNote) hc = Object.assign({}, hc, {note: suspensionNote});
+  return hc || null;
 }
 
 // =============================================================================
@@ -3383,6 +3441,34 @@ function generatePostMatchReview(m, ht, at, pred, actual, apiInfo) {
   // 9. Match events & lineup analysis from API-Sports
   var detail = matchDetails[m.id];
   if (detail) {
+    // ---- Team Statistics ----
+    if (detail.statistics && Object.keys(detail.statistics).length > 0) {
+      var hStats = detail.statistics[detail.homeTeam];
+      var aStats = detail.statistics[detail.awayTeam];
+      if (hStats && aStats) {
+        var statKeys = [
+          {key: 'Ball Possession', label: '控球率', end: '%'},
+          {key: 'Expected Goals', label: '预期进球(xG)', end: ''},
+          {key: 'Total Shots', label: '射门', end: ''},
+          {key: 'Shots on Goal', label: '射正', end: ''},
+          {key: 'Total Passes', label: '传球', end: ''},
+          {key: 'Passes %', label: '传球成功率', end: '%'},
+          {key: 'Corner Kicks', label: '角球', end: ''},
+          {key: 'Fouls', label: '犯规', end: ''}
+        ];
+        var statLines = [];
+        statKeys.forEach(function(sk) {
+          var hv = hStats[sk.key], av = aStats[sk.key];
+          if (hv !== undefined && av !== undefined) {
+            statLines.push(sk.label + ' ' + hv + sk.end + '-' + av + sk.end);
+          }
+        });
+        if (statLines.length > 0) {
+          parts.push('📊 【技术统计】' + statLines.slice(0,6).join(' | '));
+        }
+      }
+    }
+
     // ---- Lineup analysis: compare actual vs predicted ----
     if (detail.lineups && detail.lineups.home && detail.lineups.away) {
       var actualHLu = detail.lineups.home;

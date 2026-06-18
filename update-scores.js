@@ -603,6 +603,18 @@ async function updateMatchDetails() {
         // Only save if match is finished (lineups + events are final)
         if (status !== 'Match Finished' && status !== 'Match Finished AET' && status !== 'Match Finished AP') continue;
 
+        // Extract key team statistics
+        var teamStats = {};
+        (fixture.statistics || []).forEach(function(s) {
+          var teamName = s.team?.name;
+          if (!teamName) return;
+          var st = {};
+          (s.statistics || []).forEach(function(stat) {
+            st[stat.type] = stat.value;
+          });
+          teamStats[teamName] = st;
+        });
+
         const detail = {
           fixtureId: fixture.fixture?.id,
           date: fixture.fixture?.date,
@@ -610,6 +622,8 @@ async function updateMatchDetails() {
           status: status,
           homeTeam: homeName, awayTeam: awayName,
           score: { home: fixture.goals?.home, away: fixture.goals?.away },
+          // Team-level statistics
+          statistics: teamStats,
           // Lineups
           lineups: {
             home: (fixture.lineups || []).find(l => l.team?.name === homeName) || null,
