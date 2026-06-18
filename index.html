@@ -2731,7 +2731,7 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
   const allScores = [];
   for (let h = 0; h <= 9; h++) {
     for (let a = 0; a <= 9; a++) {
-      const prob = poissonPMF(lambdaH_final, h) * poissonPMF(lambdaA_final, a);
+      const prob = poissonPMF(lambdaH, h) * poissonPMF(lambdaA, a);
       if (h > a) hwp += prob; else if (h === a) dp += prob; else awp += prob;
       allScores.push({ home: h, away: a, prob: prob });
     }
@@ -2801,7 +2801,7 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
   }
   var underdog = hStr > aStr ? awayTeam : homeTeam;
   var isUpsetAlert = upsetProb > 0.25;
-  return { homeWinProb: finalHome, drawProb: finalDraw, awayWinProb: finalAway, expH: lambdaH_final, expA: lambdaA_final, predScore: bestS || [Math.round(lambdaH_final), Math.round(lambdaA_final)], topScores: topScores, hStr, aStr, tacticalAdj, tacAnalysis, marketConsensus: null, aiProbs, oddsBlended, upsetProb, upsetAlert: isUpsetAlert, upsetTeam: isUpsetAlert ? underdog.cn : null };
+  return { homeWinProb: finalHome, drawProb: finalDraw, awayWinProb: finalAway, expH: lambdaH, expA: lambdaA, predScore: bestS || [Math.round(lambdaH), Math.round(lambdaA)], topScores: topScores, hStr, aStr, tacticalAdj, tacAnalysis, marketConsensus: null, aiProbs, oddsBlended, upsetProb, upsetAlert: isUpsetAlert, upsetTeam: isUpsetAlert ? underdog.cn : null };
 }
 
 // ========== TEAM LEARNING SYSTEM ==========
