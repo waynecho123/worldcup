@@ -669,7 +669,7 @@ async function updateNews() {
       const isJunk = JUNK_KW.some(k => tl.includes(k));
       return isRelevant && !isJunk;
     })
-    .slice(0, 40).map(t => {
+    .slice(0, 80).map(t => {
       const tl = t.toLowerCase();
       return (tl.includes('injury') || tl.includes('injured') ? '🔴 ' : '📰 ') + t;
     });
