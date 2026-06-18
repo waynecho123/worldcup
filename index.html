@@ -3702,8 +3702,8 @@ function showMatchDetail(mid) {
   var now = new Date();
 
   // Weather simulation based on venue
-  var weathers = ['☀️ 晴 28°C','⛅ 多云 24°C','🌤️ 晴间多云 26°C','🌧️ 阵雨 22°C','☁️ 阴 20°C','☀️ 晴 31°C','⛅ 多云 25°C'];
-  var weather = weathers[Math.floor(m.id.charCodeAt(m.id.length-1)) % weathers.length];
+  var ww = getWeather(m.venue);
+  var weather = ww.emoji + ' ' + ww.temp + '°C';
 
   // Check if match has actual result for post-match review
   var actualResult = actualResults[mid];
