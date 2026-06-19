@@ -970,6 +970,9 @@ async function updateMatchDetails() {
           if (!detailResp.response || detailResp.response.length === 0) continue;
           const fixture = detailResp.response[0];
         if (!mid) continue;
+        if (!existing[mid]) existing[mid] = {};
+        existing[mid].fixtureId = fid;
+        n++;
         const homeName = fixture.teams?.home?.name, awayName = fixture.teams?.away?.name;
         const status = fixture.fixture?.status?.long;
         // Only save if match is finished (lineups + events are final)
