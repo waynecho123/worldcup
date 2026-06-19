@@ -971,8 +971,9 @@ async function updateMatchDetails() {
     return m ? m.date : null;
   }).filter(Boolean))];
   // Also add all remaining tournament dates (for odds + fixture ID mapping)
+  var todayStr = now.toISOString().slice(0, 10);
   var allMatchDates = [...new Set(Object.values(MATCH_DATES))].sort();
-  allMatchDates.forEach(function(d) { if (d >= today.toISOString().slice(0,10)) dates.push(d); });
+  allMatchDates.forEach(function(d) { if (d >= todayStr) dates.push(d); });
 
   for (const date of dates) {
     try {
