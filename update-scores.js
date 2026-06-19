@@ -701,16 +701,14 @@ async function updateNews() {
     })
     .slice(0, 80).map(t => {
       const tl = t.toLowerCase();
-      return (tl.includes('injury') || tl.includes('injured') ? '🔴 ' : '📰 ') + t;
+      return t;
     });
 
   // Translate all non-Chinese news to Chinese (with delay to avoid rate-limit)
   const generalNews = [];
   for (const item of generalNewsRaw) {
-    const icon = item.slice(0, 3); // emoji + space
-    const text = item.slice(3);
-    const translated = await translateToChinese(text);
-    generalNews.push(icon + translated);
+    const translated = await translateToChinese(item);
+    generalNews.push(translated);
     await new Promise(r => setTimeout(r, 200)); // 200ms delay
   }
 
@@ -726,8 +724,8 @@ async function updateNews() {
     var gf = score.homeScore, ga = score.awayScore;
     var hResult = gf > ga ? '胜' : gf === ga ? '平' : '负';
     var aResult = ga > gf ? '胜' : ga === gf ? '平' : '负';
-    var hNews = '📰 上轮' + hResult + ' ' + at.cn + ' ' + gf + '-' + ga;
-    var aNews = '📰 上轮' + aResult + ' ' + ht.cn + ' ' + ga + '-' + gf;
+    var hNews = '上轮' + hResult + ' ' + at.cn + ' ' + gf + '-' + ga;
+    var aNews = '上轮' + aResult + ' ' + ht.cn + ' ' + ga + '-' + gf;
     if (!teamNews[m.home]) teamNews[m.home] = [];
     if (!teamNews[m.away]) teamNews[m.away] = [];
     if (teamNews[m.home].length < 2) teamNews[m.home].push(hNews);
@@ -879,8 +877,8 @@ async function updateNews() {
     var aResult = ga > gf ? '胜' : ga === gf ? '平' : '负';
     if (!teamNews[m.home]) teamNews[m.home] = [];
     if (!teamNews[m.away]) teamNews[m.away] = [];
-    if (teamNews[m.home].length < 2) teamNews[m.home].push('📰 上轮' + hResult + ' ' + at.cn + ' ' + gf + '-' + ga);
-    if (teamNews[m.away].length < 2) teamNews[m.away].push('📰 上轮' + aResult + ' ' + ht.cn + ' ' + ga + '-' + gf);
+    if (teamNews[m.home].length < 2) teamNews[m.home].push('上轮' + hResult + ' ' + at.cn + ' ' + gf + '-' + ga);
+    if (teamNews[m.away].length < 2) teamNews[m.away].push('上轮' + aResult + ' ' + ht.cn + ' ' + ga + '-' + gf);
   });
 
   const items = [...generalNews, ...matchNews.map(m => m.title)];
