@@ -1409,92 +1409,46 @@ function categorizePlayers(lu) {
 
 /** Render a single pitch with players */
 function renderPitch(teamId) {
-  const lu = STARTING_XI[teamId];
-  const t = TEAMS.find(x => x.id === teamId);
+  var lu = STARTING_XI[teamId];
+  var t = TEAMS.find(function(x){return x.id===teamId});
   if (!lu || !t) return '';
-
-  const posData = getFormationPositions(lu.f);
-  const players = categorizePlayers(lu);
-  // Separate GK from outfield
-  const gk = players.filter(p => p.role === 'gk');
-  const outfield = players.filter(p => p.role !== 'gk');
-
-  // Map outfield players to formation positions
-  const placedPlayers = [];
-  outfield.forEach((p, i) => {
-    if (i < posData.length) {
-      placedPlayers.push({...p, x: posData[i].x, y: posData[i].y});
-    }
-  });
-
-  // Use Chinese name if available, otherwise original
-  function playerDisplay(name) {
-    const clean = name.replace('(C)','').trim();
-    return cnName(clean);
-  }
-  function isCap(name) { return name.includes('(C)'); }
-  function cleanName(name) { return name.replace('(C)','').trim(); }
-
-  return `
-  <div class="pitch-card">
-    <div class="pitch-title">${t.flag} ${t.cn} <span style="color:var(--accent)">${lu.f}</span></div>
-    <div class="pitch" style="aspect-ratio:3/4.5">
-      <!-- Pitch markings -->
-      <div class="field-mark" style="left:8%;right:8%;top:8%;bottom:8%;border-radius:4px"></div>
-      <div class="half-line" style="top:50%"></div>
-      <div class="center-circle" style="left:50%;top:50%;width:12%;aspect-ratio:1;transform:translate(-50%,-50%)"></div>
-      <div class="center-dot" style="left:50%;top:50%"></div>
-      <!-- Top penalty area (opponent) -->
-      <div class="penalty-box" style="left:22%;right:22%;top:8%;height:16%"></div>
-      <div class="goal-box" style="left:36%;right:36%;top:8%;height:6%"></div>
-      <div class="penalty-spot" style="left:50%;top:18%"></div>
-      <!-- Bottom penalty area (own) -->
-      <div class="penalty-box" style="left:22%;right:22%;bottom:8%;height:16%"></div>
-      <div class="goal-box" style="left:36%;right:36%;bottom:8%;height:6%"></div>
-      <div class="penalty-spot" style="left:50%;bottom:18%"></div>
-
-      <!-- Goalkeeper -->
-      ${gk.map(p => {
-        const nameCN = playerDisplay(p.name);
-        const num = getJerseyNum(teamId, p.name);
-        return `
-      <div class="player-dot" style="left:50%;bottom:3%">
-        <div class="dot${isCap(p.name)?' cap':''}">${num}</div>
-        <div class="pname">${nameCN}${isCap(p.name)?'©':''}</div>
-      </div>`}).join('')}
-
-      <!-- Outfield players -->
-      ${placedPlayers.map(p => {
-        const nameCN = playerDisplay(p.name);
-        const num = getJerseyNum(teamId, p.name);
-        return `
-        <div class="player-dot" style="left:${p.x}%;top:${100-p.y}%">
-          <div class="dot${isCap(p.name)?' cap':''}">${num}</div>
-          <div class="pname">${nameCN}${isCap(p.name)?'©':''}</div>
-        </div>`;
-      }).join('')}
-
-      <div class="pitch-info">${t.cn}</div>
-      <div class="formation-tag">${lu.f}</div>
-    </div>
-    ${lu.subs ? `<div class="subs-row">🔄 ${lu.subs}</div>` : ''}
-    ${lu.note ? `<div class="subs-row" style="color:var(--orange)">${lu.note}</div>` : ''}
-  </div>`;
+  function cnName(name) { return PLAYER_CN[name] || name; }
+  function playerDisplay(name) { var clean = name.replace("(C)","").trim(); return cnName(clean); }
+  function isCap(name) { return name.indexOf("(C)") >= 0; }
+  function cleanName(name) { return name.replace("(C)","").trim(); }
+  var posGroups = [];
+  var gkNames = Array.isArray(lu.g) ? lu.g : [lu.g];
+  if (gkNames.length > 0) posGroups.unshift({label:"GK", players:gkNames});
+  if (lu.d && lu.d.length > 0) posGroups.unshift({label:"DEF", players:lu.d});
+  var mf = [];
+  if (lu.m) mf = mf.concat(lu.m);
+  if (lu.am) mf = mf.concat(lu.am);
+  if (mf.length > 0) posGroups.unshift({label:"MF", players:mf});
+  var fw = [];
+  if (lu.fwd) fw = fw.concat(lu.fwd);
+  if (lu.st) { var stNames = Array.isArray(lu.st) ? lu.st : [lu.st]; fw = fw.concat(stNames); }
+  if (fw.length > 0) posGroups.unshift({label:"FW", players:fw});
+  var bodyHTML = posGroups.map(function(g){
+    var playersHTML = g.players.map(function(name){
+      var cn = playerDisplay(name);
+      var num = getJerseyNum(teamId, name);
+      var capCls = isCap(name) ? " cap" : "";
+      return "<div class=\"lu-player\"><div class=\"lu-num" + capCls + "\">" + num + "</div><div class=\"lu-name\" title=\"" + cleanName(name) + "\">" + cn + "</div></div>";
+    }).join("");
+    return "<div class=\"lu-row\"><span class=\"lu-row-label\">" + g.label + "</span>" + playersHTML + "</div>";
+  }).join("");
+  var subsHTML = "";
+  if (lu.subs) subsHTML += "<div class=\"lu-subs\">替补: " + lu.subs + "</div>";
+  if (lu.note) subsHTML += "<div class=\"lu-subs\" style=\"color:var(--orange)\">" + lu.note + "</div>";
+  return "<div class=\"lu-card\"><div class=\"lu-title\">" + t.flag + " " + t.cn + " <span style=\"color:var(--accent)\">" + lu.f + "</span></div><div class=\"lu-body\">" + bodyHTML + "</div>" + subsHTML + "</div>";
 }
+
 
 /** Render dual pitch comparison */
 function renderLineupComparison(homeId, awayId) {
-  const hLu = STARTING_XI[homeId], aLu = STARTING_XI[awayId];
-  if (!hLu || !aLu) return '';
-  return `
-    <div style="margin:14px 0">
-      <div style="font-weight:700;font-size:.82rem;margin-bottom:10px;color:var(--purple);padding:0 4px">📋 预测首发阵容</div>
-      <div class="pitch-wrapper">
-        ${renderPitch(homeId)}
-        ${renderPitch(awayId)}
-      </div>
-    </div>`;
+  return "<div style=\"margin:14px 0\"><div style=\"font-weight:700;font-size:.82rem;margin-bottom:10px;color:var(--text);padding:0 4px\">预测首发</div><div class=\"lu-wrapper\">" + (renderPitch(homeId) || "") + (renderPitch(awayId) || "") + "</div></div>";
 }
+
 
 // =============================================================================
 // 2a. NEWS ENGINE — Auto-refresh every 2 hours via RSS feeds
@@ -3400,8 +3354,9 @@ function generateMatchAnalysis(m, ht, at, pred, mol) {
   }
 
   // 4. Key players
-  var hStars = ht.stars.slice(0, 2).join('、'), aStars = at.stars.slice(0, 2).join('、');
-  parts.push('【核心球员】' + ht.cn + '方面，' + hStars + '是当仁不让的核心，他们的发挥将直接影响比赛走向。' + at.cn + '则需要' + aStars + '挺身而出，在关键时刻为球队攻城拔寨。');
+  var hStars = ht.stars.slice(0, 2).map(function(s){return PLAYER_CN[s] || s;}).join('、');
+  var aStars = at.stars.slice(0, 2).map(function(s){return PLAYER_CN[s] || s;}).join('、');
+  parts.push('【核心球员】' + ht.cn + '由' + hStars + '领衔，他们的状态将决定球队的上限；' + at.cn + '则依靠' + aStars + '的核心作用，需要在攻防两端扛起责任。');
 
   // 5. Score prediction reasoning
   var topScoresStr = pred.topScores ? pred.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : (pred.predScore[0] + ':' + pred.predScore[1]);
