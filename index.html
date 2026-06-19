@@ -251,27 +251,18 @@ canvas{max-height:200px}
 .venue-badge{font-size:.68rem;color:var(--text3);display:flex;align-items:center;gap:3px}
 
 /* ===== FOOTBALL PITCH ===== */
-.pitch-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
-.pitch-card{background:var(--surface);border-radius:var(--radius);overflow:hidden}
-.pitch-card .pitch-title{text-align:center;padding:8px;font-weight:700;font-size:.82rem;background:var(--surface2);border-bottom:1px solid var(--border)}
-.pitch{position:relative;width:100%;aspect-ratio:3/4;background:linear-gradient(180deg,#1a5c2a 0%,#1e7035 30%,#228b3a 50%,#1e7035 70%,#1a5c2a 100%);overflow:hidden}
-.pitch .field-mark{position:absolute;border:2px solid rgba(255,255,255,.15);border-radius:2px}
-.pitch .center-circle{position:absolute;border:2px solid rgba(255,255,255,.15);border-radius:50%}
-.pitch .center-dot{position:absolute;width:8px;height:8px;background:rgba(255,255,255,.2);border-radius:50%;transform:translate(-50%,-50%)}
-.pitch .penalty-box{position:absolute;border:2px solid rgba(255,255,255,.12)}
-.pitch .goal-box{position:absolute;border:2px solid rgba(255,255,255,.1)}
-.pitch .penalty-spot{position:absolute;width:5px;height:5px;background:rgba(255,255,255,.15);border-radius:50%;transform:translate(-50%,-50%)}
-.pitch .half-line{position:absolute;height:1px;background:rgba(255,255,255,.12);left:0;right:0}
-.pitch .player-dot{position:absolute;transform:translate(-50%,-50%);text-align:center;cursor:pointer;transition:all .2s;z-index:2}
-.pitch .player-dot:hover{z-index:10;transform:translate(-50%,-50%) scale(1.15)}
-.pitch .player-dot .dot{width:30px;height:30px;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.7rem;color:#fff;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.3);box-shadow:0 2px 8px rgba(0,0,0,.3);backdrop-filter:blur(4px)}
-.pitch .player-dot .dot.cap{border-color:var(--gold);border-width:2px;box-shadow:0 0 10px rgba(240,185,11,.3);background:rgba(240,185,11,.2)}
-.pitch .player-dot .pname{font-size:.58rem;color:rgba(255,255,255,.9);font-weight:600;margin-top:2px;line-height:1.1;max-width:64px;text-shadow:0 1px 3px rgba(0,0,0,.8)}
-.pitch .pitch-info{position:absolute;bottom:4px;left:8px;font-size:.55rem;color:rgba(255,255,255,.25)}
-.pitch .formation-tag{position:absolute;bottom:4px;right:8px;font-size:.55rem;color:rgba(255,255,255,.25)}
-/* Pitch markings - fix circle aspect ratio */
-.pitch .center-circle{position:absolute;border:2px solid rgba(255,255,255,.15);border-radius:50%}
-.pitch .subs-row{font-size:.62rem;color:var(--text3);text-align:center;padding:4px 8px}
+.lu-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.lu-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.lu-card .lu-title{text-align:center;padding:8px;font-weight:700;font-size:.8rem;background:var(--surface2);border-bottom:1px solid var(--border)}
+.lu-card .lu-body{padding:10px}
+.lu-row{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;align-items:flex-start}
+.lu-row-label{font-size:.6rem;color:var(--text3);min-width:28px;padding-top:4px}
+.lu-player{display:flex;flex-direction:column;align-items:center;width:44px;text-align:center}
+.lu-player .lu-num{width:24px;height:24px;border-radius:4px;background:var(--surface2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.65rem;color:var(--text)}
+.lu-player .lu-num.cap{border-color:var(--gold);border-width:2px;background:rgba(245,158,11,.08)}
+.lu-player .lu-name{font-size:.55rem;color:var(--text2);margin-top:1px;line-height:1.1;max-width:44px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lu-subs{font-size:.6rem;color:var(--text3);padding:4px 10px;border-top:1px solid var(--border)}
+@media(max-width:768px){.lu-wrapper{grid-template-columns:1fr}}
 @media(max-width:768px){
   /* Header & Navigation */
   .header{flex-direction:column;height:auto;padding:10px;gap:8px}
@@ -356,6 +347,41 @@ canvas{max-height:200px}
 .gm-item{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--surface);border-radius:6px;margin-bottom:3px;font-size:.75rem}
 .gm-date{color:var(--text3);min-width:72px;font-size:.72rem}.gm-teams{flex:1;color:var(--text);font-weight:600}
 .gm-score{font-weight:800;min-width:36px;text-align:center}.gm-pending{font-size:.7rem;color:var(--text3);min-width:36px;text-align:center}
+/* Post-match review visuals */
+.review-hero{display:flex;align-items:center;justify-content:center;gap:16px;padding:16px;border-radius:10px;margin-bottom:14px}
+.review-hero .rh-team{text-align:center;min-width:80px}
+.review-hero .rh-flag{font-size:2rem;display:block;margin-bottom:4px}
+.review-hero .rh-name{font-size:.8rem;font-weight:700;color:var(--text)}
+.review-hero .rh-score{font-size:2.4rem;font-weight:900;letter-spacing:2px}
+.review-hero .rh-colon{font-size:1.8rem;color:var(--text3)}
+.review-hero .rh-label{font-size:.65rem;color:var(--text3);margin-top:2px}
+.stat-bar-row{display:flex;align-items:center;gap:8px;padding:4px 0;font-size:.75rem}
+.stat-bar-row .sbr-val{min-width:48px;font-weight:700;text-align:right}
+.stat-bar-row .sbr-val.home{color:var(--accent);text-align:right}
+.stat-bar-row .sbr-val.away{color:var(--red);text-align:left}
+.stat-bar-row .sbr-label{min-width:70px;text-align:center;color:var(--text2);font-size:.7rem}
+.stat-bar-row .sbr-bar{flex:1;height:8px;border-radius:4px;overflow:hidden;display:flex;background:var(--surface2)}
+.stat-bar-row .sbr-bar .sbr-fill-h{background:var(--accent);height:100%;transition:width .3s}
+.stat-bar-row .sbr-bar .sbr-fill-a{background:var(--red);height:100%;transition:width .3s}
+.player-card{display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--surface2);border-radius:6px;margin:3px 0}
+.player-card .pc-pos{width:18px;text-align:center;font-weight:700;font-size:.7rem;color:var(--text3)}
+.player-card .pc-name{flex:1;font-size:.75rem;font-weight:600;color:var(--text)}
+.player-card .pc-rating{font-weight:800;font-size:.85rem;min-width:36px;text-align:center}
+.player-card .pc-rating.high{color:var(--green)}.player-card .pc-rating.mid{color:var(--orange)}.player-card .pc-rating.low{color:var(--red)}
+.player-card .pc-bar{width:60px;height:4px;border-radius:2px;background:var(--border);overflow:hidden}
+.player-card .pc-bar-fill{height:100%;border-radius:2px}
+.player-card .pc-stat{font-size:.65rem;color:var(--text3);min-width:30px;text-align:center}
+.goal-timeline{position:relative;padding-left:20px;margin:8px 0;border-left:2px solid var(--border)}
+.goal-timeline .gt-item{padding:4px 0 4px 14px;position:relative;font-size:.75rem}
+.goal-timeline .gt-item::before{content:'';position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%}
+.goal-timeline .gt-item.goal::before{background:var(--accent)}
+.goal-timeline .gt-item.card-y::before{background:#f59e0b}
+.goal-timeline .gt-item.card-r::before{background:var(--red)}
+.goal-timeline .gt-item.sub::before{background:var(--text3)}
+.goal-timeline .gt-time{color:var(--text3);font-size:.68rem;margin-right:6px}
+.goal-timeline .gt-player{font-weight:600;color:var(--text)}
+.goal-timeline .gt-detail{font-size:.65rem;color:var(--text2)}
+.section-title{font-weight:700;font-size:.8rem;color:var(--text);margin:14px 0 6px;padding-bottom:4px;border-bottom:1px solid var(--border)}
 </style>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script><script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script><script>firebase.initializeApp({apiKey:"AIzaSyDnqaODnstsG4YAB02gpPglayVpfYLB5ps",authDomain:"worldcup2026-875dd.firebaseapp.com",projectId:"worldcup2026-875dd",storageBucket:"worldcup2026-875dd.firebasestorage.app",messagingSenderId:"798427368926",appId:"1:798427368926:web:de6926d45c8dbdb0aae14f"});var fireDB=firebase.database();</script>
 </head>
@@ -3480,304 +3506,170 @@ function generateMatchAnalysis(m, ht, at, pred, mol) {
 
 /** Post-match review: AI reflects on its prediction vs actual result. Returns HTML string. */
 function generatePostMatchReview(m, ht, at, pred, actual, apiInfo) {
-  var parts = [];
+  var detail = matchDetails[m.id] || {};
+  var events = detail.events || [];
+  var players = detail.players || [];
+  var statistics = detail.statistics || {};
+  var hStats = statistics[detail.homeTeam] || {};
+  var aStats = statistics[detail.awayTeam] || {};
   var actH = actual.homeScore, actA = actual.awayScore;
   var predH = pred.predScore[0], predA = pred.predScore[1];
-  var actualDiff = actH - actA;
-  var predDiff = predH - predA;
-  var goalErr = Math.abs(actH - pred.expH) + Math.abs(actA - pred.expA);
-  var totalGoals = actH + actA;
-  var predTotal = pred.expH + pred.expA;
-  var predOutcome = predH > predA ? 'home' : predH === predA ? 'draw' : 'away';
   var actualOutcome = actH > actA ? 'home' : actH === actA ? 'draw' : 'away';
-  var outcomeCorrect = predOutcome === actualOutcome;
+  var outcomeCorrect = (predH > predA && actualOutcome === 'home') || (predH < predA && actualOutcome === 'away') || (predH === predA && actualOutcome === 'draw');
   var exactCorrect = predH === actH && predA === actA;
+  var goalDiffErr = Math.abs((actH - actA) - (predH - predA));
+  var hStr = getStrength(ht), aStr = getStrength(at);
+
+  var hColor = 'var(--accent)', aColor = 'var(--red)';
+  var bgColor = actualOutcome === 'home' ? 'rgba(37,99,235,.06)' : actualOutcome === 'draw' ? 'rgba(124,58,237,.06)' : 'rgba(220,38,38,.06)';
+  var brdColor = actualOutcome === 'home' ? 'var(--accent)' : actualOutcome === 'draw' ? 'var(--purple)' : 'var(--red)';
+
+  var html = '<div style="margin-top:12px;padding:16px;background:var(--surface);border-radius:12px;border:1px solid var(--border);line-height:1.8;font-size:.78rem">';
+
+  // ── Score Hero ──
+  html += '<div class="review-hero" style="background:' + bgColor + ';border:2px solid ' + brdColor + '">';
+  html += '<div class="rh-team"><span class="rh-flag">' + ht.flag + '</span><span class="rh-name">' + ht.cn + '</span></div>';
+  html += '<div style="text-align:center"><span class="rh-score" style="color:' + (actualOutcome === 'home' ? 'var(--accent)' : 'var(--text)') + '">' + actH + '</span><span class="rh-colon">:</span><span class="rh-score" style="color:' + (actualOutcome === 'away' ? 'var(--red)' : 'var(--text)') + '">' + actA + '</span><div class="rh-label">最终比分</div><div style="font-size:.68rem;color:var(--text2);margin-top:2px">AI预测 ' + predH + ':' + predA + ' | ' + (exactCorrect ? '命中' : outcomeCorrect ? '方向正确' : '预测偏差') + '</div></div>';
+  html += '<div class="rh-team"><span class="rh-flag">' + at.flag + '</span><span class="rh-name">' + at.cn + '</span></div>';
+  html += '</div>';
+
+  // ── Statistics Bars ──
+  var statKeys = [
+    {key:'Ball Possession',label:'控球率',suf:'%',fmt:'%'},
+    {key:'Expected Goals',label:'预期进球(xG)',suf:'',fmt:'.2f'},
+    {key:'Total Shots',label:'射门',suf:'',fmt:'d'},
+    {key:'Shots on Goal',label:'射正',suf:'',fmt:'d'},
+    {key:'Passes %',label:'传球成功率',suf:'%',fmt:'%'},
+    {key:'Corner Kicks',label:'角球',suf:'',fmt:'d'},
+    {key:'Fouls',label:'犯规',suf:'',fmt:'d'},
+  ];
+  var hasStats = Object.keys(hStats).length > 0 || Object.keys(aStats).length > 0;
+  if (hasStats) {
+    html += '<div class="section-title">技术统计</div>';
+    statKeys.forEach(function(sk){
+      var hv = hStats[sk.key], av = aStats[sk.key];
+      if (hv === undefined || av === undefined) return;
+      if (typeof hv === 'string' && hv.includes('%')) hv = parseFloat(hv);
+      if (typeof av === 'string' && av.includes('%')) av = parseFloat(av);
+      hv = parseFloat(hv) || 0; av = parseFloat(av) || 0;
+      var total = hv + av || 1;
+      var hpct = Math.round(hv / total * 100);
+      var apct = 100 - hpct;
+      var hdisp = sk.fmt === '.2f' ? hv.toFixed(2) : sk.fmt === '%' ? hv + '%' : Math.round(hv);
+      var adisp = sk.fmt === '.2f' ? av.toFixed(2) : sk.fmt === '%' ? av + '%' : Math.round(av);
+      html += '<div class="stat-bar-row">';
+      html += '<span class="sbr-val home">' + hdisp + '</span>';
+      html += '<span class="sbr-bar"><span class="sbr-fill-h" style="width:' + hpct + '%"></span><span class="sbr-fill-a" style="width:' + apct + '%"></span></span>';
+      html += '<span class="sbr-val away">' + adisp + '</span>';
+      html += '<span class="sbr-label">' + sk.label + '</span>';
+      html += '</div>';
+    });
+  }
+
+  // ── Goal Timeline ──
+  var goals = events.filter(function(e){return e.type === 'Goal';});
+  var cards = events.filter(function(e){return e.type === 'Card';});
+  var subs = events.filter(function(e){return e.type === 'subst';});
+  var keyEvents = events.filter(function(e){return e.type === 'Goal' || (e.type === 'Card' && e.detail === 'Red Card');});
+  if (keyEvents.length > 0) {
+    html += '<div class="section-title">比赛进程</div><div class="goal-timeline">';
+    keyEvents.sort(function(a,b){return parseInt(a.time) - parseInt(b.time);}).forEach(function(e){
+      var cls = e.type === 'Goal' ? 'goal' : 'card-r';
+      var icon = e.type === 'Goal' ? '' : '';
+      var pen = e.detail === 'Penalty' ? ' (点球)' : '';
+      var teamTag = e.team === detail.homeTeam ? ht.cn : at.cn;
+      html += '<div class="gt-item ' + cls + '"><span class="gt-time">' + e.time + '\'</span><span class="gt-player">' + icon + e.player + pen + '</span> <span class="gt-detail">' + teamTag + (e.assist ? ' | 助:' + e.assist : '') + '</span></div>';
+    });
+    html += '</div>';
+  }
+
+  // ── Player Ratings ──
+  if (players.length > 0) {
+    html += '<div class="section-title">球员评分</div>';
+    players.forEach(function(teamData){
+      var isHome = teamData.team === detail.homeTeam;
+      var teamName = isHome ? ht.cn : at.cn;
+      var flag = isHome ? ht.flag : at.flag;
+      var topPlayers = (teamData.players || []).filter(function(p){return p.rating;}).sort(function(a,b){return parseFloat(b.rating) - parseFloat(a.rating);}).slice(0, 3);
+      if (topPlayers.length === 0) return;
+      html += '<div style="font-size:.72rem;font-weight:700;margin:6px 0 2px">' + flag + ' ' + teamName + '</div>';
+      topPlayers.forEach(function(p){
+        var rating = parseFloat(p.rating) || 0;
+        var pct = Math.round(rating / 10 * 100);
+        var cls = rating >= 7.5 ? 'high' : rating >= 6.5 ? 'mid' : 'low';
+        var barColor = rating >= 7.5 ? 'var(--green)' : rating >= 6.5 ? 'var(--orange)' : 'var(--red)';
+        var stats = [];
+        if (p.goals > 0) stats.push(p.goals + '球');
+        if (p.assists > 0) stats.push(p.assists + '助');
+        html += '<div class="player-card">';
+        html += '<span class="pc-name">' + p.name + '</span>';
+        html += '<span class="pc-stat">' + (stats.join(' ') || '-') + '</span>';
+        html += '<span class="pc-bar"><span class="pc-bar-fill" style="width:' + pct + '%;background:' + barColor + '"></span></span>';
+        html += '<span class="pc-rating ' + cls + '">' + p.rating + '</span>';
+        html += '</div>';
+      });
+    });
+    html += '<div style="font-size:.6rem;color:var(--text3);margin-top:2px">评分来源: API-Sports</div>';
+  }
+
+  // ── Text Analysis ──
+  html += '<div class="section-title">分析</div>';
+
+  var parts = [];
   var actualProb = actualOutcome === 'home' ? pred.homeWinProb : actualOutcome === 'draw' ? pred.drawProb : pred.awayWinProb;
   var probPct = (actualProb * 100).toFixed(0);
-  var probLevel = actualProb > 0.5 ? '高置信区间(>50%)' : actualProb > 0.35 ? '中等置信区间(35-50%)' : actualProb > 0.2 ? '低置信区间(20-35%)' : '极低概率(<20%)';
-  var hStr = getStrength(ht), aStr = getStrength(at);
-  var strGap = hStr - aStr;
 
-  var resultDesc = actH + ':' + actA;
-  var predDesc = predH + ':' + predA;
-  var icon = exactCorrect ? '🎯' : outcomeCorrect ? '✅' : '❌';
-  var verdict = exactCorrect ? '比分完全命中！AI模型精准捕捉了本场比赛。' : outcomeCorrect ? '胜负方向判断正确，但比分有偏差。' : '预测错误，模型对本场判断出现较大偏差。';
-  parts.push('【赛后复盘】' + ht.cn + ' ' + resultDesc + ' ' + at.cn + '。AI赛前预测' + predDesc + '。' + icon + ' ' + verdict);
+  // Score review
+  var verdict = exactCorrect ? '比分完全命中' : outcomeCorrect ? '胜负方向正确，比分偏差' + goalDiffErr + '球' : '预测错误，偏差较大';
+  parts.push('【比分】AI预测 ' + predH + ':' + predA + '（期望' + pred.expH.toFixed(1) + '-' + pred.expA.toFixed(1) + '），实际' + actH + ':' + actA + '。' + verdict);
 
-  // Strength
-  var strPredictedFav = strGap > 4 ? ht.cn : strGap < -4 ? at.cn : '势均力敌';
-  var strAssessment = (strGap > 4 && actualOutcome === 'home') || (strGap < -4 && actualOutcome === 'away') ? '准确：实力较强一方顺利取胜，模型评分合理。' : (strGap > 4 && actualOutcome !== 'home') ? '偏差：实力占优的' + ht.cn + '未能取胜，模型可能高估了实力差距（' + strGap.toFixed(1) + '分）。' : (strGap < -4 && actualOutcome !== 'away') ? '偏差：实力占优的' + at.cn + '未能取胜，模型可能高估了实力差距。' : '双方实力接近（差距' + Math.abs(strGap).toFixed(1) + '分），比赛结果在合理范围内。';
-  parts.push('【实力复盘】AI评分 ' + ht.cn + ' ' + hStr.toFixed(1) + ' vs ' + at.cn + ' ' + aStr.toFixed(1) + '，预判' + strPredictedFav + '占优。实际：' + strAssessment);
+  // Probability
+  parts.push('【概率】赛前' + ht.cn + '胜' + (pred.homeWinProb*100).toFixed(0) + '%/平' + (pred.drawProb*100).toFixed(0) + '%/' + at.cn + '胜' + (pred.awayWinProb*100).toFixed(0) + '%。实际结果概率' + probPct + '%' + (actualProb > 0.35 ? '，模型有充分预期' : '，属小概率结果'));
 
   // Tactical
   if (pred.tacAnalysis) {
-    var tacAdj = pred.tacticalAdj || 0;
-    var tacCheck = (tacAdj > 0.02 && actualOutcome === 'home') || (tacAdj < -0.02 && actualOutcome === 'away') ? '战术克制关系被实际比赛验证。' : (tacAdj > 0.02 && actualOutcome !== 'home') ? '预测' + ht.cn + '战术占优，但未能转化为胜势，战术克制可能被高估。' : (tacAdj < -0.02 && actualOutcome !== 'away') ? '预测' + at.cn + '战术占优，但未能转化为胜势。' : '战术层面预测基本中性，与实际走势一致。';
-    parts.push('【战术复盘】赛前分析：' + pred.tacAnalysis.narrative + '（调整' + pred.tacAnalysis.adjPct + '）。实际：' + tacCheck);
+    parts.push('【战术】' + pred.tacAnalysis.narrative + '（调整' + pred.tacAnalysis.adjPct + '）。' + (outcomeCorrect ? '战术预判与比赛走势一致' : '战术预判与比赛结果存在偏差'));
   }
 
-  // Score
-  var goalDiffErr = Math.abs(actualDiff - predDiff);
-  var totalGoalErr = Math.abs(totalGoals - predTotal);
-  var scoreVerdict = exactCorrect ? '🎯 完美命中！AI精确预测了比分。' : goalDiffErr === 0 ? '净胜球差预测正确（' + (predDiff > 0 ? ht.cn + '赢' + predDiff + '球' : predDiff === 0 ? '平局' : at.cn + '赢' + Math.abs(predDiff) + '球') + '）。' : '净胜球差偏差' + goalDiffErr + '球，总进球偏差' + totalGoalErr.toFixed(1) + '球（预测' + predTotal.toFixed(1) + ' vs 实际' + totalGoals + '）。';
-  parts.push('【比分复盘】AI预测' + predDesc + '（期望进球' + pred.expH.toFixed(1) + '-' + pred.expA.toFixed(1) + '），实际' + resultDesc + '。' + scoreVerdict);
-
-  // Probability
-  parts.push('【概率复盘】AI给出' + ht.cn + '胜' + (pred.homeWinProb * 100).toFixed(0) + '% / 平' + (pred.drawProb * 100).toFixed(0) + '% / ' + at.cn + '胜' + (pred.awayWinProb * 100).toFixed(0) + '%。实际结果为' + (actualOutcome === 'home' ? ht.cn + '胜' : actualOutcome === 'draw' ? '平局' : at.cn + '胜') + '，该结果落在' + probLevel + '（AI赋概率' + probPct + '%）。' + (actualProb > 0.35 ? '模型对此结果有充分预期。' : '这是一个小概率结果，模型对此准备不足。'));
-
-  // Stars — use actual scorers and player ratings from match data
-  var detailStars = matchDetails[m.id];
-  if (detailStars && detailStars.players) {
-    var hPlayers = detailStars.players[0] || {};
-    var aPlayers = detailStars.players[1] || {};
-    var hTop = (hPlayers.players || []).filter(function(p){return p.rating;}).sort(function(a,b){return b.rating - a.rating;}).slice(0,2);
-    var aTop = (aPlayers.players || []).filter(function(p){return p.rating;}).sort(function(a,b){return b.rating - a.rating;}).slice(0,2);
-    var hStarText = hTop.map(function(p){return p.name + ' ' + p.rating + '分';}).join('、') || '暂无评分';
-    var aStarText = aTop.map(function(p){return p.name + ' ' + p.rating + '分';}).join('、') || '暂无评分';
-    // Goal scorers
-    var events = detailStars.events || [];
-    var hScorers = events.filter(function(e){return e.type === 'Goal' && e.team === detailStars.homeTeam;}).map(function(e){return e.player;});
-    var aScorers = events.filter(function(e){return e.type === 'Goal' && e.team === detailStars.awayTeam;}).map(function(e){return e.player;});
-    var scorerInfo = '';
-    if (hScorers.length > 0) scorerInfo += ht.cn + '进球：' + hScorers.join('、') + '；';
-    if (aScorers.length > 0) scorerInfo += at.cn + '进球：' + aScorers.join('、') + '；';
-    parts.push('【球星表现】' + ht.cn + '最高评分：' + hStarText + '；' + at.cn + '最高评分：' + aStarText + '。' + scorerInfo + (hScorers.length === 0 && aScorers.length === 0 ? '本场无进球球员。' : ''));
-  } else {
-    var hStarNames = ht.stars ? ht.stars.slice(0, 2).join('、') : '核心球员';
-    var aStarNames = at.stars ? at.stars.slice(0, 2).join('、') : '核心球员';
-    parts.push('【球星表现】赛前关注' + ht.cn + '的' + hStarNames + '与' + at.cn + '的' + aStarNames + '。（球员评分数据待更新）');
-  }
-
-  // Injuries — check if key absentees actually impacted the match
+  // Injury impact  
   if (ht.inj || at.inj) {
-    var injParts = [];
-    if (ht.inj) {
-      var hInjClean = ht.inj.replace(/[🔴⚠️]/g, '').trim();
-      injParts.push(ht.cn + '缺阵：' + hInjClean);
-    }
-    if (at.inj) {
-      var aInjClean = at.inj.replace(/[🔴⚠️]/g, '').trim();
-      injParts.push(at.cn + '缺阵：' + aInjClean);
-    }
-    // Check if the team missing key players still performed well
-    var injImpact = '';
-    if (ht.inj && actualOutcome === 'home') injImpact += ht.cn + '虽有关键球员缺阵仍取胜，伤病影响被克服。';
-    if (at.inj && actualOutcome === 'away') injImpact += at.cn + '虽有关键球员缺阵仍取胜，伤病影响被克服。';
-    if (ht.inj && actualOutcome !== 'home' && (hStr > aStr)) injImpact += ht.cn + '缺阵球员的影响可能被低估，进攻端未能打出预期水平。';
-    if (!injImpact) injImpact = '伤病对比赛走势的影响需进一步评估。';
-    parts.push('【伤病影响】' + injParts.join('；') + '。' + injImpact);
+    var injText = [];
+    if (ht.inj) injText.push(ht.cn + '缺：' + ht.inj.replace(/[🔴⚠️]/g,'').trim());
+    if (at.inj) injText.push(at.cn + '缺：' + at.inj.replace(/[🔴⚠️]/g,'').trim());
+    parts.push('【伤病】' + injText.join('；'));
   }
 
-  // Market consensus
-  if (pred.marketConsensus) {
-    var mc = pred.marketConsensus;
-    var mktDirection = mc.mktFav === 'home' ? ht.cn + '胜' : mc.mktFav === 'away' ? at.cn + '胜' : '平局';
-    var whoRight = mc.agree ? (actualOutcome === mc.aiFav ? 'AI与机构方向一致且均正确。' : 'AI与机构方向一致但均判断错误，市场也存在系统性偏差。') : (actualOutcome === mc.aiFav ? 'AI判断正确而机构方向有误，模型捕捉到了市场未充分定价的信息。' : actualOutcome === mc.mktFav ? '机构方向正确而AI判断失误，市场信息可能包含了模型未捕捉到的关键信号。' : 'AI和机构方向均错误，本场结果超出常规预期。');
-    parts.push('【机构复盘】赛前' + mc.label + '。机构方向：' + mktDirection + '，AI方向：' + (mc.aiFav === 'home' ? ht.cn + '胜' : mc.aiFav === 'away' ? at.cn + '胜' : '平局') + '。实际：' + whoRight);
-  }
-
-  // Upset
-  if (pred.upsetProb !== undefined) {
-    var upsetPct = (pred.upsetProb * 100).toFixed(0);
-    var isUpset = (hStr > aStr && actualOutcome !== 'home') || (aStr > hStr && actualOutcome !== 'away');
-    var upsetVerdict = pred.upsetAlert ? (isUpset ? '模型成功预警了冷门风险（' + upsetPct + '%），实际确实出现冷门。' : '模型预警了冷门风险（' + upsetPct + '%），但强队顺利取胜，属于过度预警。') : (isUpset ? '模型未预警冷门（风险仅' + upsetPct + '%），但实际爆冷。模型对冷门信号捕捉不足。' : '模型判断冷门概率低（' + upsetPct + '%），比赛正常走势。');
-    parts.push('【冷门复盘】赛前Monte Carlo冷门概率' + upsetPct + '%。' + upsetVerdict);
-  }
-
-  // 9. Match events & lineup analysis from API-Sports
-  var detail = matchDetails[m.id];
-  if (detail) {
-    // ---- Team Statistics ----
-    if (detail.statistics && Object.keys(detail.statistics).length > 0) {
-      var hStats = detail.statistics[detail.homeTeam];
-      var aStats = detail.statistics[detail.awayTeam];
-      if (hStats && aStats) {
-        var statKeys = [
-          {key: 'Ball Possession', label: '控球率', end: '%'},
-          {key: 'Expected Goals', label: '预期进球(xG)', end: ''},
-          {key: 'Total Shots', label: '射门', end: ''},
-          {key: 'Shots on Goal', label: '射正', end: ''},
-          {key: 'Total Passes', label: '传球', end: ''},
-          {key: 'Passes %', label: '传球成功率', end: '%'},
-          {key: 'Corner Kicks', label: '角球', end: ''},
-          {key: 'Fouls', label: '犯规', end: ''}
-        ];
-        var statLines = [];
-        statKeys.forEach(function(sk) {
-          var hv = hStats[sk.key], av = aStats[sk.key];
-          if (hv !== undefined && av !== undefined) {
-            statLines.push(sk.label + ' ' + hv + sk.end + '-' + av + sk.end);
-          }
-        });
-        if (statLines.length > 0) {
-          parts.push('【技术统计】' + statLines.slice(0,6).join(' | '));
-        }
-      }
-    }
-
-    // ---- Lineup analysis: compare actual vs predicted ----
-    if (detail.lineups && detail.lineups.home && detail.lineups.away) {
-      var actualHLu = detail.lineups.home;
-      var actualALu = detail.lineups.away;
-      var predHLu = typeof STARTING_XI !== 'undefined' ? STARTING_XI[m.home] : null;
-      var predALu = typeof STARTING_XI !== 'undefined' ? STARTING_XI[m.away] : null;
-
-      // Count changes from predicted lineup
-      var hFormation = actualHLu.formation || '?';
-      var aFormation = actualALu.formation || '?';
-      var hChanged = ''; var aChanged = '';
-      if (predHLu && predHLu.f && predHLu.f !== hFormation) {
-        hChanged = '（预测' + predHLu.f + '→实际' + hFormation + '）';
-      }
-      if (predALu && predALu.f && predALu.f !== aFormation) {
-        aChanged = '（预测' + aFormation + '→实际' + aFormation + '）';
-      }
-      // Check for missing key players
-      var actualNames = (actualHLu.startXI || []).map(function(p){return p.player.name.toLowerCase();});
-      var injuryImpact = ht.inj ? '赛前伤病' + ht.inj.replace(/[🔴⚠️]/g,'').trim() + '，实际首发是否受影响需对照' : '';
-      parts.push('【阵容分析】' + ht.cn + ' ' + hFormation + hChanged + '，' + at.cn + ' ' + aFormation + aChanged + '。' + injuryImpact);
-    }
-
-    // ---- Match flow analysis ----
-    if (detail.events && detail.events.length > 0) {
-      var goals = detail.events.filter(function(e){return e.type === 'Goal'});
-      var cards = detail.events.filter(function(e){return e.type === 'Card' && e.detail === 'Yellow Card'});
-      var reds = detail.events.filter(function(e){return e.type === 'Card' && e.detail === 'Red Card'});
-      var subs = detail.events.filter(function(e){return e.type === 'subst'});
-
-      // Goal timing analysis
-      var hGoals = goals.filter(function(g){return g.team === detail.homeTeam;});
-      var aGoals = goals.filter(function(g){return g.team === detail.awayTeam;});
-
-      var flowAnalysis = [];
-      if (goals.length > 0) {
-        var earlyGoals = goals.filter(function(g){return parseInt(g.time) <= 30;}).length;
-        var lateGoals = goals.filter(function(g){return parseInt(g.time) >= 75;}).length;
-        var goalDesc = hGoals.length + '-' + aGoals.length;
-        var timingNote = '';
-        if (earlyGoals > 0) timingNote += '，' + earlyGoals + '球发生在前30分钟（开局节奏快）';
-        if (lateGoals > 0) timingNote += '，' + lateGoals + '球在75分钟后（末段体能或战术调整影响大）';
-        flowAnalysis.push('比分' + goalDesc + timingNote);
-      }
-
-      // Card impact
-      if (reds.length > 0) {
-        flowAnalysis.push('红牌' + reds.length + '张（' + reds.map(function(r){return r.player + ' ' + r.time + '\'';}).join('、') + '），人数劣势显著改变比赛走势');
-      } else if (cards.length > 0) {
-        var hCards = cards.filter(function(c){return c.team === detail.homeTeam;}).length;
-        var aCards = cards.filter(function(c){return c.team === detail.awayTeam;}).length;
-        if (Math.abs(hCards - aCards) >= 2) {
-          flowAnalysis.push('黄牌' + hCards + '-' + aCards + '，一方纪律压力明显更大');
-        }
-      }
-
-      // Substitution pattern
-      if (subs.length > 0) {
-        var earlySubs = subs.filter(function(s){return parseInt(s.time) <= 46;}).length;
-        if (earlySubs > 0) {
-          flowAnalysis.push('半场即调整' + earlySubs + '人，说明首发战术效果不佳');
-        }
-      }
-
-      if (flowAnalysis.length > 0) {
-        parts.push('【赛事分析】' + flowAnalysis.join('；') + '。');
-      }
-
-      // Goal details
-      if (goals.length > 0) {
-        var goalText = goals.map(function(g){
-          var pen = g.detail === 'Penalty' ? '(点球)' : '';
-          return g.time + '\' ' + g.player + pen + (g.assist ? ' 助攻:' + g.assist : '');
-        }).join('，');
-        parts.push('【进球详情】' + goalText);
-      }
-
-      // Victory attribution: explain why the winning team won
-      var hScore = detail.score?.home || 0, aScore = detail.score?.away || 0;
-      var winner = hScore > aScore ? ht : aScore > hScore ? at : null;
-      var loser = hScore > aScore ? at : hScore < aScore ? ht : null;
-      var winReasons = [];
-      if (winner) {
-        // Early lead
-        var firstGoal = goals[0];
-        if (firstGoal && parseInt(firstGoal.time) <= 25 && firstGoal.team === detail[winner === ht ? 'homeTeam' : 'awayTeam']) {
-          winReasons.push(winner.cn + '开局' + firstGoal.time + '分钟即取得领先，掌握了比赛主动权');
-        }
-        // Comeback
-        if (goals.length >= 2) {
-          var oppGoals = goals.filter(function(g){return g.team !== detail[winner === ht ? 'homeTeam' : 'awayTeam'];});
-          var winGoals = goals.filter(function(g){return g.team === detail[winner === ht ? 'homeTeam' : 'awayTeam'];});
-          if (oppGoals.length >= 1 && winGoals[winGoals.length-1] && parseInt(winGoals[winGoals.length-1].time) > parseInt(oppGoals[0].time)) {
-            winReasons.push(winner.cn + '在被对手进球后实现逆转，展现了强大的心理素质和调整能力');
-          }
-        }
-        // Multiple scorers
-        var scorers = [...new Set(winGoals.map(function(g){return g.player;}))];
-        if (scorers.length >= 2) {
-          winReasons.push('多名球员贡献进球（' + scorers.join('、') + '），进攻点多令对手难以防守');
-        }
-        // Disciplinary advantage
-        var oppCards = cards.filter(function(c){return c.team !== detail[winner === ht ? 'homeTeam' : 'awayTeam'];}).length;
-        var winCards = cards.filter(function(c){return c.team === detail[winner === ht ? 'homeTeam' : 'awayTeam'];}).length;
-        if (oppCards >= 2 && oppCards > winCards * 1.5) {
-          winReasons.push('对手' + (oppCards) + '张黄牌，防守动作受限');
-        }
-        if (winReasons.length === 0) {
-          winReasons.push(winner.cn + '在关键时刻把握住了机会');
-        }
-        parts.push('🏆 【胜负归因】' + winner.cn + '获胜关键：' + winReasons.join('；') + '。');
-      } else {
-        // Draw analysis
-        parts.push('🤝 【平局分析】双方各入' + hScore + '球，' + (Math.abs(hStr-aStr) > 10 ? '实力较强一方未能将控球优势转化为胜势' : '实力接近，平局是合理结果') + '。');
-      }
+  // Stars summary
+  if (players.length > 0) {
+    var allPs = [];
+    players.forEach(function(td){allPs = allPs.concat((td.players||[]).filter(function(p){return p.rating;}));});
+    if (allPs.length > 0) {
+      var best = allPs.sort(function(a,b){return parseFloat(b.rating)-parseFloat(a.rating);})[0];
+      parts.push('【最佳】' + best.name + ' ' + best.rating + '分' + (best.goals>0?'，打入'+best.goals+'球':'') + (best.assists>0?'，助攻'+best.assists+'次':''));
     }
   }
 
-  // Deep dive on prediction errors when wrong
+  // Root cause on error
   if (!outcomeCorrect) {
-    var gap = Math.abs(hStr - aStr);
-    var favTeam = hStr > aStr ? ht : at;
-    var underTeam = hStr > aStr ? at : ht;
+    var strGap = Math.abs(hStr - aStr);
     var rootCauses = [];
-    // Check for underrated underdog
-    if (gap > 15 && underTeam.news && /黑马|崛起|强劲|势头|impressive|surprise|giant.killer/i.test(underTeam.news)) {
-      rootCauses.push('弱队' + underTeam.cn + '赛前标签"' + underTeam.news + '"被严重低估，实力评分未能反映其真实水平');
-    }
-    if (gap > 10) {
-      rootCauses.push('实力差距' + gap.toFixed(1) + '分过大，模型对强弱悬殊比赛的冷门概率天然偏低');
-    }
-    // Check for aging stars
-    if (favTeam.cn === '葡萄牙' || (favTeam.stars && favTeam.stars.some(function(s){return /Ronaldo|Messi|Modric|Suarez/i.test(s)}))) {
-      rootCauses.push(favTeam.cn + '核心球星年龄偏大（如C罗41岁），模型未对老将状态衰减建模');
-    }
-    // Check if underdog had strong recent results
-    if (underTeam.recent && /4强|亚军|冠军|决赛|semi|final/i.test(underTeam.recent)) {
-      rootCauses.push(underTeam.cn + '近期成绩"' + underTeam.recent + '"表明其状态远超标称排名');
-    }
-    // Check for African/Asian team upset pattern
-    if (/CAF|AFC/.test(underTeam.conf) && gap > 10) {
-      rootCauses.push(underTeam.cn + '来自' + (underTeam.conf === 'CAF' ? '非洲' : '亚洲') + '，世界杯历史上非洲/亚洲球队常以弱胜强，模型未学到这一模式');
-    }
-    // Generic root cause if nothing specific found
-    if (rootCauses.length === 0) {
-      rootCauses.push('实力评分与战术矩阵未能捕捉到本场关键变量，建议结合赛后详细数据进一步分析');
-    }
-    parts.push('【偏差归因】预测错误根因分析：' + rootCauses.join('；') + '。改进方向：' + (gap > 10 ? '引入非洲/亚洲球队世界杯爆冷先验概率' : '') + '动态年龄衰减系数、近期大赛成绩权重提升。');
+    if (strGap > 15) rootCauses.push('实力差距' + strGap.toFixed(1) + '分过大，模型对强弱悬殊比赛的冷门概率偏低');
+    if (strGap > 10 && (ht.conf==='CAF'||ht.conf==='AFC'||at.conf==='CAF'||at.conf==='AFC')) rootCauses.push('非洲/亚洲球队世界杯爆冷历史模式未充分建模');
+    if (rootCauses.length === 0) rootCauses.push('关键变量未被模型捕捉，建议参考技术统计和赛事进程分析');
+    parts.push('【偏差归因】' + rootCauses.join('；'));
   }
 
-  // Overall
-  var overallVerdict = exactCorrect ? 'A+ 完美预测' : outcomeCorrect && goalDiffErr <= 1 ? 'A 方向准确，比分接近' : outcomeCorrect ? 'B+ 胜负正确，比分有偏差' : goalDiffErr <= 1 ? 'B 比分接近但方向错误' : 'C 预测出现较大偏差';
-  parts.push('【综合总结】本次预测综合评级：' + overallVerdict + '。' + (exactCorrect ? '模型在所有维度上表现优秀。' : outcomeCorrect ? '方向判断准确，比分有偏差。' : '模型出现偏差，详见偏差归因分析。'));
+  // Overall grade
+  var grade = exactCorrect ? 'A+ 完美预测' : outcomeCorrect && goalDiffErr <= 1 ? 'A 方向准确' : outcomeCorrect ? 'B+ 胜负正确' : goalDiffErr <= 1 ? 'B 接近' : 'C 偏差较大';
+  parts.push('【总评】' + grade);
 
-  var html = '<div style="margin-top:12px;padding:14px;background:linear-gradient(180deg,rgba(240,185,11,.06) 0%,rgba(240,185,11,.01) 100%);border-radius:10px;border:2px solid rgba(240,185,11,.25);line-height:1.9;font-size:.78rem;color:#bcc8e0">';
-  html += '<div style="font-weight:800;font-size:.9rem;margin-bottom:8px;color:#f0b90b">🔮 AI赛后复盘</div>';
-  html += '<div style="text-align:center;padding:10px;border:2px solid ' + (actualOutcome === 'home' ? 'var(--accent)' : actualOutcome === 'draw' ? '#8b5cf6' : 'var(--red)') + ';border-radius:10px;margin-bottom:10px;background:' + (actualOutcome === 'home' ? 'rgba(77,166,255,.08)' : actualOutcome === 'draw' ? 'rgba(139,92,246,.08)' : 'rgba(255,61,87,.08)') + '">';
-  html += '<span style="font-size:1.6rem;font-weight:800">' + actH + ' : ' + actA + '</span>';
-  html += '<div style="font-size:.65rem;color:var(--text3)">最终比分</div></div>';
-  html += parts.map(function(p){ return '<p style="margin-bottom:8px;text-indent:0">' + p + '</p>'; }).join('');
-  html += '<div style="font-size:.6rem;color:var(--text3);text-align:right;margin-top:8px">*AI基于赛前预测各维度逐一复盘检讨</div></div>';
+  html += parts.map(function(p){return '<p style="margin-bottom:6px;font-size:.76rem">' + p + '</p>';}).join('');
+  
+  html += '<div style="font-size:.6rem;color:var(--text3);text-align:right;margin-top:10px">AI基于赛前预测 × 实际比赛数据复盘</div>';
+  html += '</div>';
   return html;
 }
+
 
 function showMatchDetail(mid) {
   var m = MATCH_SCHEDULE.find(function(x){return x.id===mid});
