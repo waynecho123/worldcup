@@ -265,7 +265,18 @@ async function updateOdds() {
           var d = vals.find(function(v){return v.value==='Draw';});
           var a = vals.find(function(v){return v.value==='Away';});
           if (h && d && a) {
-            existing[fixId] = { h: parseFloat(h.odd), d: parseFloat(d.odd), a: parseFloat(a.odd), updatedAt: ts };
+            var nh = parseFloat(h.odd), nd = parseFloat(d.odd), na = parseFloat(a.odd);
+            var prev = existing[fixId];
+            var move = null;
+            if (prev && prev.h) {
+              // Track odds movement direction
+              var hMove = nh - prev.h;
+              if (Math.abs(hMove) > 0.02) {
+                move = { dir: hMove < 0 ? 'home_shorten' : 'home_lengthen', by: Math.abs(hMove).toFixed(2), from: prev.h.toFixed(2), to: nh.toFixed(2) };
+              }
+            }
+            existing[fixId] = { h: nh, d: nd, a: na, updatedAt: ts };
+            if (move) { existing[fixId].move = move; existing[fixId].prevH = prev.h; existing[fixId].prevD = prev.d; existing[fixId].prevA = prev.a; }
             updated++;
           }
         });
