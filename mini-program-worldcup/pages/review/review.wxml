@@ -73,8 +73,8 @@
         </view>
         <text>{{item.awayFlag}} {{item.awayName}}</text>
       </view>
-      <view wx:if="{{item.strGap > 15}}" class="font-xs" style="text-align:center;margin-top:4px;color:{{(item.upsetAlert && item.upsetHappened) || (!item.upsetAlert && !item.upsetHappened) ? '#16a34a' : '#dc2626'}}">
-        冷门：{{item.upsetAlert ? '预警' + (item.upsetProb*100).toFixed(0) + '%' : '未预警'}} → {{item.upsetHappened ? (item.actScore[0]===item.actScore[1] ? item.homeName+'逼平' : '爆冷') : '正常'}}
+      <view wx:if="{{item.strGap > 15}}" class="font-xs" style="text-align:center;margin-top:4px;color:{{item.upsetColor}}">
+        冷门：{{item.upsetLabel}}
       </view>
     </view>
   </view>

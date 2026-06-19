@@ -78,7 +78,9 @@ Page({
         upsetAlert: pred.upsetAlert,
         upsetProb: pred.upsetProb,
         upsetTeam: pred.upsetTeam,
-        upsetHappened: upsetHappened
+        upsetHappened: upsetHappened,
+        upsetColor: (pred.upsetAlert && upsetHappened) || (!pred.upsetAlert && !upsetHappened) ? '#16a34a' : '#dc2626',
+        upsetLabel: pred.upsetAlert ? ('预警' + (pred.upsetProb*100).toFixed(0) + '% → ') : '未预警 → ' + (upsetHappened ? '爆冷' : '正常')
       });
     });
 
