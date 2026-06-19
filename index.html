@@ -3324,7 +3324,7 @@ function generateMatchAnalysis(m, ht, at, pred, mol) {
   var favProb = hStr > aStr ? (pred.homeWinProb*100).toFixed(0) : (pred.awayWinProb*100).toFixed(0);
   var gap = Math.abs(hStr - aStr);
   var gapDesc = gap > 15 ? '实力悬殊' : gap > 8 ? '差距明显' : gap > 4 ? '实力接近' : '势均力敌';
-  parts.push('【比赛概述】本场' + ht.cn + '对阵' + at.cn + '的小组赛，AI模型评定为"' + gapDesc + '"（' + fav + '取胜概率' + favProb + '%）。' + ht.cn + 'FIFA排名第' + hRank + '位，综合实力评分' + hStr.toFixed(1) + '；' + at.cn + 'FIFA排名第' + aRank + '位，综合实力评分' + aStr.toFixed(1) + '。');
+  parts.push(ht.cn + ' vs ' + at.cn + '，AI评定：' + gapDesc + '。' + ht.cn + ' FIFA#' + hRank + ' 评分' + hStr.toFixed(1) + ' | ' + at.cn + ' FIFA#' + aRank + ' 评分' + aStr.toFixed(1));
 
   // 1.5 Live data: recent form
   if (apiInfo && apiInfo.recentForm && apiInfo.recentForm.home) {
@@ -3339,29 +3339,27 @@ function generateMatchAnalysis(m, ht, at, pred, mol) {
   }
 
   // 2. Strengths & weaknesses
-  if (hTac.strength) parts.push('【' + ht.cn + '优势与短板】' + ht.cn + '的核心竞争力在于' + hTac.strength + '。然而，' + (hTac.weakness || '防守端存在一定隐患') + '。');
-  if (aTac.strength) parts.push('【' + at.cn + '优势与短板】' + at.cn + '的制胜法宝是' + aTac.strength + '。不足之处在于' + (aTac.weakness || '整体实力尚有差距') + '。');
+  if (hTac.strength) parts.push('【' + ht.cn + '】优势：' + hTac.strength + '。' + (hTac.weakness ? '劣势：' + hTac.weakness + '。' : ''));
+  if (aTac.strength) parts.push('【' + at.cn + '】优势：' + aTac.strength + '。' + (aTac.weakness ? '劣势：' + aTac.weakness + '。' : ''));
 
   // 3. Tactical matchup
   if (pred.tacAnalysis) {
-    var tacPart = '【战术博弈】';
-    tacPart += ht.cn + '采用' + (hTac.formation || '4-4-2') + '阵型，主打' + hStyle + '风格（节奏' + (hTac.tempo || 5) + '/10·逼抢' + (hTac.pressing || 5) + '/10）；';
-    tacPart += at.cn + '则排出' + (aTac.formation || '4-4-2') + '阵型，以' + aStyle + '应对（节奏' + (aTac.tempo || 5) + '/10·逼抢' + (aTac.pressing || 5) + '/10）。';
-    tacPart += '战术层面，' + pred.tacAnalysis.narrative + '（调整' + pred.tacAnalysis.adjPct + '）。';
-    var kp = pred.tacAnalysis.keyPoints || [];
-    if (kp.length > 0) tacPart += '关键点：' + kp.slice(0, 3).join('；') + '。';
+    var tacPart = '【战术】';
+    tacPart += ht.cn + ' ' + (hTac.formation || '4-4-2') + ' ' + hStyle + ' | ';
+    tacPart += at.cn + ' ' + (aTac.formation || '4-4-2') + ' ' + aStyle + '。';
+    tacPart += pred.tacAnalysis.narrative + '（调整' + pred.tacAnalysis.adjPct + '）';
     parts.push(tacPart);
   }
 
   // 4. Key players
   var hStars = ht.stars.slice(0, 2).map(function(s){return PLAYER_CN[s] || s;}).join('、');
   var aStars = at.stars.slice(0, 2).map(function(s){return PLAYER_CN[s] || s;}).join('、');
-  parts.push('【核心球员】' + ht.cn + '由' + hStars + '领衔，他们的状态将决定球队的上限；' + at.cn + '则依靠' + aStars + '的核心作用，需要在攻防两端扛起责任。');
+  parts.push('【核心球员】' + ht.cn + ': ' + hStars + '；' + at.cn + ': ' + aStars);
 
   // 5. Score prediction reasoning
   var topScoresStr = pred.topScores ? pred.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : (pred.predScore[0] + ':' + pred.predScore[1]);
   var xG = pred.expH.toFixed(1) + ' - ' + pred.expA.toFixed(1);
-  parts.push('【比分预测】基于泊松分布模型，AI预期进球为' + xG + '（' + ht.cn + '-' + at.cn + '），最可能比分TOP3为' + topScoresStr + '。' + ht.cn + '的进攻火力（攻' + ht.att + '/防' + ht.def + '）与' + at.cn + '的攻防体系（攻' + at.att + '/防' + at.def + '）对比，模型推演出' + ht.cn + '胜' + (pred.homeWinProb*100).toFixed(0) + '% / 平' + (pred.drawProb*100).toFixed(0) + '% / ' + at.cn + '胜' + (pred.awayWinProb*100).toFixed(0) + '%的概率分布。');
+  parts.push('【比分预测】预期进球 ' + xG + '，最可能比分 ' + topScoresStr + '。' + ht.cn + '胜' + (pred.homeWinProb*100).toFixed(0) + '% 平' + (pred.drawProb*100).toFixed(0) + '% ' + at.cn + '胜' + (pred.awayWinProb*100).toFixed(0) + '%');
 
   // 5.5 Market consensus
   var consensus = getMarketConsensus(m.id, pred.homeWinProb, pred.drawProb, pred.awayWinProb);
@@ -3377,14 +3375,14 @@ function generateMatchAnalysis(m, ht, at, pred, mol) {
     var injParts = [];
     if (ht.inj) injParts.push(ht.cn + '存在伤病隐患（' + ht.inj.replace(/🔴|⚠️/g, '').trim() + '）');
     if (at.inj) injParts.push(at.cn + '同样面临伤病困扰（' + at.inj.replace(/🔴|⚠️/g, '').trim() + '）');
-    if (injParts.length > 0) parts.push('【伤病影响】' + injParts.join('；') + '，这些缺席/存疑可能对双方战术执行产生不同程度的影响。');
-    else parts.push('【伤病影响】双方目前阵容齐整，无重大伤病困扰，均可派出最强阵容出战。');
+    if (injParts.length > 0) parts.push('【伤病】' + injParts.join('；'));
+    else parts.push('【伤病】双方阵容齐整，无重大伤病。');
   }
 
   // 6.5 Head-to-head history
   if (apiInfo && apiInfo.history && parseInt(apiInfo.history.totalMatches) > 0) {
     var hist = apiInfo.history;
-    parts.push('【历史交锋】双方交手' + hist.totalMatches + '次，' + ht.cn + ' ' + hist.wins + '胜' + hist.draws + '平' + hist.losses + '负，胜率' + (hist.winRate || '?') + '。');
+    parts.push('【交锋】交手' + hist.totalMatches + '次，' + ht.cn + ' ' + hist.wins + '胜' + hist.draws + '平' + hist.losses + '负');
   }
 
   // 7. Historical & odds context
