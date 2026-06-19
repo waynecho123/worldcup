@@ -257,23 +257,17 @@ async function updateOdds() {
         // Debug: show first fixture structure
         var s = resp.response[0];
         resp.response.forEach(fixture => {
-          // Match by fixture ID (odds endpoint doesn't include team names)
+          // Match by fixture ID from previously-fetched details
           var fixId = fixture.fixture?.id;
-          var m = fixId ? sched.find(function(x) { return x.id === fixToMid[fixId]; }) : null;
-          if (!m) {
-            // Fallback: match by team name
-            var teamInfo = fixture.teams || {};
-            var fHome = teamInfo.home?.name || '';
-            var fAway = teamInfo.away?.name || '';
-            m = sched.find(function(x) {
-              var ht = TEAMS[x.home], at = TEAMS[x.away];
-              return ht && at && (
-                (ht.name === fHome && at.name === fAway) ||
-                (ht.cn === fHome && at.cn === fAway) ||
-                (ht.name === fAway && at.name === fHome)
-              );
-            });
+          var mid = fixToMid[fixId];
+          if (!mid) {
+            // No stored fixture mapping yet — save fixture ID keyed by date for later resolution
+            var fixDate = fixture.fixture?.date?.slice(0, 10) || dateStr;
+            if (!existing['_fix_' + fixId]) {
+              existing['_fix_' + fixId] = { fixtureId: fixId, date: fixDate };
+            }
           }
+          var m = mid ? sched.find(function(x) { return x.id === mid; }) : null;
           if (!m) return;
           const bookmakers = fixture.bookmakers || [];
           const bet365 = bookmakers.find(b => b.name === 'Bet365') || bookmakers[0];
@@ -948,12 +942,18 @@ async function updateMatchDetails() {
   }
 
   let n = 0;
-  // Get all match dates from scores
+  // Get match dates from scores + next 5 days for odds mapping
   const matchIds = Object.keys(scores).filter(k => k.match(/^m\d+$/));
   const dates = [...new Set(matchIds.map(mid => {
     const m = getMatchSchedule().find(x => x.id === mid);
     return m ? m.date : null;
   }).filter(Boolean))];
+  // Also add next 5 days for upcoming fixture IDs (needed by updateOdds)
+  for (let d = 0; d < 5; d++) {
+    const dt = new Date(now);
+    dt.setDate(dt.getDate() + d);
+    dates.push(dt.toISOString().slice(0, 10));
+  }
 
   for (const date of dates) {
     try {
