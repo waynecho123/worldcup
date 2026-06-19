@@ -983,11 +983,13 @@ async function updateMatchDetails() {
       if (!data.response) continue;
       const wcFixtures = data.response.filter(f => f.league?.name === 'World Cup');
       if (wcFixtures.length === 0) continue;
+      console.log(`[Match details] ${date}: ${wcFixtures.length} fixtures`);
 
       // Collect fixture IDs and map to our match IDs
       const idMap = {};
       for (const fixture of wcFixtures) {
         var homeName = fixture.teams?.home?.name, awayName = fixture.teams?.away?.name;
+        console.log(`[Match details]   ${homeName} vs ${awayName} (fid=${fixture.fixture?.id})`);
         var fixDate = (fixture.fixture?.date || '').slice(0, 10);
         // Match by date + team names (or just fixture ID for odds mapping)
         var m = getMatchSchedule().find(function(x) {
@@ -1013,10 +1015,11 @@ async function updateMatchDetails() {
                    (aNameLo.includes(fAwayLo) || fAwayLo.includes(aNameLo));
           });
         }
-        if (m) idMap[fixture.fixture.id] = m.id;
+        if (m) { idMap[fixture.fixture.id] = m.id; console.log(`[Match details]     → matched ${m.id}`); }
+        else console.log(`[Match details]     → NO MATCH`);
       }
 
-      if (Object.keys(idMap).length === 0) continue;
+      if (Object.keys(idMap).length === 0) { console.log(`[Match details] ${date}: 0 matches found, skipping`); continue; }
 
       // Step 2: fetch details one by one (free plan limits batch)
       for (const [fid, mid] of Object.entries(idMap)) {
