@@ -5,7 +5,7 @@
 .page-title {
   font-size: 36rpx;
   font-weight: 800;
-  color: #e4e8f0;
+  color: #1a1a1a;
   margin-bottom: 16px;
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@
 .empty-state {
   text-align: center;
   padding: 60px 20px;
-  color: #556680;
+  color: #999999;
 }
 
 .empty-state .es-icon {
@@ -37,8 +37,8 @@
 }
 
 .history-item {
-  background: #0f1521;
-  border: 1px solid #1a2744;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
   padding: 16px;
   transition: background .15s;
@@ -53,7 +53,7 @@
 
 .history-item .hi-runs {
   font-size: 22rpx;
-  background: #4da6ff;
+  background: #2563eb;
   color: #fff;
   padding: 3px 10px;
   border-radius: 12px;
@@ -62,17 +62,17 @@
 
 .history-item .hi-time {
   font-size: 22rpx;
-  color: #556680;
+  color: #999999;
 }
 
 .history-item .hi-top3 {
   font-size: 26rpx;
-  color: #e4e8f0;
+  color: #1a1a1a;
   line-height: 1.5;
 }
 
 .history-item .hi-top3 .gold-highlight {
-  color: #f0b90b;
+  color: #f59e0b;
   font-weight: 700;
 }
 
@@ -84,8 +84,8 @@
 
 .back-btn button {
   background: transparent;
-  color: #4da6ff;
-  border: 1px solid #4da6ff;
+  color: #2563eb;
+  border: 1px solid #2563eb;
   border-radius: 8px;
   padding: 10px 30px;
   font-size: 28rpx;

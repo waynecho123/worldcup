@@ -1,5 +1,5 @@
 /* Today's Matches - 世界杯赛程 */
-page { background-color: #080c14; }
+page { background-color: #f5f5f5; }
 
 /* Date Navigation */
 .date-nav {
@@ -7,7 +7,7 @@ page { background-color: #080c14; }
   align-items: center;
   gap: 6px;
   padding: 8px 10px;
-  background: #0f1521;
+  background: #ffffff;
   margin: 8px 14px;
   border-radius: 10px;
 }
@@ -19,7 +19,7 @@ page { background-color: #080c14; }
   align-items: center;
   justify-content: center;
   font-size: 24rpx;
-  color: #8899b4;
+  color: #666666;
   flex-shrink: 0;
 }
 
@@ -36,19 +36,19 @@ page { background-color: #080c14; }
 
 .date-chip {
   padding: 6px 14px;
-  border: 1px solid #1a2744;
+  border: 1px solid #e0e0e0;
   border-radius: 16px;
   font-size: 22rpx;
-  color: #8899b4;
-  background: #0f1521;
+  color: #666666;
+  background: #ffffff;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .date-chip.active {
-  background: #4da6ff;
+  background: #2563eb;
   color: #fff;
-  border-color: #4da6ff;
+  border-color: #2563eb;
 }
 
 .date-chip.past {
@@ -66,7 +66,7 @@ page { background-color: #080c14; }
 }
 
 .date-badge {
-  background: #4da6ff;
+  background: #2563eb;
   color: #fff;
   padding: 5px 12px;
   border-radius: 16px;
@@ -77,7 +77,7 @@ page { background-color: #080c14; }
 
 /* Match Cards */
 .match-card { margin: 0 14px 10px; }
-.match-card.featured { border-left: 3px solid #f0b90b; }
+.match-card.featured { border-left: 3px solid #f59e0b; }
 
 .match-card .mc-header {
   display: flex;
@@ -86,11 +86,11 @@ page { background-color: #080c14; }
   margin-bottom: 4px;
 }
 
-.match-card .mc-time { font-size: 22rpx; color: #556680; font-weight: 600; }
+.match-card .mc-time { font-size: 22rpx; color: #999999; font-weight: 600; }
 
 .match-card .mc-group {
   font-size: 20rpx;
-  color: #4da6ff;
+  color: #2563eb;
   background: rgba(77,166,255,.1);
   padding: 2px 8px;
   border-radius: 4px;
@@ -118,7 +118,7 @@ page { background-color: #080c14; }
 .mc-vs-text {
   font-size: 32rpx;
   font-weight: 800;
-  color: #556680;
+  color: #999999;
   margin: 0 2px;
   flex-shrink: 0;
 }
@@ -140,7 +140,7 @@ page { background-color: #080c14; }
 }
 .mc-result-icon { font-size: 28rpx; }
 .mc-result-score { font-size: 44rpx; font-weight: 800; }
-.mc-result-label { font-size: 20rpx; color: #8899b4; }
+.mc-result-label { font-size: 20rpx; color: #666666; }
 
 /* 3. AI win prediction text */
 .mc-ai-win {
@@ -150,10 +150,10 @@ page { background-color: #080c14; }
   gap: 6px;
   margin-top: 8px;
 }
-.mc-ai-win-label { font-size: 24rpx; color: #f0b90b; }
-.mc-ai-win-value { font-size: 30rpx; font-weight: 800; color: #f0b90b; }
-.mc-ai-win-correct { font-size: 22rpx; color: #00c853; font-weight: 700; }
-.mc-ai-win-wrong { font-size: 22rpx; color: #ff3d57; font-weight: 700; }
+.mc-ai-win-label { font-size: 24rpx; color: #f59e0b; }
+.mc-ai-win-value { font-size: 30rpx; font-weight: 800; color: #f59e0b; }
+.mc-ai-win-correct { font-size: 22rpx; color: #16a34a; font-weight: 700; }
+.mc-ai-win-wrong { font-size: 22rpx; color: #dc2626; font-weight: 700; }
 
 /* 4. AI predicted score */
 .mc-ai-score {
@@ -163,8 +163,8 @@ page { background-color: #080c14; }
   gap: 6px;
   margin-top: 2px;
 }
-.mc-ai-score-label { font-size: 22rpx; color: #556680; }
-.mc-ai-score-value { font-size: 28rpx; font-weight: 700; color: #f0b90b; }
+.mc-ai-score-label { font-size: 22rpx; color: #999999; }
+.mc-ai-score-value { font-size: 28rpx; font-weight: 700; color: #f59e0b; }
 
 /* Upset alert */
 .mc-upset-alert {
@@ -173,7 +173,7 @@ page { background-color: #080c14; }
   padding: 6px 10px;
   font-size: 22rpx;
   font-weight: 700;
-  color: #ff9100;
+  color: #ea580c;
   background: rgba(255,145,0,.08);
   border: 1px solid rgba(255,145,0,.2);
   border-radius: 6px;
@@ -184,7 +184,7 @@ page { background-color: #080c14; }
 .mc-news-line {
   display: block;
   font-size: 22rpx;
-  color: #ff9100;
+  color: #ea580c;
   padding: 3px 8px;
   margin-top: 3px;
   background: rgba(255,145,0,.06);
@@ -197,7 +197,7 @@ page { background-color: #080c14; }
 .mc-inj-line {
   display: block;
   font-size: 22rpx;
-  color: #ff3d57;
+  color: #dc2626;
   padding: 3px 8px;
   margin-top: 3px;
   background: rgba(255,61,87,.06);
@@ -227,6 +227,6 @@ page { background-color: #080c14; }
   min-width: 0;
   overflow: hidden;
 }
-.mc-prob-seg.home { background: #4da6ff; }
-.mc-prob-seg.draw { background: #556680; }
-.mc-prob-seg.away { background: #ff3d57; }
+.mc-prob-seg.home { background: #2563eb; }
+.mc-prob-seg.draw { background: #999999; }
+.mc-prob-seg.away { background: #dc2626; }

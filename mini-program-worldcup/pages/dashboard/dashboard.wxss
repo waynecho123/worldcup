@@ -4,8 +4,8 @@
 
 /* Controls Card */
 .ctrl-card {
-  background: #0f1521;
-  border: 1px solid #1a2744;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
   padding: 18px;
   margin-bottom: 16px;
@@ -20,7 +20,7 @@
   align-items: center;
   gap: 8px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #1a2744;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .ctrl-row {
@@ -33,7 +33,7 @@
 /* Progress */
 .progress-wrap {
   height: 10px;
-  background: #182032;
+  background: #f0f2f5;
   border-radius: 5px;
   overflow: hidden;
   margin: 10px 0;
@@ -41,22 +41,22 @@
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #4da6ff, #8b5cf6);
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
   border-radius: 5px;
   transition: width 0.2s ease;
 }
 
 .progress-text {
   font-size: 22rpx;
-  color: #8899b4;
+  color: #666666;
   text-align: center;
   margin-top: 4px;
 }
 
 /* Results */
 .result-card {
-  background: #0f1521;
-  border: 1px solid #1a2744;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
   padding: 18px;
   margin-bottom: 16px;
@@ -71,7 +71,7 @@
   align-items: center;
   gap: 8px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #1a2744;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .champ-row {
@@ -80,7 +80,7 @@
   justify-content: space-between;
   padding: 12px 10px;
   margin: 4px 0;
-  background: #182032;
+  background: #f0f2f5;
   border-radius: 10px;
   transition: background .15s;
 }
@@ -109,10 +109,10 @@
   font-weight: 800;
   width: 40px;
   text-align: center;
-  color: #556680;
+  color: #999999;
 }
 
-.champ-row:nth-child(1) .cr-pos { color: #f0b90b; }
+.champ-row:nth-child(1) .cr-pos { color: #f59e0b; }
 .champ-row:nth-child(2) .cr-pos { color: #c0c0c0; }
 .champ-row:nth-child(3) .cr-pos { color: #cd7f32; }
 
@@ -123,24 +123,24 @@
 .champ-row .cr-name {
   font-size: 28rpx;
   font-weight: 700;
-  color: #e4e8f0;
+  color: #1a1a1a;
 }
 
 .champ-row .cr-prob {
   font-size: 40rpx;
   font-weight: 800;
-  color: #f0b90b;
+  color: #f59e0b;
 }
 
 .champ-row .cr-prob-unit {
   font-size: 24rpx;
-  color: #8899b4;
+  color: #666666;
 }
 
 /* Prob bar */
 .prob-bar-wrap {
   height: 6px;
-  background: #182032;
+  background: #f0f2f5;
   border-radius: 3px;
   overflow: hidden;
   margin-top: 6px;
@@ -148,7 +148,7 @@
 
 .prob-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, #f0b90b, #ff9100);
+  background: linear-gradient(90deg, #f59e0b, #ea580c);
   border-radius: 3px;
   transition: width 0.5s ease;
 }
@@ -160,7 +160,7 @@
 
 .more-teams .mt-title {
   font-size: 24rpx;
-  color: #556680;
+  color: #999999;
   margin-bottom: 6px;
 }
 
@@ -169,26 +169,26 @@
   align-items: center;
   justify-content: space-between;
   padding: 8px 10px;
-  background: #182032;
+  background: #f0f2f5;
   border-radius: 8px;
   margin-bottom: 4px;
 }
 
 .more-team-row .mt-name {
   font-size: 26rpx;
-  color: #8899b4;
+  color: #666666;
 }
 
 .more-team-row .mt-prob {
   font-size: 26rpx;
   font-weight: 700;
-  color: #4da6ff;
+  color: #2563eb;
 }
 
 /* Runs info */
 .runs-info {
   font-size: 22rpx;
-  color: #556680;
+  color: #999999;
   text-align: center;
   margin-top: 10px;
   display: block;

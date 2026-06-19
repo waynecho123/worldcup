@@ -1,8 +1,8 @@
 /* News Ticker Component */
 
 .news-ticker {
-  background: linear-gradient(90deg, #1a0a0a, #0a0a1a);
-  border-bottom: 1px solid #1a2744;
+  background: #f0f2f5;
+  border-bottom: 1px solid #e0e0e0;
   padding: 8px 20px;
   display: flex;
   align-items: center;
@@ -13,7 +13,7 @@
 }
 
 .ticker-label {
-  background: #ff3d57;
+  background: #dc2626;
   color: #fff;
   padding: 2px 10px;
   border-radius: 10px;
@@ -34,7 +34,7 @@
 
 .ticker-text {
   white-space: nowrap;
-  color: #8899b4;
+  color: #666666;
   font-size: 24rpx;
   animation: ticker-scroll 12s linear infinite;
 }

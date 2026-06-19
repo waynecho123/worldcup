@@ -12,7 +12,7 @@
 
 .group-nav-arrow {
   font-size: 28rpx;
-  color: #4da6ff;
+  color: #2563eb;
   padding: 6px;
   font-weight: 700;
 }
@@ -26,11 +26,11 @@
 
 .group-tab {
   padding: 8px 16px;
-  background: #182032;
-  border: 1px solid #1a2744;
+  background: #f0f2f5;
+  border: 1px solid #e0e0e0;
   border-radius: 20px;
   font-size: 24rpx;
-  color: #8899b4;
+  color: #666666;
   font-weight: 600;
   white-space: nowrap;
   flex-shrink: 0;
@@ -38,8 +38,8 @@
 }
 
 .group-tab.active {
-  background: #4da6ff;
-  border-color: #4da6ff;
+  background: #2563eb;
+  border-color: #2563eb;
   color: #fff;
   font-weight: 800;
 }
@@ -56,18 +56,18 @@
 .gi-title {
   font-size: 36rpx;
   font-weight: 800;
-  color: #e4e8f0;
+  color: #1a1a1a;
 }
 
 .gi-meta {
   font-size: 24rpx;
-  color: #556680;
+  color: #999999;
 }
 
 /* Standings Table */
 .standings-table {
-  background: #0f1521;
-  border: 1px solid #1a2744;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 12px;
@@ -78,12 +78,12 @@
   display: flex;
   align-items: center;
   padding: 10px 6px;
-  background: #182032;
-  border-bottom: 1px solid #1a2744;
+  background: #f0f2f5;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .st-header .st-col {
-  color: #556680;
+  color: #999999;
   font-size: 22rpx;
   font-weight: 600;
 }
@@ -117,13 +117,13 @@
 
 .st-row .st-col {
   font-size: 24rpx;
-  color: #8899b4;
+  color: #666666;
 }
 
 .st-row .st-pos {
   font-size: 26rpx;
   font-weight: 700;
-  color: #556680;
+  color: #999999;
 }
 
 /* Team Info */
@@ -144,12 +144,12 @@
 .sti-name {
   font-size: 26rpx;
   font-weight: 700;
-  color: #e4e8f0;
+  color: #1a1a1a;
 }
 
 .sti-rank {
   font-size: 20rpx;
-  color: #556680;
+  color: #999999;
 }
 
 /* Qualification Legend */
@@ -165,7 +165,7 @@
   align-items: center;
   gap: 6px;
   font-size: 22rpx;
-  color: #8899b4;
+  color: #666666;
 }
 
 .ql-dot {
@@ -183,14 +183,14 @@
   align-items: center;
   gap: 8px;
   padding: 8px 10px;
-  background: #182032;
+  background: #f0f2f5;
   border-radius: 8px;
   margin-bottom: 4px;
   font-size: 24rpx;
 }
 
 .tp-row.tp-qualify {
-  border-left: 3px solid #00c853;
+  border-left: 3px solid #16a34a;
 }
 
 .tp-row.tp-out {
@@ -200,15 +200,15 @@
 .tp-pos {
   width: 24px;
   font-weight: 700;
-  color: #556680;
+  color: #999999;
 }
 
 .tp-group {
   font-size: 20rpx;
-  background: #0f1521;
+  background: #ffffff;
   padding: 2px 6px;
   border-radius: 4px;
-  color: #8899b4;
+  color: #666666;
 }
 
 .tp-flag { font-size: 28rpx; }
@@ -216,12 +216,12 @@
 .tp-name {
   flex: 1;
   font-weight: 600;
-  color: #e4e8f0;
+  color: #1a1a1a;
 }
 
 .tp-pts {
   font-weight: 700;
-  color: #f0b90b;
+  color: #f59e0b;
   min-width: 40px;
   text-align: center;
 }
@@ -229,7 +229,7 @@
 .tp-gd {
   min-width: 40px;
   text-align: right;
-  color: #8899b4;
+  color: #666666;
   font-weight: 600;
 }
 
@@ -245,20 +245,20 @@
   align-items: center;
   gap: 8px;
   padding: 8px 10px;
-  background: #0f1521;
+  background: #ffffff;
   border-radius: 6px;
   font-size: 24rpx;
 }
 
 .gm-date {
-  color: #556680;
+  color: #999999;
   min-width: 70px;
   font-size: 22rpx;
 }
 
 .gm-teams {
   flex: 1;
-  color: #e4e8f0;
+  color: #1a1a1a;
   font-weight: 600;
 }
 
@@ -271,7 +271,7 @@
 
 .gm-pending {
   font-size: 22rpx;
-  color: #556680;
+  color: #999999;
   min-width: 36px;
   text-align: center;
 }

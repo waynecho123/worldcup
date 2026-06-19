@@ -1,8 +1,8 @@
 /* Stat Box Component */
 
 .stat-box {
-  background: #182032;
-  border: 1px solid #1a2744;
+  background: #f0f2f5;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
   padding: 14px 10px;
   text-align: center;
@@ -15,7 +15,7 @@
 
 .stat-box.clickable:active {
   background: #1a2538;
-  border-color: #4da6ff;
+  border-color: #2563eb;
 }
 
 /* Sizes */
@@ -53,13 +53,13 @@
   font-weight: 700;
 }
 
-.sb-trend.up { color: #00c853; }
-.sb-trend.down { color: #ff3d57; }
+.sb-trend.up { color: #16a34a; }
+.sb-trend.down { color: #dc2626; }
 
 /* Label */
 .sb-label {
   font-size: 24rpx;
-  color: #8899b4;
+  color: #666666;
 }
 
 .stat-sm .sb-label { font-size: 20rpx; }
@@ -68,6 +68,6 @@
 /* Sublabel */
 .sb-sublabel {
   font-size: 20rpx;
-  color: #556680;
+  color: #999999;
   margin-top: 2px;
 }

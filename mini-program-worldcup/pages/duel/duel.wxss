@@ -8,8 +8,8 @@
   justify-content: space-around;
   align-items: center;
   padding: 20px 12px;
-  background: linear-gradient(135deg, #0a1628, #132044);
-  border: 1px solid #1a2744;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 14px;
   margin-bottom: 12px;
 }
@@ -27,7 +27,7 @@
 
 .ds-label {
   font-size: 24rpx;
-  color: #8899b4;
+  color: #666666;
   display: block;
 }
 
@@ -50,7 +50,7 @@
 
 .ds-vs-text {
   font-size: 24rpx;
-  color: #f0b90b;
+  color: #f59e0b;
   font-weight: 700;
 }
 
@@ -68,7 +68,7 @@
 /* Settlement Card */
 .settlement-card {
   background: linear-gradient(90deg, rgba(77,166,255,.06), rgba(0,200,83,.06));
-  border: 1px solid #1a2744;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
   padding: 14px;
   margin-bottom: 12px;
@@ -78,7 +78,7 @@
   font-size: 28rpx;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #e4e8f0;
+  color: #1a1a1a;
 }
 
 .sc-row {
@@ -86,27 +86,27 @@
   justify-content: space-between;
   padding: 6px 0;
   font-size: 26rpx;
-  color: #8899b4;
+  color: #666666;
 }
 
 /* Strategy Items */
 .strategy-empty {
   text-align: center;
   padding: 16px;
-  color: #556680;
+  color: #999999;
   font-size: 24rpx;
 }
 
 .strategy-item {
   padding: 10px 12px;
   margin: 4px 0;
-  background: #0f1521;
+  background: #ffffff;
   border-radius: 8px;
-  border-left: 3px solid #4da6ff;
+  border-left: 3px solid #2563eb;
 }
 
 .strategy-item.human {
-  border-left-color: #00c853;
+  border-left-color: #16a34a;
 }
 
 .si-header {
@@ -118,13 +118,13 @@
 .si-label {
   font-size: 26rpx;
   font-weight: 600;
-  color: #e4e8f0;
+  color: #1a1a1a;
 }
 
 .si-stake {
   font-size: 28rpx;
   font-weight: 700;
-  color: #f0b90b;
+  color: #f59e0b;
 }
 
 .si-detail {
@@ -141,8 +141,8 @@
 
 /* Duel Match Cards */
 .duel-match-card {
-  background: #182032;
-  border: 1px solid #1a2744;
+  background: #f0f2f5;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
   padding: 14px;
   margin-bottom: 8px;
@@ -162,13 +162,13 @@
 
 .dm-date {
   font-size: 24rpx;
-  color: #8899b4;
+  color: #666666;
   font-weight: 600;
 }
 
 .dm-group {
   font-size: 22rpx;
-  background: #4da6ff;
+  background: #2563eb;
   color: #fff;
   padding: 2px 8px;
   border-radius: 10px;
@@ -195,14 +195,14 @@
 .dm-name {
   font-size: 26rpx;
   font-weight: 700;
-  color: #e4e8f0;
+  color: #1a1a1a;
   display: block;
 }
 
 .dm-vs {
   font-size: 32rpx;
   font-weight: 800;
-  color: #556680;
+  color: #999999;
 }
 
 .dm-prediction {
@@ -221,21 +221,21 @@
 .dm-odd-item {
   flex: 1;
   text-align: center;
-  background: #0f1521;
+  background: #ffffff;
   border-radius: 6px;
   padding: 6px 4px;
 }
 
 .dm-odd-label {
   font-size: 20rpx;
-  color: #8899b4;
+  color: #666666;
   display: block;
 }
 
 .dm-odd-val {
   font-size: 26rpx;
   font-weight: 700;
-  color: #f0b90b;
+  color: #f59e0b;
   display: block;
 }
 
@@ -249,13 +249,13 @@
   display: flex;
   justify-content: space-between;
   padding: 8px 12px;
-  background: #182032;
+  background: #f0f2f5;
   border-radius: 8px;
   margin-bottom: 4px;
   font-size: 24rpx;
 }
 
-.hi-date { color: #8899b4; }
+.hi-date { color: #666666; }
 .hi-result { font-weight: 700; }
 
 /* ===== Betting Modal ===== */
@@ -270,8 +270,8 @@
 }
 
 .modal {
-  background: #0f1521;
-  border: 1px solid #1a2744;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 14px;
   padding: 24px;
   max-width: 600px;
@@ -290,12 +290,12 @@
 .modal-title {
   font-size: 32rpx;
   font-weight: 800;
-  color: #e4e8f0;
+  color: #1a1a1a;
 }
 
 .modal-close {
   font-size: 36rpx;
-  color: #556680;
+  color: #999999;
   padding: 4px 8px;
 }
 
@@ -303,20 +303,20 @@
   text-align: center;
   margin-bottom: 16px;
   padding: 12px;
-  background: #182032;
+  background: #f0f2f5;
   border-radius: 8px;
 }
 
 .bmi-teams {
   font-size: 28rpx;
   font-weight: 700;
-  color: #e4e8f0;
+  color: #1a1a1a;
   display: block;
 }
 
 .bmi-meta {
   font-size: 22rpx;
-  color: #8899b4;
+  color: #666666;
   margin-top: 4px;
   display: block;
 }
@@ -332,32 +332,32 @@
   flex: 1;
   text-align: center;
   padding: 12px 8px;
-  background: #182032;
-  border: 1px solid #1a2744;
+  background: #f0f2f5;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
   transition: all .2s;
 }
 
 .bet-pick.active {
   background: rgba(77,166,255,.12);
-  border-color: #4da6ff;
+  border-color: #2563eb;
 }
 
 .bp-label {
   font-size: 24rpx;
-  color: #8899b4;
+  color: #666666;
   display: block;
 }
 
 .bet-pick.active .bp-label {
-  color: #4da6ff;
+  color: #2563eb;
   font-weight: 700;
 }
 
 .bp-odds {
   font-size: 32rpx;
   font-weight: 800;
-  color: #f0b90b;
+  color: #f59e0b;
   display: block;
   margin-top: 4px;
 }
@@ -369,7 +369,7 @@
 
 .bs-label {
   font-size: 26rpx;
-  color: #8899b4;
+  color: #666666;
   margin-bottom: 8px;
   display: block;
 }
@@ -383,27 +383,27 @@
 
 .bs-chip {
   padding: 6px 14px;
-  background: #182032;
-  border: 1px solid #1a2744;
+  background: #f0f2f5;
+  border: 1px solid #e0e0e0;
   border-radius: 16px;
   font-size: 24rpx;
-  color: #8899b4;
+  color: #666666;
   transition: all .15s;
 }
 
 .bs-chip.active {
-  background: #4da6ff;
-  border-color: #4da6ff;
+  background: #2563eb;
+  border-color: #2563eb;
   color: #fff;
   font-weight: 700;
 }
 
 .bs-input {
   padding: 10px 14px;
-  background: #182032;
-  border: 1px solid #1a2744;
+  background: #f0f2f5;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  color: #e4e8f0;
+  color: #1a1a1a;
   font-size: 28rpx;
   width: 100%;
   box-sizing: border-box;
@@ -416,11 +416,11 @@
   border-radius: 8px;
   margin-bottom: 12px;
   font-size: 26rpx;
-  color: #8899b4;
+  color: #666666;
 }
 
 .bet-error {
-  color: #ff3d57;
+  color: #dc2626;
   font-size: 24rpx;
   text-align: center;
   margin-bottom: 8px;

@@ -4,8 +4,8 @@
 
 /* Hero Banner */
 .team-hero {
-  background: linear-gradient(135deg, #0a1628 0%, #132044 50%, #0f1521 100%);
-  border: 1px solid #1a2744;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 50%, #ffffff 100%);
+  border: 1px solid #e0e0e0;
   border-radius: 16px;
   padding: 24px 18px;
   text-align: center;
@@ -21,14 +21,14 @@
 .team-hero .th-name {
   font-size: 44rpx;
   font-weight: 800;
-  color: #e4e8f0;
+  color: #1a1a1a;
   display: block;
   margin-bottom: 4px;
 }
 
 .team-hero .th-name-en {
   font-size: 26rpx;
-  color: #8899b4;
+  color: #666666;
   display: block;
   margin-bottom: 12px;
 }
@@ -42,8 +42,8 @@
 
 .stat-row .stat-cell {
   flex: 1;
-  background: #182032;
-  border: 1px solid #1a2744;
+  background: #f0f2f5;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
   padding: 12px 8px;
   text-align: center;
@@ -52,24 +52,24 @@
 .stat-cell .sc-val {
   font-size: 36rpx;
   font-weight: 800;
-  color: #4da6ff;
+  color: #2563eb;
   display: block;
 }
 
-.stat-cell .sc-val.gold { color: #f0b90b; }
-.stat-cell .sc-val.green { color: #00c853; }
-.stat-cell .sc-val.red { color: #ff3d57; }
+.stat-cell .sc-val.gold { color: #f59e0b; }
+.stat-cell .sc-val.green { color: #16a34a; }
+.stat-cell .sc-val.red { color: #dc2626; }
 
 .stat-cell .sc-lbl {
   font-size: 22rpx;
-  color: #8899b4;
+  color: #666666;
   margin-top: 2px;
 }
 
 /* Info Cards */
 .info-card {
-  background: #0f1521;
-  border: 1px solid #1a2744;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
   padding: 16px;
   margin-bottom: 14px;
@@ -78,7 +78,7 @@
 .info-card .ic-title {
   font-size: 28rpx;
   font-weight: 700;
-  color: #e4e8f0;
+  color: #1a1a1a;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -90,12 +90,12 @@
   justify-content: space-between;
   padding: 6px 0;
   font-size: 26rpx;
-  color: #8899b4;
+  color: #666666;
   border-bottom: 1px solid rgba(26,39,68,.5);
 }
 
 .info-card .ic-row:last-child { border-bottom: none; }
-.info-card .ic-row .icr-val { color: #e4e8f0; font-weight: 600; }
+.info-card .ic-row .icr-val { color: #1a1a1a; font-weight: 600; }
 
 /* Stars List */
 .stars-list {
@@ -108,7 +108,7 @@
 .star-chip {
   background: rgba(240,185,11,.1);
   border: 1px solid rgba(240,185,11,.2);
-  color: #f0b90b;
+  color: #f59e0b;
   padding: 4px 12px;
   border-radius: 16px;
   font-size: 24rpx;
@@ -120,7 +120,7 @@
   display: inline-block;
   background: rgba(255,61,87,.1);
   border: 1px solid rgba(255,61,87,.2);
-  color: #ff3d57;
+  color: #dc2626;
   padding: 6px 12px;
   border-radius: 8px;
   font-size: 24rpx;
@@ -130,12 +130,12 @@
 /* News block */
 .news-block {
   background: rgba(77,166,255,.04);
-  border-left: 3px solid #4da6ff;
+  border-left: 3px solid #2563eb;
   padding: 12px 14px;
   border-radius: 0 8px 8px 0;
   margin-top: 8px;
   font-size: 26rpx;
-  color: #8899b4;
+  color: #666666;
   line-height: 1.6;
 }
 
@@ -152,7 +152,7 @@
 }
 
 .lineup-section .ls-formation {
-  background: #4da6ff;
+  background: #2563eb;
   color: #fff;
   font-size: 22rpx;
   padding: 3px 10px;
@@ -183,14 +183,14 @@
 
 .lineup-player .lp-num {
   font-size: 20rpx;
-  color: #f0b90b;
+  color: #f59e0b;
   font-weight: 800;
   display: block;
 }
 
 .lineup-player .lp-name {
   font-size: 22rpx;
-  color: #e4e8f0;
+  color: #1a1a1a;
   font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
@@ -199,7 +199,7 @@
 
 .lineup-player .lp-note {
   font-size: 18rpx;
-  color: #556680;
+  color: #999999;
 }
 
 .lineup-divider {
@@ -209,7 +209,7 @@
 
 /* Subs bench */
 .subs-bench {
-  background: #182032;
+  background: #f0f2f5;
   border-radius: 8px;
   padding: 10px;
   margin-top: 8px;
@@ -217,11 +217,11 @@
 
 .subs-bench .sb-title {
   font-size: 22rpx;
-  color: #556680;
+  color: #999999;
   margin-bottom: 6px;
 }
 
 .subs-bench .sb-list {
   font-size: 22rpx;
-  color: #8899b4;
+  color: #666666;
 }

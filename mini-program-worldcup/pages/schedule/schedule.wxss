@@ -1,17 +1,17 @@
 .filter-bar{display:flex;gap:4px;flex-wrap:wrap;padding:12px 14px}
-.filter-btn{padding:6px 12px;border:1px solid #1a2744;border-radius:16px;font-size:22rpx;color:#8899b4;background:#0f1521}
-.filter-btn.active{background:#4da6ff;color:#fff;border-color:#4da6ff}
-.legend-bar{display:flex;gap:16px;align-items:center;padding:8px 14px;margin:0 14px 10px;background:#182032;border-radius:8px}
+.filter-btn{padding:6px 12px;border:1px solid #e0e0e0;border-radius:16px;font-size:22rpx;color:#666666;background:#ffffff}
+.filter-btn.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.legend-bar{display:flex;gap:16px;align-items:center;padding:8px 14px;margin:0 14px 10px;background:#f0f2f5;border-radius:8px}
 .leg-item{display:flex;align-items:center;gap:4px}
 .leg-dot{width:10px;height:10px;border-radius:3px}
-.leg-dot.pred{background:#f0b90b}
-.leg-dot.actual{background:#00c853}
-.leg-dot.pending{background:#556680}
+.leg-dot.pred{background:#f59e0b}
+.leg-dot.actual{background:#16a34a}
+.leg-dot.pending{background:#999999}
 .schedule-day{margin:0 14px 20px}
-.sd-header{padding:10px 14px;background:#182032;border-radius:8px;font-weight:700;font-size:26rpx;margin-bottom:6px;display:flex;justify-content:space-between}
-.schedule-match{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#0f1521;border-radius:8px;margin-bottom:2px;font-size:24rpx}
-.sm-time{font-size:22rpx;color:#556680;min-width:42px}
-.sm-badge{font-size:20rpx;background:#182032;padding:2px 6px;border-radius:6px;color:#8899b4;white-space:nowrap}
-.sm-pred{color:#f0b90b;font-weight:600;font-size:22rpx;min-width:32px;text-align:center}
-.sm-actual{color:#00c853;font-weight:700;font-size:24rpx;min-width:32px;text-align:center}
-.sm-pending{color:#556680;font-size:22rpx;min-width:32px;text-align:center}
+.sd-header{padding:10px 14px;background:#f0f2f5;border-radius:8px;font-weight:700;font-size:26rpx;margin-bottom:6px;display:flex;justify-content:space-between}
+.schedule-match{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#ffffff;border-radius:8px;margin-bottom:2px;font-size:24rpx}
+.sm-time{font-size:22rpx;color:#999999;min-width:42px}
+.sm-badge{font-size:20rpx;background:#f0f2f5;padding:2px 6px;border-radius:6px;color:#666666;white-space:nowrap}
+.sm-pred{color:#f59e0b;font-weight:600;font-size:22rpx;min-width:32px;text-align:center}
+.sm-actual{color:#16a34a;font-weight:700;font-size:24rpx;min-width:32px;text-align:center}
+.sm-pending{color:#999999;font-size:22rpx;min-width:32px;text-align:center}

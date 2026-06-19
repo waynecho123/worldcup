@@ -1,15 +1,15 @@
 .group-scroll{white-space:nowrap}
 .group-tabs{display:inline-flex;gap:4px}
-.group-tab{padding:5px 12px;border:1px solid #1a2744;border-radius:16px;font-size:22rpx;color:#8899b4;display:inline-block}
-.group-tab.active{background:#4da6ff;color:#fff;border-color:#4da6ff}
+.group-tab{padding:5px 12px;border:1px solid #e0e0e0;border-radius:16px;font-size:22rpx;color:#666666;display:inline-block}
+.group-tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
 .sort-bar{display:flex;gap:8px;padding:8px 14px}
-.sort-tab{padding:4px 10px;border-radius:12px;font-size:22rpx;color:#8899b4;background:#182032}
-.sort-tab.active{background:#4da6ff;color:#fff}
+.sort-tab{padding:4px 10px;border-radius:12px;font-size:22rpx;color:#666666;background:#f0f2f5}
+.sort-tab.active{background:#2563eb;color:#fff}
 .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 14px 20px}
-.team-card{background:#182032;border:1px solid #1a2744;border-radius:10px;padding:12px}
+.team-card{background:#f0f2f5;border:1px solid #e0e0e0;border-radius:10px;padding:12px}
 .tc-header{display:flex;align-items:center;gap:8px;margin-bottom:6px}
 .tc-flag{font-size:50rpx}
-.tc-group-badge{font-size:20rpx;background:#4da6ff;color:#fff;padding:1px 8px;border-radius:8px}
+.tc-group-badge{font-size:20rpx;background:#2563eb;color:#fff;padding:1px 8px;border-radius:8px}
 .tc-stats{display:flex;gap:12px;margin:6px 0;font-size:22rpx}
 .tc-stat{display:flex;flex-direction:column;align-items:center}
-.tc-stars{font-size:20rpx;color:#8899b4}
+.tc-stars{font-size:20rpx;color:#666666}

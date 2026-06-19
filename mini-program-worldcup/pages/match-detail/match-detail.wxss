@@ -1,4 +1,4 @@
-.info-bar{display:flex;gap:12px;flex-wrap:wrap;padding:8px 12px;background:#182032;border-radius:8px;margin-bottom:8px}
+.info-bar{display:flex;gap:12px;flex-wrap:wrap;padding:8px 12px;background:#f0f2f5;border-radius:8px;margin-bottom:8px}
 .strength-row{display:flex;justify-content:space-around;text-align:center;margin:6px 0}
 .strength-col{text-align:center}
 
@@ -8,7 +8,7 @@
   background: linear-gradient(180deg, rgba(240,185,11,.04) 0%, rgba(240,185,11,.01) 100%);
 }
 .review-header {
-  color: #f0b90b !important;
+  color: #f59e0b !important;
   font-size: 30rpx;
   font-weight: 800;
 }

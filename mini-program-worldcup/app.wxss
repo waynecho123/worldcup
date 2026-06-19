@@ -2,27 +2,27 @@
 /* WXSS doesn't support CSS variables, using utility classes */
 
 /* ===== Background Colors ===== */
-.bg-dark { background-color: #080c14; }
-.bg-surface { background-color: #0f1521; }
-.bg-surface2 { background-color: #182032; }
-.bg-card { background-color: #0f1521; }
+.bg-dark { background-color: #f5f5f5; }
+.bg-surface { background-color: #ffffff; }
+.bg-surface2 { background-color: #f0f2f5; }
+.bg-card { background-color: #ffffff; }
 .bg-accent-subtle { background-color: rgba(77,166,255,.04); }
 
 /* ===== Text Colors ===== */
-.text-primary { color: #e4e8f0; }
-.text-secondary { color: #8899b4; }
-.text-muted { color: #556680; }
-.text-accent { color: #4da6ff; }
-.text-gold { color: #f0b90b; }
-.text-green { color: #00c853; }
-.text-red { color: #ff3d57; }
-.text-orange { color: #ff9100; }
-.text-purple { color: #8b5cf6; }
+.text-primary { color: #1a1a1a; }
+.text-secondary { color: #666666; }
+.text-muted { color: #999999; }
+.text-accent { color: #2563eb; }
+.text-gold { color: #f59e0b; }
+.text-green { color: #16a34a; }
+.text-red { color: #dc2626; }
+.text-orange { color: #ea580c; }
+.text-purple { color: #7c3aed; }
 
 /* ===== Border ===== */
-.border-default { border: 1px solid #1a2744; }
-.border-accent { border-color: #4da6ff; }
-.border-gold { border-color: #f0b90b; }
+.border-default { border: 1px solid #e0e0e0; }
+.border-accent { border-color: #2563eb; }
+.border-gold { border-color: #f59e0b; }
 
 /* ===== Radius ===== */
 .radius-sm { border-radius: 8px; }
@@ -58,16 +58,16 @@
 /* ===== Page ===== */
 page {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  background-color: #080c14;
-  color: #e4e8f0;
+  background-color: #f5f5f5;
+  color: #1a1a1a;
   line-height: 1.5;
   font-size: 28rpx;
 }
 
 /* ===== Header ===== */
 .header {
-  background: linear-gradient(135deg, #0a1628, #132044);
-  border-bottom: 2px solid #4da6ff;
+  background: #ffffff;
+  border-bottom: 2px solid #2563eb;
   padding: 0 20px;
   display: flex;
   align-items: center;
@@ -80,8 +80,8 @@ page {
 
 /* ===== Card ===== */
 .card {
-  background: #0f1521;
-  border: 1px solid #1a2744;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
   padding: 18px;
   box-shadow: 0 4px 32px rgba(0,0,0,.4);
@@ -96,7 +96,7 @@ page {
   align-items: center;
   gap: 8px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #1a2744;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 /* ===== Button ===== */
@@ -109,14 +109,14 @@ page {
 }
 
 .btn-primary {
-  background: #4da6ff;
+  background: #2563eb;
   color: #fff;
 }
 
 .btn-outline {
   background: transparent;
-  color: #4da6ff;
-  border: 1px solid #4da6ff;
+  color: #2563eb;
+  border: 1px solid #2563eb;
 }
 
 .btn-sm {
@@ -126,15 +126,15 @@ page {
 
 /* ===== Match Card ===== */
 .match-card {
-  background: #182032;
-  border: 1px solid #1a2744;
+  background: #f0f2f5;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
   padding: 16px;
   margin-bottom: 10px;
 }
 
 .match-card.featured {
-  border-left: 3px solid #f0b90b;
+  border-left: 3px solid #f59e0b;
 }
 
 .match-card .mc-header {
@@ -146,13 +146,13 @@ page {
 
 .match-card .mc-time {
   font-size: 24rpx;
-  color: #556680;
+  color: #999999;
   font-weight: 600;
 }
 
 .match-card .mc-group {
   font-size: 22rpx;
-  background: #4da6ff;
+  background: #2563eb;
   color: #fff;
   padding: 2px 8px;
   border-radius: 10px;
@@ -183,13 +183,13 @@ page {
 
 .match-card .mc-rank {
   font-size: 22rpx;
-  color: #8899b4;
+  color: #666666;
 }
 
 .match-card .mc-vs {
   font-size: 38rpx;
   font-weight: 800;
-  color: #556680;
+  color: #999999;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -199,7 +199,7 @@ page {
 .match-card .mc-pred-score {
   font-size: 44rpx;
   font-weight: 800;
-  color: #f0b90b;
+  color: #f59e0b;
 }
 
 .match-card .mc-probs {
@@ -217,7 +217,7 @@ page {
 
 .schedule-day .sd-header {
   padding: 10px 14px;
-  background: #182032;
+  background: #f0f2f5;
   border-radius: 8px;
   font-weight: 700;
   font-size: 28rpx;
@@ -232,7 +232,7 @@ page {
   align-items: center;
   gap: 10px;
   padding: 9px 12px;
-  background: #0f1521;
+  background: #ffffff;
   border-radius: 8px;
   margin-bottom: 3px;
   font-size: 26rpx;
@@ -240,7 +240,7 @@ page {
 
 .schedule-match .sm-time {
   font-size: 24rpx;
-  color: #556680;
+  color: #999999;
   min-width: 42px;
 }
 
@@ -250,14 +250,14 @@ page {
 
 .schedule-match .sm-group {
   font-size: 22rpx;
-  background: #182032;
+  background: #f0f2f5;
   padding: 2px 8px;
   border-radius: 8px;
-  color: #8899b4;
+  color: #666666;
 }
 
 .schedule-match .sm-pred {
-  color: #f0b90b;
+  color: #f59e0b;
   font-weight: 600;
   font-size: 24rpx;
   min-width: 40px;
@@ -265,7 +265,7 @@ page {
 }
 
 .schedule-match .sm-actual {
-  color: #00c853;
+  color: #16a34a;
   font-weight: 700;
   font-size: 26rpx;
   min-width: 40px;
@@ -273,7 +273,7 @@ page {
 }
 
 .schedule-match .sm-pending {
-  color: #556680;
+  color: #999999;
   font-weight: 600;
   font-size: 24rpx;
   min-width: 40px;
@@ -282,8 +282,8 @@ page {
 
 /* ===== Team Grid ===== */
 .team-card {
-  background: #182032;
-  border: 1px solid #1a2744;
+  background: #f0f2f5;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
   padding: 14px;
 }
@@ -306,12 +306,12 @@ page {
 
 .team-card .tc-stars {
   font-size: 22rpx;
-  color: #f0b90b;
+  color: #f59e0b;
 }
 
 .team-card .tc-group {
   font-size: 22rpx;
-  background: #4da6ff;
+  background: #2563eb;
   color: #fff;
   padding: 2px 10px;
   border-radius: 8px;
@@ -319,7 +319,7 @@ page {
 
 /* ===== Stat Box ===== */
 .stat-box {
-  background: #182032;
+  background: #f0f2f5;
   border-radius: 8px;
   padding: 14px;
   text-align: center;
@@ -328,16 +328,16 @@ page {
 .stat-box .num {
   font-size: 54rpx;
   font-weight: 800;
-  color: #4da6ff;
+  color: #2563eb;
 }
 
 .stat-box .num.gold {
-  color: #f0b90b;
+  color: #f59e0b;
 }
 
 .stat-box .lbl {
   font-size: 24rpx;
-  color: #8899b4;
+  color: #666666;
   margin-top: 2px;
 }
 
@@ -348,15 +348,15 @@ page {
   gap: 12px;
   text-align: center;
   padding: 16px;
-  background: #182032;
+  background: #f0f2f5;
   border-radius: 12px;
   margin-bottom: 14px;
 }
 
 /* ===== News Ticker ===== */
 .news-ticker {
-  background: linear-gradient(90deg, #1a0a0a, #0a0a1a);
-  border-bottom: 1px solid #1a2744;
+  background: #f0f2f5;
+  border-bottom: 1px solid #e0e0e0;
   padding: 6px 20px;
   display: flex;
   align-items: center;
@@ -366,7 +366,7 @@ page {
 }
 
 .news-ticker .ticker-label {
-  background: #ff3d57;
+  background: #dc2626;
   color: #fff;
   padding: 2px 10px;
   border-radius: 10px;
@@ -378,7 +378,7 @@ page {
 .news-ticker .ticker-content {
   flex: 1;
   white-space: nowrap;
-  color: #8899b4;
+  color: #666666;
   overflow: hidden;
   position: relative;
   height: 20px;
@@ -396,8 +396,8 @@ page {
 }
 
 .modal {
-  background: #0f1521;
-  border: 1px solid #1a2744;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
   padding: 24px;
   max-width: 620px;
@@ -410,7 +410,7 @@ page {
 .empty-state {
   text-align: center;
   padding: 50px 20px;
-  color: #556680;
+  color: #999999;
 }
 
 .empty-state .icon {
@@ -421,7 +421,7 @@ page {
 /* ===== Progress Bar ===== */
 .progress-wrap {
   height: 8px;
-  background: #182032;
+  background: #f0f2f5;
   border-radius: 4px;
   overflow: hidden;
   margin: 8px 0;
@@ -429,7 +429,7 @@ page {
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #4da6ff, #8b5cf6);
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
   border-radius: 4px;
   transition: width .3s;
 }
@@ -444,17 +444,17 @@ page {
 
 .group-tab {
   padding: 5px 12px;
-  border: 1px solid #1a2744;
+  border: 1px solid #e0e0e0;
   background: transparent;
-  color: #8899b4;
+  color: #666666;
   border-radius: 20px;
   font-size: 24rpx;
   font-weight: 700;
 }
 
 .group-tab.active {
-  background: #4da6ff;
-  border-color: #4da6ff;
+  background: #2563eb;
+  border-color: #2563eb;
   color: #fff;
 }
 

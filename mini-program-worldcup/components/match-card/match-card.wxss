@@ -1,8 +1,8 @@
 /* Match Card Component */
 
 .match-card {
-  background: #182032;
-  border: 1px solid #1a2744;
+  background: #f0f2f5;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
   padding: 16px;
   margin-bottom: 10px;
@@ -11,12 +11,12 @@
 
 .match-card:active {
   background: #1a2538;
-  border-color: #4da6ff;
+  border-color: #2563eb;
 }
 
 .match-card.featured {
-  border-left: 3px solid #f0b90b;
-  background: linear-gradient(90deg, rgba(240,185,11,.04), #182032 30%);
+  border-left: 3px solid #f59e0b;
+  background: linear-gradient(90deg, rgba(240,185,11,.04), #f0f2f5 30%);
 }
 
 .match-card.compact {
@@ -40,13 +40,13 @@
 
 .mc-time {
   font-size: 28rpx;
-  color: #e4e8f0;
+  color: #1a1a1a;
   font-weight: 700;
 }
 
 .mc-date {
   font-size: 22rpx;
-  color: #556680;
+  color: #999999;
 }
 
 .mc-badges {
@@ -57,7 +57,7 @@
 
 .mc-group-badge {
   font-size: 22rpx;
-  background: #4da6ff;
+  background: #2563eb;
   color: #fff;
   padding: 2px 8px;
   border-radius: 10px;
@@ -66,16 +66,16 @@
 
 .mc-stage-badge {
   font-size: 20rpx;
-  background: #182032;
-  color: #8899b4;
+  background: #f0f2f5;
+  color: #666666;
   padding: 2px 8px;
   border-radius: 8px;
-  border: 1px solid #1a2744;
+  border: 1px solid #e0e0e0;
 }
 
 .mc-md-badge {
   font-size: 20rpx;
-  color: #556680;
+  color: #999999;
 }
 
 /* Teams row */
@@ -102,13 +102,13 @@
 .mc-name {
   font-weight: 700;
   font-size: 30rpx;
-  color: #e4e8f0;
+  color: #1a1a1a;
   display: block;
 }
 
 .mc-rank {
   font-size: 20rpx;
-  color: #8899b4;
+  color: #666666;
   display: block;
   margin-top: 2px;
 }
@@ -128,13 +128,13 @@
 .mc-pred-score {
   font-size: 42rpx;
   font-weight: 800;
-  color: #f0b90b;
+  color: #f59e0b;
   display: block;
 }
 
 .mc-pred-label {
   font-size: 20rpx;
-  color: #4da6ff;
+  color: #2563eb;
 }
 
 .mc-actual-score {
@@ -156,8 +156,8 @@
   font-weight: 800;
 }
 
-.mc-actual-score.correct .mc-act-num { color: #00c853; }
-.mc-actual-score.wrong .mc-act-num { color: #ff3d57; }
+.mc-actual-score.correct .mc-act-num { color: #16a34a; }
+.mc-actual-score.wrong .mc-act-num { color: #dc2626; }
 
 .mc-act-icon {
   font-size: 24rpx;
@@ -167,7 +167,7 @@
 .mc-vs-text {
   font-size: 36rpx;
   font-weight: 800;
-  color: #556680;
+  color: #999999;
 }
 
 /* Probabilities */
@@ -177,7 +177,7 @@
 
 .mc-prob-bar {
   height: 6px;
-  background: #0f1521;
+  background: #ffffff;
   border-radius: 3px;
   overflow: hidden;
   display: flex;
@@ -185,18 +185,18 @@
 
 .mc-prob-fill.home {
   height: 100%;
-  background: #4da6ff;
+  background: #2563eb;
   border-radius: 3px 0 0 3px;
 }
 
 .mc-prob-fill.draw {
   height: 100%;
-  background: #556680;
+  background: #999999;
 }
 
 .mc-prob-fill.away {
   height: 100%;
-  background: #ff3d57;
+  background: #dc2626;
   border-radius: 0 3px 3px 0;
 }
 
@@ -208,11 +208,11 @@
 
 .mc-prob-label {
   font-size: 20rpx;
-  color: #8899b4;
+  color: #666666;
 }
 
 .mc-prob-label.draw {
-  color: #556680;
+  color: #999999;
 }
 
 /* Odds */
@@ -222,20 +222,20 @@
   gap: 8px;
   margin-top: 10px;
   padding-top: 10px;
-  border-top: 1px solid #1a2744;
+  border-top: 1px solid #e0e0e0;
 }
 
 .mc-odds-label {
   font-size: 22rpx;
-  background: #182032;
+  background: #f0f2f5;
   padding: 2px 8px;
   border-radius: 6px;
-  color: #8899b4;
+  color: #666666;
 }
 
 .mc-odds-val {
   font-size: 24rpx;
-  color: #f0b90b;
+  color: #f59e0b;
   font-weight: 600;
 }
 
@@ -243,7 +243,7 @@
 .mc-venue {
   margin-top: 8px;
   font-size: 22rpx;
-  color: #556680;
+  color: #999999;
 }
 
 /* News alert */
@@ -253,7 +253,7 @@
   background: rgba(255,61,87,.06);
   border-radius: 6px;
   font-size: 22rpx;
-  color: #ff3d57;
+  color: #dc2626;
 }
 
 /* Empty */
