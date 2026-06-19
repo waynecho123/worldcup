@@ -3309,6 +3309,2345 @@ function renderMatchCard(m) {
 }
 
 /** Generate ~500-word match analysis commentary */
+function generatePostMatchReview(m, ht, at, pred, actual, apiInfo) {
+  var detail = matchDetails[m.id] || {};
+  var events = detail.events || [];
+  var players = detail.players || [];
+  var statistics = detail.statistics || {};
+  var hStats = statistics[detail.homeTeam] || {};
+  var aStats = statistics[detail.awayTeam] || {};
+  var actH = actual.homeScore, actA = actual.awayScore;
+  var predH = pred.predScore[0], predA = pred.predScore[1];
+  var actualOutcome = actH > actA ? 'home' : actH === actA ? 'draw' : 'away';
+  var outcomeCorrect = (predH > predA && actualOutcome === 'home') || (predH < predA && actualOutcome === 'away') || (predH === predA && actualOutcome === 'draw');
+  var exactCorrect = predH === actH && predA === actA;
+  var goalDiffErr = Math.abs((actH - actA) - (predH - predA));
+  var hStr = getStrength(ht), aStr = getStrength(at);
+
+  var hColor = 'var(--accent)', aColor = 'var(--red)';
+  var bgColor = actualOutcome === 'home' ? 'rgba(37,99,235,.06)' : actualOutcome === 'draw' ? 'rgba(124,58,237,.06)' : 'rgba(220,38,38,.06)';
+  var brdColor = actualOutcome === 'home' ? 'var(--accent)' : actualOutcome === 'draw' ? 'var(--purple)' : 'var(--red)';
+
+  var html = '<div style="margin-top:12px;padding:16px;background:var(--surface);border-radius:12px;border:1px solid var(--border);line-height:1.8;font-size:.78rem">';
+
+  // ── Score Hero ──
+  html += '<div class="review-hero" style="background:' + bgColor + ';border:2px solid ' + brdColor + '">';
+  html += '<div class="rh-team"><span class="rh-flag">' + ht.flag + '</span><span class="rh-name">' + ht.cn + '</span></div>';
+  html += '<div style="text-align:center"><span class="rh-score" style="color:' + (actualOutcome === 'home' ? 'var(--accent)' : 'var(--text)') + '">' + actH + '</span><span class="rh-colon">:</span><span class="rh-score" style="color:' + (actualOutcome === 'away' ? 'var(--red)' : 'var(--text)') + '">' + actA + '</span><div class="rh-label">最终比分</div><div style="font-size:.68rem;color:var(--text2);margin-top:2px">AI预测 ' + predH + ':' + predA + ' | ' + (exactCorrect ? '命中' : outcomeCorrect ? '方向正确' : '预测偏差') + '</div></div>';
+  html += '<div class="rh-team"><span class="rh-flag">' + at.flag + '</span><span class="rh-name">' + at.cn + '</span></div>';
+  html += '</div>';
+
+  // ── Statistics Bars ──
+  var statKeys = [
+    {key:'Ball Possession',label:'控球率',suf:'%',fmt:'%'},
+    {key:'Expected Goals',label:'预期进球(xG)',suf:'',fmt:'.2f'},
+    {key:'Total Shots',label:'射门',suf:'',fmt:'d'},
+    {key:'Shots on Goal',label:'射正',suf:'',fmt:'d'},
+    {key:'Passes %',label:'传球成功率',suf:'%',fmt:'%'},
+    {key:'Corner Kicks',label:'角球',suf:'',fmt:'d'},
+    {key:'Fouls',label:'犯规',suf:'',fmt:'d'},
+  ];
+  var hasStats = Object.keys(hStats).length > 0 || Object.keys(aStats).length > 0;
+  if (hasStats) {
+    html += '<div class="section-title">技术统计</div>';
+    statKeys.forEach(function(sk){
+      var hv = hStats[sk.key], av = aStats[sk.key];
+      if (hv === undefined || av === undefined) return;
+      if (typeof hv === 'string' && hv.includes('%')) hv = parseFloat(hv);
+      if (typeof av === 'string' && av.includes('%')) av = parseFloat(av);
+      hv = parseFloat(hv) || 0; av = parseFloat(av) || 0;
+      var total = hv + av || 1;
+      var hpct = Math.round(hv / total * 100);
+      var apct = 100 - hpct;
+      var hdisp = sk.fmt === '.2f' ? hv.toFixed(2) : sk.fmt === '%' ? hv + '%' : Math.round(hv);
+      var adisp = sk.fmt === '.2f' ? av.toFixed(2) : sk.fmt === '%' ? av + '%' : Math.round(av);
+      html += '<div class="stat-bar-row">';
+      html += '<span class="sbr-val home">' + hdisp + '</span>';
+      html += '<span class="sbr-bar"><span class="sbr-fill-h" style="width:' + hpct + '%"></span><span class="sbr-fill-a" style="width:' + apct + '%"></span></span>';
+      html += '<span class="sbr-val away">' + adisp + '</span>';
+      html += '<span class="sbr-label">' + sk.label + '</span>';
+      html += '</div>';
+    });
+  }
+
+  // ── Goal Timeline ──
+  var goals = events.filter(function(e){return e.type === 'Goal';});
+  var cards = events.filter(function(e){return e.type === 'Card';});
+  var subs = events.filter(function(e){return e.type === 'subst';});
+  var keyEvents = events.filter(function(e){return e.type === 'Goal' || (e.type === 'Card' && e.detail === 'Red Card');});
+  if (keyEvents.length > 0) {
+    html += '<div class="section-title">比赛进程</div><div class="goal-timeline">';
+    keyEvents.sort(function(a,b){return parseInt(a.time) - parseInt(b.time);}).forEach(function(e){
+      var cls = e.type === 'Goal' ? 'goal' : 'card-r';
+      var icon = e.type === 'Goal' ? '' : '';
+      var pen = e.detail === 'Penalty' ? ' (点球)' : '';
+      var teamTag = e.team === detail.homeTeam ? ht.cn : at.cn;
+      html += '<div class="gt-item ' + cls + '"><span class="gt-time">' + e.time + '\'</span><span class="gt-player">' + icon + e.player + pen + '</span> <span class="gt-detail">' + teamTag + (e.assist ? ' | 助:' + e.assist : '') + '</span></div>';
+    });
+    html += '</div>';
+  }
+
+  // ── Player Ratings ──
+  if (players.length > 0) {
+    html += '<div class="section-title">球员评分</div>';
+    players.forEach(function(teamData){
+      var isHome = teamData.team === detail.homeTeam;
+      var teamName = isHome ? ht.cn : at.cn;
+      var flag = isHome ? ht.flag : at.flag;
+      var topPlayers = (teamData.players || []).filter(function(p){return p.rating;}).sort(function(a,b){return parseFloat(b.rating) - parseFloat(a.rating);}).slice(0, 3);
+      if (topPlayers.length === 0) return;
+      html += '<div style="font-size:.72rem;font-weight:700;margin:6px 0 2px">' + flag + ' ' + teamName + '</div>';
+      topPlayers.forEach(function(p){
+        var rating = parseFloat(p.rating) || 0;
+        var pct = Math.round(rating / 10 * 100);
+        var cls = rating >= 7.5 ? 'high' : rating >= 6.5 ? 'mid' : 'low';
+        var barColor = rating >= 7.5 ? 'var(--green)' : rating >= 6.5 ? 'var(--orange)' : 'var(--red)';
+        var stats = [];
+        if (p.goals > 0) stats.push(p.goals + '球');
+        if (p.assists > 0) stats.push(p.assists + '助');
+        html += '<div class="player-card">';
+        html += '<span class="pc-name">' + p.name + '</span>';
+        html += '<span class="pc-stat">' + (stats.join(' ') || '-') + '</span>';
+        html += '<span class="pc-bar"><span class="pc-bar-fill" style="width:' + pct + '%;background:' + barColor + '"></span></span>';
+        html += '<span class="pc-rating ' + cls + '">' + p.rating + '</span>';
+        html += '</div>';
+      });
+    });
+    html += '<div style="font-size:.6rem;color:var(--text3);margin-top:2px">评分来源: API-Sports</div>';
+  }
+
+  // ── Data-driven natural language review ──
+  html += '<div class="section-title">复盘分析</div>';
+
+  var reviewText = '';
+
+  // ---- 1. Score verdict ----
+  var goalDiff = Math.abs(actH - actA);
+  var totalG = actH + actA;
+  var winner = actH > actA ? ht : actA > actH ? at : null;
+
+  if (exactCorrect) {
+    var phrases = [
+      '比分完全命中。AI赛前就准确预判了' + actH + ':' + actA + '的最终比分，模型对本场的判断经得起检验。',
+      '精准预测！' + predH + ':' + predA + '与实际' + actH + ':' + actA + '分毫不差，AI成功捕捉了本场的关键变量。'
+    ];
+    reviewText += phrases[Math.floor(Math.random() * phrases.length)];
+  } else if (outcomeCorrect) {
+    var phrases2 = [
+      '胜负方向判断正确。最终' + actH + ':' + actA + '的结果印证了AI对' + (winner?winner.cn:'') + '取胜的判断，但' + goalDiffErr + '球的分差偏差说明对双方攻防强度的量化仍有空间。',
+      '方向对了。AI预计' + predH + ':' + predA + '，实际' + actH + ':' + actA + '——胜负判断正确，比分精度有待提升。'
+    ];
+    reviewText += phrases2[Math.floor(Math.random() * phrases2.length)];
+  } else {
+    var phrases3 = [
+      '预测出现偏差。AI赛前认为' + predH + ':' + predA + '，结果是' + actH + ':' + actA + '，方向判断错误。' + (winner?winner.cn+'的胜利出乎模型预料。':'平局是模型未曾预料到的结果。'),
+      '这一场AI看走了眼。预测' + predH + ':' + predA + '，最终' + actH + ':' + actA + (winner?'，'+winner.cn+'用表现打破了模型的预判。':'。')
+    ];
+    reviewText += phrases3[Math.floor(Math.random() * phrases3.length)];
+  }
+
+  // ---- 2. Goal timing & match flow ----
+  var goalEvents = events.filter(function(e){return e.type === 'Goal';});
+  if (goalEvents.length > 0) {
+    goalEvents.sort(function(a,b){return parseInt(a.time)-parseInt(b.time);});
+    var firstGoal = goalEvents[0];
+    var lastGoal = goalEvents[goalEvents.length-1];
+    var early = parseInt(firstGoal.time) <= 15;
+    var late = parseInt(lastGoal.time) >= 80;
+    var comeback = false;
+    if (winner && goalEvents.length >= 2) {
+      var wTeam = winner===ht ? detail.homeTeam : detail.awayTeam;
+      var oppFirst = goalEvents.find(function(g){return g.team !== wTeam;});
+      var winLast = goalEvents.filter(function(g){return g.team === wTeam;}).pop();
+      if (oppFirst && winLast && parseInt(winLast.time) > parseInt(oppFirst.time)) comeback = true;
+    }
+
+    if (early && goalDiff >= 3) {
+      reviewText += firstGoal.player + '在第' + firstGoal.time + '分钟就撕开了防线，比赛早早失去悬念。';
+    } else if (comeback) {
+      reviewText += (winner?winner.cn:'') + '在被对手先进球的情况下完成逆转，展现了强大的意志力和战术调整能力。';
+    } else if (late && goalDiff <= 1) {
+      reviewText += '比赛直到第' + lastGoal.time + '分钟才由' + lastGoal.player + '打入制胜球，过程扣人心弦。';
+    } else if (totalG >= 5) {
+      reviewText += '一场进球盛宴——双方合计打入' + totalG + '球，攻防节奏极快，球迷大饱眼福。';
+    } else if (totalG <= 1) {
+      reviewText += '全场仅' + totalG + '粒进球，双方在防守端投入重兵，机会寥寥无几。';
+    } else {
+      reviewText += '全场' + totalG + '粒进球，' + (goalDiff >= 2 ? (winner?winner.cn+'在进攻端展现了更强的终结能力。' : '双方旗鼓相当。') : '比赛进程紧凑激烈。');
+    }
+  }
+
+  // ---- 3. Statistics narrative ----
+  var hStats2 = detail.statistics ? (detail.statistics[detail.homeTeam] || {}) : {};
+  var aStats2 = detail.statistics ? (detail.statistics[detail.awayTeam] || {}) : {};
+  if (Object.keys(hStats2).length > 0) {
+    var hPoss = parseFloat(hStats2['Ball Possession']) || 0;
+    var aPoss = parseFloat(aStats2['Ball Possession']) || 0;
+    var hxG2 = parseFloat(hStats2['Expected Goals']) || 0;
+    var axG2 = parseFloat(aStats2['Expected Goals']) || 0;
+
+    if (hPoss > 60) reviewText += ht.cn + '控球率达' + hPoss + '%，牢牢掌控节奏。';
+    else if (aPoss > 60) reviewText += at.cn + '以' + aPoss + '%的控球率主导场面。';
+    else reviewText += '控球率' + hPoss + '%-' + aPoss + '%，双方球权均衡。';
+
+    var xgHdiff = Math.abs(hxG2 - actH), xgAdiff = Math.abs(axG2 - actA);
+    if (xgHdiff > 1 || xgAdiff > 1) {
+      var overTeam = xgHdiff > xgAdiff ? ht.cn : at.cn;
+      reviewText += overTeam + '的实际进球与xG偏差较大，临门一脚的效率' + ((xgHdiff>xgAdiff?actH>hxG2:actA>axG2)?'超出':'低于') + '预期。';
+    } else {
+      reviewText += 'xG与最终比分吻合度较高，结果公正。';
+    }
+  }
+
+  // ---- 4. Red card impact ----
+  var redEvents = events.filter(function(e){return e.type === 'Card' && e.detail === 'Red Card';});
+  if (redEvents.length > 0) {
+    reviewText += '第' + redEvents[0].time + '分钟' + redEvents[0].player + '被红牌罚下，彻底改变了比赛走势。';
+  }
+
+  // ---- 5. Player ratings ----
+  if (players.length > 0) {
+    var allPs2 = [];
+    players.forEach(function(td){allPs2 = allPs2.concat((td.players||[]).filter(function(p){return p.rating;}));});
+    if (allPs2.length > 0) {
+      allPs2.sort(function(a,b){return parseFloat(b.rating)-parseFloat(a.rating);});
+      var bestP = allPs2[0];
+      var rtg = parseFloat(bestP.rating);
+      var desc = rtg >= 8 ? '统治级表现' : rtg >= 7.5 ? '发挥出色' : rtg >= 7 ? '表现稳定' : '中规中矩';
+      reviewText += '最佳球员：' + bestP.name + '（' + bestP.rating + '分，' + desc + '）' + (bestP.goals>0?'，打入' + bestP.goals + '球':'') + (bestP.assists>0?'，助攻' + bestP.assists + '次':'') + '。';
+    }
+  }
+
+  // ---- 6. Error root cause ----
+  if (!outcomeCorrect) {
+    var strGap2 = Math.abs(hStr - aStr);
+    var reasons = [];
+    if (strGap2 > 15) reasons.push('两队评分差距' + strGap2.toFixed(0) + '分，模型在极端强弱悬殊的比赛中对冷门概率估算偏低');
+    if ((ht.conf==='CAF'||ht.conf==='AFC'||at.conf==='CAF'||at.conf==='AFC') && strGap2 > 10) reasons.push('非洲/亚洲球队世界杯爆冷传统未在模型中获得足够权重');
+    if (totalG > (pred.expH + pred.expA) + 1.5) reasons.push('实际进球' + totalG + '远超预期' + (pred.expH+pred.expA).toFixed(1) + '，比赛的开放性超预期');
+    if (redEvents.length > 0) reasons.push('红牌是不可预测的突发事件');
+    if (reasons.length === 0) reasons.push('比赛结果受到模型未捕捉到的关键变量影响');
+    reviewText += '预测偏差分析：' + reasons.join('；') + '。';
+  }
+
+  // ---- 7. Grade ----
+  var grade = exactCorrect ? 'A+' : outcomeCorrect && goalDiffErr <= 1 ? 'A' : outcomeCorrect ? 'B+' : goalDiffErr <= 1 ? 'B' : 'C';
+  var gradeDesc = grade === 'A+' ? '完美预测，各维度表现优秀' : grade === 'A' ? '方向准确且比分接近' : grade === 'B+' ? '胜负判断正确，比分精度不足' : grade === 'B' ? '接近正确，存在一定偏差' : '偏差较大，需重点复盘';
+  reviewText += '综合评级' + grade + '：' + gradeDesc + '。';
+
+  html += '<p style="line-height:2;font-size:.78rem;color:var(--text)">' + reviewText + '</p>';
+
+  html += '</div>';
+  return html;
+}
+function showMatchDetail(mid) {
+  var m = MATCH_SCHEDULE.find(function(x){return x.id===mid});
+  if (!m) return;
+  var ht = TEAMS.find(function(t){return t.id===m.home}), at = TEAMS.find(function(t){return t.id===m.away});
+  if (!ht||!at) return;
+  // For finished matches, use original locked prediction (not recomputed with learning)
+  var actualRes = actualResults[mid];
+  var lockedP = actualRes ? getLockedPrediction(mid) : null;
+  var pred;
+  if (lockedP) {
+    var freshTop = predictMatch(ht,at).topScores;
+    pred = { predScore: [lockedP.homeScore, lockedP.awayScore], homeWinProb: lockedP.hProb, drawProb: lockedP.dProb, awayWinProb: lockedP.aProb, expH: lockedP.homeScore, expA: lockedP.awayScore, topScores: lockedP.topScores || freshTop, upsetAlert: lockedP.upsetAlert, upsetProb: lockedP.upsetProb, upsetTeam: lockedP.upsetTeam, locked: true };
+  } else {
+    pred = predictMatch(ht,at);
+  }
+  var mol = MATCH_ODDS[mid];
+  var top3 = topScores(pred.expH, pred.expA, 3);
+  var now = new Date();
+
+  // Weather simulation based on venue
+  var ww = getWeather(m.venue);
+  var weather = ww.emoji + ' ' + ww.temp + '°C';
+
+  // Check if match has actual result for post-match review
+  var actualResult = actualResults[mid];
+  var hasActual = actualResult && actualResult.homeScore !== undefined;
+  var reviewHTML = '';
+  if (hasActual) {
+    var apiInfo2 = liveInfo[mid];
+    reviewHTML = generatePostMatchReview(m, ht, at, pred, actualResult, apiInfo2);
+  }
+
+  var html = '';
+  html += '<button class="mclose" onclick="closeModal()">✕</button>';
+
+  // 1. 比赛双方
+  html += '<div style="text-align:center;margin-bottom:12px">';
+  html += '<span style="font-size:2.5rem">'+ht.flag+'</span> <span style="font-weight:800;font-size:1.3rem">'+ht.cn+'</span>';
+  html += ' <span style="color:var(--text3);font-size:1rem">vs</span> ';
+  html += '<span style="font-weight:800;font-size:1.3rem">'+at.cn+'</span> <span style="font-size:2.5rem">'+at.flag+'</span>';
+  html += '<div style="color:var(--gold);font-size:.85rem;margin-top:4px">'+(m.date || m.id)+'</div>';
+  html += '</div>';
+
+  // 2. 比赛时间 场地 天气 双方新闻
+  html += '<div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:10px">';
+  html += '<div style="display:flex;gap:16px;flex-wrap:wrap;font-size:.78rem;color:var(--text2)">';
+  html += '<span>📅 '+m.date+' '+m.time+' BJT</span>';
+  html += '<span>'+(m.venue||'TBD')+'</span>';
+  html += '<span>'+weather+'</span>';
+  html += '</div>';
+  if (ht.news) html += '<div style="font-size:.72rem;color:var(--orange);margin-top:4px">'+ht.flag+' '+ht.cn+'：'+ht.news+'</div>';
+  if (at.news) html += '<div style="font-size:.72rem;color:var(--orange);margin-top:2px">'+at.flag+' '+at.cn+'：'+at.news+'</div>';
+  if (ht.inj) html += '<div style="font-size:.7rem;color:var(--red);margin-top:2px">🏥 '+ht.cn+'：'+ht.inj+'</div>';
+  if (at.inj) html += '<div style="font-size:.7rem;color:var(--red);margin-top:2px">🏥 '+at.cn+'：'+at.inj+'</div>';
+  html += '</div>';
+
+  // Post-match review (finished matches only)
+  if (hasActual) {
+    html += reviewHTML;
+    html += '<div id="preMatchToggle" style="text-align:center;padding:8px;margin:8px 0;background:var(--surface2);border-radius:8px;border:1px solid rgba(240,185,11,.2);cursor:pointer;font-size:.78rem;color:var(--gold)" onclick="var p=document.getElementById(\'preMatchContent\');var t=this;if(p.style.display===\'none\'){p.style.display=\'block\';t.innerHTML=\'🔽 收起赛前预测详情\';}else{p.style.display=\'none\';t.innerHTML=\'▶️ 展开赛前预测详情\';}">▶️ 展开赛前预测详情</div>';
+    html += '<div id="preMatchContent" style="display:none">';
+  }
+
+  // 3. 双方实力评分
+  var hStr = getStrength(ht), aStr = getStrength(at);
+  html += '<div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:10px">';
+  html += '<div style="font-weight:700;font-size:.8rem;margin-bottom:6px">📊 实力评分</div>';
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;text-align:center">';
+  html += '<div><span style="font-size:1.2rem;font-weight:700;color:var(--accent)">'+hStr.toFixed(1)+'</span><div style="font-size:.65rem;color:var(--text2)">'+ht.cn+' 综合实力</div></div>';
+  html += '<div><span style="font-size:1.2rem;font-weight:700;color:var(--red)">'+aStr.toFixed(1)+'</span><div style="font-size:.65rem;color:var(--text2)">'+at.cn+' 综合实力</div></div>';
+  html += '<div><span style="font-size:.9rem;color:var(--accent)">⚔'+ht.att+' 🛡'+ht.def+'</span><div style="font-size:.6rem;color:var(--text3)">攻/防</div></div>';
+  html += '<div><span style="font-size:.9rem;color:var(--accent)">⚔'+at.att+' 🛡'+at.def+'</span><div style="font-size:.6rem;color:var(--text3)">攻/防</div></div>';
+  html += '</div></div>';
+
+  // 3.5 球队数据（来自实时API）
+  var infoData = liveInfo[mid];
+  var apiInjs = infoData ? (infoData.injuries || []) : [];
+  var feat = infoData ? (infoData.feature || {}) : null;
+  if (feat && Object.keys(feat).length > 0) {
+    html += '<div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:10px">';
+    html += '<div style="font-weight:700;font-size:.8rem;margin-bottom:6px">📊 球队数据</div>';
+    html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;text-align:center">';
+    html += '<div><span style="font-size:.85rem;font-weight:700;color:var(--accent)">'+ht.cn+'</span>';
+    html += '<div style="font-size:.65rem;color:var(--text2)">主场 '+(feat.homeTeamHomeWins||0)+'胜'+(feat.homeTeamHomeDraws||0)+'平'+(feat.homeTeamHomeLosses||0)+'负</div>';
+    html += '<div style="font-size:.62rem;color:var(--text3)">场均进'+(feat.homeTeamAvgGoals||'?')+'球·失'+(feat.homeTeamAvgLossGoals||'?')+'球</div></div>';
+    html += '<div><span style="font-size:.85rem;font-weight:700;color:var(--red)">'+at.cn+'</span>';
+    html += '<div style="font-size:.65rem;color:var(--text2)">客场 '+(feat.awayTeamAwayWins||0)+'胜'+(feat.awayTeamAwayDraws||0)+'平'+(feat.awayTeamAwayLosses||0)+'负</div>';
+    html += '<div style="font-size:.62rem;color:var(--text3)">场均进'+(feat.awayTeamAvgGoals||'?')+'球·失'+(feat.awayTeamAvgLossGoals||'?')+'球</div></div>';
+    html += '</div></div>';
+  }
+
+  // 3.8 实时伤停（替换硬编码）
+  if (apiInjs.length > 0) {
+    var hInjs = apiInjs.filter(function(i){return i.teamType==='home';});
+    var aInjs = apiInjs.filter(function(i){return i.teamType==='away';});
+    html += '<div style="padding:10px;background:#fef2f2;border-radius:8px;margin-bottom:10px">';
+    html += '<div style="font-weight:700;font-size:.78rem;margin-bottom:4px;color:var(--red)">🏥 实时伤停</div>';
+    if (hInjs.length > 0) {
+      html += '<div style="font-size:.68rem;color:var(--red)">'+ht.cn+'：'+hInjs.map(function(i){return i.playerName+(i.isSuspended?'[停赛]':'[伤病]')+'('+(i.position||'')+')';}).join('、')+'</div>';
+    }
+    if (aInjs.length > 0) {
+      html += '<div style="font-size:.68rem;color:var(--red)">'+at.cn+'：'+aInjs.map(function(i){return i.playerName+(i.isSuspended?'[停赛]':'[伤病]')+'('+(i.position||'')+')';}).join('、')+'</div>';
+    }
+    html += '</div>';
+  }
+
+  // 4. 预测首发
+  html += renderLineupComparison(m.home, m.away);
+
+  // 5. 战术克制
+  if (pred.tacAnalysis) {
+    html += '<div style="margin-bottom:10px;padding:10px;background:rgba(139,92,246,.06);border:1px solid rgba(139,92,246,.2);border-radius:8px">';
+    html += '<div style="font-weight:700;font-size:.8rem;margin-bottom:6px;color:var(--purple)">⚔️ 战术克制分析</div>';
+    html += '<div style="display:grid;grid-template-columns:1fr auto 1fr;gap:6px;align-items:center;text-align:center;margin-bottom:6px">';
+    html += '<div><div style="font-size:.72rem;font-weight:600">'+pred.tacAnalysis.homeStyle+'</div><div style="font-size:.62rem;color:var(--text2)">'+pred.tacAnalysis.homeStrength+'</div></div>';
+    html += '<div style="font-size:1rem;color:var(--text3)">VS</div>';
+    html += '<div><div style="font-size:.72rem;font-weight:600">'+pred.tacAnalysis.awayStyle+'</div><div style="font-size:.62rem;color:var(--text2)">'+pred.tacAnalysis.awayStrength+'</div></div>';
+    html += '</div>';
+    html += '<div style="font-size:.72rem;text-align:center;font-weight:600;color:'+(pred.tacticalAdj>0?'var(--green)':pred.tacticalAdj<0?'var(--red)':'var(--text3)')+'">'+pred.tacAnalysis.narrative+' ('+pred.tacAnalysis.adjPct+')</div>';
+    html += '<div style="font-size:.65rem;color:var(--text2);margin-top:4px">'+pred.tacAnalysis.keyPoints.map(function(p){return '<div>• '+p+'</div>'}).join('')+'</div>';
+    html += '</div>';
+  }
+
+  // 6. 参考指数
+  if (mol) {
+    var fair = oddsToFairProb(mol.h, mol.d, mol.a);
+    html += '<div style="padding:10px;background:rgba(240,185,11,.06);border-radius:8px;margin-bottom:10px">';
+    html += '<div style="font-weight:700;font-size:.8rem;margin-bottom:6px">🏷️ 参考指数（1X2） <span style="font-size:.6rem;color:var(--text3);font-weight:400">更新于 '+now.toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'})+'</span></div>';
+    html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;text-align:center">';
+    html += '<div style="padding:6px;background:var(--surface2);border-radius:4px"><div style="font-size:1.1rem;font-weight:700;color:var(--accent)">'+mol.h.toFixed(2)+'</div><div style="font-size:.62rem;color:var(--text2)">'+ht.cn+'胜 ('+(fair.home*100).toFixed(0)+'%)</div></div>';
+    html += '<div style="padding:6px;background:var(--surface2);border-radius:4px"><div style="font-size:1.1rem;font-weight:700;color:var(--text3)">'+mol.d.toFixed(2)+'</div><div style="font-size:.62rem;color:var(--text2)">平 ('+(fair.draw*100).toFixed(0)+'%)</div></div>';
+    html += '<div style="padding:6px;background:var(--surface2);border-radius:4px"><div style="font-size:1.1rem;font-weight:700;color:var(--red)">'+mol.a.toFixed(2)+'</div><div style="font-size:.62rem;color:var(--text2)">'+at.cn+'胜 ('+(fair.away*100).toFixed(0)+'%)</div></div>';
+    // Odds movement trend
+    if (mol.history && mol.history.length >= 2) {
+      var firstH = mol.history[0].h, lastH = mol.history[mol.history.length-1].h;
+      var trendH = lastH - firstH;
+      var trendLabel = trendH < -0.05 ? '↓ 市场看好主队' : trendH > 0.05 ? '↑ 市场看衰主队' : '→ 赔率稳定';
+      var trendColor = trendH < -0.05 ? 'var(--green)' : trendH > 0.05 ? 'var(--red)' : 'var(--text3)';
+      html += '<div style="font-size:.65rem;color:'+trendColor+';margin-top:4px;text-align:center">'+trendLabel+' (主胜'+firstH.toFixed(2)+'→'+lastH.toFixed(2)+')</div>';
+    }
+    html += '</div></div>';
+  }
+
+  // 7. 竞猜分析 + 进阶玩法
+  html += renderJCAnalysis(mid, ht, at);
+  html += renderJCAdvanced(mid, ht, at);
+
+  // 8. 历史同指数
+  if (mol) {
+    html += renderHistoricalAnalysis(mol.h, mol.d, mol.a, pred.homeWinProb, pred.drawProb, pred.awayWinProb);
+  }
+
+  // 9. AI比分预测（三个最可能比分）
+  html += '<div style="padding:10px;background:var(--surface2);border-radius:8px;margin-top:10px;text-align:center">';
+  html += '<div style="font-weight:700;font-size:.8rem;margin-bottom:8px">AI比分预测（最可能3个比分）</div>';
+  html += '<div style="display:flex;justify-content:center;gap:16px">';
+  top3.forEach(function(s,i){
+    var emphasis = i===0 ? 'font-size:1.4rem;font-weight:800;color:var(--gold);' : 'font-size:1rem;color:var(--text2);';
+    html += '<div style="text-align:center"><div style="'+emphasis+'">'+s.h+':'+s.a+'</div><div style="font-size:.62rem;color:var(--text3)">'+(s.prob*100).toFixed(1)+'%</div></div>';
+  });
+  html += '</div>';
+  html += '<div style="font-size:.68rem;color:var(--text2);margin-top:6px">预期进球 '+pred.expH.toFixed(1)+' - '+pred.expA.toFixed(1)+' | 胜'+((pred.homeWinProb*100).toFixed(0))+'% 平'+((pred.drawProb*100).toFixed(0))+'% 负'+((pred.awayWinProb*100).toFixed(0))+'%</div>';
+  var updInfo = getPredUpdateInfo(mid);
+  if (updInfo) html += '<div style="text-align:right;margin-top:4px">'+updInfo+'</div>';
+  html += '</div>';
+  if (pred.upsetAlert) html += '<div style="padding:8px;margin-top:8px;background:rgba(255,145,0,.1);border:1px solid rgba(255,145,0,.3);border-radius:8px;text-align:center;font-weight:700;color:#ff9100;font-size:.78rem">爆冷预警：' + pred.upsetTeam + '存在' + (pred.upsetProb*100).toFixed(0) + '%冷门概率！</div>';
+
+  // 10. AI深度分析 (~500字)
+  html += generateMatchAnalysis(m, ht, at, pred, mol);
+
+  if (hasActual) html += '</div>'; // close preMatchContent
+
+  document.getElementById('teamModalContent').innerHTML = html;
+  document.getElementById('teamModal').style.display = 'flex';
+}
+
+function renderDashboard() {
+  if (!lastResult) {
+    document.getElementById('topStats').innerHTML = '<div class="empty-state"><p>点击"开始蒙特卡洛模拟"按钮</p></div>';
+    [champChart, confedChart, roundChart, oddsCompChart].forEach(ch => { if (ch) { ch.destroy(); } });
+    champChart = confedChart = roundChart = oddsCompChart = null;
+    return;
+  }
+  const r = lastResult;
+  const top3 = r.champProb.slice(0,3);
+
+  document.getElementById('topStats').innerHTML = `
+    <div class="stat-box"><div class="num">${r.runs.toLocaleString()}</div><div class="lbl">模拟次数</div></div>
+    <div class="stat-box"><div class="num gold">${(top3[0].prob*100).toFixed(1)}%</div><div class="lbl">🏆 最大热门 ${TEAMS.find(t=>t.id===top3[0].id)?.flag||''} ${TEAMS.find(t=>t.id===top3[0].id)?.cn||''}</div></div>
+    <div class="stat-box"><div class="num">${r.champProb.slice(0,8).reduce((s,x)=>s+x.prob,0).toFixed(1).toLocaleString()}</div><div class="lbl">Top8 夺冠概率之和</div></div>
+    <div class="stat-box"><div class="num">${new Date(r.ts).toLocaleString('zh-CN')}</div><div class="lbl">模拟时间</div></div>
+  `;
+
+  // Champion bar chart
+  const top15 = r.champProb.slice(0,15);
+  const ctx1 = document.getElementById('champChart').getContext('2d');
+  if (champChart) champChart.destroy();
+  const cols = ['#f0b90b','#b0b8c8','#cd7f32','#4da6ff','#ff3d57','#00c853','#8b5cf6','#ff9100','#06b6d4','#ec4899','#14b8a6','#84cc16','#f43f5e','#a855f7','#22c55e'];
+  champChart = new Chart(ctx1, {type:'bar',data:{labels:top15.map(x=>{const t=TEAMS.find(tt=>tt.id===x.id);return t?t.flag+' '+t.cn:x.id;}),datasets:[{label:'夺冠概率',data:top15.map(x=>(x.prob*100).toFixed(1)),backgroundColor:top15.map((_,i)=>cols[i]||'#4da6ff'),borderRadius:6}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>ctx.raw+'%'}}},scales:{x:{grid:{color:'#1a2744'},ticks:{color:'#8899b4',callback:v=>v+'%'}},y:{grid:{display:false},ticks:{color:'#e4e8f0',font:{size:11}}}}}});
+
+  // Confederation pie
+  const confs = {}; r.champProb.forEach(x=>{const t=TEAMS.find(tt=>tt.id===x.id);const c=t?t.conf:'Other';confs[c]=(confs[c]||0)+x.prob;});
+  const ctx2 = document.getElementById('confedChart').getContext('2d');
+  if (confedChart) confedChart.destroy();
+  const cc = {UEFA:'#4da6ff',CONMEBOL:'#00c853',CONCACAF:'#ff9100',AFC:'#ff3d57',CAF:'#f0b90b',OFC:'#8b5cf6'};
+  confedChart = new Chart(ctx2,{type:'doughnut',data:{labels:Object.keys(confs),datasets:[{data:Object.values(confs).map(v=>(v*100).toFixed(1)),backgroundColor:Object.keys(confs).map(c=>cc[c]||'#8899b4'),borderWidth:2,borderColor:'#0f1521'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#8899b4',padding:14}},tooltip:{callbacks:{label:ctx=>ctx.label+': '+ctx.raw+'%'}}}}});
+
+  // Round progression
+  const top8 = r.champProb.slice(0,8);
+  const ctx3 = document.getElementById('roundChart').getContext('2d');
+  if (roundChart) roundChart.destroy();
+  roundChart = new Chart(ctx3,{type:'bar',data:{labels:top8.map(x=>{const t=TEAMS.find(tt=>tt.id===x.id);return t?t.flag:'';}),datasets:[{label:'16强',data:top8.map(x=>{const rp=r.roundProbs.find(p=>p.id===x.id);return rp?(rp.r16*100).toFixed(1):0;}),backgroundColor:'#4da6ff80'},{label:'8强',data:top8.map(x=>{const rp=r.roundProbs.find(p=>p.id===x.id);return rp?(rp.qf*100).toFixed(1):0;}),backgroundColor:'#00c85380'},{label:'4强',data:top8.map(x=>{const rp=r.roundProbs.find(p=>p.id===x.id);return rp?(rp.sf*100).toFixed(1):0;}),backgroundColor:'#f0b90b80'},{label:'决赛',data:top8.map(x=>{const rp=r.roundProbs.find(p=>p.id===x.id);return rp?(rp.final*100).toFixed(1):0;}),backgroundColor:'#ff3d5780'},{label:'冠军',data:top8.map(x=>{const rp=r.roundProbs.find(p=>p.id===x.id);return rp?(rp.champ*100).toFixed(1):0;}),backgroundColor:'#ffd700'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8899b4'}}},scales:{x:{grid:{display:false},ticks:{color:'#e4e8f0'}},y:{grid:{color:'#1a2744'},ticks:{color:'#8899b4',callback:v=>v+'%'}}}}});
+
+  // === ODDS COMPARISON: AI model vs Bookmaker implied vs Opta ===
+  const oddsCtx = document.getElementById('oddsCompChart');
+  if (oddsCtx) {
+    const ctx4 = oddsCtx.getContext('2d');
+    if (oddsCompChart) oddsCompChart.destroy();
+    const top10 = r.champProb.slice(0, 10);
+    oddsCompChart = new Chart(ctx4, {
+      type: 'bar',
+      data: {
+        labels: top10.map(x => { const t = TEAMS.find(tt => tt.id === x.id); return t ? t.flag + ' ' + t.cn : ''; }),
+        datasets: [
+          { label: 'AI模型概率', data: top10.map(x => (x.prob * 100).toFixed(1)), backgroundColor: '#f0b90bcc' },
+          { label: '参考概率', data: top10.map(x => { const o = getTeamOdds(x.id); return (1 / o.odds * 100).toFixed(1); }), backgroundColor: '#4da6ffcc' },
+          { label: 'Opta超算概率', data: top10.map(x => { const o = getTeamOdds(x.id); return o.opta.toFixed(1); }), backgroundColor: '#8b5cf6cc' }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: '#8899b4', font: { size: 11 } } },
+          tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.raw + '%' } }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: '#e4e8f0', font: { size: 10 } } },
+          y: { grid: { color: '#1a2744' }, ticks: { color: '#8899b4', callback: v => v + '%' } }
+        }
+      }
+    });
+  }
+}
+
+// ---------- GROUPS ----------
+function renderGroups() {
+  document.getElementById('groupTabs').innerHTML = GROUPS.map((g,i) => `<button class="group-tab${i===0?' active':''}" onclick="switchGrp('${g}')">${g} 组</button>`).join('');
+
+  document.getElementById('groupPanels').innerHTML = GROUPS.map(g => {
+    const teams = getGroupTeams(g).sort((a,b) => getStrength(b) - getStrength(a));
+    let stHTML = '';
+    if (lastResult && lastResult.grpCnt) {
+      const sorted = [...teams].sort((a,b)=>{
+        const ga=lastResult.grpCnt[a.id],gb=lastResult.grpCnt[b.id];
+        if(!ga||!gb)return 0;
+        return (gb.f*3+gb.s*2+gb.tA*1)-(ga.f*3+ga.s*2+ga.tA*1);
+      });
+      stHTML = `<div class="card" style="margin-bottom:10px"><div class="card-header">📊 预测出线概率</div>
+        ${sorted.map((t,i)=>{
+          const gr=lastResult.grpCnt[t.id]; if(!gr)return '';
+          const tot=gr.f+gr.s+gr.tA+gr.tO+gr.out||1;
+          const pc=i<2?'q':(i===2?'p3':'out');
+          const pt=i===0?(gr.f/tot*100).toFixed(1)+'% 小组第1':i===1?(gr.s/tot*100).toFixed(1)+'% 小组第2':(gr.tA/tot*100).toFixed(1)+'% 最佳第3晋级';
+          return `<div class="team-row"><div class="pos ${pc}">${i+1}</div><div class="flag">${t.flag}</div><div class="name">${t.cn}</div><div class="stats"><span>⚔${t.att}</span><span>🛡${t.def}</span></div><div class="prob">${pt}</div></div>`;
+        }).join('')}</div>`;
+    }
+    let mtHTML = '';
+    const tl = getGroupTeams(g);
+    const pairs = []; for(let i=0;i<tl.length;i++)for(let j=i+1;j<tl.length;j++)pairs.push([tl[i],tl[j]]);
+    mtHTML = `<div class="card"><div class="card-header">📅 小组赛预测</div>
+      ${pairs.map(([h,a])=>{const p=predictMatch(h,a);return`<div class="match-item"><span style="min-width:55px;font-size:.78rem">${h.flag} ${h.cn}</span><div class="prob-bar"><div class="hw" style="width:${(p.homeWinProb*100).toFixed(0)}%"></div><div class="dr" style="width:${(p.drawProb*100).toFixed(0)}%"></div><div class="aw" style="width:${(p.awayWinProb*100).toFixed(0)}%"></div></div><span style="min-width:55px;text-align:right;font-size:.78rem">${a.cn} ${a.flag}</span><span class="score-pred">${p.topScores ? p.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : p.predScore[0]+':'+p.predScore[1]}</span></div>`;}).join('')}</div>`;
+
+    return `<div class="group-panel${GROUPS.indexOf(g)===0?' active':''}" id="grp-${g}">${stHTML}${mtHTML}${!lastResult?'<div class="empty-state"><p>请先运行模拟</p></div>':''}</div>`;
+  }).join('');
+}
+
+// ---------- STANDINGS (Actual Results) ----------
+var currentStandingsGroup = 'A';
+function renderStandings() {
+  var tabsEl = document.getElementById('standingsGroupTabs');
+  tabsEl.innerHTML = GROUPS.map(function(g) {
+    return '<button class="group-tab' + (g === currentStandingsGroup ? ' active' : '') + '" onclick="switchStandingsGroup(\'' + g + '\')">' + g + ' 组</button>';
+  }).join('');
+
+  var contentEl = document.getElementById('standingsContent');
+  contentEl.innerHTML = buildStandingsHTML(currentStandingsGroup);
+}
+
+function buildStandingsHTML(group) {
+  // Calculate standings from actual results
+  var table = {};
+  TEAMS.filter(function(t) { return t.grp === group; }).forEach(function(t) {
+    table[t.id] = { id: t.id, flag: t.flag, cn: t.cn, name: t.name, rank: t.rk, played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0, pts: 0 };
+  });
+
+  // Process match results
+  MATCH_SCHEDULE.filter(function(m) { return m.grp === group && m.stage === 'group' && actualResults[m.id]; }).forEach(function(m) {
+    var r = actualResults[m.id];
+    var ht = table[m.home], at = table[m.away];
+    if (!ht || !at) return;
+    ht.played++; at.played++;
+    ht.gf += r.homeScore; ht.ga += r.awayScore;
+    at.gf += r.awayScore; at.ga += r.homeScore;
+    if (r.homeScore > r.awayScore) { ht.won++; ht.pts += 3; at.lost++; }
+    else if (r.homeScore < r.awayScore) { at.won++; at.pts += 3; ht.lost++; }
+    else { ht.drawn++; at.drawn++; ht.pts++; at.pts++; }
+  });
+
+  var teams = Object.values(table);
+  teams.sort(function(a, b) {
+    if (a.pts !== b.pts) return b.pts - a.pts;
+    var gdA = a.gf - a.ga, gdB = b.gf - b.ga;
+    if (gdA !== gdB) return gdB - gdA;
+    if (a.gf !== b.gf) return b.gf - a.gf;
+    return a.rank - b.rank;
+  });
+  teams.forEach(function(t) { t.gd = t.gf - t.ga; });
+
+  // Build table HTML
+  var html = '<div class="standings-table">';
+  html += '<div class="st-header"><span class="st-col st-pos">#</span><span class="st-col st-team-info">球队</span><span class="st-col st-stat">赛</span><span class="st-col st-stat">胜</span><span class="st-col st-stat">平</span><span class="st-col st-stat">负</span><span class="st-col st-stat">GF</span><span class="st-col st-stat">GA</span><span class="st-col st-stat">GD</span><span class="st-col st-pts">分</span></div>';
+
+  teams.forEach(function(t, i) {
+    var posIcon = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : (i + 1);
+    var rowClass = i < 2 ? 'qualify' : (i === 2 ? 'third' : '');
+    var gdClass = t.gd > 0 ? 'color:var(--green)' : t.gd < 0 ? 'color:var(--red)' : '';
+    html += '<div class="st-row ' + rowClass + '" onclick="showTeamDetail(\'' + t.id + '\')">';
+    html += '<span class="st-col st-pos">' + posIcon + '</span>';
+    html += '<span class="st-col st-team-info"><span class="sti-flag">' + t.flag + '</span><span><span class="sti-name">' + t.cn + '</span><span class="sti-rank">FIFA #' + t.rank + '</span></span></span>';
+    html += '<span class="st-col st-stat">' + t.played + '</span>';
+    html += '<span class="st-col st-stat">' + t.won + '</span>';
+    html += '<span class="st-col st-stat">' + t.drawn + '</span>';
+    html += '<span class="st-col st-stat">' + t.lost + '</span>';
+    html += '<span class="st-col st-stat">' + t.gf + '</span>';
+    html += '<span class="st-col st-stat">' + t.ga + '</span>';
+    html += '<span class="st-col st-stat" style="' + gdClass + '">' + (t.gd > 0 ? '+' : '') + t.gd + '</span>';
+    html += '<span class="st-col st-pts">' + t.pts + '</span>';
+    html += '</div>';
+  });
+  html += '</div>';
+
+  // Legend
+  html += '<div class="qual-legend"><span class="ql-item qualify"><span class="ql-dot"></span>直接晋级</span><span class="ql-item third"><span class="ql-dot"></span>小组第3 (待定)</span></div>';
+
+  // Group matches
+  var matches = MATCH_SCHEDULE.filter(function(m) { return m.grp === group && m.stage === 'group'; });
+  html += '<div class="card"><div class="card-header">📋 ' + group + '组比赛</div>';
+  matches.forEach(function(m) {
+    var ht = TEAMS.find(function(t) { return t.id === m.home; });
+    var at = TEAMS.find(function(t) { return t.id === m.away; });
+    var result = actualResults[m.id];
+    html += '<div class="gm-item">';
+    html += '<span class="gm-date">' + (m.date ? m.date.slice(5) : '') + ' ' + (m.time || '') + '</span>';
+    html += '<span class="gm-teams">' + (ht ? ht.flag : '?') + ' ' + (ht ? ht.cn : m.home) + ' vs ' + (at ? at.cn : m.away) + ' ' + (at ? at.flag : '?') + '</span>';
+    if (result) {
+      var scoreClass = result.homeScore > result.awayScore ? 'color:var(--accent)' : result.homeScore < result.awayScore ? 'color:var(--red)' : 'color:var(--text3)';
+      html += '<span class="gm-score" style="' + scoreClass + '">' + result.homeScore + ':' + result.awayScore + '</span>';
+    } else {
+      html += '<span class="gm-pending">未赛</span>';
+    }
+    html += '</div>';
+  });
+  html += '</div>';
+
+  // Third-place ranking across all groups
+  var allThirds = [];
+  GROUPS.forEach(function(g) {
+    var gt = TEAMS.filter(function(t) { return t.grp === g; });
+    var tbl = {};
+    gt.forEach(function(t) { tbl[t.id] = { id: t.id, flag: t.flag, cn: t.cn, rank: t.rk, played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0, pts: 0 }; });
+    MATCH_SCHEDULE.filter(function(m) { return m.grp === g && m.stage === 'group' && actualResults[m.id]; }).forEach(function(m) {
+      var r = actualResults[m.id];
+      var ht = tbl[m.home], at = tbl[m.away];
+      if (!ht || !at) return;
+      ht.played++; at.played++; ht.gf += r.homeScore; ht.ga += r.awayScore; at.gf += r.awayScore; at.ga += r.homeScore;
+      if (r.homeScore > r.awayScore) { ht.won++; ht.pts += 3; at.lost++; }
+      else if (r.homeScore < r.awayScore) { at.won++; at.pts += 3; ht.lost++; }
+      else { ht.drawn++; at.drawn++; ht.pts++; at.pts++; }
+    });
+    var arr = Object.values(tbl);
+    arr.sort(function(a, b) { if (a.pts !== b.pts) return b.pts - a.pts; var ga = a.gf - a.ga, gb = b.gf - b.ga; if (ga !== gb) return gb - ga; if (a.gf !== b.gf) return b.gf - a.gf; return a.rank - b.rank; });
+    if (arr.length >= 3) { var t3 = arr[2]; t3.gd = t3.gf - t3.ga; allThirds.push({ group: g, flag: t3.flag, cn: t3.cn, pts: t3.pts, gd: t3.gd }); }
+  });
+  allThirds.sort(function(a, b) { if (a.pts !== b.pts) return b.pts - a.pts; if (a.gd !== b.gd) return b.gd - a.gd; return 0; });
+
+  if (allThirds.length > 0) {
+    html += '<div class="card" style="margin-top:12px"><div class="card-header">🏅 小组第三排名 (前8晋级)</div>';
+    allThirds.forEach(function(t, i) {
+      html += '<div class="tp-row ' + (i < 8 ? 'tp-qualify' : 'tp-out') + '"><span class="tp-pos">' + (i + 1) + '</span><span class="tp-group">' + t.group + '组</span><span class="tp-flag">' + t.flag + '</span><span class="tp-name">' + t.cn + '</span><span class="tp-pts">' + t.pts + '分</span><span class="tp-gd">' + (t.gd >= 0 ? '+' : '') + t.gd + '</span></div>';
+    });
+    html += '</div>';
+  }
+
+  return html;
+}
+
+function switchStandingsGroup(g) {
+  currentStandingsGroup = g;
+  renderStandings();
+}
+
+function switchGrp(g) {
+  document.querySelectorAll('.group-tab').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.group-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('grp-'+g).classList.add('active');
+}
+
+// ---------- BRACKET ----------
+function renderBracket() {
+  if (!lastResult || !lastResult.bestBracket) {
+    document.getElementById('bracketTree').innerHTML='<div class="empty-state"><p>请先运行模拟</p></div>'; return;
+  }
+  const bk=lastResult.bestBracket;
+  function mh(m){if(!m)return'';const t1=TEAMS.find(x=>x.id===m.home.id),t2=TEAMS.find(x=>x.id===m.away.id),w=m.winner.id;return`<div class="br-match"><div class="br-team${w===m.home.id?' br-winner':''}"><span class="brf">${t1?.flag||'?'}</span><span class="brn">${t1?.cn||'?'}</span><span class="brs">${m.hg}</span></div><div class="br-divider"></div><div class="br-team${w===m.away.id?' br-winner':''}"><span class="brf">${t2?.flag||'?'}</span><span class="brn">${t2?.cn||'?'}</span><span class="brs">${m.ag}</span></div></div>`;}
+  document.getElementById('bracketTree').innerHTML=['1/16决赛','1/8决赛','1/4决赛','半决赛','决赛'].map((rn,i)=>{
+    const rd=[bk.r32,bk.r16,bk.qf,bk.sf,[bk.final]][i]; return`<div class="br-round"><div class="br-title">${rn}</div>${(rd||[]).map(m=>mh(m)).join('')}${i===4&&bk.champion?`<div style="text-align:center;margin-top:8px;font-size:1.1rem;font-weight:800;color:var(--gold)">🏆 ${TEAMS.find(t=>t.id===bk.champion.id)?.flag} ${TEAMS.find(t=>t.id===bk.champion.id)?.cn}</div>`:''}</div>`;
+  }).join('');
+
+  // Advance chart
+  if(lastResult){
+    const top8=lastResult.champProb.slice(0,8);
+    const ctx=document.getElementById('advChart').getContext('2d');
+    if(advChart)advChart.destroy();
+    advChart=new Chart(ctx,{type:'bar',data:{labels:top8.map(x=>{const t=TEAMS.find(tt=>tt.id===x.id);return t?t.flag+' '+t.cn:'';}),datasets:[{label:'16强',data:top8.map(x=>{const rp=lastResult.roundProbs.find(p=>p.id===x.id);return rp?(rp.r16*100).toFixed(1):0;}),backgroundColor:'#4da6ff'},{label:'8强',data:top8.map(x=>{const rp=lastResult.roundProbs.find(p=>p.id===x.id);return rp?(rp.qf*100).toFixed(1):0;}),backgroundColor:'#00c853'},{label:'4强',data:top8.map(x=>{const rp=lastResult.roundProbs.find(p=>p.id===x.id);return rp?(rp.sf*100).toFixed(1):0;}),backgroundColor:'#f0b90b'},{label:'决赛',data:top8.map(x=>{const rp=lastResult.roundProbs.find(p=>p.id===x.id);return rp?(rp.final*100).toFixed(1):0;}),backgroundColor:'#ff3d57'},{label:'冠军',data:top8.map(x=>{const rp=lastResult.roundProbs.find(p=>p.id===x.id);return rp?(rp.champ*100).toFixed(1):0;}),backgroundColor:'#ffd700'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#8899b4'}}},scales:{x:{grid:{display:false},ticks:{color:'#e4e8f0',font:{size:9}}},y:{grid:{color:'#1a2744'},ticks:{color:'#8899b4',callback:v=>v+'%'}}}}});
+    document.getElementById('top10d').innerHTML=lastResult.champProb.slice(0,10).map((x,i)=>{const t=TEAMS.find(tt=>tt.id===x.id);if(!t)return'';return`<div class="team-row" style="cursor:pointer" onclick="showTeamDetail('${t.id}')"><div class="pos q">${i+1}</div><div class="flag">${t.flag}</div><div class="name">${t.cn}</div><div class="prob">🏆${(x.prob*100).toFixed(1)}%</div></div>`;}).join('');
+  }
+}
+
+// ---------- TEAMS ----------
+function renderTeams() {
+  document.getElementById('filterGroup').innerHTML='<option value="">全部小组</option>'+GROUPS.map(g=>`<option value="${g}">${g}组</option>`).join('');
+  const confs=[...new Set(TEAMS.map(t=>t.conf))];
+  document.getElementById('filterConfed').innerHTML='<option value="">全部洲际</option>'+confs.map(c=>`<option value="${c}">${c}</option>`).join('');
+  renderTeamGrid();
+}
+function renderTeamGrid() {
+  const fg=document.getElementById('filterGroup').value,fc=document.getElementById('filterConfed').value,fs=document.getElementById('filterSort').value,fq=document.getElementById('filterSearch').value.toLowerCase();
+  let teams=[...TEAMS];
+  if(fg)teams=teams.filter(t=>t.grp===fg);if(fc)teams=teams.filter(t=>t.conf===fc);if(fq)teams=teams.filter(t=>t.cn.includes(fq)||t.name.toLowerCase().includes(fq));
+  if(fs==='strength')teams.sort((a,b)=>getStrength(b)-getStrength(a));
+  else if(fs==='champion'&&lastResult)teams.sort((a,b)=>{const pa=lastResult.champProb.find(x=>x.id===a.id),pb=lastResult.champProb.find(x=>x.id===b.id);return(pb?.prob||0)-(pa?.prob||0);});
+  else if(fs==='fifa')teams.sort((a,b)=>a.rk-b.rk);
+
+  document.getElementById('teamGrid').innerHTML=teams.map(t=>{
+    const str=getStrength(t),stars=Math.min(5,Math.round(str/20));
+    const cp=lastResult?lastResult.champProb.find(x=>x.id===t.id):null;
+    const todds = getTeamOdds(t.id);
+    const oddsProb = (1 / todds.odds * 100);
+    return`<div class="team-card" onclick="showTeamDetail('${t.id}')"><div class="tc-header"><div class="tc-flag">${t.flag}</div><div><div class="tc-name">${t.cn} <span style="font-size:.7rem;color:var(--text2)">${t.name}</span></div><div class="tc-stars">${'★'.repeat(stars)}${'☆'.repeat(5-stars)}</div></div><div class="tc-group">${t.grp}组</div></div><div class="tc-info"><div>FIFA<span class="val">#${t.rk}</span></div><div>实力<span class="val">${str.toFixed(1)}</span></div><div>夺冠指数<span class="val" style="color:var(--gold)">${todds.odds.toFixed(1)}</span></div><div>隐含概率<span class="val" style="color:var(--accent)">${oddsProb.toFixed(1)}%</span></div>${cp?`<div>AI夺冠<span class="val" style="color:var(--gold)">${(cp.prob*100).toFixed(1)}%</span></div>`:'<div></div>'}<div>参赛<span class="val">${t.apps}次</span></div></div>${t.inj?`<div class="tc-injury">🏥 ${t.inj}</div>`:''}${t.news?`<div class="tc-news">${t.news}</div>`:''}<div style="font-size:.7rem;color:var(--text3);margin-top:4px">⭐ ${t.stars.join(' · ')}</div></div>`;
+  }).join('');
+}
+
+function showTeamDetail(id) {
+  const t=TEAMS.find(x=>x.id===id);if(!t)return;
+  const str=getStrength(t),cp=lastResult?lastResult.champProb.find(x=>x.id===id):null,rp=lastResult?lastResult.roundProbs.find(x=>x.id===id):null;
+  const todds = getTeamOdds(t.id);
+  const oddsP = (1 / todds.odds * 100);
+
+  // Build lineup HTML
+  const lu = STARTING_XI[id];
+  let lineupHtml = '';
+  if (lu) {
+    const playerTag = (n, pos, color) => {
+      const clean = n.replace('(C)','').trim();
+      const cname = cnName(clean);
+      const num = JERSEY_NUM[clean] || JERSEY_NUM[n] || '?';
+      const cap = n.includes('(C)') ? '⭐' : '';
+      return `<span style="display:inline-block;text-align:center;padding:4px 8px;background:${color};border-radius:4px;margin:2px;min-width:64px"><b>${num}${cap}</b><br><span style="font-size:.7rem">${cname}</span><br><span style="font-size:.6rem;color:var(--text3)">${pos}</span></span>`;
+    };
+    lineupHtml = `<div style="margin-top:10px;padding:10px;background:var(--surface2);border-radius:var(--radius-sm)"><p style="font-weight:700;margin-bottom:6px">📋 首发阵容 <span style="color:var(--accent)">${lu.f}</span></p>
+<div style="text-align:center;margin-bottom:4px">${(lu.g ? playerTag(lu.g,'GK','rgba(240,185,11,.12)') : '')}</div>
+<div style="text-align:center;margin-bottom:4px">${(lu.d||[]).map(function(n){return playerTag(n,'DF','rgba(77,166,255,.1)');}).join(' ')}</div>
+<div style="text-align:center;margin-bottom:4px">${(lu.m||[]).map(function(n){return playerTag(n,'MF','rgba(0,200,83,.1)');}).join(' ')}</div>
+<div style="text-align:center;margin-bottom:4px">${(lu.fwd||[]).map(function(n){return playerTag(n,'FW','rgba(255,61,87,.1)');}).join(' ')}</div>
+${lu.subs?`<div style="border-top:1px dashed var(--border);padding-top:6px;font-size:.72rem;color:var(--text2)">🔄 替补: ${lu.subs.split(',').map(function(n){const c=cnName(n.trim());return c;}).join('、')}</div>`:''}
+${lu.note?`<div style="font-size:.7rem;color:var(--orange);margin-top:4px">${lu.note}</div>`:''}</div>`;
+  }
+
+  // Build group matches HTML
+  const teamMatches = MATCH_SCHEDULE.filter(function(m){return (m.home===id||m.away===id)&&m.stage==='group';});
+  let matchesHtml = '';
+  if (teamMatches.length > 0) {
+    matchesHtml = '<div style="margin-top:10px;padding:10px;background:var(--surface2);border-radius:var(--radius-sm)"><p style="font-weight:700;margin-bottom:6px">小组赛战况</p>';
+    teamMatches.forEach(function(m){
+      const opp = m.home===id ? TEAMS.find(function(x){return x.id===m.away;}) : TEAMS.find(function(x){return x.id===m.home;});
+      const isHome = m.home===id;
+      const result = actualResults[m.id];
+      let score = '<span style="color:var(--text3);font-size:.7rem">待定</span>';
+      if (result) {
+        var ms = isHome ? result.homeScore : result.awayScore;
+        var os = isHome ? result.awayScore : result.homeScore;
+        var col = ms>os?'var(--green)':ms===os?'var(--gold)':'var(--red)';
+        score = '<b style="color:'+col+'">'+ms+':'+os+'</b>';
+      }
+      matchesHtml += '<div style="display:flex;align-items:center;gap:8px;padding:4px 0;font-size:.78rem;border-bottom:1px solid var(--border)"><span style="color:var(--text3);min-width:58px">'+m.date.slice(5)+' '+m.time+'</span><span>'+ (opp?opp.flag:'?') +'</span><span style="flex:1">'+(isHome?'vs':'@')+' '+(opp?opp.cn:'待定')+'</span>'+score+'</div>';
+    });
+    matchesHtml += '</div>';
+  }
+
+  document.getElementById('teamModalContent').innerHTML=`<button class="mclose" onclick="closeModal()">✕</button><h3>${t.flag} ${t.cn} <span style="color:var(--text2)">${t.name}</span></h3><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:14px 0"><div class="stat-box"><div class="num">#${t.rk}</div><div class="lbl">FIFA排名</div></div><div class="stat-box"><div class="num">${str.toFixed(1)}</div><div class="lbl">AI综合实力</div></div><div class="stat-box"><div class="num" style="color:var(--gold)">${todds.odds.toFixed(1)}</div><div class="lbl">夺冠指数</div></div></div><div style="padding:10px;background:var(--surface2);border-radius:var(--radius-sm);margin-bottom:14px"><div style="display:flex;justify-content:space-around;text-align:center"><div><div style="font-size:.75rem;color:var(--text2)">参考概率</div><div style="font-size:1.2rem;font-weight:700;color:var(--accent)">${oddsP.toFixed(1)}%</div></div><div><div style="font-size:.75rem;color:var(--text2)">Opta超级计算机</div><div style="font-size:1.2rem;font-weight:700;color:var(--purple)">${todds.opta.toFixed(1)}%</div></div>${cp?`<div><div style="font-size:.75rem;color:var(--text2)">AI蒙特卡洛模拟</div><div style="font-size:1.2rem;font-weight:700;color:var(--gold)">${(cp.prob*100).toFixed(1)}%</div></div>`:'<div></div>'}</div></div><p><strong>进攻：</strong>${t.att} | <strong>防守：</strong>${t.def}</p><p><strong>世界杯最佳：</strong>${t.best}</p><p><strong>参赛次数：</strong>${t.apps}次 | <strong>洲际：</strong>${t.conf}</p><p><strong>近期：</strong>${t.recent}</p><p><strong>核心球员：</strong>${t.stars.join('、')}</p>${t.news?`<p style="color:var(--orange)"><strong>最新动态：</strong>${t.news}</p>`:''}${t.inj?`<p style="color:var(--red)"><strong>🏥 伤病情况：</strong>${t.inj}</p>`:''}${matchesHtml}${lineupHtml}${rp?`<div style="margin-top:10px;padding:10px;background:var(--surface2);border-radius:var(--radius-sm)"><p style="font-weight:700;margin-bottom:6px">📊 AI预测晋级各轮概率</p><div style="display:flex;gap:6px;flex-wrap:wrap"><span style="background:#4da6ff;padding:2px 8px;border-radius:3px;font-size:.75rem">32强 ${(rp.r32*100).toFixed(1)}%</span><span style="background:#00c853;padding:2px 8px;border-radius:3px;font-size:.75rem">16强 ${(rp.r16*100).toFixed(1)}%</span><span style="background:#f0b90b;padding:2px 8px;border-radius:3px;font-size:.75rem">8强 ${(rp.qf*100).toFixed(1)}%</span><span style="background:#ff9100;padding:2px 8px;border-radius:3px;font-size:.75rem">4强 ${(rp.sf*100).toFixed(1)}%</span><span style="background:#ff3d57;padding:2px 8px;border-radius:3px;font-size:.75rem">决赛 ${(rp.final*100).toFixed(1)}%</span><span style="background:#ffd700;padding:2px 8px;border-radius:3px;font-size:.75rem">冠军 ${(rp.champ*100).toFixed(1)}%</span></div></div>`:''}`;
+  document.getElementById('teamModal').style.display='flex';
+}
+
+function closeModal(){document.getElementById('teamModal').style.display='none';}
+
+// ---------- FULL SCHEDULE ----------
+function renderFullSchedule() {
+  const f = document.getElementById('schedFilter').value;
+  let ms = [...MATCH_SCHEDULE];
+  if (f !== 'all') {
+    if (f === 'f') ms = ms.filter(m => m.stage === 'final' || m.stage === 'tpp');
+    else ms = ms.filter(m => m.stage === f);
+  }
+
+  // Group by date
+  const byDate = {};
+  ms.forEach(m => { if (!byDate[m.date]) byDate[m.date] = []; byDate[m.date].push(m); });
+
+  // Legend
+  var legendHtml = '<div class="schedule-legend">' +
+    '<span style="font-weight:700;color:var(--text);margin-right:4px">图例:</span>' +
+    '<span class="leg-item"><span class="leg-dot pred"></span> AI预测比分</span>' +
+    '<span class="leg-item"><span class="leg-dot actual"></span> 实际比赛结果</span>' +
+    '<span class="leg-item"><span class="leg-dot pending"></span> 待比赛（? : ?）</span>' +
+    '</div>';
+
+  const dayNames = ['周日','周一','周二','周三','周四','周五','周六'];
+  const stageLabels = {group:'小组赛',r32:'1/16决赛',r16:'1/8决赛',qf:'1/4决赛',sf:'半决赛',tpp:'季军赛',final:'🏆决赛'};
+
+  document.getElementById('fullSchedule').innerHTML = legendHtml + Object.entries(byDate).sort().map(function([date, matches]) {
+    const dObj = new Date(date + 'T00:00:00');
+    return '<div class="schedule-day"><div class="sd-header"><span>📅 ' + date + ' ' + dayNames[dObj.getDay()] + '</span><span style="color:var(--accent);font-size:.78rem">' + [...new Set(matches.map(function(m){return stageLabels[m.stage]||m.stage;}))].join(' / ') + '</span></div>' +
+      matches.map(function(m) {
+        var ht = TEAMS.find(function(t){return t.id === m.home;}), at = TEAMS.find(function(t){return t.id === m.away;});
+        var pred = ht && at ? predictMatch(ht, at) : null;
+        var result = actualResults[m.id];
+        var scoreHtml = '';
+        if (result) {
+          // Has actual result: show prediction + actual
+          var predStr = pred && pred.topScores ? pred.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : (pred ? pred.predScore[0]+':'+pred.predScore[1] : '-:-');
+          scoreHtml = '<span class="sm-pred">' + predStr + '</span>' +
+            '<span class="sm-sep">→</span>' +
+            '<span class="sm-actual">' + result.homeScore + ':' + result.awayScore + '</span>';
+        } else {
+          // No result yet: show prediction + pending
+          var predStr2 = pred && pred.topScores ? pred.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : (pred ? pred.predScore[0]+':'+pred.predScore[1] : '-:-');
+          scoreHtml = '<span class="sm-pred">' + predStr2 + '</span>' +
+            '<span class="sm-sep">|</span>' +
+            '<span class="sm-pending">? : ?</span>';
+        }
+        var updInfo = getPredUpdateInfo(m.id);
+        return '<div class="schedule-match" style="flex-wrap:wrap">' +
+          '<span class="sm-time">' + (m.date || m.id) + '<br>' + m.time + '</span>' +
+          '<span class="sm-teams">' + (ht?ht.flag:'❓') + ' ' + (ht?ht.cn:m.home) + ' vs ' + (at?at.cn:m.away) + ' ' + (at?at.flag:'❓') + '</span>' +
+          (m.grp ? '<span class="sm-group">' + m.grp + '组</span>' : '<span class="sm-group">' + (stageLabels[m.stage]||m.stage) + '</span>') +
+          scoreHtml +
+          (updInfo ? '<span style="font-size:.58rem;color:var(--text3);flex-basis:100%;text-align:right;margin-top:2px">' + updInfo + '</span>' : '') +
+          '</div>';
+      }).join('') + '</div>';
+  }).join('');
+}
+
+// ---------- HISTORY ----------
+function renderHistory() {
+  const h = JSON.parse(localStorage.getItem('wc2026_hist') || '[]');
+  if (h.length === 0) { document.getElementById('historyList').innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>暂无记录</p></div>'; return; }
+  document.getElementById('historyList').innerHTML = h.slice().reverse().map((x,i)=>{
+    const top = x.champProb ? x.champProb.slice(0,3) : [];
+    return `<div class="hist-item" onclick="loadHistItem(${h.length-1-i})"><div class="hi-head"><span class="hi-runs">${(x.runs||0).toLocaleString()}次</span><span class="hi-time">${new Date(x.ts).toLocaleString('zh-CN')}</span></div><div class="hi-top">🏆 ${top.map(y=>{const t=TEAMS.find(tt=>tt.id===y.id);return t?`${t.flag}${t.cn}${(y.prob*100).toFixed(1)}%`:'';}).join(' · ')}</div></div>`;
+  }).join('');
+}
+
+function loadHistItem(i) {
+  const h = JSON.parse(localStorage.getItem('wc2026_hist') || '[]');
+  if (h[i]) { lastResult = h[i]; refreshAll(); switchTab('dashboard'); showToast('已加载历史结果'); }
+}
+
+function exportHistory() {
+  const h = JSON.parse(localStorage.getItem('wc2026_hist') || '[]');
+  const b = new Blob([JSON.stringify(h,null,2)],{type:'application/json'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = 'wc2026_predictions.json'; a.click();
+  URL.revokeObjectURL(a.href); showToast('导出成功');
+}
+
+function showToast(msg) {
+  const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg;
+  document.body.appendChild(t); setTimeout(() => t.remove(), 2500);
+}
+
+// =============================================================================
+// 4b. ACTUAL RESULTS & REVIEW ENGINE
+// =============================================================================
+
+// =============================================================================
+// DATA LOADING — Cloud function HTTP endpoints as single source of truth
+// Priority: scores.json (GitHub Action auto-update) > localStorage > demo seed
+// =============================================================================
+let actualResults = {};
+let _resultsLoaded = false;
+const SCORES_CACHE_KEY = 'wc2026_actual';
+
+// Demo seed data (last resort fallback)
+const DEMO_RESULTS = {
+  m001: {homeScore:2,awayScore:0}, m002: {homeScore:2,awayScore:1},
+  m003: {homeScore:1,awayScore:1}, m004: {homeScore:4,awayScore:1},
+  m005: {homeScore:1,awayScore:1}, m006: {homeScore:1,awayScore:1},
+  m007: {homeScore:0,awayScore:1}, m008: {homeScore:2,awayScore:0},
+  m009: {homeScore:7,awayScore:1}, m010: {homeScore:2,awayScore:2},
+  m011: {homeScore:1,awayScore:0}, m012: {homeScore:5,awayScore:1},
+  m013: {homeScore:0,awayScore:0}, m014: {homeScore:1,awayScore:1},
+  m015: {homeScore:1,awayScore:1}, m016: {homeScore:2,awayScore:2}
+};
+
+/** Step 1: Load from localStorage immediately (fast, works offline) */
+function loadFromLocalStorage() {
+  try {
+    var raw = localStorage.getItem(SCORES_CACHE_KEY);
+    if (raw) {
+      var parsed = JSON.parse(raw);
+      if (parsed && Object.keys(parsed).length > 0) {
+        Object.assign(actualResults, parsed);
+        return true;
+      }
+    }
+  } catch(e) { console.warn('localStorage read failed:', e); }
+  return false;
+}
+
+/** Step 2: Fetch from scores.json (auto-updated by GitHub Action every 30min) */
+async function loadFromServerJSON() {
+  try {
+    var resp = await fetch('scores.json?_t=' + Date.now(), { cache: 'no-cache' });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    var data = await resp.json();
+    if (data && Object.keys(data).length > 0) {
+      mergeResults(data, 'server');
+      return true;
+    }
+  } catch(e) { console.warn('scores.json fetch failed:', e.message); }
+  return false;
+}
+
+/** Merge incoming results into actualResults (newer data wins) */
+function mergeResults(incoming, source) {
+  var count = 0;
+  Object.keys(incoming).forEach(function(k) {
+    if (!k.match(/^m\d+$/)) return; // Only match IDs
+    var v = incoming[k];
+    var score = { homeScore: parseInt(v.homeScore) || 0, awayScore: parseInt(v.awayScore) || 0 };
+    if (v.notes) score.notes = v.notes;
+    if (v.recordedAt) score.recordedAt = v.recordedAt;
+    // Only overwrite if incoming has data
+    if (!actualResults[k] || (v.recordedAt && (!actualResults[k].recordedAt || v.recordedAt > actualResults[k].recordedAt))) {
+      actualResults[k] = score;
+      count++;
+    } else if (!actualResults[k]) {
+      actualResults[k] = score;
+      count++;
+    }
+  });
+  if (count > 0) {
+    persistResults();
+    console.log('Merged ' + count + ' results from ' + source);
+    if (_resultsLoaded) refreshUI();
+  }
+}
+
+function persistResults() {
+  try {
+    localStorage.setItem(SCORES_CACHE_KEY, JSON.stringify(actualResults));
+    localStorage.setItem(SCORES_TS_KEY, Date.now().toString());
+  } catch(e) {}
+}
+
+/** Refresh visible UI after data update */
+function refreshUI() {
+  var activeTab = document.querySelector('.tab-content.active');
+  if (!activeTab) return;
+  var tabId = activeTab.id.replace('tab-', '');
+  if (tabId === 'today') {
+    var nextDate = findNextMatchDate();
+    if (nextDate) { showDate(nextDate); renderDateSelector(); }
+  }
+  if (tabId === 'standings') renderStandings();
+  if (tabId === 'review') renderReview();
+  if (tabId === 'schedule') renderFullSchedule();
+  if (tabId === 'teams') renderTeams();
+}
+
+/** Main initialization: scores.json (GitHub Action) + localStorage */
+async function initResults() {
+  // 1. LocalStorage first (instant sync)
+  loadFromLocalStorage();
+
+  // 2. scores.json from server (auto-updated by GitHub Action)
+  await loadFromServerJSON();
+
+  // 3. Fallback: if nothing loaded, use demo seed
+  if (Object.keys(actualResults).length === 0) {
+    mergeResults(DEMO_RESULTS, 'demo');
+  }
+
+  _resultsLoaded = true;
+  console.log('Results initialized: ' + Object.keys(actualResults).length + ' matches loaded');
+
+  // Learn from finished matches
+  try {
+    Object.keys(actualResults).forEach(function(mid) { learnFromMatch(mid); });
+  } catch(e) {}
+
+  // Jump to the next unplayed match date (results may have advanced the tournament)
+  var nextDate = findNextMatchDate();
+  if (nextDate) {
+    showDate(nextDate);
+    renderDateSelector();
+  }
+  // Also refresh standings/review if visible
+  var activeTab = document.querySelector('.tab-content.active');
+  if (activeTab) {
+    var tabId = activeTab.id.replace('tab-', '');
+    if (tabId === 'standings') renderStandings();
+    if (tabId === 'review') renderReview();
+    if (tabId === 'schedule') renderFullSchedule();
+  }
+
+  // Auto-refresh every 3 minutes from scores.json
+  setInterval(async function() {
+    await loadFromServerJSON();
+    await loadMatchDetailsJSON().catch(function(){});
+    loadInfoJSON().catch(function(){});
+    loadOddsJSON().catch(function(){});
+    loadInjuriesJSON().catch(function(){});
+    loadStandingsJSON().catch(function(){});
+  }, 180000);
+}
+
+// ========== LIVE ODDS & INFO ==========
+let liveOdds = {};
+let liveInfo = {};
+let matchDetails = {};
+let liveInjuries = {};
+let standingsData = {};
+let weatherCache = {};
+
+// Venue coordinates for weather lookup
+var VENUE_COORDS = {
+  'Estadio Azteca': {lat:19.30, lng:-99.15},
+  'Estadio Akron': {lat:20.68, lng:-103.46},
+  'BMO Field': {lat:43.63, lng:-79.42},
+  'SoFi Stadium': {lat:33.95, lng:-118.34},
+  'Levi\'s Stadium': {lat:37.40, lng:-121.97},
+  'MetLife Stadium': {lat:40.81, lng:-74.07},
+  'Gillette Stadium': {lat:42.09, lng:-71.26},
+  'BC Place': {lat:49.28, lng:-123.11},
+  'NRG Stadium': {lat:29.68, lng:-95.41},
+  'AT&T Stadium': {lat:32.75, lng:-97.09},
+  'Lincoln Financial Field': {lat:39.90, lng:-75.17},
+  'Estadio BBVA': {lat:25.67, lng:-100.26},
+  'Mercedes-Benz Stadium': {lat:33.76, lng:-84.40},
+  'Lumen Field': {lat:47.60, lng:-122.33},
+  'Hard Rock Stadium': {lat:25.96, lng:-80.24},
+  'Arrowhead Stadium': {lat:39.05, lng:-94.48},
+};
+
+var WEATHER_EMOJI = {0:'☀️',1:'☀️',2:'⛅',3:'☁️',45:'🌫️',48:'🌫️',51:'🌦️',53:'🌦️',55:'🌧️',61:'🌧️',63:'🌧️',65:'🌧️',71:'❄️',73:'❄️',75:'❄️',80:'🌦️',81:'🌦️',82:'🌧️',95:'⛈️',96:'⛈️',99:'⛈️'};
+
+async function loadWeather() {
+  var venues = Object.keys(VENUE_COORDS);
+  for (var i = 0; i < venues.length; i++) {
+    var v = venues[i];
+    if (weatherCache[v]) continue;
+    try {
+      var c = VENUE_COORDS[v];
+      var resp = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + c.lat + '&longitude=' + c.lng + '&current=temperature_2m,weather_code', {cache:'no-store'});
+      if (!resp.ok) continue;
+      var d = await resp.json();
+      var code = d.current?.weather_code || 0;
+      var temp = d.current?.temperature_2m || '?';
+      weatherCache[v] = {temp: Math.round(temp), emoji: WEATHER_EMOJI[code] || '⛅'};
+    } catch(e) {}
+  }
+  // Re-render after weather loads
+  var ad = document.querySelector('#dateSelector button.active');
+  if (ad) {
+    var bt = ad.textContent.trim();
+    var dm = bt.match(/(\d{2}-\d{2})/);
+    if (dm) renderTodayMatches('2026-' + dm[1]);
+  }
+}
+
+function getWeather(venue) {
+  var key = Object.keys(VENUE_COORDS).find(function(k){return venue && venue.indexOf(k) >= 0;});
+  return weatherCache[key || ''] || {temp:'?', emoji:'⛅'};
+}
+
+async function loadStandingsJSON() {
+  try {
+    var resp = await fetch('standings.json?v=' + Date.now(), { cache: 'no-store' });
+    if (!resp.ok) return;
+    var data = await resp.json();
+    if (data && Object.keys(data).length > 0) standingsData = data;
+  } catch(e) {}
+}
+
+function getStandings(teamId) {
+  return standingsData[teamId] || null;
+}
+
+var playerStats = {scorers:[], assists:[], cards:[]};
+async function loadPlayerStats() {
+  try {
+    var resp = await fetch('players.json?v=' + Date.now(), {cache:'no-store'});
+    if (!resp.ok) return;
+    var data = await resp.json();
+    if (data) playerStats = data;
+  } catch(e) {}
+}
+
+function renderPlayerTab(type) {
+  document.querySelectorAll('#tab-players .btn-sm').forEach(function(b){b.style.background='transparent';b.style.color='var(--text2)';});
+  var btn = document.getElementById(type === 'scorers' ? 'btnScorers' : type === 'assists' ? 'btnAssists' : 'btnCards');
+  if (btn) { btn.style.background = 'var(--accent)'; btn.style.color = '#fff'; }
+  var list = playerStats[type] || [];
+  if (list.length === 0) {
+    document.getElementById('playerTabContent').innerHTML = '<div class="empty-state">暂无数据</div>';
+    return;
+  }
+  var html = '<div style="display:flex;flex-direction:column;gap:4px">';
+  list.forEach(function(p, i) {
+    var rank = i + 1;
+    var medal = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : rank;
+    var stat = type === 'scorers' ? p.goals + '球' : type === 'assists' ? p.assists + '助' : '🟨' + (p.yellow||0) + ' 🟥' + (p.red||0);
+    html += '<div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--surface2);border-radius:8px">';
+    html += '<span style="width:28px;text-align:center;font-weight:700;font-size:.9rem">' + medal + '</span>';
+    var cn = PLAYER_CN[p.name] || p.name;
+    html += '<span style="flex:1;font-weight:600">' + cn + '</span>';
+    if (cn !== p.name) html += '<span style="font-size:.6rem;color:var(--text3)">(' + p.name + ')</span>';
+    html += '<span style="font-size:.75rem;color:var(--text2)">' + (p.team || '') + '</span>';
+    html += '<span style="font-weight:700;color:var(--gold)">' + stat + '</span>';
+    html += '</div>';
+  });
+  html += '</div>';
+  document.getElementById('playerTabContent').innerHTML = html;
+}
+
+async function loadInjuriesJSON() {
+  try {
+    var resp = await fetch('injuries.json?v=' + Date.now(), { cache: 'no-store' });
+    if (!resp.ok) return;
+    var data = await resp.json();
+    if (data && Object.keys(data).length > 0) {
+      liveInjuries = data;
+      // Apply to TEAMS data
+      Object.keys(data).forEach(function(tid) {
+        var team = TEAMS.find(function(t){return t.id === tid});
+        if (!team || data[tid].length === 0) return;
+        var injPlayers = data[tid].map(function(i){return i.player + '(' + (i.reason || i.type || '伤病') + ')';});
+        team.inj = '🔴 ' + injPlayers.join(',');
+      });
+    }
+  } catch(e) {}
+}
+
+async function loadMatchDetailsJSON() {
+  try {
+    var resp = await fetch('match-details.json?v=' + Date.now(), { cache: 'no-store' });
+    if (!resp.ok) return;
+    var data = await resp.json();
+    if (data && Object.keys(data).length > 0) { matchDetails = data; }
+  } catch(e) { console.warn('match-details.json failed:', e.message); }
+}
+
+async function loadOddsJSON() {
+  try {
+    var resp = await fetch('odds.json?_t=' + Date.now(), { cache: 'no-cache' });
+    if (!resp.ok) return;
+    var data = await resp.json();
+    if (data && Object.keys(data).length > 0) {
+      liveOdds = data;
+      // Build fixture ID → match ID map from matchDetails
+      var fixToMid = {};
+      Object.keys(matchDetails).forEach(function(mid) {
+        var d = matchDetails[mid];
+        if (d && d.fixtureId) fixToMid[d.fixtureId] = mid;
+      });
+      // Merge API odds into MATCH_ODDS (resolve fixture ID → match ID)
+      var merged = 0;
+      Object.keys(data).forEach(function(k) {
+        if (!data[k] || !data[k].h) return;
+        var mid = fixToMid[k] || k;
+        var prev = MATCH_ODDS[mid];
+        // Preserve history from previous fetches
+        var hist = data[k].history || [];
+        if (prev && prev.history) hist = prev.history.concat(hist).slice(-20);
+        MATCH_ODDS[mid] = { h: data[k].h, d: data[k].d, a: data[k].a, history: hist, updatedAt: data[k].updatedAt };
+        merged++;
+      });
+      if (merged > 0) console.log('Odds merged: ' + merged + ' matches');
+    }
+  } catch(e) {}
+}
+
+async function loadInfoJSON() {
+  try {
+    var resp = await fetch('match-info.json?_t=' + Date.now(), { cache: 'no-cache' });
+    if (!resp.ok) return;
+    var data = await resp.json();
+    if (data && Object.keys(data).length > 0) { liveInfo = data; }
+  } catch(e) {}
+}
+
+function getMarketConsensus(mid, hwp, dp, awp) {
+  var o = liveOdds[mid];
+  if (!o || !o.had) return null;
+  var h = o.had;
+  var impH = 1/h.homeWinOdds, impD = 1/h.drawOdds, impA = 1/h.awayWinOdds;
+  var t = impH + impD + impA;
+  var mh = impH/t, md = impD/t, ma = impA/t;
+  var af = hwp > awp ? 'home' : awp > hwp ? 'away' : 'draw';
+  var mf = mh > ma ? 'home' : ma > mh ? 'away' : 'draw';
+  return {
+    agree: af === mf,
+    label: af === mf ? 'AI与机构一致 ✅' : 'AI与机构分歧 ⚠️',
+    mktHome: (mh*100).toFixed(0), mktDraw: (md*100).toFixed(0), mktAway: (ma*100).toFixed(0),
+    oddsH: h.homeWinOdds, oddsD: h.drawOdds, oddsA: h.awayWinOdds
+  };
+}
+
+// Start loading immediately
+initResults();
+loadMatchDetailsJSON().then(function() { loadOddsJSON(); });
+loadInfoJSON();
+loadInjuriesJSON();
+loadStandingsJSON();
+loadPlayerStats();
+loadWeather().then(function() {
+  // Refresh weather every 3 hours
+  setInterval(function() { loadWeather(); }, 10800000);
+});
+
+// Keep old API for admin panel compatibility
+function saveActualResult(matchId, homeScore, awayScore, notes) {
+  actualResults[matchId] = {
+    homeScore: parseInt(homeScore), awayScore: parseInt(awayScore),
+    notes: notes || '', recordedAt: new Date().toISOString()
+  };
+  persistResults();
+}
+
+function deleteActualResult(matchId) {
+  delete actualResults[matchId];
+  persistResults();
+}
+
+/** Compare AI prediction with actual result for a single match */
+function compareMatch(matchId) {
+  const m = MATCH_SCHEDULE.find(x => x.id === matchId);
+  if (!m) return null;
+  const ht = TEAMS.find(t => t.id === m.home), at = TEAMS.find(t => t.id === m.away);
+  if (!ht || !at) return null;
+  const pred = predictMatch(ht, at);
+  const actual = actualResults[matchId];
+  if (!actual) return null;
+
+  const predHome = pred.predScore[0], predAway = pred.predScore[1];
+  const actHome = actual.homeScore, actAway = actual.awayScore;
+
+  // Accuracy checks
+  const correctOutcome = (predHome > predAway && actHome > actAway) ||
+                         (predHome === predAway && actHome === actAway) ||
+                         (predHome < predAway && actHome < actAway);
+  const correctExact = (pred.topScores || []).some(function(s) { return s.home === actHome && s.away === actAway; });
+  const goalDiffError = Math.abs((actHome - actAway) - (predHome - predAway));
+  const totalGoalError = Math.abs(actHome - predHome) + Math.abs(actAway - predAway);
+
+  // Predicted probabilities
+  const predOutcomeProb = actHome > actAway ? pred.homeWinProb : (actHome === actAway ? pred.drawProb : pred.awayWinProb);
+
+  // Upset detection
+  const hStr = getStrength(ht), aStr = getStrength(at);
+  var strGapReview = Math.abs(hStr - aStr);
+  var upsetHappened = strGapReview > 15 && ((hStr > aStr && actHome <= actAway) || (hStr < aStr && actHome >= actAway));
+  const strongerTeam = hStr > aStr ? ht.cn : at.cn;
+  const weakerTeam = hStr > aStr ? at.cn : ht.cn;
+
+  return {
+    matchId, date: m.date, time: m.time, grp: m.grp,
+    homeTeam: ht, awayTeam: at,
+    predScore: pred.predScore, topScores: pred.topScores, actScore: [actHome, actAway],
+    correctOutcome, correctExact, goalDiffError, totalGoalError,
+    predOutcomeProb, predHomeProb: pred.homeWinProb, predDrawProb: pred.drawProb, predAwayProb: pred.awayWinProb,
+    strGap: Math.abs(hStr - aStr),
+    upsetAlert: pred.upsetAlert, upsetProb: pred.upsetProb, upsetTeam: pred.upsetTeam,
+    upsetHappened, strongerTeam, weakerTeam,
+    notes: actual.notes
+  };
+}
+
+/** Get all comparisons for matches with actual results */
+function getAllComparisons() {
+  return Object.keys(actualResults).map(mid => compareMatch(mid)).filter(Boolean)
+    .sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time));
+}
+
+/** Compute aggregate accuracy stats */
+function getAccuracyStats() {
+  const comps = getAllComparisons();
+  if (comps.length === 0) return null;
+  const total = comps.length;
+  const correctOutcomes = comps.filter(c => c.correctOutcome).length;
+  const correctExact = comps.filter(c => c.correctExact).length;
+  const avgGoalDiffError = comps.reduce((s, c) => s + c.goalDiffError, 0) / total;
+  const avgTotalGoalError = comps.reduce((s, c) => s + c.totalGoalError, 0) / total;
+  const avgConfOnCorrect = comps.filter(c => c.correctOutcome).reduce((s, c) => s + c.predOutcomeProb, 0) / Math.max(1, correctOutcomes);
+  const avgConfOnWrong = comps.filter(c => !c.correctOutcome).reduce((s, c) => s + c.predOutcomeProb, 0) / Math.max(1, total - correctOutcomes);
+  // Brier score (lower is better, measures probability accuracy)
+  const brierScore = comps.reduce((s, c) => {
+    const actH = c.actScore[0] > c.actScore[1] ? 1 : 0;
+    const actD = c.actScore[0] === c.actScore[1] ? 1 : 0;
+    const actA = c.actScore[0] < c.actScore[1] ? 1 : 0;
+    return s + ((c.predHomeProb - actH)**2 + (c.predDrawProb - actD)**2 + (c.predAwayProb - actA)**2);
+  }, 0) / total;
+  // Trend over time
+  const byDate = {};
+  comps.forEach(c => {
+    if (!byDate[c.date]) byDate[c.date] = { total: 0, correct: 0 };
+    byDate[c.date].total++;
+    if (c.correctOutcome) byDate[c.date].correct++;
+  });
+
+  // Upset accuracy: only matches with strength gap > 15
+  var upsetComps = comps.filter(function(c) { return c.strGap > 15; });
+  var upsetTotal = upsetComps.length;
+  var upsetCorrect = upsetComps.filter(function(c) {
+    return (c.upsetAlert && c.upsetHappened) || (!c.upsetAlert && !c.upsetHappened);
+  }).length;
+  var upsetFalsePos = upsetComps.filter(function(c) { return c.upsetAlert && !c.upsetHappened; }).length;
+  var upsetFalseNeg = upsetComps.filter(function(c) { return !c.upsetAlert && c.upsetHappened; }).length;
+
+  return {
+    total, correctOutcomes, correctExact, outcomeAccuracy: (correctOutcomes/total*100),
+    exactAccuracy: (correctExact/total*100), avgGoalDiffError, avgTotalGoalError,
+    avgConfOnCorrect, avgConfOnWrong, brierScore, byDate, comps,
+    upsetTotal, upsetCorrect, upsetFalsePos, upsetFalseNeg
+  };
+}
+
+/** Analyze biases in AI predictions */
+function analyzeBias() {
+  const comps = getAllComparisons();
+  if (comps.length < 5) return null;
+
+  const biases = [];
+  // Check if AI over/under predicts home wins
+  const homeWinPred = comps.reduce((s,c) => s + c.predHomeProb, 0) / comps.length;
+  const homeWinAct = comps.filter(c => c.actScore[0] > c.actScore[1]).length / comps.length;
+  if (Math.abs(homeWinPred - homeWinAct) > 0.08) {
+    biases.push({
+      type: homeWinPred > homeWinAct ? '高估主队' : '低估主队',
+      detail: `AI预测主胜概率均${(homeWinPred*100).toFixed(1)}%，实际主胜率${(homeWinAct*100).toFixed(1)}%`,
+      adjustment: homeWinPred > homeWinAct ? '建议降低主场优势系数' : '建议提高主场优势系数'
+    });
+  }
+  // Check draw prediction
+  const drawPred = comps.reduce((s,c) => s + c.predDrawProb, 0) / comps.length;
+  const drawAct = comps.filter(c => c.actScore[0] === c.actScore[1]).length / comps.length;
+  if (Math.abs(drawPred - drawAct) > 0.06) {
+    biases.push({
+      type: drawPred > drawAct ? '高估平局概率' : '低估平局概率',
+      detail: `AI预测平局概率均${(drawPred*100).toFixed(1)}%，实际平局率${(drawAct*100).toFixed(1)}%`,
+      adjustment: drawPred > drawAct ? '降低泊松模型中的平局倾向' : '提高平局概率'
+    });
+  }
+  // Check total goals
+  const avgPredGoals = comps.reduce((s,c) => s + c.predScore[0] + c.predScore[1], 0) / comps.length;
+  const avgActGoals = comps.reduce((s,c) => s + c.actScore[0] + c.actScore[1], 0) / comps.length;
+  if (Math.abs(avgPredGoals - avgActGoals) > 0.5) {
+    biases.push({
+      type: avgPredGoals > avgActGoals ? '高估总进球数' : '低估总进球数',
+      detail: `AI预测场均${avgPredGoals.toFixed(1)}球，实际场均${avgActGoals.toFixed(1)}球`,
+      adjustment: avgPredGoals > avgActGoals ? '降低lambda系数，预期进球下调5-8%' : '提高lambda系数，预期进球上调5-8%'
+    });
+  }
+  // Check big team bias
+  const strongTeams = comps.filter(c => {
+    const hStr = getStrength(c.homeTeam), aStr = getStrength(c.awayTeam);
+    return Math.abs(hStr - aStr) > 20;
+  });
+  if (strongTeams.length >= 3) {
+    const strongWinPred = strongTeams.reduce((s,c) => {
+      const hStronger = getStrength(c.homeTeam) > getStrength(c.awayTeam);
+      return s + (hStronger ? c.predHomeProb : c.predAwayProb);
+    }, 0) / strongTeams.length;
+    const strongWinAct = strongTeams.filter(c => {
+      const hStronger = getStrength(c.homeTeam) > getStrength(c.awayTeam);
+      return hStronger ? (c.actScore[0] > c.actScore[1]) : (c.actScore[0] < c.actScore[1]);
+    }).length / strongTeams.length;
+    if (Math.abs(strongWinPred - strongWinAct) > 0.1) {
+      biases.push({
+        type: strongWinPred > strongWinAct ? '高估强队胜率' : '低估强队胜率',
+        detail: `实力悬殊比赛中，AI预测强队胜率${(strongWinPred*100).toFixed(1)}%，实际${(strongWinAct*100).toFixed(1)}%`,
+        adjustment: strongWinPred > strongWinAct ? '调低实力差距影响系数10-15%' : '调高强队优势系数'
+      });
+    }
+  }
+  return biases.length > 0 ? biases : null;
+}
+
+// ---------- REVIEW UI ----------
+let accuracyChart = null;
+
+function renderReview() {
+  const stats = getAccuracyStats();
+  if (!stats) {
+    document.getElementById('reviewStats').innerHTML = '<div class="empty-state"><p>暂无数据</p></div>';
+    document.getElementById('reviewMatchList').innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>暂无已录入的实际结果</p></div>';
+    document.getElementById('biasAnalysis').innerHTML = '<div class="empty-state" style="padding:30px"><p style="color:var(--text2)">录入至少5场比赛结果后，系统将自动分析AI预测的系统性偏差</p></div>';
+    if (accuracyChart) { accuracyChart.destroy(); accuracyChart = null; }
+    return;
+  }
+
+  // Stats
+  document.getElementById('reviewStats').innerHTML = `
+    <div class="stat-box"><div class="num">${stats.total}</div><div class="lbl">已录入比赛</div></div>
+    <div class="stat-box"><div class="num" style="color:${stats.outcomeAccuracy>=60?'var(--green)':'var(--red)'}">${stats.outcomeAccuracy.toFixed(1)}%</div><div class="lbl">胜负预测准确率</div></div>
+    <div class="stat-box"><div class="num" style="color:var(--gold)">${stats.exactAccuracy.toFixed(1)}%</div><div class="lbl">比分完全正确率</div></div>
+    <div class="stat-box"><div class="num">${stats.avgGoalDiffError.toFixed(2)}</div><div class="lbl">平均净胜球误差</div></div>
+    <div class="stat-box"><div class="num">${stats.avgTotalGoalError.toFixed(2)}</div><div class="lbl">平均总进球误差</div></div>
+    <div class="stat-box"><div class="num">${stats.brierScore.toFixed(3)}</div><div class="lbl">Brier评分</div><div style="font-size:.55rem;color:var(--text3);margin-top:2px">概率校准度，越低越准</div></div>
+    <div class="stat-box"><div class="num" style="color:var(--accent)">${(stats.avgConfOnCorrect*100).toFixed(0)}%</div><div class="lbl">正确预测置信度</div><div style="font-size:.55rem;color:var(--text3);margin-top:2px">猜对时平均概率，越高越自信</div></div>
+    <div class="stat-box"><div class="num" style="color:var(--red)">${(stats.avgConfOnWrong*100).toFixed(0)}%</div><div class="lbl">错误预测置信度</div><div style="font-size:.55rem;color:var(--text3);margin-top:2px">猜错时平均概率，越低越清醒</div></div>
+    ${stats.upsetTotal>0 ? `<div class="stat-box"><div class="num" style="color:var(--orange)">${(stats.upsetCorrect/stats.upsetTotal*100).toFixed(0)}%</div><div class="lbl">冷门预警准确率</div><div style="font-size:.55rem;color:var(--text3);margin-top:2px">预警冷门是否应验 | 误报${stats.upsetFalsePos} 漏报${stats.upsetFalseNeg}</div></div>` : ''}
+  `;
+
+  // Accuracy trend chart
+  const sorted = Object.entries(stats.byDate).sort();
+  const ctx = document.getElementById('accuracyChart').getContext('2d');
+  if (accuracyChart) accuracyChart.destroy();
+  accuracyChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: sorted.map(([d]) => d.slice(5)),
+      datasets: [
+        { label: '日准确率', data: sorted.map(([,v]) => (v.correct/v.total*100).toFixed(1)), borderColor: '#4da6ff', backgroundColor: '#4da6ff30', tension: 0.3, fill: true },
+        { label: '累计准确率', data: sorted.map((_,i) => { const arr=sorted.slice(0,i+1); const t=arr.reduce((s,[,v])=>s+v.total,0); const c=arr.reduce((s,[,v])=>s+v.correct,0); return t>0?(c/t*100).toFixed(1):0; }), borderColor: '#f0b90b', tension: 0.3, borderDash: [5,5] }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { labels: { color: '#8899b4' } } },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: '#8899b4' } },
+        y: { min: 0, max: 100, grid: { color: '#1a2744' }, ticks: { color: '#8899b4', callback: v => v + '%' } }
+      }
+    }
+  });
+
+  // Match-by-match comparison list
+  renderReviewMatchList(stats.comps);
+
+  // Bias analysis
+  const biases = analyzeBias();
+  if (biases) {
+    document.getElementById('biasAnalysis').innerHTML = `
+      <div style="font-size:.82rem;color:var(--orange);margin-bottom:8px">基于${stats.total}场比赛的AI预测偏差分析</div>
+      ${biases.map(b => `
+        <div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:8px;border-left:3px solid var(--orange)">
+          <div style="font-weight:700;margin-bottom:4px">🔸 ${b.type}</div>
+          <div style="font-size:.8rem;color:var(--text2)">${b.detail}</div>
+          <div style="font-size:.78rem;color:var(--green);margin-top:4px">${b.adjustment}</div>
+        </div>
+      `).join('')}
+    `;
+  } else {
+    document.getElementById('biasAnalysis').innerHTML = '<div class="empty-state" style="padding:30px"><p style="color:var(--text2)">录入至少5场比赛结果后，系统将自动分析AI预测的系统性偏差</p></div>';
+  }
+}
+
+function renderReviewMatchList(comps) {
+  if (!comps || comps.length === 0) {
+    document.getElementById('reviewMatchList').innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>暂无已录入的实际结果</p></div>';
+    return;
+  }
+  document.getElementById('reviewMatchList').innerHTML = comps.reverse().map(c => {
+    const outcomeIcon = c.correctOutcome ? '✅' : '❌';
+    const exactIcon = c.correctExact ? '🎯' : '';
+    const diffNote = c.actScore[0] > c.actScore[1]
+      ? `${c.homeTeam.cn}胜`
+      : c.actScore[0] === c.actScore[1] ? '平局' : `${c.awayTeam.cn}胜`;
+    return `
+    <div style="padding:12px;background:var(--surface2);border-radius:8px;margin-bottom:8px;border-left:3px solid ${c.correctOutcome?'var(--green)':'var(--red)'}">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <span style="font-size:.78rem;color:var(--text3)">${c.date} ${c.time} | ${c.grp}组</span>
+        <span style="font-size:.78rem">${outcomeIcon}${exactIcon} ${c.correctOutcome?'预测正确':'预测错误'}</span>
+        <button class="btn btn-outline btn-sm" onclick="deleteActualResult('${c.matchId}');renderReview();showToast('已删除')" style="font-size:.65rem;padding:2px 8px;display:none">✕</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;text-align:center">
+        <div style="flex:1"><span style="font-size:.85rem">${c.homeTeam.flag} ${c.homeTeam.cn}</span></div>
+        <div>
+          <div style="font-size:.7rem;color:var(--text3)">AI预测</div>
+          <div style="font-weight:700;color:var(--accent)">${c.topScores ? c.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : c.predScore[0]+':'+c.predScore[1]}</div>
+        </div>
+        <div style="font-size:1.5rem;font-weight:800;color:var(--text3)">→</div>
+        <div>
+          <div style="font-size:.7rem;color:var(--text3)">实际</div>
+          <div style="font-weight:700;color:${c.correctOutcome?'var(--green)':'var(--red)'}">${c.actScore[0]}:${c.actScore[1]}</div>
+        </div>
+        <div style="font-size:1.5rem;font-weight:800;color:var(--text3)">→</div>
+        <div style="flex:1"><span style="font-size:.85rem">${c.awayTeam.flag} ${c.awayTeam.cn}</span></div>
+      </div>
+      <div style="font-size:.75rem;color:var(--text2);margin-top:6px;display:flex;gap:12px;flex-wrap:wrap">
+        <span>预测概率：胜${(c.predHomeProb*100).toFixed(0)}% 平${(c.predDrawProb*100).toFixed(0)}% 负${(c.predAwayProb*100).toFixed(0)}%</span>
+        <span>→ 实际：${diffNote}</span>
+        <span>进球误差：${c.totalGoalError.toFixed(1)}球</span>
+        ${c.strGap > 15 ? `<span style="color:${(c.upsetAlert && c.upsetHappened) || (!c.upsetAlert && !c.upsetHappened) ? 'var(--green)' : 'var(--red)'}">冷门：${c.upsetAlert ? '预警'+(c.upsetProb*100).toFixed(0)+'%' : '未预警'} → ${c.upsetHappened ? (c.actScore[0]===c.actScore[1] ? c.weakerTeam+'逼平' : c.weakerTeam+'爆冷胜') : '正常'}</span>` : ''}
+      </div>
+      ${c.notes ? `<div style="font-size:.75rem;color:var(--orange);margin-top:4px">${c.notes}</div>` : ''}
+    </div>`;
+  }).join('');
+}
+
+function showResultInput(matchId) {
+  // Build match selector or pre-select
+  const matchOptions = MATCH_SCHEDULE.filter(m => m.stage === 'group').map(m => {
+    const ht = TEAMS.find(t => t.id === m.home), at = TEAMS.find(t => t.id === m.away);
+    const htn = ht ? ht.cn : m.home, atn = at ? at.cn : m.away;
+    const hasResult = !!actualResults[m.id];
+    return `<option value="${m.id}" ${matchId===m.id?'selected':''}${hasResult?' disabled':''}>${m.date} ${m.grp}组 ${htn} vs ${atn} ${hasResult?'(已录入)':''}</option>`;
+  }).join('');
+
+  const existing = matchId && actualResults[matchId];
+  document.getElementById('teamModalContent').innerHTML = `
+    <button class="mclose" onclick="closeModal()">✕</button>
+    <h3>录入实际比赛结果</h3>
+    <div style="margin:16px 0">
+      <label style="font-size:.82rem;color:var(--text2)">选择比赛：</label>
+      <select id="resultMatch" style="width:100%;padding:8px;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;font-size:.85rem;margin-top:4px">${matchOptions}</select>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;margin:16px 0;justify-content:center">
+      <input type="number" id="resultHomeScore" min="0" max="20" value="${existing?existing.homeScore:''}" placeholder="主队进球" style="width:80px;padding:10px;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;font-size:1.2rem;text-align:center">
+      <span style="font-size:1.5rem;font-weight:800;color:var(--text3)">:</span>
+      <input type="number" id="resultAwayScore" min="0" max="20" value="${existing?existing.awayScore:''}" placeholder="客队进球" style="width:80px;padding:10px;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;font-size:1.2rem;text-align:center">
+    </div>
+    <div style="margin:16px 0">
+      <label style="font-size:.82rem;color:var(--text2)">比赛备注/分析（可选）：</label>
+      <textarea id="resultNotes" rows="3" style="width:100%;padding:8px;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:6px;font-size:.82rem;resize:vertical;margin-top:4px" placeholder="如：关键转折、红牌、伤病影响等...">${existing?existing.notes:''}</textarea>
+    </div>
+    <div style="display:flex;gap:10px;justify-content:flex-end">
+      <button class="btn btn-outline btn-sm" onclick="closeModal()">取消</button>
+      <button class="btn btn-primary" onclick="submitResult()">保存结果</button>
+    </div>
+  `;
+  document.getElementById('teamModal').style.display = 'flex';
+}
+
+function submitResult() {
+  const mid = document.getElementById('resultMatch').value;
+  const hs = parseInt(document.getElementById('resultHomeScore').value);
+  const as = parseInt(document.getElementById('resultAwayScore').value);
+  const notes = document.getElementById('resultNotes').value;
+  if (isNaN(hs) || isNaN(as)) { showToast('请输入有效比分'); return; }
+  saveActualResult(mid, hs, as, notes);
+  closeModal();
+  renderReview();
+  // Also refresh today tab if needed
+  const c = compareMatch(mid);
+  var topStr = c && c.topScores ? c.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : (c ? c.predScore[0]+':'+c.predScore[1] : '');
+  const msg = c ? (c.correctOutcome ? 'AI预测正确！' : 'AI预测错误（预测' + topStr + '）') : '';
+  showToast('结果已保存！' + msg);
+}
+
+// ========== 人机对决引擎 ==========
+var currentUser=localStorage.getItem("wc2026_user")||"";function loginUser(){var u=prompt("Username:",currentUser);if(!u||!u.trim())return;currentUser=u.trim();localStorage.setItem("wc2026_user",currentUser);DUEL_KEY="wc2026_duel_"+currentUser;renderDuel();showToast("OK: "+currentUser)}function logoutUser(){currentUser="";localStorage.removeItem("wc2026_user");DUEL_KEY="wc2026_duel";renderDuel()}
+var DUEL_KEY=currentUser?"wc2026_duel_"+currentUser:"wc2026_duel";
+function getDuelState() {
+  const d = JSON.parse(localStorage.getItem(DUEL_KEY) || 'null');
+  return d || {aiBalance:1000,humanBalance:1000,aiStrategies:{},humanStrategies:{},settled:{}};
+}
+function saveDuelState(s) { localStorage.setItem(DUEL_KEY, JSON.stringify(s)); }
+function resetDuel() { localStorage.removeItem(DUEL_KEY); renderDuel(); showToast('对决已重置'); }
+
+/** Get all strategies for a given date+player */
+function getStrategies(player, dateStr) {
+  const duel = getDuelState();
+  const key = player === 'ai' ? 'aiStrategies' : 'humanStrategies';
+  return duel[key] && duel[key][dateStr] ? duel[key][dateStr] : [];
+}
+function addStrategy(player, dateStr, strategy) {
+  var duel = getDuelState();
+  var key = player === 'ai' ? 'aiStrategies' : 'humanStrategies';
+  if (!duel[key]) duel[key] = {};
+  if (!duel[key][dateStr]) duel[key][dateStr] = [];
+  strategy.id = Date.now();
+  strategy.lockedAt = new Date().toISOString();
+  duel[key][dateStr].push(strategy);
+  // 扣除竞猜金
+  if (player === 'ai') duel.aiBalance -= strategy.stake;
+  else duel.humanBalance -= strategy.stake;
+  saveDuelState(duel);
+}
+
+let tempHumanPicks = [], humanStakePer = 100, humanMode = 'single';
+
+/** AI: build single strategies + a parlay strategy */
+
+function aiAllPositiveEV(matches) {
+  var bets = [];
+  matches.forEach(function(m){
+    var jc = MATCH_ODDS[m.id]; if (!jc) return;
+    var ht = TEAMS.find(function(t){return t.id===m.home}), at = TEAMS.find(function(t){return t.id===m.away});
+    if (!ht||!at) return;
+    var pred = predictMatch(ht,at);
+    // SPF
+    [{t:'胜',p:pred.homeWinProb,o:jc.h,l:ht.cn+'胜'},{t:'平',p:pred.drawProb,o:jc.d,l:'平局'},{t:'负',p:pred.awayWinProb,o:jc.a,l:at.cn+'胜'}].forEach(function(d){
+      var ev=(d.p*(d.o*JC_RETURN_RATE-1)*100); if(ev>0) bets.push({type:'胜平负',pick:d.l,odds:d.o,prob:d.p,ev:ev,match:ht.cn+'vs'+at.cn,mid:m.id,ht:ht,at:at});
+    });
+    // Handicap
+    if(jc.rq&&jc.rqO){
+      [{t:'让胜',p:pred.homeWinProb,o:jc.rqO[0]},{t:'让平',p:pred.drawProb,o:jc.rqO[1]},{t:'让负',p:pred.awayWinProb,o:jc.rqO[2]}].forEach(function(d){
+        var ev=(d.p*(d.o*JC_RETURN_RATE-1)*100); if(ev>0) bets.push({type:'让球',pick:d.t,odds:d.o,prob:d.p,ev:ev,match:ht.cn+'vs'+at.cn,mid:m.id,ht:ht,at:at});
+      });
+    }
+    // Total goals
+    var tg=calcTotalGoals(pred.expH,pred.expA); var go=[10,4.2,3.2,3.5,5.5,9,18,35];
+    tg.dist.forEach(function(p,i){ var ev=(p*(go[i]*JC_RETURN_RATE-1)*100); if(ev>0&&p>0.04) bets.push({type:'总进球',pick:(i===7?'7+':i)+'球',odds:go[i],prob:p,ev:ev,match:ht.cn+'vs'+at.cn,mid:m.id,ht:ht,at:at}); });
+    // Correct score top 3
+    topScores(pred.expH,pred.expA,3).forEach(function(s){ var so=Math.max(4.5,1/s.prob*0.8); var ev=(s.prob*(so*JC_RETURN_RATE-1)*100); if(ev>0&&s.prob>0.04) bets.push({type:'比分',pick:s.h+':'+s.a,odds:so,prob:s.prob,ev:ev,match:ht.cn+'vs'+at.cn,mid:m.id,ht:ht,at:at}); });
+    // HT/FT top 2
+    var hf=calcHtFt(pred.expH,pred.expA);
+    [{l:'胜-胜',p:hf.htH*pred.homeWinProb},{l:'平-胜',p:hf.htD*pred.homeWinProb},{l:'负-负',p:hf.htA*pred.awayWinProb},{l:'平-平',p:hf.htD*pred.drawProb}].forEach(function(r){
+      var ho=Math.max(2.5,1/(r.p+0.01)*0.85); var ev=(r.p*(ho*JC_RETURN_RATE-1)*100); if(ev>0&&r.p>0.05) bets.push({type:'半全场',pick:r.l,odds:ho,prob:r.p,ev:ev,match:ht.cn+'vs'+at.cn,mid:m.id,ht:ht,at:at});
+    });
+  });
+  bets.sort(function(a,b){return b.ev-a.ev});
+  return bets.slice(0, 15);
+}
+
+function aiBestPick(matches) {
+  var duel = getDuelState();
+  var bets = aiAllPositiveEV(matches);
+  if (bets.length === 0) return { singles: [], parlays: [] };
+
+  // === 风险管理过滤器 ===
+  // 1. 过滤高风险竞猜：指数>5或概率<15%或EV<3%
+  bets = bets.filter(function(b){ return b.odds <= 5.0 && b.prob >= 0.15 && b.ev >= 1.0; });
+  // 2. 按夏普比率排序：EV / sqrt(odds-1) ≈ 风险调整后收益
+  bets.sort(function(a,b){
+    var scoreA = a.ev / Math.sqrt(Math.max(0.1, a.odds - 1));
+    var scoreB = b.ev / Math.sqrt(Math.max(0.1, b.odds - 1));
+    return scoreB - scoreA;
+  });
+
+  var kel = [];
+  var totalStake = 0;
+  var maxDailyLoss = duel.aiBalance * 0.12; // 单日最大亏损=余额12%
+  var perMatchExposure = {}; // 每场比赛最大敞口
+
+  bets.forEach(function(b){
+    if (totalStake >= duel.aiBalance * 0.60) return; // 最多使用60%资金
+    // 超保守凯利：1/16 Kelly
+    var edge = Math.max(0, b.ev / 100);
+    var kellyFrac = 1.0 / 16.0; // 极度保守
+    var k = duel.aiBalance * edge / Math.max(0.01, b.odds - 1) * kellyFrac;
+    // 限制：单注不超过余额5%，不超过¥200
+    k = Math.max(10, Math.min(k, duel.aiBalance * 0.05, 200));
+    k = Math.round(k / 10) * 10;
+
+    // 单场比赛最大敞口：余额10%
+    var matchKey = b.match;
+    var currentExposure = (perMatchExposure[matchKey] || 0);
+    if (currentExposure + k > duel.aiBalance * 0.10) {
+      k = Math.max(10, duel.aiBalance * 0.10 - currentExposure);
+      k = Math.round(k / 10) * 10;
+    }
+
+    // 总投入不超过资金60%
+    if (totalStake + k > duel.aiBalance * 0.60) {
+      k = Math.max(0, duel.aiBalance * 0.60 - totalStake);
+      k = Math.round(k / 10) * 10;
+    }
+
+    // 单日最大亏损预算：Σ(stake/odds) ≤ maxDailyLoss（简化风险预算）
+    var riskContribution = k / b.odds;
+    var totalRisk = kel.reduce(function(s,x){return s + x.stake/x.odds;}, 0);
+    if (totalRisk + riskContribution > maxDailyLoss * 1.5) {
+      k = Math.max(0, (maxDailyLoss * 1.5 - totalRisk) * b.odds);
+      k = Math.round(k / 10) * 10;
+    }
+
+    if (k >= 10) {
+      kel.push({type:b.type, pick:b.pick, odds:b.odds, stake:k, ev:b.ev, match:b.match, mid:b.mid, prob:b.prob});
+      totalStake += k;
+      perMatchExposure[matchKey] = (perMatchExposure[matchKey]||0) + k;
+    }
+  });
+
+  // === 串关：仅2串1，严格风控 ===
+  var parlays = [];
+  if (kel.length >= 2) {
+    var safePicks = kel.filter(function(b){ return b.prob >= 0.30 && b.odds <= 2.5; });
+    if (safePicks.length >= 2) {
+      var best2 = safePicks.slice(0, 2);
+      var parOdds = best2.reduce(function(s,b){return s*b.odds;}, 1);
+      var parProb = best2.reduce(function(s,b){return s*(b.prob||0.5);}, 1);
+      var parEV = (parProb * (parOdds * JC_RETURN_RATE - 1) * 100);
+      // 串关门槛：概率>12%，EV>5%
+      if (parProb >= 0.12 && parEV >= 5.0) {
+        var parStake = Math.round(duel.aiBalance * 0.03 / 10) * 10; // 赌3%余额
+        parStake = Math.max(10, Math.min(parStake, 150));
+        if (totalStake + parStake <= duel.aiBalance * 0.65) {
+          parlays.push({
+            type: '2串1',
+            legs: best2.map(function(b){return {type:b.type,pick:b.pick,odds:b.odds,match:b.match,mid:b.mid}}),
+            odds: parOdds,
+            stake: parStake,
+            ev: parEV,
+            prob: parProb
+          });
+        }
+      }
+    }
+  }
+  return { singles: kel, parlays: parlays };
+}
+
+function lockAIPick() {
+  const todayStr = getTournamentDateStr();
+  const allUpcoming = MATCH_SCHEDULE.filter(function(m){return m.stage==='group' && isMatchBettable(m.id) && m.date===getNextDayDate();});
+  const duel = getDuelState();
+  if (duel.aiBalance < 10) { showToast('AI余额不足'); return; }
+  if (allUpcoming.length === 0) { showToast('没有可竞猜的比赛'); return; }
+  const best = aiBestPick(allUpcoming);
+  if (best.singles.length === 0 && best.parlays.length === 0) { showToast('AI无正期望值策略'); return; }
+  let totalStake = 0;
+  // Lock each single bet as its own strategy
+  best.singles.forEach(b => {
+    if (duel.aiBalance - totalStake >= b.stake) {
+      addStrategy('ai', todayStr, {mode:'single', stake:b.stake, picks:[{mid:b.mid,type:b.type,pick:b.pick,odds:b.odds}], match:b.match});
+      totalStake += b.stake;
+    }
+  });
+  // Lock parlay as one strategy
+  best.parlays.forEach(p => {
+    if (duel.aiBalance - totalStake >= p.stake) {
+      addStrategy('ai', todayStr, {mode:'parlay', stake:p.stake, legs:p.legs, odds:p.odds});
+      totalStake += p.stake;
+    }
+  });
+  saveDuelState(duel);
+  renderDuel();
+  showToast('AI已锁定 ' + best.singles.length + '单关+' + best.parlays.length + '串关 ¥' + totalStake);
+}
+
+// --- Human UI helpers ---
+function optionBtn(selId, mid, o) {
+  var jsPick = o.pick.replace(/'/g, "\\'");
+  var onclickStr = "toggleHumanPick('" + mid + "','" + o.type + "','" + jsPick + "'," + o.odds.toFixed(4) + ",this)";
+  return '<button class="btn btn-outline" style="font-size:.68rem;padding:4px 8px;border-radius:5px;white-space:nowrap" onclick="' + onclickStr + '">' + o.pick + ' @' + o.odds.toFixed(2) + '<br><span style="font-size:.58rem;opacity:.8">' + (o.prob*100).toFixed(0) + '%</span></button>';
+}
+function toggleHumanPick(mid, type, pick, odds, btn) {
+  const key = mid+'|'+type+'|'+pick;
+  const existing = tempHumanPicks.findIndex(function(p){ return p.mid+'|'+p.type+'|'+p.pick === key; });
+  if (existing >= 0) { tempHumanPicks.splice(existing,1); btn.style.background=''; btn.style.color=''; btn.style.borderColor=''; }
+  else {
+    if (humanMode === 'parlay') {
+      const sameMatch = tempHumanPicks.findIndex(function(p){ return p.mid === mid; });
+      if (sameMatch >= 0) { showToast('串关每场只能选一项'); return; }
+    }
+    tempHumanPicks.push({mid:mid, type:type, pick:pick, odds:odds});
+    btn.style.background='var(--green)'; btn.style.color='#fff'; btn.style.borderColor='var(--green)';
+  }
+  updateLockBtn();
+}
+function updateLockBtn() {
+  const duel = getDuelState();
+  const cost = humanMode === 'parlay' ? humanStakePer : tempHumanPicks.length * humanStakePer;
+  const over = cost > duel.humanBalance;
+  const lockBtn = document.getElementById('btnLockHuman');
+  if (!lockBtn) return;
+  const matchIds = new Set(tempHumanPicks.map(function(p){return p.mid}));
+  const validParlay = humanMode === 'parlay' && matchIds.size >= 2;
+  if (over) { lockBtn.textContent = '余额不足(需¥'+cost+' 仅¥'+duel.humanBalance+')'; lockBtn.style.background='var(--red)'; }
+  else if (humanMode==='parlay'&&tempHumanPicks.length>0&&!validParlay) { lockBtn.textContent = '串关需至少2场不同比赛'; lockBtn.style.background='var(--orange)'; }
+  else if (humanMode==='parlay'&&validParlay) { var po=tempHumanPicks.reduce(function(s,p){return s*p.odds},1); lockBtn.textContent='锁定'+tempHumanPicks.length+'串1 ¥'+humanStakePer+' @'+po.toFixed(2)+' [余额¥'+(duel.humanBalance-humanStakePer)+']'; lockBtn.style.background=''; }
+  else if (tempHumanPicks.length>0) { lockBtn.textContent='锁定'+tempHumanPicks.length+'注 ¥'+cost+' [余额¥'+(duel.humanBalance-cost)+']'; lockBtn.style.background=''; }
+  else { lockBtn.textContent='选择方案后锁定'; lockBtn.style.background=''; }
+  lockBtn.disabled = over || (humanMode==='parlay'&&!validParlay) || tempHumanPicks.length===0;
+}
+function lockHumanPick() {
+  if (tempHumanPicks.length===0) { showToast('请至少选择一个竞猜方案'); return; }
+  if (humanMode==='parlay') {
+    var mids = new Set(tempHumanPicks.map(function(p){return p.mid}));
+    if (mids.size < 2) { showToast('串关必须至少2场不同比赛'); return; }
+  }
+  var todayStr = getActiveJcDate();
+  var duel = getDuelState();
+  var totalCost = humanMode==='parlay' ? humanStakePer : tempHumanPicks.length * humanStakePer;
+  if (totalCost > duel.humanBalance) { showToast('余额不足！'); return; }
+  // Auto-lock AI if no strategies yet
+  var existingAI = getStrategies('ai', todayStr);
+  if (existingAI.length === 0) {
+    var allUpcoming2 = MATCH_SCHEDULE.filter(function(m){return m.stage==='group' && isMatchBettable(m.id) && m.date===getNextDayDate();});
+    var best = aiBestPick(allUpcoming2);
+    best.singles.forEach(function(b){ if(duel.aiBalance>=b.stake) addStrategy('ai',todayStr,{mode:'single',stake:b.stake,picks:[{mid:b.mid,type:b.type,pick:b.pick,odds:b.odds}],match:b.match}); });
+    best.parlays.forEach(function(p){ if(duel.aiBalance>=p.stake) addStrategy('ai',todayStr,{mode:'parlay',stake:p.stake,legs:p.legs,odds:p.odds}); });
+  }
+  if (humanMode === 'single') {
+    addStrategy('human', todayStr, {mode:'single', stake:humanStakePer, picks:tempHumanPicks.map(function(p){return{mid:p.mid,type:p.type,pick:p.pick,odds:p.odds}})});
+  } else {
+    var parOdds = tempHumanPicks.reduce(function(s,p){return s*p.odds},1);
+    var legCount = tempHumanPicks.length;
+    addStrategy('human', todayStr, {mode:'parlay', type:legCount+'串1', stake:humanStakePer, legs:tempHumanPicks.map(function(p){var ht=TEAMS.find(function(t){return t.id===MATCH_SCHEDULE.find(function(m){return m.id===p.mid}).home});var at=TEAMS.find(function(t){return t.id===MATCH_SCHEDULE.find(function(m){return m.id===p.mid}).away});return{type:p.type,pick:p.pick,odds:p.odds,match:(ht?ht.cn:'')+'vs'+(at?at.cn:''),mid:p.mid}}), odds:parOdds});
+  }
+  tempHumanPicks = [];
+  document.querySelectorAll('#humanDuelPick button').forEach(function(b){if(b.id!=='btnLockHuman'&&b.id!=='btnSingle'&&b.id!=='btnParlay'){b.style.background='';b.style.color='';b.style.borderColor='';}});
+  renderDuel();
+  showToast('策略已锁定！余额¥'+duel.humanBalance+' | 可继续添加更多策略');
+}
+function clearHumanPick() {
+  tempHumanPicks = [];
+  document.querySelectorAll('#humanDuelPick button').forEach(function(b){if(b.id!=='btnLockHuman'&&b.id!=='btnSingle'&&b.id!=='btnParlay'){b.style.background='';b.style.color='';b.style.borderColor='';}});
+  updateLockBtn();
+}
+
+// --- Settlement ---
+function checkBetWin(mid, type, pick) {
+  var act = actualResults[mid]; if (!act) return null;
+  var m = MATCH_SCHEDULE.find(function(x){return x.id===mid}); if (!m) return null;
+  var ht = TEAMS.find(function(t){return t.id===m.home}), at = TEAMS.find(function(t){return t.id===m.away});
+  if (!ht||!at) return null;
+  if (type==='胜平负') { var r=act.homeScore>act.awayScore?'胜':act.homeScore===act.awayScore?'平':'负'; return (pick===ht.cn+'胜'&&r==='胜')||(pick===at.cn+'胜'&&r==='负')||(pick==='平局'&&r==='平'); }
+  if (type==='总进球') { var tg=act.homeScore+act.awayScore,pg=pick==='7+'?7:parseInt(pick); return pg===7?tg>=7:tg===pg; }
+  if (type==='比分') { var parts=pick.split(':'); return act.homeScore===parseInt(parts[0])&&act.awayScore===parseInt(parts[1]); }
+  if (type==='半全场') { var r=act.homeScore>act.awayScore?'胜':act.homeScore===act.awayScore?'平':'负'; return pick.endsWith(r); }
+  return false;
+}
+function settleStrategy(strategy) {
+  if (strategy.mode === 'single') {
+    var profit = 0;
+    for (var i = 0; i < strategy.picks.length; i++) {
+      var p = strategy.picks[i];
+      var w = checkBetWin(p.mid, p.type, p.pick);
+      if (w === null) return {settled:false, profit:0}; // 有比赛未结束，暂不结算
+      var perStake = Math.floor(strategy.stake / strategy.picks.length);
+      if (w) profit += Math.round(perStake * p.odds - perStake);
+      else profit -= perStake;
+    }
+    return {settled:true, profit:profit};
+  } else {
+    // 串关：等待所有比赛结束
+    var allSettled = true;
+    for (var j = 0; j < strategy.legs.length; j++) {
+      var l = strategy.legs[j];
+      var w = checkBetWin(l.mid, l.type, l.pick);
+      if (w === null) return {settled:false, profit:0}; // 还有比赛未结束
+      if (!w) return {settled:true, profit: -strategy.stake}; // 一输全输，立即结算
+    }
+    return {settled:true, profit: Math.round(strategy.stake * strategy.odds - strategy.stake)};
+  }
+}
+function settleDuel(dateStr) {
+  var duel = getDuelState();
+  if (duel.settled[dateStr]) return;
+  var aiStrats = getStrategies('ai', dateStr);
+  var hStrats = getStrategies('human', dateStr);
+  if (aiStrats.length===0 && hStrats.length===0) return;
+  var aiProfit=0, aiHits=0, humanProfit=0, humanHits=0, allDone=true;
+  aiStrats.forEach(function(s){ var r=settleStrategy(s); if(!r.settled){allDone=false;return;} aiProfit+=r.profit; if(r.profit>0)aiHits++; });
+  hStrats.forEach(function(s){ var r=settleStrategy(s); if(!r.settled){allDone=false;return;} humanProfit+=r.profit; if(r.profit>0)humanHits++; });
+  if (!allDone) return;
+  duel.settled[dateStr] = {aiHits:aiHits,aiStrats:aiStrats.length,aiProfit:aiProfit,humanHits:humanHits,humanStrats:hStrats.length,humanProfit:humanProfit};
+  duel.aiBalance += aiProfit;
+  duel.humanBalance += humanProfit;
+  saveDuelState(duel);
+  // Generate AI reflection
+  generateAIReflection(dateStr, aiStrats, hStrats, aiProfit, humanProfit, aiHits, humanHits);
+  renderDuel();
+  var winner = aiProfit>humanProfit?'AI':humanProfit>aiProfit?'人类':'平局';
+  showToast(dateStr+' 结算: '+winner+'！AI '+(aiProfit>=0?'+':'')+'¥'+aiProfit+' vs 人类 '+(humanProfit>=0?'+':'')+'¥'+humanProfit);
+}
+
+// ========== AI反思引擎 ==========
+function generateAIReflection(dateStr, aiStrats, hStrats, aiProfit, humanProfit, aiHits, humanHits) {
+  var reflections = JSON.parse(localStorage.getItem('wc2026_ai_reflections') || '[]');
+  // Check if already reflected
+  if (reflections.find(function(r){return r.date===dateStr})) return;
+
+  var totalSingles = 0, totalParlays = 0, totalStake = 0;
+  aiStrats.forEach(function(s){
+    totalStake += s.stake;
+    if (s.mode==='single') totalSingles++; else totalParlays++;
+  });
+
+  var hTotalStake = 0;
+  hStrats.forEach(function(s){ hTotalStake += s.stake; });
+
+  // Analyze what went right/wrong
+  var analysis = [];
+  var hitRate = totalSingles > 0 ? (aiHits/totalSingles*100).toFixed(0) : 'N/A';
+
+  if (aiProfit > 0) {
+    analysis.push('本日盈利¥'+aiProfit+'，但需清醒认识到：短期盈利可能是运气，不代表策略长期有效');
+    analysis.push('命中率 '+hitRate+'%，单注风控在安全线内。不可因此放松风控参数');
+  } else if (aiProfit < 0) {
+    analysis.push('本日亏损¥'+Math.abs(aiProfit)+'，这是预期内的波动。竞猜返还率71%，长期必亏的数学规律未变');
+    if (totalSingles > 0 && aiHits === 0) {
+      analysis.push('全错预警：概率模型可能系统性高估，泊松lambda参数需要重新校准');
+    }
+    if (totalParlays > 0) {
+      analysis.push('串关未中属大概率事件——即使风控严格，串关仍有80%+失败率');
+    }
+  } else {
+    analysis.push('本日持平。在竞猜-29%的抽水率下，持平已是不错的结果');
+  }
+
+  // Risk control assessment
+  var riskRatio = totalStake / (totalStake + Math.abs(aiProfit) + 1) * 100;
+  analysis.push('总投入¥'+totalStake+'，占资金'+(totalStake/10).toFixed(0)+'%，风控纪律：坚守60%上限');
+
+  // Comparison with human — humble
+  if (aiProfit > humanProfit) {
+    analysis.push('本期AI盈亏优于人类，但这不代表AI"聪明"，概率模型的长期期望值才是关键');
+  } else if (humanProfit > aiProfit) {
+    analysis.push('本期人类优于AI。虚心学习：人类可能捕捉到了模型未纳入的信息（如临场伤病情报、士气等）');
+  } else {
+    analysis.push('本期双方持平');
+  }
+
+  // Lessons
+  var lessons = [];
+  lessons.push('核心原则：竞猜返还率71%意味着长期期望为负，任何"盈利"策略都需经受大数定律检验');
+  if (totalParlays > 0 && aiHits < totalSingles * 0.3) {
+    lessons.push('串关风险再次被验证——考虑仅在高确定性（单体概率>40%）时才启用2串1');
+  }
+  if (aiProfit < -totalStake * 0.3) {
+    lessons.push('单日亏损超30%触发风控警报，凯利系数可考虑从1/16进一步收紧到1/32');
+  }
+  if (hitRate !== 'N/A' && parseInt(hitRate) > 50) {
+    lessons.push('命中率暂好，但需警惕过度自信。回测表明：即使命中率60%+，竞猜抽水后长期收益率仍可能为负');
+  }
+  lessons.push('持续对照历史同指数数据库，确保泊松参数与实际赛果偏差在可控范围');
+
+  var reflection = {
+    date: dateStr,
+    aiProfit: aiProfit,
+    humanProfit: humanProfit,
+    aiHits: aiHits,
+    humanHits: humanHits,
+    totalStake: totalStake,
+    hitRate: hitRate,
+    analysis: analysis,
+    lessons: lessons,
+    timestamp: new Date().toISOString()
+  };
+
+  reflections.push(reflection);
+  if (reflections.length > 30) reflections = reflections.slice(-30);
+  localStorage.setItem('wc2026_ai_reflections', JSON.stringify(reflections));
+}
+
+var ledgerOpen = null;
+function toggleLedger(player) {
+  if (ledgerOpen === player) { document.getElementById('ledgerDetail').style.display='none'; ledgerOpen=null; return; }
+  ledgerOpen = player;
+  var duel = getDuelState();
+  var allDates = Object.keys(duel.settled).sort().reverse();
+  var key = player === 'ai' ? 'aiStrategies' : 'humanStrategies';
+  var name = player === 'ai' ? 'AI' : '人类';
+  var color = player === 'ai' ? 'var(--accent)' : 'var(--green)';
+  var html = '<div class="card" style="border:1px solid '+color+'"><div class="card-header">'+name+' 竞猜明细账本</div><div style="max-height:400px;overflow-y:auto">';
+  var totalProfit = 0;
+
+  allDates.forEach(function(date){
+    var strats = getStrategies(player, date);
+    if (strats.length === 0) return;
+    var settled = duel.settled[date];
+    var dayProfit = player === 'ai' ? (settled?settled.aiProfit:0) : (settled?settled.humanProfit:0);
+    totalProfit += dayProfit;
+    var dayColor = dayProfit > 0 ? 'var(--green)' : dayProfit < 0 ? 'var(--red)' : 'var(--text3)';
+
+    html += '<div style="padding:8px;margin:4px 0;background:var(--surface2);border-radius:6px">';
+    html += '<div style="display:flex;justify-content:space-between;font-weight:700;font-size:.78rem;margin-bottom:6px"><span>📅 '+date+'</span><span style="color:'+dayColor+'">'+(dayProfit>=0?'+':'')+'¥'+dayProfit+'</span></div>';
+
+    strats.forEach(function(s,i){
+      if (s.mode === 'single') {
+        html += '<div style="font-size:.7rem;padding:3px 0 3px 8px;border-bottom:1px dotted rgba(255,255,255,.04)"><span style="color:var(--accent)">单关 ¥'+s.stake+'</span>';
+        s.picks.forEach(function(p){
+          var win = checkBetWin(p.mid, p.type, p.pick);
+          var icon = win===true?'✅':win===false?'❌':win===null?'⏳':'';
+          var perStake = Math.floor(s.stake / s.picks.length);
+          var pickResult = win===true ? ' +¥'+(Math.round(perStake*p.odds-perStake)) : win===false ? ' -¥'+perStake : '';
+          html += '<div style="font-size:.65rem;padding:1px 0 1px 16px;color:var(--text2)">'+icon+' '+p.type+' → '+p.pick+' @'+p.odds.toFixed(2)+pickResult+'</div>';
+        });
+        html += '</div>';
+      } else {
+        html += '<div style="font-size:.7rem;padding:3px 0 3px 8px;border-bottom:1px dotted rgba(255,255,255,.04);background:rgba(240,185,11,.05)"><span style="color:var(--gold)">'+s.type+' ¥'+s.stake+' @'+s.odds.toFixed(2)+'</span>';
+        var allWin = true; var anyNull = false;
+        s.legs.forEach(function(l){
+          var w = checkBetWin(l.mid, l.type, l.pick);
+          if (w===null) anyNull=true; if (!w) allWin=false;
+          html += '<div style="font-size:.65rem;padding:1px 0 1px 16px;color:var(--text2)">'+(w===true?'✅':w===false?'❌':'⏳')+' '+l.match+' → '+l.pick+' @'+l.odds.toFixed(2)+'</div>';
+        });
+        var parResult = anyNull ? ' [待结算]' : allWin ? ' +¥'+Math.round(s.stake*s.odds-s.stake) : ' -¥'+s.stake;
+        html += '<div style="font-size:.65rem;color:'+(allWin?'var(--green)':'var(--red)')+'">'+(allWin?'✅':'❌')+parResult+'</div>';
+        html += '</div>';
+      }
+    });
+    html += '</div>';
+  });
+
+  html += '<div style="padding:8px;text-align:right;font-weight:700;border-top:2px solid var(--border);margin-top:4px">累计盈亏: <span style="color:'+(totalProfit>=0?'var(--green)':'var(--red)')+'">'+(totalProfit>=0?'+':'')+'¥'+totalProfit+'</span></div>';
+  html += '</div></div>';
+  document.getElementById('ledgerDetail').innerHTML = html;
+  document.getElementById('ledgerDetail').style.display = 'block';
+}
+
+function renderReflections() {
+  var reflections = JSON.parse(localStorage.getItem('wc2026_ai_reflections') || '[]');
+  var div = document.getElementById('aiReflection');
+  if (!div) return;
+  if (reflections.length === 0) {
+    div.innerHTML = '<div class="empty-state" style="padding:20px"><p>AI尚未进行反思</p><p style="font-size:.75rem;color:var(--text2)">每日结算后自动生成</p></div>';
+    return;
+  }
+  div.innerHTML = reflections.slice().reverse().map(function(r){
+    var color = r.aiProfit > 0 ? 'var(--green)' : r.aiProfit < 0 ? 'var(--red)' : 'var(--text3)';
+    return '<div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:6px;border-left:3px solid '+color+'">'+
+      '<div style="display:flex;justify-content:space-between;margin-bottom:6px">'+
+        '<span style="font-weight:700;font-size:.8rem">📅 '+r.date+'</span>'+
+        '<span style="color:'+color+';font-weight:700">AI '+(r.aiProfit>=0?'+':'')+'¥'+r.aiProfit+' vs 人类 '+(r.humanProfit>=0?'+':'')+'¥'+r.humanProfit+'</span>'+
+      '</div>'+
+      '<div style="font-size:.7rem;color:var(--text2);margin-bottom:4px">命中率 '+r.hitRate+'% | 投入¥'+r.totalStake+'</div>'+
+      r.analysis.map(function(a){ return '<div style="font-size:.72rem;padding:2px 0;color:var(--text)">'+a+'</div>'; }).join('')+
+      '<div style="margin-top:4px;padding:6px 8px;background:rgba(139,92,246,.08);border-radius:4px;font-size:.68rem;color:var(--purple)">'+
+        '<span style="font-weight:600">经验教训：</span>'+
+        r.lessons.map(function(l){ return '<div style="padding:1px 0 1px 10px">• '+l+'</div>'; }).join('')+
+      '</div>'+
+    '</div>';
+  }).join('');
+}
+
+
+function renderDuel() {
+  var ul=document.getElementById("duelUserLabel");if(ul)ul.textContent=currentUser?"👤 "+currentUser:"";
+  var duel=getDuelState();
+  var todayStr = getActiveJcDate();
+  var todayMatches = MATCH_SCHEDULE.filter(function(m){return m.date===todayStr && m.stage==='group';});
+  var allUpcoming = MATCH_SCHEDULE.filter(function(m){return m.stage==='group' && isMatchBettable(m.id) && m.date===getNextDayDate();});
+  var aiStrats = getStrategies('ai', todayStr);
+  var hStrats = getStrategies('human', todayStr);
+  var settledToday = duel.settled[todayStr];
+  if(aiStrats.length===0&&allUpcoming.length>0){var totalSpent=0;allUpcoming.forEach(function(m){var jc=MATCH_ODDS[m.id];if(!jc)return;var ht=TEAMS.find(function(t){return t.id===m.home}),at=TEAMS.find(function(t){return t.id===m.away});if(!ht||!at)return;var pred=predictMatch(ht,at);var opts=[];if(jc.h<=5)opts.push({t:"胜平负",p:ht.cn+"胜",o:jc.h,prob:pred.homeWinProb});if(jc.d<=5)opts.push({t:"胜平负",p:"平局",o:jc.d,prob:pred.drawProb});if(jc.a<=5)opts.push({t:"胜平负",p:at.cn+"胜",o:jc.a,prob:pred.awayWinProb});opts.sort(function(a,b){return b.prob-a.prob});var best=opts[0];if(!best||best.prob<0.15)return;var stake=Math.round(duel.aiBalance*best.prob*0.08/10)*10;stake=Math.max(30,Math.min(stake,200));if(totalSpent+stake>duel.aiBalance*0.75)return;totalSpent+=stake;addStrategy("ai",todayStr,{mode:"single",stake:stake,picks:[{mid:m.id,type:best.t,pick:best.p,odds:best.o}],match:ht.cn+"vs"+at.cn})});aiStrats=getStrategies("ai",todayStr);duel=getDuelState()}
+
+  // Scoreboard
+  var aiEl = document.getElementById('aiBalance');
+  var humanEl = document.getElementById('humanBalance');
+  if (aiEl) aiEl.textContent = '¥' + (duel.aiBalance || 0).toLocaleString();
+  if (humanEl) humanEl.textContent = '¥' + (duel.humanBalance || 0).toLocaleString();
+  var aiPct = ((duel.aiBalance-1000)/1000*100).toFixed(1);
+  var hPct = ((duel.humanBalance-1000)/1000*100).toFixed(1);
+  var aiPnlEl = document.getElementById('aiPnl');
+  var humanPnlEl = document.getElementById('humanPnl');
+  if (aiPnlEl) aiPnlEl.innerHTML = '盈亏 ¥'+(duel.aiBalance-1000).toLocaleString()+' ('+(aiPct>0?'+':'')+aiPct+'%)';
+  if (humanPnlEl) humanPnlEl.innerHTML = '盈亏 ¥'+(duel.humanBalance-1000).toLocaleString()+' ('+(hPct>0?'+':'')+hPct+'%)';
+
+  // Today status
+  var aiTodayEl = document.getElementById('aiToday');
+  var humanTodayEl = document.getElementById('humanToday');
+  if (aiTodayEl) {
+    if (aiStrats.length > 0 && !settledToday) {
+      var ts = aiStrats.reduce(function(s,x){return s+x.stake;},0);
+      aiTodayEl.textContent = '今日: '+aiStrats.length+'策略 ¥'+ts+' [待结算]';
+    } else if (settledToday) {
+      aiTodayEl.textContent = '今日: '+(settledToday.aiProfit>=0?'+':'')+'¥'+settledToday.aiProfit;
+    }
+  }
+  if (humanTodayEl) {
+    if (hStrats.length > 0 && !settledToday) {
+      var ts2 = hStrats.reduce(function(s,x){return s+x.stake;},0);
+      humanTodayEl.textContent = '今日: '+hStrats.length+'策略 ¥'+ts2+' [待结算]';
+    } else if (settledToday) {
+      humanTodayEl.textContent = '今日: '+(settledToday.humanProfit>=0?'+':'')+'¥'+settledToday.humanProfit;
+    }
+  }
+
+  // AI section
+  var aiDiv = document.getElementById('aiDuelPick');
+    // AI auto-lock if not yet locked today
+  if (aiStrats.length === 0 && allUpcoming.length > 0) {
+    var best = aiBestPick(allUpcoming);
+    if (best.singles.length > 0 || best.parlays.length > 0) {
+      best.singles.forEach(function(b){
+        if (duel.aiBalance >= b.stake) addStrategy('ai', todayStr, {mode:'single',stake:b.stake,picks:[{mid:b.mid,type:b.type,pick:b.pick,odds:b.odds}],match:b.match});
+      });
+      best.parlays.forEach(function(p){
+        if (duel.aiBalance >= p.stake) addStrategy('ai', todayStr, {mode:'parlay',stake:p.stake,legs:p.legs,odds:p.odds});
+      });
+      aiStrats = getStrategies('ai', todayStr);
+      duel = getDuelState();
+    }
+  }
+
+  if (aiDiv) { if (!currentUser) aiDiv.innerHTML = '<div class="empty-state" style="padding:20px"><p>请先登录查看AI策略</p></div>'; else buildAISection(aiDiv, aiStrats, duel, todayMatches); }
+
+  // Human section
+  var hDiv = document.getElementById('humanDuelPick');
+  if (hDiv) { if (!currentUser) { hDiv.innerHTML = '<div class="empty-state" style="padding:30px"><p>请先登录后再参与竞猜</p><button class="btn btn-primary" onclick="loginUser()">点击登录</button></div>'; } else { buildHumanSection(hDiv, hStrats, duel, allUpcoming); } }
+
+  // History
+  var histDiv = document.getElementById('duelHistory');
+  if (histDiv) buildHistorySection(histDiv, duel);
+  // Reflections
+  renderReflections();
+}
+
+function buildAISection(div, strats, duel, todayMatches) {
+  var html = '';
+  if (strats.length > 0) {
+    var totalStake = strats.reduce(function(s,x){return s+x.stake;},0);
+    html += '<div style="padding:10px;background:var(--surface2);border-radius:8px"><span style="color:var(--text2)">AI已锁定 '+strats.length+'个策略 · 总¥'+totalStake+'</span><div style="margin-top:6px;max-height:220px;overflow-y:auto">';
+    strats.forEach(function(s,i){
+      if (s.mode === 'single') {
+        html += '<div style="font-size:.72rem;padding:6px 8px;margin:4px 0;background:var(--surface);border-radius:6px;border-left:3px solid var(--accent)"><span style="color:var(--accent);font-weight:700">策略'+(i+1)+' 单关 ¥'+s.stake+'</span>';
+        s.picks.forEach(function(p){
+          var m = MATCH_SCHEDULE.find(function(x){return x.id===p.mid});
+          var ht = m ? TEAMS.find(function(t){return t.id===m.home}) : null;
+          var at = m ? TEAMS.find(function(t){return t.id===m.away}) : null;
+          var mn = (ht&&at) ? ht.cn+' vs '+at.cn : '';
+          var jn = m ? (m.date || m.id) : '';
+          html += '<div style="font-size:.68rem;padding:3px 0 3px 12px;color:var(--text2)"><span style="color:var(--text3)">'+jn+'</span> '+mn+' → <span style="font-weight:600;color:var(--text)">'+p.pick+'</span> @'+p.odds.toFixed(2)+'</div>';
+        });
+        html += '</div>';
+      } else {
+        html += '<div style="font-size:.72rem;padding:6px 8px;margin:4px 0;background:var(--surface);border-radius:6px;border-left:3px solid var(--gold)"><span style="color:var(--gold);font-weight:700">策略'+(i+1)+' '+s.type+' ¥'+s.stake+' @'+s.odds.toFixed(2)+'</span>';
+        s.legs.forEach(function(l){ html += '<div style="font-size:.68rem;padding:3px 0 3px 12px;color:var(--text2)">'+l.match+' → <span style="font-weight:600;color:var(--text)">'+l.pick+'</span> @'+l.odds.toFixed(2)+'</div>'; });
+        html += '</div>';
+      }
+    });
+    html += '</div></div>';
+  } else {
+    var best = aiBestPick(todayMatches);
+    if (best && best.singles && best.singles.length > 0 || (best && best.parlays && best.parlays.length > 0)) {
+      html += '<div style="padding:10px;background:var(--surface2);border-radius:8px"><div style="color:var(--accent);font-weight:700;margin-bottom:4px">AI待锁定: '+best.singles.length+'单关'+(best.parlays.length>0?'+'+best.parlays.length+'串关':'')+'（风控过滤后）';
+      if (best.parlays.length>0) html += '+1串关';
+      html += ' · 余额¥'+duel.aiBalance+' · 日风控¥'+Math.round(duel.aiBalance*0.12)+'</div><div style="font-size:.62rem;color:var(--orange);margin-bottom:4px">1/16凯利 · 指数≤5 · 概率≥15% · 串关仅限高概2串1(≥30%腿×2,总概率≥12%)</div><div style="max-height:200px;overflow-y:auto;margin-bottom:6px">';
+      best.singles.forEach(function(b){ html += '<div style="font-size:.7rem;padding:3px 0;border-bottom:1px dashed rgba(255,255,255,.04)">'+b.type+' '+b.match+' → '+b.pick+' @'+b.odds.toFixed(2)+' ¥'+b.stake+' <span style="color:var(--green);font-size:.6rem">EV'+(b.ev>0?'+':'')+b.ev.toFixed(1)+'% P'+(b.prob*100).toFixed(0)+'%</span></div>'; });
+      if (best.parlays.length > 0) {
+        var p=best.parlays[0];
+        html += '<div style="font-size:.7rem;padding:4px;background:rgba(240,185,11,.08);border-radius:4px;margin-bottom:4px"><span style="color:var(--gold);font-weight:600">2串1 ¥'+p.stake+' @'+p.odds.toFixed(2)+' (概率'+(p.prob*100).toFixed(1)+'%)</span><br><span style="font-size:.65rem;color:var(--text2)">'+p.legs.map(function(l){return l.match+' '+l.pick}).join(' × ')+'</span></div>';
+      }
+      html += '</div><button class="btn btn-primary btn-sm" onclick="lockAIPick()">AI锁定（风控已生效）</button></div>';
+    } else {
+      html += '<div style="color:var(--text3);padding:10px">今日无正期望值策略</div>';
+    }
+  }
+  div.innerHTML = html;
+}
+
+function buildHumanSection(div, strats, duel, todayMatches) {
+  var html = '';
+  // 已有策略展示
+  if (strats.length > 0) {
+    var totalStake = strats.reduce(function(s,x){return s+x.stake;},0);
+    html += '<div style="padding:10px;margin-bottom:12px;background:var(--surface2);border-radius:8px;border:2px solid var(--green)"><div style="margin-bottom:8px"><span style="color:var(--green);font-weight:800;font-size:.85rem">已锁定 '+strats.length+'个策略 总¥'+totalStake+' | 余额¥'+duel.humanBalance+'</span></div>';
+    strats.forEach(function(s,i){
+      if (s.mode === 'single') {
+        html += '<div style="font-size:.7rem;padding:6px 8px;margin:3px 0;background:var(--surface);border-radius:5px;border-left:3px solid var(--accent)"><b>策略'+(i+1)+'</b> 单关 ¥'+s.stake+'<br>';
+        s.picks.forEach(function(p){
+          var m = MATCH_SCHEDULE.find(function(x){return x.id===p.mid});
+          var ht = m ? TEAMS.find(function(t){return t.id===m.home}) : null;
+          var at = m ? TEAMS.find(function(t){return t.id===m.away}) : null;
+          var mn = (ht&&at) ? ht.flag+' '+ht.cn+' vs '+at.cn+' '+at.flag : '';
+          var jn = m ? (m.date || m.id) : '';
+          html += '<span style="color:var(--text2);padding-left:12px">'+jn+' '+mn+' → <span style="font-weight:600;color:var(--text)">'+p.type+' '+p.pick+'</span> @'+p.odds.toFixed(2)+'</span><br>';
+        });
+        html += '</div>';
+      } else {
+        html += '<div style="font-size:.7rem;padding:6px 8px;margin:3px 0;background:var(--surface);border-radius:5px;border-left:3px solid var(--gold)"><b>策略'+(i+1)+'</b> '+(s.type||'串关')+' ¥'+s.stake+' @'+s.odds.toFixed(2)+'<br>';
+        s.legs.forEach(function(l){
+          html += '<span style="color:var(--text2);padding-left:12px">'+l.match+' → <span style="font-weight:600;color:var(--text)">'+(l.pick||'')+'</span> @'+l.odds.toFixed(2)+'</span><br>';
+        });
+        html += '</div>';
+      }
+    });
+    html += '</div>';
+  }
+  // 新增竞猜（始终显示）
+  html += '<div style="font-size:.75rem;color:var(--text2);margin-bottom:6px">'+(strats.length>0?'继续新增策略':'选择竞猜方案')+' | 余额¥'+duel.humanBalance+'</div>';
+  html += '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">';
+  html += '<span style="font-size:.75rem;color:var(--text2)">竞猜额 ¥</span>';
+  html += '<input type="number" id="humanStakeInput" value="100" min="2" max="20000" step="2" oninput="humanStakePer=Math.max(2,parseInt(this.value)||0);updateLockBtn()" style="width:80px;padding:4px 8px;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:4px;font-size:.72rem;text-align:center">';
+  html += '<span style="font-size:.75rem;color:var(--text2)">模式:</span>';
+  html += '<button id="btnSingle" class="btn btn-primary btn-sm" style="font-size:.68rem;padding:4px 8px" onclick="humanMode=\'single\';this.className=\'btn btn-primary btn-sm\';document.getElementById(\'btnParlay\').className=\'btn btn-outline btn-sm\';updateLockBtn()">单关</button>';
+  html += '<button id="btnParlay" class="btn btn-outline btn-sm" style="font-size:.68rem;padding:4px 8px" onclick="humanMode=\'parlay\';this.className=\'btn btn-primary btn-sm\';document.getElementById(\'btnSingle\').className=\'btn btn-outline btn-sm\';updateLockBtn()">串关</button>';
+  html += '</div>';
+  html += '<div style="font-size:.65rem;color:var(--text3);margin-bottom:8px">'+(humanMode==='parlay'?'串关：选多场不同比赛（每场限1项）':'单关：每项独立竞猜')+'</div>';
+
+  // 比赛选择
+  todayMatches.forEach(function(m, mi){
+    if (!isMatchBettable(m.id)) return;
+    var jc = MATCH_ODDS[m.id]; if (!jc) return;
+    var ht = TEAMS.find(function(t){return t.id===m.home}), at = TEAMS.find(function(t){return t.id===m.away});
+    if (!ht||!at) return;
+    var pred = predictMatch(ht,at);
+    var tg = calcTotalGoals(pred.expH,pred.expA); var bi=0,bp=0; tg.dist.forEach(function(p,i){if(p>bp){bp=p;bi=i;}}); var go=[10,4.2,3.2,3.5,5.5,9,18,35][bi];
+    var hf=calcHtFt(pred.expH,pred.expA);
+    var htc=[{l:'胜-胜',p:hf.htH*pred.homeWinProb},{l:'平-胜',p:hf.htD*pred.homeWinProb},{l:'负-负',p:hf.htA*pred.awayWinProb},{l:'平-平',p:hf.htD*pred.drawProb}];
+    var selId='human_sel_'+mi;
+
+    html += '<div style="padding:12px;background:var(--surface2);border-radius:10px;margin-bottom:10px;border:1px solid var(--border)">';
+    html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="font-size:1.2rem">'+ht.flag+'</span><span style="font-weight:700">'+ht.cn+'</span><span style="color:var(--text3)">vs</span><span style="font-size:1.2rem">'+at.flag+'</span><span style="font-weight:700">'+at.cn+'</span><span style="font-size:.65rem;background:var(--accent);color:#fff;padding:1px 6px;border-radius:8px;margin-left:auto">'+m.grp+'组</span></div>';
+    html += '<div style="display:flex;gap:6px;flex-wrap:wrap" id="'+selId+'">';
+    // SPF
+    html += '<div style="width:100%;font-size:.65rem;color:var(--text3);margin-top:2px">胜平负</div>';
+    [{type:'胜平负',pick:ht.cn+'胜',odds:jc.h,prob:pred.homeWinProb},{type:'胜平负',pick:'平局',odds:jc.d,prob:pred.drawProb},{type:'胜平负',pick:at.cn+'胜',odds:jc.a,prob:pred.awayWinProb}].forEach(function(o){html+=optionBtn(selId,m.id,o)});
+    if(jc.rq&&jc.rqO){html+='<div style="width:100%;font-size:.65rem;color:var(--text3);margin-top:4px">让球('+jc.rq+')</div>';[{type:'让球',pick:'让胜',odds:jc.rqO[0],prob:pred.homeWinProb},{type:'让球',pick:'让平',odds:jc.rqO[1],prob:pred.drawProb},{type:'让球',pick:'让负',odds:jc.rqO[2],prob:pred.awayWinProb}].forEach(function(o){html+=optionBtn(selId,m.id,o)});}
+    html += '<div style="width:100%;font-size:.65rem;color:var(--text3);margin-top:4px">总进球</div>';
+    tg.dist.forEach(function(prob,i){if(prob<0.03)return;var label=i===7?'7+':i.toString();var godds=[10,4.2,3.2,3.5,5.5,9,18,35][i];html+=optionBtn(selId,m.id,{type:'总进球',pick:label+'球',odds:godds,prob:prob})});
+    html += '<div style="width:100%;font-size:.65rem;color:var(--text3);margin-top:4px">比分</div>';
+    topScores(pred.expH,pred.expA,4).forEach(function(s){var so=Math.max(4.5,1/s.prob*0.8);html+=optionBtn(selId,m.id,{type:'比分',pick:s.h+':'+s.a,odds:so,prob:s.prob})});
+    html += '<div style="width:100%;font-size:.65rem;color:var(--text3);margin-top:4px">半全场</div>';
+    htc.forEach(function(r){var ho=Math.max(2.5,1/(r.p+0.01)*0.85);html+=optionBtn(selId,m.id,{type:'半全场',pick:r.l,odds:ho,prob:r.p})});
+    html += '</div></div>';
+  });
+  html += '<button class="btn btn-primary" id="btnLockHuman" style="margin-top:8px;width:100%;padding:12px;font-size:.9rem" onclick="lockHumanPick()">选择方案后锁定</button>';
+  html += '<div style="font-size:.62rem;color:var(--text3);margin-top:4px;text-align:center">每次锁定=新增一个策略 · 余额实时扣减</div>';
+  div.innerHTML = html;
+}
+function buildHistorySection(div, duel) {
+  var histKeys = Object.keys(duel.settled).sort().reverse();
+  if (histKeys.length === 0) {
+    div.innerHTML = '<div class="empty-state" style="padding:20px"><p>暂无对决记录</p></div>';
+  } else {
+    div.innerHTML = histKeys.map(function(date){
+      var s = duel.settled[date];
+      var result = s.aiProfit > s.humanProfit ? 'AI胜出' : s.humanProfit > s.aiProfit ? '人类胜出' : '平局';
+      return '<div style="padding:8px;background:var(--surface2);border-radius:6px;margin-bottom:4px;font-size:.75rem;display:flex;justify-content:space-between"><span>'+date+'</span><span>'+result+'</span><span style="color:var(--accent)">AI '+(s.aiProfit>=0?'+':'')+'¥'+s.aiProfit+'</span><span style="color:var(--green)">人类 '+(s.humanProfit>=0?'+':'')+'¥'+s.humanProfit+'</span></div>';
+    }).join('');
+  }
+}
+
+function refreshAll() { renderTeamGrid(); renderHistory(); renderFullSchedule(); renderReview(); renderDuel(); }
+
+// =============================================================================
+// 5. MAIN CONTROLLER
+// =============================================================================
+
+function refreshAll() { renderDashboard(); renderGroups(); renderBracket(); renderTeamGrid(); renderHistory(); renderFullSchedule(); }
+
+async function runSimulation() {
+  const btn = document.getElementById('btnSim'), runs = parseInt(document.getElementById('simRuns').value);
+  const bar = document.getElementById('simProgress'), st = document.getElementById('simStatus');
+  btn.disabled = true; btn.textContent = '⏳ 模拟中...'; st.textContent = '初始化...'; bar.style.width = '0%';
+  await new Promise(r => setTimeout(r, 50));
+  const t0 = performance.now();
+  lastResult = runMonteCarlo(runs, p => { bar.style.width = (p*100).toFixed(0)+'%'; st.textContent = `已完成${(p*100).toFixed(0)}%...`; });
+  const el = ((performance.now()-t0)/1000).toFixed(1);
+  bar.style.width = '100%'; st.textContent = `完成！${el}秒`;
+
+  const hist = JSON.parse(localStorage.getItem('wc2026_hist') || '[]');
+  hist.push({ ts: lastResult.ts, runs: lastResult.runs, champProb: lastResult.champProb.slice(0,20), roundProbs: lastResult.roundProbs, grpCnt: lastResult.grpCnt, bestBracket: lastResult.bestBracket });
+  while (hist.length > 20) hist.shift();
+  localStorage.setItem('wc2026_hist', JSON.stringify(hist));
+  refreshAll();
+  btn.disabled = false; btn.textContent = '开始模拟';
+  showToast(`模拟完成！${runs.toLocaleString()}次，${el}秒`);
+}
+
+function loadLastResult() {
+  const hist = JSON.parse(localStorage.getItem('wc2026_hist') || '[]');
+  if (hist.length > 0) { lastResult = hist[hist.length-1]; refreshAll(); showToast('已加载最近结果'); }
+}
+
+function switchTab(tab) {
+  document.querySelectorAll('.tab-nav button').forEach(b => b.classList.remove('active'));
+  document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  if (tab === 'schedule') renderFullSchedule();
+  if (tab === 'today') renderDateSelector();
+  if (tab === 'review') renderReview();
+  if (tab === 'duel') renderDuel();
+  if (tab === 'standings') renderStandings();
+  if (tab === 'players') renderPlayerTab('scorers');
+}
+
+// =============================================================================
+// 6. INIT
+// =============================================================================
+
+document.getElementById('tabNav').addEventListener('click', e => {
+  if (e.target.tagName === 'BUTTON') switchTab(e.target.dataset.tab);
+});
+
+document.getElementById('filterGroup').addEventListener('change', renderTeamGrid);
+document.getElementById('filterConfed').addEventListener('change', renderTeamGrid);
+document.getElementById('filterSort').addEventListener('change', renderTeamGrid);
+document.getElementById('filterSearch').addEventListener('input', renderTeamGrid);
+document.getElementById('schedFilter').addEventListener('change', renderFullSchedule);
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+  if (e.ctrlKey && e.key === 'Enter') { e.preventDefault(); runSimulation(); }
+});
+
+// News: load cached immediately, then do a live refresh
+loadCachedNews();
+refreshNews(false).then(() => scheduleNewsRefresh());
+
+// Every 1 hour: refresh news → update strength → refresh predictions → re-render
+setInterval(async function() {
+  await refreshNews(false).catch(function(){});
+  loadPlayerStats().catch(function(){});
+  var d = findNextMatchDate();
+  if (d) renderTodayMatches(d);
+  var count = refreshAllPredictions();
+  console.log('1h cycle done: ' + count + ' predictions refreshed');
+}, 3600000);
+
+// Start prediction schedule checker (release 12:00, lock 16:00, checks every minute)
+// Real-time sync active (24h rule)
+
+
+// Show lock status in today's tab header if locked
+const todayStr2 = getTodayStr();
+if (isPredictionLocked(todayStr2)) {
+  document.getElementById('tickerLabel').textContent = '锁定';
+}
+
+// Today's date matches (using tournament clock)
+// Find next date with unplayed matches (use actualResults, not just time)
+function findNextMatchDate() {
+  var allDates = [...new Set(MATCH_SCHEDULE.filter(function(m){return m.stage==='group'}).map(function(m){return m.date;}))].sort();
+  for (var i = 0; i < allDates.length; i++) {
+    var d = allDates[i];
+    var ms = MATCH_SCHEDULE.filter(function(m){return m.date===d && m.stage==='group'});
+    var allPlayed = ms.every(function(m){return actualResults[m.id]});
+    if (!allPlayed) return d;
+  }
+  return allDates[allDates.length-1]; // fallback to last date
+}
+var nextMatchDate = findNextMatchDate();
+var todayStr = nextMatchDate || getTournamentToday();
+// Log initial prediction snapshots before rendering (so update info is available)
+MATCH_SCHEDULE.forEach(function(m) {
+  if (m.stage !== 'group') return;
+  if (predChangeLog[m.id]) return; // Already have history, skip
+  var ht = TEAMS.find(function(t) { return t.id === m.home; });
+  var at = TEAMS.find(function(t) { return t.id === m.away; });
+  if (!ht || !at) return;
+  var pred = predictMatch(ht, at);
+  logPredictionSnapshot(m.id, pred);
+});
+try {
+renderDateSelector();
+renderTodayMatches(todayStr);
+renderTeams();
+renderHistory();
+renderFullSchedule();
+renderReview();
+renderDuel();
+} catch(e) {
+  document.body.innerHTML = '<div style="padding:40px;color:#ff3d57;font-size:1.2rem"><h2>初始化错误</h2><pre>' + e.message + '</pre><pre>' + e.stack + '</pre></div>';
+  console.error(e);
+}
+setTimeout(() => loadLastResult(), 300);
+
+// Add manual publish and date advance controls to the header
+const headerEl = document.querySelector('.header');
+if (headerEl) {
+  const ctrlDiv = document.createElement('div');
+  ctrlDiv.style.cssText = 'display:flex;align-items:center;gap:6px;font-size:.7rem';
+  ctrlDiv.innerHTML = `
+    <span style="color:var(--text2)">赛事时间:</span>
+    <span style="color:var(--accent);font-weight:700" id="tournamentClock">${tournamentTime.toLocaleString('zh-CN',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})}</span>
+    <button class="btn btn-outline btn-sm" style="font-size:.6rem;padding:2px 6px" onclick="advanceDay()" title="推进到下一天">⏩+1天</button>
+    <button class="btn btn-primary btn-sm" style="font-size:.6rem;padding:2px 8px" onclick="publishNow()" title="立即发布今日预测">📊 发布预测</button>
+  `;
+  headerEl.appendChild(ctrlDiv);
+}
+
+function advanceDay() {
+  const newDate = advanceTournamentDay();
+  document.getElementById('tournamentClock').textContent = newDate.toLocaleString('zh-CN',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'});
+  const ts = getTournamentDateStr();
+  renderDateSelector();
+  showDate(ts);
+  showToast('已推进到 ' + ts);
+}
+
+function publishNow() {
+  const today = getTournamentDateStr();
+  const matchesToday = MATCH_SCHEDULE.filter(m => m.date === today && m.stage === 'group');
+  if (matchesToday.length === 0) { showToast('今日无比赛'); return; }
+  tournamentTime.setHours(12, 0, 0, 0);
+  setTournamentTime(tournamentTime);
+  document.getElementById('tournamentClock').textContent = tournamentTime.toLocaleString('zh-CN',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'});
+  renderDateSelector();
+  showDate(today);
+  renderTodayMatches(today);
+  showToast('📊 ' + today + ' 预测已发布！（共' + matchesToday.length + '场）');
+}
+</script>
+</body>
+</html
+
+
 function generateMatchAnalysis(m, ht, at, pred, mol) {
   var hTac = TACTICAL[ht.id] || {}, aTac = TACTICAL[at.id] || {};
   var hStr = getStrength(ht), aStr = getStrength(at);
