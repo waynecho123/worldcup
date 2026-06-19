@@ -57,9 +57,10 @@ App({
   loadResults() {
     var that = this;
 
-    // GitHub Pages scores.json (GitHub Action 每30分钟更新)
+    // GitHub Pages scores.json
     wx.request({
       url: 'https://waynecho123.github.io/worldcup/scores.json',
+      timeout: 10000,
       success: function(res) {
         if (res.data && Object.keys(res.data).length > 0) {
           that.globalData.actualResults = res.data;
