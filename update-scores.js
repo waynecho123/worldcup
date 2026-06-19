@@ -224,12 +224,18 @@ async function updateOdds() {
   const existing = loadJSON(ODDS_FILE) || {};
 
   try {
-    // Fetch odds for each match day
+    // Fetch odds for next 5 days
     const sched = getMatchSchedule();
-    const dates = [...new Set(sched.map(m => m.date))].sort();
     let updated = 0;
+    const today = new Date();
+    const dates = [];
+    for (let d = 0; d < 5; d++) {
+      const dt = new Date(today);
+      dt.setDate(dt.getDate() + d);
+      dates.push(dt.toISOString().slice(0, 10));
+    }
 
-    for (const dateStr of dates.slice(0, 5)) { // Limit to next 5 days to manage quota
+    for (const dateStr of dates) {
       const resp = await new Promise((resolve, reject) => {
         https.get(`${APISPORTS_BASE}/odds?date=${dateStr}&league=1&season=2026&bookmaker=8&bet=1`, {
           headers: { 'x-apisports-key': APISPORTS_KEY }, timeout: 15000
