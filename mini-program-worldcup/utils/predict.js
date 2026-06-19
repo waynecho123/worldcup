@@ -54,7 +54,7 @@ function saveUpsetCache() {
 }
 
 // Compute upset probability — runs 200 Monte Carlo sims once, persists result
-function computeUpsetProb(homeStr, awayStr) {
+function computeUpsetProb(homeStr, awayStr, expH, expA) {
   var key = homeStr.toFixed(1) + '_' + awayStr.toFixed(1);
   if (upsetCache[key] !== undefined) return upsetCache[key];
 
@@ -63,8 +63,8 @@ function computeUpsetProb(homeStr, awayStr) {
   for (var i = 0; i < N; i++) {
     var hNoise = 1 + (Math.random() - 0.5) * 0.3;
     var aNoise = 1 + (Math.random() - 0.5) * 0.3;
-    var hLambda = Math.max(0.3, homeStr / 28 * hNoise);
-    var aLambda = Math.max(0.3, awayStr / 28 * aNoise);
+    var hLambda = Math.max(0.3, (expH != null ? expH : homeStr / 28) * hNoise);
+    var aLambda = Math.max(0.3, (expA != null ? expA : awayStr / 28) * aNoise);
     var hg = poissonSample(hLambda);
     var ag = poissonSample(aLambda);
     if ((awayStr < homeStr && ag >= hg) || (homeStr < awayStr && hg >= ag)) upsets++;

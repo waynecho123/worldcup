@@ -71,11 +71,6 @@
     <text>📍 {{matchInfo.venue}}</text>
   </view>
 
-  <!-- Upset Alert -->
-  <view wx:if="{{matchInfo.upsetAlert && !matchInfo.actual}}" class="mc-upset-alert">
-    <text>⚠️ 冷门预警：{{matchInfo.upsetTeam}}有{{matchInfo.upsetProb}}%概率爆冷</text>
-  </view>
-
   <!-- Injury Alert -->
   <view wx:if="{{matchInfo.hasNews && !compact}}" class="mc-news-alert">
     <text>🏥 {{matchInfo.newsText}}</text>

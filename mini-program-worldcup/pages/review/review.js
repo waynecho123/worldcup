@@ -85,7 +85,7 @@ Page({
     });
 
     // Upset accuracy
-    var upsetComps = comps.filter(function(c) { return c.strGap > 15; });
+    var upsetComps = comps.filter(function(c) { return c.strGap > 15 && c.date >= '2026-06-20'; });
     var upsetTotal = upsetComps.length;
     var upsetCorrect = upsetComps.filter(function(c) {
       return (c.upsetAlert && c.upsetHappened) || (!c.upsetAlert && !c.upsetHappened);
