@@ -4370,9 +4370,9 @@ async function initResults() {
   // Auto-refresh every 3 minutes from scores.json
   setInterval(async function() {
     await loadFromServerJSON();
-    loadOddsJSON().catch(function(){});
+    await loadMatchDetailsJSON().catch(function(){});
     loadInfoJSON().catch(function(){});
-    loadMatchDetailsJSON().catch(function(){});
+    loadOddsJSON().catch(function(){});
     loadInjuriesJSON().catch(function(){});
     loadStandingsJSON().catch(function(){});
   }, 180000);
@@ -4568,9 +4568,8 @@ function getMarketConsensus(mid, hwp, dp, awp) {
 
 // Start loading immediately
 initResults();
-loadOddsJSON();
+loadMatchDetailsJSON().then(function() { loadOddsJSON(); });
 loadInfoJSON();
-loadMatchDetailsJSON();
 loadInjuriesJSON();
 loadStandingsJSON();
 loadPlayerStats();
