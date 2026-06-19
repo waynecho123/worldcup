@@ -926,6 +926,17 @@ async function updateMatchDetails() {
     });
   }
 
+  async function fetchFixtureById(fid) {
+    return new Promise((resolve, reject) => {
+      https.get(`${APISPORTS_BASE}/fixtures?id=${fid}`, {
+        headers: { 'x-apisports-key': APISPORTS_KEY }, timeout: 15000
+      }, res => {
+        let d = ''; res.on('data', c => d += c);
+        res.on('end', () => { try { resolve(JSON.parse(d)); } catch(e) { reject(e); } });
+      }).on('error', reject);
+    });
+  }
+
   let n = 0;
   // Get match dates from scores + next 5 days for odds mapping
   const matchIds = Object.keys(scores).filter(k => k.match(/^m\d+$/));
