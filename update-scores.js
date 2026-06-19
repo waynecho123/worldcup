@@ -249,13 +249,14 @@ async function updateOdds() {
       if (resp && resp.response && resp.response.length > 0) {
         // Debug: show first fixture structure
         var s = resp.response[0];
-        console.log(`[${ts}] Odds keys: ${Object.keys(s).join(',')}`);
-        console.log(`[${ts}] Odds full: ${JSON.stringify(s).slice(0, 500)}`);
+        console.log(`[${ts}] Odds fixture keys: ${JSON.stringify(Object.keys(s.fixture||{}))}`);
+        console.log(`[${ts}] Odds fixture.teams: ${JSON.stringify((s.fixture||{}).teams)}`);
         resp.response.forEach(fixture => {
+          const teamInfo = fixture.fixture?.teams || fixture.teams || {};
+          const fHome = teamInfo.home?.name || '';
+          const fAway = teamInfo.away?.name || '';
           const m = sched.find(x => {
             const ht = TEAMS[x.home], at = TEAMS[x.away];
-            const fHome = fixture.teams?.home?.name || '';
-            const fAway = fixture.teams?.away?.name || '';
             return ht && at && (
               (ht.name === fHome && at.name === fAway) ||
               (ht.cn === fHome && at.cn === fAway) ||
