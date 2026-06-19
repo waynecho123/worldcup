@@ -694,7 +694,7 @@ const TACTICAL = {
   PAR: {manager:'Gustavo Alfaro',style:'defensive_block',formation:'4-4-2',tempo:3,width:5,pressing:3,setPiece:6,transition:4,physical:7,technique:4,
     strength:'防守纪律性强',weakness:'1-4惨败美国暴露实力差距',qualifying:'南美区晋级',note:'Almirón+Enciso速度威胁'},
   AUS: {manager:'Tony Popovic',style:'direct',formation:'4-1-4-1',tempo:6,width:7,pressing:5,setPiece:7,transition:6,physical:8,technique:5,
-    strength:'定位球+Irankunda最年轻进球者2-0土耳其',weakness:'技术局限',qualifying:'亚洲区晋级',note:'Souttar空中霸主'},
+    strength:'身高优势与技战术传统让定位球成为得分利器。伊兰昆达在2-0胜土耳其的比赛中破门，成为澳大利亚世界杯史上最年轻的进球者',weakness:'技术细腻度不足，面对高压逼抢时后场出球容易失误',qualifying:'亚洲区晋级',note:'Souttar空中霸主'},
   TUR: {manager:'Vincenzo Montella',style:'balanced',formation:'4-2-3-1',tempo:7,width:7,pressing:6,setPiece:7,transition:7,physical:6,technique:7,
     strength:'Güler+Yıldız天才双核',weakness:'0-2澳大利亚暴露防线问题',qualifying:'欧洲区晋级',note:'Çalhanoğlu中场组织'},
   // Group E — 真实战术+首战
@@ -3338,9 +3338,34 @@ function generateMatchAnalysis(m, ht, at, pred, mol) {
     parts.push('【近期战绩】' + ht.cn + '：' + hPart + '。' + at.cn + '：' + aPart + '。');
   }
 
-  // 2. Strengths & weaknesses
-  if (hTac.strength) parts.push('【' + ht.cn + '】优势：' + hTac.strength + '。' + (hTac.weakness ? '劣势：' + hTac.weakness + '。' : ''));
-  if (aTac.strength) parts.push('【' + at.cn + '】优势：' + aTac.strength + '。' + (aTac.weakness ? '劣势：' + aTac.weakness + '。' : ''));
+  // 2. Strengths & weaknesses — use real data when available, fallback to TACTICAL
+  function buildTeamProfile(team, tac) {
+    var played = matchDetails ? Object.values(matchDetails).filter(function(d){return d && (d.homeTeam===team.name||d.awayTeam===team.name) && d.statistics;}) : [];
+    var lines = [];
+    if (played.length > 0) {
+      var last = played[played.length-1];
+      var isHome = last.homeTeam === team.name;
+      var stats = last.statistics[isHome ? last.homeTeam : last.awayTeam] || {};
+      var oppStats = last.statistics[isHome ? last.awayTeam : last.homeTeam] || {};
+      var score = last.score || {};
+      var myScore = isHome ? score.home : score.away;
+      var oppScore = isHome ? score.away : score.home;
+      var result = myScore > oppScore ? '胜' : myScore === oppScore ? '平' : '负';
+      lines.push('上轮' + result + ' ' + (isHome ? last.awayTeam : last.homeTeam));
+      if (stats['Ball Possession']) lines.push('控球率' + stats['Ball Possession']);
+      if (stats['Total Shots']) lines.push('射门' + stats['Total Shots'] + '次（射正' + (stats['Shots on Goal']||'?') + '）');
+      if (stats['Expected Goals']) lines.push('xG ' + stats['Expected Goals']);
+      if (stats['Passes %']) lines.push('传球成功率' + stats['Passes %']);
+    }
+    if (lines.length > 0) return '【' + team.cn + '】' + lines.join('，') + '。';
+    // Fallback
+    if (tac.strength) return '【' + team.cn + '】' + tac.strength + (tac.weakness ? '。不足：' + tac.weakness : '');
+    return '';
+  }
+  var hProfile = buildTeamProfile(ht, hTac);
+  var aProfile = buildTeamProfile(at, aTac);
+  if (hProfile) parts.push(hProfile);
+  if (aProfile) parts.push(aProfile);
 
   // 3. Tactical matchup
   if (pred.tacAnalysis) {
