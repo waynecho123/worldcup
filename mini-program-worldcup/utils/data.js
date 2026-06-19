@@ -70,7 +70,7 @@ const TEAMS = [
   // ===== GROUP L =====
   {id:"ENG",name:"England",cn:"英格兰",flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",grp:"L",seed:"1",rk:4,att:87,def:84,best:"冠军(1966)",apps:16,stars:["Kane","Bellingham","Saka"],conf:"UEFA",recent:"图赫尔执教, 2024欧洲杯亚军",news:"福登+帕尔默落选引争议！阵容€1.51B",inj:"🔴 Ben White MCL"},
   {id:"CRO",name:"Croatia",cn:"克罗地亚",flag:"🇭🇷",grp:"L",seed:"2",rk:11,att:79,def:79,best:"亚军(2018)",apps:6,stars:["Modrić","Gvardiol","Kovačić"],conf:"UEFA",recent:"2024欧洲杯小组赛",news:"莫德里奇最后一届世界杯",inj:""},
-  {id:"GHA",name:"Ghana",cn:"加纳",flag:"🇬🇭",grp:"L",seed:"3",rk:43,att:70,def:67,best:"8强(2010)",apps:4,stars:["Kudus","Partey","Williams"],conf:"CAF",recent:"2023非洲杯小组赛",news:"帕尔特伊签证问题缺席首战",inj:"🔴 Partey签证问题缺席"},
+  {id:"GHA",name:"Ghana",cn:"加纳",flag:"🇬🇭",grp:"L",seed:"3",rk:43,att:70,def:67,best:"8强(2010)",apps:4,stars:["Kudus","Partey","Williams"],conf:"CAF",recent:"2023非洲杯小组赛",news:"非洲劲旅",inj:""},
   {id:"PAN",name:"Panama",cn:"巴拿马",flag:"🇵🇦",grp:"L",seed:"4",rk:48,att:65,def:64,best:"小组赛",apps:1,stars:["Murillo","Carrasquilla","Waterman"],conf:"CONCACAF",recent:"2024美洲杯8强",news:"美洲杯8强证明实力",inj:""},
 ]
 
@@ -255,7 +255,7 @@ const STARTING_XI = {
   // Group L
   ENG: {f:'4-2-3-1',g:'Pickford',d:['Reece James','Stones','Guéhi','O\'Reilly'],m:['Rice','Mainoo'],fwd:['Saka','Bellingham','Rashford'],st:'Kane(C)',subs:'Gordon,Eze,Watkins',note:'Foden/Palmer落选 Ben White伤缺'},
   CRO: {f:'4-3-3',g:'Livaković',d:['Stanišić','Gvardiol','Šutalo','Sosa'],m:['Modrić(C)','Kovačić','Brozović'],fwd:['Pašalić','Budimir','Perišić'],subs:'Petković,Majer',note:'莫德里奇最后一届'},
-  GHA: {f:'4-3-3',g:'Ati-Zigi',d:['Lamptey','Amartey','Salisu','Mensah'],m:['Nuamah','Kudus','Samed'],fwd:['Williams','Semenyo','Ayew'],subs:'Partey(C),Bukari',note:'Partey(C)签证问题缺席，Nuamah顶替首发'},
+  GHA: {f:'4-3-3',g:'Ati-Zigi',d:['Lamptey','Amartey','Salisu','Mensah'],m:['Partey(C)','Kudus','Samed'],fwd:['Williams','Semenyo','Ayew'],subs:'Nuamah,Bukari',note:'Queiroz执教'},
   PAN: {f:'5-4-1',g:'Mejía',d:['Murillo','Córdoba','Escobar','Cummings','Davis'],m:['Carrasquilla','Godoy','Martínez','Waterman'],st:'Díaz',subs:'Gondola,Yanis',note:'美洲杯8强 五后卫大巴'},
 }
 
@@ -713,82 +713,288 @@ const MATCH_ODDS = {
   m069: {h:2.00, d:3.40, a:3.50}, m070: {h:1.62, d:3.80, a:5.00}, m071: {h:1.12, d:8.00, a:18.00}, m072: {h:1.55, d:3.90, a:5.80},
 }
 
-// 72 matches from API-Sports, Beijing time
 const MATCH_SCHEDULE = [
-  {id:"m001",date:"2026-06-12",time:"03:00",home:"MEX",away:"RSA",grp:"A",stage:"group",matchday:1,venue:"Estadio Azteca, Mexico City",featured:true},
-  {id:"m002",date:"2026-06-12",time:"10:00",home:"KOR",away:"CZE",grp:"A",stage:"group",matchday:1,venue:"Estadio Akron, Guadalajara",featured:true},
+  // === June 12 ===
+  {id:"m001",date:"2026-06-12",time:"03:00",home:"MEX",away:"RSA",grp:"A",stage:"group",matchday:1,venue:"Estadio Banorte, Mexico City",featured:true},
+  {id:"m002",date:"2026-06-12",time:"10:00",home:"KOR",away:"CZE",grp:"A",stage:"group",matchday:1,venue:"Estadio Banorte, Mexico City"},
+  // === June 13 ===
   {id:"m003",date:"2026-06-13",time:"03:00",home:"CAN",away:"BIH",grp:"B",stage:"group",matchday:1,venue:"BMO Field, Toronto",featured:true},
-  {id:"m004",date:"2026-06-13",time:"09:00",home:"USA",away:"PAR",grp:"D",stage:"group",matchday:1,venue:"SoFi Stadium, Inglewood",featured:true},
-  {id:"m005",date:"2026-06-14",time:"03:00",home:"QAT",away:"SUI",grp:"B",stage:"group",matchday:1,venue:"Levi's Stadium, Santa Clara"},
-  {id:"m006",date:"2026-06-14",time:"06:00",home:"BRA",away:"MAR",grp:"C",stage:"group",matchday:1,venue:"MetLife Stadium, East Rutherford"},
-  {id:"m007",date:"2026-06-14",time:"09:00",home:"HAI",away:"SCO",grp:"C",stage:"group",matchday:1,venue:"Gillette Stadium, Boston"},
-  {id:"m008",date:"2026-06-14",time:"12:00",home:"AUS",away:"TUR",grp:"D",stage:"group",matchday:1,venue:"BC Place, Vancouver"},
+  {id:"m004",date:"2026-06-13",time:"09:00",home:"USA",away:"PAR",grp:"D",stage:"group",matchday:1,venue:"SoFi Stadium, Los Angeles",featured:true},
+  // === June 14 ===
+  {id:"m005",date:"2026-06-14",time:"03:00",home:"QAT",away:"SUI",grp:"B",stage:"group",matchday:1,venue:"BC Place, Vancouver"},
+  {id:"m006",date:"2026-06-14",time:"06:00",home:"BRA",away:"MAR",grp:"C",stage:"group",matchday:1,venue:"MetLife Stadium, NY/NJ",featured:true},
+  {id:"m007",date:"2026-06-14",time:"09:00",home:"HAI",away:"SCO",grp:"C",stage:"group",matchday:1,venue:"MetLife Stadium, NY/NJ"},
+  {id:"m008",date:"2026-06-14",time:"12:00",home:"AUS",away:"TUR",grp:"D",stage:"group",matchday:1,venue:"SoFi Stadium, Los Angeles"},
+  // === June 15 ===
   {id:"m009",date:"2026-06-15",time:"01:00",home:"GER",away:"CUW",grp:"E",stage:"group",matchday:1,venue:"NRG Stadium, Houston"},
-  {id:"m010",date:"2026-06-15",time:"04:00",home:"NED",away:"JPN",grp:"F",stage:"group",matchday:1,venue:"AT&T Stadium, Arlington"},
-  {id:"m011",date:"2026-06-15",time:"07:00",home:"CIV",away:"ECU",grp:"E",stage:"group",matchday:1,venue:"Lincoln Financial Field, Philadelphia"},
-  {id:"m012",date:"2026-06-15",time:"10:00",home:"SWE",away:"TUN",grp:"F",stage:"group",matchday:1,venue:"Estadio BBVA, Monterrey"},
+  {id:"m010",date:"2026-06-15",time:"04:00",home:"NED",away:"JPN",grp:"F",stage:"group",matchday:1,venue:"AT&T Stadium, Dallas",featured:true},
+  {id:"m011",date:"2026-06-15",time:"07:00",home:"CIV",away:"ECU",grp:"E",stage:"group",matchday:1,venue:"NRG Stadium, Houston"},
+  {id:"m012",date:"2026-06-15",time:"10:00",home:"SWE",away:"TUN",grp:"F",stage:"group",matchday:1,venue:"AT&T Stadium, Dallas"},
+  // === June 16 ===
   {id:"m013",date:"2026-06-16",time:"00:00",home:"ESP",away:"CPV",grp:"H",stage:"group",matchday:1,venue:"Mercedes-Benz Stadium, Atlanta"},
   {id:"m014",date:"2026-06-16",time:"03:00",home:"BEL",away:"EGY",grp:"G",stage:"group",matchday:1,venue:"Lumen Field, Seattle"},
-  {id:"m015",date:"2026-06-16",time:"06:00",home:"KSA",away:"URU",grp:"H",stage:"group",matchday:1,venue:"Hard Rock Stadium, Miami Gardens"},
-  {id:"m016",date:"2026-06-16",time:"09:00",home:"IRN",away:"NZL",grp:"G",stage:"group",matchday:1,venue:"SoFi Stadium, Inglewood"},
-  {id:"m017",date:"2026-06-17",time:"03:00",home:"FRA",away:"SEN",grp:"I",stage:"group",matchday:1,venue:"MetLife Stadium, East Rutherford"},
-  {id:"m018",date:"2026-06-17",time:"06:00",home:"IRQ",away:"NOR",grp:"I",stage:"group",matchday:1,venue:"Gillette Stadium, Boston"},
-  {id:"m019",date:"2026-06-17",time:"09:00",home:"ARG",away:"ALG",grp:"J",stage:"group",matchday:1,venue:"Arrowhead Stadium, Kansas City"},
-  {id:"m020",date:"2026-06-17",time:"12:00",home:"AUT",away:"JOR",grp:"J",stage:"group",matchday:1,venue:"Levi's Stadium, Santa Clara"},
-  {id:"m021",date:"2026-06-18",time:"01:00",home:"POR",away:"COD",grp:"K",stage:"group",matchday:1,venue:"NRG Stadium, Houston"},
-  {id:"m022",date:"2026-06-18",time:"04:00",home:"ENG",away:"CRO",grp:"L",stage:"group",matchday:1,venue:"AT&T Stadium, Arlington"},
-  {id:"m023",date:"2026-06-18",time:"07:00",home:"GHA",away:"PAN",grp:"L",stage:"group",matchday:1,venue:"BMO Field, Toronto"},
-  {id:"m024",date:"2026-06-18",time:"10:00",home:"UZB",away:"COL",grp:"K",stage:"group",matchday:1,venue:"Estadio Azteca, Mexico City"},
-  {id:"m025",date:"2026-06-19",time:"00:00",home:"CZE",away:"RSA",grp:"A",stage:"group",matchday:2,venue:"Mercedes-Benz Stadium, Atlanta",featured:true},
-  {id:"m026",date:"2026-06-19",time:"03:00",home:"SUI",away:"BIH",grp:"B",stage:"group",matchday:2,venue:"SoFi Stadium, Los Angeles"},
-  {id:"m027",date:"2026-06-19",time:"06:00",home:"CAN",away:"QAT",grp:"B",stage:"group",matchday:2,venue:"BC Place, Vancouver"},
-  {id:"m028",date:"2026-06-19",time:"09:00",home:"MEX",away:"KOR",grp:"A",stage:"group",matchday:2,venue:"Estadio Akron, Guadalajara"},
-  {id:"m029",date:"2026-06-20",time:"03:00",home:"USA",away:"AUS",grp:"D",stage:"group",matchday:2,venue:"Lumen Field, Seattle"},
-  {id:"m030",date:"2026-06-20",time:"06:00",home:"SCO",away:"MAR",grp:"C",stage:"group",matchday:2,venue:"Gillette Stadium, Boston"},
-  {id:"m031",date:"2026-06-20",time:"08:30",home:"BRA",away:"HAI",grp:"C",stage:"group",matchday:2,venue:"Lincoln Financial Field, Philadelphia"},
-  {id:"m032",date:"2026-06-20",time:"11:00",home:"TUR",away:"PAR",grp:"D",stage:"group",matchday:2,venue:"Levi's Stadium, San Francisco Bay Area"},
-  {id:"m033",date:"2026-06-21",time:"01:00",home:"NED",away:"SWE",grp:"F",stage:"group",matchday:2,venue:"NRG Stadium, Houston"},
-  {id:"m034",date:"2026-06-21",time:"04:00",home:"GER",away:"CIV",grp:"E",stage:"group",matchday:2,venue:"BMO Field, Toronto"},
-  {id:"m035",date:"2026-06-21",time:"08:00",home:"ECU",away:"CUW",grp:"E",stage:"group",matchday:2,venue:"Arrowhead Stadium, Kansas City"},
-  {id:"m036",date:"2026-06-21",time:"12:00",home:"TUN",away:"JPN",grp:"F",stage:"group",matchday:2,venue:"Estadio BBVA, Monterrey"},
-  {id:"m037",date:"2026-06-22",time:"00:00",home:"ESP",away:"KSA",grp:"H",stage:"group",matchday:2,venue:"Mercedes-Benz Stadium, Atlanta"},
-  {id:"m038",date:"2026-06-22",time:"03:00",home:"BEL",away:"IRN",grp:"G",stage:"group",matchday:2,venue:"SoFi Stadium, Los Angeles"},
-  {id:"m039",date:"2026-06-22",time:"06:00",home:"URU",away:"CPV",grp:"H",stage:"group",matchday:2,venue:"Hard Rock Stadium, Miami"},
-  {id:"m040",date:"2026-06-22",time:"09:00",home:"NZL",away:"EGY",grp:"G",stage:"group",matchday:2,venue:"BC Place, Vancouver"},
-  {id:"m041",date:"2026-06-23",time:"01:00",home:"ARG",away:"AUT",grp:"J",stage:"group",matchday:2,venue:"AT&T Stadium, Dallas"},
-  {id:"m042",date:"2026-06-23",time:"05:00",home:"FRA",away:"IRQ",grp:"I",stage:"group",matchday:2,venue:"Lincoln Financial Field, Philadelphia"},
-  {id:"m043",date:"2026-06-23",time:"08:00",home:"NOR",away:"SEN",grp:"I",stage:"group",matchday:2,venue:"MetLife Stadium, New York New Jersey"},
-  {id:"m044",date:"2026-06-23",time:"11:00",home:"JOR",away:"ALG",grp:"J",stage:"group",matchday:2,venue:"Levi's Stadium, San Francisco Bay Area"},
+  {id:"m015",date:"2026-06-16",time:"06:00",home:"KSA",away:"URU",grp:"H",stage:"group",matchday:1,venue:"Hard Rock Stadium, Miami"},
+  {id:"m016",date:"2026-06-16",time:"09:00",home:"IRN",away:"NZL",grp:"G",stage:"group",matchday:1,venue:"Lumen Field, Seattle"},
+  // === June 17 ===
+  {id:"m017",date:"2026-06-17",time:"03:00",home:"FRA",away:"SEN",grp:"I",stage:"group",matchday:1,venue:"MetLife Stadium, NY/NJ",featured:true},
+  {id:"m018",date:"2026-06-17",time:"06:00",home:"IRQ",away:"NOR",grp:"I",stage:"group",matchday:1,venue:"MetLife Stadium, NY/NJ"},
+  {id:"m019",date:"2026-06-17",time:"09:00",home:"ARG",away:"ALG",grp:"J",stage:"group",matchday:1,venue:"Arrowhead Stadium, Kansas City",featured:true},
+  {id:"m020",date:"2026-06-17",time:"12:00",home:"AUT",away:"JOR",grp:"J",stage:"group",matchday:1,venue:"Arrowhead Stadium, Kansas City"},
+  // === June 18 ===
+  {id:"m021",date:"2026-06-18",time:"01:00",home:"POR",away:"COD",grp:"K",stage:"group",matchday:1,venue:"NRG Stadium, Houston",featured:true},
+  {id:"m022",date:"2026-06-18",time:"04:00",home:"ENG",away:"CRO",grp:"L",stage:"group",matchday:1,venue:"AT&T Stadium, Dallas",featured:true},
+  {id:"m023",date:"2026-06-18",time:"07:00",home:"GHA",away:"PAN",grp:"L",stage:"group",matchday:1,venue:"AT&T Stadium, Dallas"},
+  {id:"m024",date:"2026-06-18",time:"10:00",home:"UZB",away:"COL",grp:"K",stage:"group",matchday:1,venue:"NRG Stadium, Houston"},
+  // === June 19 (MD2) ===
+  {id:"m025",date:"2026-06-19",time:"03:00",home:"RSA",away:"KOR",grp:"A",stage:"group",matchday:2,venue:"Estadio Banorte, Mexico City"},
+  {id:"m026",date:"2026-06-19",time:"09:00",home:"MEX",away:"CZE",grp:"A",stage:"group",matchday:2,venue:"Estadio Banorte, Mexico City"},
+  {id:"m027",date:"2026-06-19",time:"06:00",home:"SUI",away:"BIH",grp:"B",stage:"group",matchday:2,venue:"BMO Field, Toronto"},
+  {id:"m028",date:"2026-06-19",time:"12:00",home:"CAN",away:"QAT",grp:"B",stage:"group",matchday:2,venue:"BMO Field, Toronto"},
+  // === June 20 ===
+  {id:"m029",date:"2026-06-20",time:"03:00",home:"TUR",away:"PAR",grp:"D",stage:"group",matchday:2,venue:"SoFi Stadium, Los Angeles"},
+  {id:"m030",date:"2026-06-20",time:"09:00",home:"USA",away:"AUS",grp:"D",stage:"group",matchday:2,venue:"SoFi Stadium, Los Angeles"},
+  {id:"m031",date:"2026-06-20",time:"06:00",home:"BRA",away:"HAI",grp:"C",stage:"group",matchday:2,venue:"MetLife Stadium, NY/NJ"},
+  {id:"m032",date:"2026-06-20",time:"12:00",home:"MAR",away:"SCO",grp:"C",stage:"group",matchday:2,venue:"MetLife Stadium, NY/NJ"},
+  // === June 21 ===
+  {id:"m033",date:"2026-06-21",time:"01:00",home:"GER",away:"CIV",grp:"E",stage:"group",matchday:2,venue:"NRG Stadium, Houston"},
+  {id:"m034",date:"2026-06-21",time:"07:00",home:"ECU",away:"CUW",grp:"E",stage:"group",matchday:2,venue:"NRG Stadium, Houston"},
+  {id:"m035",date:"2026-06-21",time:"04:00",home:"NED",away:"SWE",grp:"F",stage:"group",matchday:2,venue:"AT&T Stadium, Dallas"},
+  {id:"m036",date:"2026-06-21",time:"10:00",home:"JPN",away:"TUN",grp:"F",stage:"group",matchday:2,venue:"AT&T Stadium, Dallas"},
+  // === June 22 ===
+  {id:"m037",date:"2026-06-22",time:"03:00",home:"BEL",away:"IRN",grp:"G",stage:"group",matchday:2,venue:"Lumen Field, Seattle"},
+  {id:"m038",date:"2026-06-22",time:"09:00",home:"EGY",away:"NZL",grp:"G",stage:"group",matchday:2,venue:"Lumen Field, Seattle"},
+  {id:"m039",date:"2026-06-22",time:"00:00",home:"ESP",away:"KSA",grp:"H",stage:"group",matchday:2,venue:"Mercedes-Benz Stadium, Atlanta"},
+  {id:"m040",date:"2026-06-22",time:"06:00",home:"URU",away:"CPV",grp:"H",stage:"group",matchday:2,venue:"Hard Rock Stadium, Miami"},
+  // === June 23 ===
+  {id:"m041",date:"2026-06-23",time:"03:00",home:"FRA",away:"IRQ",grp:"I",stage:"group",matchday:2,venue:"MetLife Stadium, NY/NJ"},
+  {id:"m042",date:"2026-06-23",time:"09:00",home:"SEN",away:"NOR",grp:"I",stage:"group",matchday:2,venue:"MetLife Stadium, NY/NJ",featured:true},
+  {id:"m043",date:"2026-06-23",time:"06:00",home:"ARG",away:"AUT",grp:"J",stage:"group",matchday:2,venue:"Arrowhead Stadium, Kansas City"},
+  {id:"m044",date:"2026-06-23",time:"12:00",home:"ALG",away:"JOR",grp:"J",stage:"group",matchday:2,venue:"Arrowhead Stadium, Kansas City"},
+  // === June 24 ===
   {id:"m045",date:"2026-06-24",time:"01:00",home:"POR",away:"UZB",grp:"K",stage:"group",matchday:2,venue:"NRG Stadium, Houston"},
-  {id:"m046",date:"2026-06-24",time:"04:00",home:"ENG",away:"GHA",grp:"L",stage:"group",matchday:2,venue:"Gillette Stadium, Boston"},
-  {id:"m047",date:"2026-06-24",time:"07:00",home:"PAN",away:"CRO",grp:"L",stage:"group",matchday:2,venue:"BMO Field, Toronto"},
-  {id:"m048",date:"2026-06-24",time:"10:00",home:"COL",away:"COD",grp:"K",stage:"group",matchday:2,venue:"Estadio Akron, Guadalajara"},
-  {id:"m049",date:"2026-06-25",time:"03:00",home:"SUI",away:"CAN",grp:"B",stage:"group",matchday:3,venue:"BC Place, Vancouver"},
-  {id:"m050",date:"2026-06-25",time:"03:00",home:"BIH",away:"QAT",grp:"B",stage:"group",matchday:3,venue:"Lumen Field, Seattle"},
-  {id:"m051",date:"2026-06-25",time:"06:00",home:"MAR",away:"HAI",grp:"C",stage:"group",matchday:3,venue:"Mercedes-Benz Stadium, Atlanta"},
-  {id:"m052",date:"2026-06-25",time:"06:00",home:"SCO",away:"BRA",grp:"C",stage:"group",matchday:3,venue:"Hard Rock Stadium, Miami"},
-  {id:"m053",date:"2026-06-25",time:"09:00",home:"CZE",away:"MEX",grp:"A",stage:"group",matchday:3,venue:"Estadio Azteca, Mexico City"},
-  {id:"m054",date:"2026-06-25",time:"09:00",home:"RSA",away:"KOR",grp:"A",stage:"group",matchday:3,venue:"Estadio BBVA, Monterrey"},
-  {id:"m055",date:"2026-06-26",time:"04:00",home:"ECU",away:"GER",grp:"E",stage:"group",matchday:3,venue:"MetLife Stadium, New York New Jersey"},
-  {id:"m056",date:"2026-06-26",time:"04:00",home:"CUW",away:"CIV",grp:"E",stage:"group",matchday:3,venue:"Lincoln Financial Field, Philadelphia"},
-  {id:"m057",date:"2026-06-26",time:"07:00",home:"JPN",away:"SWE",grp:"F",stage:"group",matchday:3,venue:"AT&T Stadium, Dallas"},
-  {id:"m058",date:"2026-06-26",time:"07:00",home:"TUN",away:"NED",grp:"F",stage:"group",matchday:3,venue:"Arrowhead Stadium, Kansas City"},
-  {id:"m059",date:"2026-06-26",time:"10:00",home:"TUR",away:"USA",grp:"D",stage:"group",matchday:3,venue:"SoFi Stadium, Los Angeles"},
-  {id:"m060",date:"2026-06-26",time:"10:00",home:"PAR",away:"AUS",grp:"D",stage:"group",matchday:3,venue:"Levi's Stadium, San Francisco Bay Area"},
-  {id:"m061",date:"2026-06-27",time:"03:00",home:"SEN",away:"IRQ",grp:"I",stage:"group",matchday:3,venue:"BMO Field, Toronto"},
-  {id:"m062",date:"2026-06-27",time:"03:00",home:"NOR",away:"FRA",grp:"I",stage:"group",matchday:3,venue:"Gillette Stadium, Boston"},
-  {id:"m063",date:"2026-06-27",time:"08:00",home:"URU",away:"ESP",grp:"H",stage:"group",matchday:3,venue:"Estadio Akron, Guadalajara"},
-  {id:"m064",date:"2026-06-27",time:"08:00",home:"CPV",away:"KSA",grp:"H",stage:"group",matchday:3,venue:"NRG Stadium, Houston"},
-  {id:"m065",date:"2026-06-27",time:"11:00",home:"EGY",away:"IRN",grp:"G",stage:"group",matchday:3,venue:"Lumen Field, Seattle"},
-  {id:"m066",date:"2026-06-27",time:"11:00",home:"NZL",away:"BEL",grp:"G",stage:"group",matchday:3,venue:"BC Place, Vancouver"},
-  {id:"m067",date:"2026-06-28",time:"05:00",home:"CRO",away:"GHA",grp:"L",stage:"group",matchday:3,venue:"Lincoln Financial Field, Philadelphia"},
-  {id:"m068",date:"2026-06-28",time:"05:00",home:"PAN",away:"ENG",grp:"L",stage:"group",matchday:3,venue:"MetLife Stadium, New York New Jersey"},
-  {id:"m069",date:"2026-06-28",time:"07:30",home:"COL",away:"POR",grp:"K",stage:"group",matchday:3,venue:"Hard Rock Stadium, Miami"},
-  {id:"m070",date:"2026-06-28",time:"07:30",home:"COD",away:"UZB",grp:"K",stage:"group",matchday:3,venue:"Mercedes-Benz Stadium, Atlanta"},
-  {id:"m071",date:"2026-06-28",time:"10:00",home:"ALG",away:"AUT",grp:"J",stage:"group",matchday:3,venue:"Arrowhead Stadium, Kansas City"},
-  {id:"m072",date:"2026-06-28",time:"10:00",home:"JOR",away:"ARG",grp:"J",stage:"group",matchday:3,venue:"AT&T Stadium, Dallas"}
-];
+  {id:"m046",date:"2026-06-24",time:"07:00",home:"COL",away:"COD",grp:"K",stage:"group",matchday:2,venue:"NRG Stadium, Houston"},
+  {id:"m047",date:"2026-06-24",time:"04:00",home:"ENG",away:"GHA",grp:"L",stage:"group",matchday:2,venue:"AT&T Stadium, Dallas"},
+  {id:"m048",date:"2026-06-24",time:"10:00",home:"CRO",away:"PAN",grp:"L",stage:"group",matchday:2,venue:"AT&T Stadium, Dallas"},
+  // === June 25 (MD3 - simultaneous per group) ===
+  {id:"m049",date:"2026-06-25",time:"03:00",home:"MEX",away:"KOR",grp:"A",stage:"group",matchday:3,venue:"Estadio Banorte, Mexico City",simul:"A"},
+  {id:"m050",date:"2026-06-25",time:"03:00",home:"CZE",away:"RSA",grp:"A",stage:"group",matchday:3,venue:"Estadio Akron, Guadalajara",simul:"A"},
+  {id:"m051",date:"2026-06-25",time:"09:00",home:"CAN",away:"SUI",grp:"B",stage:"group",matchday:3,venue:"BMO Field, Toronto",simul:"B"},
+  {id:"m052",date:"2026-06-25",time:"09:00",home:"BIH",away:"QAT",grp:"B",stage:"group",matchday:3,venue:"BC Place, Vancouver",simul:"B"},
+  // === June 26 (MD3 groups C, E, F, D) ===
+  {id:"m053",date:"2026-06-26",time:"06:00",home:"BRA",away:"SCO",grp:"C",stage:"group",matchday:3,venue:"MetLife Stadium, NY/NJ",simul:"C"},
+  {id:"m054",date:"2026-06-26",time:"06:00",home:"MAR",away:"HAI",grp:"C",stage:"group",matchday:3,venue:"Gillette Stadium, Boston",simul:"C"},
+  {id:"m055",date:"2026-06-26",time:"01:00",home:"GER",away:"ECU",grp:"E",stage:"group",matchday:3,venue:"NRG Stadium, Houston",simul:"E"},
+  {id:"m056",date:"2026-06-26",time:"01:00",home:"CIV",away:"CUW",grp:"E",stage:"group",matchday:3,venue:"Levi's Stadium, SF Bay",simul:"E"},
+  {id:"m057",date:"2026-06-26",time:"04:00",home:"NED",away:"TUN",grp:"F",stage:"group",matchday:3,venue:"AT&T Stadium, Dallas",simul:"F"},
+  {id:"m058",date:"2026-06-26",time:"04:00",home:"JPN",away:"SWE",grp:"F",stage:"group",matchday:3,venue:"Lincoln Financial, Philadelphia",simul:"F"},
+  {id:"m059",date:"2026-06-26",time:"09:00",home:"USA",away:"TUR",grp:"D",stage:"group",matchday:3,venue:"SoFi Stadium, Los Angeles",simul:"D"},
+  {id:"m060",date:"2026-06-26",time:"09:00",home:"PAR",away:"AUS",grp:"D",stage:"group",matchday:3,venue:"BC Place, Vancouver",simul:"D"},
+  // === June 27 (MD3 groups G, H, I) ===
+  {id:"m061",date:"2026-06-27",time:"03:00",home:"BEL",away:"NZL",grp:"G",stage:"group",matchday:3,venue:"Lumen Field, Seattle",simul:"G"},
+  {id:"m062",date:"2026-06-27",time:"03:00",home:"EGY",away:"IRN",grp:"G",stage:"group",matchday:3,venue:"Levi's Stadium, SF Bay",simul:"G"},
+  {id:"m063",date:"2026-06-27",time:"06:00",home:"ESP",away:"URU",grp:"H",stage:"group",matchday:3,venue:"Mercedes-Benz Stadium, Atlanta",simul:"H",featured:true},
+  {id:"m064",date:"2026-06-27",time:"06:00",home:"CPV",away:"KSA",grp:"H",stage:"group",matchday:3,venue:"Hard Rock Stadium, Miami",simul:"H"},
+  {id:"m065",date:"2026-06-27",time:"09:00",home:"FRA",away:"NOR",grp:"I",stage:"group",matchday:3,venue:"MetLife Stadium, NY/NJ",simul:"I",featured:true},
+  {id:"m066",date:"2026-06-27",time:"09:00",home:"SEN",away:"IRQ",grp:"I",stage:"group",matchday:3,venue:"Gillette Stadium, Boston",simul:"I"},
+  // === June 28 (MD3 groups J, K, L) ===
+  {id:"m067",date:"2026-06-28",time:"03:00",home:"ARG",away:"JOR",grp:"J",stage:"group",matchday:3,venue:"Arrowhead Stadium, Kansas City",simul:"J"},
+  {id:"m068",date:"2026-06-28",time:"03:00",home:"ALG",away:"AUT",grp:"J",stage:"group",matchday:3,venue:"Gillette Stadium, Boston",simul:"J"},
+  {id:"m069",date:"2026-06-28",time:"06:00",home:"POR",away:"COL",grp:"K",stage:"group",matchday:3,venue:"NRG Stadium, Houston",simul:"K",featured:true},
+  {id:"m070",date:"2026-06-28",time:"06:00",home:"COD",away:"UZB",grp:"K",stage:"group",matchday:3,venue:"Lincoln Financial, Philadelphia",simul:"K"},
+  {id:"m071",date:"2026-06-28",time:"09:00",home:"ENG",away:"PAN",grp:"L",stage:"group",matchday:3,venue:"AT&T Stadium, Dallas",simul:"L"},
+  {id:"m072",date:"2026-06-28",time:"09:00",home:"CRO",away:"GHA",grp:"L",stage:"group",matchday:3,venue:"Levi's Stadium, SF Bay",simul:"L"},
+  // === Knockout: Round of 32 (June 29 - July 4) ===
+  {id:"k01",date:"2026-06-29",time:"TBD",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Various"},
+  // ... (16 knockout slots filled after group stage)
+  {id:"k02",date:"2026-07-04",time:"TBD",home:"?",away:"?",grp:"",stage:"r32",matchday:null,venue:"Various"},
+  // Round of 16
+  {id:"k17",date:"2026-07-05",time:"TBD",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"Various"},
+  {id:"k24",date:"2026-07-08",time:"TBD",home:"?",away:"?",grp:"",stage:"r16",matchday:null,venue:"Various"},
+  // Quarter-finals
+  {id:"k25",date:"2026-07-10",time:"TBD",home:"?",away:"?",grp:"",stage:"qf",matchday:null,venue:""},
+  {id:"k28",date:"2026-07-12",time:"TBD",home:"?",away:"?",grp:"",stage:"qf",matchday:null,venue:""},
+  // Semi-finals
+  {id:"k29",date:"2026-07-15",time:"TBD",home:"?",away:"?",grp:"",stage:"sf",matchday:null,venue:"AT&T Stadium, Dallas"},
+  {id:"k30",date:"2026-07-16",time:"TBD",home:"?",away:"?",grp:"",stage:"sf",matchday:null,venue:"Mercedes-Benz Stadium, Atlanta"},
+  // 3rd place + Final
+  {id:"k31",date:"2026-07-18",time:"TBD",home:"?",away:"?",grp:"",stage:"tpp",matchday:null,venue:"Hard Rock Stadium, Miami"},
+  {id:"k32",date:"2026-07-20",time:"03:00",home:"?",away:"?",grp:"",stage:"final",matchday:null,venue:"MetLife Stadium, NY/NJ",featured:true},
+]
+
+var JC_NUMBERS = {
+  m001:'周四001',m002:'周四002',m003:'周五003',m004:'周五004',
+  m005:'周六005',m006:'周六006',m007:'周六007',m008:'周六008',
+  m009:'周日009',m010:'周日010',m011:'周日011',m012:'周日012',
+  m013:'周一013',m014:'周一014',m015:'周一015',m016:'周一016',
+  m017:'周二017',m018:'周二018',m019:'周二019',m020:'周二020',
+  m021:'周三021',m022:'周三022',m023:'周三023',m024:'周三024',
+  m025:'周五025',m026:'周五026',m027:'周五027',m028:'周五028',
+  m029:'周六029',m030:'周六030',m031:'周六031',m032:'周六032',
+  m033:'周日033',m034:'周日034',m035:'周日035',m036:'周日036',
+  m037:'周一037',m038:'周一038',m039:'周一039',m040:'周一040',
+  m041:'周二041',m042:'周二042',m043:'周二043',m044:'周二044',
+  m045:'周三045',m046:'周三046',m047:'周三047',m048:'周三048',
+  m049:'周四049',m050:'周四050',m051:'周四051',m052:'周四052',
+  m053:'周五053',m054:'周五054',m055:'周五055',m056:'周五056',m057:'周五057',m058:'周五058',m059:'周五059',m060:'周五060',
+  m061:'周六061',m062:'周六062',m063:'周六063',m064:'周六064',m065:'周六065',m066:'周六066',
+  m067:'周日067',m068:'周日068',m069:'周日069',m070:'周日070',m071:'周日071',m072:'周日072',
+}
+
+const JC_ODDS = {m001:{spf:[1.85,3.25,3.60]},m002:{spf:[2.05,3.10,3.20]},m003:{spf:[2.00,3.15,3.30]},m004:{spf:[2.10,3.05,3.50]},m005:{spf:[5.80,3.70,1.47],rq:'+1',rqO:[2.55,3.25,2.30]},m006:{spf:[1.53,3.55,5.30],rq:'-1',rqO:[2.80,3.30,2.10]},m007:{spf:[5.50,3.80,1.48],rq:'+1',rqO:[2.35,3.30,2.45]},m008:{spf:[3.80,3.30,1.80],rq:'+1',rqO:[1.82,3.35,3.45]},m009:{spf:[1.00,9.00,35.0],rq:'-3',rqO:[2.10,4.80,2.25]},m010:{spf:[1.80,3.35,3.60],rq:'-1',rqO:[3.45,3.45,1.78]},m011:{spf:[3.30,2.80,2.15],rq:'+1',rqO:[1.62,3.50,4.20]},m012:{spf:[1.75,3.40,3.80],rq:'-1',rqO:[3.20,3.50,1.85]},m013:{spf:[1.00,7.50,18.0],rq:'-2',rqO:[1.82,4.55,2.85]},m014:{spf:[1.43,3.92,5.90],rq:'-1',rqO:[2.56,3.40,2.35]},m015:{spf:[7.65,4.30,1.31],rq:'+1',rqO:[2.87,3.30,2.11]},m016:{spf:[1.59,3.30,5.10],rq:'-1',rqO:[3.11,3.20,2.02]},m017:{spf:[1.38,4.10,6.30],rq:'-1',rqO:[2.25,3.35,2.55]},m018:{spf:[9.50,5.20,1.22],rq:'+1',rqO:[3.50,3.40,1.78]},m019:{spf:[1.35,4.15,6.80],rq:'-1',rqO:[2.15,3.35,2.65]},m020:{spf:[1.28,4.60,8.00],rq:'-1',rqO:[1.95,3.40,3.00]},m021:{spf:[1.22,5.00,9.20],rq:'-1',rqO:[1.75,3.60,3.35]},m022:{spf:[1.65,3.50,4.25],rq:'-1',rqO:[3.05,3.35,1.95]},m023:{spf:[1.85,3.25,3.55],rq:'-1',rqO:[3.65,3.40,1.75]},m024:{spf:[8.00,4.50,1.30],rq:'+1',rqO:[3.20,3.35,1.90]},m025:{spf:[2.30,3.10,2.70]},m026:{spf:[1.82,3.30,3.65],rq:'-1',rqO:[3.40,3.40,1.80]},m027:{spf:[1.30,4.50,7.50],rq:'-1',rqO:[2.05,3.40,2.80]},m028:{spf:[1.75,3.40,3.85],rq:'-1',rqO:[3.20,3.50,1.85]},m029:{spf:[2.05,3.20,3.05]},m030:{spf:[1.68,3.55,4.00],rq:'-1',rqO:[3.10,3.35,1.92]},m031:{spf:[1.06,8.00,20.0],rq:'-2',rqO:[1.90,4.50,2.65]},m032:{spf:[1.50,3.70,5.40],rq:'-1',rqO:[2.70,3.40,2.10]},m033:{spf:[1.25,4.80,8.80],rq:'-1',rqO:[1.95,3.50,2.90]},m034:{spf:[1.15,6.00,13.0],rq:'-2',rqO:[2.70,4.40,1.88]},m035:{spf:[1.68,3.50,4.10],rq:'-1',rqO:[3.20,3.35,1.88]},m036:{spf:[1.32,4.40,7.00],rq:'-1',rqO:[2.15,3.40,2.60]},m037:{spf:[1.40,4.00,6.20],rq:'-1',rqO:[2.40,3.40,2.32]},m038:{spf:[1.12,6.50,14.0],rq:'-2',rqO:[2.50,4.30,2.00]},m039:{spf:[1.03,9.00,26.0],rq:'-2',rqO:[1.55,5.00,3.45]},m040:{spf:[1.06,8.00,21.0],rq:'-2',rqO:[1.75,4.80,2.85]},m041:{spf:[1.03,10.0,30.0],rq:'-3',rqO:[2.30,5.20,2.00]},m042:{spf:[2.30,3.15,2.65]},m043:{spf:[1.33,4.40,7.00],rq:'-1',rqO:[2.15,3.40,2.60]},m044:{spf:[1.75,3.40,3.80],rq:'-1',rqO:[3.30,3.40,1.83]},m045:{spf:[1.06,8.00,20.0],rq:'-2',rqO:[1.88,4.60,2.70]},m046:{spf:[1.32,4.50,7.00],rq:'-1',rqO:[2.10,3.45,2.65]},m047:{spf:[1.22,5.00,9.50],rq:'-1',rqO:[1.80,3.60,3.25]},m048:{spf:[1.50,3.80,5.20],rq:'-1',rqO:[2.70,3.40,2.08]}}
+
+const ODDS_STATS = {
+  "1.01-1.15":{"n":54,"H":0.8889,"D":0.0741,"A":0.037},
+  "1.16-1.25":{"n":141,"H":0.7872,"D":0.1844,"A":0.0284},
+  "1.26-1.40":{"n":382,"H":0.7513,"D":0.1675,"A":0.0812},
+  "1.41-1.55":{"n":483,"H":0.6563,"D":0.1967,"A":0.147},
+  "1.56-1.70":{"n":786,"H":0.5802,"D":0.2583,"A":0.1616},
+  "1.71-1.85":{"n":902,"H":0.5477,"D":0.2616,"A":0.1907},
+  "1.86-2.00":{"n":898,"H":0.4822,"D":0.2706,"A":0.2472},
+  "2.01-2.20":{"n":1114,"H":0.4408,"D":0.2944,"A":0.2648},
+  "2.21-2.50":{"n":1415,"H":0.4141,"D":0.2919,"A":0.294},
+  "2.51-3.00":{"n":1498,"H":0.3311,"D":0.3051,"A":0.3638},
+  "3.01-4.00":{"n":1163,"H":0.27,"D":0.258,"A":0.4721},
+  "4.01-6.00":{"n":560,"H":0.1893,"D":0.25,"A":0.5607},
+  "6.01-10.00":{"n":141,"H":0.1206,"D":0.1915,"A":0.6879},
+  "10.01+":{"n":20,"H":0.1,"D":0.15,"A":0.75}
+}
+
+const ODDS_FINE = {
+  "1.1-1.2":{"n":76,"H":0.8289,"D":0.1447,"A":0.0263},
+  "1.2-1.3":{"n":141,"H":0.7801,"D":0.1844,"A":0.0355},
+  "1.3-1.4":{"n":234,"H":0.7436,"D":0.1667,"A":0.0897},
+  "1.4-1.5":{"n":287,"H":0.7143,"D":0.1916,"A":0.0941},
+  "1.5-1.6":{"n":418,"H":0.6244,"D":0.201,"A":0.1746},
+  "1.6-1.7":{"n":503,"H":0.5805,"D":0.2783,"A":0.1412},
+  "1.7-1.8":{"n":512,"H":0.5645,"D":0.2422,"A":0.1934},
+  "1.8-1.9":{"n":561,"H":0.5419,"D":0.2656,"A":0.1925},
+  "1.9-2.0":{"n":606,"H":0.4917,"D":0.2591,"A":0.2492},
+  "2.0-2.1":{"n":542,"H":0.4613,"D":0.2934,"A":0.2454},
+  "2.1-2.2":{"n":526,"H":0.4506,"D":0.2814,"A":0.2681},
+  "2.2-2.3":{"n":655,"H":0.4122,"D":0.3008,"A":0.287},
+  "2.3-2.4":{"n":525,"H":0.4362,"D":0.2743,"A":0.2895},
+  "2.4-2.5":{"n":374,"H":0.3984,"D":0.3075,"A":0.2941},
+  "2.5-2.6":{"n":349,"H":0.3811,"D":0.3095,"A":0.3095},
+  "2.6-2.7":{"n":320,"H":0.3625,"D":0.2906,"A":0.3469},
+  "2.7-2.8":{"n":360,"H":0.3139,"D":0.3167,"A":0.3694},
+  "2.8-2.9":{"n":310,"H":0.3,"D":0.3194,"A":0.3806},
+  "2.9-3.0":{"n":146,"H":0.3425,"D":0.2945,"A":0.363},
+  "3.0-3.1":{"n":212,"H":0.3208,"D":0.3019,"A":0.3774},
+  "3.1-3.2":{"n":187,"H":0.3048,"D":0.2513,"A":0.4439},
+  "3.2-3.3":{"n":212,"H":0.3349,"D":0.2264,"A":0.4387},
+  "3.3-3.4":{"n":122,"H":0.1885,"D":0.3279,"A":0.4836},
+  "3.4-3.5":{"n":125,"H":0.24,"D":0.304,"A":0.456},
+  "3.5-3.6":{"n":98,"H":0.2245,"D":0.2143,"A":0.5612},
+  "3.6-3.7":{"n":123,"H":0.2764,"D":0.252,"A":0.4715},
+  "3.7-3.8":{"n":94,"H":0.3085,"D":0.2979,"A":0.3936},
+  "3.8-3.9":{"n":87,"H":0.2759,"D":0.2299,"A":0.4943},
+  "4.0-4.1":{"n":110,"H":0.2,"D":0.2364,"A":0.5636},
+  "4.2-4.3":{"n":105,"H":0.2571,"D":0.219,"A":0.5238},
+  "4.3-4.4":{"n":71,"H":0.1268,"D":0.2535,"A":0.6197},
+  "4.5-4.6":{"n":63,"H":0.2063,"D":0.3016,"A":0.4921},
+  "4.7-4.8":{"n":89,"H":0.2584,"D":0.2584,"A":0.4831},
+  "5-6":{"n":128,"H":0.1562,"D":0.2422,"A":0.6016},
+  "5.0-5.1":{"n":63,"H":0.1905,"D":0.2698,"A":0.5397},
+  "6-7":{"n":74,"H":0.0541,"D":0.2162,"A":0.7297},
+  "7-8":{"n":50,"H":0.1,"D":0.32,"A":0.58},
+  "8-9":{"n":32,"H":0.25,"D":0.0938,"A":0.6562},
+  "9-10":{"n":20,"H":0.1,"D":0,"A":0.9},
+  "10+":{"n":20,"H":0.1,"D":0.15,"A":0.75}
+}
+
+const HISTORICAL_WC = [
+  // ===== 2022 World Cup =====
+  {odds:[1.67,3.50,5.50],r:'H',s:'group',m:'Netherlands vs Senegal',y:2022},{odds:[1.25,5.50,12.0],r:'H',s:'group',m:'England vs Iran',y:2022},{odds:[2.15,3.10,3.60],r:'D',s:'group',m:'USA vs Wales',y:2022},{odds:[1.44,4.00,8.00],r:'H',s:'group',m:'Argentina vs Saudi Arabia',y:2022},
+  {odds:[2.50,3.10,2.90],r:'D',s:'group',m:'Denmark vs Tunisia',y:2022},{odds:[1.50,3.80,7.00],r:'D',s:'group',m:'Mexico vs Poland',y:2022},{odds:[1.30,5.00,10.0],r:'H',s:'group',m:'France vs Australia',y:2022},{odds:[2.00,3.20,4.00],r:'D',s:'group',m:'Morocco vs Croatia',y:2022},
+  {odds:[1.62,3.60,5.80],r:'A',s:'group',m:'Germany vs Japan',y:2022},{odds:[1.36,4.50,9.00],r:'H',s:'group',m:'Spain vs Costa Rica',y:2022},{odds:[1.73,3.50,5.00],r:'D',s:'group',m:'Belgium vs Canada',y:2022},{odds:[1.44,4.00,7.50],r:'A',s:'group',m:'Switzerland vs Cameroon',y:2022},
+  {odds:[1.55,3.75,6.50],r:'A',s:'group',m:'Uruguay vs South Korea',y:2022},{odds:[1.40,4.20,8.50],r:'H',s:'group',m:'Portugal vs Ghana',y:2022},{odds:[1.36,4.50,9.00],r:'H',s:'group',m:'Brazil vs Serbia',y:2022},{odds:[2.50,3.00,3.00],r:'D',s:'group',m:'Wales vs Iran',y:2022},
+  {odds:[2.10,3.20,3.60],r:'A',s:'group',m:'Qatar vs Senegal',y:2022},{odds:[1.80,3.40,4.50],r:'H',s:'group',m:'Netherlands vs Ecuador',y:2022},{odds:[1.36,4.50,9.00],r:'D',s:'group',m:'England vs USA',y:2022},{odds:[2.75,3.10,2.62],r:'A',s:'group',m:'Tunisia vs Australia',y:2022},
+  {odds:[1.83,3.30,4.50],r:'H',s:'group',m:'Poland vs Saudi Arabia',y:2022},{odds:[1.36,4.50,9.00],r:'H',s:'group',m:'France vs Denmark',y:2022},{odds:[1.08,9.00,23.0],r:'H',s:'group',m:'Argentina vs Mexico',y:2022},{odds:[2.40,3.20,3.00],r:'D',s:'group',m:'Japan vs Costa Rica',y:2022},
+  {odds:[1.57,3.75,6.00],r:'D',s:'group',m:'Belgium vs Morocco',y:2022},{odds:[2.25,3.20,3.25],r:'H',s:'group',m:'Croatia vs Canada',y:2022},{odds:[1.50,3.80,7.00],r:'D',s:'group',m:'Spain vs Germany',y:2022},{odds:[2.62,3.10,2.75],r:'H',s:'group',m:'Cameroon vs Serbia',y:2022},
+  {odds:[2.00,3.20,4.00],r:'H',s:'group',m:'South Korea vs Ghana',y:2022},{odds:[1.40,4.20,8.50],r:'H',s:'group',m:'Brazil vs Switzerland',y:2022},{odds:[1.67,3.50,5.50],r:'H',s:'group',m:'Portugal vs Uruguay',y:2022},{odds:[3.75,3.30,2.00],r:'A',s:'group',m:'Wales vs England',y:2022},
+  {odds:[3.60,3.25,2.10],r:'A',s:'group',m:'Iran vs USA',y:2022},{odds:[1.11,8.00,21.0],r:'H',s:'group',m:'Netherlands vs Qatar',y:2022},{odds:[2.25,3.40,3.10],r:'H',s:'group',m:'Ecuador vs Senegal',y:2022},{odds:[8.50,4.50,1.36],r:'A',s:'group',m:'Saudi Arabia vs Mexico',y:2022},
+  {odds:[2.50,3.30,2.80],r:'A',s:'group',m:'Poland vs Argentina',y:2022},{odds:[6.00,3.75,1.57],r:'A',s:'group',m:'Tunisia vs France',y:2022},{odds:[9.00,4.50,1.36],r:'A',s:'group',m:'Australia vs Denmark',y:2022},{odds:[2.90,3.00,2.62],r:'H',s:'group',m:'Japan vs Spain',y:2022},
+  {odds:[8.00,4.50,1.40],r:'A',s:'group',m:'Costa Rica vs Germany',y:2022},{odds:[2.62,3.40,2.62],r:'D',s:'group',m:'Canada vs Morocco',y:2022},{odds:[3.00,3.30,2.37],r:'D',s:'group',m:'Croatia vs Belgium',y:2022},{odds:[5.50,4.00,1.57],r:'A',s:'group',m:'Cameroon vs Brazil',y:2022},
+  {odds:[1.91,3.30,4.33],r:'A',s:'group',m:'Ghana vs Uruguay',y:2022},{odds:[4.50,3.40,1.83],r:'A',s:'group',m:'South Korea vs Portugal',y:2022},{odds:[3.50,3.20,2.15],r:'H',s:'group',m:'Serbia vs Switzerland',y:2022},
+  // KO 2022
+  {odds:[1.83,3.30,4.75],r:'H',s:'ko',m:'Netherlands vs USA R16',y:2022},{odds:[1.22,6.00,13.0],r:'H',s:'ko',m:'Argentina vs Australia R16',y:2022},{odds:[1.40,4.20,9.00],r:'H',s:'ko',m:'France vs Poland R16',y:2022},{odds:[1.44,4.00,8.00],r:'H',s:'ko',m:'England vs Senegal R16',y:2022},
+  {odds:[5.00,3.60,1.72],r:'A',s:'ko',m:'Japan vs Croatia R16',y:2022},{odds:[1.33,4.80,9.50],r:'H',s:'ko',m:'Brazil vs South Korea R16',y:2022},{odds:[2.60,3.00,2.90],r:'D',s:'ko',m:'Morocco vs Spain R16',y:2022},{odds:[1.95,3.30,4.00],r:'H',s:'ko',m:'Portugal vs Switzerland R16',y:2022},
+  {odds:[1.80,3.25,4.00],r:'D',s:'ko',m:'Netherlands vs Argentina QF',y:2022},{odds:[2.87,2.90,2.75],r:'A',s:'ko',m:'Morocco vs Portugal QF',y:2022},{odds:[1.83,3.30,4.75],r:'H',s:'ko',m:'England vs France QF',y:2022},{odds:[1.90,3.40,4.20],r:'H',s:'ko',m:'Argentina vs Croatia SF',y:2022},
+  {odds:[1.50,3.80,7.50],r:'H',s:'ko',m:'France vs Morocco SF',y:2022},{odds:[2.40,3.20,3.00],r:'D',s:'ko',m:'Argentina vs France F',y:2022},
+
+  // ===== 2018 World Cup =====
+  {odds:[1.47,4.00,7.00],r:'H',s:'group',m:'Russia vs Saudi Arabia',y:2018},{odds:[1.61,3.50,6.00],r:'D',s:'group',m:'Egypt vs Uruguay',y:2018},{odds:[2.30,3.00,3.30],r:'D',s:'group',m:'Morocco vs Iran',y:2018},{odds:[1.30,5.00,10.0],r:'D',s:'group',m:'Portugal vs Spain',y:2018},
+  {odds:[1.36,4.50,9.00],r:'H',s:'group',m:'France vs Australia',y:2018},{odds:[1.44,4.00,8.00],r:'D',s:'group',m:'Argentina vs Iceland',y:2018},{odds:[5.00,3.50,1.72],r:'A',s:'group',m:'Peru vs Denmark',y:2018},{odds:{h:2.50,d:3.00,a:3.00},r:'D',s:'group',m:'Croatia vs Nigeria',y:2018},
+  {odds:[3.75,3.25,2.05],r:'A',s:'group',m:'Costa Rica vs Serbia',y:2018},{odds:[1.33,5.00,9.00],r:'D',s:'group',m:'Germany vs Mexico',y:2018},{odds:[1.25,5.50,12.0],r:'H',s:'group',m:'Brazil vs Switzerland',y:2018},{odds:[2.25,3.00,3.50],r:'D',s:'group',m:'Sweden vs South Korea',y:2018},
+  {odds:[1.50,3.75,7.50],r:'H',s:'group',m:'Belgium vs Panama',y:2018},{odds:[2.10,3.10,3.75],r:'H',s:'group',m:'Tunisia vs England',y:2018},{odds:{h:5.00,d:3.50,a:1.72},r:'H',s:'group',m:'Poland vs Senegal',y:2018},{odds:[1.67,3.40,5.80],r:'A',s:'group',m:'Colombia vs Japan',y:2018},
+  {odds:[2.37,3.10,3.10],r:'H',s:'group',m:'Russia vs Egypt',y:2018},{odds:[1.67,3.40,6.00],r:'H',s:'group',m:'Portugal vs Morocco',y:2018},{odds:[1.61,3.60,5.80],r:'A',s:'group',m:'Uruguay vs Saudi Arabia',y:2018},{odds:[2.50,3.10,2.90],r:'A',s:'group',m:'Iran vs Spain',y:2018},
+  {odds:[2.60,3.00,2.87],r:'D',s:'group',m:'Denmark vs Australia',y:2018},{odds:[1.28,5.00,11.0],r:'H',s:'group',m:'France vs Peru',y:2018},{odds:{h:3.40,d:3.20,a:2.15},r:'A',s:'group',m:'Argentina vs Croatia',y:2018},{odds:[1.36,4.50,9.00],r:'H',s:'group',m:'Brazil vs Costa Rica',y:2018},
+  {odds:[4.00,3.40,1.91],r:'A',s:'group',m:'Nigeria vs Iceland',y:2018},{odds:[2.37,3.25,3.00],r:'H',s:'group',m:'Serbia vs Switzerland',y:2018},{odds:[2.60,3.00,2.87],r:'H',s:'group',m:'South Korea vs Germany',y:2018},{odds:{h:1.30,d:5.00,a:10.0},r:'A',s:'group',m:'Mexico vs Sweden',y:2018},
+  {odds:[5.00,3.75,1.66],r:'A',s:'group',m:'Switzerland vs Brazil',y:2018},{odds:[1.30,5.00,10.0],r:'H',s:'group',m:'England vs Panama',y:2018},{odds:[5.00,3.40,1.72],r:'H',s:'group',m:'Japan vs Poland',y:2018},{odds:[2.37,3.25,3.00],r:'H',s:'group',m:'Senegal vs Colombia',y:2018},
+  {odds:[1.30,5.00,10.0],r:'H',s:'group',m:'Belgium vs Tunisia',y:2018},{odds:[1.83,3.30,4.50],r:'H',s:'group',m:'England vs Belgium',y:2018},
+  // KO 2018
+  {odds:[1.30,4.75,11.0],r:'H',s:'ko',m:'France vs Argentina R16',y:2018},{odds:[1.44,4.00,8.00],r:'A',s:'ko',m:'Uruguay vs Portugal R16',y:2018},{odds:[2.75,2.90,2.87],r:'D',s:'ko',m:'Russia vs Spain R16',y:2018},{odds:{h:1.40,d:4.00,a:9.00},r:'D',s:'ko',m:'Croatia vs Denmark R16',y:2018},
+  {odds:[1.36,4.50,9.00],r:'H',s:'ko',m:'Brazil vs Mexico R16',y:2018},{odds:[1.30,5.00,10.0],r:'H',s:'ko',m:'Belgium vs Japan R16',y:2018},{odds:[2.50,3.10,2.87],r:'H',s:'ko',m:'Sweden vs Switzerland R16',y:2018},{odds:{h:2.37,d:3.10,a:3.10},r:'D',s:'ko',m:'Colombia vs England R16',y:2018},
+  {odds:[1.83,3.30,4.50],r:'A',s:'ko',m:'Uruguay vs France QF',y:2018},{odds:[1.53,3.75,6.50],r:'A',s:'ko',m:'Brazil vs Belgium QF',y:2018},{odds:[2.10,3.00,4.00],r:'H',s:'ko',m:'Sweden vs England QF',y:2018},{odds:{h:2.75,d:3.00,a:2.75},r:'D',s:'ko',m:'Russia vs Croatia QF',y:2018},
+  {odds:[1.50,3.80,7.50],r:'H',s:'ko',m:'France vs Belgium SF',y:2018},{odds:[2.37,3.10,3.10],r:'A',s:'ko',m:'Croatia vs England SF',y:2018},{odds:[1.57,4.00,5.80],r:'A',s:'ko',m:'Belgium vs England 3P',y:2018},{odds:[1.36,4.50,9.00],r:'H',s:'ko',m:'France vs Croatia F',y:2018},
+
+  // ===== 2014 World Cup =====
+  {odds:[1.30,5.00,10.0],r:'H',s:'group',m:'Brazil vs Croatia',y:2014},{odds:[2.50,3.10,2.90],r:'H',s:'group',m:'Mexico vs Cameroon',y:2014},{odds:[1.44,4.00,7.50],r:'A',s:'group',m:'Spain vs Netherlands',y:2014},{odds:{h:2.20,d:3.20,a:3.30},r:'H',s:'group',m:'Chile vs Australia',y:2014},
+  {odds:[2.37,3.10,3.10],r:'A',s:'group',m:'Colombia vs Greece',y:2014},{odds:{h:1.67,d:3.50,a:5.50},r:'A',s:'group',m:'Uruguay vs Costa Rica',y:2014},{odds:[1.25,5.50,12.0],r:'H',s:'group',m:'England vs Italy',y:2014},{odds:{h:3.75,d:3.30,a:2.00},r:'H',s:'group',m:'Ivory Coast vs Japan',y:2014},
+  {odds:[1.36,4.50,9.00],r:'H',s:'group',m:'Switzerland vs Ecuador',y:2014},{odds:[1.30,5.00,10.0],r:'H',s:'group',m:'France vs Honduras',y:2014},{odds:[1.36,4.50,9.00],r:'H',s:'group',m:'Argentina vs Bosnia',y:2014},{odds:[2.90,3.10,2.50],r:'A',s:'group',m:'Iran vs Nigeria',y:2014},
+  {odds:[1.40,4.20,8.50],r:'D',s:'group',m:'Germany vs Ghana',y:2014},{odds:{h:1.83,d:3.50,a:4.20},r:'H',s:'group',m:'Belgium vs Algeria',y:2014},{odds:[1.44,4.00,7.50],r:'D',s:'group',m:'Brazil vs Mexico',y:2014},{odds:{h:6.00,d:3.80,a:1.57},r:'A',s:'group',m:'Australia vs Netherlands',y:2014},
+  {odds:[2.50,3.20,2.80],r:'A',s:'group',m:'Spain vs Chile',y:2014},{odds:[2.10,3.20,3.60],r:'H',s:'group',m:'Croatia vs Cameroon',y:2014},{odds:[1.25,5.50,12.0],r:'H',s:'group',m:'Argentina vs Iran',y:2014},{odds:{h:2.37,d:3.25,a:3.00},r:'D',s:'group',m:'Germany vs USA',y:2014},
+  {odds:[2.60,3.25,2.70],r:'H',s:'group',m:'Algeria vs Russia',y:2014},{odds:[1.30,5.00,10.0],r:'H',s:'group',m:'Belgium vs South Korea',y:2014},
+  // KO 2014
+  {odds:[1.30,5.00,10.0],r:'D',s:'ko',m:'Brazil vs Chile R16',y:2014},{odds:[1.30,5.00,9.00],r:'H',s:'ko',m:'Netherlands vs Mexico R16',y:2014},{odds:{h:2.00,d:3.20,a:4.00},r:'A',s:'ko',m:'Colombia vs Uruguay R16',y:2014},{odds:[1.57,3.75,6.00],r:'H',s:'ko',m:'France vs Nigeria R16',y:2014},
+  {odds:[1.44,4.00,7.50],r:'H',s:'ko',m:'Germany vs Algeria R16',y:2014},{odds:[1.40,4.00,8.50],r:'H',s:'ko',m:'Argentina vs Switzerland R16',y:2014},{odds:{h:1.67,d:3.50,a:5.50},r:'A',s:'ko',m:'Belgium vs USA R16',y:2014},{odds:[1.61,3.60,6.00],r:'D',s:'ko',m:'Costa Rica vs Greece R16',y:2014},
+  {odds:[1.91,3.30,4.20],r:'H',s:'ko',m:'Brazil vs Colombia QF',y:2014},{odds:{h:1.53,d:3.80,a:6.50},r:'H',s:'ko',m:'France vs Germany QF',y:2014},{odds:[1.36,4.50,9.00],r:'H',s:'ko',m:'Argentina vs Belgium QF',y:2014},{odds:{h:1.72,d:3.50,a:5.00},r:'H',s:'ko',m:'Netherlands vs Costa Rica QF',y:2014},
+  {odds:[1.61,3.60,6.00],r:'A',s:'ko',m:'Brazil vs Germany SF',y:2014},{odds:[2.50,3.10,2.90],r:'D',s:'ko',m:'Netherlands vs Argentina SF',y:2014},{odds:[1.61,3.75,5.50],r:'A',s:'ko',m:'Brazil vs Netherlands 3P',y:2014},{odds:{h:1.67,d:3.50,a:5.80},r:'A',s:'ko',m:'Germany vs Argentina F',y:2014},
+
+  // ===== 2010 World Cup =====
+  {odds:[1.36,4.50,9.00],r:'D',s:'group',m:'South Africa vs Mexico',y:2010},{odds:{h:2.50,d:3.10,a:2.87},r:'D',s:'group',m:'Uruguay vs France',y:2010},{odds:[1.57,3.50,6.50],r:'H',s:'group',m:'Argentina vs Nigeria',y:2010},{odds:{h:2.00,d:3.20,a:4.00},r:'D',s:'group',m:'South Korea vs Greece',y:2010},
+  {odds:[1.25,5.50,12.0],r:'D',s:'group',m:'England vs USA',y:2010},{odds:{h:3.10,d:3.20,a:2.30},r:'A',s:'group',m:'Slovenia vs Algeria',y:2010},{odds:[1.57,3.75,6.00],r:'A',s:'group',m:'Serbia vs Ghana',y:2010},{odds:[1.30,5.00,10.0],r:'H',s:'group',m:'Germany vs Australia',y:2010},
+  {odds:[1.40,4.00,9.00],r:'H',s:'group',m:'Netherlands vs Denmark',y:2010},{odds:{h:1.50,d:3.80,a:7.00},r:'D',s:'group',m:'Japan vs Cameroon',y:2010},{odds:[1.30,5.00,10.0],r:'H',s:'group',m:'Italy vs Paraguay',y:2010},{odds:[1.57,3.60,6.50],r:'D',s:'group',m:'Netherlands vs Japan',y:2010},
+  {odds:[1.57,3.75,6.00],r:'A',s:'group',m:'Spain vs Switzerland',y:2010},{odds:[1.30,5.00,10.0],r:'D',s:'group',m:'Brazil vs Portugal',y:2010},
+  // KO 2010
+  {odds:[1.30,5.00,10.0],r:'H',s:'ko',m:'Netherlands vs Slovakia R16',y:2010},{odds:[1.36,4.50,9.00],r:'H',s:'ko',m:'Brazil vs Chile R16',y:2010},{odds:[1.50,3.80,7.00],r:'H',s:'ko',m:'Argentina vs Mexico R16',y:2010},{odds:{h:3.00,d:3.10,a:2.37},r:'A',s:'ko',m:'Germany vs England R16',y:2010},
+  {odds:[1.50,3.80,7.00],r:'D',s:'ko',m:'Paraguay vs Japan R16',y:2010},{odds:{h:1.30,d:5.00,a:9.00},r:'H',s:'ko',m:'Spain vs Portugal R16',y:2010},{odds:[1.53,3.75,6.50],r:'A',s:'ko',m:'Netherlands vs Brazil QF',y:2010},{odds:[1.36,4.50,9.00],r:'H',s:'ko',m:'Spain vs Paraguay QF',y:2010},
+  {odds:[2.15,3.20,3.50],r:'A',s:'ko',m:'Uruguay vs Ghana QF',y:2010},{odds:[1.36,4.50,9.00],r:'H',s:'ko',m:'Germany vs Argentina QF',y:2010},{odds:{h:1.83,d:3.30,a:4.50},r:'H',s:'ko',m:'Uruguay vs Netherlands SF',y:2010},{odds:[2.20,3.10,3.40],r:'A',s:'ko',m:'Germany vs Spain SF',y:2010},
+  {odds:[1.95,3.30,4.00],r:'H',s:'ko',m:'Uruguay vs Germany 3P',y:2010},{odds:{h:2.30,d:3.10,a:3.20},r:'A',s:'ko',m:'Netherlands vs Spain F',y:2010},
+]
+
+const DEFAULT_NEWS = [
+  '🔴 西班牙亚马尔+尼科·威廉斯首战不会首发，费尔明缺席整届赛事',
+  '🔴 阿根廷梅西腿筋管理出场时间，帕雷德斯伤缺，塔利亚菲科疑缺',
+  '🔴 伊朗阿兹蒙因签证落选大名单，贾汉巴赫什等多人伤疑',
+  '🔴 乌拉圭阿劳霍+希门尼斯双双缺阵首战，贝尔萨防线告急',
+  '🔴 塞内加尔库利巴利大腿血肿出战成疑，盖耶也存疑',
+  '🔴 阿尔及利亚本塞拜尼足部伤缺，齐达内戴护面出战',
+  '🔴 奥地利鲍姆加特纳整届赛事报销，阿拉巴疑缺',
+  '🔴 荷兰西蒙斯ACL+廷贝尔腹股沟+德利赫特背伤三主力缺阵',
+  '🔴 日本三笘薰腘绳肌伤缺，远藤航足部伤退出国家队',
+  '🔴 巴西罗德里戈ACL报销，内马尔小腿伤疑',
+  '✅ 法国萨利巴背部伤愈恢复训练，预计首发',
+  '🔥 德国7-1狂胜库拉索，哈弗茨梅开二度',
+  '🔥 日本2-2逼平荷兰，89分钟镰田大地绝平',
+  '🔥 卡塔尔补时94分钟绝平瑞士，队史首个世界杯积分',
+  '🔥 美国4-1大胜巴拉圭，巴洛贡梅开二度',
+  '🔥 瑞典5-1突尼斯，伊萨克+哲凯赖什双锋发威',
+  '🔥 巴西1-1平摩洛哥，维尼修斯破门难救主',
+  '⭐ C罗41岁第6届世界杯，葡萄牙身价排第6',
+  '🔴 意大利连续两届无缘世界杯，被波黑附加赛淘汰',
+]
+
+const NEWS_SOURCES = [
+  'https://www.espn.com/espn/rss/soccer/news',
+  'https://feeds.bbci.co.uk/sport/football/rss.xml',
+  'https://www.skysports.com/rss/12040',
+]
+
+function getLineup(teamId) { return STARTING_XI[teamId] || null; }
 function cnName(englishName) {
+  if (!englishName) return '?';
+  if (PLAYER_CN[englishName]) return PLAYER_CN[englishName];
   var clean = englishName.replace('(C)','').trim();
   if (PLAYER_CN[clean]) return PLAYER_CN[clean];
   return clean;
