@@ -285,6 +285,48 @@
   ],
   "cards": [
     {
+      "name": "Homam Ahmed",
+      "photo": "https://media.api-sports.io/football/players/175439.png",
+      "team": "Qatar",
+      "yellow": 0,
+      "red": 1
+    },
+    {
+      "name": "Assim Madibo",
+      "photo": "https://media.api-sports.io/football/players/2535.png",
+      "team": "Qatar",
+      "yellow": 0,
+      "red": 1
+    },
+    {
+      "name": "T. Muharemović",
+      "photo": "https://media.api-sports.io/football/players/271350.png",
+      "team": "Bosnia & Herzegovina",
+      "yellow": 0,
+      "red": 1
+    },
+    {
+      "name": "T. Zwane",
+      "photo": "https://media.api-sports.io/football/players/3289.png",
+      "team": "South Africa",
+      "yellow": 0,
+      "red": 1
+    },
+    {
+      "name": "S. Sithole",
+      "photo": "https://media.api-sports.io/football/players/158433.png",
+      "team": "South Africa",
+      "yellow": 0,
+      "red": 1
+    },
+    {
+      "name": "C. Montes",
+      "photo": "https://media.api-sports.io/football/players/2873.png",
+      "team": "Mexico",
+      "yellow": 0,
+      "red": 1
+    },
+    {
       "name": "T. Mokoena",
       "photo": "https://media.api-sports.io/football/players/3287.png",
       "team": "South Africa",
@@ -381,49 +423,7 @@
       "team": "South Korea",
       "yellow": 1,
       "red": 0
-    },
-    {
-      "name": "Lee Gi-Hyuk",
-      "photo": "https://media.api-sports.io/football/players/304951.png",
-      "team": "South Korea",
-      "yellow": 1,
-      "red": 0
-    },
-    {
-      "name": "Mahmud Abunada",
-      "photo": "https://media.api-sports.io/football/players/42207.png",
-      "team": "Qatar",
-      "yellow": 1,
-      "red": 0
-    },
-    {
-      "name": "A. Johnston",
-      "photo": "https://media.api-sports.io/football/players/78547.png",
-      "team": "Canada",
-      "yellow": 1,
-      "red": 0
-    },
-    {
-      "name": "L. Krejčí",
-      "photo": "https://media.api-sports.io/football/players/66407.png",
-      "team": "Czechia",
-      "yellow": 1,
-      "red": 0
-    },
-    {
-      "name": "K. McLean",
-      "photo": "https://media.api-sports.io/football/players/19077.png",
-      "team": "Scotland",
-      "yellow": 1,
-      "red": 0
-    },
-    {
-      "name": "Findlay Curtis",
-      "photo": "https://media.api-sports.io/football/players/433272.png",
-      "team": "Scotland",
-      "yellow": 1,
-      "red": 0
     }
   ],
-  "updatedAt": "2026-06-19T08:11:26.104Z"
+  "updatedAt": "2026-06-19T09:05:34.744Z"
 }
