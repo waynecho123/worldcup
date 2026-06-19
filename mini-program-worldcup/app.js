@@ -107,6 +107,7 @@ App({
     var that = this;
     wx.request({
       url: 'https://waynecho123.github.io/worldcup/news.json',
+      timeout: 10000,
       success: function(res) {
         if (res.data && res.data.items && res.data.items.length > 0) {
           that.globalData.newsItems = res.data.items;
@@ -122,11 +123,22 @@ App({
             if (!team) return;
             var items = res.data.teamNews[tid];
             if (items.length > 0) {
-              var news = items[0].replace(/^[🔴📰]\s*/, '').slice(0, 80);
+              var realItem = items.find(function(n){ return n.indexOf('上轮') < 0; });
+              var news = (realItem || items[0]).replace(/^[🔴📰]\s*/, '').slice(0, 80);
               if (team.news !== news) { team.news = news; updated++; }
             }
           });
           if (updated > 0) console.log('Team news updated for ' + updated + ' teams');
+        }
+      },
+      fail: function(e) {
+        console.log('News fetch failed, using cache');
+        var cached = wx.getStorageSync('news_cache');
+        if (cached) {
+          try {
+            var data = JSON.parse(cached);
+            that.globalData.newsItems = data.items || [];
+          } catch(ex) {}
         }
       }
     });
