@@ -995,8 +995,14 @@ async function updateMatchDetails() {
         var m = getMatchSchedule().find(function(x) {
           var ht = TEAMS[x.home], at = TEAMS[x.away];
           if (!ht || !at) return false;
-          // Date filter: only compare matches on the same date
-          if (fixDate && MATCH_DATES[x.id] !== fixDate) return false;
+          // Date filter: API uses UTC, Beijing time is UTC+8 (matches can cross midnight)
+          if (fixDate && MATCH_DATES[x.id] !== fixDate) {
+            // Also accept date+1 (Beijing time may be next day UTC)
+            var nextDay = new Date(fixDate + 'T00:00:00Z');
+            nextDay.setDate(nextDay.getDate() + 1);
+            var nextDayStr = nextDay.toISOString().slice(0, 10);
+            if (MATCH_DATES[x.id] !== nextDayStr) return false;
+          }
           var hMatch = ht.cn === homeName || ht.name === homeName || ht.alt === homeName || (ht.name||'').toLowerCase() === (homeName||'').toLowerCase();
           var aMatch = at.cn === awayName || at.name === awayName || at.alt === awayName || (at.name||'').toLowerCase() === (awayName||'').toLowerCase();
           return hMatch && aMatch;
@@ -1006,7 +1012,10 @@ async function updateMatchDetails() {
           m = getMatchSchedule().find(function(x) {
             var ht = TEAMS[x.home], at = TEAMS[x.away];
             if (!ht || !at) return false;
-            if (fixDate && MATCH_DATES[x.id] !== fixDate) return false;
+            if (fixDate && MATCH_DATES[x.id] !== fixDate) {
+              var nd2 = new Date(fixDate + 'T00:00:00Z'); nd2.setDate(nd2.getDate() + 1);
+              if (MATCH_DATES[x.id] !== nd2.toISOString().slice(0, 10)) return false;
+            }
             var hMatch = ht.cn === awayName || ht.name === awayName || ht.alt === awayName || (ht.name||'').toLowerCase() === (awayName||'').toLowerCase();
             var aMatch = at.cn === homeName || at.name === homeName || at.alt === homeName || (at.name||'').toLowerCase() === (homeName||'').toLowerCase();
             return hMatch && aMatch;
