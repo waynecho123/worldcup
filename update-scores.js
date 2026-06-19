@@ -970,12 +970,9 @@ async function updateMatchDetails() {
     const m = getMatchSchedule().find(x => x.id === mid);
     return m ? m.date : null;
   }).filter(Boolean))];
-  // Also add next 5 days for upcoming fixture IDs (needed by updateOdds)
-  for (let d = 0; d < 5; d++) {
-    const dt = new Date(now);
-    dt.setDate(dt.getDate() + d);
-    dates.push(dt.toISOString().slice(0, 10));
-  }
+  // Also add all remaining tournament dates (for odds + fixture ID mapping)
+  var allMatchDates = [...new Set(Object.values(MATCH_DATES))].sort();
+  allMatchDates.forEach(function(d) { if (d >= today.toISOString().slice(0,10)) dates.push(d); });
 
   for (const date of dates) {
     try {
