@@ -33,6 +33,11 @@ Page({
     if (!this.data.activeDate) this.buildDateList();
   },
 
+  refresh() {
+    if (this.data.activeDate) this.loadDate(this.data.activeDate);
+    else this.buildDateList();
+  },
+
   /** Build list of all tournament dates with group matches */
   buildDateList() {
     const allDates = new Set();
