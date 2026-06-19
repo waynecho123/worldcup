@@ -36,16 +36,16 @@
       "matches": 1
     },
     {
-      "name": "E. Just",
-      "photo": "https://media.api-sports.io/football/players/94333.png",
-      "team": "New Zealand",
+      "name": "Kylian Mbappé",
+      "photo": "https://media.api-sports.io/football/players/278.png",
+      "team": "France",
       "goals": 2,
       "matches": 1
     },
     {
-      "name": "E. Haaland",
-      "photo": "https://media.api-sports.io/football/players/1100.png",
-      "team": "Norway",
+      "name": "E. Just",
+      "photo": "https://media.api-sports.io/football/players/94333.png",
+      "team": "New Zealand",
       "goals": 2,
       "matches": 1
     },
@@ -57,9 +57,9 @@
       "matches": 1
     },
     {
-      "name": "Kylian Mbappé",
-      "photo": "https://media.api-sports.io/football/players/278.png",
-      "team": "France",
+      "name": "E. Haaland",
+      "photo": "https://media.api-sports.io/football/players/1100.png",
+      "team": "Norway",
       "goals": 2,
       "matches": 1
     },
@@ -376,16 +376,16 @@
       "red": 0
     },
     {
-      "name": "L. De Fougerolles",
-      "photo": "https://media.api-sports.io/football/players/327738.png",
-      "team": "Canada",
+      "name": "Paik Seung-Ho",
+      "photo": "https://media.api-sports.io/football/players/2909.png",
+      "team": "South Korea",
       "yellow": 1,
       "red": 0
     },
     {
-      "name": "Paik Seung-Ho",
-      "photo": "https://media.api-sports.io/football/players/2909.png",
-      "team": "South Korea",
+      "name": "L. De Fougerolles",
+      "photo": "https://media.api-sports.io/football/players/327738.png",
+      "team": "Canada",
       "yellow": 1,
       "red": 0
     },
@@ -404,16 +404,16 @@
       "red": 0
     },
     {
-      "name": "N. Elvedi",
-      "photo": "https://media.api-sports.io/football/players/2803.png",
-      "team": "Switzerland",
+      "name": "Lee Gi-Hyuk",
+      "photo": "https://media.api-sports.io/football/players/304951.png",
+      "team": "South Korea",
       "yellow": 1,
       "red": 0
     },
     {
-      "name": "A. Dedić",
-      "photo": "https://media.api-sports.io/football/players/7318.png",
-      "team": "Bosnia & Herzegovina",
+      "name": "N. Elvedi",
+      "photo": "https://media.api-sports.io/football/players/2803.png",
+      "team": "Switzerland",
       "yellow": 1,
       "red": 0
     },
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-06-19T16:11:02.305Z"
+  "updatedAt": "2026-06-19T18:06:14.035Z"
 }
