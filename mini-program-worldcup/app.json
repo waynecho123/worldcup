@@ -12,16 +12,16 @@
     "pages/group-standings/group-standings"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#0f1521",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "CHO的世界杯小站",
-    "navigationBarTextStyle": "white",
+    "navigationBarTextStyle": "black",
     "backgroundColor": "#080c14"
   },
   "tabBar": {
-    "color": "#556680",
-    "selectedColor": "#4da6ff",
-    "backgroundColor": "#0f1521",
-    "borderStyle": "black",
+    "color": "#999999",
+    "selectedColor": "#2563eb",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
     "list": [
       { "pagePath": "pages/today/today", "text": "📅 赛程" },
       { "pagePath": "pages/teams/teams", "text": "⭐ 球队" },

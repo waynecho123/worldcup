@@ -1,5 +1,5 @@
 <!-- Match Detail - 比赛详情 -->
-<scroll-view scroll-y class="page bg-dark" style="height:100vh" wx:if="{{!loading}}">
+<scroll-view scroll-y class="page bg-surface" style="height:100vh" wx:if="{{!loading}}">
   <view style="padding:14px">
 
     <!-- Match Header -->
