@@ -942,7 +942,7 @@ async function updateMatchDetails() {
 
   for (const date of dates) {
     try {
-      const data = await fetchFixturesByDate(date);
+      const data = await fetchFixtures(date);
       if (!data.response) continue;
       const wcFixtures = data.response.filter(f => f.league?.name === 'World Cup');
       if (wcFixtures.length === 0) continue;
