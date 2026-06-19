@@ -3781,6 +3781,14 @@ function showMatchDetail(mid) {
     html += '<div style="padding:6px;background:var(--surface2);border-radius:4px"><div style="font-size:1.1rem;font-weight:700;color:var(--accent)">'+mol.h.toFixed(2)+'</div><div style="font-size:.62rem;color:var(--text2)">'+ht.cn+'胜 ('+(fair.home*100).toFixed(0)+'%)</div></div>';
     html += '<div style="padding:6px;background:var(--surface2);border-radius:4px"><div style="font-size:1.1rem;font-weight:700;color:var(--text3)">'+mol.d.toFixed(2)+'</div><div style="font-size:.62rem;color:var(--text2)">平 ('+(fair.draw*100).toFixed(0)+'%)</div></div>';
     html += '<div style="padding:6px;background:var(--surface2);border-radius:4px"><div style="font-size:1.1rem;font-weight:700;color:var(--red)">'+mol.a.toFixed(2)+'</div><div style="font-size:.62rem;color:var(--text2)">'+at.cn+'胜 ('+(fair.away*100).toFixed(0)+'%)</div></div>';
+    // Odds movement trend
+    if (mol.history && mol.history.length >= 2) {
+      var firstH = mol.history[0].h, lastH = mol.history[mol.history.length-1].h;
+      var trendH = lastH - firstH;
+      var trendLabel = trendH < -0.05 ? '↓ 市场看好主队' : trendH > 0.05 ? '↑ 市场看衰主队' : '→ 赔率稳定';
+      var trendColor = trendH < -0.05 ? 'var(--green)' : trendH > 0.05 ? 'var(--red)' : 'var(--text3)';
+      html += '<div style="font-size:.65rem;color:'+trendColor+';margin-top:4px;text-align:center">'+trendLabel+' (主胜'+firstH.toFixed(2)+'→'+lastH.toFixed(2)+')</div>';
+    }
     html += '</div></div>';
   }
 
@@ -4531,8 +4539,12 @@ async function loadOddsJSON() {
       var merged = 0;
       Object.keys(data).forEach(function(k) {
         if (!data[k] || !data[k].h) return;
-        var mid = fixToMid[k] || k; // try fixture ID → match ID, fallback to raw key
-        MATCH_ODDS[mid] = data[k];
+        var mid = fixToMid[k] || k;
+        var prev = MATCH_ODDS[mid];
+        // Preserve history from previous fetches
+        var hist = data[k].history || [];
+        if (prev && prev.history) hist = prev.history.concat(hist).slice(-20);
+        MATCH_ODDS[mid] = { h: data[k].h, d: data[k].d, a: data[k].a, history: hist, updatedAt: data[k].updatedAt };
         merged++;
       });
       if (merged > 0) console.log('Odds merged: ' + merged + ' matches');
