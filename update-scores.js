@@ -245,6 +245,7 @@ async function updateOdds() {
         }).on('error', reject);
       });
 
+      console.log(`[${ts}] Odds[${dateStr}]: API returned ${resp.response ? resp.response.length : 0} fixtures (errors: ${JSON.stringify(resp.errors||'none')})`);
       if (resp && resp.response) {
         resp.response.forEach(fixture => {
           const m = sched.find(x => {
