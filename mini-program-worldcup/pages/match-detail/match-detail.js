@@ -153,8 +153,7 @@ Page({
     if (!ht || !at) { this.setData({ loading: false }); return; }
 
     // Core prediction — pass live odds for market consensus
-    const pred = predict.predictMatch(ht, at, apiOdds);
-    const dynOdds = liveOdds[matchId] || data.MATCH_ODDS[matchId]; const mol = dynOdds;
+    const mol = liveOdds[matchId] || data.MATCH_ODDS[matchId];
 
     // Top scores
     const topScoresList = odds.topScores(pred.expH, pred.expA, 6);
