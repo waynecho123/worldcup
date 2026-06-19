@@ -154,6 +154,7 @@ Page({
 
     // Core prediction — pass live odds for market consensus
     const mol = liveOdds[matchId] || data.MATCH_ODDS[matchId];
+    const pred = predict.predictMatch(ht, at, mol);
 
     // Top scores
     const topScoresList = odds.topScores(pred.expH, pred.expA, 6);
