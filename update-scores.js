@@ -666,7 +666,7 @@ async function updateNews() {
 
   // Simple Google Translate (free, no key)
   function cleanText(t) {
-    return (t || '').replace(/�/g, '').replace(/[​‌‍﻿]/g, '').trim();
+    return (t || '').replace(/�/g, '').replace(/[​‌‍﻿]/g, '').replace(/^[^一-鿿A-Za-z0-9一-鿿]+/g, '').trim();
   }
   async function translateToChinese(text) {
     var cleaned = cleanText(text);
