@@ -47,6 +47,7 @@ Page({
   },
 
   buildDetail(matchId) {
+    try {
     const m = data.MATCH_SCHEDULE.find(x => x.id === matchId);
     if (!m) { this.setData({ loading: false }); return; }
 
@@ -246,8 +247,11 @@ Page({
       postReview,
       actualResult,
       updateInfo,
-      loading: false
+      loading: false, error: null
     });
+  } catch(e) {
+    this.setData({ loading: false, error: e.message });
+  }    });
   },
 
   generateAnalysis(m, ht, at, pred, mol, apiInfo) {
