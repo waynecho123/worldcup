@@ -4519,7 +4519,13 @@ async function loadOddsJSON() {
     var resp = await fetch('odds.json?_t=' + Date.now(), { cache: 'no-cache' });
     if (!resp.ok) return;
     var data = await resp.json();
-    if (data && Object.keys(data).length > 0) { liveOdds = data; }
+    if (data && Object.keys(data).length > 0) {
+      liveOdds = data;
+      // Merge live odds into MATCH_ODDS (API-Sports real odds override hardcoded estimates)
+      Object.keys(data).forEach(function(k) {
+        if (data[k] && data[k].h) MATCH_ODDS[k] = data[k];
+      });
+    }
   } catch(e) {}
 }
 

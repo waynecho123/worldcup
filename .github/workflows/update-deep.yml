@@ -13,7 +13,7 @@ jobs:
           node-version: '20'
 
       - name: Update deep data
-        run: node update-scores.js --news || true; node update-scores.js --details || true; node update-scores.js --injuries || true; node update-scores.js --standings || true; node update-scores.js --players || true
+        run: node update-scores.js --news || true; node update-scores.js --details || true; node update-scores.js --injuries || true; node update-scores.js --standings || true; node update-scores.js --players || true; node update-scores.js --odds || true
         env:
           FD_TOKEN: ${{ secrets.FD_TOKEN }}
           GNEWS_KEY: ${{ secrets.GNEWS_KEY }}

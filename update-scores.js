@@ -213,64 +213,68 @@ async function updateScores() {
 
 // ========== UPDATE: Odds (the-odds-api.com, free 500 req/month) ==========
 async function updateOdds() {
-  if (!ODDS_API_KEY) {
-    const ts = new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
-    console.log(`[${ts}] Odds: skipped (set ODDS_API_KEY env var to enable)`);
-    return false;
-  }
-
   const now = new Date();
   const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
+  if (!APISPORTS_KEY) {
+    console.log(`[${ts}] Odds: skipped (set APISPORTS_KEY)`);
+    return false;
+  }
 
-  // the-odds-api.com: get soccer/World Cup winner odds + upcoming match odds
-  // Free tier: 500 req/month, use sparingly
-  const sport = 'soccer_fifa_world_cup_winner';
-  const regions = 'eu';  // European bookmakers
-  const markets = 'h2h'; // 1X2
+  // API-Sports odds endpoint (Pro plan includes 1X2 odds for all matches)
+  const existing = loadJSON(ODDS_FILE) || {};
 
-  let oddsData;
   try {
-    oddsData = await fetchOdds(`/sports/${sport}/odds/?regions=${regions}&markets=${markets}`);
-  } catch(e) {
-    console.error(`[${ts}] Odds fetch failed:`, e.message);
-    return false;
-  }
+    // Fetch odds for each match day
+    const sched = getMatchSchedule();
+    const dates = [...new Set(sched.map(m => m.date))].sort();
+    let updated = 0;
 
-  if (!oddsData || !Array.isArray(oddsData)) {
-    console.log(`[${ts}] Odds: no data returned`);
-    return false;
-  }
+    for (const dateStr of dates.slice(0, 5)) { // Limit to next 5 days to manage quota
+      const resp = await new Promise((resolve, reject) => {
+        https.get(`${APISPORTS_BASE}/odds?date=${dateStr}&league=1&season=2026&bookmaker=8&bet=1`, {
+          headers: { 'x-apisports-key': APISPORTS_KEY }, timeout: 15000
+        }, res => {
+          let b = ''; res.on('data', c => b += c);
+          res.on('end', () => { try { resolve(JSON.parse(b)); } catch(e) { reject(e); } });
+        }).on('error', reject);
+      });
 
-  const existing = loadJSON(ODDS_FILE);
-  let n = 0;
+      if (resp && resp.response) {
+        resp.response.forEach(fixture => {
+          const m = sched.find(x => {
+            const ht = TEAMS[x.home], at = TEAMS[x.away];
+            return ht && at && (
+              (ht.name === fixture.teams.home.name && at.name === fixture.teams.away.name) ||
+              (ht.cn === fixture.teams.home.name || at.cn === fixture.teams.away.name)
+            );
+          });
+          if (!m) return;
+          const bookmakers = fixture.bookmakers || [];
+          const bet365 = bookmakers.find(b => b.name === 'Bet365') || bookmakers[0];
+          if (!bet365 || !bet365.bets || !bet365.bets[0]) return;
+          const bet = bet365.bets[0].values.find(v => v.value === 'Home' || v.value === 'Draw' || v.value === 'Away')
+            ? bet365.bets[0].values
+            : null;
+          if (!bet) return;
+          const h = bet.find(v => v.value === 'Home');
+          const d = bet.find(v => v.value === 'Draw');
+          const a = bet.find(v => v.value === 'Away');
+          if (h && d && a) {
+            existing[m.id] = { h: parseFloat(h.odd), d: parseFloat(d.odd), a: parseFloat(a.odd), updatedAt: ts };
+            updated++;
+          }
+        });
+      }
+      console.log(`[${ts}] Odds[${dateStr}]: ${updated} matches updated`);
+    }
 
-  for (const event of oddsData) {
-    const home = event.home_team, away = event.away_team;
-    // Try to find a bookmarker with 1X2 odds
-    const bookmaker = event.bookmakers?.find(b => b.markets?.some(m => m.key === 'h2h'));
-    if (!bookmaker) continue;
-    const h2h = bookmaker.markets.find(m => m.key === 'h2h');
-    if (!h2h) continue;
-
-    const outcomes = {};
-    h2h.outcomes.forEach(o => { outcomes[o.name] = o.price; });
-
-    const key = `${home} vs ${away}`;
-    existing[key] = {
-      home, away,
-      commence_time: event.commence_time,
-      bookmaker: bookmaker.title,
-      homeOdds: outcomes[home] || null,
-      drawOdds: outcomes['Draw'] || null,
-      awayOdds: outcomes[away] || null,
-      updatedAt: now.toISOString()
-    };
-    n++;
-  }
-
-  saveJSON(ODDS_FILE, existing);
-  console.log(`[${ts}] Odds: ${n} events updated (total: ${Object.keys(existing).length})`);
-  return true;
+    if (updated > 0) {
+      fs.writeFileSync(ODDS_FILE, JSON.stringify(existing, null, 2));
+      console.log(`[${ts}] Odds: ${updated} matches written to odds.json`);
+      return true;
+    }
+  } catch(e) { console.error(`[${ts}] Odds fetch failed:`, e.message); }
+  return false;
 }
 
 // ========== UPDATE: Match Info (football-data.org standings + H2H) ==========
