@@ -78,6 +78,21 @@ function fetchOdds(path) {
 }
 
 // ========== Match Schedule ==========
+// Match dates (synced from index.html MATCH_SCHEDULE)
+var MATCH_DATES = {
+  m001:'2026-06-12',m002:'2026-06-12',m003:'2026-06-13',m004:'2026-06-13',m005:'2026-06-14',m006:'2026-06-14',
+  m007:'2026-06-14',m008:'2026-06-14',m009:'2026-06-15',m010:'2026-06-15',m011:'2026-06-15',m012:'2026-06-15',
+  m013:'2026-06-16',m014:'2026-06-16',m015:'2026-06-16',m016:'2026-06-16',m017:'2026-06-17',m018:'2026-06-17',
+  m019:'2026-06-17',m020:'2026-06-17',m021:'2026-06-18',m022:'2026-06-18',m023:'2026-06-18',m024:'2026-06-18',
+  m025:'2026-06-19',m026:'2026-06-19',m027:'2026-06-19',m028:'2026-06-19',m029:'2026-06-20',m030:'2026-06-20',
+  m031:'2026-06-20',m032:'2026-06-20',m033:'2026-06-21',m034:'2026-06-21',m035:'2026-06-21',m036:'2026-06-21',
+  m037:'2026-06-22',m038:'2026-06-22',m039:'2026-06-22',m040:'2026-06-22',m041:'2026-06-23',m042:'2026-06-23',
+  m043:'2026-06-23',m044:'2026-06-23',m045:'2026-06-24',m046:'2026-06-24',m047:'2026-06-24',m048:'2026-06-24',
+  m049:'2026-06-25',m050:'2026-06-25',m051:'2026-06-25',m052:'2026-06-25',m053:'2026-06-25',m054:'2026-06-25',
+  m055:'2026-06-26',m056:'2026-06-26',m057:'2026-06-26',m058:'2026-06-26',m059:'2026-06-26',m060:'2026-06-26',
+  m061:'2026-06-27',m062:'2026-06-27',m063:'2026-06-27',m064:'2026-06-27',m065:'2026-06-27',m066:'2026-06-27',
+  m067:'2026-06-28',m068:'2026-06-28',m069:'2026-06-28',m070:'2026-06-28',m071:'2026-06-28',m072:'2026-06-28'
+};
 function getMatchSchedule() { return [
   {id:"m001",home:"MEX",away:"RSA"},
   {id:"m002",home:"KOR",away:"CZE"},
@@ -972,14 +987,32 @@ async function updateMatchDetails() {
       // Collect fixture IDs and map to our match IDs
       const idMap = {};
       for (const fixture of wcFixtures) {
-        const homeName = fixture.teams?.home?.name, awayName = fixture.teams?.away?.name;
-        const m = getMatchSchedule().find(x => {
-          const ht = TEAMS[x.home], at = TEAMS[x.away];
-          return ht && at && (
-            (ht.cn === homeName || ht.name === homeName || ht.name.toLowerCase() === homeName?.toLowerCase()) &&
-            (at.cn === awayName || at.name === awayName || at.name.toLowerCase() === awayName?.toLowerCase())
-          );
+        var homeName = fixture.teams?.home?.name, awayName = fixture.teams?.away?.name;
+        var fixDate = (fixture.fixture?.date || '').slice(0, 10);
+        // Match by date + team names (or just fixture ID for odds mapping)
+        var m = getMatchSchedule().find(function(x) {
+          var ht = TEAMS[x.home], at = TEAMS[x.away];
+          if (!ht || !at) return false;
+          // Date filter: only compare matches on the same date
+          if (fixDate && MATCH_DATES[x.id] !== fixDate) return false;
+          var hMatch = ht.cn === homeName || ht.name === homeName || (ht.name||'').toLowerCase() === (homeName||'').toLowerCase();
+          var aMatch = at.cn === awayName || at.name === awayName || (at.name||'').toLowerCase() === (awayName||'').toLowerCase();
+          return hMatch && aMatch;
         });
+        // If still no match, just store fixture ID for odds.json resolution
+        if (!m && fixDate) {
+          // Find any schedule match on this date with home/away matching by first letter or partial
+          m = getMatchSchedule().find(function(x) {
+            var ht = TEAMS[x.home], at = TEAMS[x.away];
+            if (!ht || !at) return false;
+            if (MATCH_DATES[x.id] !== fixDate) return false;
+            // Fuzzy: check if team names share common words
+            var hNameLo = (ht.name||'').toLowerCase(), aNameLo = (at.name||'').toLowerCase();
+            var fHomeLo = (homeName||'').toLowerCase(), fAwayLo = (awayName||'').toLowerCase();
+            return (hNameLo.includes(fHomeLo) || fHomeLo.includes(hNameLo)) &&
+                   (aNameLo.includes(fAwayLo) || fAwayLo.includes(aNameLo));
+          });
+        }
         if (m) idMap[fixture.fixture.id] = m.id;
       }
 
