@@ -23,6 +23,24 @@
     </view>
   </view>
 
+  <!-- Upset Accuracy -->
+  <view wx:if="{{upsetTotal > 0}}" class="card">
+    <view class="card-header">冷门预警统计</view>
+    <view class="strength-row">
+      <view class="stat-box" style="flex:1">
+        <text class="num" style="color:#ea580c">{{upsetRate}}%</text>
+        <text class="lbl">预警准确率</text>
+      </view>
+      <view class="stat-box" style="flex:1">
+        <text class="num">{{upsetTotal}}</text>
+        <text class="lbl">分差>15比赛</text>
+      </view>
+    </view>
+    <view wx:if="{{hasResults}}" class="font-s text-secondary" style="text-align:center;margin-top:8px">
+      误报{{upsetFalsePos}}次 | 漏报{{upsetFalseNeg}}次
+    </view>
+  </view>
+
   <!-- Bias Analysis -->
   <view wx:if="{{bias}}" class="card">
     <view class="card-header">🧠 AI偏差分析</view>
@@ -54,6 +72,9 @@
           <text class="font-xs" style="display:block;color:{{item.ok?'#00c853':'#ff3d57'}}">实际 {{item.actScore[0]}}:{{item.actScore[1]}}</text>
         </view>
         <text>{{item.awayFlag}} {{item.awayName}}</text>
+      </view>
+      <view wx:if="{{item.strGap > 15}}" class="font-xs" style="text-align:center;margin-top:4px;color:{{(item.upsetAlert && item.upsetHappened) || (!item.upsetAlert && !item.upsetHappened) ? '#16a34a' : '#dc2626'}}">
+        冷门：{{item.upsetAlert ? '预警' + (item.upsetProb*100).toFixed(0) + '%' : '未预警'}} → {{item.upsetHappened ? (item.actScore[0]===item.actScore[1] ? item.homeName+'逼平' : '爆冷') : '正常'}}
       </view>
     </view>
   </view>

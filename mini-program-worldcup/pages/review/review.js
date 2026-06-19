@@ -56,6 +56,9 @@ Page({
       if (outcomeOk) correct++;
       if (exactOk) exact++;
 
+      var hStr = predict.getStrength(ht), aStr = predict.getStrength(at);
+      var strGap = Math.abs(hStr - aStr);
+      var upsetHappened = strGap > 15 && ((hStr > aStr && act.homeScore <= act.awayScore) || (hStr < aStr && act.homeScore >= act.awayScore));
       comps.push({
         id: matchId,
         date: m.date,
@@ -70,9 +73,23 @@ Page({
         exact: exactOk,
         predHomeProb: pred.homeWinProb,
         predDrawProb: pred.drawProb,
-        predAwayProb: pred.awayWinProb
+        predAwayProb: pred.awayWinProb,
+        strGap: strGap,
+        upsetAlert: pred.upsetAlert,
+        upsetProb: pred.upsetProb,
+        upsetTeam: pred.upsetTeam,
+        upsetHappened: upsetHappened
       });
     });
+
+    // Upset accuracy
+    var upsetComps = comps.filter(function(c) { return c.strGap > 15; });
+    var upsetTotal = upsetComps.length;
+    var upsetCorrect = upsetComps.filter(function(c) {
+      return (c.upsetAlert && c.upsetHappened) || (!c.upsetAlert && !c.upsetHappened);
+    }).length;
+    var upsetFalsePos = upsetComps.filter(function(c) { return c.upsetAlert && !c.upsetHappened; }).length;
+    var upsetFalseNeg = upsetComps.filter(function(c) { return !c.upsetAlert && c.upsetHappened; }).length;
 
     const bias = comps.length >= 3 ? review.analyzeBias(comps) : null;
 
@@ -84,7 +101,9 @@ Page({
       winRate: comps.length > 0 ? (correct / comps.length * 100).toFixed(0) : '0',
       exactRate: comps.length > 0 ? (exact / comps.length * 100).toFixed(0) : '0',
       comparisons: comps.reverse(),
-      bias
+      bias,
+      upsetTotal, upsetCorrect, upsetFalsePos, upsetFalseNeg,
+      upsetRate: upsetTotal > 0 ? (upsetCorrect / upsetTotal * 100).toFixed(0) : '0'
     });
   }
 });
