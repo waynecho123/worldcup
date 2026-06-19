@@ -246,13 +246,18 @@ async function updateOdds() {
       });
 
       console.log(`[${ts}] Odds[${dateStr}]: API returned ${resp.response ? resp.response.length : 0} fixtures (errors: ${JSON.stringify(resp.errors||'none')})`);
-      if (resp && resp.response) {
+      if (resp && resp.response && resp.response.length > 0) {
+        // Debug: show first fixture structure
+        console.log(`[${ts}] Odds sample: ${JSON.stringify(resp.response[0]).slice(0, 300)}`);
         resp.response.forEach(fixture => {
           const m = sched.find(x => {
             const ht = TEAMS[x.home], at = TEAMS[x.away];
+            const fHome = fixture.teams?.home?.name || '';
+            const fAway = fixture.teams?.away?.name || '';
             return ht && at && (
-              (ht.name === fixture.teams.home.name && at.name === fixture.teams.away.name) ||
-              (ht.cn === fixture.teams.home.name || at.cn === fixture.teams.away.name)
+              (ht.name === fHome && at.name === fAway) ||
+              (ht.cn === fHome && at.cn === fAway) ||
+              (ht.name === fAway && at.name === fHome)
             );
           });
           if (!m) return;
