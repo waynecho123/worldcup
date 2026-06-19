@@ -249,8 +249,8 @@ async function updateOdds() {
       if (resp && resp.response && resp.response.length > 0) {
         // Debug: show first fixture structure
         var s = resp.response[0];
-        console.log(`[${ts}] Odds sample teams: ${JSON.stringify(s.teams)}`);
-        console.log(`[${ts}] Odds sample fixture.id: ${s.fixture?.id}`);
+        console.log(`[${ts}] Odds keys: ${Object.keys(s).join(',')}`);
+        console.log(`[${ts}] Odds full: ${JSON.stringify(s).slice(0, 500)}`);
         resp.response.forEach(fixture => {
           const m = sched.find(x => {
             const ht = TEAMS[x.home], at = TEAMS[x.away];
