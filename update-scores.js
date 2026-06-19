@@ -1213,10 +1213,20 @@ async function updatePlayerStats() {
     });
   } catch(e) {}
   try {
-    var cData = await fetchAPI('/players/topyellowcards?');
-    cards = (cData.response || []).slice(0, 20).map(function(r) {
-      return { name: r.player?.name, photo: r.player?.photo, team: r.statistics?.[0]?.team?.name, yellow: r.statistics?.[0]?.cards?.yellow || 0, red: r.statistics?.[0]?.cards?.red || 0 };
+    var yData = await fetchAPI('/players/topyellowcards?');
+    var rData = await fetchAPI('/players/topredcards?');
+    var allCards = (yData.response || []).concat(rData.response || []);
+    var seen = {};
+    cards = [];
+    allCards.forEach(function(r) {
+      var name = r.player?.name;
+      if (!name || seen[name]) return;
+      seen[name] = true;
+      cards.push({ name: name, photo: r.player?.photo, team: r.statistics?.[0]?.team?.name, yellow: r.statistics?.[0]?.cards?.yellow || 0, red: r.statistics?.[0]?.cards?.red || 0 });
     });
+    // Sort: red cards first, then yellow
+    cards.sort(function(a,b) { return (b.red - a.red) || (b.yellow - a.yellow); });
+    cards = cards.slice(0, 20);
   } catch(e) {}
 
   var data = { scorers, assists, cards, updatedAt: now.toISOString() };
