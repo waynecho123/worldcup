@@ -35,18 +35,18 @@ const BASE_DIR = __dirname;
 
 // Team data (shared by news + details functions)
 const TEAMS = {
-  MEX:{cn:'墨西哥',name:'Mexico'},RSA:{cn:'南非',name:'South Africa'},KOR:{cn:'韩国',name:'South Korea'},CZE:{cn:'捷克',name:'Czech Republic'},
-  CAN:{cn:'加拿大',name:'Canada'},BIH:{cn:'波黑',name:'Bosnia & Herzegovina'},QAT:{cn:'卡塔尔',name:'Qatar'},SUI:{cn:'瑞士',name:'Switzerland'},
-  BRA:{cn:'巴西',name:'Brazil'},MAR:{cn:'摩洛哥',name:'Morocco'},HAI:{cn:'海地',name:'Haiti'},SCO:{cn:'苏格兰',name:'Scotland'},
-  USA:{cn:'美国',name:'United States'},PAR:{cn:'巴拉圭',name:'Paraguay'},AUS:{cn:'澳大利亚',name:'Australia'},TUR:{cn:'土耳其',name:'Turkey'},
-  GER:{cn:'德国',name:'Germany'},CUW:{cn:'库拉索',name:'Curacao'},CIV:{cn:'科特迪瓦',name:'Ivory Coast'},ECU:{cn:'厄瓜多尔',name:'Ecuador'},
-  NED:{cn:'荷兰',name:'Netherlands'},JPN:{cn:'日本',name:'Japan'},SWE:{cn:'瑞典',name:'Sweden'},TUN:{cn:'突尼斯',name:'Tunisia'},
-  BEL:{cn:'比利时',name:'Belgium'},EGY:{cn:'埃及',name:'Egypt'},IRN:{cn:'伊朗',name:'Iran'},NZL:{cn:'新西兰',name:'New Zealand'},
-  ESP:{cn:'西班牙',name:'Spain'},CPV:{cn:'佛得角',name:'Cape Verde'},KSA:{cn:'沙特',name:'Saudi Arabia'},URU:{cn:'乌拉圭',name:'Uruguay'},
-  FRA:{cn:'法国',name:'France'},SEN:{cn:'塞内加尔',name:'Senegal'},IRQ:{cn:'伊拉克',name:'Iraq'},NOR:{cn:'挪威',name:'Norway'},
-  ARG:{cn:'阿根廷',name:'Argentina'},ALG:{cn:'阿尔及利亚',name:'Algeria'},AUT:{cn:'奥地利',name:'Austria'},JOR:{cn:'约旦',name:'Jordan'},
-  POR:{cn:'葡萄牙',name:'Portugal'},COD:{cn:'民主刚果',name:'Congo DR'},UZB:{cn:'乌兹别克',name:'Uzbekistan'},COL:{cn:'哥伦比亚',name:'Colombia'},
-  ENG:{cn:'英格兰',name:'England'},CRO:{cn:'克罗地亚',name:'Croatia'},GHA:{cn:'加纳',name:'Ghana'},PAN:{cn:'巴拿马',name:'Panama'},
+  MEX:{cn:'墨西哥',name:'Mexico',alt:'Mexico'},RSA:{cn:'南非',name:'South Africa',alt:'South Africa'},KOR:{cn:'韩国',name:'South Korea',alt:'South Korea'},CZE:{cn:'捷克',name:'Czech Republic',alt:'Czechia'},
+  CAN:{cn:'加拿大',name:'Canada',alt:'Canada'},BIH:{cn:'波黑',name:'Bosnia & Herzegovina',alt:'Bosnia and Herzegovina'},QAT:{cn:'卡塔尔',name:'Qatar',alt:'Qatar'},SUI:{cn:'瑞士',name:'Switzerland',alt:'Switzerland'},
+  BRA:{cn:'巴西',name:'Brazil',alt:'Brazil'},MAR:{cn:'摩洛哥',name:'Morocco',alt:'Morocco'},HAI:{cn:'海地',name:'Haiti',alt:'Haiti'},SCO:{cn:'苏格兰',name:'Scotland',alt:'Scotland'},
+  USA:{cn:'美国',name:'United States',alt:'USA'},PAR:{cn:'巴拉圭',name:'Paraguay',alt:'Paraguay'},AUS:{cn:'澳大利亚',name:'Australia',alt:'Australia'},TUR:{cn:'土耳其',name:'Turkey',alt:'Türkiye'},
+  GER:{cn:'德国',name:'Germany',alt:'Germany'},CUW:{cn:'库拉索',name:'Curacao',alt:'Curaçao'},CIV:{cn:'科特迪瓦',name:'Ivory Coast',alt:'Côte d\'Ivoire'},ECU:{cn:'厄瓜多尔',name:'Ecuador',alt:'Ecuador'},
+  NED:{cn:'荷兰',name:'Netherlands',alt:'Netherlands'},JPN:{cn:'日本',name:'Japan',alt:'Japan'},SWE:{cn:'瑞典',name:'Sweden',alt:'Sweden'},TUN:{cn:'突尼斯',name:'Tunisia',alt:'Tunisia'},
+  BEL:{cn:'比利时',name:'Belgium',alt:'Belgium'},EGY:{cn:'埃及',name:'Egypt',alt:'Egypt'},IRN:{cn:'伊朗',name:'Iran',alt:'Iran'},NZL:{cn:'新西兰',name:'New Zealand',alt:'New Zealand'},
+  ESP:{cn:'西班牙',name:'Spain',alt:'Spain'},CPV:{cn:'佛得角',name:'Cape Verde',alt:'Cape Verde Islands'},KSA:{cn:'沙特',name:'Saudi Arabia',alt:'Saudi Arabia'},URU:{cn:'乌拉圭',name:'Uruguay',alt:'Uruguay'},
+  FRA:{cn:'法国',name:'France',alt:'France'},SEN:{cn:'塞内加尔',name:'Senegal',alt:'Senegal'},IRQ:{cn:'伊拉克',name:'Iraq',alt:'Iraq'},NOR:{cn:'挪威',name:'Norway',alt:'Norway'},
+  ARG:{cn:'阿根廷',name:'Argentina',alt:'Argentina'},ALG:{cn:'阿尔及利亚',name:'Algeria',alt:'Algeria'},AUT:{cn:'奥地利',name:'Austria',alt:'Austria'},JOR:{cn:'约旦',name:'Jordan',alt:'Jordan'},
+  POR:{cn:'葡萄牙',name:'Portugal',alt:'Portugal'},COD:{cn:'民主刚果',name:'Congo DR',alt:'DR Congo'},UZB:{cn:'乌兹别克',name:'Uzbekistan',alt:'Uzbekistan'},COL:{cn:'哥伦比亚',name:'Colombia',alt:'Colombia'},
+  ENG:{cn:'英格兰',name:'England',alt:'England'},CRO:{cn:'克罗地亚',name:'Croatia',alt:'Croatia'},GHA:{cn:'加纳',name:'Ghana',alt:'Ghana'},PAN:{cn:'巴拿马',name:'Panama',alt:'Panama'},
 };
 const SCORES_FILE = path.join(BASE_DIR, 'scores.json');
 const ODDS_FILE = path.join(BASE_DIR, 'odds.json');
@@ -997,10 +997,21 @@ async function updateMatchDetails() {
           if (!ht || !at) return false;
           // Date filter: only compare matches on the same date
           if (fixDate && MATCH_DATES[x.id] !== fixDate) return false;
-          var hMatch = ht.cn === homeName || ht.name === homeName || (ht.name||'').toLowerCase() === (homeName||'').toLowerCase();
-          var aMatch = at.cn === awayName || at.name === awayName || (at.name||'').toLowerCase() === (awayName||'').toLowerCase();
+          var hMatch = ht.cn === homeName || ht.name === homeName || ht.alt === homeName || (ht.name||'').toLowerCase() === (homeName||'').toLowerCase();
+          var aMatch = at.cn === awayName || at.name === awayName || at.alt === awayName || (at.name||'').toLowerCase() === (awayName||'').toLowerCase();
           return hMatch && aMatch;
         });
+        // Try reverse (away/home swap)
+        if (!m) {
+          m = getMatchSchedule().find(function(x) {
+            var ht = TEAMS[x.home], at = TEAMS[x.away];
+            if (!ht || !at) return false;
+            if (fixDate && MATCH_DATES[x.id] !== fixDate) return false;
+            var hMatch = ht.cn === awayName || ht.name === awayName || ht.alt === awayName || (ht.name||'').toLowerCase() === (awayName||'').toLowerCase();
+            var aMatch = at.cn === homeName || at.name === homeName || at.alt === homeName || (at.name||'').toLowerCase() === (homeName||'').toLowerCase();
+            return hMatch && aMatch;
+          });
+        }
         // If still no match, just store fixture ID for odds.json resolution
         if (!m && fixDate) {
           // Find any schedule match on this date with home/away matching by first letter or partial
@@ -1009,7 +1020,7 @@ async function updateMatchDetails() {
             if (!ht || !at) return false;
             if (MATCH_DATES[x.id] !== fixDate) return false;
             // Fuzzy: check if team names share common words
-            var hNameLo = (ht.name||'').toLowerCase(), aNameLo = (at.name||'').toLowerCase();
+            var hNameLo = ((ht.name||'')+' '+(ht.alt||'')).toLowerCase(), aNameLo = ((at.name||'')+' '+(at.alt||'')).toLowerCase();
             var fHomeLo = (homeName||'').toLowerCase(), fAwayLo = (awayName||'').toLowerCase();
             return (hNameLo.includes(fHomeLo) || fHomeLo.includes(hNameLo)) &&
                    (aNameLo.includes(fAwayLo) || fAwayLo.includes(aNameLo));
