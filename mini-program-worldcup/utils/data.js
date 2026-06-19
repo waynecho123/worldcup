@@ -788,6 +788,7 @@ const MATCH_SCHEDULE = [
   {id:"m071",date:"2026-06-28",time:"10:00",home:"ALG",away:"AUT",grp:"J",stage:"group",matchday:3,venue:"Arrowhead Stadium, Kansas City"},
   {id:"m072",date:"2026-06-28",time:"10:00",home:"JOR",away:"ARG",grp:"J",stage:"group",matchday:3,venue:"AT&T Stadium, Dallas"}
 ];
+function cnName(englishName) {
   var clean = englishName.replace('(C)','').trim();
   if (PLAYER_CN[clean]) return PLAYER_CN[clean];
   return clean;
