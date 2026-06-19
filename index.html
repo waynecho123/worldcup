@@ -3540,6 +3540,89 @@ function generatePostMatchReview(m, ht, at, pred, actual, apiInfo) {
   html += '</div>';
   return html;
 }
+function generateMatchAnalysis(m, ht, at, pred, mol) {
+  var hTac = TACTICAL[ht.id] || {}, aTac = TACTICAL[at.id] || {};
+  var hStr = getStrength(ht), aStr = getStrength(at);
+  var styleNames = {possession:'传控',counter:'防守反击',high_press:'高压逼抢',direct:'长传冲吊',defensive_block:'低位防守',balanced:'均衡'};
+  var hStyle = styleNames[hTac.style] || '均衡', aStyle = styleNames[aTac.style] || '均衡';
+  var apiInfo = liveInfo[m.id] || null;
+
+  var paragraphs = [];
+
+  // ---- Overview ----
+  var gap = Math.abs(hStr - aStr);
+  var fav = hStr > aStr ? ht : at;
+  var dog = hStr > aStr ? at : ht;
+
+  if (gap > 20) {
+    paragraphs.push('本场可能是本轮实力最悬殊的较量。' + fav.cn + '综合评分领先' + dog.cn + gap.toFixed(0) + '分，取胜概率' + ((hStr>aStr?pred.homeWinProb:pred.awayWinProb)*100).toFixed(0) + '%。从纸面实力看，' + dog.cn + '想要拿分需要超水平发挥。');
+  } else if (gap > 10) {
+    paragraphs.push(fav.cn + '实力占优（领先' + gap.toFixed(0) + '分），胜率' + ((hStr>aStr?pred.homeWinProb:pred.awayWinProb)*100).toFixed(0) + '%。但' + dog.cn + '并非没有机会——足球的魅力就在于不确定性。');
+  } else if (gap > 4) {
+    paragraphs.push('两队实力接近，' + fav.cn + '仅以' + gap.toFixed(0) + '分微弱领先。这类比赛往往取决于临场发挥和关键球员的灵光一现。');
+  } else {
+    paragraphs.push('本轮最势均力敌的对决之一。双方评分仅差' + gap.toFixed(1) + '分，胜负难料——谁在细节上做得更好，谁就更接近三分。');
+  }
+
+  // ---- Recent form ----
+  if (apiInfo && apiInfo.recentForm && apiInfo.recentForm.home) {
+    var hForm = apiInfo.recentForm.home, aForm = apiInfo.recentForm.away || {};
+    var feat = apiInfo.feature || {};
+    var hW = parseInt(hForm.homeTeamWins||0), hD = parseInt(hForm.homeTeamDraws||0), hL = parseInt(hForm.homeTeamLosses||0);
+    var aW = parseInt(aForm.awayTeamWins||0), aD = parseInt(aForm.awayTeamDraws||0), aL = parseInt(aForm.awayTeamLosses||0);
+    var formT = '近期状态：' + ht.cn + '近' + (hW+hD+hL) + '场' + hW + '胜' + hD + '平' + hL + '负';
+    formT += hW >= (hW+hD+hL) - 1 ? '，势头正盛；' : hL >= 2 ? '，状态堪忧；' : '；';
+    formT += at.cn + '近' + (aW+aD+aL) + '场' + aW + '胜' + aD + '平' + aL + '负';
+    formT += aW >= (aW+aD+aL) - 1 ? '，状态火热。' : aL >= 2 ? '，近期低迷。' : '。';
+    if (feat.homeTeamAvgGoals) formT += ht.cn + '场均进' + feat.homeTeamAvgGoals + '球。';
+    if (feat.awayTeamAvgGoals) formT += at.cn + '场均进' + feat.awayTeamAvgGoals + '球。';
+    paragraphs.push(formT);
+  }
+
+  // ---- Strengths + Tactics ----
+  var strat = '';
+  if (hTac.strength) strat += ht.cn + '的取胜之匙是' + hTac.strength + '。';
+  if (hTac.weakness) strat += '但' + hTac.weakness + '可能被对手针对。';
+  if (aTac.strength) strat += at.cn + '则寄望于' + aTac.strength + '来对抗。';
+  if (pred.tacAnalysis) {
+    strat += '从战术看，' + ht.cn + '的' + (hTac.formation||'4-4-2') + hStyle + '体系对阵' + at.cn + '的' + (aTac.formation||'4-4-2') + aStyle + '体系——' + pred.tacAnalysis.narrative + '。';
+  }
+  paragraphs.push(strat);
+
+  // ---- Key players ----
+  var hStars = (ht.stars||[]).map(function(s){return PLAYER_CN[s]||s;});
+  var aStars = (at.stars||[]).map(function(s){return PLAYER_CN[s]||s;});
+  paragraphs.push('球员焦点：' + ht.cn + '的' + (hStars.slice(0,2).join('、')||'核心球员') + '是进攻端的主要威胁；' + at.cn + '需要' + (aStars.slice(0,2).join('、')||'关键球员') + '挺身而出。');
+
+  // ---- Prediction ----
+  var topScoresStr = pred.topScores ? pred.topScores.map(function(s){return s.home+':'+s.away;}).join('、') : (pred.predScore[0]+':'+pred.predScore[1]);
+  paragraphs.push('AI预期进球' + pred.expH.toFixed(1) + '-' + pred.expA.toFixed(1) + '，最可能比分' + topScoresStr + '。概率分布：' + ht.cn + '胜' + (pred.homeWinProb*100).toFixed(0) + '% / 平' + (pred.drawProb*100).toFixed(0) + '% / ' + at.cn + '胜' + (pred.awayWinProb*100).toFixed(0) + '%。');
+
+  // ---- Odds ----
+  if (mol) {
+    var fair = oddsToFairProb(mol.h, mol.d, mol.a);
+    var oText = '市场赔率：主胜' + mol.h.toFixed(2) + ' / 平' + mol.d.toFixed(2) + ' / 客胜' + mol.a.toFixed(2);
+    if (mol.history && mol.history.length >= 2) {
+      var trend = mol.history[mol.history.length-1].h - mol.history[0].h;
+      oText += trend < -0.05 ? '（主胜赔率走低，市场信心增强）' : trend > 0.05 ? '（主胜赔率走高，市场信心减弱）' : '（赔率稳定）';
+    }
+    oText += '。';
+    paragraphs.push(oText);
+  }
+
+  // ---- Injuries ----
+  if (ht.inj || at.inj) {
+    var injT = '伤病情况：';
+    if (ht.inj) injT += ht.cn + (ht.inj||'').replace(/[🔴⚠️]/g,'').trim();
+    if (at.inj) injT += (ht.inj?'；':'') + at.cn + (at.inj||'').replace(/[🔴⚠️]/g,'').trim();
+    injT += '。';
+    paragraphs.push(injT);
+  }
+
+  return '<div style="line-height:2.1;font-size:.78rem;color:var(--text);padding:10px 0">' + paragraphs.map(function(p){return '<p style="margin-bottom:10px;text-indent:2em">' + p + '</p>';}).join('') + '</div>';
+}
+
+
 function showMatchDetail(mid) {
   var m = MATCH_SCHEDULE.find(function(x){return x.id===mid});
   if (!m) return;
@@ -5647,88 +5730,6 @@ function publishNow() {
 </body>
 </html
 
-
-function generateMatchAnalysis(m, ht, at, pred, mol) {
-  var hTac = TACTICAL[ht.id] || {}, aTac = TACTICAL[at.id] || {};
-  var hStr = getStrength(ht), aStr = getStrength(at);
-  var styleNames = {possession:'传控',counter:'防守反击',high_press:'高压逼抢',direct:'长传冲吊',defensive_block:'低位防守',balanced:'均衡'};
-  var hStyle = styleNames[hTac.style] || '均衡', aStyle = styleNames[aTac.style] || '均衡';
-  var apiInfo = liveInfo[m.id] || null;
-
-  var paragraphs = [];
-
-  // ---- Overview ----
-  var gap = Math.abs(hStr - aStr);
-  var fav = hStr > aStr ? ht : at;
-  var dog = hStr > aStr ? at : ht;
-
-  if (gap > 20) {
-    paragraphs.push('本场可能是本轮实力最悬殊的较量。' + fav.cn + '综合评分领先' + dog.cn + gap.toFixed(0) + '分，取胜概率' + ((hStr>aStr?pred.homeWinProb:pred.awayWinProb)*100).toFixed(0) + '%。从纸面实力看，' + dog.cn + '想要拿分需要超水平发挥。');
-  } else if (gap > 10) {
-    paragraphs.push(fav.cn + '实力占优（领先' + gap.toFixed(0) + '分），胜率' + ((hStr>aStr?pred.homeWinProb:pred.awayWinProb)*100).toFixed(0) + '%。但' + dog.cn + '并非没有机会——足球的魅力就在于不确定性。');
-  } else if (gap > 4) {
-    paragraphs.push('两队实力接近，' + fav.cn + '仅以' + gap.toFixed(0) + '分微弱领先。这类比赛往往取决于临场发挥和关键球员的灵光一现。');
-  } else {
-    paragraphs.push('本轮最势均力敌的对决之一。双方评分仅差' + gap.toFixed(1) + '分，胜负难料——谁在细节上做得更好，谁就更接近三分。');
-  }
-
-  // ---- Recent form ----
-  if (apiInfo && apiInfo.recentForm && apiInfo.recentForm.home) {
-    var hForm = apiInfo.recentForm.home, aForm = apiInfo.recentForm.away || {};
-    var feat = apiInfo.feature || {};
-    var hW = parseInt(hForm.homeTeamWins||0), hD = parseInt(hForm.homeTeamDraws||0), hL = parseInt(hForm.homeTeamLosses||0);
-    var aW = parseInt(aForm.awayTeamWins||0), aD = parseInt(aForm.awayTeamDraws||0), aL = parseInt(aForm.awayTeamLosses||0);
-    var formT = '近期状态：' + ht.cn + '近' + (hW+hD+hL) + '场' + hW + '胜' + hD + '平' + hL + '负';
-    formT += hW >= (hW+hD+hL) - 1 ? '，势头正盛；' : hL >= 2 ? '，状态堪忧；' : '；';
-    formT += at.cn + '近' + (aW+aD+aL) + '场' + aW + '胜' + aD + '平' + aL + '负';
-    formT += aW >= (aW+aD+aL) - 1 ? '，状态火热。' : aL >= 2 ? '，近期低迷。' : '。';
-    if (feat.homeTeamAvgGoals) formT += ht.cn + '场均进' + feat.homeTeamAvgGoals + '球。';
-    if (feat.awayTeamAvgGoals) formT += at.cn + '场均进' + feat.awayTeamAvgGoals + '球。';
-    paragraphs.push(formT);
-  }
-
-  // ---- Strengths + Tactics ----
-  var strat = '';
-  if (hTac.strength) strat += ht.cn + '的取胜之匙是' + hTac.strength + '。';
-  if (hTac.weakness) strat += '但' + hTac.weakness + '可能被对手针对。';
-  if (aTac.strength) strat += at.cn + '则寄望于' + aTac.strength + '来对抗。';
-  if (pred.tacAnalysis) {
-    strat += '从战术看，' + ht.cn + '的' + (hTac.formation||'4-4-2') + hStyle + '体系对阵' + at.cn + '的' + (aTac.formation||'4-4-2') + aStyle + '体系——' + pred.tacAnalysis.narrative + '。';
-  }
-  paragraphs.push(strat);
-
-  // ---- Key players ----
-  var hStars = (ht.stars||[]).map(function(s){return PLAYER_CN[s]||s;});
-  var aStars = (at.stars||[]).map(function(s){return PLAYER_CN[s]||s;});
-  paragraphs.push('球员焦点：' + ht.cn + '的' + (hStars.slice(0,2).join('、')||'核心球员') + '是进攻端的主要威胁；' + at.cn + '需要' + (aStars.slice(0,2).join('、')||'关键球员') + '挺身而出。');
-
-  // ---- Prediction ----
-  var topScoresStr = pred.topScores ? pred.topScores.map(function(s){return s.home+':'+s.away;}).join('、') : (pred.predScore[0]+':'+pred.predScore[1]);
-  paragraphs.push('AI预期进球' + pred.expH.toFixed(1) + '-' + pred.expA.toFixed(1) + '，最可能比分' + topScoresStr + '。概率分布：' + ht.cn + '胜' + (pred.homeWinProb*100).toFixed(0) + '% / 平' + (pred.drawProb*100).toFixed(0) + '% / ' + at.cn + '胜' + (pred.awayWinProb*100).toFixed(0) + '%。');
-
-  // ---- Odds ----
-  if (mol) {
-    var fair = oddsToFairProb(mol.h, mol.d, mol.a);
-    var oText = '市场赔率：主胜' + mol.h.toFixed(2) + ' / 平' + mol.d.toFixed(2) + ' / 客胜' + mol.a.toFixed(2);
-    if (mol.history && mol.history.length >= 2) {
-      var trend = mol.history[mol.history.length-1].h - mol.history[0].h;
-      oText += trend < -0.05 ? '（主胜赔率走低，市场信心增强）' : trend > 0.05 ? '（主胜赔率走高，市场信心减弱）' : '（赔率稳定）';
-    }
-    oText += '。';
-    paragraphs.push(oText);
-  }
-
-  // ---- Injuries ----
-  if (ht.inj || at.inj) {
-    var injT = '伤病情况：';
-    if (ht.inj) injT += ht.cn + (ht.inj||'').replace(/[🔴⚠️]/g,'').trim();
-    if (at.inj) injT += (ht.inj?'；':'') + at.cn + (at.inj||'').replace(/[🔴⚠️]/g,'').trim();
-    injT += '。';
-    paragraphs.push(injT);
-  }
-
-  return '<div style="line-height:2.1;font-size:.78rem;color:var(--text);padding:10px 0">' + paragraphs.map(function(p){return '<p style="margin-bottom:10px;text-indent:2em">' + p + '</p>';}).join('') + '</div>';
-}
 
 function renderDashboard() {
   if (!lastResult) {
