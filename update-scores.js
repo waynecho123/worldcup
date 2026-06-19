@@ -223,8 +223,15 @@ async function updateOdds() {
   // API-Sports odds endpoint (Pro plan includes 1X2 odds for all matches)
   const existing = loadJSON(ODDS_FILE) || {};
 
+  // Fixture ID → match ID map (from match-details.json)
+  const detailsForOdds = loadJSON(path.join(BASE_DIR, 'match-details.json')) || {};
+  const fixToMid = {};
+  Object.keys(detailsForOdds).forEach(function(k) {
+    if (detailsForOdds[k] && detailsForOdds[k].fixtureId) fixToMid[detailsForOdds[k].fixtureId] = k;
+  });
+
   try {
-    // Fetch odds for next 5 days
+    // Fetch odds for next 7 days
     const sched = getMatchSchedule();
     let updated = 0;
     const today = new Date();
@@ -249,20 +256,24 @@ async function updateOdds() {
       if (resp && resp.response && resp.response.length > 0) {
         // Debug: show first fixture structure
         var s = resp.response[0];
-        console.log(`[${ts}] Odds fixture keys: ${JSON.stringify(Object.keys(s.fixture||{}))}`);
-        console.log(`[${ts}] Odds fixture.teams: ${JSON.stringify((s.fixture||{}).teams)}`);
         resp.response.forEach(fixture => {
-          const teamInfo = fixture.fixture?.teams || fixture.teams || {};
-          const fHome = teamInfo.home?.name || '';
-          const fAway = teamInfo.away?.name || '';
-          const m = sched.find(x => {
-            const ht = TEAMS[x.home], at = TEAMS[x.away];
-            return ht && at && (
-              (ht.name === fHome && at.name === fAway) ||
-              (ht.cn === fHome && at.cn === fAway) ||
-              (ht.name === fAway && at.name === fHome)
-            );
-          });
+          // Match by fixture ID (odds endpoint doesn't include team names)
+          var fixId = fixture.fixture?.id;
+          var m = fixId ? sched.find(function(x) { return x.id === fixToMid[fixId]; }) : null;
+          if (!m) {
+            // Fallback: match by team name
+            var teamInfo = fixture.teams || {};
+            var fHome = teamInfo.home?.name || '';
+            var fAway = teamInfo.away?.name || '';
+            m = sched.find(function(x) {
+              var ht = TEAMS[x.home], at = TEAMS[x.away];
+              return ht && at && (
+                (ht.name === fHome && at.name === fAway) ||
+                (ht.cn === fHome && at.cn === fAway) ||
+                (ht.name === fAway && at.name === fHome)
+              );
+            });
+          }
           if (!m) return;
           const bookmakers = fixture.bookmakers || [];
           const bet365 = bookmakers.find(b => b.name === 'Bet365') || bookmakers[0];
