@@ -1594,7 +1594,7 @@ function updateNewsModifiers(newsItems) {
     {kw:['不会首发','替补出战','管理出场时间','带伤','尚未痊愈'],baseVal:-2,scope:'any'},
     // === 🏃 伤病正面 (recovery → upgrade) ===
     {kw:['复出','回归','伤愈','痊愈','恢复完整训练','重返赛场','解禁复出','恢复训练'],baseVal:3,scope:'any'},
-    // === ⚽ 比赛状态正面 ===
+    // === 比赛状态正面 ===
     {kw:['大胜','狂胜','屠杀','血洗','横扫','完胜','轻取','碾压','大比分'],baseVal:3,scope:'winner'},
     {kw:['逆转','绝杀','顽强','韧性','气势如虹','势不可挡','火力全开'],baseVal:2,scope:'winner'},
     {kw:['创造历史','首次','纪录','破纪录','里程碑','历史性'],baseVal:2,scope:'any'},
@@ -2661,7 +2661,7 @@ function _dead_jc_advanced(mid, ht, at) {
 
     <!-- Correct Score -->
     <div style="margin-bottom:10px">
-      <div style="font-size:.7rem;color:var(--text2);margin-bottom:4px">⚽ 比分 (波胆)</div>
+      <div style="font-size:.7rem;color:var(--text2);margin-bottom:4px">比分 (波胆)</div>
       <div style="display:flex;gap:6px;flex-wrap:wrap">
         ${scores.map(s => `
         <div style="padding:4px 10px;background:var(--surface2);border-radius:4px;text-align:center;font-size:.7rem;min-width:55px">
@@ -3212,7 +3212,7 @@ function renderMatchCard(m) {
       ? '<span class="mc-correct">🎯 命中</span>'
       : correctOutcome
         ? '<span class="mc-correct">正确</span>'
-        : '<span class="mc-wrong">❌ 错误</span>';
+        : '<span class="mc-wrong">错误</span>';
   }
 
   // Priority 4: AI predicted score display
@@ -3506,7 +3506,7 @@ function generatePostMatchReview(m, ht, at, pred, actual, apiInfo) {
 
   // Strength
   var strPredictedFav = strGap > 4 ? ht.cn : strGap < -4 ? at.cn : '势均力敌';
-  var strAssessment = (strGap > 4 && actualOutcome === 'home') || (strGap < -4 && actualOutcome === 'away') ? '准确：实力较强一方顺利取胜，模型评分合理。' : (strGap > 4 && actualOutcome !== 'home') ? '❌ 偏差：实力占优的' + ht.cn + '未能取胜，模型可能高估了实力差距（' + strGap.toFixed(1) + '分）。' : (strGap < -4 && actualOutcome !== 'away') ? '❌ 偏差：实力占优的' + at.cn + '未能取胜，模型可能高估了实力差距。' : '双方实力接近（差距' + Math.abs(strGap).toFixed(1) + '分），比赛结果在合理范围内。';
+  var strAssessment = (strGap > 4 && actualOutcome === 'home') || (strGap < -4 && actualOutcome === 'away') ? '准确：实力较强一方顺利取胜，模型评分合理。' : (strGap > 4 && actualOutcome !== 'home') ? '偏差：实力占优的' + ht.cn + '未能取胜，模型可能高估了实力差距（' + strGap.toFixed(1) + '分）。' : (strGap < -4 && actualOutcome !== 'away') ? '偏差：实力占优的' + at.cn + '未能取胜，模型可能高估了实力差距。' : '双方实力接近（差距' + Math.abs(strGap).toFixed(1) + '分），比赛结果在合理范围内。';
   parts.push('【实力复盘】AI评分 ' + ht.cn + ' ' + hStr.toFixed(1) + ' vs ' + at.cn + ' ' + aStr.toFixed(1) + '，预判' + strPredictedFav + '占优。实际：' + strAssessment);
 
   // Tactical
@@ -3525,26 +3525,54 @@ function generatePostMatchReview(m, ht, at, pred, actual, apiInfo) {
   // Probability
   parts.push('【概率复盘】AI给出' + ht.cn + '胜' + (pred.homeWinProb * 100).toFixed(0) + '% / 平' + (pred.drawProb * 100).toFixed(0) + '% / ' + at.cn + '胜' + (pred.awayWinProb * 100).toFixed(0) + '%。实际结果为' + (actualOutcome === 'home' ? ht.cn + '胜' : actualOutcome === 'draw' ? '平局' : at.cn + '胜') + '，该结果落在' + probLevel + '（AI赋概率' + probPct + '%）。' + (actualProb > 0.35 ? '模型对此结果有充分预期。' : '这是一个小概率结果，模型对此准备不足。'));
 
-  // Stars
-  var hStars = ht.stars ? ht.stars.slice(0, 2).join('、') : '核心球员';
-  var aStars = at.stars ? at.stars.slice(0, 2).join('、') : '核心球员';
-  parts.push('【球星复盘】赛前关注' + ht.cn + '的' + hStars + '与' + at.cn + '的' + aStars + '。球星临场发挥往往是预测偏差的重要来源，建议赛后关注球员评分数据以完善此维度。');
-
-  // Injuries
-  if (ht.inj || at.inj || (apiInfo && apiInfo.injuries && apiInfo.injuries.length > 0)) {
-    var injSummary = [];
-    if (ht.inj) injSummary.push(ht.cn + '：' + ht.inj.replace(/[🔴⚠️]/g, '').trim());
-    if (at.inj) injSummary.push(at.cn + '：' + at.inj.replace(/[🔴⚠️]/g, '').trim());
-    parts.push('【伤病复盘】赛前伤停：' + injSummary.join('；') + '。伤病因素在复盘时需结合临场表现综合评判。');
+  // Stars — use actual scorers and player ratings from match data
+  var detailStars = matchDetails[m.id];
+  if (detailStars && detailStars.players) {
+    var hPlayers = detailStars.players[0] || {};
+    var aPlayers = detailStars.players[1] || {};
+    var hTop = (hPlayers.players || []).filter(function(p){return p.rating;}).sort(function(a,b){return b.rating - a.rating;}).slice(0,2);
+    var aTop = (aPlayers.players || []).filter(function(p){return p.rating;}).sort(function(a,b){return b.rating - a.rating;}).slice(0,2);
+    var hStarText = hTop.map(function(p){return p.name + ' ' + p.rating + '分';}).join('、') || '暂无评分';
+    var aStarText = aTop.map(function(p){return p.name + ' ' + p.rating + '分';}).join('、') || '暂无评分';
+    // Goal scorers
+    var events = detailStars.events || [];
+    var hScorers = events.filter(function(e){return e.type === 'Goal' && e.team === detailStars.homeTeam;}).map(function(e){return e.player;});
+    var aScorers = events.filter(function(e){return e.type === 'Goal' && e.team === detailStars.awayTeam;}).map(function(e){return e.player;});
+    var scorerInfo = '';
+    if (hScorers.length > 0) scorerInfo += ht.cn + '进球：' + hScorers.join('、') + '；';
+    if (aScorers.length > 0) scorerInfo += at.cn + '进球：' + aScorers.join('、') + '；';
+    parts.push('【球星表现】' + ht.cn + '最高评分：' + hStarText + '；' + at.cn + '最高评分：' + aStarText + '。' + scorerInfo + (hScorers.length === 0 && aScorers.length === 0 ? '本场无进球球员。' : ''));
   } else {
-    parts.push('【伤病复盘】本场双方阵容齐整，无重大伤病影响预测准确性。');
+    var hStarNames = ht.stars ? ht.stars.slice(0, 2).join('、') : '核心球员';
+    var aStarNames = at.stars ? at.stars.slice(0, 2).join('、') : '核心球员';
+    parts.push('【球星表现】赛前关注' + ht.cn + '的' + hStarNames + '与' + at.cn + '的' + aStarNames + '。（球员评分数据待更新）');
+  }
+
+  // Injuries — check if key absentees actually impacted the match
+  if (ht.inj || at.inj) {
+    var injParts = [];
+    if (ht.inj) {
+      var hInjClean = ht.inj.replace(/[🔴⚠️]/g, '').trim();
+      injParts.push(ht.cn + '缺阵：' + hInjClean);
+    }
+    if (at.inj) {
+      var aInjClean = at.inj.replace(/[🔴⚠️]/g, '').trim();
+      injParts.push(at.cn + '缺阵：' + aInjClean);
+    }
+    // Check if the team missing key players still performed well
+    var injImpact = '';
+    if (ht.inj && actualOutcome === 'home') injImpact += ht.cn + '虽有关键球员缺阵仍取胜，伤病影响被克服。';
+    if (at.inj && actualOutcome === 'away') injImpact += at.cn + '虽有关键球员缺阵仍取胜，伤病影响被克服。';
+    if (ht.inj && actualOutcome !== 'home' && (hStr > aStr)) injImpact += ht.cn + '缺阵球员的影响可能被低估，进攻端未能打出预期水平。';
+    if (!injImpact) injImpact = '伤病对比赛走势的影响需进一步评估。';
+    parts.push('【伤病影响】' + injParts.join('；') + '。' + injImpact);
   }
 
   // Market consensus
   if (pred.marketConsensus) {
     var mc = pred.marketConsensus;
     var mktDirection = mc.mktFav === 'home' ? ht.cn + '胜' : mc.mktFav === 'away' ? at.cn + '胜' : '平局';
-    var whoRight = mc.agree ? (actualOutcome === mc.aiFav ? 'AI与机构方向一致且均正确。' : '❌ AI与机构方向一致但均判断错误，市场也存在系统性偏差。') : (actualOutcome === mc.aiFav ? '💡 AI判断正确而机构方向有误，模型捕捉到了市场未充分定价的信息。' : actualOutcome === mc.mktFav ? '机构方向正确而AI判断失误，市场信息可能包含了模型未捕捉到的关键信号。' : '❌ AI和机构方向均错误，本场结果超出常规预期。');
+    var whoRight = mc.agree ? (actualOutcome === mc.aiFav ? 'AI与机构方向一致且均正确。' : 'AI与机构方向一致但均判断错误，市场也存在系统性偏差。') : (actualOutcome === mc.aiFav ? 'AI判断正确而机构方向有误，模型捕捉到了市场未充分定价的信息。' : actualOutcome === mc.mktFav ? '机构方向正确而AI判断失误，市场信息可能包含了模型未捕捉到的关键信号。' : 'AI和机构方向均错误，本场结果超出常规预期。');
     parts.push('【机构复盘】赛前' + mc.label + '。机构方向：' + mktDirection + '，AI方向：' + (mc.aiFav === 'home' ? ht.cn + '胜' : mc.aiFav === 'away' ? at.cn + '胜' : '平局') + '。实际：' + whoRight);
   }
 
@@ -3552,7 +3580,7 @@ function generatePostMatchReview(m, ht, at, pred, actual, apiInfo) {
   if (pred.upsetProb !== undefined) {
     var upsetPct = (pred.upsetProb * 100).toFixed(0);
     var isUpset = (hStr > aStr && actualOutcome !== 'home') || (aStr > hStr && actualOutcome !== 'away');
-    var upsetVerdict = pred.upsetAlert ? (isUpset ? '模型成功预警了冷门风险（' + upsetPct + '%），实际确实出现冷门。' : '模型预警了冷门风险（' + upsetPct + '%），但强队顺利取胜，属于过度预警。') : (isUpset ? '❌ 模型未预警冷门（风险仅' + upsetPct + '%），但实际爆冷。模型对冷门信号捕捉不足。' : '模型判断冷门概率低（' + upsetPct + '%），比赛正常走势。');
+    var upsetVerdict = pred.upsetAlert ? (isUpset ? '模型成功预警了冷门风险（' + upsetPct + '%），实际确实出现冷门。' : '模型预警了冷门风险（' + upsetPct + '%），但强队顺利取胜，属于过度预警。') : (isUpset ? '模型未预警冷门（风险仅' + upsetPct + '%），但实际爆冷。模型对冷门信号捕捉不足。' : '模型判断冷门概率低（' + upsetPct + '%），比赛正常走势。');
     parts.push('【冷门复盘】赛前Monte Carlo冷门概率' + upsetPct + '%。' + upsetVerdict);
   }
 
@@ -3661,7 +3689,7 @@ function generatePostMatchReview(m, ht, at, pred, actual, apiInfo) {
           var pen = g.detail === 'Penalty' ? '(点球)' : '';
           return g.time + '\' ' + g.player + pen + (g.assist ? ' 助攻:' + g.assist : '');
         }).join('，');
-        parts.push('⚽ 【进球详情】' + goalText);
+        parts.push('【进球详情】' + goalText);
       }
 
       // Victory attribution: explain why the winning team won
@@ -4226,7 +4254,7 @@ ${lu.note?`<div style="font-size:.7rem;color:var(--orange);margin-top:4px">${lu.
   const teamMatches = MATCH_SCHEDULE.filter(function(m){return (m.home===id||m.away===id)&&m.stage==='group';});
   let matchesHtml = '';
   if (teamMatches.length > 0) {
-    matchesHtml = '<div style="margin-top:10px;padding:10px;background:var(--surface2);border-radius:var(--radius-sm)"><p style="font-weight:700;margin-bottom:6px">⚽ 小组赛战况</p>';
+    matchesHtml = '<div style="margin-top:10px;padding:10px;background:var(--surface2);border-radius:var(--radius-sm)"><p style="font-weight:700;margin-bottom:6px">小组赛战况</p>';
     teamMatches.forEach(function(m){
       const opp = m.home===id ? TEAMS.find(function(x){return x.id===m.away;}) : TEAMS.find(function(x){return x.id===m.home;});
       const isHome = m.home===id;
@@ -4891,7 +4919,7 @@ function renderReview() {
         <div style="padding:10px;background:var(--surface2);border-radius:8px;margin-bottom:8px;border-left:3px solid var(--orange)">
           <div style="font-weight:700;margin-bottom:4px">🔸 ${b.type}</div>
           <div style="font-size:.8rem;color:var(--text2)">${b.detail}</div>
-          <div style="font-size:.78rem;color:var(--green);margin-top:4px">💡 ${b.adjustment}</div>
+          <div style="font-size:.78rem;color:var(--green);margin-top:4px">${b.adjustment}</div>
         </div>
       `).join('')}
     `;
@@ -4989,7 +5017,7 @@ function submitResult() {
   // Also refresh today tab if needed
   const c = compareMatch(mid);
   var topStr = c && c.topScores ? c.topScores.map(function(s){return s.home+':'+s.away}).join(' · ') : (c ? c.predScore[0]+':'+c.predScore[1] : '');
-  const msg = c ? (c.correctOutcome ? 'AI预测正确！' : '❌ AI预测错误（预测' + topStr + '）') : '';
+  const msg = c ? (c.correctOutcome ? 'AI预测正确！' : 'AI预测错误（预测' + topStr + '）') : '';
   showToast('结果已保存！' + msg);
 }
 
@@ -5456,7 +5484,7 @@ function renderReflections() {
       '<div style="font-size:.7rem;color:var(--text2);margin-bottom:4px">命中率 '+r.hitRate+'% | 投入¥'+r.totalStake+'</div>'+
       r.analysis.map(function(a){ return '<div style="font-size:.72rem;padding:2px 0;color:var(--text)">'+a+'</div>'; }).join('')+
       '<div style="margin-top:4px;padding:6px 8px;background:rgba(139,92,246,.08);border-radius:4px;font-size:.68rem;color:var(--purple)">'+
-        '<span style="font-weight:600">💡 经验教训：</span>'+
+        '<span style="font-weight:600">经验教训：</span>'+
         r.lessons.map(function(l){ return '<div style="padding:1px 0 1px 10px">• '+l+'</div>'; }).join('')+
       '</div>'+
     '</div>';
