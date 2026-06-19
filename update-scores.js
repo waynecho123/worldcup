@@ -253,34 +253,19 @@ async function updateOdds() {
       });
 
       console.log(`[${ts}] Odds[${dateStr}]: API returned ${resp.response ? resp.response.length : 0} fixtures (errors: ${JSON.stringify(resp.errors||'none')})`);
-      if (resp && resp.response && resp.response.length > 0) {
-        // Debug: show first fixture structure
-        var s = resp.response[0];
-        resp.response.forEach(fixture => {
-          // Match by fixture ID from previously-fetched details
-          var fixId = fixture.fixture?.id;
-          var mid = fixToMid[fixId];
-          if (!mid) {
-            // No stored fixture mapping yet — save fixture ID keyed by date for later resolution
-            var fixDate = fixture.fixture?.date?.slice(0, 10) || dateStr;
-            if (!existing['_fix_' + fixId]) {
-              existing['_fix_' + fixId] = { fixtureId: fixId, date: fixDate };
-            }
-          }
-          var m = mid ? sched.find(function(x) { return x.id === mid; }) : null;
-          if (!m) return;
-          const bookmakers = fixture.bookmakers || [];
-          const bet365 = bookmakers.find(b => b.name === 'Bet365') || bookmakers[0];
-          if (!bet365 || !bet365.bets || !bet365.bets[0]) return;
-          const bet = bet365.bets[0].values.find(v => v.value === 'Home' || v.value === 'Draw' || v.value === 'Away')
-            ? bet365.bets[0].values
-            : null;
-          if (!bet) return;
-          const h = bet.find(v => v.value === 'Home');
-          const d = bet.find(v => v.value === 'Draw');
-          const a = bet.find(v => v.value === 'Away');
+      if (resp && resp.response) {
+        resp.response.forEach(function(fixture) {
+          var fixId = fixture.fixture && fixture.fixture.id;
+          if (!fixId) return;
+          var bookmakers = fixture.bookmakers || [];
+          var b365 = bookmakers.find(function(b){return b.name==='Bet365';}) || bookmakers[0];
+          if (!b365 || !b365.bets || !b365.bets[0]) return;
+          var vals = b365.bets[0].values || [];
+          var h = vals.find(function(v){return v.value==='Home';});
+          var d = vals.find(function(v){return v.value==='Draw';});
+          var a = vals.find(function(v){return v.value==='Away';});
           if (h && d && a) {
-            existing[m.id] = { h: parseFloat(h.odd), d: parseFloat(d.odd), a: parseFloat(a.odd), updatedAt: ts };
+            existing[fixId] = { h: parseFloat(h.odd), d: parseFloat(d.odd), a: parseFloat(a.odd), updatedAt: ts };
             updated++;
           }
         });

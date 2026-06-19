@@ -4521,10 +4521,21 @@ async function loadOddsJSON() {
     var data = await resp.json();
     if (data && Object.keys(data).length > 0) {
       liveOdds = data;
-      // Merge live odds into MATCH_ODDS (API-Sports real odds override hardcoded estimates)
-      Object.keys(data).forEach(function(k) {
-        if (data[k] && data[k].h) MATCH_ODDS[k] = data[k];
+      // Build fixture ID → match ID map from matchDetails
+      var fixToMid = {};
+      Object.keys(matchDetails).forEach(function(mid) {
+        var d = matchDetails[mid];
+        if (d && d.fixtureId) fixToMid[d.fixtureId] = mid;
       });
+      // Merge API odds into MATCH_ODDS (resolve fixture ID → match ID)
+      var merged = 0;
+      Object.keys(data).forEach(function(k) {
+        if (!data[k] || !data[k].h) return;
+        var mid = fixToMid[k] || k; // try fixture ID → match ID, fallback to raw key
+        MATCH_ODDS[mid] = data[k];
+        merged++;
+      });
+      if (merged > 0) console.log('Odds merged: ' + merged + ' matches');
     }
   } catch(e) {}
 }
