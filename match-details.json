@@ -4964,5 +4964,1060 @@
         ]
       }
     ]
+  },
+  "m028": {
+    "fixtureId": 1489388,
+    "date": "2026-06-19T01:00:00+00:00",
+    "venue": "Estadio Akron",
+    "status": "Match Finished",
+    "homeTeam": "Mexico",
+    "awayTeam": "South Korea",
+    "score": {
+      "home": 1,
+      "away": 0
+    },
+    "statistics": {
+      "Mexico": {
+        "Shots on Goal": 4,
+        "Shots off Goal": 3,
+        "Total Shots": 8,
+        "Blocked Shots": 1,
+        "Shots insidebox": 5,
+        "Shots outsidebox": 3,
+        "Fouls": 9,
+        "Corner Kicks": 0,
+        "Offsides": 3,
+        "Ball Possession": "42%",
+        "Yellow Cards": 0,
+        "Red Cards": null,
+        "Goalkeeper Saves": 2,
+        "Total passes": 429,
+        "Passes accurate": 350,
+        "Passes %": "82%",
+        "expected_goals": "0.48",
+        "goals_prevented": "-0.23"
+      },
+      "South Korea": {
+        "Shots on Goal": 2,
+        "Shots off Goal": 4,
+        "Total Shots": 9,
+        "Blocked Shots": 3,
+        "Shots insidebox": 6,
+        "Shots outsidebox": 3,
+        "Fouls": 7,
+        "Corner Kicks": 2,
+        "Offsides": 6,
+        "Ball Possession": "58%",
+        "Yellow Cards": 2,
+        "Red Cards": null,
+        "Goalkeeper Saves": 3,
+        "Total passes": 579,
+        "Passes accurate": 486,
+        "Passes %": "84%",
+        "expected_goals": "0.69",
+        "goals_prevented": "-0.23"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 16,
+          "name": "Mexico",
+          "logo": "https://media.api-sports.io/football/teams/16.png",
+          "colors": {
+            "player": {
+              "primary": "298b77",
+              "number": "ffffff",
+              "border": "298b77"
+            },
+            "goalkeeper": {
+              "primary": "d54882",
+              "number": "ebebeb",
+              "border": "d54882"
+            }
+          }
+        },
+        "formation": "4-3-3",
+        "startXI": [
+          {
+            "player": {
+              "id": 270774,
+              "name": "Raúl Rangel",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2878,
+              "name": "Jorge Sánchez",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 2869,
+              "name": "Edson Álvarez",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 35544,
+              "name": "Johan Vásquez",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 2881,
+              "name": "Jesús Gallardo",
+              "number": 23,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 212233,
+              "name": "Brian Gutiérrez",
+              "number": 26,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 266345,
+              "name": "Erik Lira",
+              "number": 6,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 35970,
+              "name": "Luis Romo",
+              "number": 7,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2879,
+              "name": "Roberto Alvarado",
+              "number": 25,
+              "pos": "F",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 2887,
+              "name": "Raúl Jiménez",
+              "number": 9,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 35532,
+              "name": "Julián Quiñones",
+              "number": 16,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 35576,
+              "name": "Orbelín Pineda",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 313383,
+              "name": "Obed Vargas",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 127227,
+              "name": "Israel Reyes",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 94562,
+              "name": "Santiago Giménez",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36111,
+              "name": "César Huerta",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 35769,
+              "name": "Carlos Acevedo",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2098,
+              "name": "Guillermo Ochoa",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 390002,
+              "name": "Mateo Chávez",
+              "number": 20,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 750,
+              "name": "Álvaro Fidalgo",
+              "number": 8,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 482605,
+              "name": "Gilberto Mora",
+              "number": 19,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 35690,
+              "name": "Luis Chávez",
+              "number": 24,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2889,
+              "name": "Alexis Vega",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 291713,
+              "name": "Armando González",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36088,
+              "name": "Guillermo Martínez",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 27707,
+          "name": "Javier Aguirre",
+          "photo": "https://media.api-sports.io/football/coachs/27707.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 17,
+          "name": "South Korea",
+          "logo": "https://media.api-sports.io/football/teams/17.png",
+          "colors": {
+            "player": {
+              "primary": "dfd6eb",
+              "number": "ffffff",
+              "border": "dfd6eb"
+            },
+            "goalkeeper": {
+              "primary": "3da071",
+              "number": "ffffff",
+              "border": "3da071"
+            }
+          }
+        },
+        "formation": "3-4-2-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 2892,
+              "name": "Kim Seung-gyu",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 237218,
+              "name": "Han-Beom Lee",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 2897,
+              "name": "Kim Min-jae",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 304951,
+              "name": "Gi-Hyuk Lee",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2912,
+              "name": "Kim Moon-hwan",
+              "number": 15,
+              "pos": "M",
+              "grid": "3:4"
+            }
+          },
+          {
+            "player": {
+              "id": 2901,
+              "name": "Hwang In-beom",
+              "number": 6,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 2909,
+              "name": "Seung Ho Paik",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 197985,
+              "name": "Young-woo Seol",
+              "number": 22,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 927,
+              "name": "Kang-in Lee",
+              "number": 19,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 2906,
+              "name": "Jae-sung Lee",
+              "number": 10,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 186,
+              "name": "Son Heung-min",
+              "number": 7,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 24888,
+              "name": "Hwang Hee-chan",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 34710,
+              "name": "Hyeon-gyu Oh",
+              "number": 18,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 237050,
+              "name": "Ji-sung Eom",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 304958,
+              "name": "Yang Hyun-Jun",
+              "number": 20,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 34211,
+              "name": "Gue-sung Cho",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 34374,
+              "name": "Song Bum-keun",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2890,
+              "name": "Jo Hyeonwoo",
+              "number": 21,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 34418,
+              "name": "Kim Tae-hyeon",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 357209,
+              "name": "Wi-je Cho",
+              "number": 14,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 237220,
+              "name": "Lee Tae-seok",
+              "number": 13,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 99211,
+              "name": "Jin-seob Park",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 280358,
+              "name": "Jens Castrop",
+              "number": 23,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 357286,
+              "name": "Jun-Ho Bae",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 34168,
+              "name": "Jin-gyu Kim",
+              "number": 24,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 34431,
+              "name": "Dong-gyeong Lee",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 10461,
+          "name": "Myung-Bo Hong",
+          "photo": "https://media.api-sports.io/football/coachs/10461.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "4",
+        "team": "South Korea",
+        "player": "Lee Kang-In",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Foul"
+      },
+      {
+        "time": "50",
+        "team": "Mexico",
+        "player": "L. Romo",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "57",
+        "team": "South Korea",
+        "player": "Lee Jae-Sung",
+        "assist": "Hwang Hee-Chan",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "57",
+        "team": "South Korea",
+        "player": "Son Heung-Min",
+        "assist": "Oh Hyeon-Gyu",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "58",
+        "team": "South Korea",
+        "player": "Paik Seung-Ho",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Foul"
+      },
+      {
+        "time": "71",
+        "team": "Mexico",
+        "player": "B. Gutierrez",
+        "assist": "O. Pineda",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "71",
+        "team": "Mexico",
+        "player": "L. Romo",
+        "assist": "O. Vargas",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "71",
+        "team": "South Korea",
+        "player": "Seol Young-Woo",
+        "assist": "Yang Hyun-Jun",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "71",
+        "team": "South Korea",
+        "player": "Kim Moon-Hwan",
+        "assist": "Eom Ji-Sung",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "77",
+        "team": "South Korea",
+        "player": "Paik Seung-Ho",
+        "assist": "Cho Gue-Sung",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "80",
+        "team": "Mexico",
+        "player": "R. Jimenez",
+        "assist": "S. Gimenez",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "80",
+        "team": "Mexico",
+        "player": "R. Alvarado",
+        "assist": "I. Reyes",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "84",
+        "team": "Mexico",
+        "player": "J. Quinones",
+        "assist": "C. S. Huerta Valera",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Mexico",
+        "players": [
+          {
+            "name": "Raúl Rangel",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jorge Sánchez",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Edson Álvarez",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Johan Vásquez",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jesús Gallardo",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Brian Gutiérrez",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Erik Lira",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Luis Romo",
+            "rating": "8",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Roberto Alvarado",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Raúl Jiménez",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Julián Quiñones",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Orbelín Pineda",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Obed Vargas",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Israel Reyes",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Santiago Giménez",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "César Huerta",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Carlos Acevedo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Guillermo Ochoa",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mateo Chávez",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Álvaro Fidalgo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gilberto Mora",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Luis Chávez",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alexis Vega",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Armando González",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Guillermo Martínez",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "South Korea",
+        "players": [
+          {
+            "name": "Kim Seung-gyu",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Han-Beom Lee",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kim Min-jae",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gi-Hyuk Lee",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kim Moon-hwan",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Hwang In-beom",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Seung Ho Paik",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Young-woo Seol",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kang-in Lee",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jae-sung Lee",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Son Heung-min",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Hwang Hee-chan",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Hyeon-gyu Oh",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ji-sung Eom",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yang Hyun-Jun",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gue-sung Cho",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Song Bum-keun",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jo Hyeonwoo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kim Tae-hyeon",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Wi-je Cho",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lee Tae-seok",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jin-seob Park",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jens Castrop",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jun-Ho Bae",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jin-gyu Kim",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Dong-gyeong Lee",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
+  },
+  "m030": {
+    "fixtureId": "1489390"
+  },
+  "m031": {
+    "fixtureId": "1489389"
+  },
+  "m034": {
+    "fixtureId": "1489393"
+  },
+  "m033": {
+    "fixtureId": "1539007"
+  },
+  "m036": {
+    "fixtureId": "1489394"
+  },
+  "m038": {
+    "fixtureId": "1489395"
+  },
+  "m037": {
+    "fixtureId": "1489397"
+  },
+  "m040": {
+    "fixtureId": "1489396"
+  },
+  "m041": {
+    "fixtureId": "1489399"
+  },
+  "m042": {
+    "fixtureId": "1539017"
+  },
+  "m044": {
+    "fixtureId": "1489400"
+  },
+  "m043": {
+    "fixtureId": "1489401"
+  },
+  "m046": {
+    "fixtureId": "1489402"
+  },
+  "m047": {
+    "fixtureId": "1489403"
+  },
+  "m045": {
+    "fixtureId": "1489404"
   }
 }
