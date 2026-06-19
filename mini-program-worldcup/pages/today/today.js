@@ -31,6 +31,7 @@ Page({
 
   onShow() {
     if (!this.data.activeDate) this.buildDateList();
+    else this.loadDate(this.data.activeDate);
   },
 
   refresh() {
