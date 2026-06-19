@@ -3590,65 +3590,130 @@ function generatePostMatchReview(m, ht, at, pred, actual, apiInfo) {
     html += '<div style="font-size:.6rem;color:var(--text3);margin-top:2px">评分来源: API-Sports</div>';
   }
 
-  // ── Text Analysis ──
-  html += '<div class="section-title">分析</div>';
+  // ── Data-driven natural language review ──
+  html += '<div class="section-title">复盘分析</div>';
 
-  var parts = [];
-  var actualProb = actualOutcome === 'home' ? pred.homeWinProb : actualOutcome === 'draw' ? pred.drawProb : pred.awayWinProb;
-  var probPct = (actualProb * 100).toFixed(0);
+  var reviewText = '';
 
-  // Score review
-  var verdict = exactCorrect ? '比分完全命中' : outcomeCorrect ? '胜负方向正确，比分偏差' + goalDiffErr + '球' : '预测错误，偏差较大';
-  parts.push('【比分】AI预测 ' + predH + ':' + predA + '（期望' + pred.expH.toFixed(1) + '-' + pred.expA.toFixed(1) + '），实际' + actH + ':' + actA + '。' + verdict);
+  // ---- 1. Score verdict ----
+  var goalDiff = Math.abs(actH - actA);
+  var totalG = actH + actA;
+  var winner = actH > actA ? ht : actA > actH ? at : null;
 
-  // Probability
-  parts.push('【概率】赛前' + ht.cn + '胜' + (pred.homeWinProb*100).toFixed(0) + '%/平' + (pred.drawProb*100).toFixed(0) + '%/' + at.cn + '胜' + (pred.awayWinProb*100).toFixed(0) + '%。实际结果概率' + probPct + '%' + (actualProb > 0.35 ? '，模型有充分预期' : '，属小概率结果'));
-
-  // Tactical
-  if (pred.tacAnalysis) {
-    parts.push('【战术】' + pred.tacAnalysis.narrative + '（调整' + pred.tacAnalysis.adjPct + '）。' + (outcomeCorrect ? '战术预判与比赛走势一致' : '战术预判与比赛结果存在偏差'));
+  if (exactCorrect) {
+    var phrases = [
+      '比分完全命中。AI赛前就准确预判了' + actH + ':' + actA + '的最终比分，模型对本场的判断经得起检验。',
+      '精准预测！' + predH + ':' + predA + '与实际' + actH + ':' + actA + '分毫不差，AI成功捕捉了本场的关键变量。'
+    ];
+    reviewText += phrases[Math.floor(Math.random() * phrases.length)];
+  } else if (outcomeCorrect) {
+    var phrases2 = [
+      '胜负方向判断正确。最终' + actH + ':' + actA + '的结果印证了AI对' + (winner?winner.cn:'') + '取胜的判断，但' + goalDiffErr + '球的分差偏差说明对双方攻防强度的量化仍有空间。',
+      '方向对了。AI预计' + predH + ':' + predA + '，实际' + actH + ':' + actA + '——胜负判断正确，比分精度有待提升。'
+    ];
+    reviewText += phrases2[Math.floor(Math.random() * phrases2.length)];
+  } else {
+    var phrases3 = [
+      '预测出现偏差。AI赛前认为' + predH + ':' + predA + '，结果是' + actH + ':' + actA + '，方向判断错误。' + (winner?winner.cn+'的胜利出乎模型预料。':'平局是模型未曾预料到的结果。'),
+      '这一场AI看走了眼。预测' + predH + ':' + predA + '，最终' + actH + ':' + actA + (winner?'，'+winner.cn+'用表现打破了模型的预判。':'。')
+    ];
+    reviewText += phrases3[Math.floor(Math.random() * phrases3.length)];
   }
 
-  // Injury impact  
-  if (ht.inj || at.inj) {
-    var injText = [];
-    if (ht.inj) injText.push(ht.cn + '缺：' + ht.inj.replace(/[🔴⚠️]/g,'').trim());
-    if (at.inj) injText.push(at.cn + '缺：' + at.inj.replace(/[🔴⚠️]/g,'').trim());
-    parts.push('【伤病】' + injText.join('；'));
-  }
+  // ---- 2. Goal timing & match flow ----
+  var goalEvents = events.filter(function(e){return e.type === 'Goal';});
+  if (goalEvents.length > 0) {
+    goalEvents.sort(function(a,b){return parseInt(a.time)-parseInt(b.time);});
+    var firstGoal = goalEvents[0];
+    var lastGoal = goalEvents[goalEvents.length-1];
+    var early = parseInt(firstGoal.time) <= 15;
+    var late = parseInt(lastGoal.time) >= 80;
+    var comeback = false;
+    if (winner && goalEvents.length >= 2) {
+      var wTeam = winner===ht ? detail.homeTeam : detail.awayTeam;
+      var oppFirst = goalEvents.find(function(g){return g.team !== wTeam;});
+      var winLast = goalEvents.filter(function(g){return g.team === wTeam;}).pop();
+      if (oppFirst && winLast && parseInt(winLast.time) > parseInt(oppFirst.time)) comeback = true;
+    }
 
-  // Stars summary
-  if (players.length > 0) {
-    var allPs = [];
-    players.forEach(function(td){allPs = allPs.concat((td.players||[]).filter(function(p){return p.rating;}));});
-    if (allPs.length > 0) {
-      var best = allPs.sort(function(a,b){return parseFloat(b.rating)-parseFloat(a.rating);})[0];
-      parts.push('【最佳】' + best.name + ' ' + best.rating + '分' + (best.goals>0?'，打入'+best.goals+'球':'') + (best.assists>0?'，助攻'+best.assists+'次':''));
+    if (early && goalDiff >= 3) {
+      reviewText += firstGoal.player + '在第' + firstGoal.time + '分钟就撕开了防线，比赛早早失去悬念。';
+    } else if (comeback) {
+      reviewText += (winner?winner.cn:'') + '在被对手先进球的情况下完成逆转，展现了强大的意志力和战术调整能力。';
+    } else if (late && goalDiff <= 1) {
+      reviewText += '比赛直到第' + lastGoal.time + '分钟才由' + lastGoal.player + '打入制胜球，过程扣人心弦。';
+    } else if (totalG >= 5) {
+      reviewText += '一场进球盛宴——双方合计打入' + totalG + '球，攻防节奏极快，球迷大饱眼福。';
+    } else if (totalG <= 1) {
+      reviewText += '全场仅' + totalG + '粒进球，双方在防守端投入重兵，机会寥寥无几。';
+    } else {
+      reviewText += '全场' + totalG + '粒进球，' + (goalDiff >= 2 ? (winner?winner.cn+'在进攻端展现了更强的终结能力。' : '双方旗鼓相当。') : '比赛进程紧凑激烈。');
     }
   }
 
-  // Root cause on error
-  if (!outcomeCorrect) {
-    var strGap = Math.abs(hStr - aStr);
-    var rootCauses = [];
-    if (strGap > 15) rootCauses.push('实力差距' + strGap.toFixed(1) + '分过大，模型对强弱悬殊比赛的冷门概率偏低');
-    if (strGap > 10 && (ht.conf==='CAF'||ht.conf==='AFC'||at.conf==='CAF'||at.conf==='AFC')) rootCauses.push('非洲/亚洲球队世界杯爆冷历史模式未充分建模');
-    if (rootCauses.length === 0) rootCauses.push('关键变量未被模型捕捉，建议参考技术统计和赛事进程分析');
-    parts.push('【偏差归因】' + rootCauses.join('；'));
+  // ---- 3. Statistics narrative ----
+  var hStats2 = detail.statistics ? (detail.statistics[detail.homeTeam] || {}) : {};
+  var aStats2 = detail.statistics ? (detail.statistics[detail.awayTeam] || {}) : {};
+  if (Object.keys(hStats2).length > 0) {
+    var hPoss = parseFloat(hStats2['Ball Possession']) || 0;
+    var aPoss = parseFloat(aStats2['Ball Possession']) || 0;
+    var hxG2 = parseFloat(hStats2['Expected Goals']) || 0;
+    var axG2 = parseFloat(aStats2['Expected Goals']) || 0;
+
+    if (hPoss > 60) reviewText += ht.cn + '控球率达' + hPoss + '%，牢牢掌控节奏。';
+    else if (aPoss > 60) reviewText += at.cn + '以' + aPoss + '%的控球率主导场面。';
+    else reviewText += '控球率' + hPoss + '%-' + aPoss + '%，双方球权均衡。';
+
+    var xgHdiff = Math.abs(hxG2 - actH), xgAdiff = Math.abs(axG2 - actA);
+    if (xgHdiff > 1 || xgAdiff > 1) {
+      var overTeam = xgHdiff > xgAdiff ? ht.cn : at.cn;
+      reviewText += overTeam + '的实际进球与xG偏差较大，临门一脚的效率' + ((xgHdiff>xgAdiff?actH>hxG2:actA>axG2)?'超出':'低于') + '预期。';
+    } else {
+      reviewText += 'xG与最终比分吻合度较高，结果公正。';
+    }
   }
 
-  // Overall grade
-  var grade = exactCorrect ? 'A+ 完美预测' : outcomeCorrect && goalDiffErr <= 1 ? 'A 方向准确' : outcomeCorrect ? 'B+ 胜负正确' : goalDiffErr <= 1 ? 'B 接近' : 'C 偏差较大';
-  parts.push('【总评】' + grade);
+  // ---- 4. Red card impact ----
+  var redEvents = events.filter(function(e){return e.type === 'Card' && e.detail === 'Red Card';});
+  if (redEvents.length > 0) {
+    reviewText += '第' + redEvents[0].time + '分钟' + redEvents[0].player + '被红牌罚下，彻底改变了比赛走势。';
+  }
 
-  html += parts.map(function(p){return '<p style="margin-bottom:6px;font-size:.76rem">' + p + '</p>';}).join('');
-  
-  html += '<div style="font-size:.6rem;color:var(--text3);text-align:right;margin-top:10px">AI基于赛前预测 × 实际比赛数据复盘</div>';
+  // ---- 5. Player ratings ----
+  if (players.length > 0) {
+    var allPs2 = [];
+    players.forEach(function(td){allPs2 = allPs2.concat((td.players||[]).filter(function(p){return p.rating;}));});
+    if (allPs2.length > 0) {
+      allPs2.sort(function(a,b){return parseFloat(b.rating)-parseFloat(a.rating);});
+      var bestP = allPs2[0];
+      var rtg = parseFloat(bestP.rating);
+      var desc = rtg >= 8 ? '统治级表现' : rtg >= 7.5 ? '发挥出色' : rtg >= 7 ? '表现稳定' : '中规中矩';
+      reviewText += '最佳球员：' + bestP.name + '（' + bestP.rating + '分，' + desc + '）' + (bestP.goals>0?'，打入' + bestP.goals + '球':'') + (bestP.assists>0?'，助攻' + bestP.assists + '次':'') + '。';
+    }
+  }
+
+  // ---- 6. Error root cause ----
+  if (!outcomeCorrect) {
+    var strGap2 = Math.abs(hStr - aStr);
+    var reasons = [];
+    if (strGap2 > 15) reasons.push('两队评分差距' + strGap2.toFixed(0) + '分，模型在极端强弱悬殊的比赛中对冷门概率估算偏低');
+    if ((ht.conf==='CAF'||ht.conf==='AFC'||at.conf==='CAF'||at.conf==='AFC') && strGap2 > 10) reasons.push('非洲/亚洲球队世界杯爆冷传统未在模型中获得足够权重');
+    if (totalG > (pred.expH + pred.expA) + 1.5) reasons.push('实际进球' + totalG + '远超预期' + (pred.expH+pred.expA).toFixed(1) + '，比赛的开放性超预期');
+    if (redEvents.length > 0) reasons.push('红牌是不可预测的突发事件');
+    if (reasons.length === 0) reasons.push('比赛结果受到模型未捕捉到的关键变量影响');
+    reviewText += '预测偏差分析：' + reasons.join('；') + '。';
+  }
+
+  // ---- 7. Grade ----
+  var grade = exactCorrect ? 'A+' : outcomeCorrect && goalDiffErr <= 1 ? 'A' : outcomeCorrect ? 'B+' : goalDiffErr <= 1 ? 'B' : 'C';
+  var gradeDesc = grade === 'A+' ? '完美预测，各维度表现优秀' : grade === 'A' ? '方向准确且比分接近' : grade === 'B+' ? '胜负判断正确，比分精度不足' : grade === 'B' ? '接近正确，存在一定偏差' : '偏差较大，需重点复盘';
+  reviewText += '综合评级' + grade + '：' + gradeDesc + '。';
+
+  html += '<p style="line-height:2;font-size:.78rem;color:var(--text)">' + reviewText + '</p>';
+
   html += '</div>';
   return html;
 }
-
-
 function showMatchDetail(mid) {
   var m = MATCH_SCHEDULE.find(function(x){return x.id===mid});
   if (!m) return;
