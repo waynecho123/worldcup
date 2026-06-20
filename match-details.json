@@ -6378,6 +6378,42 @@
           },
           {
             "player": {
+              "id": 19077,
+              "name": "Kenny McLean",
+              "number": 23,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 45307,
+              "name": "Lyndon Dykes",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1115,
+              "name": "Tony Ralston",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 45078,
+              "name": "Ross Stewart",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 44937,
               "name": "Liam Kelly",
               "number": 12,
@@ -6423,15 +6459,6 @@
           },
           {
             "player": {
-              "id": 1115,
-              "name": "Tony Ralston",
-              "number": 24,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 44811,
               "name": "Scott McKenna",
               "number": 26,
@@ -6450,36 +6477,9 @@
           },
           {
             "player": {
-              "id": 19077,
-              "name": "Kenny McLean",
-              "number": 23,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 433272,
               "name": "Findlay Curtis",
               "number": 25,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 45307,
-              "name": "Lyndon Dykes",
-              "number": 9,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 45078,
-              "name": "Ross Stewart",
-              "number": 14,
               "pos": "F",
               "grid": null
             }
@@ -6632,6 +6632,42 @@
         "substitutes": [
           {
             "player": {
+              "id": 336659,
+              "name": "Chemsdine Talbi",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 535046,
+              "name": "Ayoube Amaimouni Echghouyab",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36579,
+              "name": "Soufiane Rahimi",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 415431,
+              "name": "Samir El Mourabet",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 2703,
               "name": "Ahmed Reda Tagnaouti",
               "number": 22,
@@ -6704,28 +6740,10 @@
           },
           {
             "player": {
-              "id": 336659,
-              "name": "Chemsdine Talbi",
-              "number": 7,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 369544,
               "name": "Gessime Yassine",
               "number": 16,
               "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 415431,
-              "name": "Samir El Mourabet",
-              "number": 15,
-              "pos": "M",
               "grid": null
             }
           },
@@ -6743,24 +6761,6 @@
               "id": 2722,
               "name": "Ayoub El Kaabi",
               "number": 20,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 535046,
-              "name": "Ayoube Amaimouni Echghouyab",
-              "number": 21,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 36579,
-              "name": "Soufiane Rahimi",
-              "number": 9,
               "pos": "F",
               "grid": null
             }
