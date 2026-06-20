@@ -8257,7 +8257,1029 @@
     ]
   },
   "m034": {
-    "fixtureId": "1489393"
+    "fixtureId": 1489393,
+    "date": "2026-06-20T20:00:00+00:00",
+    "venue": "BMO Field",
+    "status": "Match Finished",
+    "homeTeam": "Germany",
+    "awayTeam": "Ivory Coast",
+    "score": {
+      "home": 2,
+      "away": 1
+    },
+    "statistics": {
+      "Germany": {
+        "Shots on Goal": 7,
+        "Shots off Goal": 5,
+        "Total Shots": 16,
+        "Blocked Shots": 4,
+        "Shots insidebox": 9,
+        "Shots outsidebox": 7,
+        "Fouls": 5,
+        "Corner Kicks": 8,
+        "Offsides": 0,
+        "Ball Possession": "60%",
+        "Yellow Cards": null,
+        "Red Cards": null,
+        "Goalkeeper Saves": 1,
+        "Total passes": 618,
+        "Passes accurate": 553,
+        "Passes %": "89%",
+        "expected_goals": "1.84",
+        "goals_prevented": "1.51"
+      },
+      "Ivory Coast": {
+        "Shots on Goal": 2,
+        "Shots off Goal": 2,
+        "Total Shots": 9,
+        "Blocked Shots": 5,
+        "Shots insidebox": 6,
+        "Shots outsidebox": 3,
+        "Fouls": 7,
+        "Corner Kicks": 3,
+        "Offsides": 1,
+        "Ball Possession": "40%",
+        "Yellow Cards": null,
+        "Red Cards": null,
+        "Goalkeeper Saves": 5,
+        "Total passes": 420,
+        "Passes accurate": 361,
+        "Passes %": "86%",
+        "expected_goals": "1.23",
+        "goals_prevented": "1.51"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 25,
+          "name": "Germany",
+          "logo": "https://media.api-sports.io/football/teams/25.png",
+          "colors": {
+            "player": {
+              "primary": "ffffff",
+              "number": "000000",
+              "border": "ffffff"
+            },
+            "goalkeeper": {
+              "primary": "4f9b9c",
+              "number": "ecede8",
+              "border": "4f9b9c"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 497,
+              "name": "Manuel Neuer",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 502,
+              "name": "Joshua Kimmich",
+              "number": 6,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 972,
+              "name": "Jonathan Tah",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 26243,
+              "name": "Nico Schlotterbeck",
+              "number": 15,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 280074,
+              "name": "Nathaniel Brown",
+              "number": 18,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 637,
+              "name": "Felix Nmecha",
+              "number": 23,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 328033,
+              "name": "Aleksandar Pavlović",
+              "number": 5,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 644,
+              "name": "Leroy Sané",
+              "number": 19,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 181812,
+              "name": "Jamal Musiala",
+              "number": 10,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 203224,
+              "name": "Florian Wirtz",
+              "number": 17,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 978,
+              "name": "Kai Havertz",
+              "number": 7,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 2285,
+              "name": "Antonio Rüdiger",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 128533,
+              "name": "Jamie Leweling",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 714,
+              "name": "Nadiem Amiri",
+              "number": 20,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 26475,
+              "name": "Deniz Undav",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 399,
+              "name": "Alexander Nübel",
+              "number": 21,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 702,
+              "name": "Oliver Baumann",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 163189,
+              "name": "Malick Thiaw",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 25368,
+              "name": "Waldemar Anton",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 25158,
+              "name": "David Raum",
+              "number": 22,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 380978,
+              "name": "Assan Ouédraogo",
+              "number": 25,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 18970,
+              "name": "Pascal Groß",
+              "number": 13,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 511,
+              "name": "Leon Goretzka",
+              "number": 8,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 137210,
+              "name": "Angelo Stiller",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 158644,
+              "name": "Maximilian Beier",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 158054,
+              "name": "Nick Woltemade",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 1545,
+          "name": "Julian Nagelsmann",
+          "photo": "https://media.api-sports.io/football/coachs/1545.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 1501,
+          "name": "Ivory Coast",
+          "logo": "https://media.api-sports.io/football/teams/1501.png",
+          "colors": {
+            "player": {
+              "primary": "ff7c0a",
+              "number": "ffffff",
+              "border": "ff7c0a"
+            },
+            "goalkeeper": {
+              "primary": "58d8fb",
+              "number": "1d1a1a",
+              "border": "58d8fb"
+            }
+          }
+        },
+        "formation": "4-1-4-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 64190,
+              "name": "Yahia Fofana",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 30504,
+              "name": "Wilfried Singo",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 48119,
+              "name": "Odilon Kossounou",
+              "number": 7,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 135068,
+              "name": "Emmanuel Agbadou",
+              "number": 20,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 22002,
+              "name": "Ghislain Konan",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 22149,
+              "name": "Ibrahim Sangaré",
+              "number": 18,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 157997,
+              "name": "Amad Diallo",
+              "number": 15,
+              "pos": "M",
+              "grid": "4:4"
+            }
+          },
+          {
+            "player": {
+              "id": 1642,
+              "name": "Franck Kessié",
+              "number": 8,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 474591,
+              "name": "Christ Inao Oulaï",
+              "number": 26,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 513776,
+              "name": "Yan Diomande",
+              "number": 11,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 275651,
+              "name": "Ange-Yoan Bonny",
+              "number": 9,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 30393,
+              "name": "Alban Lafont",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 277046,
+              "name": "Mohamed Koné",
+              "number": 16,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 20836,
+              "name": "Christopher Operi",
+              "number": 13,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 354753,
+              "name": "Ousmane Diomande",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 161747,
+              "name": "Guéla Doué",
+              "number": 17,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1807,
+              "name": "Evan Ndicka",
+              "number": 21,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 387643,
+              "name": "Bazoumana Touré",
+              "number": 24,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 3243,
+              "name": "Jean Michaël Seri",
+              "number": 4,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 263228,
+              "name": "Parfait Guiagon",
+              "number": 25,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30807,
+              "name": "Seko Fofana",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 301771,
+              "name": "Simon Adingra",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 334429,
+              "name": "Oumar Diakité",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 162707,
+              "name": "Elye Wahi",
+              "number": 12,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 3246,
+              "name": "Nicolas Pépé",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 137303,
+              "name": "Evann Guessand",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 28719,
+          "name": "Emerse Fae",
+          "photo": "https://media.api-sports.io/football/coachs/28719.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "30",
+        "team": "Ivory Coast",
+        "player": "F. Kessie",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "Germany",
+        "player": "N. Schlotterbeck",
+        "assist": "A. Rudiger",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "60",
+        "team": "Germany",
+        "player": "L. Sane",
+        "assist": "J. Leweling",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "60",
+        "team": "Germany",
+        "player": "J. Musiala",
+        "assist": "D. Undav",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "60",
+        "team": "Germany",
+        "player": "A. Pavlovic",
+        "assist": "N. Amiri",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "68",
+        "team": "Germany",
+        "player": "D. Undav",
+        "assist": "N. Amiri",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "75",
+        "team": "Ivory Coast",
+        "player": "A. Bonny",
+        "assist": "E. Guessand",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "75",
+        "team": "Ivory Coast",
+        "player": "I. Sangare",
+        "assist": "S. Fofana",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "75",
+        "team": "Ivory Coast",
+        "player": "A. Diallo",
+        "assist": "S. Adingra",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "82",
+        "team": "Ivory Coast",
+        "player": "W. Singo",
+        "assist": "G. Doue",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "85",
+        "team": "Ivory Coast",
+        "player": "Y. Diomande",
+        "assist": "N. Pepe",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "85",
+        "team": "Germany",
+        "player": "K. Havertz",
+        "assist": "L. Goretzka",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "90+4",
+        "team": "Germany",
+        "player": "D. Undav",
+        "assist": "F. Nmecha",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Germany",
+        "players": [
+          {
+            "name": "Manuel Neuer",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Joshua Kimmich",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jonathan Tah",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nico Schlotterbeck",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nathaniel Brown",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Felix Nmecha",
+            "rating": "7.5",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Aleksandar Pavlović",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Leroy Sané",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jamal Musiala",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Florian Wirtz",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kai Havertz",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Antonio Rüdiger",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jamie Leweling",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nadiem Amiri",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Deniz Undav",
+            "rating": "8.3",
+            "goals": 2,
+            "assists": 0
+          },
+          {
+            "name": "Leon Goretzka",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alexander Nübel",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Oliver Baumann",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Malick Thiaw",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Waldemar Anton",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "David Raum",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Assan Ouédraogo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Pascal Groß",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Angelo Stiller",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Maximilian Beier",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nick Woltemade",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Ivory Coast",
+        "players": [
+          {
+            "name": "Yahia Fofana",
+            "rating": "8.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Wilfried Singo",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Odilon Kossounou",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Emmanuel Agbadou",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ghislain Konan",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ibrahim Sangaré",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Amad Diallo",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Franck Kessié",
+            "rating": "7.5",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Christ Inao Oulaï",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yan Diomande",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ange-Yoan Bonny",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Seko Fofana",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Simon Adingra",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Evann Guessand",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Guéla Doué",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nicolas Pépé",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alban Lafont",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohamed Koné",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Christopher Operi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ousmane Diomande",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Evan Ndicka",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Bazoumana Touré",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jean Michaël Seri",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Parfait Guiagon",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Oumar Diakité",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Elye Wahi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m033": {
     "fixtureId": 1539007,
