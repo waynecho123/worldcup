@@ -156,7 +156,7 @@ Page({
     if (!ht || !at) { this.setData({ loading: false }); return; }
 
     // Core prediction — pass live odds for market consensus
-    const pred = predict.predictMatch(ht, at, apiOdds);
+    const pred = predict.predictMatch(ht, at, null);
     const dynOdds = liveOdds[matchId] || data.MATCH_ODDS[matchId]; const mol = dynOdds;
 
     // Top scores
