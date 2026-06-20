@@ -32,9 +32,6 @@
       <text class="st-col st-stat">胜</text>
       <text class="st-col st-stat">平</text>
       <text class="st-col st-stat">负</text>
-      <text class="st-col st-stat">GF</text>
-      <text class="st-col st-stat">GA</text>
-      <text class="st-col st-stat">GD</text>
       <text class="st-col st-pts">分</text>
     </view>
 
@@ -58,9 +55,6 @@
       <text class="st-col st-stat">{{item.won}}</text>
       <text class="st-col st-stat">{{item.drawn}}</text>
       <text class="st-col st-stat">{{item.lost}}</text>
-      <text class="st-col st-stat">{{item.gf}}</text>
-      <text class="st-col st-stat">{{item.ga}}</text>
-      <text class="st-col st-stat {{item.gd > 0 ? 'text-green' : item.gd < 0 ? 'text-red' : ''}}">{{item.gd > 0 ? '+' : ''}}{{item.gd}}</text>
       <text class="st-col st-pts font-bold text-gold">{{item.pts}}</text>
     </view>
   </view>
@@ -96,7 +90,6 @@
       <text class="tp-flag">{{item.flag}}</text>
       <text class="tp-name">{{item.cn}}</text>
       <text class="tp-pts">{{item.pts}}分</text>
-      <text class="tp-gd">{{item.gd >= 0 ? '+' : ''}}{{item.gd}}</text>
     </view>
   </view>
 </view>
