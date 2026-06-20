@@ -8260,7 +8260,1068 @@
     "fixtureId": "1489393"
   },
   "m033": {
-    "fixtureId": "1539007"
+    "fixtureId": 1539007,
+    "date": "2026-06-20T17:00:00+00:00",
+    "venue": "NRG Stadium",
+    "status": "Match Finished",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Sweden",
+    "score": {
+      "home": 5,
+      "away": 1
+    },
+    "statistics": {
+      "Netherlands": {
+        "Shots on Goal": 7,
+        "Shots off Goal": 2,
+        "Total Shots": 10,
+        "Blocked Shots": 1,
+        "Shots insidebox": 6,
+        "Shots outsidebox": 4,
+        "Fouls": 9,
+        "Corner Kicks": 2,
+        "Offsides": 3,
+        "Ball Possession": "51%",
+        "Yellow Cards": 0,
+        "Red Cards": null,
+        "Goalkeeper Saves": 7,
+        "Total passes": 450,
+        "Passes accurate": 397,
+        "Passes %": "88%",
+        "expected_goals": "2.47",
+        "goals_prevented": "-0.84"
+      },
+      "Sweden": {
+        "Shots on Goal": 8,
+        "Shots off Goal": 5,
+        "Total Shots": 16,
+        "Blocked Shots": 3,
+        "Shots insidebox": 7,
+        "Shots outsidebox": 9,
+        "Fouls": 12,
+        "Corner Kicks": 5,
+        "Offsides": 3,
+        "Ball Possession": "49%",
+        "Yellow Cards": 3,
+        "Red Cards": null,
+        "Goalkeeper Saves": 2,
+        "Total passes": 424,
+        "Passes accurate": 361,
+        "Passes %": "85%",
+        "expected_goals": "0.98",
+        "goals_prevented": "-0.84"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 1118,
+          "name": "Netherlands",
+          "logo": "https://media.api-sports.io/football/teams/1118.png",
+          "colors": {
+            "player": {
+              "primary": "ff6803",
+              "number": "000000",
+              "border": "ff6803"
+            },
+            "goalkeeper": {
+              "primary": "5886c6",
+              "number": "f9f1f1",
+              "border": "5886c6"
+            }
+          }
+        },
+        "formation": "4-3-3",
+        "startXI": [
+          {
+            "player": {
+              "id": 129058,
+              "name": "Bart Verbruggen",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 226,
+              "name": "Denzel Dumfries",
+              "number": 22,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 38695,
+              "name": "Jan Paul van Hecke",
+              "number": 6,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 290,
+              "name": "Virgil van Dijk",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 152849,
+              "name": "Micky van de Ven",
+              "number": 15,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 542,
+              "name": "Ryan Gravenberch",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 538,
+              "name": "Frenkie de Jong",
+              "number": 21,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 36902,
+              "name": "Tijjani Reijnders",
+              "number": 14,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 249,
+              "name": "Donyell Malen",
+              "number": 18,
+              "pos": "F",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 38750,
+              "name": "Brian Brobbey",
+              "number": 19,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 247,
+              "name": "Cody Gakpo",
+              "number": 11,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 37724,
+              "name": "Crysencio Summerville",
+              "number": 24,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36905,
+              "name": "Guus Til",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36899,
+              "name": "Teun Koopmeiners",
+              "number": 20,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 667,
+              "name": "Memphis Depay",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 544,
+              "name": "Noa Lang",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 26232,
+              "name": "Mark Flekken",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 194536,
+              "name": "Robin Roefs",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 341642,
+              "name": "Jorrel Hato",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 18861,
+              "name": "Nathan Aké",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 37143,
+              "name": "Lutsharel Geertruida",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 92993,
+              "name": "Mats Wieffer",
+              "number": 12,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 792,
+              "name": "Justin Kluivert",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30432,
+              "name": "Marten de Roon",
+              "number": 3,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 25416,
+              "name": "Wout Weghorst",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 73,
+          "name": "Ronald Koeman",
+          "photo": "https://media.api-sports.io/football/coachs/73.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 5,
+          "name": "Sweden",
+          "logo": "https://media.api-sports.io/football/teams/5.png",
+          "colors": {
+            "player": {
+              "primary": "093f95",
+              "number": "fdeda9",
+              "border": "093f95"
+            },
+            "goalkeeper": {
+              "primary": "cdc9c6",
+              "number": "1d1d1d",
+              "border": "cdc9c6"
+            }
+          }
+        },
+        "formation": "3-1-4-2",
+        "startXI": [
+          {
+            "player": {
+              "id": 2851,
+              "name": "Kristoffer Nordfeldt",
+              "number": 23,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 137721,
+              "name": "Gustaf Lagerbielke",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 137976,
+              "name": "Isak Hien",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 889,
+              "name": "Victor Lindelöf",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 48047,
+              "name": "Jesper Karlström",
+              "number": 16,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 47696,
+              "name": "Alexander Bernhardsson",
+              "number": 21,
+              "pos": "M",
+              "grid": "4:4"
+            }
+          },
+          {
+            "player": {
+              "id": 48002,
+              "name": "Benjamin Nygren",
+              "number": 10,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 265820,
+              "name": "Yasin Ayari",
+              "number": 18,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 47969,
+              "name": "Gabriel Gudmundsson",
+              "number": 5,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 18979,
+              "name": "Viktor Gyökeres",
+              "number": 17,
+              "pos": "F",
+              "grid": "5:2"
+            }
+          },
+          {
+            "player": {
+              "id": 2864,
+              "name": "Alexander Isak",
+              "number": 9,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 350850,
+              "name": "Besfort Zeneli",
+              "number": 22,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 347316,
+              "name": "Lucas Bergvall",
+              "number": 7,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 153430,
+              "name": "Anthony Elanga",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 160925,
+              "name": "Taha Abdi Ali",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 226765,
+              "name": "Elliot Stroud",
+              "number": 24,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 48033,
+              "name": "Jacob Widell Zetterström",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 158700,
+              "name": "Viktor Johansson",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47988,
+              "name": "Carl Starfelt",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47903,
+              "name": "Hjalmar Ekdal",
+              "number": 14,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 8486,
+              "name": "Eric Smith",
+              "number": 20,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 198654,
+              "name": "Daniel Svensson",
+              "number": 8,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 161504,
+              "name": "Herman Johansson",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2860,
+              "name": "Ken Sema",
+              "number": 13,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30484,
+              "name": "Mattias Svanberg",
+              "number": 19,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 15683,
+              "name": "Gustaf Nilsson",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 12,
+          "name": "Graham Potter",
+          "photo": "https://media.api-sports.io/football/coachs/12.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "5",
+        "team": "Netherlands",
+        "player": "B. Brobbey",
+        "assist": "C. Gakpo",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "17",
+        "team": "Netherlands",
+        "player": "B. Brobbey",
+        "assist": "D. Dumfries",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "Netherlands",
+        "player": "D. Malen",
+        "assist": "C. Summerville",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "47",
+        "team": "Netherlands",
+        "player": "C. Gakpo",
+        "assist": "D. Dumfries",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "53",
+        "team": "Sweden",
+        "player": "G. Gudmundsson",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "54",
+        "team": "Netherlands",
+        "player": "C. Gakpo",
+        "assist": "C. Summerville",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "55",
+        "team": "Sweden",
+        "player": "A. Bernhardsson",
+        "assist": "A. Elanga",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "56",
+        "team": "Sweden",
+        "player": "J. Karlstrom",
+        "assist": "B. Zeneli",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "56",
+        "team": "Sweden",
+        "player": "B. Nygren",
+        "assist": "L. Bergvall",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "59",
+        "team": "Sweden",
+        "player": "A. Elanga",
+        "assist": "A. Isak",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "59",
+        "team": "Netherlands",
+        "player": "F. de Jong",
+        "assist": "T. Koopmeiners",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "59",
+        "team": "Netherlands",
+        "player": "T. Reijnders",
+        "assist": "G. Til",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "72",
+        "team": "Netherlands",
+        "player": "B. Brobbey",
+        "assist": "M. Depay",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "75",
+        "team": "Sweden",
+        "player": "Y. Ayari",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Holding"
+      },
+      {
+        "time": "79",
+        "team": "Sweden",
+        "player": "Y. Ayari",
+        "assist": "T. Ali",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "80",
+        "team": "Sweden",
+        "player": "L. Bergvall",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Roughing"
+      },
+      {
+        "time": "89",
+        "team": "Netherlands",
+        "player": "C. Summerville",
+        "assist": "M. Depay",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "90",
+        "team": "Netherlands",
+        "player": "C. Gakpo",
+        "assist": "N. Lang",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "90+3",
+        "team": "Sweden",
+        "player": "G. Gudmundsson",
+        "assist": "E. Stroud",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Netherlands",
+        "players": [
+          {
+            "name": "Bart Verbruggen",
+            "rating": "8.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Denzel Dumfries",
+            "rating": "8.6",
+            "goals": 0,
+            "assists": 2
+          },
+          {
+            "name": "Jan Paul van Hecke",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Virgil van Dijk",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Micky van de Ven",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ryan Gravenberch",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Frenkie de Jong",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tijjani Reijnders",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Donyell Malen",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Brian Brobbey",
+            "rating": "8.2",
+            "goals": 2,
+            "assists": 0
+          },
+          {
+            "name": "Cody Gakpo",
+            "rating": "9.6",
+            "goals": 2,
+            "assists": 1
+          },
+          {
+            "name": "Crysencio Summerville",
+            "rating": "8.5",
+            "goals": 1,
+            "assists": 1
+          },
+          {
+            "name": "Guus Til",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Teun Koopmeiners",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Memphis Depay",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Noa Lang",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mark Flekken",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Robin Roefs",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jorrel Hato",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nathan Aké",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lutsharel Geertruida",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mats Wieffer",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Justin Kluivert",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marten de Roon",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Wout Weghorst",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Sweden",
+        "players": [
+          {
+            "name": "Kristoffer Nordfeldt",
+            "rating": "5.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gustaf Lagerbielke",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Isak Hien",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Victor Lindelöf",
+            "rating": "5.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jesper Karlström",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alexander Bernhardsson",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Benjamin Nygren",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yasin Ayari",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gabriel Gudmundsson",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Viktor Gyökeres",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alexander Isak",
+            "rating": "7",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Besfort Zeneli",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lucas Bergvall",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Anthony Elanga",
+            "rating": "7.9",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Taha Abdi Ali",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Elliot Stroud",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jacob Widell Zetterström",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Viktor Johansson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Carl Starfelt",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Hjalmar Ekdal",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Eric Smith",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Daniel Svensson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Herman Johansson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ken Sema",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mattias Svanberg",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gustaf Nilsson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m036": {
     "fixtureId": "1489394"
