@@ -156,15 +156,15 @@
   "AUS": {
     "group": "Group D",
     "rank": 2,
-    "played": 1,
+    "played": 2,
     "won": 1,
     "drawn": 0,
-    "lost": 0,
+    "lost": 1,
     "goalsFor": 2,
-    "goalsAgainst": 0,
-    "goalDiff": 2,
+    "goalsAgainst": 2,
+    "goalDiff": 0,
     "points": 3,
-    "form": "W",
+    "form": "LW",
     "status": "same"
   },
   "PAR": {

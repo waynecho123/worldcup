@@ -6193,7 +6193,1020 @@
     ]
   },
   "m030": {
-    "fixtureId": "1489390"
+    "fixtureId": 1489390,
+    "date": "2026-06-19T22:00:00+00:00",
+    "venue": "Gillette Stadium",
+    "status": "Match Finished",
+    "homeTeam": "Scotland",
+    "awayTeam": "Morocco",
+    "score": {
+      "home": 0,
+      "away": 1
+    },
+    "statistics": {
+      "Scotland": {
+        "Shots on Goal": 0,
+        "Shots off Goal": 3,
+        "Total Shots": 6,
+        "Blocked Shots": 3,
+        "Shots insidebox": 5,
+        "Shots outsidebox": 1,
+        "Fouls": 10,
+        "Corner Kicks": 1,
+        "Offsides": 1,
+        "Ball Possession": "41%",
+        "Yellow Cards": 1,
+        "Red Cards": null,
+        "Goalkeeper Saves": 1,
+        "Total passes": 454,
+        "Passes accurate": 388,
+        "Passes %": "85%",
+        "expected_goals": "0.54",
+        "goals_prevented": "0.00"
+      },
+      "Morocco": {
+        "Shots on Goal": 2,
+        "Shots off Goal": 6,
+        "Total Shots": 12,
+        "Blocked Shots": 4,
+        "Shots insidebox": 9,
+        "Shots outsidebox": 3,
+        "Fouls": 8,
+        "Corner Kicks": 5,
+        "Offsides": 0,
+        "Ball Possession": "59%",
+        "Yellow Cards": 1,
+        "Red Cards": null,
+        "Goalkeeper Saves": 0,
+        "Total passes": 671,
+        "Passes accurate": 601,
+        "Passes %": "90%",
+        "expected_goals": "0.95",
+        "goals_prevented": "0.00"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 1108,
+          "name": "Scotland",
+          "logo": "https://media.api-sports.io/football/teams/1108.png",
+          "colors": {
+            "player": {
+              "primary": "0d2852",
+              "number": "f9faf5",
+              "border": "0d2852"
+            },
+            "goalkeeper": {
+              "primary": "e629c7",
+              "number": "0d0d0d",
+              "border": "e629c7"
+            }
+          }
+        },
+        "formation": "4-4-1-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 18933,
+              "name": "Angus Gunn",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 138417,
+              "name": "Nathan Patterson",
+              "number": 22,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 19066,
+              "name": "Grant Hanley",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 1111,
+              "name": "Jack Hendry",
+              "number": 13,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 289,
+              "name": "Andy Robertson",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 19191,
+              "name": "John McGinn",
+              "number": 7,
+              "pos": "M",
+              "grid": "3:4"
+            }
+          },
+          {
+            "player": {
+              "id": 1125,
+              "name": "Ryan Christie",
+              "number": 11,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 44814,
+              "name": "Lewis Ferguson",
+              "number": 19,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 1117,
+              "name": "Kieran Tierney",
+              "number": 6,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 903,
+              "name": "Scott McTominay",
+              "number": 4,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 19524,
+              "name": "Che Adams",
+              "number": 10,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 343576,
+              "name": "Ben Gannon-Doak",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44937,
+              "name": "Liam Kelly",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1106,
+              "name": "Craig Gordon",
+              "number": 21,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44871,
+              "name": "Aaron Hickey",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44865,
+              "name": "John Souttar",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19987,
+              "name": "Dominic Hyam",
+              "number": 16,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1115,
+              "name": "Tony Ralston",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44811,
+              "name": "Scott McKenna",
+              "number": 26,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 557460,
+              "name": "Tyler Fletcher",
+              "number": 8,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19077,
+              "name": "Kenny McLean",
+              "number": 23,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 433272,
+              "name": "Findlay Curtis",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 45307,
+              "name": "Lyndon Dykes",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 45078,
+              "name": "Ross Stewart",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 8794,
+              "name": "George Hirst",
+              "number": 18,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 45175,
+              "name": "Lawrence Shankland",
+              "number": 20,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 76,
+          "name": "Steve Clarke",
+          "photo": "https://media.api-sports.io/football/coachs/76.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 31,
+          "name": "Morocco",
+          "logo": "https://media.api-sports.io/football/teams/31.png",
+          "colors": {
+            "player": {
+              "primary": "ffffff",
+              "number": "ed1b0c",
+              "border": "ffffff"
+            },
+            "goalkeeper": {
+              "primary": "99bff0",
+              "number": "000000",
+              "border": "99bff0"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 2701,
+              "name": "Bono",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 9,
+              "name": "Achraf Hakimi",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 18814,
+              "name": "Issa Diop",
+              "number": 14,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 278898,
+              "name": "Chadi Riad",
+              "number": 18,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 545,
+              "name": "Noussair Mazraoui",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 438688,
+              "name": "Ayyoub Bouaddi",
+              "number": 6,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 277003,
+              "name": "Neil El Aynaoui",
+              "number": 24,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 744,
+              "name": "Brahim Díaz",
+              "number": 10,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 129678,
+              "name": "Azzedine Ounahi",
+              "number": 8,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 340573,
+              "name": "Bilal El Khannouss",
+              "number": 23,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 161897,
+              "name": "Ismael Saibari",
+              "number": 11,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 2703,
+              "name": "Ahmed Reda Tagnaouti",
+              "number": 22,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2702,
+              "name": "Munir El Kajoui",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 162451,
+              "name": "Anass Salah-Eddine",
+              "number": 26,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50042,
+              "name": "Marwane Saadane",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 326183,
+              "name": "Redouane Halhal",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 146772,
+              "name": "Youssef Belammari",
+              "number": 19,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 283252,
+              "name": "Zakaria El Ouahdi",
+              "number": 13,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 191289,
+              "name": "Amine Sbai",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 336659,
+              "name": "Chemsdine Talbi",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 369544,
+              "name": "Gessime Yassine",
+              "number": 16,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 415431,
+              "name": "Samir El Mourabet",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 74,
+              "name": "Sofyan Amrabat",
+              "number": 4,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2722,
+              "name": "Ayoub El Kaabi",
+              "number": 20,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 535046,
+              "name": "Ayoube Amaimouni Echghouyab",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36579,
+              "name": "Soufiane Rahimi",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 28221,
+          "name": "Mohamed Ouahbi",
+          "photo": "https://media.api-sports.io/football/coachs/28221.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "2",
+        "team": "Morocco",
+        "player": "I. Saibari",
+        "assist": "B. Diaz",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "23",
+        "team": "Morocco",
+        "player": "I. Diop",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Holding"
+      },
+      {
+        "time": "60",
+        "team": "Scotland",
+        "player": "K. Tierney",
+        "assist": "B. Gannon-Doak",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "65",
+        "team": "Scotland",
+        "player": "A. Robertson",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Holding"
+      },
+      {
+        "time": "71",
+        "team": "Scotland",
+        "player": "C. Adams",
+        "assist": "L. Dykes",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "71",
+        "team": "Scotland",
+        "player": "R. Christie",
+        "assist": "K. McLean",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "84",
+        "team": "Morocco",
+        "player": "I. Saibari",
+        "assist": "S. Rahimi",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "84",
+        "team": "Morocco",
+        "player": "B. El Khannouss",
+        "assist": "C. Talbi",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "84",
+        "team": "Morocco",
+        "player": "B. Diaz",
+        "assist": "A. Amaimouni",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "89",
+        "team": "Scotland",
+        "player": "N. Patterson",
+        "assist": "A. Ralston",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "89",
+        "team": "Scotland",
+        "player": "J. McGinn",
+        "assist": "R. Stewart",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "90",
+        "team": "Morocco",
+        "player": "A. Ounahi",
+        "assist": "S. El Mourabet",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Scotland",
+        "players": [
+          {
+            "name": "Angus Gunn",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nathan Patterson",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Grant Hanley",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jack Hendry",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Andy Robertson",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "John McGinn",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ryan Christie",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lewis Ferguson",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kieran Tierney",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Scott McTominay",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Che Adams",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ben Gannon-Doak",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kenny McLean",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lyndon Dykes",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tony Ralston",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ross Stewart",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Liam Kelly",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Craig Gordon",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Aaron Hickey",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "John Souttar",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Dominic Hyam",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Scott McKenna",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tyler Fletcher",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Findlay Curtis",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "George Hirst",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lawrence Shankland",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Morocco",
+        "players": [
+          {
+            "name": "Bono",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Achraf Hakimi",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Issa Diop",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Chadi Riad",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Noussair Mazraoui",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ayyoub Bouaddi",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Neil El Aynaoui",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Brahim Díaz",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Azzedine Ounahi",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Bilal El Khannouss",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ismael Saibari",
+            "rating": "7.9",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Chemsdine Talbi",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ayoube Amaimouni Echghouyab",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Soufiane Rahimi",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Samir El Mourabet",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ahmed Reda Tagnaouti",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Munir El Kajoui",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Anass Salah-Eddine",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marwane Saadane",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Redouane Halhal",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Youssef Belammari",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Zakaria El Ouahdi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Amine Sbai",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gessime Yassine",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Sofyan Amrabat",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ayoub El Kaabi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m031": {
     "fixtureId": "1489389"
