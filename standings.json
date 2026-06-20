@@ -71,7 +71,7 @@
   },
   "BIH": {
     "group": "Group Stage",
-    "rank": 7,
+    "rank": 8,
     "played": 2,
     "won": 0,
     "drawn": 1,
@@ -168,17 +168,17 @@
     "status": "same"
   },
   "PAR": {
-    "group": "Group D",
-    "rank": 4,
-    "played": 1,
-    "won": 0,
+    "group": "Group Stage",
+    "rank": 2,
+    "played": 2,
+    "won": 1,
     "drawn": 0,
     "lost": 1,
-    "goalsFor": 1,
+    "goalsFor": 2,
     "goalsAgainst": 4,
-    "goalDiff": -3,
-    "points": 0,
-    "form": "L",
+    "goalDiff": -2,
+    "points": 3,
+    "form": "WL",
     "status": "same"
   },
   "GER": {
@@ -211,7 +211,7 @@
   },
   "ECU": {
     "group": "Group Stage",
-    "rank": 8,
+    "rank": 9,
     "played": 1,
     "won": 0,
     "drawn": 0,
@@ -253,7 +253,7 @@
   },
   "NED": {
     "group": "Group Stage",
-    "rank": 2,
+    "rank": 3,
     "played": 1,
     "won": 0,
     "drawn": 1,
@@ -309,7 +309,7 @@
   },
   "BEL": {
     "group": "Group Stage",
-    "rank": 3,
+    "rank": 4,
     "played": 1,
     "won": 0,
     "drawn": 1,
@@ -365,7 +365,7 @@
   },
   "ESP": {
     "group": "Group Stage",
-    "rank": 5,
+    "rank": 6,
     "played": 1,
     "won": 0,
     "drawn": 1,
@@ -407,7 +407,7 @@
   },
   "SEN": {
     "group": "Group Stage",
-    "rank": 10,
+    "rank": 11,
     "played": 1,
     "won": 0,
     "drawn": 0,
@@ -463,7 +463,7 @@
   },
   "JOR": {
     "group": "Group Stage",
-    "rank": 11,
+    "rank": 12,
     "played": 1,
     "won": 0,
     "drawn": 0,
@@ -519,7 +519,7 @@
   },
   "POR": {
     "group": "Group Stage",
-    "rank": 4,
+    "rank": 5,
     "played": 1,
     "won": 0,
     "drawn": 1,
@@ -575,7 +575,7 @@
   },
   "PAN": {
     "group": "Group Stage",
-    "rank": 9,
+    "rank": 10,
     "played": 1,
     "won": 0,
     "drawn": 0,
