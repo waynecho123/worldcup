@@ -26,20 +26,74 @@
       <text wx:if="{{match.awayInj}}" class="font-xs text-red">🏥 {{match.awayName}}：{{match.awayInj}}</text>
     </view>
 
-    <!-- Post-Match Review (finished matches only) -->
-    <view wx:if="{{postReview}}" class="card review-card">
-      <view class="card-header review-header">🔮 AI赛后复盘</view>
-      <view class="review-result-badge" style="background:{{actualResult.homeScore > actualResult.awayScore ? 'rgba(77,166,255,.15)' : actualResult.homeScore === actualResult.awayScore ? 'rgba(139,92,246,.15)' : 'rgba(255,61,87,.15)'}};border-color:{{actualResult.homeScore > actualResult.awayScore ? '#4da6ff' : actualResult.homeScore === actualResult.awayScore ? '#8b5cf6' : '#ff3d57'}}">
-        <text class="font-xxl font-extrabold">{{actualResult.homeScore}} : {{actualResult.awayScore}}</text>
-        <text class="font-xs text-secondary" style="display:block">最终比分</text>
+    <!-- Post-Match Review with visual components -->
+    <view wx:if="{{hasReview}}" class="card" style="border:1px solid #e0e0e0">
+      <!-- Score Hero -->
+      <view style="display:flex;align-items:center;justify-content:center;gap:12px;padding:12px;border-radius:8px;margin-bottom:10px;background:{{reviewScore.outcomeColor=='#2563eb'?'rgba(37,99,235,.06)':reviewScore.outcomeColor=='#dc2626'?'rgba(220,38,38,.06)':'rgba(124,58,237,.06)'}};border:2px solid {{reviewScore.outcomeColor}}">
+        <view style="text-align:center;min-width:60px">
+          <text style="font-size:36rpx;display:block">{{reviewScore.homeFlag}}</text>
+          <text class="font-s font-bold">{{reviewScore.homeName}}</text>
+        </view>
+        <view style="text-align:center">
+          <text style="font-size:44rpx;font-weight:900">{{reviewScore.homeScore}} : {{reviewScore.awayScore}}</text>
+          <text class="font-xs text-muted" style="display:block">最终比分 | AI预测 {{reviewScore.predH}}:{{reviewScore.predA}}</text>
+        </view>
+        <view style="text-align:center;min-width:60px">
+          <text style="font-size:36rpx;display:block">{{reviewScore.awayFlag}}</text>
+          <text class="font-s font-bold">{{reviewScore.awayName}}</text>
+        </view>
       </view>
-      <text wx:for="{{postReview}}" wx:key="*this" class="font-s review-text" style="display:block;margin-bottom:8px">{{item}}</text>
-      <text class="font-xs text-muted" style="text-align:right;display:block;margin-top:8px">*AI基于赛前预测各维度逐一复盘检讨</text>
+
+      <!-- Stat Bars -->
+      <view wx:if="{{statBars.length > 0}}" style="margin-bottom:10px">
+        <text class="font-s font-bold" style="display:block;margin-bottom:4px">技术统计</text>
+        <view wx:for="{{statBars}}" wx:key="label" style="display:flex;align-items:center;gap:6px;padding:2px 0;font-size:22rpx">
+          <text style="min-width:40px;text-align:right;font-weight:700;color:#2563eb">{{item.homeVal}}</text>
+          <view style="flex:1;height:6px;border-radius:3px;overflow:hidden;display:flex;background:#f0f2f5">
+            <view style="background:#2563eb;height:100%;width:{{item.homePct}}%"></view>
+            <view style="background:#dc2626;height:100%;width:{{item.awayPct}}%"></view>
+          </view>
+          <text style="min-width:40px;font-weight:700;color:#dc2626">{{item.awayVal}}</text>
+          <text style="width:56px;text-align:center;color:#999;font-size:20rpx">{{item.label}}</text>
+        </view>
+      </view>
+
+      <!-- Goal Timeline -->
+      <view wx:if="{{goalTimeline.length > 0}}" style="margin-bottom:10px">
+        <text class="font-s font-bold" style="display:block;margin-bottom:4px">比赛进程</text>
+        <view style="border-left:2px solid #e0e0e0;padding-left:12px">
+          <view wx:for="{{goalTimeline}}" wx:key="*this" style="padding:3px 0;position:relative;font-size:22rpx">
+            <text class="text-muted" style="margin-right:6px">{{item.time}}'</text>
+            <text class="font-bold">{{item.player}}{{item.penalty ? '(点)' : ''}}</text>
+            <text class="text-muted"> {{item.teamName}}{{item.assist ? ' 助:'+item.assist : ''}}</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- Player Ratings -->
+      <view wx:if="{{playerRatings.length > 0}}" style="margin-bottom:10px">
+        <text class="font-s font-bold" style="display:block;margin-bottom:4px">球员评分</text>
+        <view wx:for="{{playerRatings}}" wx:key="*this" style="display:flex;align-items:center;gap:6px;padding:3px 6px;background:#f0f2f5;border-radius:4px;margin:2px 0;font-size:22rpx">
+          <text style="width:16px;font-size:20rpx;color:#999">{{index+1}}</text>
+          <text class="font-bold" style="flex:1">{{item.name}} ({{item.teamFlag}}{{item.teamName}})</text>
+          <text wx:if="{{item.goals > 0}}" class="text-muted" style="font-size:20rpx">{{item.goals}}球</text>
+          <text wx:if="{{item.assists > 0}}" class="text-muted" style="font-size:20rpx">{{item.assists}}助</text>
+          <view style="width:48px;height:4px;border-radius:2px;background:#e0e0e0;overflow:hidden">
+            <view style="height:100%;width:{{item.ratingPct}}%;background:{{item.color}}"></view>
+          </view>
+          <text style="font-weight:800;min-width:32px;text-align:center;color:{{item.color}}">{{item.rating}}</text>
+        </view>
+      </view>
+
+      <!-- Text review -->
+      <view wx:if="{{postReview && postReview.length > 0}}" style="border-top:1px solid #e0e0e0;padding-top:8px">
+        <text wx:for="{{postReview}}" wx:key="*this" class="font-s" style="display:block;margin-bottom:6px;line-height:1.8">{{item}}</text>
+      </view>
     </view>
 
-    <!-- Pre-match prediction sections (collapsible when review exists) -->
-    <view wx:if="{{postReview}}" class="card" style="border-color:rgba(240,185,11,.15);text-align:center;padding:8px" bindtap="togglePreMatch">
-      <text class="font-xs text-gold">{{showPreMatch ? '🔽 收起赛前预测' : '▶️ 展开赛前预测详情'}}</text>
+    <!-- Pre-match toggle (when review exists) -->
+    <view wx:if="{{hasReview}}" class="card" style="text-align:center;padding:8px;border-color:#e0e0e0" bindtap="togglePreMatch">
+      <text class="font-xs" style="color:#2563eb">{{showPreMatch ? '收起赛前预测' : '展开赛前预测详情'}}</text>
     </view>
 
     <block wx:if="{{!postReview || showPreMatch}}">
