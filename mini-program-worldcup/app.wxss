@@ -341,18 +341,6 @@ page {
   margin-top: 2px;
 }
 
-/* ===== Duel ===== */
-.duel-scoreboard {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 12px;
-  text-align: center;
-  padding: 16px;
-  background: #f0f2f5;
-  border-radius: 12px;
-  margin-bottom: 14px;
-}
-
 /* ===== News Ticker ===== */
 .news-ticker {
   background: #f0f2f5;

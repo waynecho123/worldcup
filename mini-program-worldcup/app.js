@@ -12,8 +12,6 @@ App({
     matchOdds: data.MATCH_ODDS,
     predictions: {},
     actualResults: {},
-    duelState: null,
-    currentUser: '',
     predLog: {},
     reflections: [],
     simHistory: [],
@@ -31,15 +29,6 @@ App({
     this.loadNews();
 
     try {
-
-      this.globalData.currentUser = wx.getStorageSync('duel_user') || '';
-      var duelKey = this.globalData.currentUser ? 'duel_state_'+this.globalData.currentUser : 'duel_state';
-      try {
-        var ds = JSON.parse(wx.getStorageSync(duelKey) || 'null');
-        this.globalData.duelState = ds || {aiBalance:1000,humanBalance:1000,strategies:{},settled:{}};
-      } catch(e) {
-        this.globalData.duelState = {aiBalance:1000,humanBalance:1000,strategies:{},settled:{}};
-      }
 
       var newsRaw = wx.getStorageSync('news_cache');
       if (newsRaw) {
@@ -147,11 +136,4 @@ App({
     });
   },
 
-  saveDuelState() {
-    try {
-      var duelKey = this.globalData.currentUser ? 'duel_state_'+this.globalData.currentUser : 'duel_state';
-      wx.setStorageSync(duelKey, JSON.stringify(this.globalData.duelState));
-      wx.setStorageSync('duel_user', this.globalData.currentUser);
-    } catch(e) {}
-  }
 });

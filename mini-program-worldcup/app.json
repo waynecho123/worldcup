@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/today/today",
-    "pages/duel/duel",
     "pages/teams/teams",
     "pages/schedule/schedule",
     "pages/review/review",
