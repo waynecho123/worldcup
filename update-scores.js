@@ -680,15 +680,23 @@ async function updateNews() {
   ];
   // Non-match-factors (fluff, betting, broadcast, gossip) — keep out of AI predictions
   const JUNK_KW = [
-    // EN
-    'how to watch','watch on tv','tv schedule','broadcast','free-to-air','live stream',
-    'betting','odds','favourites','favorites','predictions game','tipping',
-    'quiz','guess who','vote','poll','pick your','fans choose','fantasy',
+    // EN — keep in sync with CN keywords below
+    'how to watch','watch on tv','tv schedule','broadcast','free-to-air','live stream','tv channel',
+    'betting','odds','favourites','favorites','predictions game','tipping','golden boot',
+    'quiz','guess who','who am i','vote','poll','pick your','fans choose','fantasy','have your say',
     'sponsor','advertisement','promoted','partner content',
     'tickets','travel guide','where to stay','fan zone',
     'girlfriend','wife','wag','dating','married','divorce',
     'instagram','tweeted','viral','trending',
-    'fashion','hairstyle','tattoo','car','watch','jewelry',
+    'fashion','hairstyle','tattoo','car','watch','jewelry','pink boot',
+    'horse racing','ascot','royal ascot',
+    'trump','global conflict','cold war','hollywood','brand battle','brand war',
+    'tv ratings','viewing figures','ratings battle','ratings war',
+    'spoiler','water break','cooling break','guaranteed to qualify',
+    'lionesses','wales boss','wales manager',
+    'who will win','i predict','my pick','my choice','my prediction','who do you support',
+    'kick-off time','daily schedule','first-timer',
+    'deadline','nike vs','nike v','cosmos','oldest player',
     // CN: fluff/gossip + expired qualifier news
     '如何观看','转播','直播平台','收视','彩票','赔率','竞猜','投票',
     '赞助','广告','推广','门票','旅游','球迷区',
