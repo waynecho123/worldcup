@@ -6777,8 +6777,8 @@
       {
         "time": "2",
         "team": "Morocco",
-        "player": "I. Saibari",
-        "assist": "B. Diaz",
+        "player": "Ismael Saibari",
+        "assist": "Brahim Díaz",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -6786,35 +6786,35 @@
       {
         "time": "23",
         "team": "Morocco",
-        "player": "I. Diop",
+        "player": "Issa Diop",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Holding"
+        "comments": "Foul"
       },
       {
         "time": "60",
         "team": "Scotland",
-        "player": "K. Tierney",
-        "assist": "B. Gannon-Doak",
+        "player": "Kieran Tierney",
+        "assist": "Ben Gannon-Doak",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
       },
       {
-        "time": "65",
+        "time": "66",
         "team": "Scotland",
-        "player": "A. Robertson",
+        "player": "Andy Robertson",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Holding"
+        "comments": "Foul"
       },
       {
         "time": "71",
         "team": "Scotland",
-        "player": "C. Adams",
-        "assist": "L. Dykes",
+        "player": "Ryan Christie",
+        "assist": "Kenny McLean",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -6822,8 +6822,8 @@
       {
         "time": "71",
         "team": "Scotland",
-        "player": "R. Christie",
-        "assist": "K. McLean",
+        "player": "Che Adams",
+        "assist": "Lyndon Dykes",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -6831,8 +6831,8 @@
       {
         "time": "84",
         "team": "Morocco",
-        "player": "I. Saibari",
-        "assist": "S. Rahimi",
+        "player": "Brahim Díaz",
+        "assist": "Ayoube Amaimouni Echghouyab",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -6840,8 +6840,8 @@
       {
         "time": "84",
         "team": "Morocco",
-        "player": "B. El Khannouss",
-        "assist": "C. Talbi",
+        "player": "Bilal El Khannouss",
+        "assist": "Chemsdine Talbi",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -6849,8 +6849,8 @@
       {
         "time": "84",
         "team": "Morocco",
-        "player": "B. Diaz",
-        "assist": "A. Amaimouni",
+        "player": "Ismael Saibari",
+        "assist": "Soufiane Rahimi",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -6858,8 +6858,8 @@
       {
         "time": "89",
         "team": "Scotland",
-        "player": "N. Patterson",
-        "assist": "A. Ralston",
+        "player": "John McGinn",
+        "assist": "Ross Stewart",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -6867,8 +6867,8 @@
       {
         "time": "89",
         "team": "Scotland",
-        "player": "J. McGinn",
-        "assist": "R. Stewart",
+        "player": "Nathan Patterson",
+        "assist": "Tony Ralston",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -6876,8 +6876,8 @@
       {
         "time": "90",
         "team": "Morocco",
-        "player": "A. Ounahi",
-        "assist": "S. El Mourabet",
+        "player": "Azzedine Ounahi",
+        "assist": "Samir El Mourabet",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
