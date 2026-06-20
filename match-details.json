@@ -14778,7 +14778,7 @@
               "id": 377930,
               "name": "A. Al Oui",
               "number": 13,
-              "pos": null,
+              "pos": "D",
               "grid": "2:4"
             }
           },
@@ -24309,9 +24309,9 @@
           }
         },
         "coach": {
-          "id": 28723,
-          "name": "Sabri Lamouchi",
-          "photo": "https://media.api-sports.io/football/coachs/28723.png"
+          "id": 344,
+          "name": "Herve Renard",
+          "photo": "https://media.api-sports.io/football/coachs/344.png"
         },
         "formation": "5-3-2",
         "startXI": [
