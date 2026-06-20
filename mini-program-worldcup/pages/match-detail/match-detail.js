@@ -139,9 +139,12 @@ Page({
   },
 
   onLoad(options) {
+    console.log('match-detail onLoad, id=' + options.id);
     const matchId = options.id;
     if (!matchId) { this.setData({ loading: false }); return; }
+    try {
     this.buildDetail(matchId);
+    } catch(e) { console.error('buildDetail error:', e.message); this.setData({ loading: false }); }
   },
 
   buildDetail(matchId) {
