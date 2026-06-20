@@ -97,9 +97,23 @@
     "form": "LD",
     "status": "same"
   },
-  "MAR": {
+  "BRA": {
     "group": "Group C",
     "rank": 1,
+    "played": 2,
+    "won": 1,
+    "drawn": 1,
+    "lost": 0,
+    "goalsFor": 4,
+    "goalsAgainst": 1,
+    "goalDiff": 3,
+    "points": 4,
+    "form": "WD",
+    "status": "same"
+  },
+  "MAR": {
+    "group": "Group C",
+    "rank": 2,
     "played": 2,
     "won": 1,
     "drawn": 1,
@@ -112,8 +126,8 @@
     "status": "same"
   },
   "SCO": {
-    "group": "Group C",
-    "rank": 2,
+    "group": "Group Stage",
+    "rank": 1,
     "played": 2,
     "won": 1,
     "drawn": 0,
@@ -125,32 +139,18 @@
     "form": "LW",
     "status": "same"
   },
-  "BRA": {
-    "group": "Group Stage",
-    "rank": 2,
-    "played": 1,
-    "won": 0,
-    "drawn": 1,
-    "lost": 0,
-    "goalsFor": 1,
-    "goalsAgainst": 1,
-    "goalDiff": 0,
-    "points": 1,
-    "form": "D",
-    "status": "same"
-  },
   "HAI": {
     "group": "Group C",
     "rank": 4,
-    "played": 1,
+    "played": 2,
     "won": 0,
     "drawn": 0,
-    "lost": 1,
+    "lost": 2,
     "goalsFor": 0,
-    "goalsAgainst": 1,
-    "goalDiff": -1,
+    "goalsAgainst": 4,
+    "goalDiff": -4,
     "points": 0,
-    "form": "L",
+    "form": "LL",
     "status": "same"
   },
   "AUS": {
@@ -253,7 +253,7 @@
   },
   "NED": {
     "group": "Group Stage",
-    "rank": 1,
+    "rank": 2,
     "played": 1,
     "won": 0,
     "drawn": 1,
