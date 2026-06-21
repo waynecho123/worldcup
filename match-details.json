@@ -11441,14 +11441,14 @@
         "Shots insidebox": 22,
         "Shots outsidebox": 6,
         "Fouls": 7,
-        "Corner Kicks": 8,
+        "Corner Kicks": 9,
         "Offsides": 1,
         "Ball Possession": "75%",
         "Yellow Cards": 1,
         "Red Cards": null,
         "Goalkeeper Saves": 3,
-        "Total passes": 633,
-        "Passes accurate": 571,
+        "Total passes": 641,
+        "Passes accurate": 577,
         "Passes %": "90%",
         "expected_goals": "3.06",
         "goals_prevented": "2.48"
@@ -11467,9 +11467,9 @@
         "Yellow Cards": 5,
         "Red Cards": null,
         "Goalkeeper Saves": 15,
-        "Total passes": 220,
+        "Total passes": 223,
         "Passes accurate": 154,
-        "Passes %": "70%",
+        "Passes %": "69%",
         "expected_goals": "0.48",
         "goals_prevented": "2.48"
       }
@@ -11616,6 +11616,24 @@
           },
           {
             "player": {
+              "id": 2583,
+              "name": "Ángelo Preciado",
+              "number": 17,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 16590,
+              "name": "Jordy Caicedo",
+              "number": 16,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 81224,
               "name": "Moisés Ramírez",
               "number": 12,
@@ -11670,15 +11688,6 @@
           },
           {
             "player": {
-              "id": 2583,
-              "name": "Ángelo Preciado",
-              "number": 17,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 406303,
               "name": "Kendry Páez",
               "number": 10,
@@ -11692,15 +11701,6 @@
               "name": "Denil Castillo",
               "number": 18,
               "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 16590,
-              "name": "Jordy Caicedo",
-              "number": 16,
-              "pos": "F",
               "grid": null
             }
           },
@@ -11861,6 +11861,51 @@
         "substitutes": [
           {
             "player": {
+              "id": 41627,
+              "name": "Kenji Gorré",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 37066,
+              "name": "Roshon van Eijma",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 195067,
+              "name": "Jearl Margaritha",
+              "number": 16,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 38708,
+              "name": "Gervane Kastaneer",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36842,
+              "name": "Godfried Roemeratoe",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 214129,
               "name": "Tyrick Bodak",
               "number": 25,
@@ -11888,15 +11933,6 @@
           },
           {
             "player": {
-              "id": 37066,
-              "name": "Roshon van Eijma",
-              "number": 4,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 37175,
               "name": "Riechedly Bazoer",
               "number": 23,
@@ -11910,24 +11946,6 @@
               "name": "Ar'Jany Martha",
               "number": 15,
               "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 195067,
-              "name": "Jearl Margaritha",
-              "number": 16,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 41627,
-              "name": "Kenji Gorré",
-              "number": 14,
-              "pos": "F",
               "grid": null
             }
           },
@@ -11955,24 +11973,6 @@
               "name": "Kevin Felida",
               "number": 22,
               "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 36842,
-              "name": "Godfried Roemeratoe",
-              "number": 6,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 38708,
-              "name": "Gervane Kastaneer",
-              "number": 19,
-              "pos": "F",
               "grid": null
             }
           },
@@ -12006,16 +12006,16 @@
       {
         "time": "38",
         "team": "Ecuador",
-        "player": "J. Alcivar",
+        "player": "Jordy Alcivar",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Tripping"
+        "comments": "Foul"
       },
       {
         "time": "39",
         "team": "Curaçao",
-        "player": "L. Bacuna",
+        "player": "Leandro Bacuna",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -12024,8 +12024,8 @@
       {
         "time": "46",
         "team": "Ecuador",
-        "player": "J. Alcivar",
-        "assist": "K. Rodriguez",
+        "player": "Jordy Alcivar",
+        "assist": "Kevin Rodriguez",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -12033,7 +12033,7 @@
       {
         "time": "53",
         "team": "Curaçao",
-        "player": "J. Bacuna",
+        "player": "Juninho Bacuna",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -12042,17 +12042,17 @@
       {
         "time": "56",
         "team": "Curaçao",
-        "player": "L. Comenencia",
+        "player": "Livano Comenencia",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Roughing"
+        "comments": "Foul"
       },
       {
-        "time": "70",
+        "time": "71",
         "team": "Ecuador",
-        "player": "P. Estupinan",
-        "assist": "N. Angulo",
+        "player": "Pervis Estupiñán",
+        "assist": "Nilson Angulo",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -12060,17 +12060,17 @@
       {
         "time": "75",
         "team": "Curaçao",
-        "player": "J. Gaari",
+        "player": "Jurien Gaari",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Roughing"
+        "comments": "Foul"
       },
       {
         "time": "75",
         "team": "Curaçao",
-        "player": "J. Bacuna",
-        "assist": "K. Gorre",
+        "player": "Juninho Bacuna",
+        "assist": "Kenji Gorré",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -12078,8 +12078,8 @@
       {
         "time": "76",
         "team": "Curaçao",
-        "player": "D. Fonville",
-        "assist": "R. van Eijma",
+        "player": "Tahith Chong",
+        "assist": "Jearl Margaritha",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -12087,8 +12087,8 @@
       {
         "time": "76",
         "team": "Curaçao",
-        "player": "T. Chong",
-        "assist": "J. Margaritha",
+        "player": "Deveron Fonville",
+        "assist": "Roshon van Eijma",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -12096,8 +12096,8 @@
       {
         "time": "83",
         "team": "Ecuador",
-        "player": "A. Franco",
-        "assist": "A. Preciado",
+        "player": "Alan Franco",
+        "assist": "Ángelo Preciado",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -12105,8 +12105,8 @@
       {
         "time": "83",
         "team": "Curaçao",
-        "player": "J. Locadia",
-        "assist": "G. Kastaneer",
+        "player": "Jürgen Locadia",
+        "assist": "Gervane Kastaneer",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -12114,8 +12114,8 @@
       {
         "time": "84",
         "team": "Curaçao",
-        "player": "L. Comenencia",
-        "assist": "G. Roemeratoe",
+        "player": "Livano Comenencia",
+        "assist": "Godfried Roemeratoe",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -12123,8 +12123,8 @@
       {
         "time": "89",
         "team": "Ecuador",
-        "player": "J. Yeboah",
-        "assist": "J. Caicedo",
+        "player": "John Yeboah",
+        "assist": "Jordy Caicedo",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -12132,11 +12132,11 @@
       {
         "time": "90+1",
         "team": "Curaçao",
-        "player": "G. Kastaneer",
+        "player": "Gervane Kastaneer",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Roughing"
+        "comments": "Foul"
       }
     ],
     "players": [
@@ -12145,7 +12145,7 @@
         "players": [
           {
             "name": "Hernán Galíndez",
-            "rating": "7.9",
+            "rating": "8",
             "goals": 0,
             "assists": 0
           },
@@ -12157,25 +12157,25 @@
           },
           {
             "name": "Willian Pacho",
-            "rating": "7.3",
+            "rating": "7.5",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Piero Hincapié",
-            "rating": "7.2",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Jordy Alcivar",
-            "rating": "6.3",
+            "rating": "6.7",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "John Yeboah",
-            "rating": "7.2",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
@@ -12187,13 +12187,13 @@
           },
           {
             "name": "Moisés Caicedo",
-            "rating": "8",
+            "rating": "8.3",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Pervis Estupiñán",
-            "rating": "6.3",
+            "rating": "6.7",
             "goals": 0,
             "assists": 0
           },
@@ -12217,13 +12217,13 @@
           },
           {
             "name": "Nilson Angulo",
-            "rating": "6.7",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Ángelo Preciado",
-            "rating": "6.3",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
@@ -12312,31 +12312,31 @@
           },
           {
             "name": "Joshua Brenet",
-            "rating": "7.2",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Jurien Gaari",
-            "rating": "6.3",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Armando Obispo",
-            "rating": "7",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Sherel Constancio Floranus",
             "rating": "7.5",
             "goals": 0,
             "assists": 0
           },
           {
+            "name": "Jurien Gaari",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Armando Obispo",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Sherel Constancio Floranus",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
             "name": "Deveron Fonville",
-            "rating": "6.6",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
@@ -12348,13 +12348,13 @@
           },
           {
             "name": "Livano Comenencia",
-            "rating": "6.2",
+            "rating": "6.5",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Leandro Bacuna",
-            "rating": "6.5",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
@@ -12378,25 +12378,25 @@
           },
           {
             "name": "Roshon van Eijma",
-            "rating": "6.6",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Jearl Margaritha",
-            "rating": "6.5",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Gervane Kastaneer",
-            "rating": "6.6",
+            "rating": "6.7",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Godfried Roemeratoe",
-            "rating": "6.3",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },

@@ -71,7 +71,7 @@
   },
   "BIH": {
     "group": "Group Stage",
-    "rank": 8,
+    "rank": 9,
     "played": 2,
     "won": 0,
     "drawn": 1,
@@ -211,16 +211,16 @@
   },
   "ECU": {
     "group": "Group Stage",
-    "rank": 9,
-    "played": 1,
+    "rank": 8,
+    "played": 2,
     "won": 0,
-    "drawn": 0,
+    "drawn": 1,
     "lost": 1,
     "goalsFor": 0,
     "goalsAgainst": 1,
     "goalDiff": -1,
-    "points": 0,
-    "form": "L",
+    "points": 1,
+    "form": "DL",
     "status": "same"
   },
   "NED": {
