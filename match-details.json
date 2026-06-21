@@ -8278,15 +8278,15 @@
         "Fouls": 5,
         "Corner Kicks": 8,
         "Offsides": 0,
-        "Ball Possession": "60%",
+        "Ball Possession": "59%",
         "Yellow Cards": null,
         "Red Cards": null,
         "Goalkeeper Saves": 1,
-        "Total passes": 618,
-        "Passes accurate": 553,
+        "Total passes": 622,
+        "Passes accurate": 554,
         "Passes %": "89%",
-        "expected_goals": "1.84",
-        "goals_prevented": "1.51"
+        "expected_goals": "1.83",
+        "goals_prevented": "0.33"
       },
       "Ivory Coast": {
         "Shots on Goal": 2,
@@ -8298,15 +8298,15 @@
         "Fouls": 7,
         "Corner Kicks": 3,
         "Offsides": 1,
-        "Ball Possession": "40%",
+        "Ball Possession": "41%",
         "Yellow Cards": null,
         "Red Cards": null,
         "Goalkeeper Saves": 5,
-        "Total passes": 420,
-        "Passes accurate": 361,
-        "Passes %": "86%",
+        "Total passes": 431,
+        "Passes accurate": 367,
+        "Passes %": "85%",
         "expected_goals": "1.23",
-        "goals_prevented": "1.51"
+        "goals_prevented": "0.33"
       }
     },
     "lineups": {
@@ -8469,6 +8469,15 @@
           },
           {
             "player": {
+              "id": 511,
+              "name": "Leon Goretzka",
+              "number": 8,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 399,
               "name": "Alexander Nübel",
               "number": 21,
@@ -8526,15 +8535,6 @@
               "id": 18970,
               "name": "Pascal Groß",
               "number": 13,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 511,
-              "name": "Leon Goretzka",
-              "number": 8,
               "pos": "M",
               "grid": null
             }
@@ -8696,6 +8696,51 @@
         "substitutes": [
           {
             "player": {
+              "id": 30807,
+              "name": "Seko Fofana",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 301771,
+              "name": "Simon Adingra",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 137303,
+              "name": "Evann Guessand",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 161747,
+              "name": "Guéla Doué",
+              "number": 17,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 3246,
+              "name": "Nicolas Pépé",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 30393,
               "name": "Alban Lafont",
               "number": 23,
@@ -8726,15 +8771,6 @@
               "id": 354753,
               "name": "Ousmane Diomande",
               "number": 2,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 161747,
-              "name": "Guéla Doué",
-              "number": 17,
               "pos": "D",
               "grid": null
             }
@@ -8777,24 +8813,6 @@
           },
           {
             "player": {
-              "id": 30807,
-              "name": "Seko Fofana",
-              "number": 6,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 301771,
-              "name": "Simon Adingra",
-              "number": 10,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 334429,
               "name": "Oumar Diakité",
               "number": 14,
@@ -8807,24 +8825,6 @@
               "id": 162707,
               "name": "Elye Wahi",
               "number": 12,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 3246,
-              "name": "Nicolas Pépé",
-              "number": 19,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 137303,
-              "name": "Evann Guessand",
-              "number": 22,
               "pos": "F",
               "grid": null
             }
@@ -8992,7 +8992,7 @@
           },
           {
             "name": "Felix Nmecha",
-            "rating": "7.5",
+            "rating": "7.2",
             "goals": 0,
             "assists": 1
           },
@@ -9028,7 +9028,7 @@
           },
           {
             "name": "Antonio Rüdiger",
-            "rating": "7",
+            "rating": "7.2",
             "goals": 0,
             "assists": 0
           },
@@ -9123,7 +9123,7 @@
         "players": [
           {
             "name": "Yahia Fofana",
-            "rating": "8.5",
+            "rating": "8",
             "goals": 0,
             "assists": 0
           },
@@ -9201,7 +9201,7 @@
           },
           {
             "name": "Evann Guessand",
-            "rating": "6.2",
+            "rating": "6.5",
             "goals": 0,
             "assists": 0
           },
