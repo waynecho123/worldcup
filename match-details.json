@@ -11353,7 +11353,1065 @@
     "fixtureId": "1489395"
   },
   "m037": {
-    "fixtureId": "1489397"
+    "fixtureId": 1489397,
+    "date": "2026-06-21T16:00:00+00:00",
+    "venue": "Mercedes-Benz Stadium",
+    "status": "Match Finished",
+    "homeTeam": "Spain",
+    "awayTeam": "Saudi Arabia",
+    "score": {
+      "home": 4,
+      "away": 0
+    },
+    "statistics": {
+      "Spain": {
+        "Shots on Goal": 8,
+        "Shots off Goal": 12,
+        "Total Shots": 21,
+        "Blocked Shots": 1,
+        "Shots insidebox": 12,
+        "Shots outsidebox": 9,
+        "Fouls": 10,
+        "Corner Kicks": 6,
+        "Offsides": 2,
+        "Ball Possession": "66%",
+        "Yellow Cards": 0,
+        "Red Cards": null,
+        "Goalkeeper Saves": 1,
+        "Total passes": 693,
+        "Passes accurate": 636,
+        "Passes %": "92%",
+        "expected_goals": "2.78",
+        "goals_prevented": "-1.18"
+      },
+      "Saudi Arabia": {
+        "Shots on Goal": 1,
+        "Shots off Goal": 1,
+        "Total Shots": 3,
+        "Blocked Shots": 1,
+        "Shots insidebox": 0,
+        "Shots outsidebox": 3,
+        "Fouls": 2,
+        "Corner Kicks": 1,
+        "Offsides": 3,
+        "Ball Possession": "34%",
+        "Yellow Cards": 2,
+        "Red Cards": null,
+        "Goalkeeper Saves": 5,
+        "Total passes": 365,
+        "Passes accurate": 293,
+        "Passes %": "80%",
+        "expected_goals": "0.14",
+        "goals_prevented": "-1.18"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 9,
+          "name": "Spain",
+          "logo": "https://media.api-sports.io/football/teams/9.png",
+          "colors": {
+            "player": {
+              "primary": "f94046",
+              "number": "fddc30",
+              "border": "f94046"
+            },
+            "goalkeeper": {
+              "primary": "00b9e5",
+              "number": "cdf111",
+              "border": "00b9e5"
+            }
+          }
+        },
+        "formation": "4-3-3",
+        "startXI": [
+          {
+            "player": {
+              "id": 47270,
+              "name": "Unai Simón",
+              "number": 23,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 47519,
+              "name": "Pedro Porro",
+              "number": 12,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 396623,
+              "name": "Pau Cubarsí",
+              "number": 22,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 622,
+              "name": "Aymeric Laporte",
+              "number": 14,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 47380,
+              "name": "Marc Cucurella",
+              "number": 24,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 1323,
+              "name": "Dani Olmo",
+              "number": 10,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 44,
+              "name": "Rodri",
+              "number": 16,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 133609,
+              "name": "Pedri",
+              "number": 20,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 386828,
+              "name": "Lamine Yamal",
+              "number": 19,
+              "pos": "F",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 47323,
+              "name": "Mikel Oyarzabal",
+              "number": 21,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 182219,
+              "name": "Alex Baena",
+              "number": 15,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 931,
+              "name": "Ferran Torres",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 184226,
+              "name": "Yéremy Pino",
+              "number": 11,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47311,
+              "name": "Mikel Merino",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 183799,
+              "name": "Nico Williams",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19465,
+              "name": "David Raya",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 182718,
+              "name": "Joan García",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 295793,
+              "name": "Marc Pubill",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 619,
+              "name": "Eric García",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 753,
+              "name": "Marcos Llorente",
+              "number": 5,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 563,
+              "name": "Alejandro Grimaldo",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 328,
+              "name": "Fabián Ruiz",
+              "number": 8,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 296667,
+              "name": "Pablo Gavi",
+              "number": 9,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47315,
+              "name": "Martín Zubimendi",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 338751,
+              "name": "Víctor Muñoz",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47348,
+              "name": "Borja Iglesias",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 5832,
+          "name": "Luis de la Fuente",
+          "photo": "https://media.api-sports.io/football/coachs/5832.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 23,
+          "name": "Saudi Arabia",
+          "logo": "https://media.api-sports.io/football/teams/23.png",
+          "colors": {
+            "player": {
+              "primary": "f9faf9",
+              "number": "cca98c",
+              "border": "f9faf9"
+            },
+            "goalkeeper": {
+              "primary": "5fa8ba",
+              "number": "ffffff",
+              "border": "5fa8ba"
+            }
+          }
+        },
+        "formation": "5-4-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 44411,
+              "name": "Mohammed Al-Owais",
+              "number": 21,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 44594,
+              "name": "Saud Abdulhamid",
+              "number": 12,
+              "pos": "D",
+              "grid": "2:5"
+            }
+          },
+          {
+            "player": {
+              "id": 44475,
+              "name": "Abdulelah Al-Amri",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 44507,
+              "name": "Ali Lajami",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 44362,
+              "name": "Hassan Altambakti",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 202381,
+              "name": "Moteb Al-Harbi",
+              "number": 24,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 306380,
+              "name": "Musab Al Juwayr",
+              "number": 7,
+              "pos": "M",
+              "grid": "3:4"
+            }
+          },
+          {
+            "player": {
+              "id": 44315,
+              "name": "Abdullah Al-Khaibari",
+              "number": 15,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 44339,
+              "name": "Nasser Al-Dawsari",
+              "number": 6,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 44340,
+              "name": "Salem Al-Dawsari",
+              "number": 10,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 44324,
+              "name": "Firas Al-Buraikan",
+              "number": 9,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 44349,
+              "name": "Mohamed Kanno",
+              "number": 23,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44382,
+              "name": "Abdullah Al-Hamdan",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 403087,
+              "name": "Mohammed Abu Al-Shamat",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 43953,
+              "name": "Ala'a Al-Hejji",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 193288,
+              "name": "Nawaf Al-Aqidi",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44449,
+              "name": "Ahmed Al-Kassar",
+              "number": 22,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44367,
+              "name": "Ali Majrashi",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 134995,
+              "name": "Nawaf Boushal",
+              "number": 13,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44335,
+              "name": "Hassan Kadesh",
+              "number": 14,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 304467,
+              "name": "Jehad Thakri",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 269172,
+              "name": "Ziyad Aljohani",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 147812,
+              "name": "Ayman Yahya",
+              "number": 8,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44551,
+              "name": "Saleh Al-Shehri",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44701,
+              "name": "Khalid Al-Ghannam",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2639,
+              "name": "Sultan Mandash",
+              "number": 20,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 1106,
+          "name": "Georgios Donis",
+          "photo": "https://media.api-sports.io/football/coachs/1106.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "10",
+        "team": "Spain",
+        "player": "Lamine Yamal",
+        "assist": "M. Oyarzabal",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "21",
+        "team": "Spain",
+        "player": "M. Oyarzabal",
+        "assist": "A. Laporte",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "24",
+        "team": "Spain",
+        "player": "M. Oyarzabal",
+        "assist": "D. Olmo",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "30",
+        "team": "Saudi Arabia",
+        "player": "S. Al Dawsari",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Roughing"
+      },
+      {
+        "time": "46",
+        "team": "Spain",
+        "player": "Lamine Yamal",
+        "assist": "Y. Pino",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "Spain",
+        "player": "M. Oyarzabal",
+        "assist": "F. Torres",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "Saudi Arabia",
+        "player": "A. Al Khaibari",
+        "assist": "M. Kanno",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "Saudi Arabia",
+        "player": "M. Al Juwayr",
+        "assist": "A. Al Hamdan",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "49",
+        "team": "Spain",
+        "player": "H. Tambakti",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Own Goal",
+        "comments": ""
+      },
+      {
+        "time": "60",
+        "team": "Saudi Arabia",
+        "player": "M. Kanno",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Elbowing"
+      },
+      {
+        "time": "60",
+        "team": "Saudi Arabia",
+        "player": "A. Al Amri",
+        "assist": "A. Hejji",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "60",
+        "team": "Saudi Arabia",
+        "player": "F. Al Buraikan",
+        "assist": "M. Abu Al Shamat",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "61",
+        "team": "Spain",
+        "player": "D. Olmo",
+        "assist": "M. Merino",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "61",
+        "team": "Spain",
+        "player": "A. Baena",
+        "assist": "N. Williams",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "70",
+        "team": "Spain",
+        "player": "Pedri",
+        "assist": "F. Ruiz",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "90",
+        "team": "Saudi Arabia",
+        "player": "N. Al Dawsari",
+        "assist": "K. Al Ghannam",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "90+2",
+        "team": "Spain",
+        "player": "F. Torres",
+        "assist": null,
+        "type": "Var",
+        "detail": "Goal Disallowed - offside",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Spain",
+        "players": [
+          {
+            "name": "Unai Simón",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Pedro Porro",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Pau Cubarsí",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Aymeric Laporte",
+            "rating": "7.6",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Marc Cucurella",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Dani Olmo",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Rodri",
+            "rating": "8.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Pedri",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lamine Yamal",
+            "rating": "8.2",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Mikel Oyarzabal",
+            "rating": "9.3",
+            "goals": 2,
+            "assists": 1
+          },
+          {
+            "name": "Alex Baena",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ferran Torres",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yéremy Pino",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mikel Merino",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nico Williams",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Fabián Ruiz",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "David Raya",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Joan García",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marc Pubill",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Eric García",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marcos Llorente",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alejandro Grimaldo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Pablo Gavi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Martín Zubimendi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Víctor Muñoz",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Borja Iglesias",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Saudi Arabia",
+        "players": [
+          {
+            "name": "Mohammed Al-Owais",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Saud Abdulhamid",
+            "rating": "6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Abdulelah Al-Amri",
+            "rating": "5.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ali Lajami",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Hassan Tambakti",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Moteb Al-Harbi",
+            "rating": "5.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Musab Al Juwayr",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Abdullah Al-Khaibari",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nasser Al-Dawsari",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Salem Al-Dawsari",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Firas Al-Buraikan",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohamed Kanno",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Abdullah Al-Hamdan",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohammed Abu Al-Shamat",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ala'a Al-Hejji",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Khalid Al-Ghannam",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nawaf Al-Aqidi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ahmed Al-Kassar",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ali Majrashi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nawaf Boushal",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Hassan Kadesh",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jehad Thakri",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ziyad Aljohani",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ayman Yahya",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Saleh Al-Shehri",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Sultan Mandash",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m040": {
     "fixtureId": "1489396"
