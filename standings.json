@@ -127,7 +127,7 @@
   },
   "SCO": {
     "group": "Group Stage",
-    "rank": 1,
+    "rank": 2,
     "played": 2,
     "won": 1,
     "drawn": 0,
@@ -169,7 +169,7 @@
   },
   "PAR": {
     "group": "Group Stage",
-    "rank": 2,
+    "rank": 3,
     "played": 2,
     "won": 1,
     "drawn": 0,
@@ -237,9 +237,23 @@
     "form": "WD",
     "status": "same"
   },
-  "SWE": {
+  "JPN": {
     "group": "Group F",
     "rank": 2,
+    "played": 2,
+    "won": 1,
+    "drawn": 1,
+    "lost": 0,
+    "goalsFor": 6,
+    "goalsAgainst": 2,
+    "goalDiff": 4,
+    "points": 4,
+    "form": "WD",
+    "status": "same"
+  },
+  "SWE": {
+    "group": "Group Stage",
+    "rank": 1,
     "played": 2,
     "won": 1,
     "drawn": 0,
@@ -251,32 +265,18 @@
     "form": "LW",
     "status": "same"
   },
-  "JPN": {
-    "group": "Group Stage",
-    "rank": 3,
-    "played": 1,
-    "won": 0,
-    "drawn": 1,
-    "lost": 0,
-    "goalsFor": 2,
-    "goalsAgainst": 2,
-    "goalDiff": 0,
-    "points": 1,
-    "form": "D",
-    "status": "same"
-  },
   "TUN": {
     "group": "Group F",
     "rank": 4,
-    "played": 1,
+    "played": 2,
     "won": 0,
     "drawn": 0,
-    "lost": 1,
+    "lost": 2,
     "goalsFor": 1,
-    "goalsAgainst": 5,
-    "goalDiff": -4,
+    "goalsAgainst": 9,
+    "goalDiff": -8,
     "points": 0,
-    "form": "L",
+    "form": "LL",
     "status": "same"
   },
   "NZL": {

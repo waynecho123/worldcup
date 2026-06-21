@@ -3816,7 +3816,7 @@
         "time": "90",
         "team": "Ghana",
         "player": "C. Yirenkyi",
-        "assist": null,
+        "assist": "B. Thomas-Asante",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -10371,8 +10371,8 @@
         "Yellow Cards": null,
         "Red Cards": null,
         "Goalkeeper Saves": 1,
-        "Total passes": 351,
-        "Passes accurate": 282,
+        "Total passes": 353,
+        "Passes accurate": 284,
         "Passes %": "80%",
         "expected_goals": "0.05",
         "goals_prevented": "0.00"
@@ -10391,9 +10391,9 @@
         "Yellow Cards": null,
         "Red Cards": null,
         "Goalkeeper Saves": 0,
-        "Total passes": 565,
-        "Passes accurate": 505,
-        "Passes %": "89%",
+        "Total passes": 581,
+        "Passes accurate": 520,
+        "Passes %": "90%",
         "expected_goals": "2.07",
         "goals_prevented": "0.00"
       }
@@ -10549,6 +10549,24 @@
           },
           {
             "player": {
+              "id": 42012,
+              "name": "Elias Achouri",
+              "number": 7,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 25300,
+              "name": "Rani Khedira",
+              "number": 13,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 533394,
               "name": "Abdelmouhib Chamakh",
               "number": 1,
@@ -10594,15 +10612,6 @@
           },
           {
             "player": {
-              "id": 42012,
-              "name": "Elias Achouri",
-              "number": 7,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 67195,
               "name": "Mohamed Belhadj Mahmoud",
               "number": 15,
@@ -10615,15 +10624,6 @@
               "id": 49469,
               "name": "Mortadha Ben Ouanes",
               "number": 12,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 25300,
-              "name": "Rani Khedira",
-              "number": 13,
               "pos": "M",
               "grid": null
             }
@@ -10785,19 +10785,19 @@
         "substitutes": [
           {
             "player": {
-              "id": 33034,
-              "name": "Keisuke Osako",
-              "number": 12,
-              "pos": "G",
+              "id": 351014,
+              "name": "Junnosuke Suzuki",
+              "number": 25,
+              "pos": "D",
               "grid": null
             }
           },
           {
             "player": {
-              "id": 304782,
-              "name": "Tomoki Hayakawa",
-              "number": 23,
-              "pos": "G",
+              "id": 32887,
+              "name": "Yukinari Sugawara",
+              "number": 2,
+              "pos": "D",
               "grid": null
             }
           },
@@ -10812,10 +10812,37 @@
           },
           {
             "player": {
-              "id": 351014,
-              "name": "Junnosuke Suzuki",
-              "number": 25,
-              "pos": "D",
+              "id": 199143,
+              "name": "Yuito Suzuki",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 375930,
+              "name": "Keisuke Goto",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 33034,
+              "name": "Keisuke Osako",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 304782,
+              "name": "Tomoki Hayakawa",
+              "number": 23,
+              "pos": "G",
               "grid": null
             }
           },
@@ -10839,15 +10866,6 @@
           },
           {
             "player": {
-              "id": 32887,
-              "name": "Yukinari Sugawara",
-              "number": 2,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 440,
               "name": "Yuto Nagatomo",
               "number": 5,
@@ -10857,27 +10875,9 @@
           },
           {
             "player": {
-              "id": 199143,
-              "name": "Yuito Suzuki",
-              "number": 17,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 33224,
               "name": "Daizen Maeda",
               "number": 11,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 375930,
-              "name": "Keisuke Goto",
-              "number": 9,
               "pos": "F",
               "grid": null
             }
@@ -11066,7 +11066,7 @@
           },
           {
             "name": "Yan Valery",
-            "rating": "6.3",
+            "rating": "6.5",
             "goals": 0,
             "assists": 0
           },
@@ -11120,7 +11120,7 @@
           },
           {
             "name": "Firas Chaouat",
-            "rating": "6.3",
+            "rating": "6.7",
             "goals": 0,
             "assists": 0
           },
@@ -11209,13 +11209,13 @@
           },
           {
             "name": "Takehiro Tomiyasu",
-            "rating": "7.2",
+            "rating": "7.5",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Ko Itakura",
-            "rating": "7.6",
+            "rating": "7.9",
             "goals": 0,
             "assists": 1
           },
@@ -11227,13 +11227,13 @@
           },
           {
             "name": "Ritsu Doan",
-            "rating": "6.7",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Kaishu Sano",
-            "rating": "7.7",
+            "rating": "7.6",
             "goals": 0,
             "assists": 1
           },
@@ -11269,19 +11269,19 @@
           },
           {
             "name": "Junnosuke Suzuki",
-            "rating": "6.3",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Yukinari Sugawara",
-            "rating": "6.2",
+            "rating": "6.5",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Ayumu Seko",
-            "rating": "6.7",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
@@ -11293,7 +11293,7 @@
           },
           {
             "name": "Keisuke Goto",
-            "rating": "6.6",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
