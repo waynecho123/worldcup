@@ -692,7 +692,7 @@
       {
         "time": "81",
         "team": "Algeria",
-        "player": "N. Bentaleb",
+        "player": "I. Maza",
         "assist": "A. Boulbina",
         "type": "subst",
         "detail": "Substitution 4",
@@ -701,7 +701,7 @@
       {
         "time": "82",
         "team": "Algeria",
-        "player": "I. Maza",
+        "player": "N. Bentaleb",
         "assist": "R. Zerrouki",
         "type": "subst",
         "detail": "Substitution 5",
@@ -29485,7 +29485,7 @@
           {
             "player": {
               "id": 665473,
-              "name": "D. Iri",
+              "name": "D. Eiri",
               "number": 25,
               "pos": null,
               "grid": null
