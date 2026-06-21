@@ -335,21 +335,21 @@
     "form": "D",
     "status": "same"
   },
-  "URU": {
+  "ESP": {
     "group": "Group H",
     "rank": 1,
-    "played": 1,
-    "won": 0,
+    "played": 2,
+    "won": 1,
     "drawn": 1,
     "lost": 0,
-    "goalsFor": 1,
-    "goalsAgainst": 1,
-    "goalDiff": 0,
-    "points": 1,
-    "form": "D",
+    "goalsFor": 4,
+    "goalsAgainst": 0,
+    "goalDiff": 4,
+    "points": 4,
+    "form": "WD",
     "status": "same"
   },
-  "KSA": {
+  "URU": {
     "group": "Group H",
     "rank": 2,
     "played": 1,
@@ -363,18 +363,18 @@
     "form": "D",
     "status": "same"
   },
-  "ESP": {
-    "group": "Group Stage",
-    "rank": 6,
-    "played": 1,
+  "KSA": {
+    "group": "Group H",
+    "rank": 4,
+    "played": 2,
     "won": 0,
     "drawn": 1,
-    "lost": 0,
-    "goalsFor": 0,
-    "goalsAgainst": 0,
-    "goalDiff": 0,
+    "lost": 1,
+    "goalsFor": 1,
+    "goalsAgainst": 5,
+    "goalDiff": -4,
     "points": 1,
-    "form": "D",
+    "form": "LD",
     "status": "same"
   },
   "NOR": {

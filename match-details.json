@@ -11367,22 +11367,22 @@
       "Spain": {
         "Shots on Goal": 8,
         "Shots off Goal": 12,
-        "Total Shots": 21,
-        "Blocked Shots": 1,
-        "Shots insidebox": 12,
+        "Total Shots": 22,
+        "Blocked Shots": 2,
+        "Shots insidebox": 13,
         "Shots outsidebox": 9,
         "Fouls": 10,
         "Corner Kicks": 6,
         "Offsides": 2,
-        "Ball Possession": "66%",
+        "Ball Possession": "67%",
         "Yellow Cards": 0,
         "Red Cards": null,
         "Goalkeeper Saves": 1,
-        "Total passes": 693,
-        "Passes accurate": 636,
+        "Total passes": 725,
+        "Passes accurate": 668,
         "Passes %": "92%",
-        "expected_goals": "2.78",
-        "goals_prevented": "-1.18"
+        "expected_goals": "2.85",
+        "goals_prevented": "-0.16"
       },
       "Saudi Arabia": {
         "Shots on Goal": 1,
@@ -11394,15 +11394,15 @@
         "Fouls": 2,
         "Corner Kicks": 1,
         "Offsides": 3,
-        "Ball Possession": "34%",
+        "Ball Possession": "33%",
         "Yellow Cards": 2,
         "Red Cards": null,
         "Goalkeeper Saves": 5,
-        "Total passes": 365,
-        "Passes accurate": 293,
+        "Total passes": 364,
+        "Passes accurate": 292,
         "Passes %": "80%",
         "expected_goals": "0.14",
-        "goals_prevented": "-1.18"
+        "goals_prevented": "-0.16"
       }
     },
     "lineups": {
@@ -11565,6 +11565,15 @@
           },
           {
             "player": {
+              "id": 328,
+              "name": "Fabián Ruiz",
+              "number": 8,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 19465,
               "name": "David Raya",
               "number": 1,
@@ -11614,15 +11623,6 @@
               "name": "Alejandro Grimaldo",
               "number": 3,
               "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 328,
-              "name": "Fabián Ruiz",
-              "number": 8,
-              "pos": "M",
               "grid": null
             }
           },
@@ -11728,7 +11728,7 @@
           {
             "player": {
               "id": 44362,
-              "name": "Hassan Altambakti",
+              "name": "Hassan Tambakti",
               "number": 5,
               "pos": "D",
               "grid": "2:2"
@@ -11828,6 +11828,15 @@
           },
           {
             "player": {
+              "id": 44701,
+              "name": "Khalid Al-Ghannam",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 193288,
               "name": "Nawaf Al-Aqidi",
               "number": 1,
@@ -11903,15 +11912,6 @@
               "id": 44551,
               "name": "Saleh Al-Shehri",
               "number": 11,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 44701,
-              "name": "Khalid Al-Ghannam",
-              "number": 17,
               "pos": "F",
               "grid": null
             }
@@ -12094,49 +12094,49 @@
         "players": [
           {
             "name": "Unai Simón",
-            "rating": "7",
+            "rating": "7.2",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Pedro Porro",
-            "rating": "7.2",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Pau Cubarsí",
             "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "Aymeric Laporte",
+            "name": "Pau Cubarsí",
             "rating": "7.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Aymeric Laporte",
+            "rating": "7.9",
             "goals": 0,
             "assists": 1
           },
           {
             "name": "Marc Cucurella",
-            "rating": "7",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Dani Olmo",
-            "rating": "7.2",
+            "rating": "7.5",
             "goals": 0,
             "assists": 1
           },
           {
             "name": "Rodri",
-            "rating": "8.2",
+            "rating": "8.3",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Pedri",
-            "rating": "6.9",
+            "rating": "7",
             "goals": 0,
             "assists": 0
           },
@@ -12166,7 +12166,7 @@
           },
           {
             "name": "Yéremy Pino",
-            "rating": "6.3",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
@@ -12184,7 +12184,7 @@
           },
           {
             "name": "Fabián Ruiz",
-            "rating": "6.9",
+            "rating": "7.2",
             "goals": 0,
             "assists": 0
           },
@@ -12261,7 +12261,7 @@
           },
           {
             "name": "Saud Abdulhamid",
-            "rating": "6",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
@@ -12273,7 +12273,7 @@
           },
           {
             "name": "Ali Lajami",
-            "rating": "6.2",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
@@ -12321,7 +12321,7 @@
           },
           {
             "name": "Mohamed Kanno",
-            "rating": "6.3",
+            "rating": "6.5",
             "goals": 0,
             "assists": 0
           },
@@ -12333,19 +12333,19 @@
           },
           {
             "name": "Mohammed Abu Al-Shamat",
-            "rating": "6.6",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Ala'a Al-Hejji",
-            "rating": "6.3",
+            "rating": "6.7",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Khalid Al-Ghannam",
-            "rating": null,
+            "rating": "6.5",
             "goals": 0,
             "assists": 0
           },
