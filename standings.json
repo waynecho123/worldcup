@@ -279,9 +279,23 @@
     "form": "LL",
     "status": "same"
   },
-  "IRN": {
+  "EGY": {
     "group": "Group G",
     "rank": 1,
+    "played": 2,
+    "won": 1,
+    "drawn": 1,
+    "lost": 0,
+    "goalsFor": 4,
+    "goalsAgainst": 2,
+    "goalDiff": 2,
+    "points": 4,
+    "form": "WD",
+    "status": "same"
+  },
+  "IRN": {
+    "group": "Group G",
+    "rank": 2,
     "played": 2,
     "won": 0,
     "drawn": 2,
@@ -294,8 +308,8 @@
     "status": "same"
   },
   "BEL": {
-    "group": "Group G",
-    "rank": 2,
+    "group": "Group Stage",
+    "rank": 5,
     "played": 2,
     "won": 0,
     "drawn": 2,
@@ -308,31 +322,17 @@
     "status": "same"
   },
   "NZL": {
-    "group": "Group Stage",
-    "rank": 5,
-    "played": 1,
-    "won": 0,
-    "drawn": 1,
-    "lost": 0,
-    "goalsFor": 2,
-    "goalsAgainst": 2,
-    "goalDiff": 0,
-    "points": 1,
-    "form": "D",
-    "status": "same"
-  },
-  "EGY": {
     "group": "Group G",
     "rank": 4,
-    "played": 1,
+    "played": 2,
     "won": 0,
     "drawn": 1,
-    "lost": 0,
-    "goalsFor": 1,
-    "goalsAgainst": 1,
-    "goalDiff": 0,
+    "lost": 1,
+    "goalsFor": 3,
+    "goalsAgainst": 5,
+    "goalDiff": -2,
     "points": 1,
-    "form": "D",
+    "form": "LD",
     "status": "same"
   },
   "ESP": {
