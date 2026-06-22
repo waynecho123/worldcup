@@ -14485,7 +14485,1065 @@
     ]
   },
   "m041": {
-    "fixtureId": "1489399"
+    "fixtureId": 1489399,
+    "date": "2026-06-22T17:00:00+00:00",
+    "venue": "AT&T Stadium",
+    "status": "Match Finished",
+    "homeTeam": "Argentina",
+    "awayTeam": "Austria",
+    "score": {
+      "home": 2,
+      "away": 0
+    },
+    "statistics": {
+      "Argentina": {
+        "Shots on Goal": 5,
+        "Shots off Goal": 4,
+        "Total Shots": 12,
+        "Blocked Shots": 3,
+        "Shots insidebox": 10,
+        "Shots outsidebox": 2,
+        "Fouls": 13,
+        "Corner Kicks": 1,
+        "Offsides": 2,
+        "Ball Possession": "54%",
+        "Yellow Cards": 2,
+        "Red Cards": null,
+        "Goalkeeper Saves": 1,
+        "Total passes": 553,
+        "Passes accurate": 493,
+        "Passes %": "89%",
+        "expected_goals": "2.65",
+        "goals_prevented": "-0.51"
+      },
+      "Austria": {
+        "Shots on Goal": 1,
+        "Shots off Goal": 5,
+        "Total Shots": 6,
+        "Blocked Shots": 0,
+        "Shots insidebox": 4,
+        "Shots outsidebox": 2,
+        "Fouls": 13,
+        "Corner Kicks": 3,
+        "Offsides": 0,
+        "Ball Possession": "46%",
+        "Yellow Cards": 2,
+        "Red Cards": null,
+        "Goalkeeper Saves": 2,
+        "Total passes": 468,
+        "Passes accurate": 402,
+        "Passes %": "86%",
+        "expected_goals": "0.50",
+        "goals_prevented": "-0.51"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 26,
+          "name": "Argentina",
+          "logo": "https://media.api-sports.io/football/teams/26.png",
+          "colors": {
+            "player": {
+              "primary": "ffffff",
+              "number": "000000",
+              "border": "ffffff"
+            },
+            "goalkeeper": {
+              "primary": "252428",
+              "number": "bdc2ce",
+              "border": "252428"
+            }
+          }
+        },
+        "formation": "4-4-2",
+        "startXI": [
+          {
+            "player": {
+              "id": 19599,
+              "name": "Emiliano Martínez",
+              "number": 23,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 6503,
+              "name": "Nahuel Molina",
+              "number": 26,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 30776,
+              "name": "Cristian Romero",
+              "number": 13,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 2467,
+              "name": "Lisandro Martínez",
+              "number": 6,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 6231,
+              "name": "Facundo Medina",
+              "number": 25,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2472,
+              "name": "Rodrigo De Paul",
+              "number": 7,
+              "pos": "M",
+              "grid": "3:4"
+            }
+          },
+          {
+            "player": {
+              "id": 6716,
+              "name": "Alexis Mac Allister",
+              "number": 20,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 5996,
+              "name": "Enzo Fernández",
+              "number": 24,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 6067,
+              "name": "Thiago Almada",
+              "number": 16,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 154,
+              "name": "Lionel Messi",
+              "number": 10,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 217,
+              "name": "Lautaro Martínez",
+              "number": 22,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 624,
+              "name": "Nicolás Otamendi",
+              "number": 19,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 26315,
+              "name": "Nicolás González",
+              "number": 15,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6009,
+              "name": "Julián Alvarez",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 529,
+              "name": "Nicolás Tagliafico",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 271,
+              "name": "Leandro Paredes",
+              "number": 5,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2465,
+              "name": "Juan Musso",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47296,
+              "name": "Gerónimo Rulli",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6610,
+              "name": "Marcos Senesi",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2468,
+              "name": "Gonzalo Montiel",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 319572,
+              "name": "Valentín Barco",
+              "number": 8,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 350037,
+              "name": "Nico Paz",
+              "number": 18,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 323935,
+              "name": "Giuliano Simeone",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1578,
+              "name": "Giovani Lo Celso",
+              "number": 11,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6002,
+              "name": "Exequiel Palacios",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 295513,
+              "name": "José Manuel López",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 326,
+          "name": "Lionel Scaloni",
+          "photo": "https://media.api-sports.io/football/coachs/326.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 775,
+          "name": "Austria",
+          "logo": "https://media.api-sports.io/football/teams/775.png",
+          "colors": {
+            "player": {
+              "primary": "ff0000",
+              "number": "ffffff",
+              "border": "ff0000"
+            },
+            "goalkeeper": {
+              "primary": "8ec0f5",
+              "number": "0c0606",
+              "border": "8ec0f5"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 7525,
+              "name": "Alexander Schlager",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 711,
+              "name": "Stefan Posch",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 25287,
+              "name": "Kevin Danso",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 505,
+              "name": "David Alaba",
+              "number": 8,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 1157,
+              "name": "Konrad Laimer",
+              "number": 20,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 7328,
+              "name": "Nicolas Seiwald",
+              "number": 6,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 1095,
+              "name": "Xaver Schlager",
+              "number": 4,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 7562,
+              "name": "Romano Schmid",
+              "number": 18,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 327895,
+              "name": "Paul Wanner",
+              "number": 24,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 1159,
+              "name": "Marcel Sabitzer",
+              "number": 9,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 25297,
+              "name": "Michael Gregoritsch",
+              "number": 11,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 25314,
+              "name": "Marco Friedl",
+              "number": 23,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 7327,
+              "name": "Alexander Prass",
+              "number": 22,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 18830,
+              "name": "Marko Arnautović",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 126642,
+              "name": "Patrick Wimmer",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 138935,
+              "name": "Carney Chukwuemeka",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 7598,
+              "name": "Patrick Pentz",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 221605,
+              "name": "Florian Wiegele",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 126640,
+              "name": "David Affengruber",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 7090,
+              "name": "Michael Svoboda",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 26240,
+              "name": "Philipp Lienhart",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1725,
+              "name": "Dejan Ljubičić",
+              "number": 19,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 719,
+              "name": "Florian Grillitsch",
+              "number": 10,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 417,
+              "name": "Alessandro Schöpf",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 25915,
+              "name": "Phillipp Mwene",
+              "number": 16,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 7722,
+              "name": "Saša Kalajdžić",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 3085,
+          "name": "Ralf Rangnick",
+          "photo": "https://media.api-sports.io/football/coachs/3085.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "9",
+        "team": "Argentina",
+        "player": "L. Messi",
+        "assist": "L. Messi",
+        "type": "Goal",
+        "detail": "Missed Penalty",
+        "comments": ""
+      },
+      {
+        "time": "38",
+        "team": "Argentina",
+        "player": "L. Messi",
+        "assist": "F. Medina",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "40",
+        "team": "Austria",
+        "player": "S. Posch",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Unsportsmanlike conduct"
+      },
+      {
+        "time": "57",
+        "team": "Argentina",
+        "player": "C. Romero",
+        "assist": "N. Otamendi",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "64",
+        "team": "Argentina",
+        "player": "T. Almada",
+        "assist": "J. Alvarez",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "65",
+        "team": "Argentina",
+        "player": "L. Martinez",
+        "assist": "N. Gonzalez",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "67",
+        "team": "Austria",
+        "player": "D. Alaba",
+        "assist": "M. Friedl",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "68",
+        "team": "Austria",
+        "player": "S. Posch",
+        "assist": "A. Prass",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "68",
+        "team": "Austria",
+        "player": "P. Wanner",
+        "assist": "M. Arnautovic",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "76",
+        "team": "Argentina",
+        "player": "F. Medina",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Unsportsmanlike conduct"
+      },
+      {
+        "time": "76",
+        "team": "Austria",
+        "player": "K. Laimer",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Unsportsmanlike conduct"
+      },
+      {
+        "time": "78",
+        "team": "Austria",
+        "player": "R. Schmid",
+        "assist": "P. Wimmer",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "82",
+        "team": "Argentina",
+        "player": "R. de Paul",
+        "assist": "L. Paredes",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "82",
+        "team": "Argentina",
+        "player": "F. Medina",
+        "assist": "N. Tagliafico",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "85",
+        "team": "Austria",
+        "player": "M. Gregoritsch",
+        "assist": "C. Chukwuemeka",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "90+2",
+        "team": "Argentina",
+        "player": "L. Paredes",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Roughing"
+      },
+      {
+        "time": "90+5",
+        "team": "Argentina",
+        "player": "L. Messi",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Argentina",
+        "players": [
+          {
+            "name": "Emiliano Martínez",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nahuel Molina",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Cristian Romero",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lisandro Martínez",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Facundo Medina",
+            "rating": "7",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Rodrigo De Paul",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alexis Mac Allister",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Enzo Fernández",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Thiago Almada",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lionel Messi",
+            "rating": "9.3",
+            "goals": 2,
+            "assists": 0
+          },
+          {
+            "name": "Lautaro Martínez",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nicolás Otamendi",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nicolás González",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Julián Alvarez",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nicolás Tagliafico",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Leandro Paredes",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Juan Musso",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gerónimo Rulli",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marcos Senesi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gonzalo Montiel",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Valentín Barco",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nico Paz",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Giuliano Simeone",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Giovani Lo Celso",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Exequiel Palacios",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "José Manuel López",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Austria",
+        "players": [
+          {
+            "name": "Alexander Schlager",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Stefan Posch",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kevin Danso",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "David Alaba",
+            "rating": "7.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Konrad Laimer",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nicolas Seiwald",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Xaver Schlager",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Romano Schmid",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Paul Wanner",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marcel Sabitzer",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Michael Gregoritsch",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marco Friedl",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alexander Prass",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marko Arnautović",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Patrick Wimmer",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Carney Chukwuemeka",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Patrick Pentz",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Florian Wiegele",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "David Affengruber",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Michael Svoboda",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Philipp Lienhart",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Dejan Ljubičić",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Florian Grillitsch",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alessandro Schöpf",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Phillipp Mwene",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Saša Kalajdžić",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m042": {
     "fixtureId": "1539017"
