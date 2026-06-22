@@ -13415,7 +13415,1074 @@
     ]
   },
   "m040": {
-    "fixtureId": "1489396"
+    "fixtureId": 1489396,
+    "date": "2026-06-22T01:00:00+00:00",
+    "venue": "BC Place",
+    "status": "Match Finished",
+    "homeTeam": "New Zealand",
+    "awayTeam": "Egypt",
+    "score": {
+      "home": 1,
+      "away": 3
+    },
+    "statistics": {
+      "New Zealand": {
+        "Shots on Goal": 5,
+        "Shots off Goal": 3,
+        "Total Shots": 11,
+        "Blocked Shots": 3,
+        "Shots insidebox": 6,
+        "Shots outsidebox": 5,
+        "Fouls": 14,
+        "Corner Kicks": 4,
+        "Offsides": 3,
+        "Ball Possession": "44%",
+        "Yellow Cards": 2,
+        "Red Cards": null,
+        "Goalkeeper Saves": 4,
+        "Total passes": 420,
+        "Passes accurate": 338,
+        "Passes %": "80%",
+        "expected_goals": "1.12",
+        "goals_prevented": "0.75"
+      },
+      "Egypt": {
+        "Shots on Goal": 7,
+        "Shots off Goal": 6,
+        "Total Shots": 19,
+        "Blocked Shots": 6,
+        "Shots insidebox": 12,
+        "Shots outsidebox": 7,
+        "Fouls": 8,
+        "Corner Kicks": 3,
+        "Offsides": 0,
+        "Ball Possession": "56%",
+        "Yellow Cards": 1,
+        "Red Cards": null,
+        "Goalkeeper Saves": 4,
+        "Total passes": 528,
+        "Passes accurate": 463,
+        "Passes %": "88%",
+        "expected_goals": "1.96",
+        "goals_prevented": "0.75"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 4673,
+          "name": "New Zealand",
+          "logo": "https://media.api-sports.io/football/teams/4673.png",
+          "colors": {
+            "player": {
+              "primary": "e7e8ec",
+              "number": "000000",
+              "border": "e7e8ec"
+            },
+            "goalkeeper": {
+              "primary": "3c691f",
+              "number": "0d0d0d",
+              "border": "3c691f"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 18110,
+              "name": "Max Crocombe",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 94346,
+              "name": "Tim Payne",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 210165,
+              "name": "Finn Surman",
+              "number": 16,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 51149,
+              "name": "Michael Boxall",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 6931,
+              "name": "Liberato Cacace",
+              "number": 13,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 94541,
+              "name": "Joe Bell",
+              "number": 6,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 179862,
+              "name": "Marko Stamenić",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 94322,
+              "name": "Callum McCowatt",
+              "number": 20,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 6935,
+              "name": "Sarpreet Singh",
+              "number": 10,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 94333,
+              "name": "Elijah Just",
+              "number": 11,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 18931,
+              "name": "Chris Wood",
+              "number": 9,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 179856,
+              "name": "Benjamin Old",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 242,
+              "name": "Ryan Thomas",
+              "number": 23,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 158688,
+              "name": "Jesse Randall",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 430835,
+              "name": "Tyler Bindon",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 94405,
+              "name": "Francis De Vries",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 94360,
+              "name": "Alex Paulsen",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36777,
+              "name": "Michael Woud",
+              "number": 22,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 51307,
+              "name": "Tommy Smith",
+              "number": 26,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 94344,
+              "name": "Nando Pijnaker",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6932,
+              "name": "Callan Elliot",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6934,
+              "name": "Alex Rufer",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 405957,
+              "name": "Lachlan Bayliss",
+              "number": 25,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 26161,
+              "name": "Logan Rogerson",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6865,
+              "name": "Kosta Barbarouses",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6938,
+              "name": "Ben Waine",
+              "number": 18,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 0,
+          "name": null,
+          "photo": null
+        }
+      },
+      "away": {
+        "team": {
+          "id": 32,
+          "name": "Egypt",
+          "logo": "https://media.api-sports.io/football/teams/32.png",
+          "colors": {
+            "player": {
+              "primary": "ff0000",
+              "number": "d0c190",
+              "border": "ff0000"
+            },
+            "goalkeeper": {
+              "primary": "2d6e86",
+              "number": "050505",
+              "border": "2d6e86"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 269174,
+              "name": "Mostafa Shobeir",
+              "number": 23,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2654,
+              "name": "Mohamed Hany",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 16804,
+              "name": "Yasser Ibrahim",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 16813,
+              "name": "Hamdy Fathy",
+              "number": 14,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 2649,
+              "name": "Ahmed Fatouh",
+              "number": 13,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 190575,
+              "name": "Marwan Attia",
+              "number": 19,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 16841,
+              "name": "Mohanad Lasheen",
+              "number": 17,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 395075,
+              "name": "Mostafa Ziko",
+              "number": 11,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 306,
+              "name": "Mohamed Salah",
+              "number": 10,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 17269,
+              "name": "Emam Ashour",
+              "number": 8,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 81573,
+              "name": "Omar Marmoush",
+              "number": 22,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 16805,
+              "name": "Rami Rabia",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2664,
+              "name": "Mahmoud Trézéguet",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 550547,
+              "name": "Hamza Abdelkarim",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 269621,
+              "name": "Hossam Abdelmaguid",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 16871,
+              "name": "Zizo",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 196343,
+              "name": "Mohamed Abdelmonem",
+              "number": 6,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 498250,
+              "name": "Mohamed Alaa",
+              "number": 26,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 16831,
+              "name": "Mahdi Soliman",
+              "number": 16,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 16797,
+              "name": "Mohamed El-Shenawy",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 550371,
+              "name": "Tarek Alaa",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2656,
+              "name": "Karim Hafez",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 69196,
+              "name": "Mahmoud Saber",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 70535,
+              "name": "Ibrahim Adel",
+              "number": 20,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 20844,
+              "name": "Haissem Hassan",
+              "number": 12,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2660,
+              "name": "Nabil Donga",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 19341,
+          "name": "Hossam Hassan",
+          "photo": "https://media.api-sports.io/football/coachs/19341.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "15",
+        "team": "New Zealand",
+        "player": "F. Surman",
+        "assist": "T. Payne",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "17",
+        "team": "Egypt",
+        "player": "M. Lasheen",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Roughing"
+      },
+      {
+        "time": "20",
+        "team": "New Zealand",
+        "player": "S. Singh",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Holding"
+      },
+      {
+        "time": "34",
+        "team": "New Zealand",
+        "player": "C. McCowatt",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "41",
+        "team": "Egypt",
+        "player": "H. Fathy",
+        "assist": "R. Rabia",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "58",
+        "team": "Egypt",
+        "player": "M. Ziko",
+        "assist": "M. Hany",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "66",
+        "team": "New Zealand",
+        "player": "C. McCowatt",
+        "assist": "B. Old",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "67",
+        "team": "Egypt",
+        "player": "M. Salah",
+        "assist": "M. Ziko",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "76",
+        "team": "New Zealand",
+        "player": "S. Singh",
+        "assist": "R. Thomas",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "76",
+        "team": "New Zealand",
+        "player": "L. Cacace",
+        "assist": "J. Randall",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "76",
+        "team": "Egypt",
+        "player": "O. Marmoush",
+        "assist": "Trezeguet",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "76",
+        "team": "Egypt",
+        "player": "M. Ziko",
+        "assist": "H. Abdelkarim",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "82",
+        "team": "Egypt",
+        "player": "Trezeguet",
+        "assist": "M. Salah",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "85",
+        "team": "Egypt",
+        "player": "E. Ashour",
+        "assist": "Zizo",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "85",
+        "team": "Egypt",
+        "player": "M. Salah",
+        "assist": "H. Abdelmaguid",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "85",
+        "team": "New Zealand",
+        "player": "T. Payne",
+        "assist": "T. Bindon",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "85",
+        "team": "New Zealand",
+        "player": "E. Just",
+        "assist": "F. De Vries",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "90+9",
+        "team": "Egypt",
+        "player": "H. Abdelmaguid",
+        "assist": "M. Abdelmonem",
+        "type": "subst",
+        "detail": "Substitution 6",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "New Zealand",
+        "players": [
+          {
+            "name": "Max Crocombe",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tim Payne",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Finn Surman",
+            "rating": "7.5",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Michael Boxall",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Liberato Cacace",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Joe Bell",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marko Stamenić",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Callum McCowatt",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Sarpreet Singh",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Elijah Just",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Chris Wood",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Benjamin Old",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ryan Thomas",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jesse Randall",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tyler Bindon",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Francis De Vries",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alex Paulsen",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Michael Woud",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tommy Smith",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nando Pijnaker",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Callan Elliot",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alex Rufer",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lachlan Bayliss",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Logan Rogerson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kosta Barbarouses",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ben Waine",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Egypt",
+        "players": [
+          {
+            "name": "Mostafa Shobeir",
+            "rating": "8.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohamed Hany",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Yasser Ibrahim",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Hamdy Fathy",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ahmed Fatouh",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marwan Attia",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohanad Lasheen",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mostafa Ziko",
+            "rating": "8",
+            "goals": 1,
+            "assists": 1
+          },
+          {
+            "name": "Mohamed Salah",
+            "rating": "8.7",
+            "goals": 1,
+            "assists": 1
+          },
+          {
+            "name": "Emam Ashour",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Omar Marmoush",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Rami Rabia",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mahmoud Trézéguet",
+            "rating": "7.3",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Hamza Abdelkarim",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Hossam Abdelmaguid",
+            "rating": "7.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Zizo",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohamed Abdelmonem",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohamed Alaa",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mahdi Soliman",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohamed El-Shenawy",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tarek Alaa",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Karim Hafez",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mahmoud Saber",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ibrahim Adel",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Haissem Hassan",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nabil Donga",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m041": {
     "fixtureId": "1489399"
