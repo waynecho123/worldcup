@@ -16783,6 +16783,33 @@
         "substitutes": [
           {
             "player": {
+              "id": 5995,
+              "name": "Nicolás de la Cruz",
+              "number": 7,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 51617,
+              "name": "Darwin Núñez",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 51618,
+              "name": "Brian Rodríguez",
+              "number": 18,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 61895,
               "name": "Santiago Mele",
               "number": 12,
@@ -16837,15 +16864,6 @@
           },
           {
             "player": {
-              "id": 5995,
-              "name": "Nicolás de la Cruz",
-              "number": 7,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 70078,
               "name": "Facundo Pellistri",
               "number": 11,
@@ -16855,28 +16873,10 @@
           },
           {
             "player": {
-              "id": 51618,
-              "name": "Brian Rodríguez",
-              "number": 18,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 153083,
               "name": "Emiliano Martínez",
               "number": 15,
               "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 51617,
-              "name": "Darwin Núñez",
-              "number": 9,
-              "pos": "F",
               "grid": null
             }
           },
@@ -17055,6 +17055,24 @@
           },
           {
             "player": {
+              "id": 37436,
+              "name": "Laros Duarte",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 128007,
+              "name": "Yannick Semedo",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 41764,
               "name": "Márcio Rosa",
               "number": 12,
@@ -17118,28 +17136,10 @@
           },
           {
             "player": {
-              "id": 37436,
-              "name": "Laros Duarte",
-              "number": 15,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 113580,
               "name": "Willy Semedo",
               "number": 17,
               "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 128007,
-              "name": "Yannick Semedo",
-              "number": 16,
-              "pos": "M",
               "grid": null
             }
           },
