@@ -127,16 +127,16 @@
       "matches": 2
     },
     {
-      "name": "Kylian Mbappé",
-      "photo": "https://media.api-sports.io/football/players/278.png",
-      "team": "France",
+      "name": "E. Haaland",
+      "photo": "https://media.api-sports.io/football/players/1100.png",
+      "team": "Norway",
       "goals": 2,
       "matches": 1
     },
     {
-      "name": "E. Haaland",
-      "photo": "https://media.api-sports.io/football/players/1100.png",
-      "team": "Norway",
+      "name": "Kylian Mbappé",
+      "photo": "https://media.api-sports.io/football/players/278.png",
+      "team": "France",
       "goals": 2,
       "matches": 1
     }
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-06-22T16:11:10.348Z"
+  "updatedAt": "2026-06-22T18:06:24.505Z"
 }
