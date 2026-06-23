@@ -1,1 +1,130 @@
-{}
+{
+  "BEL": [
+    {
+      "player": "Z. Debast",
+      "type": "Missing Fixture",
+      "reason": "Leg Injury",
+      "fixture": "2026-06-15T19:00:00+00:00"
+    },
+    {
+      "player": "Z. Debast",
+      "type": "Missing Fixture",
+      "reason": "Leg Injury",
+      "fixture": "2026-06-21T19:00:00+00:00"
+    },
+    {
+      "player": "J. Doku",
+      "type": "Missing Fixture",
+      "reason": "Illness",
+      "fixture": "2026-06-27T03:00:00+00:00"
+    },
+    {
+      "player": "N. Ngoy",
+      "type": "Missing Fixture",
+      "reason": "Red Card",
+      "fixture": "2026-06-27T03:00:00+00:00"
+    }
+  ],
+  "BRA": [
+    {
+      "player": "Neymar",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury",
+      "fixture": "2026-06-13T22:00:00+00:00"
+    },
+    {
+      "player": "Neymar",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury",
+      "fixture": "2026-06-20T00:30:00+00:00"
+    },
+    {
+      "player": "Neymar",
+      "type": "Missing Fixture",
+      "reason": "Calf Injury",
+      "fixture": "2026-06-24T22:00:00+00:00"
+    }
+  ],
+  "URU": [
+    {
+      "player": "G. de Arrascaeta",
+      "type": "Missing Fixture",
+      "reason": "Muscle bruise",
+      "fixture": "2026-06-21T22:00:00+00:00"
+    },
+    {
+      "player": "R. Araújo",
+      "type": "Missing Fixture",
+      "reason": "Muscle bruise",
+      "fixture": "2026-06-21T22:00:00+00:00"
+    }
+  ],
+  "JPN": [
+    {
+      "player": "T. Kubo",
+      "type": "Missing Fixture",
+      "reason": "Wound",
+      "fixture": "2026-06-21T04:00:00+00:00"
+    },
+    {
+      "player": "S. Machino",
+      "type": "Missing Fixture",
+      "reason": "Illness",
+      "fixture": "2026-06-25T23:00:00+00:00"
+    }
+  ],
+  "BIH": [
+    {
+      "player": "T. Muharemović",
+      "type": "Missing Fixture",
+      "reason": "Red Card",
+      "fixture": "2026-06-24T19:00:00+00:00"
+    }
+  ],
+  "RSA": [
+    {
+      "player": "T. Mokoena",
+      "type": "Missing Fixture",
+      "reason": "Yellow card suspension",
+      "fixture": "2026-06-25T01:00:00+00:00"
+    }
+  ],
+  "ALG": [
+    {
+      "player": "M. Amoura",
+      "type": "Missing Fixture",
+      "reason": "Hamstring muscle injury",
+      "fixture": "2026-06-28T02:00:00+00:00"
+    }
+  ],
+  "QAT": [
+    {
+      "player": "Homam Ahmed",
+      "type": "Missing Fixture",
+      "reason": "Red Card",
+      "fixture": "2026-06-24T19:00:00+00:00"
+    },
+    {
+      "player": "Assim Madibo",
+      "type": "Missing Fixture",
+      "reason": "Red Card",
+      "fixture": "2026-06-24T19:00:00+00:00"
+    }
+  ],
+  "PAR": [
+    {
+      "player": "M. Almirón",
+      "type": "Missing Fixture",
+      "reason": "Red Card",
+      "fixture": "2026-06-26T02:00:00+00:00"
+    }
+  ],
+  "CAN": [
+    {
+      "player": "I. Koné",
+      "type": "Missing Fixture",
+      "reason": "Fracture of lower leg",
+      "fixture": "2026-06-24T19:00:00+00:00"
+    }
+  ]
+}
