@@ -18650,7 +18650,999 @@
     ]
   },
   "m046": {
-    "fixtureId": "1489402"
+    "fixtureId": 1489402,
+    "date": "2026-06-23T20:00:00+00:00",
+    "venue": "Gillette Stadium",
+    "status": "Match Finished",
+    "homeTeam": "England",
+    "awayTeam": "Ghana",
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "statistics": {
+      "England": {
+        "Blocked Shots": 6,
+        "Free Kicks": 24,
+        "Shots on Goal": 3,
+        "Shots off Goal": 10,
+        "Offsides": 2,
+        "Total Shots": 19,
+        "Yellow Cards": 1,
+        "Corner Kicks": 9,
+        "Goalkeeper Saves": 0,
+        "Fouls": 14,
+        "Red Cards": 0,
+        "Ball Possession": "79%"
+      },
+      "Ghana": {
+        "Blocked Shots": 1,
+        "Free Kicks": 13,
+        "Shots on Goal": 1,
+        "Shots off Goal": 0,
+        "Offsides": 2,
+        "Total Shots": 2,
+        "Yellow Cards": 1,
+        "Corner Kicks": 2,
+        "Goalkeeper Saves": 3,
+        "Fouls": 24,
+        "Red Cards": 0,
+        "Ball Possession": "21%"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 10,
+          "name": "England",
+          "logo": "https://media.api-sports.io/football/teams/10.png",
+          "colors": {
+            "player": {
+              "primary": "ffffff",
+              "number": "2a2f3c",
+              "border": "ffffff"
+            },
+            "goalkeeper": {
+              "primary": "d9f700",
+              "number": "f7f7f7",
+              "border": "d9f700"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 2932,
+              "name": "Jordan Pickford",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 19545,
+              "name": "Reece James",
+              "number": 24,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 19354,
+              "name": "Ezri Konsa",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 67971,
+              "name": "Marc Guéhi",
+              "number": 6,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 19235,
+              "name": "Djed Spence",
+              "number": 25,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 138908,
+              "name": "Elliot Anderson",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 2937,
+              "name": "Declan Rice",
+              "number": 4,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 136723,
+              "name": "Noni Madueke",
+              "number": 20,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 129718,
+              "name": "Jude Bellingham",
+              "number": 10,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 138787,
+              "name": "Anthony Gordon",
+              "number": 18,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 184,
+              "name": "Harry Kane",
+              "number": 9,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 307123,
+              "name": "Nico O'Reilly",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1460,
+              "name": "Bukayo Saka",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 162489,
+              "name": "James Trafford",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19088,
+              "name": "Dean Henderson",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 626,
+              "name": "John Stones",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 158698,
+              "name": "Jarell Quansah",
+              "number": 26,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 18961,
+              "name": "Dan Burn",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19720,
+              "name": "Trevoh Chalobah",
+              "number": 12,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 292,
+              "name": "Jordan Henderson",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19586,
+              "name": "Eberechi Eze",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 284322,
+              "name": "Kobbie Mainoo",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19170,
+              "name": "Morgan Rogers",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19974,
+              "name": "Ivan Toney",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19366,
+              "name": "Ollie Watkins",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 909,
+              "name": "Marcus Rashford",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 40,
+          "name": "Thomas Tuchel",
+          "photo": "https://media.api-sports.io/football/coachs/40.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 1504,
+          "name": "Ghana",
+          "logo": "https://media.api-sports.io/football/teams/1504.png",
+          "colors": {
+            "player": {
+              "primary": "f1d375",
+              "number": "0f0f0f",
+              "border": "f1d375"
+            },
+            "goalkeeper": {
+              "primary": "f65b96",
+              "number": "0a0a0a",
+              "border": "f65b96"
+            }
+          }
+        },
+        "formation": "4-1-4-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 480108,
+              "name": "Benjamin Asare",
+              "number": 16,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 191240,
+              "name": "Marvin Senaya",
+              "number": 26,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 369425,
+              "name": "Jonas Adjei Adjetey",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 137223,
+              "name": "Jerome Opoku",
+              "number": 18,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 7578,
+              "name": "Gideon Mensah",
+              "number": 14,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 49,
+              "name": "Thomas Partey",
+              "number": 5,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 47294,
+              "name": "Iñaki Williams",
+              "number": 19,
+              "pos": "M",
+              "grid": "4:4"
+            }
+          },
+          {
+            "player": {
+              "id": 475575,
+              "name": "Caleb Yirenkyi",
+              "number": 3,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 3608,
+              "name": "Kwasi Sibo",
+              "number": 8,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 19281,
+              "name": "Antoine Semenyo",
+              "number": 11,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 3428,
+              "name": "Jordan Ayew",
+              "number": 9,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 303467,
+              "name": "Abdul Fatawu Issahaku",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 410016,
+              "name": "Prince Kwabena Adu",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 3412,
+              "name": "Lawrence Ati Zigi",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 144709,
+              "name": "Joseph Anang",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 404172,
+              "name": "Kojo Peprah Oppong",
+              "number": 21,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 25341,
+              "name": "Derrick Luckassen",
+              "number": 23,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 196187,
+              "name": "Alidu Seidu",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 15900,
+              "name": "Abdul Mumin",
+              "number": 6,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 21996,
+              "name": "Rahman Baba",
+              "number": 17,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 411800,
+              "name": "Christopher Baah",
+              "number": 13,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 21010,
+              "name": "Elisha Owusu",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 82090,
+              "name": "Brandon Thomas-Asante",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 337426,
+              "name": "Augustine Boakye",
+              "number": 20,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 199837,
+              "name": "Kamaldeen Sulemana",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 350856,
+              "name": "Ernest Nuamah",
+              "number": 24,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 324,
+          "name": "Carlos Queiroz",
+          "photo": "https://media.api-sports.io/football/coachs/324.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "41",
+        "team": "England",
+        "player": "Declan Rice",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Foul"
+      },
+      {
+        "time": "60",
+        "team": "Ghana",
+        "player": "Iñaki Williams",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Foul"
+      },
+      {
+        "time": "65",
+        "team": "England",
+        "player": "Anthony Gordon",
+        "assist": "Bukayo Saka",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "66",
+        "team": "England",
+        "player": "Djed Spence",
+        "assist": "Nico O'Reilly",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "66",
+        "team": "Ghana",
+        "player": "Iñaki Williams",
+        "assist": "Abdul Fatawu Issahaku",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "67",
+        "team": "Ghana",
+        "player": "Jordan Ayew",
+        "assist": "Prince Kwabena Adu",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "73",
+        "team": "England",
+        "player": "Jude Bellingham",
+        "assist": "Morgan Rogers",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "74",
+        "team": "England",
+        "player": "Elliot Anderson",
+        "assist": "Eberechi Eze",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "83",
+        "team": "England",
+        "player": "Noni Madueke",
+        "assist": "Marcus Rashford",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "87",
+        "team": "Ghana",
+        "player": "Marvin Senaya",
+        "assist": "Kojo Peprah Oppong",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "95",
+        "team": "Ghana",
+        "player": "Prince Kwabena Adu",
+        "assist": "Abdul Rahman Baba",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "England",
+        "players": [
+          {
+            "name": "K. Mainoo",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "N. O&apos;Reilly",
+            "rating": "6.52",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "M. Rogers",
+            "rating": "6.4",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "J. Quansah",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "J. Bellingham",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "N. Madueke",
+            "rating": "6.36",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "J. Trafford",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "B. Saka",
+            "rating": "6.79",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "D. Spence",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "E. Anderson",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "A. Gordon",
+            "rating": "7.04",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "R. James",
+            "rating": "7.27",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "M. Guéhi",
+            "rating": "7.35",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "E. Eze",
+            "rating": "6.58",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "D. Rice",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "E. Konsa",
+            "rating": "7.4",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "T. Chalobah",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "M. Rashford",
+            "rating": "6.07",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "D. Henderson",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "O. Watkins",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "I. Toney",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "J. Stones",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "J. Pickford",
+            "rating": "7.18",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "H. Kane",
+            "rating": "6.34",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "D. Burn",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "J. Henderson",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Ghana",
+        "players": [
+          {
+            "name": "B. Asare",
+            "rating": "6.77",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Caleb Marfo Yirenkyi",
+            "rating": "6.39",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "C. Bonsu Baah",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "K. Peprah Oppong",
+            "rating": "6.52",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "J. Adjetey",
+            "rating": "6.44",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "E. Nuamah",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "A. Fatawu",
+            "rating": "6.56",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "A. Boakye",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "P. Adu",
+            "rating": "6.66",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "K. Sibo",
+            "rating": "6.22",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "M. Senaya",
+            "rating": "6.91",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "A. Seidu",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "K. Sulemana",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "J. Anang",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "E. Owusu",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "A. Semenyo",
+            "rating": "6.21",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "J. Opoku",
+            "rating": "6.92",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "A. Mumin",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "B. Thomas-Asante",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "G. Mensah",
+            "rating": "6.99",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "L. Zigi",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "I. Williams",
+            "rating": "6.13",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "D. Luckassen",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "T. Partey",
+            "rating": "7.21",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "A. Baba",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "J. Ayew",
+            "rating": "6.32",
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m047": {
     "fixtureId": "1489403"
@@ -19328,7 +20320,7 @@
         "comments": ""
       },
       {
-        "time": "64",
+        "time": "63",
         "team": "Portugal",
         "player": "Joao Felix",
         "assist": "Trincao",
