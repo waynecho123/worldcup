@@ -12379,11 +12379,11 @@
         "Yellow Cards": 0,
         "Red Cards": null,
         "Goalkeeper Saves": 1,
-        "Total passes": 725,
+        "Total passes": 726,
         "Passes accurate": 668,
         "Passes %": "92%",
-        "expected_goals": "2.85",
-        "goals_prevented": "-0.16"
+        "expected_goals": "2.30",
+        "goals_prevented": "-0.55"
       },
       "Saudi Arabia": {
         "Shots on Goal": 1,
@@ -12400,10 +12400,10 @@
         "Red Cards": null,
         "Goalkeeper Saves": 5,
         "Total passes": 364,
-        "Passes accurate": 292,
-        "Passes %": "80%",
+        "Passes accurate": 294,
+        "Passes %": "81%",
         "expected_goals": "0.14",
-        "goals_prevented": "-0.16"
+        "goals_prevented": "-0.55"
       }
     },
     "lineups": {
@@ -12425,12 +12425,17 @@
             }
           }
         },
+        "coach": {
+          "id": 5832,
+          "name": "Luis de la Fuente",
+          "photo": "https://media.api-sports.io/football/coachs/5832.png"
+        },
         "formation": "4-3-3",
         "startXI": [
           {
             "player": {
               "id": 47270,
-              "name": "Unai Simón",
+              "name": "U. Simon",
               "number": 23,
               "pos": "G",
               "grid": "1:1"
@@ -12439,7 +12444,7 @@
           {
             "player": {
               "id": 47519,
-              "name": "Pedro Porro",
+              "name": "P. Porro",
               "number": 12,
               "pos": "D",
               "grid": "2:4"
@@ -12448,7 +12453,7 @@
           {
             "player": {
               "id": 396623,
-              "name": "Pau Cubarsí",
+              "name": "P. Cubarsi",
               "number": 22,
               "pos": "D",
               "grid": "2:3"
@@ -12457,7 +12462,7 @@
           {
             "player": {
               "id": 622,
-              "name": "Aymeric Laporte",
+              "name": "A. Laporte",
               "number": 14,
               "pos": "D",
               "grid": "2:2"
@@ -12466,7 +12471,7 @@
           {
             "player": {
               "id": 47380,
-              "name": "Marc Cucurella",
+              "name": "M. Cucurella",
               "number": 24,
               "pos": "D",
               "grid": "2:1"
@@ -12475,7 +12480,7 @@
           {
             "player": {
               "id": 1323,
-              "name": "Dani Olmo",
+              "name": "D. Olmo",
               "number": 10,
               "pos": "M",
               "grid": "3:3"
@@ -12511,7 +12516,7 @@
           {
             "player": {
               "id": 47323,
-              "name": "Mikel Oyarzabal",
+              "name": "M. Oyarzabal",
               "number": 21,
               "pos": "F",
               "grid": "4:2"
@@ -12520,7 +12525,7 @@
           {
             "player": {
               "id": 182219,
-              "name": "Alex Baena",
+              "name": "A. Baena",
               "number": 15,
               "pos": "F",
               "grid": "4:1"
@@ -12530,53 +12535,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 931,
-              "name": "Ferran Torres",
-              "number": 7,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 184226,
-              "name": "Yéremy Pino",
-              "number": 11,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 47311,
-              "name": "Mikel Merino",
-              "number": 6,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 183799,
-              "name": "Nico Williams",
-              "number": 17,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 328,
-              "name": "Fabián Ruiz",
-              "number": 8,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 19465,
-              "name": "David Raya",
+              "name": "D. Raya",
               "number": 1,
               "pos": "G",
               "grid": null
@@ -12585,7 +12545,7 @@
           {
             "player": {
               "id": 182718,
-              "name": "Joan García",
+              "name": "J. Garcia",
               "number": 13,
               "pos": "G",
               "grid": null
@@ -12593,26 +12553,8 @@
           },
           {
             "player": {
-              "id": 295793,
-              "name": "Marc Pubill",
-              "number": 2,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 619,
-              "name": "Eric García",
-              "number": 4,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 753,
-              "name": "Marcos Llorente",
+              "name": "M. Llorente",
               "number": 5,
               "pos": "M",
               "grid": null
@@ -12620,26 +12562,26 @@
           },
           {
             "player": {
-              "id": 563,
-              "name": "Alejandro Grimaldo",
-              "number": 3,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 296667,
-              "name": "Pablo Gavi",
-              "number": 9,
+              "id": 328,
+              "name": "F. Ruiz",
+              "number": 8,
               "pos": "M",
               "grid": null
             }
           },
           {
             "player": {
+              "id": 931,
+              "name": "F. Torres",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 47315,
-              "name": "Martín Zubimendi",
+              "name": "M. Zubimendi",
               "number": 18,
               "pos": "M",
               "grid": null
@@ -12647,8 +12589,71 @@
           },
           {
             "player": {
+              "id": 296667,
+              "name": "Gavi",
+              "number": 9,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 563,
+              "name": "A. Grimaldo",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47348,
+              "name": "B. Iglesias",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47311,
+              "name": "M. Merino",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 619,
+              "name": "E. Garcia",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 184226,
+              "name": "Y. Pino",
+              "number": 11,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 183799,
+              "name": "N. Williams",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 338751,
-              "name": "Víctor Muñoz",
+              "name": "V. Munoz",
               "number": 25,
               "pos": "F",
               "grid": null
@@ -12656,19 +12661,14 @@
           },
           {
             "player": {
-              "id": 47348,
-              "name": "Borja Iglesias",
-              "number": 26,
-              "pos": "F",
+              "id": 295793,
+              "name": "M. Pubill",
+              "number": 2,
+              "pos": "D",
               "grid": null
             }
           }
-        ],
-        "coach": {
-          "id": 5832,
-          "name": "Luis de la Fuente",
-          "photo": "https://media.api-sports.io/football/coachs/5832.png"
-        }
+        ]
       },
       "away": {
         "team": {
@@ -12688,12 +12688,17 @@
             }
           }
         },
+        "coach": {
+          "id": 1106,
+          "name": "Georgios Donis",
+          "photo": "https://media.api-sports.io/football/coachs/1106.png"
+        },
         "formation": "5-4-1",
         "startXI": [
           {
             "player": {
               "id": 44411,
-              "name": "Mohammed Al-Owais",
+              "name": "M. Al Owais",
               "number": 21,
               "pos": "G",
               "grid": "1:1"
@@ -12702,7 +12707,7 @@
           {
             "player": {
               "id": 44594,
-              "name": "Saud Abdulhamid",
+              "name": "S. Abdulhamid",
               "number": 12,
               "pos": "D",
               "grid": "2:5"
@@ -12711,7 +12716,7 @@
           {
             "player": {
               "id": 44475,
-              "name": "Abdulelah Al-Amri",
+              "name": "A. Al Amri",
               "number": 4,
               "pos": "D",
               "grid": "2:4"
@@ -12720,7 +12725,7 @@
           {
             "player": {
               "id": 44507,
-              "name": "Ali Lajami",
+              "name": "A. Lajami",
               "number": 3,
               "pos": "D",
               "grid": "2:3"
@@ -12729,7 +12734,7 @@
           {
             "player": {
               "id": 44362,
-              "name": "Hassan Tambakti",
+              "name": "H. Tambakti",
               "number": 5,
               "pos": "D",
               "grid": "2:2"
@@ -12738,7 +12743,7 @@
           {
             "player": {
               "id": 202381,
-              "name": "Moteb Al-Harbi",
+              "name": "M. Al Harbi",
               "number": 24,
               "pos": "D",
               "grid": "2:1"
@@ -12747,7 +12752,7 @@
           {
             "player": {
               "id": 306380,
-              "name": "Musab Al Juwayr",
+              "name": "M. Al Juwayr",
               "number": 7,
               "pos": "M",
               "grid": "3:4"
@@ -12756,7 +12761,7 @@
           {
             "player": {
               "id": 44315,
-              "name": "Abdullah Al-Khaibari",
+              "name": "A. Al Khaibari",
               "number": 15,
               "pos": "M",
               "grid": "3:3"
@@ -12765,7 +12770,7 @@
           {
             "player": {
               "id": 44339,
-              "name": "Nasser Al-Dawsari",
+              "name": "N. Al Dawsari",
               "number": 6,
               "pos": "M",
               "grid": "3:2"
@@ -12774,7 +12779,7 @@
           {
             "player": {
               "id": 44340,
-              "name": "Salem Al-Dawsari",
+              "name": "S. Al Dawsari",
               "number": 10,
               "pos": "M",
               "grid": "3:1"
@@ -12783,7 +12788,7 @@
           {
             "player": {
               "id": 44324,
-              "name": "Firas Al-Buraikan",
+              "name": "F. Al Buraikan",
               "number": 9,
               "pos": "F",
               "grid": "4:1"
@@ -12793,62 +12798,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 44349,
-              "name": "Mohamed Kanno",
-              "number": 23,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 44382,
-              "name": "Abdullah Al-Hamdan",
-              "number": 19,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 403087,
-              "name": "Mohammed Abu Al-Shamat",
-              "number": 26,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 43953,
-              "name": "Ala'a Al-Hejji",
-              "number": 18,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 44701,
-              "name": "Khalid Al-Ghannam",
-              "number": 17,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 193288,
-              "name": "Nawaf Al-Aqidi",
-              "number": 1,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 44449,
-              "name": "Ahmed Al-Kassar",
+              "name": "A. Al Kassar",
               "number": 22,
               "pos": "G",
               "grid": null
@@ -12856,62 +12807,17 @@
           },
           {
             "player": {
-              "id": 44367,
-              "name": "Ali Majrashi",
-              "number": 2,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 134995,
-              "name": "Nawaf Boushal",
-              "number": 13,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 44335,
-              "name": "Hassan Kadesh",
-              "number": 14,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 304467,
-              "name": "Jehad Thakri",
-              "number": 25,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 269172,
-              "name": "Ziyad Aljohani",
-              "number": 16,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 147812,
-              "name": "Ayman Yahya",
-              "number": 8,
-              "pos": "M",
+              "id": 193288,
+              "name": "N. Al Aqidi",
+              "number": 1,
+              "pos": "G",
               "grid": null
             }
           },
           {
             "player": {
               "id": 44551,
-              "name": "Saleh Al-Shehri",
+              "name": "S. Al Shehri",
               "number": 11,
               "pos": "F",
               "grid": null
@@ -12919,19 +12825,113 @@
           },
           {
             "player": {
+              "id": 44349,
+              "name": "M. Kanno",
+              "number": 23,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 2639,
-              "name": "Sultan Mandash",
+              "name": "S. Mandash",
               "number": 20,
               "pos": "F",
               "grid": null
             }
+          },
+          {
+            "player": {
+              "id": 44367,
+              "name": "A. Majrashi",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44701,
+              "name": "K. Al Ghannam",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44382,
+              "name": "A. Al Hamdan",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 269172,
+              "name": "Z. Al Johani",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44335,
+              "name": "H. Kadesh",
+              "number": 14,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 593759,
+              "name": "A. Hejji",
+              "number": 18,
+              "pos": null,
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 147812,
+              "name": "A. Yahya",
+              "number": 8,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 403087,
+              "name": "M. Abu Al Shamat",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 134995,
+              "name": "N. Boushal",
+              "number": 13,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 543059,
+              "name": "J. Thakri",
+              "number": 25,
+              "pos": null,
+              "grid": null
+            }
           }
-        ],
-        "coach": {
-          "id": 1106,
-          "name": "Georgios Donis",
-          "photo": "https://media.api-sports.io/football/coachs/1106.png"
-        }
+        ]
       }
     },
     "events": [
@@ -13095,7 +13095,7 @@
         "players": [
           {
             "name": "Unai Simón",
-            "rating": "7.2",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
@@ -13107,7 +13107,7 @@
           },
           {
             "name": "Pau Cubarsí",
-            "rating": "7.6",
+            "rating": "7.9",
             "goals": 0,
             "assists": 0
           },
@@ -13131,7 +13131,7 @@
           },
           {
             "name": "Rodri",
-            "rating": "8.3",
+            "rating": "8.2",
             "goals": 0,
             "assists": 0
           },
@@ -13143,25 +13143,25 @@
           },
           {
             "name": "Lamine Yamal",
-            "rating": "8.2",
+            "rating": "8.3",
             "goals": 1,
             "assists": 0
           },
           {
             "name": "Mikel Oyarzabal",
-            "rating": "9.3",
+            "rating": "9.5",
             "goals": 2,
             "assists": 1
           },
           {
             "name": "Alex Baena",
-            "rating": "7",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Ferran Torres",
-            "rating": "6.7",
+            "rating": "6.5",
             "goals": 0,
             "assists": 0
           },
@@ -13185,7 +13185,7 @@
           },
           {
             "name": "Fabián Ruiz",
-            "rating": "7.2",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
@@ -13280,7 +13280,7 @@
           },
           {
             "name": "Hassan Tambakti",
-            "rating": "5.9",
+            "rating": "5.6",
             "goals": 0,
             "assists": 0
           },
@@ -13298,7 +13298,7 @@
           },
           {
             "name": "Abdullah Al-Khaibari",
-            "rating": "6.2",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
@@ -13310,19 +13310,19 @@
           },
           {
             "name": "Salem Al-Dawsari",
-            "rating": "6.6",
+            "rating": "6.7",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Firas Al-Buraikan",
-            "rating": "6.5",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Mohamed Kanno",
-            "rating": "6.5",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
@@ -21828,42 +21828,42 @@
     "statistics": {
       "Uruguay": {
         "Shots on Goal": 2,
-        "Shots off Goal": 7,
-        "Total Shots": 16,
+        "Shots off Goal": 8,
+        "Total Shots": 17,
         "Blocked Shots": 7,
-        "Shots insidebox": 8,
+        "Shots insidebox": 9,
         "Shots outsidebox": 8,
-        "Fouls": 8,
+        "Fouls": 11,
         "Corner Kicks": 11,
         "Offsides": 3,
-        "Ball Possession": "66%",
+        "Ball Possession": "65%",
         "Yellow Cards": 2,
         "Red Cards": null,
-        "Goalkeeper Saves": null,
-        "Total passes": 494,
-        "Passes accurate": 411,
-        "Passes %": "83%",
-        "expected_goals": "2.28",
+        "Goalkeeper Saves": 2,
+        "Total passes": 511,
+        "Passes accurate": 420,
+        "Passes %": "82%",
+        "expected_goals": "2.32",
         "goals_prevented": "-0.35"
       },
       "Cape Verde Islands": {
-        "Shots on Goal": 2,
+        "Shots on Goal": 4,
         "Shots off Goal": 4,
-        "Total Shots": 7,
-        "Blocked Shots": 1,
-        "Shots insidebox": 1,
-        "Shots outsidebox": 6,
+        "Total Shots": 12,
+        "Blocked Shots": 4,
+        "Shots insidebox": 2,
+        "Shots outsidebox": 10,
         "Fouls": 4,
-        "Corner Kicks": 3,
+        "Corner Kicks": 4,
         "Offsides": 0,
-        "Ball Possession": "34%",
-        "Yellow Cards": 1,
+        "Ball Possession": "35%",
+        "Yellow Cards": 2,
         "Red Cards": null,
-        "Goalkeeper Saves": null,
-        "Total passes": 256,
-        "Passes accurate": 190,
+        "Goalkeeper Saves": 0,
+        "Total passes": 278,
+        "Passes accurate": 205,
         "Passes %": "74%",
-        "expected_goals": "0.77",
+        "expected_goals": "0.88",
         "goals_prevented": "-0.35"
       }
     },
@@ -42560,7 +42560,7 @@
         "players": [
           {
             "name": "Mahmud Abunada",
-            "rating": "6.3",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
@@ -42626,7 +42626,7 @@
           },
           {
             "name": "Sultan Al-Brake",
-            "rating": "6.2",
+            "rating": "6.5",
             "goals": 0,
             "assists": 0
           },
