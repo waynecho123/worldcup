@@ -3940,12 +3940,11 @@ function buildStandingsHTML(group) {
 
   // Build table HTML
   var html = '<div class="standings-table">';
-  html += '<div class="st-header"><span class="st-col st-pos">#</span><span class="st-col st-team-info">球队</span><span class="st-col st-stat">赛</span><span class="st-col st-stat">胜</span><span class="st-col st-stat">平</span><span class="st-col st-stat">负</span><span class="st-col st-stat">GF</span><span class="st-col st-stat">GA</span><span class="st-col st-stat">GD</span><span class="st-col st-pts">分</span></div>';
+  html += '<div class="st-header"><span class="st-col st-pos">#</span><span class="st-col st-team-info">球队</span><span class="st-col st-stat">赛</span><span class="st-col st-stat">胜</span><span class="st-col st-stat">平</span><span class="st-col st-stat">负</span><span class="st-col st-pts">分</span></div>';
 
   teams.forEach(function(t, i) {
     var posIcon = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : (i + 1);
     var rowClass = i < 2 ? 'qualify' : (i === 2 ? 'third' : '');
-    var gdClass = t.gd > 0 ? 'color:var(--green)' : t.gd < 0 ? 'color:var(--red)' : '';
     html += '<div class="st-row ' + rowClass + '" onclick="showTeamDetail(\'' + t.id + '\')">';
     html += '<span class="st-col st-pos">' + posIcon + '</span>';
     html += '<span class="st-col st-team-info"><span class="sti-flag">' + t.flag + '</span><span><span class="sti-name">' + t.cn + '</span><span class="sti-rank">FIFA #' + t.rank + '</span></span></span>';
@@ -3953,9 +3952,6 @@ function buildStandingsHTML(group) {
     html += '<span class="st-col st-stat">' + t.won + '</span>';
     html += '<span class="st-col st-stat">' + t.drawn + '</span>';
     html += '<span class="st-col st-stat">' + t.lost + '</span>';
-    html += '<span class="st-col st-stat">' + t.gf + '</span>';
-    html += '<span class="st-col st-stat">' + t.ga + '</span>';
-    html += '<span class="st-col st-stat" style="' + gdClass + '">' + (t.gd > 0 ? '+' : '') + t.gd + '</span>';
     html += '<span class="st-col st-pts">' + t.pts + '</span>';
     html += '</div>';
   });
