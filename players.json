@@ -150,6 +150,13 @@
       "matches": 2
     },
     {
+      "name": "M. Olise",
+      "photo": "https://media.api-sports.io/football/players/19617.png",
+      "team": "France",
+      "assists": 3,
+      "matches": 2
+    },
+    {
       "name": "D. Undav",
       "photo": "https://media.api-sports.io/football/players/26475.png",
       "team": "Germany",
@@ -174,6 +181,13 @@
       "name": "R. Gravenberch",
       "photo": "https://media.api-sports.io/football/players/542.png",
       "team": "Netherlands",
+      "assists": 2,
+      "matches": 2
+    },
+    {
+      "name": "M. Ødegaard",
+      "photo": "https://media.api-sports.io/football/players/37127.png",
+      "team": "Norway",
       "assists": 2,
       "matches": 2
     },
@@ -255,30 +269,16 @@
       "matches": 2
     },
     {
+      "name": "O. Dembélé",
+      "photo": "https://media.api-sports.io/football/players/153.png",
+      "team": "France",
+      "assists": 1,
+      "matches": 2
+    },
+    {
       "name": "Mostafa Zico",
       "photo": "https://media.api-sports.io/football/players/395075.png",
       "team": "Egypt",
-      "assists": 1,
-      "matches": 2
-    },
-    {
-      "name": "N. Brown",
-      "photo": "https://media.api-sports.io/football/players/280074.png",
-      "team": "Germany",
-      "assists": 1,
-      "matches": 2
-    },
-    {
-      "name": "F. Nmecha",
-      "photo": "https://media.api-sports.io/football/players/637.png",
-      "team": "Germany",
-      "assists": 1,
-      "matches": 2
-    },
-    {
-      "name": "Keito Nakamura",
-      "photo": "https://media.api-sports.io/football/players/33321.png",
-      "team": "Japan",
       "assists": 1,
       "matches": 2
     }
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-06-23T10:11:03.674Z"
+  "updatedAt": "2026-06-23T12:06:11.902Z"
 }
