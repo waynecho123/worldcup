@@ -8,6 +8,20 @@
       "matches": 2
     },
     {
+      "name": "Kylian Mbappé",
+      "photo": "https://media.api-sports.io/football/players/278.png",
+      "team": "France",
+      "goals": 4,
+      "matches": 2
+    },
+    {
+      "name": "E. Haaland",
+      "photo": "https://media.api-sports.io/football/players/1100.png",
+      "team": "Norway",
+      "goals": 4,
+      "matches": 2
+    },
+    {
       "name": "D. Undav",
       "photo": "https://media.api-sports.io/football/players/26475.png",
       "team": "Germany",
@@ -106,6 +120,13 @@
       "matches": 2
     },
     {
+      "name": "I. Sarr",
+      "photo": "https://media.api-sports.io/football/players/2218.png",
+      "team": "Senegal",
+      "goals": 2,
+      "matches": 2
+    },
+    {
       "name": "Y. Ayari",
       "photo": "https://media.api-sports.io/football/players/265820.png",
       "team": "Sweden",
@@ -118,27 +139,6 @@
       "team": "Morocco",
       "goals": 2,
       "matches": 2
-    },
-    {
-      "name": "E. Just",
-      "photo": "https://media.api-sports.io/football/players/94333.png",
-      "team": "New Zealand",
-      "goals": 2,
-      "matches": 2
-    },
-    {
-      "name": "E. Haaland",
-      "photo": "https://media.api-sports.io/football/players/1100.png",
-      "team": "Norway",
-      "goals": 2,
-      "matches": 1
-    },
-    {
-      "name": "Kylian Mbappé",
-      "photo": "https://media.api-sports.io/football/players/278.png",
-      "team": "France",
-      "goals": 2,
-      "matches": 1
     }
   ],
   "assists": [
@@ -376,6 +376,13 @@
       "red": 0
     },
     {
+      "name": "R. Zerrouki",
+      "photo": "https://media.api-sports.io/football/players/129047.png",
+      "team": "Algeria",
+      "yellow": 1,
+      "red": 0
+    },
+    {
       "name": "L. Bergvall",
       "photo": "https://media.api-sports.io/football/players/347316.png",
       "team": "Sweden",
@@ -404,26 +411,19 @@
       "red": 0
     },
     {
+      "name": "T. Castagne",
+      "photo": "https://media.api-sports.io/football/players/2920.png",
+      "team": "Belgium",
+      "yellow": 1,
+      "red": 0
+    },
+    {
       "name": "Y. Akgün",
       "photo": "https://media.api-sports.io/football/players/454.png",
       "team": "Türkiye",
       "yellow": 1,
       "red": 0
-    },
-    {
-      "name": "E. Hajisafi",
-      "photo": "https://media.api-sports.io/football/players/2685.png",
-      "team": "Iran",
-      "yellow": 1,
-      "red": 0
-    },
-    {
-      "name": "S. Fofana",
-      "photo": "https://media.api-sports.io/football/players/30807.png",
-      "team": "Ivory Coast",
-      "yellow": 1,
-      "red": 0
     }
   ],
-  "updatedAt": "2026-06-23T08:11:15.431Z"
+  "updatedAt": "2026-06-23T10:06:19.266Z"
 }
