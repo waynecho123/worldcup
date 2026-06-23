@@ -16287,7 +16287,7 @@
           },
           {
             "name": "B. Barcola",
-            "rating": "6.39",
+            "rating": "6.16",
             "goals": 0,
             "assists": 0
           },
@@ -16311,13 +16311,13 @@
           },
           {
             "name": "M. Koné",
-            "rating": "7.12",
+            "rating": "7.19",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "J. Koundé",
-            "rating": "7.45",
+            "rating": "7.44",
             "goals": 0,
             "assists": 0
           },
@@ -16365,7 +16365,7 @@
           },
           {
             "name": "M. Thuram",
-            "rating": "6.6",
+            "rating": "6.4",
             "goals": 0,
             "assists": 0
           },
@@ -16383,7 +16383,7 @@
           },
           {
             "name": "A. Rabiot",
-            "rating": "6.91",
+            "rating": "6.97",
             "goals": 0,
             "assists": 0
           },
@@ -16407,7 +16407,7 @@
           },
           {
             "name": "L. Digne",
-            "rating": "7.15",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           }
@@ -16436,13 +16436,13 @@
           },
           {
             "name": "Z. Ismaeel",
-            "rating": "6.24",
+            "rating": "6.16",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Zayed Tahseen",
-            "rating": "6.04",
+            "rating": "6.05",
             "goals": 0,
             "assists": 0
           },
@@ -16472,7 +16472,7 @@
           },
           {
             "name": "Merchas Doski",
-            "rating": "6.54",
+            "rating": "6.55",
             "goals": 0,
             "assists": 0
           },
@@ -16496,13 +16496,13 @@
           },
           {
             "name": "Hussein Ali",
-            "rating": "5.92",
+            "rating": "5.89",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "A. Sher",
-            "rating": "5.85",
+            "rating": "6.55",
             "goals": 0,
             "assists": 0
           },
@@ -16532,7 +16532,7 @@
           },
           {
             "name": "Ibraheem Bayesh",
-            "rating": "5.63",
+            "rating": "5.65",
             "goals": 0,
             "assists": 0
           },
@@ -16550,7 +16550,7 @@
           },
           {
             "name": "Rebin Solaka",
-            "rating": "5.73",
+            "rating": "6.13",
             "goals": 0,
             "assists": 0
           },
@@ -16774,6 +16774,33 @@
           },
           {
             "player": {
+              "id": 301528,
+              "name": "Andreas Schjelderup",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 18967,
+              "name": "Leo Østigård",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 278133,
+              "name": "Oscar Bobb",
+              "number": 22,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 264378,
               "name": "Sander Tangvik",
               "number": 12,
@@ -16787,15 +16814,6 @@
               "name": "Egil Selvik",
               "number": 13,
               "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 18967,
-              "name": "Leo Østigård",
-              "number": 4,
-              "pos": "D",
               "grid": null
             }
           },
@@ -16832,24 +16850,6 @@
               "name": "Thelo Aasgaard",
               "number": 19,
               "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 278133,
-              "name": "Oscar Bobb",
-              "number": 22,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 301528,
-              "name": "Andreas Schjelderup",
-              "number": 21,
-              "pos": "F",
               "grid": null
             }
           },
@@ -17055,6 +17055,15 @@
           },
           {
             "player": {
+              "id": 237129,
+              "name": "Pape Matar Sarr",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 20566,
               "name": "Yehvann Diouf",
               "number": 1,
@@ -17104,15 +17113,6 @@
               "name": "Iliman Ndiaye",
               "number": 13,
               "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 237129,
-              "name": "Pape Matar Sarr",
-              "number": 17,
-              "pos": "M",
               "grid": null
             }
           },
