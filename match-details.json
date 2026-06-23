@@ -10371,7 +10371,7 @@
         "Yellow Cards": null,
         "Red Cards": null,
         "Goalkeeper Saves": 1,
-        "Total passes": 353,
+        "Total passes": 354,
         "Passes accurate": 284,
         "Passes %": "80%",
         "expected_goals": "0.05",
@@ -10391,10 +10391,10 @@
         "Yellow Cards": null,
         "Red Cards": null,
         "Goalkeeper Saves": 0,
-        "Total passes": 581,
-        "Passes accurate": 520,
-        "Passes %": "90%",
-        "expected_goals": "2.07",
+        "Total passes": 583,
+        "Passes accurate": 521,
+        "Passes %": "89%",
+        "expected_goals": "2.13",
         "goals_prevented": "0.00"
       }
     },
@@ -10912,8 +10912,8 @@
       {
         "time": "4",
         "team": "Japan",
-        "player": "Daichi Kamada",
-        "assist": "Keito Nakamura",
+        "player": "D. Kamada",
+        "assist": "K. Nakamura",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -10921,8 +10921,8 @@
       {
         "time": "31",
         "team": "Japan",
-        "player": "Ayase Ueda",
-        "assist": "Ko Itakura",
+        "player": "A. Ueda",
+        "assist": "K. Itakura",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -10930,8 +10930,8 @@
       {
         "time": "46",
         "team": "Tunisia",
-        "player": "Dylan Bronn",
-        "assist": "Amine Ben Hmida",
+        "player": "D. Bronn",
+        "assist": "M. Ben Hamida",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -10939,17 +10939,17 @@
       {
         "time": "46",
         "team": "Tunisia",
-        "player": "Elias Saad",
-        "assist": "Ismael Gharbi",
+        "player": "E. Saad",
+        "assist": "I. Gharbi",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
       },
       {
-        "time": "64",
+        "time": "65",
         "team": "Tunisia",
-        "player": "Sebastian Tounekti",
-        "assist": "Firas Chaouat",
+        "player": "S. Tounekti",
+        "assist": "F. Chaouat",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -10957,8 +10957,8 @@
       {
         "time": "69",
         "team": "Japan",
-        "player": "Junya Ito",
-        "assist": "Ayase Ueda",
+        "player": "J. Ito",
+        "assist": "A. Ueda",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -10966,8 +10966,8 @@
       {
         "time": "73",
         "team": "Japan",
-        "player": "Daichi Kamada",
-        "assist": "Junnosuke Suzuki",
+        "player": "D. Kamada",
+        "assist": "J. Suzuki",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -10975,8 +10975,8 @@
       {
         "time": "74",
         "team": "Japan",
-        "player": "Ritsu Doan",
-        "assist": "Yukinari Sugawara",
+        "player": "R. Doan",
+        "assist": "Y. Sugawara",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -10984,8 +10984,8 @@
       {
         "time": "79",
         "team": "Japan",
-        "player": "Takehiro Tomiyasu",
-        "assist": "Ayumu Seko",
+        "player": "T. Tomiyasu",
+        "assist": "A. Seko",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -10993,8 +10993,8 @@
       {
         "time": "79",
         "team": "Japan",
-        "player": "Keito Nakamura",
-        "assist": "Yuito Suzuki",
+        "player": "K. Nakamura",
+        "assist": "Y. Suzuki",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -11002,8 +11002,8 @@
       {
         "time": "83",
         "team": "Japan",
-        "player": "Ayase Ueda",
-        "assist": "Kaishu Sano",
+        "player": "A. Ueda",
+        "assist": "K. Sano",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -11011,26 +11011,26 @@
       {
         "time": "84",
         "team": "Japan",
-        "player": "Ayase Ueda",
-        "assist": "Keisuke Goto",
+        "player": "A. Ueda",
+        "assist": "K. Goto",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
       },
       {
-        "time": "90",
+        "time": "90+1",
         "team": "Tunisia",
-        "player": "Ali Abdi",
-        "assist": "Elias Achouri",
+        "player": "A. Abdi",
+        "assist": "E. Achouri",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
       },
       {
-        "time": "90",
+        "time": "90+1",
         "team": "Tunisia",
-        "player": "Ellyes Skhiri",
-        "assist": "Rani Khedira",
+        "player": "E. Skhiri",
+        "assist": "R. Khedira",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -19713,9 +19713,9 @@
       "Ecuador": {
         "Shots on Goal": 15,
         "Shots off Goal": 10,
-        "Total Shots": 28,
-        "Blocked Shots": 3,
-        "Shots insidebox": 22,
+        "Total Shots": 27,
+        "Blocked Shots": 2,
+        "Shots insidebox": 21,
         "Shots outsidebox": 6,
         "Fouls": 7,
         "Corner Kicks": 9,
@@ -19724,11 +19724,11 @@
         "Yellow Cards": 1,
         "Red Cards": null,
         "Goalkeeper Saves": 3,
-        "Total passes": 641,
-        "Passes accurate": 577,
+        "Total passes": 644,
+        "Passes accurate": 581,
         "Passes %": "90%",
-        "expected_goals": "3.06",
-        "goals_prevented": "2.48"
+        "expected_goals": "2.84",
+        "goals_prevented": "2.27"
       },
       "Curaçao": {
         "Shots on Goal": 3,
@@ -19744,11 +19744,11 @@
         "Yellow Cards": 5,
         "Red Cards": null,
         "Goalkeeper Saves": 15,
-        "Total passes": 223,
-        "Passes accurate": 154,
-        "Passes %": "69%",
-        "expected_goals": "0.48",
-        "goals_prevented": "2.48"
+        "Total passes": 227,
+        "Passes accurate": 159,
+        "Passes %": "70%",
+        "expected_goals": "0.50",
+        "goals_prevented": "2.27"
       }
     },
     "lineups": {
