@@ -1,6 +1,13 @@
 {
   "scorers": [
     {
+      "name": "L. Messi",
+      "photo": "https://media.api-sports.io/football/players/154.png",
+      "team": "Argentina",
+      "goals": 5,
+      "matches": 2
+    },
+    {
       "name": "D. Undav",
       "photo": "https://media.api-sports.io/football/players/26475.png",
       "team": "Germany",
@@ -13,13 +20,6 @@
       "team": "Canada",
       "goals": 3,
       "matches": 2
-    },
-    {
-      "name": "L. Messi",
-      "photo": "https://media.api-sports.io/football/players/154.png",
-      "team": "Argentina",
-      "goals": 3,
-      "matches": 1
     },
     {
       "name": "C. Summerville",
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-06-23T04:11:12.332Z"
+  "updatedAt": "2026-06-23T06:06:06.515Z"
 }
