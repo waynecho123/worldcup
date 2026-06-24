@@ -18680,32 +18680,44 @@
     },
     "statistics": {
       "England": {
-        "Blocked Shots": 6,
-        "Free Kicks": 24,
         "Shots on Goal": 3,
         "Shots off Goal": 10,
-        "Offsides": 2,
         "Total Shots": 19,
-        "Yellow Cards": 1,
-        "Corner Kicks": 9,
-        "Goalkeeper Saves": 0,
+        "Blocked Shots": 6,
+        "Shots insidebox": 14,
+        "Shots outsidebox": 5,
         "Fouls": 14,
-        "Red Cards": 0,
-        "Ball Possession": "79%"
+        "Corner Kicks": 9,
+        "Offsides": 2,
+        "Ball Possession": "79%",
+        "Yellow Cards": 1,
+        "Red Cards": null,
+        "Goalkeeper Saves": 0,
+        "Total passes": 633,
+        "Passes accurate": 586,
+        "Passes %": "93%",
+        "expected_goals": "1.36",
+        "goals_prevented": "0.37"
       },
       "Ghana": {
-        "Blocked Shots": 1,
-        "Free Kicks": 13,
         "Shots on Goal": 1,
         "Shots off Goal": 0,
-        "Offsides": 2,
         "Total Shots": 2,
-        "Yellow Cards": 1,
-        "Corner Kicks": 2,
-        "Goalkeeper Saves": 3,
+        "Blocked Shots": 1,
+        "Shots insidebox": 2,
+        "Shots outsidebox": 0,
         "Fouls": 24,
-        "Red Cards": 0,
-        "Ball Possession": "21%"
+        "Corner Kicks": 2,
+        "Offsides": 2,
+        "Ball Possession": "21%",
+        "Yellow Cards": 1,
+        "Red Cards": null,
+        "Goalkeeper Saves": 3,
+        "Total passes": 172,
+        "Passes accurate": 127,
+        "Passes %": "74%",
+        "expected_goals": "0.17",
+        "goals_prevented": "0.37"
       }
     },
     "lineups": {
@@ -18726,6 +18738,11 @@
               "border": "d9f700"
             }
           }
+        },
+        "coach": {
+          "id": 40,
+          "name": "Thomas Tuchel",
+          "photo": "https://media.api-sports.io/football/coachs/40.png"
         },
         "formation": "4-2-3-1",
         "startXI": [
@@ -18832,6 +18849,15 @@
         "substitutes": [
           {
             "player": {
+              "id": 1460,
+              "name": "Bukayo Saka",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 307123,
               "name": "Nico O'Reilly",
               "number": 3,
@@ -18841,9 +18867,27 @@
           },
           {
             "player": {
-              "id": 1460,
-              "name": "Bukayo Saka",
-              "number": 7,
+              "id": 19170,
+              "name": "Morgan Rogers",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19586,
+              "name": "Eberechi Eze",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 909,
+              "name": "Marcus Rashford",
+              "number": 11,
               "pos": "F",
               "grid": null
             }
@@ -18913,27 +18957,9 @@
           },
           {
             "player": {
-              "id": 19586,
-              "name": "Eberechi Eze",
-              "number": 21,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 284322,
               "name": "Kobbie Mainoo",
               "number": 16,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 19170,
-              "name": "Morgan Rogers",
-              "number": 17,
               "pos": "M",
               "grid": null
             }
@@ -18955,22 +18981,8 @@
               "pos": "F",
               "grid": null
             }
-          },
-          {
-            "player": {
-              "id": 909,
-              "name": "Marcus Rashford",
-              "number": 11,
-              "pos": "F",
-              "grid": null
-            }
           }
-        ],
-        "coach": {
-          "id": 40,
-          "name": "Thomas Tuchel",
-          "photo": "https://media.api-sports.io/football/coachs/40.png"
-        }
+        ]
       },
       "away": {
         "team": {
@@ -18989,6 +19001,11 @@
               "border": "f65b96"
             }
           }
+        },
+        "coach": {
+          "id": 324,
+          "name": "Carlos Queiroz",
+          "photo": "https://media.api-sports.io/football/coachs/324.png"
         },
         "formation": "4-1-4-1",
         "startXI": [
@@ -19113,6 +19130,24 @@
           },
           {
             "player": {
+              "id": 404172,
+              "name": "Kojo Peprah Oppong",
+              "number": 21,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 21996,
+              "name": "Rahman Baba",
+              "number": 17,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 3412,
               "name": "Lawrence Ati Zigi",
               "number": 1,
@@ -19126,15 +19161,6 @@
               "name": "Joseph Anang",
               "number": 12,
               "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 404172,
-              "name": "Kojo Peprah Oppong",
-              "number": 21,
-              "pos": "D",
               "grid": null
             }
           },
@@ -19161,15 +19187,6 @@
               "id": 15900,
               "name": "Abdul Mumin",
               "number": 6,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 21996,
-              "name": "Rahman Baba",
-              "number": 17,
               "pos": "D",
               "grid": null
             }
@@ -19228,12 +19245,7 @@
               "grid": null
             }
           }
-        ],
-        "coach": {
-          "id": 324,
-          "name": "Carlos Queiroz",
-          "photo": "https://media.api-sports.io/football/coachs/324.png"
-        }
+        ]
       }
     },
     "events": [
@@ -19328,10 +19340,10 @@
         "comments": ""
       },
       {
-        "time": "95",
+        "time": "90",
         "team": "Ghana",
         "player": "Prince Kwabena Adu",
-        "assist": "Abdul Rahman Baba",
+        "assist": "Rahman Baba",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -19342,158 +19354,158 @@
         "team": "England",
         "players": [
           {
-            "name": "K. Mainoo",
-            "rating": "0",
+            "name": "Jordan Pickford",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "N. O&apos;Reilly",
-            "rating": "6.52",
+            "name": "Reece James",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "M. Rogers",
-            "rating": "6.4",
+            "name": "Ezri Konsa",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "J. Quansah",
-            "rating": "0",
+            "name": "Marc Guéhi",
+            "rating": "8.2",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "J. Bellingham",
-            "rating": "7.2",
+            "name": "Djed Spence",
+            "rating": "7.5",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "N. Madueke",
-            "rating": "6.36",
+            "name": "Elliot Anderson",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "J. Trafford",
-            "rating": "0",
+            "name": "Declan Rice",
+            "rating": "7.5",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "B. Saka",
-            "rating": "6.79",
+            "name": "Noni Madueke",
+            "rating": "6.7",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "D. Spence",
-            "rating": "7.2",
+            "name": "Jude Bellingham",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "E. Anderson",
-            "rating": "7",
+            "name": "Anthony Gordon",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "A. Gordon",
-            "rating": "7.04",
+            "name": "Harry Kane",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "R. James",
-            "rating": "7.27",
+            "name": "Bukayo Saka",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "M. Guéhi",
-            "rating": "7.35",
+            "name": "Nico O'Reilly",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "E. Eze",
-            "rating": "6.58",
+            "name": "Morgan Rogers",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "D. Rice",
-            "rating": "7.7",
+            "name": "Eberechi Eze",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "E. Konsa",
-            "rating": "7.4",
+            "name": "Marcus Rashford",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "T. Chalobah",
-            "rating": "0",
+            "name": "James Trafford",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "M. Rashford",
-            "rating": "6.07",
+            "name": "Dean Henderson",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "D. Henderson",
-            "rating": "0",
+            "name": "John Stones",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "O. Watkins",
-            "rating": "0",
+            "name": "Jarell Quansah",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "I. Toney",
-            "rating": "0",
+            "name": "Dan Burn",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "J. Stones",
-            "rating": "0",
+            "name": "Trevoh Chalobah",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "J. Pickford",
-            "rating": "7.18",
+            "name": "Jordan Henderson",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "H. Kane",
-            "rating": "6.34",
+            "name": "Kobbie Mainoo",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "D. Burn",
-            "rating": "0",
+            "name": "Ivan Toney",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "J. Henderson",
-            "rating": "0",
+            "name": "Ollie Watkins",
+            "rating": null,
             "goals": 0,
             "assists": 0
           }
@@ -19503,158 +19515,158 @@
         "team": "Ghana",
         "players": [
           {
-            "name": "B. Asare",
+            "name": "Benjamin Asare",
             "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "Caleb Marfo Yirenkyi",
-            "rating": "6.39",
+            "name": "Marvin Senaya",
+            "rating": "7.2",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "C. Bonsu Baah",
-            "rating": "0",
+            "name": "Jonas Adjei Adjetey",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "K. Peprah Oppong",
-            "rating": "6.52",
+            "name": "Jerome Opoku",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "J. Adjetey",
-            "rating": "6.44",
+            "name": "Gideon Mensah",
+            "rating": "7.7",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "E. Nuamah",
-            "rating": "0",
+            "name": "Thomas Partey",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "A. Fatawu",
-            "rating": "6.56",
+            "name": "Iñaki Williams",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "A. Boakye",
-            "rating": "0",
+            "name": "Caleb Yirenkyi",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "P. Adu",
-            "rating": "6.66",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "K. Sibo",
+            "name": "Kwasi Sibo",
             "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "M. Senaya",
-            "rating": "6.91",
+            "name": "Antoine Semenyo",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "A. Seidu",
-            "rating": "0",
+            "name": "Jordan Ayew",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "K. Sulemana",
-            "rating": "0",
+            "name": "Abdul Fatawu Issahaku",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "J. Anang",
-            "rating": "0",
+            "name": "Prince Kwabena Adu",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "E. Owusu",
-            "rating": "0",
+            "name": "Kojo Peprah Oppong",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "A. Semenyo",
-            "rating": "6.21",
+            "name": "Rahman Baba",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "J. Opoku",
-            "rating": "7.3",
+            "name": "Lawrence Ati Zigi",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "A. Mumin",
-            "rating": "0",
+            "name": "Joseph Anang",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "B. Thomas-Asante",
-            "rating": "0",
+            "name": "Derrick Luckassen",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "G. Mensah",
-            "rating": "7.4",
+            "name": "Alidu Seidu",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "L. Zigi",
-            "rating": "0",
+            "name": "Abdul Mumin",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "I. Williams",
-            "rating": "6.13",
+            "name": "Christopher Baah",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "D. Luckassen",
-            "rating": "0",
+            "name": "Elisha Owusu",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "T. Partey",
-            "rating": "7.31",
+            "name": "Brandon Thomas-Asante",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "A. Baba",
-            "rating": "6.5",
+            "name": "Augustine Boakye",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "J. Ayew",
-            "rating": "6.02",
+            "name": "Kamaldeen Sulemana",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ernest Nuamah",
+            "rating": null,
             "goals": 0,
             "assists": 0
           }

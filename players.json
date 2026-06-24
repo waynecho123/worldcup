@@ -362,6 +362,13 @@
       "red": 0
     },
     {
+      "name": "C. Pickel",
+      "photo": "https://media.api-sports.io/football/players/48555.png",
+      "team": "Congo DR",
+      "yellow": 1,
+      "red": 0
+    },
+    {
       "name": "K. McLean",
       "photo": "https://media.api-sports.io/football/players/19077.png",
       "team": "Scotland",
@@ -383,9 +390,23 @@
       "red": 0
     },
     {
+      "name": "Bernardo Silva",
+      "photo": "https://media.api-sports.io/football/players/636.png",
+      "team": "Portugal",
+      "yellow": 1,
+      "red": 0
+    },
+    {
       "name": "L. Bergvall",
       "photo": "https://media.api-sports.io/football/players/347316.png",
       "team": "Sweden",
+      "yellow": 1,
+      "red": 0
+    },
+    {
+      "name": "Nélson Semedo",
+      "photo": "https://media.api-sports.io/football/players/130.png",
+      "team": "Portugal",
       "yellow": 1,
       "red": 0
     },
@@ -402,28 +423,7 @@
       "team": "Bosnia & Herzegovina",
       "yellow": 1,
       "red": 0
-    },
-    {
-      "name": "R. Khedira",
-      "photo": "https://media.api-sports.io/football/players/25300.png",
-      "team": "Tunisia",
-      "yellow": 1,
-      "red": 0
-    },
-    {
-      "name": "T. Castagne",
-      "photo": "https://media.api-sports.io/football/players/2920.png",
-      "team": "Belgium",
-      "yellow": 1,
-      "red": 0
-    },
-    {
-      "name": "Y. Akgün",
-      "photo": "https://media.api-sports.io/football/players/454.png",
-      "team": "Türkiye",
-      "yellow": 1,
-      "red": 0
     }
   ],
-  "updatedAt": "2026-06-24T08:11:31.367Z"
+  "updatedAt": "2026-06-24T10:06:42.354Z"
 }
