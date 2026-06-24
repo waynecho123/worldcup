@@ -109,15 +109,12 @@
       <view class="bracket-rounds">
         <view wx:for="{{bracketRounds}}" wx:key="round" class="bracket-col">
           <text class="bracket-round-title">{{item.round}}</text>
-          <view wx:for="{{item.matches}}" wx:for-item="m" wx:key="*this" class="bracket-match">
+          <view wx:for="{{item.matches}}" wx:for-item="m" wx:key="id" class="bracket-match">
             <view class="bm-team">
-              <text class="bm-flag">{{m[0].flag}}</text>
-              <text class="{{m[0].placeholder ? 'bm-tbd' : 'bm-name'}}">{{m[0].cn}}</text>
+              <text class="bm-flag">❓</text>
+              <text class="bm-tbd">待定</text>
             </view>
-            <view class="bm-team">
-              <text class="bm-flag">{{m[1].flag}}</text>
-              <text class="{{m[1].placeholder ? 'bm-tbd' : 'bm-name'}}">{{m[1].cn}}</text>
-            </view>
+            <view class="bm-meta">{{m.id}}  {{m.time}}</view>
           </view>
         </view>
       </view>

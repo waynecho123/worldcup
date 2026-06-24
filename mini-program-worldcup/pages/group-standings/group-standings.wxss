@@ -347,6 +347,12 @@
   color: #999999;
   font-style: italic;
 }
+.bm-meta {
+  font-size: 20rpx;
+  color: #cccccc;
+  text-align: center;
+  margin-top: 2px;
+}
 .bracket-note {
   font-size: 22rpx;
   color: #999999;
