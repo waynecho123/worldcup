@@ -10,7 +10,8 @@ Page({
     standings: null,
     thirdPlace: [],
     totalMatches: 0,
-    tabScrollLeft: 0
+    tabScrollLeft: 0,
+    viewMode: 'groups'  // 'groups' or 'bracket'
   },
 
   onLoad() {
@@ -103,6 +104,64 @@ Page({
   onTeamTap(e) {
     const id = e.currentTarget.dataset.id;
     wx.navigateTo({ url: '/pages/team-detail/team-detail?id=' + id });
+  },
+
+  switchView(e) {
+    var mode = e.currentTarget.dataset.mode;
+    this.setData({ viewMode: mode });
+    if (mode === 'bracket') this.buildBracket();
+  },
+
+  buildBracket() {
+    var that = this;
+    var allStandings = this.data.standings;
+
+    function resolveTeam(placeholder) {
+      if (!placeholder) return { flag: '❓', cn: '?', placeholder: true };
+      if (placeholder.indexOf('W') === 0 || placeholder.indexOf('L') === 0) {
+        return { flag: '❓', cn: placeholder, placeholder: true };
+      }
+      var m = placeholder.match(/^([123])([A-L])/);
+      if (m) {
+        var pos = parseInt(m[1]), grp = m[2];
+        var table = allStandings[grp] || [];
+        if (table.length >= pos) {
+          var t = table[pos - 1];
+          // Check standings module for team data
+          var team = data.TEAMS.find(function(x) { return x.id === t.id; });
+          if (team) return { flag: team.flag, cn: team.cn, id: t.id, pts: t.pts, placeholder: false };
+        }
+        return { flag: '❓', cn: grp+'组第'+pos, placeholder: true };
+      }
+      return { flag: '❓', cn: placeholder, placeholder: true };
+    }
+
+    var rounds = [
+      { round: '32强', matches: [
+        ['1A','3C/D/F/G/H/I'],['1B','3A/E/F/G/H/I'],['1C','3A/B/F/G/H/I'],['1D','3B/C/E/F/H/I'],
+        ['1E','3A/B/C/D/G/I'],['1F','3A/C/D/E/H/I'],['1G','3A/B/D/E/F/H'],['1H','3A/B/C/D/E/G'],
+        ['1I','3A/B/D/E/G/H'],['1J','3A/C/D/E/F/I'],['1K','3A/B/C/E/F/G'],['1L','3A/B/C/D/G/H'],
+        ['2A','2B'],['2C','2D'],['2E','2F'],['2G','2H']
+      ]},
+      { round: '16强', matches: [
+        ['W74','W73'],['W79','W80'],['W76','W75'],['W78','W77'],
+        ['W82','W84'],['W85','W86'],['W88','W87'],['W83','W81']
+      ]},
+      { round: '8强', matches: [['W89','W90'],['W92','W91'],['W94','W93'],['W96','W95']]},
+      { round: '半决赛', matches: [['W97','W98'],['W99','W100']]},
+      { round: '决赛', matches: [['W101','W102']]}
+    ];
+
+    var bracketRounds = rounds.map(function(r) {
+      return {
+        round: r.round,
+        matches: r.matches.map(function(m) {
+          return [resolveTeam(m[0]), resolveTeam(m[1])];
+        })
+      };
+    });
+
+    this.setData({ bracketRounds: bracketRounds });
   },
 
   // Get group matches

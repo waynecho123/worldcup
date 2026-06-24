@@ -275,3 +275,81 @@
   min-width: 36px;
   text-align: center;
 }
+
+/* Sub-tabs */
+.subtabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.subtab {
+  padding: 10px 24px;
+  border-radius: 20px;
+  border: 1px solid #e0e0e0;
+  background: #ffffff;
+  color: #666666;
+  font-size: 26rpx;
+  font-weight: 600;
+}
+.subtab.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+/* Bracket */
+.bracket-scroll {
+  margin-top: 8px;
+}
+.bracket-rounds {
+  display: flex;
+  gap: 14px;
+  padding: 8px 0;
+}
+.bracket-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 200rpx;
+}
+.bracket-round-title {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999999;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.bracket-match {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-height: 64rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.bm-team {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.bm-flag {
+  font-size: 28rpx;
+}
+.bm-name {
+  font-size: 24rpx;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+.bm-tbd {
+  font-size: 24rpx;
+  color: #999999;
+  font-style: italic;
+}
+.bracket-note {
+  font-size: 22rpx;
+  color: #999999;
+  text-align: center;
+  margin-top: 12px;
+}

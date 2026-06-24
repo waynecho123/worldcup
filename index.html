@@ -340,6 +340,18 @@ canvas{max-height:200px}
 .st-row .st-pos{font-weight:700;color:var(--text3)}.sti-flag{font-size:1.4rem}.sti-name{font-weight:700;color:var(--text);display:block}.sti-rank{font-size:.65rem;color:var(--text3)}
 .qual-legend{display:flex;gap:16px;padding:6px 4px;margin-bottom:8px;font-size:.72rem;color:var(--text2)}
 .ql-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px}.ql-item.qualify .ql-dot{background:rgba(0,200,83,.6)}.ql-item.third .ql-dot{background:rgba(240,185,11,.6)}
+.standings-subtabs{display:flex;gap:8px;margin-bottom:14px}
+.standings-subtabs .subtab{padding:8px 22px;border-radius:20px;border:1px solid var(--border);background:var(--surface);color:var(--text2);font-size:.78rem;cursor:pointer;transition:all .15s}
+.standings-subtabs .subtab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+/* Bracket */
+.bracket{overflow-x:auto;padding:10px 0}
+.bracket-rounds{display:flex;gap:20px;min-width:max-content}
+.bracket-col{display:flex;flex-direction:column;justify-content:space-around;min-width:160px}
+.bracket-col h4{text-align:center;font-size:.72rem;color:var(--text3);margin-bottom:8px;white-space:nowrap}
+.bracket-match{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:8px 10px;margin:4px 0;font-size:.68rem;min-height:52px;display:flex;flex-direction:column;gap:2px}
+.bracket-match .bm-team{display:flex;align-items:center;gap:6px}
+.bracket-match .bm-team .bm-flag{font-size:.9rem}.bm-team .bm-name{color:var(--text);font-weight:600}.bm-team .bm-placeholder{color:var(--text3);font-style:italic}
+.bracket-match .bm-team.winner .bm-name{color:var(--green)}
 .tp-row{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--surface2);border-radius:8px;margin-bottom:4px;font-size:.78rem}
 .tp-row.tp-qualify{border-left:3px solid var(--green)}.tp-row.tp-out{opacity:.5}
 .tp-pos{width:24px;font-weight:700;color:var(--text3)}.tp-group{font-size:.7rem;background:var(--surface);padding:2px 6px;border-radius:4px;color:var(--text2)}
@@ -488,8 +500,15 @@ canvas{max-height:200px}
 
 <!-- ========== STANDINGS TAB ========== -->
 <section class="tab-content" id="tab-standings">
-  <div class="group-tabs" id="standingsGroupTabs"></div>
-  <div id="standingsContent"></div>
+  <div class="standings-subtabs">
+    <button class="subtab active" onclick="switchStandingsView('groups')">小组积分</button>
+    <button class="subtab" onclick="switchStandingsView('bracket')">淘汰赛对阵</button>
+  </div>
+  <div id="standingsGroupView">
+    <div class="group-tabs" id="standingsGroupTabs"></div>
+    <div id="standingsContent"></div>
+  </div>
+  <div id="bracketView" style="display:none"></div>
 </section>
 
 <!-- ========== SCHEDULE TAB ========== -->
@@ -4015,6 +4034,96 @@ function buildStandingsHTML(group) {
 function switchStandingsGroup(g) {
   currentStandingsGroup = g;
   renderStandings();
+}
+
+var currentStandingsView = 'groups';
+function switchStandingsView(view) {
+  currentStandingsView = view;
+  document.querySelectorAll('.standings-subtabs .subtab').forEach(function(b, i) {
+    b.classList.toggle('active', (i === 0 && view === 'groups') || (i === 1 && view === 'bracket'));
+  });
+  document.getElementById('standingsGroupView').style.display = view === 'groups' ? '' : 'none';
+  document.getElementById('bracketView').style.display = view === 'bracket' ? '' : 'none';
+  if (view === 'bracket') buildBracket();
+}
+
+function resolveTeam(placeholder) {
+  // placeholder: "1A", "2B", "3C", "W73", "L101", etc.
+  if (!placeholder) return null;
+  // If it's a winner/loser reference, show as TBD
+  if (placeholder.startsWith('W') || placeholder.startsWith('L')) {
+    return { flag: '❓', name: placeholder, cn: placeholder, placeholder: true };
+  }
+  // If it's a group position reference like "1A", "2B", "3CDEFGHI"
+  var m = placeholder.match(/^([123])([A-L])/);
+  if (m) {
+    var pos = parseInt(m[1]);
+    var grp = m[2];
+    // Find team at this position in current standings
+    var table = [];
+    TEAMS.filter(function(t) { return t.grp === grp; }).forEach(function(t) {
+      var rec = { id: t.id, flag: t.flag, cn: t.cn, name: t.name, rank: t.rk, played: 0, won: 0, drawn: 0, lost: 0, gf: 0, ga: 0, pts: 0 };
+      MATCH_SCHEDULE.filter(function(m) { return m.grp === grp && m.stage === 'group' && actualResults[m.id]; }).forEach(function(m) {
+        var r = actualResults[m.id];
+        if (m.home === t.id) { rec.played++; rec.gf += r.homeScore; rec.ga += r.awayScore; if (r.homeScore > r.awayScore) { rec.won++; rec.pts += 3; } else if (r.homeScore < r.awayScore) { rec.lost++; } else { rec.drawn++; rec.pts++; } }
+        if (m.away === t.id) { rec.played++; rec.gf += r.awayScore; rec.ga += r.homeScore; if (r.awayScore > r.homeScore) { rec.won++; rec.pts += 3; } else if (r.awayScore < r.homeScore) { rec.lost++; } else { rec.drawn++; rec.pts++; } }
+      });
+      rec.gd = rec.gf - rec.ga;
+      table.push(rec);
+    });
+    table.sort(function(a, b) { return b.pts - a.pts || b.gd - a.gd || b.gf - a.gf; });
+    if (table.length >= pos) {
+      var t = table[pos - 1];
+      if (t.played > 0) return { flag: t.flag, name: t.cn, cn: t.cn, rank: t.rank, placeholder: false, id: t.id, pts: t.pts };
+      return { flag: '❓', name: pos + grp, cn: grp+'组第'+pos, placeholder: true };
+    }
+  }
+  // Multi-group 3rd place reference
+  if (placeholder.startsWith('3') && placeholder.length > 3) {
+    return { flag: '❓', name: '最佳第3', cn: '最佳小组第3', placeholder: true };
+  }
+  return { flag: '❓', name: placeholder, cn: placeholder, placeholder: true };
+}
+
+var BRACKET_DATA = [
+  { round: '32强', matches: [
+    ['1A','3CDEFGHI'],['1B','3AEFGHI'],['1C','3ABFGHI'],['1D','3BCEFHI'],
+    ['1E','3ABCDGI'],['1F','3ACDEHI'],['1G','3ABDEFH'],['1H','3ABCDEG'],
+    ['1I','3ABDEGH'],['1J','3ACDEFI'],['1K','3ABCEFG'],['1L','3ABCDGH'],
+    ['2A','2B'],['2C','2D'],['2E','2F'],['2G','2H']
+  ]},
+  { round: '16强', matches: [
+    ['W74','W73'],['W79','W80'],['W76','W75'],['W78','W77'],
+    ['W82','W84'],['W85','W86'],['W88','W87'],['W83','W81']
+  ]},
+  { round: '8强', matches: [
+    ['W89','W90'],['W92','W91'],['W94','W93'],['W96','W95']
+  ]},
+  { round: '半决赛', matches: [
+    ['W97','W98'],['W99','W100']
+  ]},
+  { round: '决赛', matches: [
+    ['W101','W102']
+  ]},
+];
+
+function buildBracket() {
+  var el = document.getElementById('bracketView');
+  var html = '<div class="bracket"><div class="bracket-rounds">';
+  BRACKET_DATA.forEach(function(round) {
+    html += '<div class="bracket-col"><h4>' + round.round + '</h4>';
+    round.matches.forEach(function(m) {
+      var h = resolveTeam(m[0]);
+      var a = resolveTeam(m[1]);
+      html += '<div class="bracket-match">';
+      html += '<div class="bm-team' + (h.placeholder ? '' : '') + '"><span class="bm-flag">' + h.flag + '</span><span class="' + (h.placeholder ? 'bm-placeholder' : 'bm-name') + '">' + h.cn + '</span></div>';
+      html += '<div class="bm-team' + (a.placeholder ? '' : '') + '"><span class="bm-flag">' + a.flag + '</span><span class="' + (a.placeholder ? 'bm-placeholder' : 'bm-name') + '">' + a.cn + '</span></div>';
+      html += '</div>';
+    });
+    html += '</div>';
+  });
+  html += '</div></div>';
+  el.innerHTML = html;
 }
 
 function switchGrp(g) {

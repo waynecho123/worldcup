@@ -1,6 +1,15 @@
 <!-- Group Standings - 小组积分榜 -->
 <view class="page bg-dark">
 
+  <!-- Sub-tabs -->
+  <view class="subtabs">
+    <view class="subtab {{viewMode==='groups'?'active':''}}" data-mode="groups" bindtap="switchView">小组积分</view>
+    <view class="subtab {{viewMode==='bracket'?'active':''}}" data-mode="bracket" bindtap="switchView">淘汰赛对阵</view>
+  </view>
+
+  <!-- Group View -->
+  <view wx:if="{{viewMode==='groups'}}">
+
   <!-- Group Navigator -->
   <view class="group-nav">
     <view class="group-nav-arrow" bindtap="onPrevGroup" wx:if="{{activeGroup !== 'A'}}">◀</view>
@@ -92,4 +101,28 @@
       <text class="tp-pts">{{item.pts}}分</text>
     </view>
   </view>
+  </view><!-- end groups view -->
+
+  <!-- Bracket View -->
+  <view wx:if="{{viewMode==='bracket'}}" class="bracket-scroll">
+    <scroll-view scroll-x enhanced show-scrollbar="{{false}}">
+      <view class="bracket-rounds">
+        <view wx:for="{{bracketRounds}}" wx:key="round" class="bracket-col">
+          <text class="bracket-round-title">{{item.round}}</text>
+          <view wx:for="{{item.matches}}" wx:for-item="m" wx:key="*this" class="bracket-match">
+            <view class="bm-team">
+              <text class="bm-flag">{{m[0].flag}}</text>
+              <text class="{{m[0].placeholder ? 'bm-tbd' : 'bm-name'}}">{{m[0].cn}}</text>
+            </view>
+            <view class="bm-team">
+              <text class="bm-flag">{{m[1].flag}}</text>
+              <text class="{{m[1].placeholder ? 'bm-tbd' : 'bm-name'}}">{{m[1].cn}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="bracket-note">* 球队根据当前小组积分榜排名推测，随比赛进行更新</view>
+  </view>
+
 </view>
