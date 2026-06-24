@@ -5797,10 +5797,10 @@ if (isPredictionLocked(todayStr2)) {
 // Today's date matches (using tournament clock)
 // Find next date with unplayed matches (use actualResults, not just time)
 function findNextMatchDate() {
-  var allDates = [...new Set(MATCH_SCHEDULE.filter(function(m){return m.stage==='group'}).map(function(m){return m.date;}))].sort();
+  var allDates = [...new Set(MATCH_SCHEDULE.map(function(m){return m.date;}))].sort();
   for (var i = 0; i < allDates.length; i++) {
     var d = allDates[i];
-    var ms = MATCH_SCHEDULE.filter(function(m){return m.date===d && m.stage==='group'});
+    var ms = MATCH_SCHEDULE.filter(function(m){return m.date===d});
     var allPlayed = ms.every(function(m){return actualResults[m.id]});
     if (!allPlayed) return d;
   }
