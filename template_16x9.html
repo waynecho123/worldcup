@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920, height=1080">
+<title>西班牙 vs 沙特 — 比赛详情</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --card: #f7f8fa;
+    --text: #1a1a1a;
+    --t2: #555555;
+    --t3: #888888;
+    --accent: #2563eb;
+    --es-red: #C60B1E;
+    --ksa-green: #006C35;
+    --radius: 14px;
+    --gap: 24px;
+    --margin: 64px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1920px; height: 1080px;
+    background: var(--bg);
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: var(--text);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Top Bar */
+  .topbar {
+    height: 56px; background: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 22px; font-weight: 600; letter-spacing: 2px;
+  }
+
+  /* Hero */
+  .hero {
+    text-align: center; padding: 28px 0 0;
+  }
+  .hero h1 { font-size: 38px; font-weight: 700; letter-spacing: 4px; }
+  .hero .meta { font-size: 17px; color: var(--t3); margin-top: 8px; }
+
+  /* Three-column grid */
+  .grid {
+    display: flex; gap: var(--gap);
+    margin: 20px var(--margin) 0;
+  }
+  .grid .col { flex: 1; }
+
+  /* Card */
+  .card {
+    background: var(--card); border-radius: var(--radius);
+    padding: 18px 22px 14px;
+  }
+  .card h2 {
+    text-align: center; font-size: 22px; font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  /* Data row */
+  .row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 5px 0; font-size: 16px;
+  }
+  .row .label { color: var(--t3); }
+  .row .value { font-weight: 500; text-align: right; }
+
+  /* Prediction center */
+  .pred-score {
+    text-align: center; margin: 8px 0;
+    font-size: 56px; font-weight: 900; color: var(--accent);
+    letter-spacing: 6px;
+  }
+  .pred-score span { color: var(--t3); font-weight: 300; margin: 0 2px; }
+  .pred-label { text-align: center; font-size: 14px; color: var(--t3); margin-top: -4px; }
+
+  /* Prob bar */
+  .prob-bar-wrap { margin: 14px 0 8px; }
+  .prob-bar {
+    display: flex; height: 6px; border-radius: 3px; overflow: hidden;
+    background: #e5e7eb;
+  }
+  .prob-bar .h { background: #16A34A; }
+  .prob-bar .d { background: #9CA3AF; }
+  .prob-bar .a { background: #DC2626; }
+  .prob-labels {
+    display: flex; justify-content: space-between;
+    font-size: 13px; color: var(--t3); margin-top: 4px;
+  }
+
+  /* Odds row */
+  .odds-row {
+    display: flex; justify-content: space-around; text-align: center;
+    margin: 10px 0; padding: 10px 0; border-top: 1px solid #eee;
+  }
+  .odds-row .odd { font-size: 28px; font-weight: 800; }
+  .odds-row .odd.h { color: #16A34A; }
+  .odds-row .odd.d { color: var(--t3); }
+  .odds-row .odd.a { color: #DC2626; }
+  .odds-row .lbl { font-size: 12px; color: var(--t3); }
+
+  /* Bottom: full-width cards */
+  .bottom {
+    margin: 18px var(--margin) 0;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+
+  /* Lineup */
+  .lineup-grid {
+    display: flex; gap: 60px;
+  }
+  .lineup-half { flex: 1; }
+  .lineup-half h3 { font-size: 20px; margin-bottom: 8px; }
+  .lineup-half .pos { font-size: 15px; line-height: 1.7; color: var(--text); }
+  .lineup-half .note { font-size: 13px; color: var(--t3); margin-top: 6px; }
+
+  /* Analysis */
+  .analysis p { font-size: 15px; line-height: 1.7; color: var(--t2); margin-bottom: 4px; }
+
+  /* Footer */
+  .footer {
+    position: absolute; bottom: 12px; width: 100%; text-align: center;
+    font-size: 13px; color: var(--t3);
+  }
+
+  /* Utility */
+  .es { color: var(--es-red); }
+  .ksa { color: var(--ksa-green); }
+</style>
+</head>
+<body>
+
+<div class="topbar">CHO的世界杯小站</div>
+
+<div class="hero">
+  <h1>西班牙 <span style="color:var(--t3);font-weight:300">vs</span> 沙特</h1>
+  <div class="meta">H组 · 第2轮 &nbsp;&nbsp; 6月22日 00:00 BJT &nbsp;&nbsp; Mercedes-Benz Stadium, Atlanta</div>
+</div>
+
+<div class="grid">
+
+  <!-- Spain Card -->
+  <div class="col">
+    <div class="card">
+      <h2 class="es">西班牙</h2>
+      <div class="row"><span class="label">FIFA 排名</span><span class="value">#2</span></div>
+      <div class="row"><span class="label">历史最佳</span><span class="value">冠军 (2010)</span></div>
+      <div class="row"><span class="label">参赛次数</span><span class="value">16 次</span></div>
+      <div class="row"><span class="label">近期战绩</span><span class="value">2024 欧洲杯冠军</span></div>
+      <div class="row"><span class="label">进攻 / 防守</span><span class="value">88 / 86</span></div>
+      <div class="row"><span class="label">核心球员</span><span class="value">Rodri · Pedri · Yamal</span></div>
+      <div class="row"><span class="label">主教练</span><span class="value">Luis de la Fuente</span></div>
+      <div class="row"><span class="label">战术风格</span><span class="value">进化版传控</span></div>
+      <div class="row"><span class="label">隐患</span><span class="value">高位防线易被反击</span></div>
+      <div class="row"><span class="label">伤停</span><span class="value">Fermín López, Yamal, Nico</span></div>
+    </div>
+  </div>
+
+  <!-- Prediction Card -->
+  <div class="col">
+    <div class="card">
+      <h2 style="color:var(--accent)">AI 赛前预测</h2>
+      <div class="pred-label" style="margin-top:2px">预测比分</div>
+      <div class="pred-score">4<span>:</span>0</div>
+      <div class="prob-bar-wrap">
+        <div class="prob-bar">
+          <div class="h" style="width:86%"></div>
+          <div class="d" style="width:9%"></div>
+          <div class="a" style="width:5%"></div>
+        </div>
+        <div class="prob-labels">
+          <span>主胜 86%</span><span>平 9%</span><span>客胜 5%</span>
+        </div>
+      </div>
+      <div class="row"><span class="label">最可能比分</span><span class="value">4:0 / 3:0 / 5:0</span></div>
+      <div class="odds-row">
+        <div><div class="odd h">1.10</div><div class="lbl">主胜</div></div>
+        <div><div class="odd d">10.00</div><div class="lbl">平局</div></div>
+        <div><div class="odd a">21.00</div><div class="lbl">客胜</div></div>
+      </div>
+      <div class="row"><span class="label">西班牙夺冠</span><span class="value">5.50</span></div>
+      <div class="row"><span class="label">沙特夺冠</span><span class="value">301.00</span></div>
+    </div>
+  </div>
+
+  <!-- Saudi Card -->
+  <div class="col">
+    <div class="card">
+      <h2 class="ksa">沙特</h2>
+      <div class="row"><span class="label">FIFA 排名</span><span class="value">#37</span></div>
+      <div class="row"><span class="label">历史最佳</span><span class="value">16强 (1994)</span></div>
+      <div class="row"><span class="label">参赛次数</span><span class="value">6 次</span></div>
+      <div class="row"><span class="label">近期战绩</span><span class="value">2023 亚洲杯 16 强</span></div>
+      <div class="row"><span class="label">进攻 / 防守</span><span class="value">68 / 66</span></div>
+      <div class="row"><span class="label">核心球员</span><span class="value">Al-Dawsari · Al-Buraikan</span></div>
+      <div class="row"><span class="label">主教练</span><span class="value">Georgios Donis</span></div>
+      <div class="row"><span class="label">战术风格</span><span class="value">高位防线，协同逼抢</span></div>
+      <div class="row"><span class="label">隐患</span><span class="value">0-4 惨败埃及</span></div>
+      <div class="row"><span class="label">伤停</span><span class="value">Al-Aqidi</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom">
+  <!-- Lineups -->
+  <div class="card">
+    <h2>预测首发阵容</h2>
+    <div class="lineup-grid">
+      <div class="lineup-half">
+        <h3 class="es">西班牙 4-3-3</h3>
+        <div class="pos">GK &nbsp; Unai Simón</div>
+        <div class="pos">DEF &nbsp; Llorente · Cubarsí · Laporte · Cucurella</div>
+        <div class="pos">MID &nbsp; Rodri · Fabián Ruiz · Pedri</div>
+        <div class="pos">FWD &nbsp; Ferran Torres · Oyarzabal · Baena</div>
+        <div class="note">替补：Yamal · Nico Williams · Olmo &nbsp;|&nbsp; 费尔明报销</div>
+      </div>
+      <div class="lineup-half">
+        <h3 class="ksa">沙特 4-3-3</h3>
+        <div class="pos">GK &nbsp; Al-Owais</div>
+        <div class="pos">DEF &nbsp; Abdulhamid · Al-Tambakti · Al-Bulaihi · Al-Shahrani</div>
+        <div class="pos">MID &nbsp; Al-Malki · Kanno · Al-Dawsari</div>
+        <div class="pos">FWD &nbsp; Al-Buraikan · Al-Shehri · Ghareeb</div>
+        <div class="note">替补：Al-Aqidi · Radif &nbsp;|&nbsp; 新帅 Donis 4月上任</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Analysis -->
+  <div class="card">
+    <h2 style="color:var(--accent)">AI 综合分析</h2>
+    <div class="analysis">
+      <p>实力差距悬殊 — 西班牙世界第2 vs 沙特第37。欧赔主胜低至 1.10，AI 预测比分 4:0。西班牙 2024 欧洲杯冠军，欧预赛 6 场 21 球仅失 2 球；沙特新帅 Donis 4 月上任，仅 2 个月磨合，0-4 惨败埃及暴露防守漏洞。</p>
+      <p>西班牙进化版传控体系成熟，Rodri + Pedri 中场控制力极强。需注意高位防线被沙特反击的风险（Yamal + 尼科伤愈替补），但预计控球率超 65%，沙特难以组织有效进攻。</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">微信小程序搜索「CHO的世界杯小站」· AI预测 · 实时比分 · 赛后复盘 · 球员数据</div>
+
+</body>
+</html>

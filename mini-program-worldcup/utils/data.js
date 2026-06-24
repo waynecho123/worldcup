@@ -785,7 +785,49 @@ const MATCH_SCHEDULE = [
   {id:"m069",date:"2026-06-28",time:"07:30",home:"COL",away:"POR",grp:"K",stage:"group",matchday:3,venue:"Hard Rock Stadium, Miami"},
   {id:"m070",date:"2026-06-28",time:"07:30",home:"COD",away:"UZB",grp:"K",stage:"group",matchday:3,venue:"Mercedes-Benz Stadium, Atlanta"},
   {id:"m071",date:"2026-06-28",time:"10:00",home:"ALG",away:"AUT",grp:"J",stage:"group",matchday:3,venue:"Arrowhead Stadium, Kansas City"},
-  {id:"m072",date:"2026-06-28",time:"10:00",home:"JOR",away:"ARG",grp:"J",stage:"group",matchday:3,venue:"AT&T Stadium, Dallas"}
+  {id:"m072",date:"2026-06-28",time:"10:00",home:"JOR",away:"ARG",grp:"J",stage:"group",matchday:3,venue:"AT&T Stadium, Dallas"},
+
+  // ===== ROUND OF 32 (6/29 - 7/3) =====
+  {id:"m073",date:"2026-06-29",time:"23:00",home:"1A",away:"3CDEFGHI",grp:"KO",stage:"r32",venue:"MetLife Stadium, East Rutherford"},
+  {id:"m074",date:"2026-06-30",time:"02:00",home:"1B",away:"3AEFGHI",grp:"KO",stage:"r32",venue:"AT&T Stadium, Dallas"},
+  {id:"m075",date:"2026-06-30",time:"05:00",home:"1C",away:"3ABFGHI",grp:"KO",stage:"r32",venue:"Mercedes-Benz Stadium, Atlanta"},
+  {id:"m076",date:"2026-06-30",time:"08:00",home:"1D",away:"3BCEFHI",grp:"KO",stage:"r32",venue:"SoFi Stadium, Los Angeles"},
+  {id:"m077",date:"2026-06-30",time:"23:00",home:"1E",away:"3ABCDGI",grp:"KO",stage:"r32",venue:"Arrowhead Stadium, Kansas City"},
+  {id:"m078",date:"2026-07-01",time:"02:00",home:"1F",away:"3ACDEHI",grp:"KO",stage:"r32",venue:"Gillette Stadium, Boston"},
+  {id:"m079",date:"2026-07-01",time:"05:00",home:"1G",away:"3ABDEFH",grp:"KO",stage:"r32",venue:"BC Place, Vancouver"},
+  {id:"m080",date:"2026-07-01",time:"08:00",home:"1H",away:"3ABCDEG",grp:"KO",stage:"r32",venue:"Lumen Field, Seattle"},
+  {id:"m081",date:"2026-07-01",time:"23:00",home:"1I",away:"3ABDEGH",grp:"KO",stage:"r32",venue:"Levi's Stadium, San Francisco"},
+  {id:"m082",date:"2026-07-02",time:"02:00",home:"1J",away:"3ACDEFI",grp:"KO",stage:"r32",venue:"Hard Rock Stadium, Miami"},
+  {id:"m083",date:"2026-07-02",time:"05:00",home:"1K",away:"3ABCEFG",grp:"KO",stage:"r32",venue:"NRG Stadium, Houston"},
+  {id:"m084",date:"2026-07-02",time:"08:00",home:"1L",away:"3ABCDGH",grp:"KO",stage:"r32",venue:"Lincoln Financial Field, Philadelphia"},
+  {id:"m085",date:"2026-07-02",time:"23:00",home:"2A",away:"2B",grp:"KO",stage:"r32",venue:"MetLife Stadium, East Rutherford"},
+  {id:"m086",date:"2026-07-03",time:"02:00",home:"2C",away:"2D",grp:"KO",stage:"r32",venue:"AT&T Stadium, Dallas"},
+  {id:"m087",date:"2026-07-03",time:"05:00",home:"2E",away:"2F",grp:"KO",stage:"r32",venue:"Mercedes-Benz Stadium, Atlanta"},
+  {id:"m088",date:"2026-07-03",time:"08:00",home:"2G",away:"2H",grp:"KO",stage:"r32",venue:"SoFi Stadium, Los Angeles"},
+
+  // ===== ROUND OF 16 (7/4 - 7/6) =====
+  {id:"m089",date:"2026-07-04",time:"23:00",home:"W74",away:"W73",grp:"KO",stage:"r16",venue:"Arrowhead Stadium, Kansas City"},
+  {id:"m090",date:"2026-07-05",time:"02:00",home:"W79",away:"W80",grp:"KO",stage:"r16",venue:"Gillette Stadium, Boston"},
+  {id:"m091",date:"2026-07-05",time:"05:00",home:"W76",away:"W75",grp:"KO",stage:"r16",venue:"BC Place, Vancouver"},
+  {id:"m092",date:"2026-07-05",time:"08:00",home:"W78",away:"W77",grp:"KO",stage:"r16",venue:"Lumen Field, Seattle"},
+  {id:"m093",date:"2026-07-05",time:"23:00",home:"W82",away:"W84",grp:"KO",stage:"r16",venue:"Levi's Stadium, San Francisco"},
+  {id:"m094",date:"2026-07-06",time:"02:00",home:"W85",away:"W86",grp:"KO",stage:"r16",venue:"Hard Rock Stadium, Miami"},
+  {id:"m095",date:"2026-07-06",time:"05:00",home:"W88",away:"W87",grp:"KO",stage:"r16",venue:"NRG Stadium, Houston"},
+  {id:"m096",date:"2026-07-06",time:"08:00",home:"W83",away:"W81",grp:"KO",stage:"r16",venue:"Lincoln Financial Field, Philadelphia"},
+
+  // ===== QUARTER-FINALS (7/8 - 7/11) =====
+  {id:"m097",date:"2026-07-08",time:"23:00",home:"W89",away:"W90",grp:"KO",stage:"qf",venue:"MetLife Stadium, East Rutherford"},
+  {id:"m098",date:"2026-07-09",time:"23:00",home:"W92",away:"W91",grp:"KO",stage:"qf",venue:"AT&T Stadium, Dallas"},
+  {id:"m099",date:"2026-07-10",time:"23:00",home:"W94",away:"W93",grp:"KO",stage:"qf",venue:"Mercedes-Benz Stadium, Atlanta"},
+  {id:"m100",date:"2026-07-11",time:"23:00",home:"W96",away:"W95",grp:"KO",stage:"qf",venue:"SoFi Stadium, Los Angeles"},
+
+  // ===== SEMI-FINALS (7/14 - 7/15) =====
+  {id:"m101",date:"2026-07-14",time:"23:00",home:"W97",away:"W98",grp:"KO",stage:"sf",venue:"AT&T Stadium, Dallas"},
+  {id:"m102",date:"2026-07-15",time:"23:00",home:"W99",away:"W100",grp:"KO",stage:"sf",venue:"Mercedes-Benz Stadium, Atlanta"},
+
+  // ===== FINAL (7/18 - 7/19) =====
+  {id:"m103",date:"2026-07-18",time:"23:00",home:"L101",away:"L102",grp:"KO",stage:"tpp",venue:"MetLife Stadium, East Rutherford"},
+  {id:"m104",date:"2026-07-19",time:"23:00",home:"W101",away:"W102",grp:"KO",stage:"final",venue:"MetLife Stadium, East Rutherford"}
 ];
 function cnName(englishName) {
   var clean = englishName.replace('(C)','').trim();

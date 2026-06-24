@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1440">
+<title>赛后复盘 — 巴西 3:0 海地</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --card: #f7f8fa;
+    --text: #1a1a1a;
+    --t2: #666666;
+    --t3: #999999;
+    --accent: #2563eb;
+    --red: #DC2626;
+    --green: #16A34A;
+    --gold: #D97706;
+    --home-color: #009C3B;
+    --away-color: #00209F;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1440px;
+    background: var(--bg);
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: var(--text);
+    overflow: hidden;
+    padding: 0 64px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center; padding: 36px 0 0;
+  }
+  .header .date {
+    font-size: 20px; color: var(--t3);
+  }
+
+  /* Team badges */
+  .teams {
+    display: flex; align-items: center; justify-content: center;
+    gap: 40px; margin: 30px 0 0;
+  }
+  .badge {
+    width: 180px; height: 110px; border-radius: 16px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    color: #fff;
+  }
+  .badge .code { font-size: 42px; font-weight: 900; }
+  .badge .name { font-size: 22px; margin-top: 4px; }
+  .badge.home { background: var(--home-color); }
+  .badge.away { background: var(--away-color); }
+  .badge.winner {
+    box-shadow: 0 0 0 3px var(--accent);
+  }
+  .teams .vs { font-size: 22px; color: var(--t3); }
+
+  /* Score */
+  .score-area {
+    text-align: center; margin: 28px 0 0;
+  }
+  .score-area .score {
+    font-size: 120px; font-weight: 900; letter-spacing: 10px;
+  }
+  .score-area .score .h { color: var(--accent); }
+  .score-area .score .sep { color: var(--t3); font-weight: 300; margin: 0 8px; }
+  .score-area .score .a { color: var(--text); }
+  .score-area .result {
+    font-size: 22px; color: var(--t2); margin-top: 4px;
+  }
+
+  /* Timeline */
+  .timeline {
+    margin: 30px 0 0; padding-left: 24px;
+    border-left: 2px solid #e5e7eb;
+  }
+  .timeline h3 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+  .tl-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 4px 0; font-size: 18px; position: relative;
+  }
+  .tl-item::before {
+    content: ''; width: 8px; height: 8px; border-radius: 50%;
+    position: absolute; left: -29px;
+  }
+  .tl-item.goal::before { background: var(--accent); }
+  .tl-item.red::before { background: var(--red); }
+  .tl-item .time { color: var(--t3); min-width: 44px; }
+  .tl-item .tag {
+    padding: 1px 8px; border-radius: 4px;
+    color: #fff; font-size: 13px; font-weight: 700;
+  }
+  .tl-item .tag.home { background: var(--home-color); }
+  .tl-item .tag.away { background: var(--away-color); }
+
+  /* Divider */
+  hr { border: none; border-top: 1px solid #f0f0f0; margin: 28px 0; }
+
+  /* Prediction */
+  .pred-section { text-align: center; }
+  .pred-section h3 { font-size: 20px; color: var(--t2); font-weight: 500; }
+  .pred-section .pred-score {
+    font-size: 44px; font-weight: 700; color: var(--t2); margin: 8px 0;
+  }
+  .pred-section .badge-acc {
+    display: inline-block; padding: 6px 28px; border-radius: 20px;
+    font-size: 18px; font-weight: 600;
+  }
+  .pred-section .badge-acc.exact { background: #DCFCE7; color: var(--green); }
+  .pred-section .badge-acc.correct { background: #FEF3C7; color: var(--gold); }
+
+  /* Insight */
+  .insight {
+    text-align: center; margin-top: 24px;
+    font-size: 20px; color: var(--text); line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="date">6月20日 08:30 BJT · 小组赛第2轮</div>
+</div>
+
+<div class="teams">
+  <div class="badge home winner">
+    <div class="code">BRA</div>
+    <div class="name">巴西</div>
+  </div>
+  <div class="vs">VS</div>
+  <div class="badge away">
+    <div class="code">HAI</div>
+    <div class="name">海地</div>
+  </div>
+</div>
+
+<div class="score-area">
+  <div class="score">
+    <span class="h">3</span><span class="sep">:</span><span class="a">0</span>
+  </div>
+  <div class="result">最终比分 · 巴西胜</div>
+</div>
+
+<div class="timeline">
+  <h3>比赛进程</h3>
+  <div class="tl-item goal">
+    <span class="time">23'</span><span>G &nbsp; Cunha</span>
+    <span class="tag home">BRA</span>
+  </div>
+  <div class="tl-item goal">
+    <span class="time">36'</span><span>G &nbsp; Cunha</span>
+    <span class="tag home">BRA</span>
+  </div>
+  <div class="tl-item goal">
+    <span class="time">45+3'</span><span>G &nbsp; Vinicius Jr</span>
+    <span class="tag home">BRA</span>
+  </div>
+</div>
+
+<hr>
+
+<div class="pred-section">
+  <h3>AI 赛前预测</h3>
+  <div class="pred-score">3 : 0</div>
+  <div class="badge-acc exact">精准命中</div>
+</div>
+
+<div class="insight">
+  库尼亚梅开二度 + 维尼修斯破门<br>巴西 3-0 轻取海地，AI 完美预测
+</div>
+
+</body>
+</html>
