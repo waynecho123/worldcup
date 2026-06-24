@@ -233,5 +233,10 @@
     "homeScore": 0,
     "awayScore": 1,
     "recordedAt": "2026-06-24T01:00:53.267Z"
+  },
+  "m048": {
+    "homeScore": 1,
+    "awayScore": 0,
+    "recordedAt": "2026-06-24T04:05:51.066Z"
   }
 }
