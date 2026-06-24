@@ -178,16 +178,16 @@
       "matches": 2
     },
     {
-      "name": "R. Gravenberch",
-      "photo": "https://media.api-sports.io/football/players/542.png",
-      "team": "Netherlands",
+      "name": "M. Ødegaard",
+      "photo": "https://media.api-sports.io/football/players/37127.png",
+      "team": "Norway",
       "assists": 2,
       "matches": 2
     },
     {
-      "name": "M. Ødegaard",
-      "photo": "https://media.api-sports.io/football/players/37127.png",
-      "team": "Norway",
+      "name": "R. Gravenberch",
+      "photo": "https://media.api-sports.io/football/players/542.png",
+      "team": "Netherlands",
       "assists": 2,
       "matches": 2
     },
@@ -206,16 +206,16 @@
       "matches": 2
     },
     {
-      "name": "D. Dumfries",
-      "photo": "https://media.api-sports.io/football/players/226.png",
-      "team": "Netherlands",
+      "name": "C. Wood",
+      "photo": "https://media.api-sports.io/football/players/18931.png",
+      "team": "New Zealand",
       "assists": 2,
       "matches": 2
     },
     {
-      "name": "C. Wood",
-      "photo": "https://media.api-sports.io/football/players/18931.png",
-      "team": "New Zealand",
+      "name": "D. Dumfries",
+      "photo": "https://media.api-sports.io/football/players/226.png",
+      "team": "Netherlands",
       "assists": 2,
       "matches": 2
     },
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-06-24T10:11:38.920Z"
+  "updatedAt": "2026-06-24T12:06:34.016Z"
 }
