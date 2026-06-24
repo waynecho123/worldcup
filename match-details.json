@@ -19675,44 +19675,44 @@
     },
     "statistics": {
       "Panama": {
-        "Shots on Goal": 0,
-        "Shots off Goal": 0,
-        "Total Shots": 1,
-        "Blocked Shots": 1,
-        "Shots insidebox": 1,
-        "Shots outsidebox": 0,
-        "Fouls": 9,
-        "Corner Kicks": 0,
-        "Offsides": null,
-        "Ball Possession": "36%",
-        "Yellow Cards": null,
+        "Shots on Goal": 1,
+        "Shots off Goal": 5,
+        "Total Shots": 8,
+        "Blocked Shots": 2,
+        "Shots insidebox": 6,
+        "Shots outsidebox": 2,
+        "Fouls": 19,
+        "Corner Kicks": 7,
+        "Offsides": 1,
+        "Ball Possession": "42%",
+        "Yellow Cards": 1,
         "Red Cards": null,
         "Goalkeeper Saves": 1,
-        "Total passes": 172,
-        "Passes accurate": 136,
+        "Total passes": 352,
+        "Passes accurate": 277,
         "Passes %": "79%",
-        "expected_goals": "0.06",
-        "goals_prevented": "0.00"
+        "expected_goals": "0.55",
+        "goals_prevented": "0.04"
       },
       "Croatia": {
-        "Shots on Goal": 1,
-        "Shots off Goal": 1,
-        "Total Shots": 2,
-        "Blocked Shots": 0,
-        "Shots insidebox": 1,
-        "Shots outsidebox": 1,
-        "Fouls": 5,
-        "Corner Kicks": 1,
-        "Offsides": null,
-        "Ball Possession": "64%",
-        "Yellow Cards": null,
+        "Shots on Goal": 2,
+        "Shots off Goal": 3,
+        "Total Shots": 6,
+        "Blocked Shots": 1,
+        "Shots insidebox": 4,
+        "Shots outsidebox": 2,
+        "Fouls": 12,
+        "Corner Kicks": 2,
+        "Offsides": 2,
+        "Ball Possession": "58%",
+        "Yellow Cards": 1,
         "Red Cards": null,
-        "Goalkeeper Saves": 0,
-        "Total passes": 310,
-        "Passes accurate": 272,
-        "Passes %": "88%",
-        "expected_goals": "0.05",
-        "goals_prevented": "0.00"
+        "Goalkeeper Saves": 1,
+        "Total passes": 512,
+        "Passes accurate": 432,
+        "Passes %": "84%",
+        "expected_goals": "1.65",
+        "goals_prevented": "0.04"
       }
     },
     "lineups": {
@@ -19733,6 +19733,11 @@
               "border": "565f71"
             }
           }
+        },
+        "coach": {
+          "id": 1552,
+          "name": "Thomas Christiansen",
+          "photo": "https://media.api-sports.io/football/coachs/1552.png"
         },
         "formation": "5-4-1",
         "startXI": [
@@ -19839,6 +19844,42 @@
         "substitutes": [
           {
             "player": {
+              "id": 51648,
+              "name": "Cecilio Waterman",
+              "number": 18,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 292396,
+              "name": "Azarias Londoño",
+              "number": 24,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2970,
+              "name": "Éric Davis",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 57910,
+              "name": "Tomás Rodríguez",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 2967,
               "name": "Luis Mejía",
               "number": 1,
@@ -19869,15 +19910,6 @@
               "id": 328148,
               "name": "Edgardo Fariña",
               "number": 5,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 2970,
-              "name": "Éric Davis",
-              "number": 15,
               "pos": "D",
               "grid": null
             }
@@ -19944,40 +19976,8 @@
               "pos": "F",
               "grid": null
             }
-          },
-          {
-            "player": {
-              "id": 292396,
-              "name": "Azarias Londoño",
-              "number": 24,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 57910,
-              "name": "Tomás Rodríguez",
-              "number": 9,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 51648,
-              "name": "Cecilio Waterman",
-              "number": 18,
-              "pos": "F",
-              "grid": null
-            }
           }
-        ],
-        "coach": {
-          "id": 1552,
-          "name": "Thomas Christiansen",
-          "photo": "https://media.api-sports.io/football/coachs/1552.png"
-        }
+        ]
       },
       "away": {
         "team": {
@@ -19996,6 +19996,11 @@
               "border": "e3d243"
             }
           }
+        },
+        "coach": {
+          "id": 115,
+          "name": "Zlatko Dalic",
+          "photo": "https://media.api-sports.io/football/coachs/115.png"
         },
         "formation": "4-2-3-1",
         "startXI": [
@@ -20102,6 +20107,51 @@
         "substitutes": [
           {
             "player": {
+              "id": 726,
+              "name": "Andrej Kramarić",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 46746,
+              "name": "Ante Budimir",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 348205,
+              "name": "Petar Sučić",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 7332,
+              "name": "Luka Sučić",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2763,
+              "name": "Mario Pašalić",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 14268,
               "name": "Ivor Pandur",
               "number": 12,
@@ -20174,55 +20224,10 @@
           },
           {
             "player": {
-              "id": 2763,
-              "name": "Mario Pašalić",
-              "number": 15,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 348205,
-              "name": "Petar Sučić",
-              "number": 17,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 284869,
               "name": "Toni Fruk",
               "number": 19,
               "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 7332,
-              "name": "Luka Sučić",
-              "number": 21,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 726,
-              "name": "Andrej Kramarić",
-              "number": 9,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 46746,
-              "name": "Ante Budimir",
-              "number": 11,
-              "pos": "F",
               "grid": null
             }
           },
@@ -20235,12 +20240,7 @@
               "grid": null
             }
           }
-        ],
-        "coach": {
-          "id": 115,
-          "name": "Zlatko Dalic",
-          "photo": "https://media.api-sports.io/football/coachs/115.png"
-        }
+        ]
       }
     },
     "events": [
@@ -20359,7 +20359,7 @@
         "players": [
           {
             "name": "Orlando Mosquera",
-            "rating": "6.6",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
@@ -20371,13 +20371,13 @@
           },
           {
             "name": "Jiovany Ramos",
-            "rating": "6.9",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "José Córdoba",
-            "rating": "6.7",
+            "rating": "6.5",
             "goals": 0,
             "assists": 0
           },
@@ -20389,13 +20389,13 @@
           },
           {
             "name": "César Blackman",
-            "rating": "6.9",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Cristian Martínez",
-            "rating": "6.6",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
@@ -20407,19 +20407,43 @@
           },
           {
             "name": "Yoel Bárcenas",
-            "rating": "7",
+            "rating": "7.5",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "José Luis Rodríguez",
-            "rating": "6.2",
+            "rating": "6",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "José Fajardo",
             "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Cecilio Waterman",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Azarias Londoño",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Éric Davis",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tomás Rodríguez",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
@@ -20443,12 +20467,6 @@
           },
           {
             "name": "Edgardo Fariña",
-            "rating": null,
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Éric Davis",
             "rating": null,
             "goals": 0,
             "assists": 0
@@ -20494,24 +20512,6 @@
             "rating": null,
             "goals": 0,
             "assists": 0
-          },
-          {
-            "name": "Azarias Londoño",
-            "rating": null,
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Tomás Rodríguez",
-            "rating": null,
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Cecilio Waterman",
-            "rating": null,
-            "goals": 0,
-            "assists": 0
           }
         ]
       },
@@ -20520,15 +20520,15 @@
         "players": [
           {
             "name": "Dominik Livaković",
-            "rating": "6.7",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Josip Stanišić",
-            "rating": "6.7",
+            "rating": "7.6",
             "goals": 0,
-            "assists": 0
+            "assists": 1
           },
           {
             "name": "Josip Šutalo",
@@ -20538,49 +20538,79 @@
           },
           {
             "name": "Marin Pongračić",
-            "rating": "6.6",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Joško Gvardiol",
-            "rating": "6.6",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Luka Modrić",
             "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
+            "name": "Joško Gvardiol",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Luka Modrić",
+            "rating": "7.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
             "name": "Mateo Kovačić",
-            "rating": "6.3",
+            "rating": "6.5",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Marco Pašalić",
-            "rating": "6.6",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Martin Baturina",
-            "rating": "6.6",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Ivan Perišić",
-            "rating": "6.7",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Petar Musa",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Andrej Kramarić",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ante Budimir",
+            "rating": "7.6",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Petar Sučić",
             "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Luka Sučić",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mario Pašalić",
+            "rating": "6.7",
             "goals": 0,
             "assists": 0
           },
@@ -20633,37 +20663,7 @@
             "assists": 0
           },
           {
-            "name": "Mario Pašalić",
-            "rating": null,
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Petar Sučić",
-            "rating": null,
-            "goals": 0,
-            "assists": 0
-          },
-          {
             "name": "Toni Fruk",
-            "rating": null,
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Luka Sučić",
-            "rating": null,
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Andrej Kramarić",
-            "rating": null,
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Ante Budimir",
             "rating": null,
             "goals": 0,
             "assists": 0

@@ -1,30 +1,4 @@
 {
-  "BEL": [
-    {
-      "player": "Z. Debast",
-      "type": "Missing Fixture",
-      "reason": "Leg Injury",
-      "fixture": "2026-06-15T19:00:00+00:00"
-    },
-    {
-      "player": "Z. Debast",
-      "type": "Missing Fixture",
-      "reason": "Leg Injury",
-      "fixture": "2026-06-21T19:00:00+00:00"
-    },
-    {
-      "player": "J. Doku",
-      "type": "Missing Fixture",
-      "reason": "Illness",
-      "fixture": "2026-06-27T03:00:00+00:00"
-    },
-    {
-      "player": "N. Ngoy",
-      "type": "Missing Fixture",
-      "reason": "Red Card",
-      "fixture": "2026-06-27T03:00:00+00:00"
-    }
-  ],
   "BRA": [
     {
       "player": "Neymar",
@@ -43,6 +17,44 @@
       "type": "Missing Fixture",
       "reason": "Calf Injury",
       "fixture": "2026-06-24T22:00:00+00:00"
+    },
+    {
+      "player": "Raphinha",
+      "type": "Missing Fixture",
+      "reason": "Hamstring muscle injury",
+      "fixture": "2026-06-24T22:00:00+00:00"
+    }
+  ],
+  "BEL": [
+    {
+      "player": "Z. Debast",
+      "type": "Missing Fixture",
+      "reason": "Leg Injury",
+      "fixture": "2026-06-15T19:00:00+00:00"
+    },
+    {
+      "player": "Z. Debast",
+      "type": "Missing Fixture",
+      "reason": "Leg Injury",
+      "fixture": "2026-06-21T19:00:00+00:00"
+    },
+    {
+      "player": "Z. Debast",
+      "type": "Missing Fixture",
+      "reason": "Leg Injury",
+      "fixture": "2026-06-27T03:00:00+00:00"
+    },
+    {
+      "player": "J. Doku",
+      "type": "Missing Fixture",
+      "reason": "Illness",
+      "fixture": "2026-06-27T03:00:00+00:00"
+    },
+    {
+      "player": "N. Ngoy",
+      "type": "Missing Fixture",
+      "reason": "Red Card",
+      "fixture": "2026-06-27T03:00:00+00:00"
     }
   ],
   "URU": [
@@ -53,10 +65,22 @@
       "fixture": "2026-06-21T22:00:00+00:00"
     },
     {
+      "player": "G. de Arrascaeta",
+      "type": "Missing Fixture",
+      "reason": "Muscle bruise",
+      "fixture": "2026-06-27T00:00:00+00:00"
+    },
+    {
       "player": "R. Araújo",
       "type": "Missing Fixture",
       "reason": "Muscle bruise",
       "fixture": "2026-06-21T22:00:00+00:00"
+    },
+    {
+      "player": "R. Araújo",
+      "type": "Missing Fixture",
+      "reason": "Muscle bruise",
+      "fixture": "2026-06-27T00:00:00+00:00"
     }
   ],
   "JPN": [
@@ -71,6 +95,14 @@
       "type": "Missing Fixture",
       "reason": "Illness",
       "fixture": "2026-06-25T23:00:00+00:00"
+    }
+  ],
+  "SEN": [
+    {
+      "player": "É. Mendy",
+      "type": "Missing Fixture",
+      "reason": "Twisted knee",
+      "fixture": "2026-06-26T19:00:00+00:00"
     }
   ],
   "BIH": [
@@ -124,6 +156,12 @@
       "player": "I. Koné",
       "type": "Missing Fixture",
       "reason": "Fracture of lower leg",
+      "fixture": "2026-06-24T19:00:00+00:00"
+    },
+    {
+      "player": "A. Jones",
+      "type": "Missing Fixture",
+      "reason": "",
       "fixture": "2026-06-24T19:00:00+00:00"
     }
   ]
