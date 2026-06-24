@@ -489,9 +489,23 @@
     "form": "LL",
     "status": "same"
   },
-  "POR": {
+  "COL": {
     "group": "Group K",
     "rank": 1,
+    "played": 2,
+    "won": 2,
+    "drawn": 0,
+    "lost": 0,
+    "goalsFor": 4,
+    "goalsAgainst": 1,
+    "goalDiff": 3,
+    "points": 6,
+    "form": "WW",
+    "status": "same"
+  },
+  "POR": {
+    "group": "Group K",
+    "rank": 2,
     "played": 2,
     "won": 1,
     "drawn": 1,
@@ -503,32 +517,18 @@
     "form": "WD",
     "status": "same"
   },
-  "COL": {
-    "group": "Group K",
-    "rank": 2,
-    "played": 1,
-    "won": 1,
-    "drawn": 0,
-    "lost": 0,
-    "goalsFor": 3,
-    "goalsAgainst": 1,
-    "goalDiff": 2,
-    "points": 3,
-    "form": "W",
-    "status": "same"
-  },
   "COD": {
     "group": "Group Stage",
-    "rank": 8,
-    "played": 1,
+    "rank": 9,
+    "played": 2,
     "won": 0,
     "drawn": 1,
-    "lost": 0,
+    "lost": 1,
     "goalsFor": 1,
-    "goalsAgainst": 1,
-    "goalDiff": 0,
+    "goalsAgainst": 2,
+    "goalDiff": -1,
     "points": 1,
-    "form": "D",
+    "form": "LD",
     "status": "same"
   },
   "UZB": {
