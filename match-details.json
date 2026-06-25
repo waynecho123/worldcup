@@ -25951,10 +25951,2129 @@
     ]
   },
   "m051": {
-    "fixtureId": "1489405"
+    "fixtureId": 1489405,
+    "date": "2026-06-24T22:00:00+00:00",
+    "venue": "Mercedes-Benz Stadium",
+    "status": "Match Finished",
+    "homeTeam": "Morocco",
+    "awayTeam": "Haiti",
+    "score": {
+      "home": 4,
+      "away": 2
+    },
+    "statistics": {
+      "Morocco": {
+        "Shots on Goal": 11,
+        "Shots off Goal": 6,
+        "Total Shots": 22,
+        "Blocked Shots": 5,
+        "Shots insidebox": 15,
+        "Shots outsidebox": 7,
+        "Fouls": 10,
+        "Corner Kicks": 9,
+        "Offsides": 5,
+        "Ball Possession": "70%",
+        "Yellow Cards": 0,
+        "Red Cards": null,
+        "Goalkeeper Saves": 1,
+        "Total passes": 540,
+        "Passes accurate": 478,
+        "Passes %": "89%",
+        "expected_goals": "3.26",
+        "goals_prevented": "-0.23"
+      },
+      "Haiti": {
+        "Shots on Goal": 1,
+        "Shots off Goal": 3,
+        "Total Shots": 5,
+        "Blocked Shots": 1,
+        "Shots insidebox": 2,
+        "Shots outsidebox": 3,
+        "Fouls": 18,
+        "Corner Kicks": 0,
+        "Offsides": 0,
+        "Ball Possession": "30%",
+        "Yellow Cards": 3,
+        "Red Cards": null,
+        "Goalkeeper Saves": 8,
+        "Total passes": 242,
+        "Passes accurate": 193,
+        "Passes %": "80%",
+        "expected_goals": "0.52",
+        "goals_prevented": "-0.23"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 31,
+          "name": "Morocco",
+          "logo": "https://media.api-sports.io/football/teams/31.png",
+          "colors": {
+            "player": {
+              "primary": "f11313",
+              "number": "f6f3f3",
+              "border": "f11313"
+            },
+            "goalkeeper": {
+              "primary": "99bff0",
+              "number": "000000",
+              "border": "99bff0"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 2701,
+              "name": "Yassine Bounou",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 9,
+              "name": "Achraf Hakimi",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 326183,
+              "name": "Redouane Halhal",
+              "number": 25,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 278898,
+              "name": "Chadi Riad",
+              "number": 18,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 162451,
+              "name": "Anass Salah-Eddine",
+              "number": 26,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 74,
+              "name": "Sofyan Amrabat",
+              "number": 4,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 277003,
+              "name": "Neil El Aynaoui",
+              "number": 24,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 744,
+              "name": "Brahim Díaz",
+              "number": 10,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 161897,
+              "name": "Ismael Saibari",
+              "number": 11,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 340573,
+              "name": "Bilal El Khannouss",
+              "number": 23,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2722,
+              "name": "Ayoub El Kaabi",
+              "number": 20,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 2702,
+              "name": "Munir El Kajoui",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2703,
+              "name": "Ahmed Reda Tagnaouti",
+              "number": 22,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 545,
+              "name": "Noussair Mazraoui",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50042,
+              "name": "Marwane Saadane",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 283252,
+              "name": "Zakaria El Ouahdi",
+              "number": 13,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 18814,
+              "name": "Issa Diop",
+              "number": 14,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 146772,
+              "name": "Youssef Belammari",
+              "number": 19,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 438688,
+              "name": "Ayyoub Bouaddi",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 336659,
+              "name": "Chemsdine Talbi",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 129678,
+              "name": "Azzedine Ounahi",
+              "number": 8,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 415431,
+              "name": "Samir El Mourabet",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 369544,
+              "name": "Gessime Yassine",
+              "number": 16,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 191289,
+              "name": "Amine Sbai",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36579,
+              "name": "Soufiane Rahimi",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 535046,
+              "name": "Ayoube Amaimouni Echghouyab",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 28221,
+          "name": "Mohamed Ouahbi",
+          "photo": "https://media.api-sports.io/football/coachs/28221.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 2386,
+          "name": "Haiti",
+          "logo": "https://media.api-sports.io/football/teams/2386.png",
+          "colors": {
+            "player": {
+              "primary": "3300ff",
+              "number": "ffffff",
+              "border": "3300ff"
+            },
+            "goalkeeper": {
+              "primary": "0d0d0d",
+              "number": "ffffff",
+              "border": "0d0d0d"
+            }
+          }
+        },
+        "formation": "4-4-1-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 87789,
+              "name": "Johny Placide",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 20655,
+              "name": "Jean-Kévin Duverne",
+              "number": 22,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 12303,
+              "name": "Ricardo Adé",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 1411,
+              "name": "Hannes Delcroix",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 190747,
+              "name": "Martin Expérience",
+              "number": 8,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 174915,
+              "name": "Josué Casimir",
+              "number": 21,
+              "pos": "M",
+              "grid": "3:4"
+            }
+          },
+          {
+            "player": {
+              "id": 338367,
+              "name": "Danley Jean Jacques",
+              "number": 17,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 20665,
+              "name": "Jean-Ricner Bellegarde",
+              "number": 10,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 162733,
+              "name": "Ruben Providence",
+              "number": 15,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 84087,
+              "name": "Wilson Isidor",
+              "number": 18,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 21613,
+              "name": "Lenny Joseph",
+              "number": 16,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 128766,
+              "name": "Louicius Don Deedson",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 45020,
+              "name": "Duckens Nazon",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 174768,
+              "name": "Alexandre Pierre",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 123742,
+              "name": "Josué Duverger",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 20850,
+              "name": "Carlens Arcus",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 573613,
+              "name": "Keeto Thermoncy",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 318930,
+              "name": "Garven-Michee Metusala",
+              "number": 14,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 102505,
+              "name": "Duke Lacroix",
+              "number": 13,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 237142,
+              "name": "Carl Fred Sainté",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 275367,
+              "name": "Wilguens Paugain",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 371050,
+              "name": "Woodensky Pierre",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 194242,
+              "name": "Dominique Simon",
+              "number": 25,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50958,
+              "name": "Derrick Etienne",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 8601,
+              "name": "Frantzdy Pierrot",
+              "number": 20,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 48535,
+              "name": "Yassin Fortune",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 373,
+          "name": "Sebastien Migne",
+          "photo": "https://media.api-sports.io/football/coachs/373.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "10",
+        "team": "Haiti",
+        "player": "Bono",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Own Goal",
+        "comments": ""
+      },
+      {
+        "time": "39",
+        "team": "Morocco",
+        "player": "A. Hakimi",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "43",
+        "team": "Haiti",
+        "player": "W. Isidor",
+        "assist": "J. Duverne",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "45+1",
+        "team": "Morocco",
+        "player": "I. Saibari",
+        "assist": "A. Hakimi",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "67",
+        "team": "Haiti",
+        "player": "R. Providence",
+        "assist": "D. Nazon",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "67",
+        "team": "Haiti",
+        "player": "W. Isidor",
+        "assist": "L. Deedson",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "70",
+        "team": "Morocco",
+        "player": "B. Diaz",
+        "assist": "A. Ounahi",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "70",
+        "team": "Morocco",
+        "player": "I. Saibari",
+        "assist": "S. Rahimi",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "70",
+        "team": "Morocco",
+        "player": "A. El Kaabi",
+        "assist": "G. Yassine",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "78",
+        "team": "Morocco",
+        "player": "S. Rahimi",
+        "assist": "C. Riad",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "79",
+        "team": "Haiti",
+        "player": "D. Nazon",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Unsportsmanlike conduct"
+      },
+      {
+        "time": "79",
+        "team": "Haiti",
+        "player": "J. Placide",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Unsportsmanlike conduct"
+      },
+      {
+        "time": "80",
+        "team": "Haiti",
+        "player": "J. Duverne",
+        "assist": "C. Arcus",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "80",
+        "team": "Haiti",
+        "player": "D. Jean Jacques",
+        "assist": "D. Simon",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "83",
+        "team": "Morocco",
+        "player": "A. Salah-Eddine",
+        "assist": "N. Mazraoui",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "83",
+        "team": "Morocco",
+        "player": "N. El Aynaoui",
+        "assist": "S. El Mourabet",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "83",
+        "team": "Haiti",
+        "player": "L. Joseph",
+        "assist": "F. Pierrot",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "89",
+        "team": "Morocco",
+        "player": "G. Yassine",
+        "assist": "S. Rahimi",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "90+4",
+        "team": "Haiti",
+        "player": "J. Casimir",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      }
+    ],
+    "players": [
+      {
+        "team": "Morocco",
+        "players": [
+          {
+            "name": "Yassine Bounou",
+            "rating": "5.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Achraf Hakimi",
+            "rating": "7.6",
+            "goals": 1,
+            "assists": 1
+          },
+          {
+            "name": "Redouane Halhal",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Chadi Riad",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Anass Salah-Eddine",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Neil El Aynaoui",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Sofyan Amrabat",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Brahim Díaz",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ismael Saibari",
+            "rating": "7.3",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Bilal El Khannouss",
+            "rating": "8.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ayoub El Kaabi",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Azzedine Ounahi",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gessime Yassine",
+            "rating": "7.3",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Soufiane Rahimi",
+            "rating": "8.2",
+            "goals": 1,
+            "assists": 1
+          },
+          {
+            "name": "Noussair Mazraoui",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Samir El Mourabet",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Munir El Kajoui",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ahmed Reda Tagnaouti",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marwane Saadane",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Zakaria El Ouahdi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Issa Diop",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Youssef Belammari",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ayyoub Bouaddi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Chemsdine Talbi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Amine Sbai",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ayoube Amaimouni Echghouyab",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Haiti",
+        "players": [
+          {
+            "name": "Johny Placide",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jean-Kévin Duverne",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Ricardo Adé",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Hannes Delcroix",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Martin Expérience",
+            "rating": "5.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Josué Casimir",
+            "rating": "6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Danley Jean Jacques",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jean-Ricner Bellegarde",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ruben Providence",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Wilson Isidor",
+            "rating": "7.7",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Lenny Joseph",
+            "rating": "5.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Louicius Don Deedson",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Duckens Nazon",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Carlens Arcus",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Dominique Simon",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Frantzdy Pierrot",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alexandre Pierre",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Josué Duverger",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Keeto Thermoncy",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Garven-Michee Metusala",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Duke Lacroix",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Carl Fred Sainté",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Wilguens Paugain",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Woodensky Pierre",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Derrick Etienne",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yassin Fortune",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m052": {
-    "fixtureId": "1489406"
+    "fixtureId": 1489406,
+    "date": "2026-06-24T22:00:00+00:00",
+    "venue": "Hard Rock Stadium",
+    "status": "Match Finished",
+    "homeTeam": "Scotland",
+    "awayTeam": "Brazil",
+    "score": {
+      "home": 0,
+      "away": 3
+    },
+    "statistics": {
+      "Scotland": {
+        "Shots on Goal": 4,
+        "Shots off Goal": 6,
+        "Total Shots": 13,
+        "Blocked Shots": 3,
+        "Shots insidebox": 9,
+        "Shots outsidebox": 4,
+        "Fouls": 10,
+        "Corner Kicks": 6,
+        "Offsides": 0,
+        "Ball Possession": "47%",
+        "Yellow Cards": 1,
+        "Red Cards": null,
+        "Goalkeeper Saves": 5,
+        "Total passes": 497,
+        "Passes accurate": 447,
+        "Passes %": "90%",
+        "expected_goals": "0.87",
+        "goals_prevented": "1.05"
+      },
+      "Brazil": {
+        "Shots on Goal": 9,
+        "Shots off Goal": 7,
+        "Total Shots": 20,
+        "Blocked Shots": 4,
+        "Shots insidebox": 13,
+        "Shots outsidebox": 7,
+        "Fouls": 9,
+        "Corner Kicks": 6,
+        "Offsides": 1,
+        "Ball Possession": "53%",
+        "Yellow Cards": 2,
+        "Red Cards": null,
+        "Goalkeeper Saves": 4,
+        "Total passes": 585,
+        "Passes accurate": 543,
+        "Passes %": "93%",
+        "expected_goals": "4.41",
+        "goals_prevented": "1.05"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 1108,
+          "name": "Scotland",
+          "logo": "https://media.api-sports.io/football/teams/1108.png",
+          "colors": {
+            "player": {
+              "primary": "0d2852",
+              "number": "f9faf5",
+              "border": "0d2852"
+            },
+            "goalkeeper": {
+              "primary": "e629c7",
+              "number": "0d0d0d",
+              "border": "e629c7"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 18933,
+              "name": "Angus Gunn",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 138417,
+              "name": "Nathan Patterson",
+              "number": 22,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 1111,
+              "name": "Jack Hendry",
+              "number": 13,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 44811,
+              "name": "Scott McKenna",
+              "number": 26,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 289,
+              "name": "Andy Robertson",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 44814,
+              "name": "Lewis Ferguson",
+              "number": 19,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 19077,
+              "name": "Kenny McLean",
+              "number": 23,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 343576,
+              "name": "Ben Gannon-Doak",
+              "number": 17,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 903,
+              "name": "Scott McTominay",
+              "number": 4,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 19191,
+              "name": "John McGinn",
+              "number": 7,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 45175,
+              "name": "Lawrence Shankland",
+              "number": 20,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 1117,
+              "name": "Kieran Tierney",
+              "number": 6,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44937,
+              "name": "Liam Kelly",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1106,
+              "name": "Craig Gordon",
+              "number": 21,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44871,
+              "name": "Aaron Hickey",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19066,
+              "name": "Grant Hanley",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44865,
+              "name": "John Souttar",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19987,
+              "name": "Dominic Hyam",
+              "number": 16,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1115,
+              "name": "Tony Ralston",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 557460,
+              "name": "Tyler Fletcher",
+              "number": 8,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1125,
+              "name": "Ryan Christie",
+              "number": 11,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 433272,
+              "name": "Findlay Curtis",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 45307,
+              "name": "Lyndon Dykes",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19524,
+              "name": "Che Adams",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 45078,
+              "name": "Ross Stewart",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 8794,
+              "name": "George Hirst",
+              "number": 18,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 76,
+          "name": "Steve Clarke",
+          "photo": "https://media.api-sports.io/football/coachs/76.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 6,
+          "name": "Brazil",
+          "logo": "https://media.api-sports.io/football/teams/6.png",
+          "colors": {
+            "player": {
+              "primary": "313a97",
+              "number": "f8df40",
+              "border": "313a97"
+            },
+            "goalkeeper": {
+              "primary": "47484d",
+              "number": "c8d77c",
+              "border": "47484d"
+            }
+          }
+        },
+        "formation": "4-3-3",
+        "startXI": [
+          {
+            "player": {
+              "id": 280,
+              "name": "Alisson",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 618,
+              "name": "Danilo",
+              "number": 13,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 257,
+              "name": "Marquinhos",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 22224,
+              "name": "Gabriel Magalhães",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 24866,
+              "name": "Douglas Santos",
+              "number": 16,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 10135,
+              "name": "Bruno Guimarães",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 747,
+              "name": "Casemiro",
+              "number": 5,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 1646,
+              "name": "Lucas Paquetá",
+              "number": 20,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 407806,
+              "name": "Rayan",
+              "number": 26,
+              "pos": "F",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 1165,
+              "name": "Matheus Cunha",
+              "number": 9,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 762,
+              "name": "Vinícius Júnior",
+              "number": 7,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 2410,
+              "name": "Weverton",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 617,
+              "name": "Ederson",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 860,
+              "name": "Alex Sandro",
+              "number": 6,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30497,
+              "name": "Bremer",
+              "number": 14,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 10124,
+              "name": "Léo Pereira",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30424,
+              "name": "Roger Ibañez",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 10097,
+              "name": "Éderson",
+              "number": 2,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 299,
+              "name": "Fabinho",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 275170,
+              "name": "Danilo Santos",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 265785,
+              "name": "Luiz Henrique",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 276,
+              "name": "Neymar",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 377122,
+              "name": "Endrick",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 127769,
+              "name": "Gabriel Martinelli",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 196156,
+              "name": "Igor Thiago",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 2407,
+          "name": "Carlo Ancelotti",
+          "photo": "https://media.api-sports.io/football/coachs/2407.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "7",
+        "team": "Brazil",
+        "player": "Vinicius Junior",
+        "assist": "Rayan",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "22",
+        "team": "Brazil",
+        "player": "Vinicius Junior",
+        "assist": null,
+        "type": "Var",
+        "detail": "Goal Disallowed - Foul",
+        "comments": ""
+      },
+      {
+        "time": "45+3",
+        "team": "Brazil",
+        "player": "Vinicius Junior",
+        "assist": "Bruno Guimaraes",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "Scotland",
+        "player": "A. Robertson",
+        "assist": "K. Tierney",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "60",
+        "team": "Brazil",
+        "player": "M. Cunha",
+        "assist": "Bruno Guimaraes",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "62",
+        "team": "Brazil",
+        "player": "Danilo",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "65",
+        "team": "Brazil",
+        "player": "Casemiro",
+        "assist": "Fabinho",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "66",
+        "team": "Brazil",
+        "player": "Lucas Paqueta",
+        "assist": "G. Martinelli",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "76",
+        "team": "Brazil",
+        "player": "M. Cunha",
+        "assist": "Neymar",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "82",
+        "team": "Scotland",
+        "player": "N. Patterson",
+        "assist": "A. Ralston",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "82",
+        "team": "Scotland",
+        "player": "B. Gannon-Doak",
+        "assist": "R. Christie",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "82",
+        "team": "Brazil",
+        "player": "Douglas Santos",
+        "assist": "Alex Sandro",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "82",
+        "team": "Brazil",
+        "player": "Rayan",
+        "assist": "Endrick",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "82",
+        "team": "Brazil",
+        "player": "Fabinho",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "89",
+        "team": "Scotland",
+        "player": "R. Christie",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Holding"
+      },
+      {
+        "time": "90+1",
+        "team": "Scotland",
+        "player": "L. Shankland",
+        "assist": "C. Adams",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "90+1",
+        "team": "Scotland",
+        "player": "J. McGinn",
+        "assist": "F. Curtis",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Scotland",
+        "players": [
+          {
+            "name": "Angus Gunn",
+            "rating": "8.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nathan Patterson",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jack Hendry",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Scott McKenna",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Andy Robertson",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lewis Ferguson",
+            "rating": "7.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kenny McLean",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ben Gannon-Doak",
+            "rating": "6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Scott McTominay",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "John McGinn",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lawrence Shankland",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kieran Tierney",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tony Ralston",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ryan Christie",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Findlay Curtis",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Che Adams",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Liam Kelly",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Craig Gordon",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Aaron Hickey",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Grant Hanley",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "John Souttar",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Dominic Hyam",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tyler Fletcher",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lyndon Dykes",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ross Stewart",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "George Hirst",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Brazil",
+        "players": [
+          {
+            "name": "Alisson",
+            "rating": "7.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Danilo",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marquinhos",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gabriel Magalhães",
+            "rating": "7.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Douglas Santos",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Bruno Guimarães",
+            "rating": "7.9",
+            "goals": 0,
+            "assists": 2
+          },
+          {
+            "name": "Casemiro",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lucas Paquetá",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Rayan",
+            "rating": "7.9",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Matheus Cunha",
+            "rating": "7.9",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Vinícius Júnior",
+            "rating": "9",
+            "goals": 2,
+            "assists": 0
+          },
+          {
+            "name": "Fabinho",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gabriel Martinelli",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Neymar",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alex Sandro",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Endrick",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Weverton",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ederson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Bremer",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Léo Pereira",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Roger Ibañez",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Éderson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Danilo Santos",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Luiz Henrique",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Igor Thiago",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m049": {
     "fixtureId": 1489408,
