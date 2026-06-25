@@ -16614,10 +16614,10 @@
         "Red Cards": null,
         "Goalkeeper Saves": 6,
         "Total passes": 251,
-        "Passes accurate": 180,
+        "Passes accurate": 181,
         "Passes %": "72%",
-        "expected_goals": "0.65",
-        "goals_prevented": "-0.44"
+        "expected_goals": "0.63",
+        "goals_prevented": "-0.38"
       },
       "Algeria": {
         "Shots on Goal": 8,
@@ -16633,11 +16633,11 @@
         "Yellow Cards": 1,
         "Red Cards": null,
         "Goalkeeper Saves": 3,
-        "Total passes": 638,
-        "Passes accurate": 559,
+        "Total passes": 641,
+        "Passes accurate": 561,
         "Passes %": "88%",
-        "expected_goals": "1.81",
-        "goals_prevented": "-0.44"
+        "expected_goals": "1.89",
+        "goals_prevented": "-0.38"
       }
     },
     "lineups": {
@@ -16659,12 +16659,17 @@
             }
           }
         },
+        "coach": {
+          "id": 6606,
+          "name": "Jamal Sellami",
+          "photo": "https://media.api-sports.io/football/coachs/6606.png"
+        },
         "formation": "3-4-2-1",
         "startXI": [
           {
             "player": {
               "id": 140607,
-              "name": "Yazeed Abu Laila",
+              "name": "Y. Abulaila",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -16673,7 +16678,7 @@
           {
             "player": {
               "id": 310835,
-              "name": "Abdallah Nasib",
+              "name": "A. Nasib",
               "number": 3,
               "pos": "D",
               "grid": "2:3"
@@ -16682,7 +16687,7 @@
           {
             "player": {
               "id": 53900,
-              "name": "Yazan Al-Arab",
+              "name": "Y. Al Arab",
               "number": 5,
               "pos": "D",
               "grid": "2:2"
@@ -16690,17 +16695,17 @@
           },
           {
             "player": {
-              "id": 543035,
-              "name": "Husam Ali Mohammad Abudahab",
+              "id": 542822,
+              "name": "H. Abu Dahab",
               "number": 4,
-              "pos": "D",
+              "pos": null,
               "grid": "2:1"
             }
           },
           {
             "player": {
               "id": 53902,
-              "name": "Ehsan Haddad",
+              "name": "E. Haddad",
               "number": 23,
               "pos": "M",
               "grid": "3:4"
@@ -16709,7 +16714,7 @@
           {
             "player": {
               "id": 213980,
-              "name": "Nizar Al-Rashdan",
+              "name": "N. Al Rashdan",
               "number": 21,
               "pos": "M",
               "grid": "3:3"
@@ -16718,7 +16723,7 @@
           {
             "player": {
               "id": 140609,
-              "name": "Noor Al-Rawabdeh",
+              "name": "N. Al Rawabdeh",
               "number": 8,
               "pos": "M",
               "grid": "3:2"
@@ -16727,7 +16732,7 @@
           {
             "player": {
               "id": 310785,
-              "name": "Mohannad Abu Taha",
+              "name": "M. Abu Taha",
               "number": 20,
               "pos": "M",
               "grid": "3:1"
@@ -16736,7 +16741,7 @@
           {
             "player": {
               "id": 164026,
-              "name": "Ali Olwan",
+              "name": "A. Olwan",
               "number": 9,
               "pos": "F",
               "grid": "4:2"
@@ -16745,7 +16750,7 @@
           {
             "player": {
               "id": 123530,
-              "name": "Mahmoud Al-Mardi",
+              "name": "M. Al Mardi",
               "number": 13,
               "pos": "F",
               "grid": "4:1"
@@ -16754,7 +16759,7 @@
           {
             "player": {
               "id": 15286,
-              "name": "Mousa Tamari",
+              "name": "M. Tamari",
               "number": 10,
               "pos": "F",
               "grid": "5:1"
@@ -16764,53 +16769,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 492980,
-              "name": "Odeh Fakhoury",
-              "number": 11,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 315099,
-              "name": "Mohammad Ali Hasheesh",
-              "number": 2,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 575283,
-              "name": "Ali Al Azaizah",
-              "number": 24,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 72140,
-              "name": "Saleem Obaid",
-              "number": 17,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 72142,
-              "name": "Mohammad Abu Zrayq",
-              "number": 7,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 163908,
-              "name": "Noureddin Zaid",
+              "name": "N. Bani Attiah",
               "number": 12,
               "pos": "G",
               "grid": null
@@ -16819,7 +16779,7 @@
           {
             "player": {
               "id": 163884,
-              "name": "Abdallah Al-Fakhouri",
+              "name": "A. Al Fakhouri",
               "number": 22,
               "pos": "G",
               "grid": null
@@ -16827,53 +16787,8 @@
           },
           {
             "player": {
-              "id": 102538,
-              "name": "Mo Abualnadi",
-              "number": 16,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 314882,
-              "name": "Saad Al Rousan",
-              "number": 19,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 664028,
-              "name": "Anas Badawi",
-              "number": 26,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 601853,
-              "name": "Mohammad Abu Ghoush",
-              "number": 18,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 198211,
-              "name": "Amer Jamous",
-              "number": 6,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 104242,
-              "name": "Rajaei Ayed",
+              "name": "R. Ayed",
               "number": 14,
               "pos": "M",
               "grid": null
@@ -16881,28 +16796,113 @@
           },
           {
             "player": {
-              "id": 164214,
-              "name": "Ibrahim Sadeh",
+              "id": 651096,
+              "name": "M. Al Daoud",
+              "number": 25,
+              "pos": null,
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 72140,
+              "name": "S. Obaid",
+              "number": 17,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 542768,
+              "name": "I. Saadeh",
               "number": 15,
+              "pos": null,
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 213978,
+              "name": "S. Al Rosan",
+              "number": 19,
+              "pos": null,
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 542710,
+              "name": "M. Abu Hasheesh",
+              "number": 2,
+              "pos": null,
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 102538,
+              "name": "M. Abualnadi",
+              "number": 16,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 198211,
+              "name": "A. Jamous",
+              "number": 6,
               "pos": "M",
               "grid": null
             }
           },
           {
             "player": {
-              "id": 104244,
-              "name": "Mohammad Al Daoud",
-              "number": 25,
-              "pos": "M",
+              "id": 72142,
+              "name": "Shararh",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 664028,
+              "name": "A. Badawi",
+              "number": 26,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 575283,
+              "name": "A. Azaizeh",
+              "number": 24,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 601853,
+              "name": "M. Abu Ghoush",
+              "number": 18,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 568556,
+              "name": "O. Al Fakhouri",
+              "number": 11,
+              "pos": null,
               "grid": null
             }
           }
-        ],
-        "coach": {
-          "id": 6606,
-          "name": "Jamal Sellami",
-          "photo": "https://media.api-sports.io/football/coachs/6606.png"
-        }
+        ]
       },
       "away": {
         "team": {
@@ -16922,12 +16922,17 @@
             }
           }
         },
+        "coach": {
+          "id": 28220,
+          "name": "Vladimir Petkovic",
+          "photo": "https://media.api-sports.io/football/coachs/28220.png"
+        },
         "formation": "4-2-3-1",
         "startXI": [
           {
             "player": {
               "id": 732,
-              "name": "Luca Zidane",
+              "name": "L. Zidane",
               "number": 23,
               "pos": "G",
               "grid": "1:1"
@@ -16936,7 +16941,7 @@
           {
             "player": {
               "id": 303362,
-              "name": "Rafik Belghali",
+              "name": "R. Belghali",
               "number": 17,
               "pos": "D",
               "grid": "2:4"
@@ -16945,7 +16950,7 @@
           {
             "player": {
               "id": 1567,
-              "name": "Aïssa Mandi",
+              "name": "A. Mandi",
               "number": 2,
               "pos": "D",
               "grid": "2:3"
@@ -16954,7 +16959,7 @@
           {
             "player": {
               "id": 2194,
-              "name": "Ramy Bensebaini",
+              "name": "R. Bensebaini",
               "number": 21,
               "pos": "D",
               "grid": "2:2"
@@ -16963,7 +16968,7 @@
           {
             "player": {
               "id": 21138,
-              "name": "Rayan Aït-Nouri",
+              "name": "R. Ait-Nouri",
               "number": 15,
               "pos": "D",
               "grid": "2:1"
@@ -16972,7 +16977,7 @@
           {
             "player": {
               "id": 4399,
-              "name": "Hicham Boudaoui",
+              "name": "H. Boudaoui",
               "number": 14,
               "pos": "M",
               "grid": "3:2"
@@ -16981,7 +16986,7 @@
           {
             "player": {
               "id": 129047,
-              "name": "Ramiz Zerrouki",
+              "name": "R. Zerrouki",
               "number": 6,
               "pos": "M",
               "grid": "3:1"
@@ -16990,7 +16995,7 @@
           {
             "player": {
               "id": 635,
-              "name": "Riyad Mahrez",
+              "name": "R. Mahrez",
               "number": 7,
               "pos": "M",
               "grid": "4:3"
@@ -16999,7 +17004,7 @@
           {
             "player": {
               "id": 380587,
-              "name": "Ibrahim Maza",
+              "name": "I. Maza",
               "number": 22,
               "pos": "M",
               "grid": "4:2"
@@ -17008,7 +17013,7 @@
           {
             "player": {
               "id": 276670,
-              "name": "Farès Chaïbi",
+              "name": "F. Chaibi",
               "number": 10,
               "pos": "M",
               "grid": "4:1"
@@ -17017,7 +17022,7 @@
           {
             "player": {
               "id": 85041,
-              "name": "Amine Gouiri",
+              "name": "A. Gouiri",
               "number": 9,
               "pos": "F",
               "grid": "5:1"
@@ -17027,53 +17032,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 409,
-              "name": "Nabil Bentaleb",
-              "number": 19,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 292924,
-              "name": "Ahmed Nadhir Benbouali",
-              "number": 12,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 326067,
-              "name": "Anis Hadj Moussa",
-              "number": 11,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 4561,
-              "name": "Zineddine Belaid",
-              "number": 5,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 271539,
-              "name": "Jaouen Hadjam",
-              "number": 13,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 304229,
-              "name": "Melvin Mastil",
+              "name": "M. Mastil",
               "number": 1,
               "pos": "G",
               "grid": null
@@ -17082,7 +17042,7 @@
           {
             "player": {
               "id": 4414,
-              "name": "Oussama Benbot",
+              "name": "O. Benbot",
               "number": 16,
               "pos": "G",
               "grid": null
@@ -17090,35 +17050,17 @@
           },
           {
             "player": {
-              "id": 342740,
-              "name": "Achref Abada",
-              "number": 3,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 4569,
-              "name": "Mohamed Tougai",
-              "number": 4,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 20869,
-              "name": "Samir Sophian Chergui",
-              "number": 26,
-              "pos": "D",
+              "id": 409,
+              "name": "N. Bentaleb",
+              "number": 19,
+              "pos": "M",
               "grid": null
             }
           },
           {
             "player": {
               "id": 658,
-              "name": "Houssem Aouar",
+              "name": "H. Aouar",
               "number": 8,
               "pos": "M",
               "grid": null
@@ -17126,8 +17068,26 @@
           },
           {
             "player": {
+              "id": 20869,
+              "name": "S. Chergui",
+              "number": 26,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 271539,
+              "name": "J. Hadjam",
+              "number": 13,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 327599,
-              "name": "Yassine Titraoui",
+              "name": "Y. Titraoui",
               "number": 24,
               "pos": "M",
               "grid": null
@@ -17136,7 +17096,7 @@
           {
             "player": {
               "id": 329163,
-              "name": "Adil Boulbina",
+              "name": "A. Boulbina",
               "number": 20,
               "pos": "F",
               "grid": null
@@ -17145,18 +17105,58 @@
           {
             "player": {
               "id": 334915,
-              "name": "Farès Ghedjemis",
+              "name": "F. Ghedjemis",
               "number": 25,
               "pos": "F",
               "grid": null
             }
+          },
+          {
+            "player": {
+              "id": 4569,
+              "name": "M. Tougai",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 4561,
+              "name": "Z. Belaid",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 292924,
+              "name": "N. Benbouali",
+              "number": 12,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 342740,
+              "name": "A. Abada",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 326067,
+              "name": "A. Hadj Moussa",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
           }
-        ],
-        "coach": {
-          "id": 28220,
-          "name": "Vladimir Petkovic",
-          "photo": "https://media.api-sports.io/football/coachs/28220.png"
-        }
+        ]
       }
     },
     "events": [
@@ -17317,13 +17317,13 @@
           },
           {
             "name": "Abdallah Nasib",
-            "rating": "6.6",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Yazan Al-Arab",
-            "rating": "6.3",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
@@ -17347,7 +17347,7 @@
           },
           {
             "name": "Noor Al-Rawabdeh",
-            "rating": "7",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
@@ -17359,7 +17359,7 @@
           },
           {
             "name": "Ali Olwan",
-            "rating": "6.7",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
@@ -17382,14 +17382,14 @@
             "assists": 0
           },
           {
-            "name": "Mohammad Ali Hasheesh",
-            "rating": "7",
+            "name": "Ali Al Azaizeh",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "Ali Al Azaizah",
-            "rating": "6.3",
+            "name": "Mohammad Ali Hasheesh",
+            "rating": "7",
             "goals": 0,
             "assists": 0
           },
@@ -17478,7 +17478,7 @@
           },
           {
             "name": "Rafik Belghali",
-            "rating": "6",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
@@ -17526,13 +17526,13 @@
           },
           {
             "name": "Farès Chaïbi",
-            "rating": "6.5",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Amine Gouiri",
-            "rating": "7.2",
+            "rating": "7.3",
             "goals": 1,
             "assists": 0
           },
@@ -17544,25 +17544,25 @@
           },
           {
             "name": "Ahmed Nadhir Benbouali",
-            "rating": "7.5",
+            "rating": "7.7",
             "goals": 1,
             "assists": 0
           },
           {
             "name": "Anis Hadj Moussa",
-            "rating": "6.3",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Zineddine Belaid",
-            "rating": "6.9",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Jaouen Hadjam",
             "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Zineddine Belaid",
+            "rating": "7",
             "goals": 0,
             "assists": 0
           },
@@ -17650,17 +17650,17 @@
         "Yellow Cards": null,
         "Red Cards": null,
         "Goalkeeper Saves": 2,
-        "Total passes": 352,
-        "Passes accurate": 283,
+        "Total passes": 353,
+        "Passes accurate": 282,
         "Passes %": "80%",
-        "expected_goals": "2.10",
-        "goals_prevented": "-1.19"
+        "expected_goals": "2.20",
+        "goals_prevented": "-1.05"
       },
       "Senegal": {
         "Shots on Goal": 4,
-        "Shots off Goal": 6,
+        "Shots off Goal": 7,
         "Total Shots": 16,
-        "Blocked Shots": 6,
+        "Blocked Shots": 5,
         "Shots insidebox": 10,
         "Shots outsidebox": 6,
         "Fouls": 5,
@@ -17670,11 +17670,11 @@
         "Yellow Cards": null,
         "Red Cards": null,
         "Goalkeeper Saves": 3,
-        "Total passes": 487,
-        "Passes accurate": 429,
+        "Total passes": 489,
+        "Passes accurate": 430,
         "Passes %": "88%",
-        "expected_goals": "1.70",
-        "goals_prevented": "-1.19"
+        "expected_goals": "1.72",
+        "goals_prevented": "-1.05"
       }
     },
     "lineups": {
@@ -32110,7 +32110,7 @@
   "m053": {
     "fixtureId": 1539010,
     "date": "2026-06-25T01:00:00+00:00",
-    "venue": "Estadio Azteca",
+    "venue": "Estadio Banorte",
     "status": "Match Finished",
     "homeTeam": "Czechia",
     "awayTeam": "Mexico",
@@ -50811,7 +50811,7 @@
   "m024": {
     "fixtureId": 1489386,
     "date": "2026-06-18T02:00:00+00:00",
-    "venue": "Estadio Azteca",
+    "venue": "Estadio Banorte",
     "status": "Match Finished",
     "homeTeam": "Uzbekistan",
     "awayTeam": "Colombia",
