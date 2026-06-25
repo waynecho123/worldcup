@@ -33,7 +33,7 @@
       "photo": "https://media.api-sports.io/football/players/26475.png",
       "team": "Germany",
       "goals": 3,
-      "matches": 2
+      "matches": 3
     },
     {
       "name": "J. Manzambi",
@@ -61,6 +61,20 @@
       "photo": "https://media.api-sports.io/football/players/8489.png",
       "team": "Canada",
       "goals": 3,
+      "matches": 3
+    },
+    {
+      "name": "A. Ueda",
+      "photo": "https://media.api-sports.io/football/players/72155.png",
+      "team": "Japan",
+      "goals": 2,
+      "matches": 3
+    },
+    {
+      "name": "C. Gakpo",
+      "photo": "https://media.api-sports.io/football/players/247.png",
+      "team": "Netherlands",
+      "goals": 2,
       "matches": 3
     },
     {
@@ -92,18 +106,18 @@
       "matches": 2
     },
     {
-      "name": "A. Ueda",
-      "photo": "https://media.api-sports.io/football/players/72155.png",
-      "team": "Japan",
-      "goals": 2,
-      "matches": 2
-    },
-    {
-      "name": "C. Gakpo",
-      "photo": "https://media.api-sports.io/football/players/247.png",
+      "name": "B. Brobbey",
+      "photo": "https://media.api-sports.io/football/players/38750.png",
       "team": "Netherlands",
       "goals": 2,
-      "matches": 2
+      "matches": 3
+    },
+    {
+      "name": "N. Pépé",
+      "photo": "https://media.api-sports.io/football/players/3246.png",
+      "team": "Ivory Coast",
+      "goals": 2,
+      "matches": 3
     },
     {
       "name": "C. Larin",
@@ -113,32 +127,18 @@
       "matches": 3
     },
     {
-      "name": "J. Quiñones",
-      "photo": "https://media.api-sports.io/football/players/35532.png",
-      "team": "Mexico",
+      "name": "D. Kamada",
+      "photo": "https://media.api-sports.io/football/players/2601.png",
+      "team": "Japan",
       "goals": 2,
       "matches": 3
     },
     {
-      "name": "Ermin Mahmić",
-      "photo": "https://media.api-sports.io/football/players/340173.png",
-      "team": "Bosnia & Herzegovina",
+      "name": "Y. Ayari",
+      "photo": "https://media.api-sports.io/football/players/265820.png",
+      "team": "Sweden",
       "goals": 2,
-      "matches": 2
-    },
-    {
-      "name": "B. Brobbey",
-      "photo": "https://media.api-sports.io/football/players/38750.png",
-      "team": "Netherlands",
-      "goals": 2,
-      "matches": 2
-    },
-    {
-      "name": "F. Balogun",
-      "photo": "https://media.api-sports.io/football/players/138835.png",
-      "team": "USA",
-      "goals": 2,
-      "matches": 2
+      "matches": 3
     }
   ],
   "assists": [
@@ -147,7 +147,7 @@
       "photo": "https://media.api-sports.io/football/players/2864.png",
       "team": "Sweden",
       "assists": 3,
-      "matches": 2
+      "matches": 3
     },
     {
       "name": "Bruno Guimarães",
@@ -168,7 +168,7 @@
       "photo": "https://media.api-sports.io/football/players/26475.png",
       "team": "Germany",
       "assists": 2,
-      "matches": 2
+      "matches": 3
     },
     {
       "name": "N. Saliba",
@@ -192,9 +192,37 @@
       "matches": 3
     },
     {
+      "name": "R. Gravenberch",
+      "photo": "https://media.api-sports.io/football/players/542.png",
+      "team": "Netherlands",
+      "assists": 2,
+      "matches": 3
+    },
+    {
+      "name": "D. Dumfries",
+      "photo": "https://media.api-sports.io/football/players/226.png",
+      "team": "Netherlands",
+      "assists": 2,
+      "matches": 3
+    },
+    {
       "name": "Brahim Díaz",
       "photo": "https://media.api-sports.io/football/players/744.png",
       "team": "Morocco",
+      "assists": 2,
+      "matches": 3
+    },
+    {
+      "name": "J. Kimmich",
+      "photo": "https://media.api-sports.io/football/players/502.png",
+      "team": "Germany",
+      "assists": 2,
+      "matches": 3
+    },
+    {
+      "name": "F. Wirtz",
+      "photo": "https://media.api-sports.io/football/players/203224.png",
+      "team": "Germany",
       "assists": 2,
       "matches": 3
     },
@@ -206,13 +234,6 @@
       "matches": 3
     },
     {
-      "name": "R. Gravenberch",
-      "photo": "https://media.api-sports.io/football/players/542.png",
-      "team": "Netherlands",
-      "assists": 2,
-      "matches": 2
-    },
-    {
       "name": "M. Ødegaard",
       "photo": "https://media.api-sports.io/football/players/37127.png",
       "team": "Norway",
@@ -220,23 +241,9 @@
       "matches": 2
     },
     {
-      "name": "J. Kimmich",
-      "photo": "https://media.api-sports.io/football/players/502.png",
-      "team": "Germany",
-      "assists": 2,
-      "matches": 2
-    },
-    {
       "name": "J. Enciso",
       "photo": "https://media.api-sports.io/football/players/70747.png",
       "team": "Paraguay",
-      "assists": 2,
-      "matches": 2
-    },
-    {
-      "name": "D. Dumfries",
-      "photo": "https://media.api-sports.io/football/players/226.png",
-      "team": "Netherlands",
       "assists": 2,
       "matches": 2
     },
@@ -262,25 +269,18 @@
       "matches": 3
     },
     {
-      "name": "R. Vargas",
-      "photo": "https://media.api-sports.io/football/players/48471.png",
-      "team": "Switzerland",
+      "name": "A. Ueda",
+      "photo": "https://media.api-sports.io/football/players/72155.png",
+      "team": "Japan",
       "assists": 1,
       "matches": 3
     },
     {
-      "name": "C. Summerville",
-      "photo": "https://media.api-sports.io/football/players/37724.png",
+      "name": "C. Gakpo",
+      "photo": "https://media.api-sports.io/football/players/247.png",
       "team": "Netherlands",
       "assists": 1,
-      "matches": 2
-    },
-    {
-      "name": "Mikel Oyarzabal",
-      "photo": "https://media.api-sports.io/football/players/47323.png",
-      "team": "Spain",
-      "assists": 1,
-      "matches": 2
+      "matches": 3
     }
   ],
   "cards": [
@@ -341,9 +341,23 @@
       "red": 1
     },
     {
+      "name": "G. Kastaneer",
+      "photo": "https://media.api-sports.io/football/players/38708.png",
+      "team": "Curaçao",
+      "yellow": 2,
+      "red": 0
+    },
+    {
       "name": "Ahmed Fathi",
       "photo": "https://media.api-sports.io/football/players/2539.png",
       "team": "Qatar",
+      "yellow": 2,
+      "red": 0
+    },
+    {
+      "name": "J. Bacuna",
+      "photo": "https://media.api-sports.io/football/players/19047.png",
+      "team": "Curaçao",
       "yellow": 2,
       "red": 0
     },
@@ -362,6 +376,13 @@
       "red": 0
     },
     {
+      "name": "R. Khedira",
+      "photo": "https://media.api-sports.io/football/players/25300.png",
+      "team": "Tunisia",
+      "yellow": 1,
+      "red": 0
+    },
+    {
       "name": "R. Christie",
       "photo": "https://media.api-sports.io/football/players/1125.png",
       "team": "Scotland",
@@ -372,13 +393,6 @@
       "name": "K. McLean",
       "photo": "https://media.api-sports.io/football/players/19077.png",
       "team": "Scotland",
-      "yellow": 1,
-      "red": 0
-    },
-    {
-      "name": "F. Pierrot",
-      "photo": "https://media.api-sports.io/football/players/8601.png",
-      "team": "Haiti",
       "yellow": 1,
       "red": 0
     },
@@ -397,33 +411,19 @@
       "red": 0
     },
     {
-      "name": "C. Larin",
-      "photo": "https://media.api-sports.io/football/players/2001.png",
-      "team": "Canada",
-      "yellow": 1,
-      "red": 0
-    },
-    {
-      "name": "J. Casimir",
-      "photo": "https://media.api-sports.io/football/players/174915.png",
+      "name": "F. Pierrot",
+      "photo": "https://media.api-sports.io/football/players/8601.png",
       "team": "Haiti",
       "yellow": 1,
       "red": 0
     },
     {
-      "name": "E. Álvarez",
-      "photo": "https://media.api-sports.io/football/players/2869.png",
-      "team": "Mexico",
-      "yellow": 1,
-      "red": 0
-    },
-    {
-      "name": "Casemiro",
-      "photo": "https://media.api-sports.io/football/players/747.png",
-      "team": "Brazil",
+      "name": "G. Gudmundsson",
+      "photo": "https://media.api-sports.io/football/players/47969.png",
+      "team": "Sweden",
       "yellow": 1,
       "red": 0
     }
   ],
-  "updatedAt": "2026-06-25T20:11:40.336Z"
+  "updatedAt": "2026-06-25T22:12:38.538Z"
 }
