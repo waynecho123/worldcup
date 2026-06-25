@@ -25970,35 +25970,35 @@
         "Fouls": 10,
         "Corner Kicks": 9,
         "Offsides": 5,
-        "Ball Possession": "70%",
+        "Ball Possession": "69%",
         "Yellow Cards": 0,
         "Red Cards": null,
         "Goalkeeper Saves": 1,
-        "Total passes": 540,
-        "Passes accurate": 478,
-        "Passes %": "89%",
-        "expected_goals": "3.26",
-        "goals_prevented": "-0.23"
+        "Total passes": 541,
+        "Passes accurate": 477,
+        "Passes %": "88%",
+        "expected_goals": "3.76",
+        "goals_prevented": "-0.18"
       },
       "Haiti": {
-        "Shots on Goal": 1,
-        "Shots off Goal": 3,
-        "Total Shots": 5,
-        "Blocked Shots": 1,
-        "Shots insidebox": 2,
-        "Shots outsidebox": 3,
+        "Shots on Goal": 2,
+        "Shots off Goal": 4,
+        "Total Shots": 9,
+        "Blocked Shots": 3,
+        "Shots insidebox": 4,
+        "Shots outsidebox": 5,
         "Fouls": 18,
-        "Corner Kicks": 0,
+        "Corner Kicks": 1,
         "Offsides": 0,
-        "Ball Possession": "30%",
+        "Ball Possession": "31%",
         "Yellow Cards": 3,
         "Red Cards": null,
         "Goalkeeper Saves": 8,
-        "Total passes": 242,
-        "Passes accurate": 193,
+        "Total passes": 247,
+        "Passes accurate": 198,
         "Passes %": "80%",
-        "expected_goals": "0.52",
-        "goals_prevented": "-0.23"
+        "expected_goals": "0.67",
+        "goals_prevented": "-0.18"
       }
     },
     "lineups": {
@@ -26019,6 +26019,11 @@
               "border": "99bff0"
             }
           }
+        },
+        "coach": {
+          "id": 28221,
+          "name": "Mohamed Ouahbi",
+          "photo": "https://media.api-sports.io/football/coachs/28221.png"
         },
         "formation": "4-2-3-1",
         "startXI": [
@@ -26258,12 +26263,7 @@
               "grid": null
             }
           }
-        ],
-        "coach": {
-          "id": 28221,
-          "name": "Mohamed Ouahbi",
-          "photo": "https://media.api-sports.io/football/coachs/28221.png"
-        }
+        ]
       },
       "away": {
         "team": {
@@ -26282,6 +26282,11 @@
               "border": "0d0d0d"
             }
           }
+        },
+        "coach": {
+          "id": 373,
+          "name": "Sebastien Migne",
+          "photo": "https://media.api-sports.io/football/coachs/373.png"
         },
         "formation": "4-4-1-1",
         "startXI": [
@@ -26521,12 +26526,7 @@
               "grid": null
             }
           }
-        ],
-        "coach": {
-          "id": 373,
-          "name": "Sebastien Migne",
-          "photo": "https://media.api-sports.io/football/coachs/373.png"
-        }
+        ]
       }
     },
     "events": [
@@ -26546,15 +26546,6 @@
         "assist": null,
         "type": "Goal",
         "detail": "Normal Goal",
-        "comments": ""
-      },
-      {
-        "time": "40",
-        "team": "Morocco",
-        "player": "Achraf Hakimi",
-        "assist": null,
-        "type": "Var",
-        "detail": "Goal confirmed",
         "comments": ""
       },
       {
@@ -26596,8 +26587,8 @@
       {
         "time": "70",
         "team": "Morocco",
-        "player": "Ismael Saibari",
-        "assist": "Soufiane Rahimi",
+        "player": "Ayoub El Kaabi",
+        "assist": "Gessime Yassine",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -26614,8 +26605,8 @@
       {
         "time": "70",
         "team": "Morocco",
-        "player": "Ayoub El Kaabi",
-        "assist": "Gessime Yassine",
+        "player": "Ismael Saibari",
+        "assist": "Soufiane Rahimi",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -26639,7 +26630,7 @@
         "comments": "Argument"
       },
       {
-        "time": "79",
+        "time": "80",
         "team": "Haiti",
         "player": "Duckens Nazon",
         "assist": null,
@@ -26702,15 +26693,6 @@
         "comments": ""
       },
       {
-        "time": "90+1",
-        "team": "Morocco",
-        "player": "Gessime Yassine",
-        "assist": null,
-        "type": "Var",
-        "detail": "Goal confirmed",
-        "comments": ""
-      },
-      {
         "time": "90+3",
         "team": "Haiti",
         "player": "Josué Casimir",
@@ -26726,13 +26708,13 @@
         "players": [
           {
             "name": "Yassine Bounou",
-            "rating": "5.2",
+            "rating": "5.6",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Achraf Hakimi",
-            "rating": "7.6",
+            "rating": "7.9",
             "goals": 1,
             "assists": 1
           },
@@ -26744,7 +26726,7 @@
           },
           {
             "name": "Chadi Riad",
-            "rating": "6.7",
+            "rating": "6.6",
             "goals": 0,
             "assists": 1
           },
@@ -26762,7 +26744,7 @@
           },
           {
             "name": "Sofyan Amrabat",
-            "rating": "6.9",
+            "rating": "7",
             "goals": 0,
             "assists": 0
           },
@@ -26774,13 +26756,13 @@
           },
           {
             "name": "Ismael Saibari",
-            "rating": "7.3",
+            "rating": "7.2",
             "goals": 1,
             "assists": 0
           },
           {
             "name": "Bilal El Khannouss",
-            "rating": "8.9",
+            "rating": "8.6",
             "goals": 0,
             "assists": 0
           },
@@ -26792,31 +26774,31 @@
           },
           {
             "name": "Azzedine Ounahi",
-            "rating": "6.7",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Gessime Yassine",
-            "rating": "7.3",
+            "rating": "7.7",
             "goals": 1,
             "assists": 0
           },
           {
             "name": "Soufiane Rahimi",
-            "rating": "8.2",
+            "rating": "8.3",
             "goals": 1,
             "assists": 1
           },
           {
             "name": "Noussair Mazraoui",
-            "rating": "6.7",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Samir El Mourabet",
-            "rating": "6.6",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
@@ -26887,7 +26869,7 @@
         "players": [
           {
             "name": "Johny Placide",
-            "rating": "6.9",
+            "rating": "7",
             "goals": 0,
             "assists": 0
           },
@@ -26899,7 +26881,7 @@
           },
           {
             "name": "Ricardo Adé",
-            "rating": "6.5",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
@@ -26935,25 +26917,25 @@
           },
           {
             "name": "Ruben Providence",
-            "rating": "6.6",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Wilson Isidor",
-            "rating": "7.7",
+            "rating": "7.6",
             "goals": 1,
             "assists": 0
           },
           {
             "name": "Lenny Joseph",
-            "rating": "5.3",
+            "rating": "5.7",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Louicius Don Deedson",
-            "rating": "6.3",
+            "rating": "6.5",
             "goals": 0,
             "assists": 0
           },
@@ -27058,44 +27040,44 @@
     },
     "statistics": {
       "Scotland": {
-        "Shots on Goal": 4,
+        "Shots on Goal": 5,
         "Shots off Goal": 6,
-        "Total Shots": 13,
+        "Total Shots": 14,
         "Blocked Shots": 3,
-        "Shots insidebox": 9,
+        "Shots insidebox": 10,
         "Shots outsidebox": 4,
         "Fouls": 10,
-        "Corner Kicks": 6,
+        "Corner Kicks": 7,
         "Offsides": 0,
-        "Ball Possession": "47%",
+        "Ball Possession": "46%",
         "Yellow Cards": 1,
         "Red Cards": null,
         "Goalkeeper Saves": 5,
-        "Total passes": 497,
-        "Passes accurate": 447,
+        "Total passes": 500,
+        "Passes accurate": 450,
         "Passes %": "90%",
-        "expected_goals": "0.87",
-        "goals_prevented": "1.05"
+        "expected_goals": "1.04",
+        "goals_prevented": "1.23"
       },
       "Brazil": {
         "Shots on Goal": 9,
         "Shots off Goal": 7,
-        "Total Shots": 20,
-        "Blocked Shots": 4,
-        "Shots insidebox": 13,
+        "Total Shots": 21,
+        "Blocked Shots": 5,
+        "Shots insidebox": 14,
         "Shots outsidebox": 7,
-        "Fouls": 9,
+        "Fouls": 11,
         "Corner Kicks": 6,
         "Offsides": 1,
-        "Ball Possession": "53%",
+        "Ball Possession": "54%",
         "Yellow Cards": 2,
         "Red Cards": null,
-        "Goalkeeper Saves": 4,
-        "Total passes": 585,
-        "Passes accurate": 543,
+        "Goalkeeper Saves": 5,
+        "Total passes": 605,
+        "Passes accurate": 564,
         "Passes %": "93%",
-        "expected_goals": "4.41",
-        "goals_prevented": "1.05"
+        "expected_goals": "4.33",
+        "goals_prevented": "1.23"
       }
     },
     "lineups": {
@@ -27116,6 +27098,11 @@
               "border": "e629c7"
             }
           }
+        },
+        "coach": {
+          "id": 76,
+          "name": "Steve Clarke",
+          "photo": "https://media.api-sports.io/football/coachs/76.png"
         },
         "formation": "4-2-3-1",
         "startXI": [
@@ -27355,12 +27342,7 @@
               "grid": null
             }
           }
-        ],
-        "coach": {
-          "id": 76,
-          "name": "Steve Clarke",
-          "photo": "https://media.api-sports.io/football/coachs/76.png"
-        }
+        ]
       },
       "away": {
         "team": {
@@ -27379,6 +27361,11 @@
               "border": "47484d"
             }
           }
+        },
+        "coach": {
+          "id": 2407,
+          "name": "Carlo Ancelotti",
+          "photo": "https://media.api-sports.io/football/coachs/2407.png"
         },
         "formation": "4-3-3",
         "startXI": [
@@ -27609,12 +27596,7 @@
               "grid": null
             }
           }
-        ],
-        "coach": {
-          "id": 2407,
-          "name": "Carlo Ancelotti",
-          "photo": "https://media.api-sports.io/football/coachs/2407.png"
-        }
+        ]
       }
     },
     "events": [
@@ -27625,15 +27607,6 @@
         "assist": "Rayan",
         "type": "Goal",
         "detail": "Normal Goal",
-        "comments": ""
-      },
-      {
-        "time": "22",
-        "team": "Brazil",
-        "player": "Vinícius Júnior",
-        "assist": null,
-        "type": "Var",
-        "detail": "Goal cancelled",
         "comments": ""
       },
       {
@@ -27664,7 +27637,7 @@
         "comments": ""
       },
       {
-        "time": "63",
+        "time": "62",
         "team": "Brazil",
         "player": "Danilo",
         "assist": null,
@@ -27673,10 +27646,10 @@
         "comments": "Foul"
       },
       {
-        "time": "66",
+        "time": "65",
         "team": "Brazil",
-        "player": "Lucas Paquetá",
-        "assist": "Gabriel Martinelli",
+        "player": "Casemiro",
+        "assist": "Fabinho",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -27684,8 +27657,8 @@
       {
         "time": "66",
         "team": "Brazil",
-        "player": "Casemiro",
-        "assist": "Fabinho",
+        "player": "Lucas Paquetá",
+        "assist": "Gabriel Martinelli",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -27700,7 +27673,16 @@
         "comments": ""
       },
       {
-        "time": "81",
+        "time": "82",
+        "team": "Brazil",
+        "player": "Fabinho",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Foul"
+      },
+      {
+        "time": "82",
         "team": "Scotland",
         "player": "Ben Gannon-Doak",
         "assist": "Ryan Christie",
@@ -27709,7 +27691,7 @@
         "comments": ""
       },
       {
-        "time": "81",
+        "time": "82",
         "team": "Scotland",
         "player": "Nathan Patterson",
         "assist": "Tony Ralston",
@@ -27720,8 +27702,8 @@
       {
         "time": "82",
         "team": "Brazil",
-        "player": "Rayan",
-        "assist": "Endrick",
+        "player": "Douglas Santos",
+        "assist": "Alex Sandro",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -27729,20 +27711,11 @@
       {
         "time": "82",
         "team": "Brazil",
-        "player": "Douglas Santos",
-        "assist": "Alex Sandro",
+        "player": "Rayan",
+        "assist": "Endrick",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
-      },
-      {
-        "time": "83",
-        "team": "Brazil",
-        "player": "Fabinho",
-        "assist": null,
-        "type": "Card",
-        "detail": "Yellow Card",
-        "comments": "Foul"
       },
       {
         "time": "89",
@@ -27756,8 +27729,8 @@
       {
         "time": "90",
         "team": "Scotland",
-        "player": "John McGinn",
-        "assist": "Findlay Curtis",
+        "player": "Lawrence Shankland",
+        "assist": "Che Adams",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -27765,8 +27738,8 @@
       {
         "time": "90",
         "team": "Scotland",
-        "player": "Lawrence Shankland",
-        "assist": "Che Adams",
+        "player": "John McGinn",
+        "assist": "Findlay Curtis",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -27790,7 +27763,7 @@
           },
           {
             "name": "Jack Hendry",
-            "rating": "6.3",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
@@ -27808,13 +27781,13 @@
           },
           {
             "name": "Lewis Ferguson",
-            "rating": "7.9",
+            "rating": "8.2",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Kenny McLean",
-            "rating": "6.5",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
@@ -27826,7 +27799,7 @@
           },
           {
             "name": "Scott McTominay",
-            "rating": "6.7",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
@@ -27844,19 +27817,19 @@
           },
           {
             "name": "Kieran Tierney",
-            "rating": "7.2",
+            "rating": "7",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Tony Ralston",
-            "rating": "6.2",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Ryan Christie",
-            "rating": "6.5",
+            "rating": "6.7",
             "goals": 0,
             "assists": 0
           },
@@ -27939,7 +27912,7 @@
         "players": [
           {
             "name": "Alisson",
-            "rating": "7.9",
+            "rating": "8.3",
             "goals": 0,
             "assists": 0
           },
@@ -27951,37 +27924,37 @@
           },
           {
             "name": "Marquinhos",
-            "rating": "7.2",
+            "rating": "7.5",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Gabriel Magalhães",
-            "rating": "7.6",
+            "rating": "8.2",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Douglas Santos",
-            "rating": "6.3",
+            "rating": "6.7",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Bruno Guimarães",
-            "rating": "7.9",
+            "rating": "8",
             "goals": 0,
             "assists": 2
           },
           {
             "name": "Casemiro",
-            "rating": "7.3",
+            "rating": "7.7",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Lucas Paquetá",
-            "rating": "7.2",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
@@ -27999,7 +27972,7 @@
           },
           {
             "name": "Vinícius Júnior",
-            "rating": "9",
+            "rating": "9.2",
             "goals": 2,
             "assists": 0
           },
@@ -28011,13 +27984,13 @@
           },
           {
             "name": "Gabriel Martinelli",
-            "rating": "6.5",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Neymar",
-            "rating": "6.3",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
