@@ -34085,7 +34085,974 @@
     ]
   },
   "m058": {
-    "fixtureId": "1489412"
+    "fixtureId": 1489412,
+    "date": "2026-06-25T23:00:00+00:00",
+    "venue": "Arrowhead Stadium",
+    "status": "Match Finished",
+    "homeTeam": "Tunisia",
+    "awayTeam": "Netherlands",
+    "score": {
+      "home": 1,
+      "away": 3
+    },
+    "statistics": {
+      "Tunisia": {
+        "Blocked Shots": 1,
+        "Free Kicks": 9,
+        "Shots on Goal": 4,
+        "Goalkeeper Saves": 4,
+        "Shots off Goal": 5,
+        "Offsides": 2,
+        "Total Shots": 10,
+        "Corner Kicks": 4,
+        "Fouls": 11,
+        "Yellow Cards": 0,
+        "Red Cards": 0,
+        "Ball Possession": "28%"
+      },
+      "Netherlands": {
+        "Blocked Shots": 5,
+        "Free Kicks": 11,
+        "Shots on Goal": 7,
+        "Goalkeeper Saves": 3,
+        "Shots off Goal": 8,
+        "Offsides": 1,
+        "Total Shots": 20,
+        "Corner Kicks": 6,
+        "Fouls": 10,
+        "Yellow Cards": 0,
+        "Red Cards": 0,
+        "Ball Possession": "72%"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 28,
+          "name": "Tunisia",
+          "logo": "https://media.api-sports.io/football/teams/28.png",
+          "colors": null
+        },
+        "formation": "5-3-2",
+        "coach": {
+          "id": 0,
+          "name": "Hervé Renard",
+          "photo": null
+        },
+        "startXI": [
+          {
+            "player": {
+              "id": 49424,
+              "name": "A. Dahmen",
+              "number": 16,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 18942,
+              "name": "Y. Valery",
+              "number": 20,
+              "pos": "D",
+              "grid": "2:5"
+            }
+          },
+          {
+            "player": {
+              "id": 25300,
+              "name": "R. Khedira",
+              "number": 13,
+              "pos": "M",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 50030,
+              "name": "M. Talbi",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 135059,
+              "name": "A. Ben Hmida",
+              "number": 21,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 49583,
+              "name": "A. Abdi",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 21587,
+              "name": "E. Skhiri",
+              "number": 17,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 180560,
+              "name": "H. Mejbri",
+              "number": 10,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 310196,
+              "name": "Ismaël Gharbi",
+              "number": 11,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 344862,
+              "name": "H. Mastouri",
+              "number": 9,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 199310,
+              "name": "A. Ben Slimane",
+              "number": 25,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 49423,
+              "name": "S. Ben Hsan",
+              "number": 22,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2945,
+              "name": "D. Bronn",
+              "number": 6,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 49469,
+              "name": "M. Ben Ouanes",
+              "number": 12,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2962,
+              "name": "F. Chaouat",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 163068,
+              "name": "O. Rekik",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 42012,
+              "name": "E. Achouri",
+              "number": 7,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 57518,
+              "name": "S. Tounekti",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 67195,
+              "name": "H. Mahmoud",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 533394,
+              "name": "C. Abdelmouhib",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 323974,
+              "name": "E. Saad",
+              "number": 8,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 533360,
+              "name": "R. Chikhaoui",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 533295,
+              "name": "K. Ayari",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 566059,
+              "name": "R. Elloumi",
+              "number": 18,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ]
+      },
+      "away": {
+        "team": {
+          "id": 1118,
+          "name": "Netherlands",
+          "logo": "https://media.api-sports.io/football/teams/1118.png",
+          "colors": null
+        },
+        "formation": "4-3-3",
+        "coach": {
+          "id": 73,
+          "name": "R. Koeman",
+          "photo": "https://media.api-sports.io/football/coachs/73.png"
+        },
+        "startXI": [
+          {
+            "player": {
+              "id": 129058,
+              "name": "B. Verbruggen",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 226,
+              "name": "D. Dumfries",
+              "number": 22,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 38695,
+              "name": "J. van Hecke",
+              "number": 6,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 290,
+              "name": "V. van Dijk",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 18861,
+              "name": "N. Aké",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 542,
+              "name": "R. Gravenberch",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 538,
+              "name": "F. de Jong",
+              "number": 21,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 36902,
+              "name": "T. Reijnders",
+              "number": 14,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 249,
+              "name": "D. Malen",
+              "number": 18,
+              "pos": "F",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 38750,
+              "name": "B. Brobbey",
+              "number": 19,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 247,
+              "name": "C. Gakpo",
+              "number": 11,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 341642,
+              "name": "J. Hato",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 194536,
+              "name": "R. Roefs",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 152849,
+              "name": "M. van de Ven",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 38747,
+              "name": "Q. Timber",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 92993,
+              "name": "M. Wieffer",
+              "number": 12,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 37724,
+              "name": "C. Summerville",
+              "number": 24,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 544,
+              "name": "N. Lang",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 37143,
+              "name": "L. Geertruida",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 792,
+              "name": "J. Kluivert",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36905,
+              "name": "G. Til",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36899,
+              "name": "T. Koopmeiners",
+              "number": 20,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 25416,
+              "name": "W. Weghorst",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 26232,
+              "name": "M. Flekken",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 667,
+              "name": "M. Depay",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30432,
+              "name": "M. de Roon",
+              "number": 3,
+              "pos": "M",
+              "grid": null
+            }
+          }
+        ]
+      }
+    },
+    "events": [
+      {
+        "time": "3",
+        "team": "Netherlands",
+        "player": "Ellyes Skhiri",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Own Goal",
+        "comments": ""
+      },
+      {
+        "time": "7",
+        "team": "Netherlands",
+        "player": "Brian Brobbey",
+        "assist": "Virgil van Dijk",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "54",
+        "team": "Tunisia",
+        "player": "Hazem Mastouri",
+        "assist": "Hannibal Mejbri",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "62",
+        "team": "Netherlands",
+        "player": "Jan Paul van Hecke",
+        "assist": "Tijjani Reijnders",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "67",
+        "team": "Tunisia",
+        "player": "Rani Khedira",
+        "assist": "Mohamed Hadj Mahmoud",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "68",
+        "team": "Tunisia",
+        "player": "Anis Ben Slimane",
+        "assist": "Elias Achouri",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "68",
+        "team": "Tunisia",
+        "player": "Mohamed Amine Ben Hamida",
+        "assist": "Mortadha Ben Ouanes",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "72",
+        "team": "Netherlands",
+        "player": "Frenkie de Jong",
+        "assist": "Teun Koopmeiners",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "72",
+        "team": "Netherlands",
+        "player": "Tijjani Reijnders",
+        "assist": "Justin Kluivert",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "72",
+        "team": "Netherlands",
+        "player": "Donyell Malen",
+        "assist": "Crysencio Summerville",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "75",
+        "team": "Tunisia",
+        "player": "Ismael Gharbi",
+        "assist": "Firas Chaouat",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "77",
+        "team": "Netherlands",
+        "player": "Brian Brobbey",
+        "assist": "Memphis Depay",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "84",
+        "team": "Netherlands",
+        "player": "Cody Gakpo",
+        "assist": "Noa Lang",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "90",
+        "team": "Tunisia",
+        "player": "Hazem Mastouri",
+        "assist": "Sebastian Tounekti",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Tunisia",
+        "players": [
+          {
+            "name": "R. Elloumi",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "H. Mastouri",
+            "rating": "8.2",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "K. Ayari",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "R. Chikhaoui",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "E. Saad",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "C. Abdelmouhib",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ismaël Gharbi",
+            "rating": "6.33",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "A. Ben Hmida",
+            "rating": "6.17",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "H. Mejbri",
+            "rating": "7",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "A. Ben Slimane",
+            "rating": "5.79",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "A. Dahmen",
+            "rating": "6.33",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "H. Mahmoud",
+            "rating": "5.81",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "S. Tounekti",
+            "rating": "6.69",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "E. Achouri",
+            "rating": "5.87",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "O. Rekik",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "F. Chaouat",
+            "rating": "6.23",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "A. Abdi",
+            "rating": "5.45",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Y. Valery",
+            "rating": "5.72",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "M. Ben Ouanes",
+            "rating": "5.64",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "M. Talbi",
+            "rating": "6.14",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "D. Bronn",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "E. Skhiri",
+            "rating": "6.4",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "S. Ben Hsan",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "R. Khedira",
+            "rating": "5.97",
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Netherlands",
+        "players": [
+          {
+            "name": "J. Hato",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "R. Roefs",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "M. van de Ven",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "B. Verbruggen",
+            "rating": "6.96",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Q. Timber",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "J. van Hecke",
+            "rating": "8.33",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "M. Wieffer",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "R. Gravenberch",
+            "rating": "6.66",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "C. Summerville",
+            "rating": "6.55",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "B. Brobbey",
+            "rating": "8.2",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "T. Reijnders",
+            "rating": "7.36",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "N. Lang",
+            "rating": "6.54",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "C. Gakpo",
+            "rating": "6.27",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "L. Geertruida",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "J. Kluivert",
+            "rating": "6.12",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "G. Til",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "D. Malen",
+            "rating": "6.72",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "T. Koopmeiners",
+            "rating": "6.95",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "F. de Jong",
+            "rating": "6.85",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "D. Dumfries",
+            "rating": "7.22",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "W. Weghorst",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "M. Flekken",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "V. van Dijk",
+            "rating": "7.83",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "N. Aké",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "M. Depay",
+            "rating": "6.37",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "M. de Roon",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m053": {
     "fixtureId": 1539010,
@@ -35107,7 +36074,998 @@
     ]
   },
   "m057": {
-    "fixtureId": "1539011"
+    "fixtureId": 1539011,
+    "date": "2026-06-25T23:00:00+00:00",
+    "venue": "AT&T Stadium",
+    "status": "Match Finished",
+    "homeTeam": "Japan",
+    "awayTeam": "Sweden",
+    "score": {
+      "home": 1,
+      "away": 1
+    },
+    "statistics": {
+      "Japan": {
+        "Blocked Shots": 2,
+        "Free Kicks": 11,
+        "Shots on Goal": 3,
+        "Goalkeeper Saves": 4,
+        "Shots off Goal": 3,
+        "Offsides": 3,
+        "Total Shots": 8,
+        "Yellow Cards": 1,
+        "Corner Kicks": 2,
+        "Fouls": 20,
+        "Red Cards": 0,
+        "Ball Possession": "52%"
+      },
+      "Sweden": {
+        "Blocked Shots": 3,
+        "Free Kicks": 19,
+        "Shots on Goal": 5,
+        "Goalkeeper Saves": 2,
+        "Shots off Goal": 3,
+        "Offsides": 2,
+        "Total Shots": 11,
+        "Yellow Cards": 2,
+        "Corner Kicks": 8,
+        "Fouls": 11,
+        "Red Cards": 0,
+        "Ball Possession": "48%"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 12,
+          "name": "Japan",
+          "logo": "https://media.api-sports.io/football/teams/12.png",
+          "colors": null
+        },
+        "formation": "3-4-3",
+        "coach": {
+          "id": 323,
+          "name": "H. Moriyasu",
+          "photo": "https://media.api-sports.io/football/coachs/323.png"
+        },
+        "startXI": [
+          {
+            "player": {
+              "id": 199578,
+              "name": "Z. Suzuki",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 33165,
+              "name": "A. Seko",
+              "number": 20,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 38114,
+              "name": "K. Itakura",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 32893,
+              "name": "H. Ito",
+              "number": 21,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 32887,
+              "name": "Y. Sugawara",
+              "number": 2,
+              "pos": "D",
+              "grid": "3:4"
+            }
+          },
+          {
+            "player": {
+              "id": 2601,
+              "name": "D. Kamada",
+              "number": 15,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 32966,
+              "name": "A. Tanaka",
+              "number": 7,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 33321,
+              "name": "Keito Nakamura",
+              "number": 13,
+              "pos": "F",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2598,
+              "name": "R. Dōan",
+              "number": 10,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 72155,
+              "name": "A. Ueda",
+              "number": 18,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 33224,
+              "name": "D. Maeda",
+              "number": 11,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 32954,
+              "name": "S. Taniguchi",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 440,
+              "name": "Y. Nagatomo",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1942,
+              "name": "J. Ito",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2597,
+              "name": "T. Tomiyasu",
+              "number": 22,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 33289,
+              "name": "Koki Ogawa",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 33034,
+              "name": "K. Osako",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 33889,
+              "name": "K. Sano",
+              "number": 24,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 32858,
+              "name": "T. Watanabe",
+              "number": 16,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 199143,
+              "name": "Y. Suzuki",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 304782,
+              "name": "T. Hayakawa",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 351014,
+              "name": "J. Suzuki",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 375930,
+              "name": "K. Goto",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 422572,
+              "name": "K. Shiogai",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 106851,
+              "name": "S. Machino",
+              "number": 6,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ]
+      },
+      "away": {
+        "team": {
+          "id": 5,
+          "name": "Sweden",
+          "logo": "https://media.api-sports.io/football/teams/5.png",
+          "colors": null
+        },
+        "formation": "3-4-1-2",
+        "coach": {
+          "id": 12,
+          "name": "G. Potter",
+          "photo": "https://media.api-sports.io/football/coachs/12.png"
+        },
+        "startXI": [
+          {
+            "player": {
+              "id": 48033,
+              "name": "J. Widell Zetterström",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 137721,
+              "name": "G. Lagerbielke",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 137976,
+              "name": "I. Hien",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 889,
+              "name": "V. Lindelöf",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 47696,
+              "name": "A. Bernhardsson",
+              "number": 21,
+              "pos": "F",
+              "grid": "3:4"
+            }
+          },
+          {
+            "player": {
+              "id": 226765,
+              "name": "E. Stroud",
+              "number": 24,
+              "pos": "D",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 265820,
+              "name": "Y. Ayari",
+              "number": 18,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 47969,
+              "name": "G. Gudmundsson",
+              "number": 5,
+              "pos": "D",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 153430,
+              "name": "A. Elanga",
+              "number": 11,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 18979,
+              "name": "V. Gyökeres",
+              "number": 17,
+              "pos": "F",
+              "grid": "5:2"
+            }
+          },
+          {
+            "player": {
+              "id": 2864,
+              "name": "A. Isak",
+              "number": 9,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 350850,
+              "name": "B. Zeneli",
+              "number": 22,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 347316,
+              "name": "L. Bergvall",
+              "number": 7,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 198654,
+              "name": "D. Svensson",
+              "number": 8,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 161504,
+              "name": "H. Johansson",
+              "number": 6,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 160925,
+              "name": "T. Ali",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 48002,
+              "name": "B. Nygren",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 158700,
+              "name": "V. Johansson",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47903,
+              "name": "H. Ekdal",
+              "number": 14,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30484,
+              "name": "M. Svanberg",
+              "number": 19,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 15683,
+              "name": "G. Nilsson",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 8486,
+              "name": "E. Smith",
+              "number": 20,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47988,
+              "name": "C. Starfelt",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2860,
+              "name": "K. Sema",
+              "number": 13,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 48047,
+              "name": "J. Karlström",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2851,
+              "name": "K. Nordfeldt",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          }
+        ]
+      }
+    },
+    "events": [
+      {
+        "time": "32",
+        "team": "Sweden",
+        "player": "Isak Hien",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Foul"
+      },
+      {
+        "time": "37",
+        "team": "Sweden",
+        "player": "Isak Hien",
+        "assist": "Lucas Bergvall",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "39",
+        "team": "Japan",
+        "player": "Ko Itakura",
+        "assist": "Shogo Taniguchi",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "56",
+        "team": "Japan",
+        "player": "Daizen Maeda",
+        "assist": "Ritsu Doan",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "62",
+        "team": "Sweden",
+        "player": "Anthony Elanga",
+        "assist": "Viktor Gyökeres",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "66",
+        "team": "Japan",
+        "player": "Ayase Ueda",
+        "assist": "Koki Ogawa",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "67",
+        "team": "Japan",
+        "player": "Ritsu Doan",
+        "assist": "Junya Ito",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "75",
+        "team": "Sweden",
+        "player": "Alexander Bernhardsson",
+        "assist": "Daniel Svensson",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "75",
+        "team": "Sweden",
+        "player": "Elliot Stroud",
+        "assist": "Ken Sema",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "75",
+        "team": "Japan",
+        "player": "Keito Nakamura",
+        "assist": "Yuto Nagatomo",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "75",
+        "team": "Japan",
+        "player": "Ayumu Seko",
+        "assist": "Tsuyoshi Watanabe",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "77",
+        "team": "Japan",
+        "player": "Shogo Taniguchi",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Foul"
+      },
+      {
+        "time": "85",
+        "team": "Sweden",
+        "player": "Viktor Gyökeres",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Foul"
+      },
+      {
+        "time": "87",
+        "team": "Sweden",
+        "player": "Victor Lindelöf",
+        "assist": "Carl Starfelt",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "88",
+        "team": "Sweden",
+        "player": "Gabriel Gudmundsson",
+        "assist": "Benjamin Nygren",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Japan",
+        "players": [
+          {
+            "name": "K. Shiogai",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "K. Goto",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "J. Suzuki",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "T. Hayakawa",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Y. Suzuki",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "A. Ueda",
+            "rating": "6.44",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "T. Watanabe",
+            "rating": "6.57",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "K. Sano",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "D. Maeda",
+            "rating": "8.2",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Keito Nakamura",
+            "rating": "6.64",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Z. Suzuki",
+            "rating": "7.09",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Y. Sugawara",
+            "rating": "6.68",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "H. Ito",
+            "rating": "7.05",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "A. Seko",
+            "rating": "6.77",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "A. Tanaka",
+            "rating": "6.89",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "K. Osako",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Koki Ogawa",
+            "rating": "6.31",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "T. Tomiyasu",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "D. Kamada",
+            "rating": "7.06",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "K. Itakura",
+            "rating": "6.92",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "R. Dōan",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "J. Ito",
+            "rating": "6.53",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "S. Taniguchi",
+            "rating": "6.17",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Y. Nagatomo",
+            "rating": "6.88",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "S. Machino",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Sweden",
+        "players": [
+          {
+            "name": "B. Zeneli",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "L. Bergvall",
+            "rating": "6.77",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "E. Stroud",
+            "rating": "6.62",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "A. Elanga",
+            "rating": "8.3",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Y. Ayari",
+            "rating": "6.86",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "D. Svensson",
+            "rating": "6.54",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "H. Johansson",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "G. Lagerbielke",
+            "rating": "6.71",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "J. Widell Zetterström",
+            "rating": "6.16",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "A. Bernhardsson",
+            "rating": "6.27",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "T. Ali",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "B. Nygren",
+            "rating": "6.63",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "V. Johansson",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "I. Hien",
+            "rating": "6.96",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "H. Ekdal",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "G. Gudmundsson",
+            "rating": "7.13",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "A. Isak",
+            "rating": "6.39",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "V. Gyökeres",
+            "rating": "6.28",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "M. Svanberg",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "G. Nilsson",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "E. Smith",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "C. Starfelt",
+            "rating": "6.48",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "K. Sema",
+            "rating": "6.44",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "J. Karlström",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "V. Lindelöf",
+            "rating": "6.81",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "K. Nordfeldt",
+            "rating": "0",
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m060": {
     "fixtureId": "1489411"
