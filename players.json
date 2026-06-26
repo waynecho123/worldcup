@@ -8,18 +8,25 @@
       "matches": 2
     },
     {
+      "name": "Kylian Mbappé",
+      "photo": "https://media.api-sports.io/football/players/278.png",
+      "team": "France",
+      "goals": 4,
+      "matches": 3
+    },
+    {
+      "name": "O. Dembélé",
+      "photo": "https://media.api-sports.io/football/players/153.png",
+      "team": "France",
+      "goals": 4,
+      "matches": 3
+    },
+    {
       "name": "Vinícius Júnior",
       "photo": "https://media.api-sports.io/football/players/762.png",
       "team": "Brazil",
       "goals": 4,
       "matches": 3
-    },
-    {
-      "name": "Kylian Mbappé",
-      "photo": "https://media.api-sports.io/football/players/278.png",
-      "team": "France",
-      "goals": 4,
-      "matches": 2
     },
     {
       "name": "E. Haaland",
@@ -39,6 +46,13 @@
       "name": "J. Manzambi",
       "photo": "https://media.api-sports.io/football/players/406244.png",
       "team": "Switzerland",
+      "goals": 3,
+      "matches": 3
+    },
+    {
+      "name": "I. Sarr",
+      "photo": "https://media.api-sports.io/football/players/2218.png",
+      "team": "Senegal",
       "goals": 3,
       "matches": 3
     },
@@ -74,6 +88,13 @@
       "name": "C. Summerville",
       "photo": "https://media.api-sports.io/football/players/37724.png",
       "team": "Netherlands",
+      "goals": 2,
+      "matches": 3
+    },
+    {
+      "name": "P. Gueye",
+      "photo": "https://media.api-sports.io/football/players/20696.png",
+      "team": "Senegal",
       "goals": 2,
       "matches": 3
     },
@@ -118,27 +139,6 @@
       "team": "Sweden",
       "goals": 2,
       "matches": 3
-    },
-    {
-      "name": "N. Pépé",
-      "photo": "https://media.api-sports.io/football/players/3246.png",
-      "team": "Ivory Coast",
-      "goals": 2,
-      "matches": 3
-    },
-    {
-      "name": "C. Larin",
-      "photo": "https://media.api-sports.io/football/players/2001.png",
-      "team": "Canada",
-      "goals": 2,
-      "matches": 3
-    },
-    {
-      "name": "D. Kamada",
-      "photo": "https://media.api-sports.io/football/players/2601.png",
-      "team": "Japan",
-      "goals": 2,
-      "matches": 3
     }
   ],
   "assists": [
@@ -150,6 +150,13 @@
       "matches": 3
     },
     {
+      "name": "M. Olise",
+      "photo": "https://media.api-sports.io/football/players/19617.png",
+      "team": "France",
+      "assists": 3,
+      "matches": 3
+    },
+    {
       "name": "Bruno Guimarães",
       "photo": "https://media.api-sports.io/football/players/10135.png",
       "team": "Brazil",
@@ -157,11 +164,11 @@
       "matches": 3
     },
     {
-      "name": "M. Olise",
-      "photo": "https://media.api-sports.io/football/players/19617.png",
+      "name": "Kylian Mbappé",
+      "photo": "https://media.api-sports.io/football/players/278.png",
       "team": "France",
-      "assists": 3,
-      "matches": 2
+      "assists": 2,
+      "matches": 3
     },
     {
       "name": "D. Undav",
@@ -176,6 +183,13 @@
       "team": "Sweden",
       "assists": 2,
       "matches": 3
+    },
+    {
+      "name": "I. Ndiaye",
+      "photo": "https://media.api-sports.io/football/players/18592.png",
+      "team": "Senegal",
+      "assists": 2,
+      "matches": 2
     },
     {
       "name": "N. Saliba",
@@ -241,16 +255,16 @@
       "matches": 3
     },
     {
-      "name": "H. Mejbri",
-      "photo": "https://media.api-sports.io/football/players/180560.png",
-      "team": "Tunisia",
+      "name": "D. Dumfries",
+      "photo": "https://media.api-sports.io/football/players/226.png",
+      "team": "Netherlands",
       "assists": 2,
       "matches": 3
     },
     {
-      "name": "D. Dumfries",
-      "photo": "https://media.api-sports.io/football/players/226.png",
-      "team": "Netherlands",
+      "name": "H. Mejbri",
+      "photo": "https://media.api-sports.io/football/players/180560.png",
+      "team": "Tunisia",
       "assists": 2,
       "matches": 3
     },
@@ -267,20 +281,6 @@
       "team": "New Zealand",
       "assists": 2,
       "matches": 2
-    },
-    {
-      "name": "Vinícius Júnior",
-      "photo": "https://media.api-sports.io/football/players/762.png",
-      "team": "Brazil",
-      "assists": 1,
-      "matches": 3
-    },
-    {
-      "name": "J. Manzambi",
-      "photo": "https://media.api-sports.io/football/players/406244.png",
-      "team": "Switzerland",
-      "assists": 1,
-      "matches": 3
     }
   ],
   "cards": [
@@ -289,6 +289,13 @@
       "photo": "https://media.api-sports.io/football/players/2507.png",
       "team": "Paraguay",
       "yellow": 1,
+      "red": 1
+    },
+    {
+      "name": "Rebin Solaka",
+      "photo": "https://media.api-sports.io/football/players/42261.png",
+      "team": "Iraq",
+      "yellow": 0,
       "red": 1
     },
     {
@@ -362,6 +369,13 @@
       "red": 0
     },
     {
+      "name": "Amir Al Ammari",
+      "photo": "https://media.api-sports.io/football/players/47792.png",
+      "team": "Iraq",
+      "yellow": 2,
+      "red": 0
+    },
+    {
       "name": "J. Bacuna",
       "photo": "https://media.api-sports.io/football/players/19047.png",
       "team": "Curaçao",
@@ -409,21 +423,7 @@
       "team": "Sweden",
       "yellow": 1,
       "red": 0
-    },
-    {
-      "name": "K. McLean",
-      "photo": "https://media.api-sports.io/football/players/19077.png",
-      "team": "Scotland",
-      "yellow": 1,
-      "red": 0
-    },
-    {
-      "name": "C. Summerville",
-      "photo": "https://media.api-sports.io/football/players/37724.png",
-      "team": "Netherlands",
-      "yellow": 1,
-      "red": 0
     }
   ],
-  "updatedAt": "2026-06-26T20:11:31.994Z"
+  "updatedAt": "2026-06-26T22:06:31.112Z"
 }
