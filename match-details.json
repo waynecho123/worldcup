@@ -18749,7 +18749,7 @@
           {
             "player": {
               "id": 2932,
-              "name": "J. Pickford",
+              "name": "Jordan Pickford",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -18758,7 +18758,7 @@
           {
             "player": {
               "id": 19545,
-              "name": "R. James",
+              "name": "Reece James",
               "number": 24,
               "pos": "D",
               "grid": "2:4"
@@ -18767,7 +18767,7 @@
           {
             "player": {
               "id": 19354,
-              "name": "E. Konsa",
+              "name": "Ezri Konsa",
               "number": 2,
               "pos": "D",
               "grid": "2:3"
@@ -18776,7 +18776,7 @@
           {
             "player": {
               "id": 67971,
-              "name": "M. Guehi",
+              "name": "Marc Guéhi",
               "number": 6,
               "pos": "D",
               "grid": "2:2"
@@ -18785,7 +18785,7 @@
           {
             "player": {
               "id": 19235,
-              "name": "D. Spence",
+              "name": "Djed Spence",
               "number": 25,
               "pos": "D",
               "grid": "2:1"
@@ -18794,7 +18794,7 @@
           {
             "player": {
               "id": 138908,
-              "name": "E. Anderson",
+              "name": "Elliot Anderson",
               "number": 8,
               "pos": "M",
               "grid": "3:2"
@@ -18803,7 +18803,7 @@
           {
             "player": {
               "id": 2937,
-              "name": "D. Rice",
+              "name": "Declan Rice",
               "number": 4,
               "pos": "M",
               "grid": "3:1"
@@ -18812,7 +18812,7 @@
           {
             "player": {
               "id": 136723,
-              "name": "N. Madueke",
+              "name": "Noni Madueke",
               "number": 20,
               "pos": "M",
               "grid": "4:3"
@@ -18821,7 +18821,7 @@
           {
             "player": {
               "id": 129718,
-              "name": "J. Bellingham",
+              "name": "Jude Bellingham",
               "number": 10,
               "pos": "M",
               "grid": "4:2"
@@ -18830,7 +18830,7 @@
           {
             "player": {
               "id": 138787,
-              "name": "A. Gordon",
+              "name": "Anthony Gordon",
               "number": 18,
               "pos": "M",
               "grid": "4:1"
@@ -18839,7 +18839,7 @@
           {
             "player": {
               "id": 184,
-              "name": "H. Kane",
+              "name": "Harry Kane",
               "number": 9,
               "pos": "F",
               "grid": "5:1"
@@ -18849,71 +18849,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 19088,
-              "name": "D. Henderson",
-              "number": 13,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 162489,
-              "name": "J. Trafford",
-              "number": 23,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 292,
-              "name": "J. Henderson",
-              "number": 14,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 18961,
-              "name": "D. Burn",
-              "number": 15,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 19366,
-              "name": "O. Watkins",
-              "number": 19,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 19720,
-              "name": "T. Chalobah",
-              "number": 12,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 19170,
-              "name": "M. Rogers",
-              "number": 17,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 1460,
-              "name": "B. Saka",
+              "name": "Bukayo Saka",
               "number": 7,
               "pos": "F",
               "grid": null
@@ -18921,17 +18858,8 @@
           },
           {
             "player": {
-              "id": 284322,
-              "name": "K. Mainoo",
-              "number": 16,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 307123,
-              "name": "N. O'Reilly",
+              "name": "Nico O'Reilly",
               "number": 3,
               "pos": "D",
               "grid": null
@@ -18939,35 +18867,17 @@
           },
           {
             "player": {
-              "id": 626,
-              "name": "J. Stones",
-              "number": 5,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 19974,
-              "name": "I. Toney",
-              "number": 22,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 909,
-              "name": "M. Rashford",
-              "number": 11,
-              "pos": "F",
+              "id": 19170,
+              "name": "Morgan Rogers",
+              "number": 17,
+              "pos": "M",
               "grid": null
             }
           },
           {
             "player": {
               "id": 19586,
-              "name": "E. Eze",
+              "name": "Eberechi Eze",
               "number": 21,
               "pos": "M",
               "grid": null
@@ -18975,10 +18885,100 @@
           },
           {
             "player": {
+              "id": 909,
+              "name": "Marcus Rashford",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 162489,
+              "name": "James Trafford",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19088,
+              "name": "Dean Henderson",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 626,
+              "name": "John Stones",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 158698,
-              "name": "J. Quansah",
+              "name": "Jarell Quansah",
               "number": 26,
               "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 18961,
+              "name": "Dan Burn",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19720,
+              "name": "Trevoh Chalobah",
+              "number": 12,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 292,
+              "name": "Jordan Henderson",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 284322,
+              "name": "Kobbie Mainoo",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19974,
+              "name": "Ivan Toney",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19366,
+              "name": "Ollie Watkins",
+              "number": 19,
+              "pos": "F",
               "grid": null
             }
           }
@@ -19011,17 +19011,17 @@
         "startXI": [
           {
             "player": {
-              "id": 559233,
-              "name": "B. Asare",
+              "id": 480108,
+              "name": "Benjamin Asare",
               "number": 16,
-              "pos": null,
+              "pos": "G",
               "grid": "1:1"
             }
           },
           {
             "player": {
               "id": 191240,
-              "name": "M. Senaya",
+              "name": "Marvin Senaya",
               "number": 26,
               "pos": "D",
               "grid": "2:4"
@@ -19030,7 +19030,7 @@
           {
             "player": {
               "id": 369425,
-              "name": "J. Adjetey",
+              "name": "Jonas Adjei Adjetey",
               "number": 4,
               "pos": "D",
               "grid": "2:3"
@@ -19039,7 +19039,7 @@
           {
             "player": {
               "id": 137223,
-              "name": "J. Opoku",
+              "name": "Jerome Opoku",
               "number": 18,
               "pos": "D",
               "grid": "2:2"
@@ -19048,7 +19048,7 @@
           {
             "player": {
               "id": 7578,
-              "name": "G. Mensah",
+              "name": "Gideon Mensah",
               "number": 14,
               "pos": "D",
               "grid": "2:1"
@@ -19057,7 +19057,7 @@
           {
             "player": {
               "id": 49,
-              "name": "T. Partey",
+              "name": "Thomas Partey",
               "number": 5,
               "pos": "M",
               "grid": "3:1"
@@ -19066,7 +19066,7 @@
           {
             "player": {
               "id": 47294,
-              "name": "I. Williams",
+              "name": "Iñaki Williams",
               "number": 19,
               "pos": "M",
               "grid": "4:4"
@@ -19075,7 +19075,7 @@
           {
             "player": {
               "id": 475575,
-              "name": "C. Yirenkyi",
+              "name": "Caleb Yirenkyi",
               "number": 3,
               "pos": "M",
               "grid": "4:3"
@@ -19084,7 +19084,7 @@
           {
             "player": {
               "id": 3608,
-              "name": "K. Sibo",
+              "name": "Kwasi Sibo",
               "number": 8,
               "pos": "M",
               "grid": "4:2"
@@ -19093,7 +19093,7 @@
           {
             "player": {
               "id": 19281,
-              "name": "A. Semenyo",
+              "name": "Antoine Semenyo",
               "number": 11,
               "pos": "M",
               "grid": "4:1"
@@ -19102,7 +19102,7 @@
           {
             "player": {
               "id": 3428,
-              "name": "J. Ayew",
+              "name": "Jordan Ayew",
               "number": 9,
               "pos": "F",
               "grid": "5:1"
@@ -19112,8 +19112,44 @@
         "substitutes": [
           {
             "player": {
+              "id": 303467,
+              "name": "Abdul Fatawu Issahaku",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 410016,
+              "name": "Prince Kwabena Adu",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 404172,
+              "name": "Kojo Peprah Oppong",
+              "number": 21,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 21996,
+              "name": "Rahman Baba",
+              "number": 17,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 3412,
-              "name": "L. Ati Zigi",
+              "name": "Lawrence Ati Zigi",
               "number": 1,
               "pos": "G",
               "grid": null
@@ -19122,7 +19158,7 @@
           {
             "player": {
               "id": 144709,
-              "name": "J. Anang",
+              "name": "Joseph Anang",
               "number": 12,
               "pos": "G",
               "grid": null
@@ -19130,80 +19166,8 @@
           },
           {
             "player": {
-              "id": 21996,
-              "name": "A. Baba",
-              "number": 17,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 82090,
-              "name": "B. Thomas-Asante",
-              "number": 10,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 410016,
-              "name": "P. Adu",
-              "number": 25,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 199837,
-              "name": "K. Sulemana",
-              "number": 22,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 196187,
-              "name": "A. Seidu",
-              "number": 2,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 350856,
-              "name": "E. Nuamah",
-              "number": 24,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 404172,
-              "name": "K. Peprah",
-              "number": 21,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 411800,
-              "name": "C. Bonsu Baah",
-              "number": 13,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 25341,
-              "name": "D. Luckassen",
+              "name": "Derrick Luckassen",
               "number": 23,
               "pos": "D",
               "grid": null
@@ -19211,17 +19175,17 @@
           },
           {
             "player": {
-              "id": 21010,
-              "name": "E. Owusu",
-              "number": 15,
-              "pos": "M",
+              "id": 196187,
+              "name": "Alidu Seidu",
+              "number": 2,
+              "pos": "D",
               "grid": null
             }
           },
           {
             "player": {
               "id": 15900,
-              "name": "A. Mumin",
+              "name": "Abdul Mumin",
               "number": 6,
               "pos": "D",
               "grid": null
@@ -19229,8 +19193,35 @@
           },
           {
             "player": {
+              "id": 411800,
+              "name": "Christopher Baah",
+              "number": 13,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 21010,
+              "name": "Elisha Owusu",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 82090,
+              "name": "Brandon Thomas-Asante",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 337426,
-              "name": "A. Boakye",
+              "name": "Augustine Boakye",
               "number": 20,
               "pos": "M",
               "grid": null
@@ -19238,9 +19229,18 @@
           },
           {
             "player": {
-              "id": 303467,
-              "name": "I. Fatawu",
-              "number": 7,
+              "id": 199837,
+              "name": "Kamaldeen Sulemana",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 350856,
+              "name": "Ernest Nuamah",
+              "number": 24,
               "pos": "F",
               "grid": null
             }
@@ -19270,8 +19270,8 @@
       {
         "time": "65",
         "team": "England",
-        "player": "A. Gordon",
-        "assist": "B. Saka",
+        "player": "Anthony Gordon",
+        "assist": "Bukayo Saka",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -19279,8 +19279,8 @@
       {
         "time": "66",
         "team": "England",
-        "player": "D. Spence",
-        "assist": "N. O'Reilly",
+        "player": "Djed Spence",
+        "assist": "Nico O'Reilly",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -19288,8 +19288,8 @@
       {
         "time": "66",
         "team": "Ghana",
-        "player": "I. Williams",
-        "assist": "I. Fatawu",
+        "player": "Iñaki Williams",
+        "assist": "Abdul Fatawu Issahaku",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -19297,8 +19297,8 @@
       {
         "time": "67",
         "team": "Ghana",
-        "player": "J. Ayew",
-        "assist": "P. Adu",
+        "player": "Jordan Ayew",
+        "assist": "Prince Kwabena Adu",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -19306,8 +19306,8 @@
       {
         "time": "73",
         "team": "England",
-        "player": "J. Bellingham",
-        "assist": "M. Rogers",
+        "player": "Jude Bellingham",
+        "assist": "Morgan Rogers",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -19315,8 +19315,8 @@
       {
         "time": "74",
         "team": "England",
-        "player": "E. Anderson",
-        "assist": "E. Eze",
+        "player": "Elliot Anderson",
+        "assist": "Eberechi Eze",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -19324,8 +19324,8 @@
       {
         "time": "83",
         "team": "England",
-        "player": "N. Madueke",
-        "assist": "M. Rashford",
+        "player": "Noni Madueke",
+        "assist": "Marcus Rashford",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -19333,17 +19333,17 @@
       {
         "time": "87",
         "team": "Ghana",
-        "player": "M. Senaya",
-        "assist": "K. Peprah",
+        "player": "Marvin Senaya",
+        "assist": "Kojo Peprah Oppong",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
       },
       {
-        "time": "90+5",
+        "time": "90",
         "team": "Ghana",
-        "player": null,
-        "assist": "A. Baba",
+        "player": "Prince Kwabena Adu",
+        "assist": "Rahman Baba",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
