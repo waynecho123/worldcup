@@ -57,6 +57,26 @@
       "fixture": "2026-06-27T03:00:00+00:00"
     }
   ],
+  "JPN": [
+    {
+      "player": "S. Machino",
+      "type": "Missing Fixture",
+      "reason": "Illness",
+      "fixture": "2026-06-25T23:00:00+00:00"
+    },
+    {
+      "player": "T. Kubo",
+      "type": "Missing Fixture",
+      "reason": "",
+      "fixture": "2026-06-21T04:00:00+00:00"
+    },
+    {
+      "player": "T. Kubo",
+      "type": "Missing Fixture",
+      "reason": "",
+      "fixture": "2026-06-25T23:00:00+00:00"
+    }
+  ],
   "URU": [
     {
       "player": "G. de Arrascaeta",
@@ -83,20 +103,6 @@
       "fixture": "2026-06-27T00:00:00+00:00"
     }
   ],
-  "JPN": [
-    {
-      "player": "T. Kubo",
-      "type": "Missing Fixture",
-      "reason": "Wound",
-      "fixture": "2026-06-21T04:00:00+00:00"
-    },
-    {
-      "player": "S. Machino",
-      "type": "Missing Fixture",
-      "reason": "Illness",
-      "fixture": "2026-06-25T23:00:00+00:00"
-    }
-  ],
   "SEN": [
     {
       "player": "É. Mendy",
@@ -117,8 +123,24 @@
     {
       "player": "J. Italiano",
       "type": "Missing Fixture",
-      "reason": "",
+      "reason": "Adductor injury",
       "fixture": "2026-06-26T02:00:00+00:00"
+    }
+  ],
+  "GER": [
+    {
+      "player": "N. Schlotterbeck",
+      "type": "Missing Fixture",
+      "reason": "Ligament stretching",
+      "fixture": "2026-06-25T20:00:00+00:00"
+    }
+  ],
+  "EGY": [
+    {
+      "player": "Hossam Abdelmaguid",
+      "type": "Missing Fixture",
+      "reason": "Suspension through sports court",
+      "fixture": "2026-06-27T03:00:00+00:00"
     }
   ],
   "BIH": [
@@ -173,6 +195,12 @@
       "type": "Missing Fixture",
       "reason": "Fracture of lower leg",
       "fixture": "2026-06-24T19:00:00+00:00"
+    },
+    {
+      "player": "I. Koné",
+      "type": "Missing Fixture",
+      "reason": "Fracture of lower leg",
+      "fixture": "2026-06-28T19:00:00+00:00"
     },
     {
       "player": "A. Jones",

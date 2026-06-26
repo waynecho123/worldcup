@@ -134,9 +134,9 @@
       "matches": 3
     },
     {
-      "name": "J. Quiñones",
-      "photo": "https://media.api-sports.io/football/players/35532.png",
-      "team": "Mexico",
+      "name": "D. Kamada",
+      "photo": "https://media.api-sports.io/football/players/2601.png",
+      "team": "Japan",
       "goals": 2,
       "matches": 3
     }
@@ -171,6 +171,13 @@
       "matches": 3
     },
     {
+      "name": "V. Gyökeres",
+      "photo": "https://media.api-sports.io/football/players/18979.png",
+      "team": "Sweden",
+      "assists": 2,
+      "matches": 3
+    },
+    {
       "name": "N. Saliba",
       "photo": "https://media.api-sports.io/football/players/294824.png",
       "team": "Canada",
@@ -188,20 +195,6 @@
       "name": "B. Embolo",
       "photo": "https://media.api-sports.io/football/players/421.png",
       "team": "Switzerland",
-      "assists": 2,
-      "matches": 3
-    },
-    {
-      "name": "R. Gravenberch",
-      "photo": "https://media.api-sports.io/football/players/542.png",
-      "team": "Netherlands",
-      "assists": 2,
-      "matches": 3
-    },
-    {
-      "name": "D. Dumfries",
-      "photo": "https://media.api-sports.io/football/players/226.png",
-      "team": "Netherlands",
       "assists": 2,
       "matches": 3
     },
@@ -234,16 +227,37 @@
       "matches": 3
     },
     {
-      "name": "M. Ødegaard",
-      "photo": "https://media.api-sports.io/football/players/37127.png",
-      "team": "Norway",
+      "name": "R. Gravenberch",
+      "photo": "https://media.api-sports.io/football/players/542.png",
+      "team": "Netherlands",
       "assists": 2,
-      "matches": 2
+      "matches": 3
     },
     {
       "name": "J. Enciso",
       "photo": "https://media.api-sports.io/football/players/70747.png",
       "team": "Paraguay",
+      "assists": 2,
+      "matches": 3
+    },
+    {
+      "name": "H. Mejbri",
+      "photo": "https://media.api-sports.io/football/players/180560.png",
+      "team": "Tunisia",
+      "assists": 2,
+      "matches": 3
+    },
+    {
+      "name": "D. Dumfries",
+      "photo": "https://media.api-sports.io/football/players/226.png",
+      "team": "Netherlands",
+      "assists": 2,
+      "matches": 3
+    },
+    {
+      "name": "M. Ødegaard",
+      "photo": "https://media.api-sports.io/football/players/37127.png",
+      "team": "Norway",
       "assists": 2,
       "matches": 2
     },
@@ -265,20 +279,6 @@
       "name": "J. Manzambi",
       "photo": "https://media.api-sports.io/football/players/406244.png",
       "team": "Switzerland",
-      "assists": 1,
-      "matches": 3
-    },
-    {
-      "name": "A. Ueda",
-      "photo": "https://media.api-sports.io/football/players/72155.png",
-      "team": "Japan",
-      "assists": 1,
-      "matches": 3
-    },
-    {
-      "name": "C. Gakpo",
-      "photo": "https://media.api-sports.io/football/players/247.png",
-      "team": "Netherlands",
       "assists": 1,
       "matches": 3
     }
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-06-26T06:11:28.576Z"
+  "updatedAt": "2026-06-26T08:06:38.181Z"
 }
