@@ -18749,7 +18749,7 @@
           {
             "player": {
               "id": 2932,
-              "name": "Jordan Pickford",
+              "name": "J. Pickford",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -18758,7 +18758,7 @@
           {
             "player": {
               "id": 19545,
-              "name": "Reece James",
+              "name": "R. James",
               "number": 24,
               "pos": "D",
               "grid": "2:4"
@@ -18767,7 +18767,7 @@
           {
             "player": {
               "id": 19354,
-              "name": "Ezri Konsa",
+              "name": "E. Konsa",
               "number": 2,
               "pos": "D",
               "grid": "2:3"
@@ -18776,7 +18776,7 @@
           {
             "player": {
               "id": 67971,
-              "name": "Marc Guéhi",
+              "name": "M. Guehi",
               "number": 6,
               "pos": "D",
               "grid": "2:2"
@@ -18785,7 +18785,7 @@
           {
             "player": {
               "id": 19235,
-              "name": "Djed Spence",
+              "name": "D. Spence",
               "number": 25,
               "pos": "D",
               "grid": "2:1"
@@ -18794,7 +18794,7 @@
           {
             "player": {
               "id": 138908,
-              "name": "Elliot Anderson",
+              "name": "E. Anderson",
               "number": 8,
               "pos": "M",
               "grid": "3:2"
@@ -18803,7 +18803,7 @@
           {
             "player": {
               "id": 2937,
-              "name": "Declan Rice",
+              "name": "D. Rice",
               "number": 4,
               "pos": "M",
               "grid": "3:1"
@@ -18812,7 +18812,7 @@
           {
             "player": {
               "id": 136723,
-              "name": "Noni Madueke",
+              "name": "N. Madueke",
               "number": 20,
               "pos": "M",
               "grid": "4:3"
@@ -18821,7 +18821,7 @@
           {
             "player": {
               "id": 129718,
-              "name": "Jude Bellingham",
+              "name": "J. Bellingham",
               "number": 10,
               "pos": "M",
               "grid": "4:2"
@@ -18830,7 +18830,7 @@
           {
             "player": {
               "id": 138787,
-              "name": "Anthony Gordon",
+              "name": "A. Gordon",
               "number": 18,
               "pos": "M",
               "grid": "4:1"
@@ -18839,7 +18839,7 @@
           {
             "player": {
               "id": 184,
-              "name": "Harry Kane",
+              "name": "H. Kane",
               "number": 9,
               "pos": "F",
               "grid": "5:1"
@@ -18849,62 +18849,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 1460,
-              "name": "Bukayo Saka",
-              "number": 7,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 307123,
-              "name": "Nico O'Reilly",
-              "number": 3,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 19170,
-              "name": "Morgan Rogers",
-              "number": 17,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 19586,
-              "name": "Eberechi Eze",
-              "number": 21,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 909,
-              "name": "Marcus Rashford",
-              "number": 11,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 162489,
-              "name": "James Trafford",
-              "number": 23,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 19088,
-              "name": "Dean Henderson",
+              "name": "D. Henderson",
               "number": 13,
               "pos": "G",
               "grid": null
@@ -18912,44 +18858,17 @@
           },
           {
             "player": {
-              "id": 626,
-              "name": "John Stones",
-              "number": 5,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 158698,
-              "name": "Jarell Quansah",
-              "number": 26,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 18961,
-              "name": "Dan Burn",
-              "number": 15,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 19720,
-              "name": "Trevoh Chalobah",
-              "number": 12,
-              "pos": "D",
+              "id": 162489,
+              "name": "J. Trafford",
+              "number": 23,
+              "pos": "G",
               "grid": null
             }
           },
           {
             "player": {
               "id": 292,
-              "name": "Jordan Henderson",
+              "name": "J. Henderson",
               "number": 14,
               "pos": "M",
               "grid": null
@@ -18957,8 +18876,53 @@
           },
           {
             "player": {
+              "id": 18961,
+              "name": "D. Burn",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19366,
+              "name": "O. Watkins",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19720,
+              "name": "T. Chalobah",
+              "number": 12,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19170,
+              "name": "M. Rogers",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1460,
+              "name": "B. Saka",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 284322,
-              "name": "Kobbie Mainoo",
+              "name": "K. Mainoo",
               "number": 16,
               "pos": "M",
               "grid": null
@@ -18966,8 +18930,26 @@
           },
           {
             "player": {
+              "id": 307123,
+              "name": "N. O'Reilly",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 626,
+              "name": "J. Stones",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 19974,
-              "name": "Ivan Toney",
+              "name": "I. Toney",
               "number": 22,
               "pos": "F",
               "grid": null
@@ -18975,10 +18957,28 @@
           },
           {
             "player": {
-              "id": 19366,
-              "name": "Ollie Watkins",
-              "number": 19,
+              "id": 909,
+              "name": "M. Rashford",
+              "number": 11,
               "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19586,
+              "name": "E. Eze",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 158698,
+              "name": "J. Quansah",
+              "number": 26,
+              "pos": "D",
               "grid": null
             }
           }
@@ -19011,17 +19011,17 @@
         "startXI": [
           {
             "player": {
-              "id": 480108,
-              "name": "Benjamin Asare",
+              "id": 559233,
+              "name": "B. Asare",
               "number": 16,
-              "pos": "G",
+              "pos": null,
               "grid": "1:1"
             }
           },
           {
             "player": {
               "id": 191240,
-              "name": "Marvin Senaya",
+              "name": "M. Senaya",
               "number": 26,
               "pos": "D",
               "grid": "2:4"
@@ -19030,7 +19030,7 @@
           {
             "player": {
               "id": 369425,
-              "name": "Jonas Adjei Adjetey",
+              "name": "J. Adjetey",
               "number": 4,
               "pos": "D",
               "grid": "2:3"
@@ -19039,7 +19039,7 @@
           {
             "player": {
               "id": 137223,
-              "name": "Jerome Opoku",
+              "name": "J. Opoku",
               "number": 18,
               "pos": "D",
               "grid": "2:2"
@@ -19048,7 +19048,7 @@
           {
             "player": {
               "id": 7578,
-              "name": "Gideon Mensah",
+              "name": "G. Mensah",
               "number": 14,
               "pos": "D",
               "grid": "2:1"
@@ -19057,7 +19057,7 @@
           {
             "player": {
               "id": 49,
-              "name": "Thomas Partey",
+              "name": "T. Partey",
               "number": 5,
               "pos": "M",
               "grid": "3:1"
@@ -19066,7 +19066,7 @@
           {
             "player": {
               "id": 47294,
-              "name": "Iñaki Williams",
+              "name": "I. Williams",
               "number": 19,
               "pos": "M",
               "grid": "4:4"
@@ -19075,7 +19075,7 @@
           {
             "player": {
               "id": 475575,
-              "name": "Caleb Yirenkyi",
+              "name": "C. Yirenkyi",
               "number": 3,
               "pos": "M",
               "grid": "4:3"
@@ -19084,7 +19084,7 @@
           {
             "player": {
               "id": 3608,
-              "name": "Kwasi Sibo",
+              "name": "K. Sibo",
               "number": 8,
               "pos": "M",
               "grid": "4:2"
@@ -19093,7 +19093,7 @@
           {
             "player": {
               "id": 19281,
-              "name": "Antoine Semenyo",
+              "name": "A. Semenyo",
               "number": 11,
               "pos": "M",
               "grid": "4:1"
@@ -19102,7 +19102,7 @@
           {
             "player": {
               "id": 3428,
-              "name": "Jordan Ayew",
+              "name": "J. Ayew",
               "number": 9,
               "pos": "F",
               "grid": "5:1"
@@ -19112,44 +19112,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 303467,
-              "name": "Abdul Fatawu Issahaku",
-              "number": 7,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 410016,
-              "name": "Prince Kwabena Adu",
-              "number": 25,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 404172,
-              "name": "Kojo Peprah Oppong",
-              "number": 21,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 21996,
-              "name": "Rahman Baba",
-              "number": 17,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 3412,
-              "name": "Lawrence Ati Zigi",
+              "name": "L. Ati Zigi",
               "number": 1,
               "pos": "G",
               "grid": null
@@ -19158,7 +19122,7 @@
           {
             "player": {
               "id": 144709,
-              "name": "Joseph Anang",
+              "name": "J. Anang",
               "number": 12,
               "pos": "G",
               "grid": null
@@ -19166,53 +19130,17 @@
           },
           {
             "player": {
-              "id": 25341,
-              "name": "Derrick Luckassen",
-              "number": 23,
+              "id": 21996,
+              "name": "A. Baba",
+              "number": 17,
               "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 196187,
-              "name": "Alidu Seidu",
-              "number": 2,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 15900,
-              "name": "Abdul Mumin",
-              "number": 6,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 411800,
-              "name": "Christopher Baah",
-              "number": 13,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 21010,
-              "name": "Elisha Owusu",
-              "number": 15,
-              "pos": "M",
               "grid": null
             }
           },
           {
             "player": {
               "id": 82090,
-              "name": "Brandon Thomas-Asante",
+              "name": "B. Thomas-Asante",
               "number": 10,
               "pos": "F",
               "grid": null
@@ -19220,17 +19148,17 @@
           },
           {
             "player": {
-              "id": 337426,
-              "name": "Augustine Boakye",
-              "number": 20,
-              "pos": "M",
+              "id": 410016,
+              "name": "P. Adu",
+              "number": 25,
+              "pos": "F",
               "grid": null
             }
           },
           {
             "player": {
               "id": 199837,
-              "name": "Kamaldeen Sulemana",
+              "name": "K. Sulemana",
               "number": 22,
               "pos": "F",
               "grid": null
@@ -19238,9 +19166,81 @@
           },
           {
             "player": {
+              "id": 196187,
+              "name": "A. Seidu",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 350856,
-              "name": "Ernest Nuamah",
+              "name": "E. Nuamah",
               "number": 24,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 404172,
+              "name": "K. Peprah",
+              "number": 21,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 411800,
+              "name": "C. Bonsu Baah",
+              "number": 13,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 25341,
+              "name": "D. Luckassen",
+              "number": 23,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 21010,
+              "name": "E. Owusu",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 15900,
+              "name": "A. Mumin",
+              "number": 6,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 337426,
+              "name": "A. Boakye",
+              "number": 20,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 303467,
+              "name": "I. Fatawu",
+              "number": 7,
               "pos": "F",
               "grid": null
             }
@@ -19270,8 +19270,8 @@
       {
         "time": "65",
         "team": "England",
-        "player": "Anthony Gordon",
-        "assist": "Bukayo Saka",
+        "player": "A. Gordon",
+        "assist": "B. Saka",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -19279,8 +19279,8 @@
       {
         "time": "66",
         "team": "England",
-        "player": "Djed Spence",
-        "assist": "Nico O'Reilly",
+        "player": "D. Spence",
+        "assist": "N. O'Reilly",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -19288,8 +19288,8 @@
       {
         "time": "66",
         "team": "Ghana",
-        "player": "Iñaki Williams",
-        "assist": "Abdul Fatawu Issahaku",
+        "player": "I. Williams",
+        "assist": "I. Fatawu",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -19297,8 +19297,8 @@
       {
         "time": "67",
         "team": "Ghana",
-        "player": "Jordan Ayew",
-        "assist": "Prince Kwabena Adu",
+        "player": "J. Ayew",
+        "assist": "P. Adu",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -19306,8 +19306,8 @@
       {
         "time": "73",
         "team": "England",
-        "player": "Jude Bellingham",
-        "assist": "Morgan Rogers",
+        "player": "J. Bellingham",
+        "assist": "M. Rogers",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -19315,8 +19315,8 @@
       {
         "time": "74",
         "team": "England",
-        "player": "Elliot Anderson",
-        "assist": "Eberechi Eze",
+        "player": "E. Anderson",
+        "assist": "E. Eze",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -19324,8 +19324,8 @@
       {
         "time": "83",
         "team": "England",
-        "player": "Noni Madueke",
-        "assist": "Marcus Rashford",
+        "player": "N. Madueke",
+        "assist": "M. Rashford",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -19333,17 +19333,17 @@
       {
         "time": "87",
         "team": "Ghana",
-        "player": "Marvin Senaya",
-        "assist": "Kojo Peprah Oppong",
+        "player": "M. Senaya",
+        "assist": "K. Peprah",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
       },
       {
-        "time": "90",
+        "time": "90+5",
         "team": "Ghana",
-        "player": "Prince Kwabena Adu",
-        "assist": "Rahman Baba",
+        "player": null,
+        "assist": "A. Baba",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -32658,8 +32658,8 @@
       {
         "time": "7",
         "team": "Ivory Coast",
-        "player": "Nicolas Pépé",
-        "assist": "Yan Diomande",
+        "player": "N. Pepe",
+        "assist": "Y. Diomande",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -32676,8 +32676,8 @@
       {
         "time": "46",
         "team": "Ivory Coast",
-        "player": "Amad Diallo",
-        "assist": "Christ Inao Oulaï",
+        "player": "A. Diallo",
+        "assist": "C. Inao Oulai",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -32685,8 +32685,8 @@
       {
         "time": "61",
         "team": "Curaçao",
-        "player": "Livano Comenencia",
-        "assist": "Jeremy Antonisse",
+        "player": "L. Comenencia",
+        "assist": "J. Antonisse",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -32694,8 +32694,8 @@
       {
         "time": "64",
         "team": "Ivory Coast",
-        "player": "Nicolas Pépé",
-        "assist": "Ibrahim Sangaré",
+        "player": "N. Pepe",
+        "assist": "I. Sangare",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -32703,8 +32703,8 @@
       {
         "time": "67",
         "team": "Ivory Coast",
-        "player": "Yan Diomande",
-        "assist": "Bazoumana Touré",
+        "player": "Y. Diomande",
+        "assist": "B. Toure",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -32712,8 +32712,8 @@
       {
         "time": "67",
         "team": "Ivory Coast",
-        "player": "Nicolas Pépé",
-        "assist": "Elye Wahi",
+        "player": "N. Pepe",
+        "assist": "E. Wahi",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -32721,8 +32721,8 @@
       {
         "time": "67",
         "team": "Ivory Coast",
-        "player": "Ange-Yoan Bonny",
-        "assist": "Oumar Diakité",
+        "player": "A. Bonny",
+        "assist": "O. Diakite",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -32739,8 +32739,8 @@
       {
         "time": "77",
         "team": "Curaçao",
-        "player": "Deveron Fonville",
-        "assist": "Tyrese Noslin",
+        "player": "D. Fonville",
+        "assist": "T. Noslin",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -32748,8 +32748,8 @@
       {
         "time": "77",
         "team": "Curaçao",
-        "player": "Jurien Gaari",
-        "assist": "Gervane Kastaneer",
+        "player": "J. Gaari",
+        "assist": "G. Kastaneer",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -32757,8 +32757,8 @@
       {
         "time": "77",
         "team": "Ivory Coast",
-        "player": "Franck Kessié",
-        "assist": "Jean Michaël Seri",
+        "player": "F. Kessie",
+        "assist": "J. Seri",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -32775,8 +32775,8 @@
       {
         "time": "90",
         "team": "Curaçao",
-        "player": "Jürgen Locadia",
-        "assist": "Brandley Kuwas",
+        "player": "J. Locadia",
+        "assist": "B. Kuwas",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -32784,8 +32784,8 @@
       {
         "time": "90",
         "team": "Curaçao",
-        "player": "Joshua Brenet",
-        "assist": "Shurandy Sambo",
+        "player": "J. Brenet",
+        "assist": "S. Sambo",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -33683,8 +33683,8 @@
       {
         "time": "2",
         "team": "Germany",
-        "player": "Leroy Sané",
-        "assist": "Florian Wirtz",
+        "player": "L. Sane",
+        "assist": "F. Wirtz",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -33692,8 +33692,8 @@
       {
         "time": "9",
         "team": "Ecuador",
-        "player": "Nilson Angulo",
-        "assist": "Pedro Vite",
+        "player": "N. Angulo",
+        "assist": "P. Vite",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -33719,10 +33719,19 @@
       {
         "time": "46",
         "team": "Germany",
-        "player": "Aleksandar Pavlović",
-        "assist": "Angelo Stiller",
+        "player": "A. Pavlovic",
+        "assist": "A. Stiller",
         "type": "subst",
         "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "47",
+        "team": "Germany",
+        "player": null,
+        "assist": null,
+        "type": "Goal",
+        "detail": "Normal Goal",
         "comments": ""
       },
       {
@@ -33737,8 +33746,8 @@
       {
         "time": "60",
         "team": "Germany",
-        "player": "Joshua Kimmich",
-        "assist": "Malick Thiaw",
+        "player": "J. Kimmich",
+        "assist": "M. Thiaw",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -33746,8 +33755,8 @@
       {
         "time": "60",
         "team": "Germany",
-        "player": "Kai Havertz",
-        "assist": "Deniz Undav",
+        "player": "K. Havertz",
+        "assist": "D. Undav",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -33755,8 +33764,8 @@
       {
         "time": "64",
         "team": "Ecuador",
-        "player": "Alan Franco",
-        "assist": "Ángelo Preciado",
+        "player": "A. Franco",
+        "assist": "A. Preciado",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -33764,8 +33773,8 @@
       {
         "time": "64",
         "team": "Ecuador",
-        "player": "Enner Valencia",
-        "assist": "Kevin Rodriguez",
+        "player": "E. Valencia",
+        "assist": "K. Rodriguez",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -33773,8 +33782,8 @@
       {
         "time": "64",
         "team": "Germany",
-        "player": "Felix Nmecha",
-        "assist": "Maximilian Beier",
+        "player": "F. Nmecha",
+        "assist": "M. Beier",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -33782,8 +33791,8 @@
       {
         "time": "71",
         "team": "Ecuador",
-        "player": "Piero Hincapié",
-        "assist": "Pervis Estupiñán",
+        "player": "P. Hincapie",
+        "assist": "P. Estupinan",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -33791,8 +33800,8 @@
       {
         "time": "73",
         "team": "Germany",
-        "player": "Florian Wirtz",
-        "assist": "Pascal Groß",
+        "player": "F. Wirtz",
+        "assist": "P. Gross",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -33800,8 +33809,8 @@
       {
         "time": "77",
         "team": "Ecuador",
-        "player": "Gonzalo Plata",
-        "assist": "Kevin Rodriguez",
+        "player": "G. Plata",
+        "assist": "K. Rodriguez",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -33809,8 +33818,8 @@
       {
         "time": "85",
         "team": "Ecuador",
-        "player": "Nilson Angulo",
-        "assist": "Jordy Caicedo",
+        "player": "N. Angulo",
+        "assist": "J. Caicedo",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -33818,8 +33827,8 @@
       {
         "time": "85",
         "team": "Ecuador",
-        "player": "John Yeboah",
-        "assist": "Félix Torres",
+        "player": "J. Yeboah",
+        "assist": "F. Torres",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -34219,12 +34228,17 @@
             }
           }
         },
+        "coach": {
+          "id": 344,
+          "name": "Herve Renard",
+          "photo": "https://media.api-sports.io/football/coachs/344.png"
+        },
         "formation": "5-4-1",
         "startXI": [
           {
             "player": {
               "id": 49424,
-              "name": "Aymen Dahmen",
+              "name": "A. Dahmen",
               "number": 16,
               "pos": "G",
               "grid": "1:1"
@@ -34233,7 +34247,7 @@
           {
             "player": {
               "id": 18942,
-              "name": "Yan Valery",
+              "name": "Y. Valery",
               "number": 20,
               "pos": "D",
               "grid": "2:5"
@@ -34242,7 +34256,7 @@
           {
             "player": {
               "id": 50030,
-              "name": "Montassar Talbi",
+              "name": "M. Talbi",
               "number": 3,
               "pos": "D",
               "grid": "2:4"
@@ -34251,7 +34265,7 @@
           {
             "player": {
               "id": 21587,
-              "name": "Ellyes Skhiri",
+              "name": "E. Skhiri",
               "number": 17,
               "pos": "D",
               "grid": "2:3"
@@ -34260,7 +34274,7 @@
           {
             "player": {
               "id": 135059,
-              "name": "Amine Ben Hmida",
+              "name": "M. Ben Hamida",
               "number": 21,
               "pos": "D",
               "grid": "2:2"
@@ -34269,7 +34283,7 @@
           {
             "player": {
               "id": 49583,
-              "name": "Ali Abdi",
+              "name": "A. Abdi",
               "number": 2,
               "pos": "D",
               "grid": "2:1"
@@ -34278,7 +34292,7 @@
           {
             "player": {
               "id": 199310,
-              "name": "Anis Ben Slimane",
+              "name": "A. Slimane",
               "number": 25,
               "pos": "M",
               "grid": "3:4"
@@ -34287,7 +34301,7 @@
           {
             "player": {
               "id": 310196,
-              "name": "Ismael Gharbi",
+              "name": "I. Gharbi",
               "number": 11,
               "pos": "M",
               "grid": "3:3"
@@ -34296,7 +34310,7 @@
           {
             "player": {
               "id": 25300,
-              "name": "Rani Khedira",
+              "name": "R. Khedira",
               "number": 13,
               "pos": "M",
               "grid": "3:2"
@@ -34305,7 +34319,7 @@
           {
             "player": {
               "id": 180560,
-              "name": "Hannibal Mejbri",
+              "name": "H. Mejbri",
               "number": 10,
               "pos": "M",
               "grid": "3:1"
@@ -34314,7 +34328,7 @@
           {
             "player": {
               "id": 344862,
-              "name": "Hazem Mastouri",
+              "name": "H. Mastouri",
               "number": 9,
               "pos": "F",
               "grid": "4:1"
@@ -34324,53 +34338,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 67195,
-              "name": "Mohamed Belhadj Mahmoud",
-              "number": 15,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 49469,
-              "name": "Mortadha Ben Ouanes",
-              "number": 12,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 42012,
-              "name": "Elias Achouri",
-              "number": 7,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 2962,
-              "name": "Firas Chaouat",
-              "number": 19,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 57518,
-              "name": "Sebastian Tounekti",
-              "number": 26,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 49423,
-              "name": "Sabri Ben Hessen",
+              "name": "S. Ben Hessen",
               "number": 22,
               "pos": "G",
               "grid": null
@@ -34379,7 +34348,7 @@
           {
             "player": {
               "id": 533394,
-              "name": "Abdelmouhib Chamakh",
+              "name": "A. Chamakh",
               "number": 1,
               "pos": "G",
               "grid": null
@@ -34387,44 +34356,35 @@
           },
           {
             "player": {
-              "id": 2945,
-              "name": "Dylan Bronn",
-              "number": 6,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 533360,
-              "name": "Raed Chikhaoui",
-              "number": 24,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 163068,
-              "name": "Omar Rekik",
-              "number": 4,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 566059,
-              "name": "Rayan Elloumi",
-              "number": 18,
+              "id": 2962,
+              "name": "F. Chaouat",
+              "number": 19,
               "pos": "F",
               "grid": null
             }
           },
           {
             "player": {
+              "id": 57518,
+              "name": "S. Tounekti",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 42012,
+              "name": "E. Achouri",
+              "number": 7,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 323974,
-              "name": "Elias Saad",
+              "name": "E. Saad",
               "number": 8,
               "pos": "F",
               "grid": null
@@ -34432,19 +34392,68 @@
           },
           {
             "player": {
+              "id": 67195,
+              "name": "M. Belhadj",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 533295,
-              "name": "Khalil Ayari",
+              "name": "K. Ayari",
               "number": 14,
               "pos": "F",
               "grid": null
             }
+          },
+          {
+            "player": {
+              "id": 533360,
+              "name": "R. Chikhaoui",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 566059,
+              "name": "R. Elloumi",
+              "number": 18,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 49469,
+              "name": "M. Ben Ouanes",
+              "number": 12,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2945,
+              "name": "D. Bronn",
+              "number": 6,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 163068,
+              "name": "O. Rekik",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
           }
-        ],
-        "coach": {
-          "id": 344,
-          "name": "Herve Renard",
-          "photo": "https://media.api-sports.io/football/coachs/344.png"
-        }
+        ]
       },
       "away": {
         "team": {
@@ -34464,12 +34473,17 @@
             }
           }
         },
+        "coach": {
+          "id": 73,
+          "name": "Ronald Koeman",
+          "photo": "https://media.api-sports.io/football/coachs/73.png"
+        },
         "formation": "4-3-3",
         "startXI": [
           {
             "player": {
               "id": 129058,
-              "name": "Bart Verbruggen",
+              "name": "B. Verbruggen",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -34478,7 +34492,7 @@
           {
             "player": {
               "id": 226,
-              "name": "Denzel Dumfries",
+              "name": "D. Dumfries",
               "number": 22,
               "pos": "D",
               "grid": "2:4"
@@ -34487,7 +34501,7 @@
           {
             "player": {
               "id": 38695,
-              "name": "Jan Paul van Hecke",
+              "name": "J. P. van Hecke",
               "number": 6,
               "pos": "D",
               "grid": "2:3"
@@ -34496,7 +34510,7 @@
           {
             "player": {
               "id": 290,
-              "name": "Virgil van Dijk",
+              "name": "V. van Dijk",
               "number": 4,
               "pos": "D",
               "grid": "2:2"
@@ -34505,7 +34519,7 @@
           {
             "player": {
               "id": 18861,
-              "name": "Nathan Aké",
+              "name": "N. Ake",
               "number": 5,
               "pos": "D",
               "grid": "2:1"
@@ -34514,7 +34528,7 @@
           {
             "player": {
               "id": 542,
-              "name": "Ryan Gravenberch",
+              "name": "R. Gravenberch",
               "number": 8,
               "pos": "M",
               "grid": "3:3"
@@ -34523,7 +34537,7 @@
           {
             "player": {
               "id": 538,
-              "name": "Frenkie de Jong",
+              "name": "F. de Jong",
               "number": 21,
               "pos": "M",
               "grid": "3:2"
@@ -34532,7 +34546,7 @@
           {
             "player": {
               "id": 36902,
-              "name": "Tijjani Reijnders",
+              "name": "T. Reijnders",
               "number": 14,
               "pos": "M",
               "grid": "3:1"
@@ -34541,7 +34555,7 @@
           {
             "player": {
               "id": 249,
-              "name": "Donyell Malen",
+              "name": "D. Malen",
               "number": 18,
               "pos": "F",
               "grid": "4:3"
@@ -34550,7 +34564,7 @@
           {
             "player": {
               "id": 38750,
-              "name": "Brian Brobbey",
+              "name": "B. Brobbey",
               "number": 19,
               "pos": "F",
               "grid": "4:2"
@@ -34559,7 +34573,7 @@
           {
             "player": {
               "id": 247,
-              "name": "Cody Gakpo",
+              "name": "C. Gakpo",
               "number": 11,
               "pos": "F",
               "grid": "4:1"
@@ -34569,62 +34583,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 36899,
-              "name": "Teun Koopmeiners",
-              "number": 20,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 792,
-              "name": "Justin Kluivert",
-              "number": 7,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 37724,
-              "name": "Crysencio Summerville",
-              "number": 24,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 667,
-              "name": "Memphis Depay",
-              "number": 10,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 544,
-              "name": "Noa Lang",
-              "number": 17,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 194536,
-              "name": "Robin Roefs",
-              "number": 13,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 26232,
-              "name": "Mark Flekken",
+              "name": "M. Flekken",
               "number": 23,
               "pos": "G",
               "grid": null
@@ -34632,17 +34592,53 @@
           },
           {
             "player": {
-              "id": 341642,
-              "name": "Jorrel Hato",
-              "number": 25,
-              "pos": "D",
+              "id": 194536,
+              "name": "R. Roefs",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 667,
+              "name": "M. Depay",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 25416,
+              "name": "W. Weghorst",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 38747,
+              "name": "Q. Timber",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 37724,
+              "name": "C. Summerville",
+              "number": 24,
+              "pos": "F",
               "grid": null
             }
           },
           {
             "player": {
               "id": 92993,
-              "name": "Mats Wieffer",
+              "name": "M. Wieffer",
               "number": 12,
               "pos": "M",
               "grid": null
@@ -34651,7 +34647,7 @@
           {
             "player": {
               "id": 152849,
-              "name": "Micky van de Ven",
+              "name": "M. van de Ven",
               "number": 15,
               "pos": "D",
               "grid": null
@@ -34659,35 +34655,8 @@
           },
           {
             "player": {
-              "id": 37143,
-              "name": "Lutsharel Geertruida",
-              "number": 2,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 38747,
-              "name": "Quinten Timber",
-              "number": 26,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 36905,
-              "name": "Guus Til",
-              "number": 16,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 30432,
-              "name": "Marten de Roon",
+              "name": "M. De Roon",
               "number": 3,
               "pos": "M",
               "grid": null
@@ -34695,19 +34664,59 @@
           },
           {
             "player": {
-              "id": 25416,
-              "name": "Wout Weghorst",
-              "number": 9,
+              "id": 36899,
+              "name": "T. Koopmeiners",
+              "number": 20,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 792,
+              "name": "J. Kluivert",
+              "number": 7,
               "pos": "F",
               "grid": null
             }
+          },
+          {
+            "player": {
+              "id": 36905,
+              "name": "G. Til",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 544,
+              "name": "N. Lang",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 37143,
+              "name": "L. Geertruida",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 341642,
+              "name": "J. Hato",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
           }
-        ],
-        "coach": {
-          "id": 73,
-          "name": "Ronald Koeman",
-          "photo": "https://media.api-sports.io/football/coachs/73.png"
-        }
+        ]
       }
     },
     "events": [
@@ -34777,8 +34786,8 @@
       {
         "time": "72",
         "team": "Netherlands",
-        "player": "F. de Jong",
-        "assist": "T. Koopmeiners",
+        "player": "D. Malen",
+        "assist": "C. Summerville",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -34786,8 +34795,8 @@
       {
         "time": "72",
         "team": "Netherlands",
-        "player": "T. Reijnders",
-        "assist": "J. Kluivert",
+        "player": "F. de Jong",
+        "assist": "T. Koopmeiners",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -34795,8 +34804,8 @@
       {
         "time": "72",
         "team": "Netherlands",
-        "player": "D. Malen",
-        "assist": "C. Summerville",
+        "player": "T. Reijnders",
+        "assist": "J. Kluivert",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -36242,12 +36251,17 @@
             }
           }
         },
+        "coach": {
+          "id": 323,
+          "name": "Hajime Moriyasu",
+          "photo": "https://media.api-sports.io/football/coachs/323.png"
+        },
         "formation": "3-4-2-1",
         "startXI": [
           {
             "player": {
               "id": 199578,
-              "name": "Zion Suzuki",
+              "name": "Z. Suzuki",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -36256,7 +36270,7 @@
           {
             "player": {
               "id": 33165,
-              "name": "Ayumu Seko",
+              "name": "A. Seko",
               "number": 20,
               "pos": "D",
               "grid": "2:3"
@@ -36265,7 +36279,7 @@
           {
             "player": {
               "id": 38114,
-              "name": "Ko Itakura",
+              "name": "K. Itakura",
               "number": 4,
               "pos": "D",
               "grid": "2:2"
@@ -36274,7 +36288,7 @@
           {
             "player": {
               "id": 32893,
-              "name": "Hiroki Itō",
+              "name": "H. Ito",
               "number": 21,
               "pos": "D",
               "grid": "2:1"
@@ -36283,7 +36297,7 @@
           {
             "player": {
               "id": 32887,
-              "name": "Yukinari Sugawara",
+              "name": "Y. Sugawara",
               "number": 2,
               "pos": "M",
               "grid": "3:4"
@@ -36292,7 +36306,7 @@
           {
             "player": {
               "id": 32966,
-              "name": "Ao Tanaka",
+              "name": "A. Tanaka",
               "number": 7,
               "pos": "M",
               "grid": "3:3"
@@ -36301,7 +36315,7 @@
           {
             "player": {
               "id": 2601,
-              "name": "Daichi Kamada",
+              "name": "D. Kamada",
               "number": 15,
               "pos": "M",
               "grid": "3:2"
@@ -36310,7 +36324,7 @@
           {
             "player": {
               "id": 33321,
-              "name": "Keito Nakamura",
+              "name": "K. Nakamura",
               "number": 13,
               "pos": "M",
               "grid": "3:1"
@@ -36319,7 +36333,7 @@
           {
             "player": {
               "id": 2598,
-              "name": "Ritsu Doan",
+              "name": "R. Doan",
               "number": 10,
               "pos": "F",
               "grid": "4:2"
@@ -36328,7 +36342,7 @@
           {
             "player": {
               "id": 33224,
-              "name": "Daizen Maeda",
+              "name": "D. Maeda",
               "number": 11,
               "pos": "F",
               "grid": "4:1"
@@ -36337,7 +36351,7 @@
           {
             "player": {
               "id": 72155,
-              "name": "Ayase Ueda",
+              "name": "A. Ueda",
               "number": 18,
               "pos": "F",
               "grid": "5:1"
@@ -36347,53 +36361,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 32954,
-              "name": "Shogo Taniguchi",
-              "number": 3,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 33289,
-              "name": "Koki Ogawa",
-              "number": 19,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 1942,
-              "name": "Junya Ito",
-              "number": 14,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 32858,
-              "name": "Tsuyoshi Watanabe",
-              "number": 16,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 440,
-              "name": "Yuto Nagatomo",
-              "number": 5,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 33034,
-              "name": "Keisuke Osako",
+              "name": "K. Osako",
               "number": 12,
               "pos": "G",
               "grid": null
@@ -36402,7 +36371,7 @@
           {
             "player": {
               "id": 304782,
-              "name": "Tomoki Hayakawa",
+              "name": "T. Hayakawa",
               "number": 23,
               "pos": "G",
               "grid": null
@@ -36410,9 +36379,9 @@
           },
           {
             "player": {
-              "id": 351014,
-              "name": "Junnosuke Suzuki",
-              "number": 25,
+              "id": 440,
+              "name": "Y. Nagatomo",
+              "number": 5,
               "pos": "D",
               "grid": null
             }
@@ -36420,7 +36389,7 @@
           {
             "player": {
               "id": 2597,
-              "name": "Takehiro Tomiyasu",
+              "name": "T. Tomiyasu",
               "number": 22,
               "pos": "D",
               "grid": null
@@ -36428,35 +36397,8 @@
           },
           {
             "player": {
-              "id": 199143,
-              "name": "Yuito Suzuki",
-              "number": 17,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 33889,
-              "name": "Kaishu Sano",
-              "number": 24,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 422572,
-              "name": "Kento Shiogai",
-              "number": 26,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 106851,
-              "name": "Shuto Machino",
+              "name": "S. Machino",
               "number": 6,
               "pos": "F",
               "grid": null
@@ -36464,19 +36406,86 @@
           },
           {
             "player": {
+              "id": 199143,
+              "name": "Y. Suzuki",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 351014,
+              "name": "J. Suzuki",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 375930,
-              "name": "Keisuke Goto",
+              "name": "K. Goto",
               "number": 9,
               "pos": "F",
               "grid": null
             }
+          },
+          {
+            "player": {
+              "id": 32954,
+              "name": "S. Taniguchi",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1942,
+              "name": "J. Ito",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 33289,
+              "name": "K. Ogawa",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 33889,
+              "name": "K. Sano",
+              "number": 24,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 32858,
+              "name": "T. Watanabe",
+              "number": 16,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 422572,
+              "name": "K. Shiogai",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
           }
-        ],
-        "coach": {
-          "id": 323,
-          "name": "Hajime Moriyasu",
-          "photo": "https://media.api-sports.io/football/coachs/323.png"
-        }
+        ]
       },
       "away": {
         "team": {
@@ -36496,12 +36505,17 @@
             }
           }
         },
+        "coach": {
+          "id": 12,
+          "name": "Graham Potter",
+          "photo": "https://media.api-sports.io/football/coachs/12.png"
+        },
         "formation": "3-4-3",
         "startXI": [
           {
             "player": {
               "id": 48033,
-              "name": "Jacob Widell Zetterström",
+              "name": "J. Widell Zetterstrom",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -36510,7 +36524,7 @@
           {
             "player": {
               "id": 137721,
-              "name": "Gustaf Lagerbielke",
+              "name": "G. Lagerbielke",
               "number": 2,
               "pos": "D",
               "grid": "2:3"
@@ -36519,7 +36533,7 @@
           {
             "player": {
               "id": 137976,
-              "name": "Isak Hien",
+              "name": "I. Hien",
               "number": 4,
               "pos": "D",
               "grid": "2:2"
@@ -36528,7 +36542,7 @@
           {
             "player": {
               "id": 47969,
-              "name": "Gabriel Gudmundsson",
+              "name": "G. Gudmundsson",
               "number": 5,
               "pos": "D",
               "grid": "2:1"
@@ -36537,7 +36551,7 @@
           {
             "player": {
               "id": 47696,
-              "name": "Alexander Bernhardsson",
+              "name": "A. Bernhardsson",
               "number": 21,
               "pos": "M",
               "grid": "3:4"
@@ -36546,7 +36560,7 @@
           {
             "player": {
               "id": 889,
-              "name": "Victor Lindelöf",
+              "name": "V. Lindelof",
               "number": 3,
               "pos": "M",
               "grid": "3:3"
@@ -36555,7 +36569,7 @@
           {
             "player": {
               "id": 265820,
-              "name": "Yasin Ayari",
+              "name": "Y. Ayari",
               "number": 18,
               "pos": "M",
               "grid": "3:2"
@@ -36564,7 +36578,7 @@
           {
             "player": {
               "id": 226765,
-              "name": "Elliot Stroud",
+              "name": "E. Stroud",
               "number": 24,
               "pos": "M",
               "grid": "3:1"
@@ -36573,7 +36587,7 @@
           {
             "player": {
               "id": 153430,
-              "name": "Anthony Elanga",
+              "name": "A. Elanga",
               "number": 11,
               "pos": "F",
               "grid": "4:3"
@@ -36582,7 +36596,7 @@
           {
             "player": {
               "id": 18979,
-              "name": "Viktor Gyökeres",
+              "name": "V. Gyökeres",
               "number": 17,
               "pos": "F",
               "grid": "4:2"
@@ -36591,7 +36605,7 @@
           {
             "player": {
               "id": 2864,
-              "name": "Alexander Isak",
+              "name": "A. Isak",
               "number": 9,
               "pos": "F",
               "grid": "4:1"
@@ -36601,62 +36615,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 347316,
-              "name": "Lucas Bergvall",
-              "number": 7,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 198654,
-              "name": "Daniel Svensson",
-              "number": 8,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 2860,
-              "name": "Ken Sema",
-              "number": 13,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 47988,
-              "name": "Carl Starfelt",
-              "number": 15,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 48002,
-              "name": "Benjamin Nygren",
-              "number": 10,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 158700,
-              "name": "Viktor Johansson",
-              "number": 12,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 2851,
-              "name": "Kristoffer Nordfeldt",
+              "name": "K. Nordfeldt",
               "number": 23,
               "pos": "G",
               "grid": null
@@ -36664,8 +36624,89 @@
           },
           {
             "player": {
+              "id": 158700,
+              "name": "V. Johansson",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47988,
+              "name": "C. Starfelt",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 15683,
+              "name": "G. Nilsson",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30484,
+              "name": "M. Svanberg",
+              "number": 19,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 48002,
+              "name": "B. Nygren",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 161504,
+              "name": "H. Johansson",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 160925,
+              "name": "T. Ali",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2860,
+              "name": "K. Sema",
+              "number": 13,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 48047,
+              "name": "J. Karlstrom",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 8486,
-              "name": "Eric Smith",
+              "name": "E. Smith",
               "number": 20,
               "pos": "D",
               "grid": null
@@ -36674,7 +36715,7 @@
           {
             "player": {
               "id": 47903,
-              "name": "Hjalmar Ekdal",
+              "name": "H. Ekdal",
               "number": 14,
               "pos": "D",
               "grid": null
@@ -36682,36 +36723,18 @@
           },
           {
             "player": {
-              "id": 48047,
-              "name": "Jesper Karlström",
-              "number": 16,
-              "pos": "M",
+              "id": 198654,
+              "name": "D. Svensson",
+              "number": 8,
+              "pos": "D",
               "grid": null
             }
           },
           {
             "player": {
-              "id": 30484,
-              "name": "Mattias Svanberg",
-              "number": 19,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 160925,
-              "name": "Taha Abdi Ali",
-              "number": 26,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 161504,
-              "name": "Herman Johansson",
-              "number": 6,
+              "id": 347316,
+              "name": "L. Bergvall",
+              "number": 7,
               "pos": "M",
               "grid": null
             }
@@ -36719,38 +36742,24 @@
           {
             "player": {
               "id": 350850,
-              "name": "Besfort Zeneli",
+              "name": "B. Zeneli",
               "number": 22,
               "pos": "M",
               "grid": null
             }
-          },
-          {
-            "player": {
-              "id": 15683,
-              "name": "Gustaf Nilsson",
-              "number": 25,
-              "pos": "F",
-              "grid": null
-            }
           }
-        ],
-        "coach": {
-          "id": 12,
-          "name": "Graham Potter",
-          "photo": "https://media.api-sports.io/football/coachs/12.png"
-        }
+        ]
       }
     },
     "events": [
       {
         "time": "32",
         "team": "Sweden",
-        "player": "I. Hien",
+        "player": "Isak Hien",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Holding"
+        "comments": "Foul"
       },
       {
         "time": "37",
@@ -36808,24 +36817,6 @@
       },
       {
         "time": "75",
-        "team": "Sweden",
-        "player": "A. Bernhardsson",
-        "assist": "D. Svensson",
-        "type": "subst",
-        "detail": "Substitution 2",
-        "comments": ""
-      },
-      {
-        "time": "75",
-        "team": "Sweden",
-        "player": "E. Stroud",
-        "assist": "K. Sema",
-        "type": "subst",
-        "detail": "Substitution 3",
-        "comments": ""
-      },
-      {
-        "time": "75",
         "team": "Japan",
         "player": "K. Nakamura",
         "assist": "Y. Nagatomo",
@@ -36843,22 +36834,40 @@
         "comments": ""
       },
       {
+        "time": "75",
+        "team": "Sweden",
+        "player": "E. Stroud",
+        "assist": "K. Sema",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "75",
+        "team": "Sweden",
+        "player": "A. Bernhardsson",
+        "assist": "D. Svensson",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
         "time": "77",
         "team": "Japan",
-        "player": "S. Taniguchi",
+        "player": "Shogo Taniguchi",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Roughing"
+        "comments": "Foul"
       },
       {
         "time": "85",
         "team": "Sweden",
-        "player": "V. Gyokeres",
+        "player": "Viktor Gyökeres",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Roughing"
+        "comments": "Foul"
       },
       {
         "time": "87",
@@ -37270,12 +37279,17 @@
             }
           }
         },
+        "coach": {
+          "id": 861,
+          "name": "Gustavo Alfaro",
+          "photo": "https://media.api-sports.io/football/coachs/861.png"
+        },
         "formation": "5-3-2",
         "startXI": [
           {
             "player": {
               "id": 70852,
-              "name": "Orlando Gill",
+              "name": "O. Gill",
               "number": 12,
               "pos": "G",
               "grid": "1:1"
@@ -37284,7 +37298,7 @@
           {
             "player": {
               "id": 195992,
-              "name": "Juan Cáceres",
+              "name": "J. Caceres",
               "number": 4,
               "pos": "D",
               "grid": "2:5"
@@ -37293,7 +37307,7 @@
           {
             "player": {
               "id": 35808,
-              "name": "Gustavo Velázquez",
+              "name": "G. Velazquez",
               "number": 2,
               "pos": "D",
               "grid": "2:4"
@@ -37302,7 +37316,7 @@
           {
             "player": {
               "id": 2502,
-              "name": "Gustavo Gómez",
+              "name": "G. Gomez",
               "number": 15,
               "pos": "D",
               "grid": "2:3"
@@ -37311,7 +37325,7 @@
           {
             "player": {
               "id": 6168,
-              "name": "Omar Alderete",
+              "name": "O. Alderete",
               "number": 3,
               "pos": "D",
               "grid": "2:2"
@@ -37320,7 +37334,7 @@
           {
             "player": {
               "id": 425020,
-              "name": "Alexandro Maidana",
+              "name": "A. Maidana",
               "number": 26,
               "pos": "D",
               "grid": "2:1"
@@ -37329,7 +37343,7 @@
           {
             "player": {
               "id": 278370,
-              "name": "Diego Gómez",
+              "name": "D. Gomez",
               "number": 8,
               "pos": "M",
               "grid": "3:3"
@@ -37338,7 +37352,7 @@
           {
             "player": {
               "id": 6236,
-              "name": "Andrés Cubas",
+              "name": "A. Cubas",
               "number": 14,
               "pos": "M",
               "grid": "3:2"
@@ -37347,7 +37361,7 @@
           {
             "player": {
               "id": 305832,
-              "name": "Matías Galarza",
+              "name": "M. Galarza",
               "number": 23,
               "pos": "M",
               "grid": "3:1"
@@ -37356,7 +37370,7 @@
           {
             "player": {
               "id": 6483,
-              "name": "Gabriel Ávalos",
+              "name": "G. Avalos",
               "number": 21,
               "pos": "F",
               "grid": "4:2"
@@ -37365,7 +37379,7 @@
           {
             "player": {
               "id": 70747,
-              "name": "Julio Enciso",
+              "name": "J. Enciso",
               "number": 19,
               "pos": "F",
               "grid": "4:1"
@@ -37373,6 +37387,78 @@
           }
         ],
         "substitutes": [
+          {
+            "player": {
+              "id": 535737,
+              "name": "R. Fernandez",
+              "number": 1,
+              "pos": null,
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 51733,
+              "name": "G. Olveira",
+              "number": 22,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2500,
+              "name": "Fabian Balbuena",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2522,
+              "name": "A. Sanabria",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2499,
+              "name": "J. Alonso",
+              "number": 6,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 119128,
+              "name": "G. Caballero",
+              "number": 24,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 70732,
+              "name": "J. Canale",
+              "number": 13,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 70670,
+              "name": "I. Pitta",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          },
           {
             "player": {
               "id": 106485,
@@ -37384,98 +37470,8 @@
           },
           {
             "player": {
-              "id": 95460,
-              "name": "Alex Arce",
-              "number": 18,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 70732,
-              "name": "José Canale",
-              "number": 13,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 2499,
-              "name": "Junior Alonso",
-              "number": 6,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 195107,
-              "name": "Damián Bobadilla",
-              "number": 16,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 2497,
-              "name": "Roberto Fernández",
-              "number": 1,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 51733,
-              "name": "Gastón Olveira",
-              "number": 22,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 2500,
-              "name": "Fabián Balbuena",
-              "number": 5,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 70767,
-              "name": "Braian Ojeda",
-              "number": 20,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 119128,
-              "name": "Gustavo Caballero",
-              "number": 24,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 2514,
-              "name": "Alejandro Romero",
-              "number": 17,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 196298,
-              "name": "Ramón Sosa",
+              "name": "R. Sosa",
               "number": 7,
               "pos": "F",
               "grid": null
@@ -37483,28 +37479,41 @@
           },
           {
             "player": {
-              "id": 2522,
-              "name": "Antonio Sanabria",
-              "number": 9,
+              "id": 2514,
+              "name": "Kaku",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 95460,
+              "name": "A. Arce",
+              "number": 18,
               "pos": "F",
               "grid": null
             }
           },
           {
             "player": {
-              "id": 70670,
-              "name": "Isidro Pitta",
-              "number": 25,
-              "pos": "F",
+              "id": 70767,
+              "name": "B. Ojeda",
+              "number": 20,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 195107,
+              "name": "D. Bobadilla",
+              "number": 16,
+              "pos": "M",
               "grid": null
             }
           }
-        ],
-        "coach": {
-          "id": 861,
-          "name": "Gustavo Alfaro",
-          "photo": "https://media.api-sports.io/football/coachs/861.png"
-        }
+        ]
       },
       "away": {
         "team": {
@@ -37524,12 +37533,17 @@
             }
           }
         },
+        "coach": {
+          "id": 151,
+          "name": "Tony Popovic",
+          "photo": "https://media.api-sports.io/football/coachs/151.png"
+        },
         "formation": "3-4-2-1",
         "startXI": [
           {
             "player": {
               "id": 353883,
-              "name": "Patrick Beach",
+              "name": "P. Beach",
               "number": 18,
               "pos": "G",
               "grid": "1:1"
@@ -37538,7 +37552,7 @@
           {
             "player": {
               "id": 348568,
-              "name": "Alessandro Circati",
+              "name": "A. Circati",
               "number": 3,
               "pos": "D",
               "grid": "2:3"
@@ -37547,7 +37561,7 @@
           {
             "player": {
               "id": 20079,
-              "name": "Harry Souttar",
+              "name": "H. Souttar",
               "number": 19,
               "pos": "D",
               "grid": "2:2"
@@ -37556,7 +37570,7 @@
           {
             "player": {
               "id": 426480,
-              "name": "Lucas Herrington",
+              "name": "L. Herrington",
               "number": 25,
               "pos": "D",
               "grid": "2:1"
@@ -37565,7 +37579,7 @@
           {
             "player": {
               "id": 337587,
-              "name": "Jordan Bos",
+              "name": "J. Bos",
               "number": 5,
               "pos": "M",
               "grid": "3:4"
@@ -37574,7 +37588,7 @@
           {
             "player": {
               "id": 7050,
-              "name": "Aiden O'Neill",
+              "name": "A. O'Neill",
               "number": 13,
               "pos": "M",
               "grid": "3:3"
@@ -37583,7 +37597,7 @@
           {
             "player": {
               "id": 2749,
-              "name": "Jackson Irvine",
+              "name": "J. Irvine",
               "number": 22,
               "pos": "M",
               "grid": "3:2"
@@ -37592,7 +37606,7 @@
           {
             "player": {
               "id": 225,
-              "name": "Aziz Behich",
+              "name": "A. Behich",
               "number": 16,
               "pos": "M",
               "grid": "3:1"
@@ -37601,7 +37615,7 @@
           {
             "player": {
               "id": 342035,
-              "name": "Cristian Volpato",
+              "name": "C. Volpato",
               "number": 20,
               "pos": "F",
               "grid": "4:2"
@@ -37610,7 +37624,7 @@
           {
             "player": {
               "id": 6904,
-              "name": "Connor Metcalfe",
+              "name": "C. Metcalfe",
               "number": 8,
               "pos": "F",
               "grid": "4:1"
@@ -37619,7 +37633,7 @@
           {
             "player": {
               "id": 338014,
-              "name": "Nestory Irankunda",
+              "name": "N. Irankunda",
               "number": 17,
               "pos": "F",
               "grid": "5:1"
@@ -37629,35 +37643,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 38123,
-              "name": "Ajdin Hrustić",
-              "number": 10,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 441269,
-              "name": "Paul Okon-Engstler",
-              "number": 24,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 296645,
-              "name": "Tete Yengi",
-              "number": 26,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 2741,
-              "name": "Mathew Ryan",
+              "name": "M. Ryan",
               "number": 1,
               "pos": "G",
               "grid": null
@@ -37666,7 +37653,7 @@
           {
             "player": {
               "id": 6870,
-              "name": "Paul Izzo",
+              "name": "P. Izzo",
               "number": 12,
               "pos": "G",
               "grid": null
@@ -37674,17 +37661,8 @@
           },
           {
             "player": {
-              "id": 2742,
-              "name": "Miloš Degenek",
-              "number": 2,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 33847,
-              "name": "Jason Geria",
+              "name": "J. Geria",
               "number": 6,
               "pos": "D",
               "grid": null
@@ -37692,35 +37670,8 @@
           },
           {
             "player": {
-              "id": 20457,
-              "name": "Cameron Burgess",
-              "number": 21,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 153622,
-              "name": "Kai Trewin",
-              "number": 15,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 6832,
-              "name": "Cameron Devlin",
-              "number": 14,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 2755,
-              "name": "Awer Mabil",
+              "name": "A. Mabil",
               "number": 11,
               "pos": "M",
               "grid": null
@@ -37728,40 +37679,89 @@
           },
           {
             "player": {
-              "id": 312459,
-              "name": "Nishan Velupillay",
-              "number": 23,
-              "pos": "F",
+              "id": 20457,
+              "name": "C. Burgess",
+              "number": 21,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 38123,
+              "name": "A. Hrustic",
+              "number": 10,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 153622,
+              "name": "K. Trewin",
+              "number": 15,
+              "pos": "D",
               "grid": null
             }
           },
           {
             "player": {
               "id": 198352,
-              "name": "Mohamed Touré",
+              "name": "M. Toure",
               "number": 9,
               "pos": "F",
               "grid": null
             }
+          },
+          {
+            "player": {
+              "id": 441269,
+              "name": "P. Okon-Engstler",
+              "number": 24,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2742,
+              "name": "M. Degenek",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6832,
+              "name": "C. Devlin",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 296645,
+              "name": "T. Yengi",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 312459,
+              "name": "N. Velupillay",
+              "number": 23,
+              "pos": "F",
+              "grid": null
+            }
           }
-        ],
-        "coach": {
-          "id": 151,
-          "name": "Tony Popovic",
-          "photo": "https://media.api-sports.io/football/coachs/151.png"
-        }
+        ]
       }
     },
     "events": [
-      {
-        "time": "46",
-        "team": "Paraguay",
-        "player": "A. Maidana",
-        "assist": "Mauricio",
-        "type": "subst",
-        "detail": "Substitution 1",
-        "comments": ""
-      },
       {
         "time": "46",
         "team": "Australia",
@@ -37770,6 +37770,15 @@
         "type": "Card",
         "detail": "Yellow Card",
         "comments": "Tripping"
+      },
+      {
+        "time": "46",
+        "team": "Paraguay",
+        "player": "A. Maidana",
+        "assist": "Mauricio",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
       },
       {
         "time": "58",
@@ -37828,8 +37837,8 @@
       {
         "time": "90+2",
         "team": "Paraguay",
-        "player": "D. Gomez",
-        "assist": "D. Bobadilla",
+        "player": "M. Galarza",
+        "assist": "J. Alonso",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -37837,8 +37846,8 @@
       {
         "time": "90+2",
         "team": "Paraguay",
-        "player": "M. Galarza",
-        "assist": "J. Alonso",
+        "player": "D. Gomez",
+        "assist": "D. Bobadilla",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -38223,7 +38232,7 @@
             }
           }
         },
-        "formation": "4-3-3",
+        "formation": null,
         "startXI": [
           {
             "player": {
@@ -38231,7 +38240,7 @@
               "name": "Egil Selvik",
               "number": 13,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -38240,7 +38249,7 @@
               "name": "Fredrik Aursnes",
               "number": 14,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -38249,7 +38258,7 @@
               "name": "Henrik Sælebakke Falchener",
               "number": 25,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -38258,7 +38267,7 @@
               "name": "Leo Østigård",
               "number": 4,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -38267,7 +38276,7 @@
               "name": "Fredrik André Bjørkan",
               "number": 15,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -38276,7 +38285,7 @@
               "name": "Kristian Thorstvedt",
               "number": 18,
               "pos": "M",
-              "grid": "3:3"
+              "grid": null
             }
           },
           {
@@ -38285,7 +38294,7 @@
               "name": "Patrick Berg",
               "number": 6,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -38294,7 +38303,7 @@
               "name": "Thelo Aasgaard",
               "number": 19,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -38303,7 +38312,7 @@
               "name": "Oscar Bobb",
               "number": 22,
               "pos": "F",
-              "grid": "4:3"
+              "grid": null
             }
           },
           {
@@ -38312,7 +38321,7 @@
               "name": "Jørgen Strand Larsen",
               "number": 11,
               "pos": "F",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -38321,7 +38330,7 @@
               "name": "Andreas Schjelderup",
               "number": 21,
               "pos": "F",
-              "grid": "4:1"
+              "grid": null
             }
           }
         ],
@@ -38486,7 +38495,7 @@
             }
           }
         },
-        "formation": "4-2-3-1",
+        "formation": null,
         "startXI": [
           {
             "player": {
@@ -38494,7 +38503,7 @@
               "name": "Mike Maignan",
               "number": 16,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -38503,7 +38512,7 @@
               "name": "Jules Koundé",
               "number": 5,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -38512,7 +38521,7 @@
               "name": "Dayot Upamecano",
               "number": 4,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -38521,7 +38530,7 @@
               "name": "Maxence Lacroix",
               "number": 26,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -38530,7 +38539,7 @@
               "name": "Theo Hernández",
               "number": 19,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -38539,7 +38548,7 @@
               "name": "Aurélien Tchouaméni",
               "number": 8,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -38548,7 +38557,7 @@
               "name": "Manu Koné",
               "number": 6,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -38557,7 +38566,7 @@
               "name": "Ousmane Dembélé",
               "number": 7,
               "pos": "M",
-              "grid": "4:3"
+              "grid": null
             }
           },
           {
@@ -38566,7 +38575,7 @@
               "name": "Michael Olise",
               "number": 11,
               "pos": "M",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -38575,7 +38584,7 @@
               "name": "Désiré Doué",
               "number": 20,
               "pos": "M",
-              "grid": "4:1"
+              "grid": null
             }
           },
           {
@@ -38584,7 +38593,7 @@
               "name": "Kylian Mbappé",
               "number": 10,
               "pos": "F",
-              "grid": "5:1"
+              "grid": null
             }
           }
         ],
@@ -38736,8 +38745,8 @@
       {
         "time": "7",
         "team": "France",
-        "player": "O. Dembele",
-        "assist": "K. Mbappe",
+        "player": "Ousmane Dembélé",
+        "assist": "Kylian Mbappé",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -38745,17 +38754,17 @@
       {
         "time": "10",
         "team": "Norway",
-        "player": "P. Berg",
+        "player": "Patrick Berg",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Holding"
+        "comments": "Foul"
       },
       {
         "time": "20",
         "team": "France",
-        "player": "O. Dembele",
-        "assist": "K. Mbappe",
+        "player": "Ousmane Dembélé",
+        "assist": "Kylian Mbappé",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -38763,8 +38772,8 @@
       {
         "time": "21",
         "team": "Norway",
-        "player": "T. Aasgaard",
-        "assist": "A. Schjelderup",
+        "player": "Thelo Aasgaard",
+        "assist": "Andreas Schjelderup",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -38772,8 +38781,8 @@
       {
         "time": "32",
         "team": "France",
-        "player": "O. Dembele",
-        "assist": "A. Tchouameni",
+        "player": "Ousmane Dembélé",
+        "assist": "Aurélien Tchouaméni",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -38781,8 +38790,8 @@
       {
         "time": "46",
         "team": "Norway",
-        "player": "F. Bjorkan",
-        "assist": "M. Pedersen",
+        "player": "Fredrik André Bjørkan",
+        "assist": "Marcus Pedersen",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -38790,8 +38799,8 @@
       {
         "time": "46",
         "team": "Norway",
-        "player": "K. Thorstvedt",
-        "assist": "M. Thorsby",
+        "player": "Kristian Thorstvedt",
+        "assist": "Morten Thorsby",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -38799,8 +38808,8 @@
       {
         "time": "50",
         "team": "Norway",
-        "player": "J. Larsen",
-        "assist": "J. Larsen",
+        "player": "Jørgen Strand Larsen",
+        "assist": null,
         "type": "Goal",
         "detail": "Missed Penalty",
         "comments": ""
@@ -38808,8 +38817,8 @@
       {
         "time": "65",
         "team": "France",
-        "player": "M. Olise",
-        "assist": "R. Cherki",
+        "player": "Michael Olise",
+        "assist": "Rayan Cherki",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -38817,8 +38826,8 @@
       {
         "time": "65",
         "team": "France",
-        "player": "O. Dembele",
-        "assist": "B. Barcola",
+        "player": "Ousmane Dembélé",
+        "assist": "Bradley Barcola",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -38826,8 +38835,8 @@
       {
         "time": "66",
         "team": "Norway",
-        "player": "H. Falchener",
-        "assist": "S. Langas",
+        "player": "Henrik Sælebakke Falchener",
+        "assist": "Sondre Langås",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -38835,17 +38844,17 @@
       {
         "time": "74",
         "team": "France",
-        "player": "A. Tchouameni",
+        "player": "Aurélien Tchouaméni",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Roughing"
+        "comments": "Foul"
       },
       {
         "time": "76",
         "team": "France",
-        "player": "D. Upamecano",
-        "assist": "I. Konate",
+        "player": "Dayot Upamecano",
+        "assist": "Ibrahima Konaté",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -38853,8 +38862,8 @@
       {
         "time": "83",
         "team": "Norway",
-        "player": "O. Bobb",
-        "assist": "A. Nusa",
+        "player": "Andreas Schjelderup",
+        "assist": "Antonio Nusa",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -38862,8 +38871,8 @@
       {
         "time": "83",
         "team": "Norway",
-        "player": "A. Schjelderup",
-        "assist": "J. Hauge",
+        "player": "Oscar Bobb",
+        "assist": "Jens Petter Hauge",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -38871,8 +38880,8 @@
       {
         "time": "87",
         "team": "France",
-        "player": "J. Kounde",
-        "assist": "M. Gusto",
+        "player": "Jules Koundé",
+        "assist": "Malo Gusto",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -38880,8 +38889,8 @@
       {
         "time": "87",
         "team": "France",
-        "player": "K. Mbappe",
-        "assist": "J. Mateta",
+        "player": "Kylian Mbappé",
+        "assist": "Jean-Philippe Mateta",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -38889,8 +38898,8 @@
       {
         "time": "90+4",
         "team": "France",
-        "player": "D. Doue",
-        "assist": "B. Barcola",
+        "player": "Désiré Doué",
+        "assist": "Bradley Barcola",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -39930,7 +39939,7 @@
         "comments": ""
       },
       {
-        "time": "90+8",
+        "time": "90",
         "team": "Türkiye",
         "player": "K. Ayhan",
         "assist": null,
@@ -40330,7 +40339,7 @@
             }
           }
         },
-        "formation": "4-3-3",
+        "formation": null,
         "startXI": [
           {
             "player": {
@@ -40338,7 +40347,7 @@
               "name": "Mory Diaw",
               "number": 23,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -40347,7 +40356,7 @@
               "name": "Krépin Diatta",
               "number": 15,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -40356,7 +40365,7 @@
               "name": "Abdoulaye Seck",
               "number": 4,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -40365,7 +40374,7 @@
               "name": "Moussa Niakhaté",
               "number": 19,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -40374,7 +40383,7 @@
               "name": "Ismail Jakobs",
               "number": 14,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -40383,7 +40392,7 @@
               "name": "Habib Diarra",
               "number": 21,
               "pos": "M",
-              "grid": "3:3"
+              "grid": null
             }
           },
           {
@@ -40392,7 +40401,7 @@
               "name": "Idrissa Gana Gueye",
               "number": 5,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -40401,7 +40410,7 @@
               "name": "Lamine Camara",
               "number": 8,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -40410,7 +40419,7 @@
               "name": "Ibrahim Mbaye",
               "number": 20,
               "pos": "F",
-              "grid": "4:3"
+              "grid": null
             }
           },
           {
@@ -40419,7 +40428,7 @@
               "name": "Ismaïla Sarr",
               "number": 18,
               "pos": "F",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -40428,7 +40437,7 @@
               "name": "Sadio Mané",
               "number": 10,
               "pos": "F",
-              "grid": "4:1"
+              "grid": null
             }
           }
         ],
@@ -40584,7 +40593,7 @@
             }
           }
         },
-        "formation": "4-2-3-1",
+        "formation": null,
         "startXI": [
           {
             "player": {
@@ -40592,7 +40601,7 @@
               "name": "Ahmed Basil",
               "number": 22,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -40601,7 +40610,7 @@
               "name": "Frans Putros",
               "number": 26,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -40610,7 +40619,7 @@
               "name": "Rebin Sulaka",
               "number": 2,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -40619,7 +40628,7 @@
               "name": "Akam Hashem",
               "number": 5,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -40628,7 +40637,7 @@
               "name": "Merchas Doski",
               "number": 23,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -40637,7 +40646,7 @@
               "name": "Zidane Iqbal",
               "number": 14,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -40646,7 +40655,7 @@
               "name": "Amir Al-Ammari",
               "number": 16,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -40655,7 +40664,7 @@
               "name": "Ahmed Qasem",
               "number": 11,
               "pos": "M",
-              "grid": "4:3"
+              "grid": null
             }
           },
           {
@@ -40664,7 +40673,7 @@
               "name": "Ali Jasim",
               "number": 17,
               "pos": "M",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -40673,7 +40682,7 @@
               "name": "Ibrahim Bayesh",
               "number": 8,
               "pos": "M",
-              "grid": "4:1"
+              "grid": null
             }
           },
           {
@@ -40682,7 +40691,7 @@
               "name": "Ali Al-Hamadi",
               "number": 9,
               "pos": "F",
-              "grid": "5:1"
+              "grid": null
             }
           }
         ],
@@ -40834,8 +40843,8 @@
       {
         "time": "4",
         "team": "Senegal",
-        "player": "H. Diarra",
-        "assist": "A. Seck",
+        "player": "Habib Diarra",
+        "assist": "Abdoulaye Seck",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -40843,25 +40852,34 @@
       {
         "time": "13",
         "team": "Iraq",
-        "player": "R. Sulaka",
+        "player": "Rebin Sulaka",
         "assist": null,
         "type": "Card",
         "detail": "Red Card",
-        "comments": "Holding"
+        "comments": "Foul"
+      },
+      {
+        "time": "13",
+        "team": "Iraq",
+        "player": "Rebin Sulaka",
+        "assist": null,
+        "type": "Var",
+        "detail": "Card upgrade",
+        "comments": ""
       },
       {
         "time": "16",
         "team": "Iraq",
-        "player": "A. Qasem",
-        "assist": "M. Younis",
+        "player": "Ahmed Qasem",
+        "assist": "Munaf Younus",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
       },
       {
-        "time": "18",
+        "time": "17",
         "team": "Senegal",
-        "player": "A. Seck",
+        "player": "Abdoulaye Seck",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -40870,8 +40888,8 @@
       {
         "time": "46",
         "team": "Iraq",
-        "player": "A. Basil",
-        "assist": "J. Hassan",
+        "player": "Ahmed Basil",
+        "assist": "Jalal Hassan",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -40879,8 +40897,8 @@
       {
         "time": "56",
         "team": "Senegal",
-        "player": "I. Sarr",
-        "assist": "L. Camara",
+        "player": "Ismaïla Sarr",
+        "assist": "Lamine Camara",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -40888,8 +40906,8 @@
       {
         "time": "57",
         "team": "Senegal",
-        "player": "H. Diarra",
-        "assist": "P. Gueye",
+        "player": "Lamine Camara",
+        "assist": "Nicolas Jackson",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -40897,8 +40915,8 @@
       {
         "time": "57",
         "team": "Senegal",
-        "player": "I. Mbaye",
-        "assist": "I. Ndiaye",
+        "player": "Ibrahim Mbaye",
+        "assist": "Iliman Ndiaye",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -40906,35 +40924,35 @@
       {
         "time": "57",
         "team": "Senegal",
-        "player": "L. Camara",
-        "assist": "N. Jackson",
+        "player": "Habib Diarra",
+        "assist": "Pape Gueye",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
       },
       {
         "time": "58",
-        "team": "Iraq",
-        "player": "A. Jasim",
-        "assist": "A. Maknzi",
-        "type": "subst",
-        "detail": "Substitution 3",
-        "comments": ""
-      },
-      {
-        "time": "58",
-        "team": "Iraq",
-        "player": "A. Al Hamadi",
-        "assist": "A. Yousif",
+        "team": "Senegal",
+        "player": "Abdoulaye Seck",
+        "assist": "Pathé Ismaël Ciss",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
       },
       {
         "time": "58",
-        "team": "Senegal",
-        "player": "A. Seck",
-        "assist": "P. Ciss",
+        "team": "Iraq",
+        "player": "Ali Al-Hamadi",
+        "assist": "Ali Yousif",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "58",
+        "team": "Iraq",
+        "player": "Ali Jasim",
+        "assist": "Ahmed Hasan Maknazi",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -40942,8 +40960,8 @@
       {
         "time": "59",
         "team": "Senegal",
-        "player": "P. Gueye",
-        "assist": "I. Sarr",
+        "player": "Pape Gueye",
+        "assist": "Ismaïla Sarr",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -40951,35 +40969,35 @@
       {
         "time": "67",
         "team": "Iraq",
-        "player": "Z. Iqbal",
-        "assist": "K. Yakob",
+        "player": "Zidane Iqbal",
+        "assist": "Kevin Yakob",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
       },
       {
-        "time": "71",
+        "time": "72",
         "team": "Senegal",
-        "player": "P. Gueye",
-        "assist": "I. Ndiaye",
+        "player": "Pape Gueye",
+        "assist": "Iliman Ndiaye",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
       },
       {
-        "time": "75",
+        "time": "76",
         "team": "Iraq",
-        "player": "A. Al Ammari",
+        "player": "Amir Al-Ammari",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": ""
+        "comments": "Foul"
       },
       {
-        "time": "81",
+        "time": "80",
         "team": "Senegal",
-        "player": "I. Sarr",
-        "assist": "A. Diao",
+        "player": "Ismaïla Sarr",
+        "assist": "Assane Diao",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -40987,7 +41005,7 @@
       {
         "time": "81",
         "team": "Senegal",
-        "player": "P. Gueye",
+        "player": "Pape Gueye",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -40996,8 +41014,8 @@
       {
         "time": "82",
         "team": "Senegal",
-        "player": "I. Ndiaye",
-        "assist": "P. Gueye",
+        "player": "Iliman Ndiaye",
+        "assist": "Pape Gueye",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -41005,7 +41023,7 @@
       {
         "time": "90",
         "team": "Iraq",
-        "player": "M. Doski",
+        "player": "Merchas Doski",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -42336,10 +42354,2093 @@
     ]
   },
   "m065": {
-    "fixtureId": "1489414"
+    "fixtureId": 1489414,
+    "date": "2026-06-27T03:00:00+00:00",
+    "venue": "Lumen Field",
+    "status": "Match Finished",
+    "homeTeam": "Egypt",
+    "awayTeam": "Iran",
+    "score": {
+      "home": 1,
+      "away": 1
+    },
+    "statistics": {
+      "Egypt": {
+        "Shots on Goal": 3,
+        "Shots off Goal": 6,
+        "Total Shots": 15,
+        "Blocked Shots": 6,
+        "Shots insidebox": 8,
+        "Shots outsidebox": 7,
+        "Fouls": 11,
+        "Corner Kicks": 8,
+        "Offsides": 0,
+        "Ball Possession": "61%",
+        "Yellow Cards": 3,
+        "Red Cards": null,
+        "Goalkeeper Saves": 3,
+        "Total passes": 587,
+        "Passes accurate": 512,
+        "Passes %": "87%",
+        "expected_goals": "0.81",
+        "goals_prevented": "-0.55"
+      },
+      "Iran": {
+        "Shots on Goal": 4,
+        "Shots off Goal": 6,
+        "Total Shots": 12,
+        "Blocked Shots": 2,
+        "Shots insidebox": 9,
+        "Shots outsidebox": 3,
+        "Fouls": 16,
+        "Corner Kicks": 2,
+        "Offsides": 3,
+        "Ball Possession": "39%",
+        "Yellow Cards": 4,
+        "Red Cards": null,
+        "Goalkeeper Saves": 2,
+        "Total passes": 367,
+        "Passes accurate": 281,
+        "Passes %": "77%",
+        "expected_goals": "1.83",
+        "goals_prevented": "-0.55"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 32,
+          "name": "Egypt",
+          "logo": "https://media.api-sports.io/football/teams/32.png",
+          "colors": {
+            "player": {
+              "primary": "ff0000",
+              "number": "d0c190",
+              "border": "ff0000"
+            },
+            "goalkeeper": {
+              "primary": "2d6e86",
+              "number": "050505",
+              "border": "2d6e86"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 269174,
+              "name": "Mostafa Shobeir",
+              "number": 23,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2654,
+              "name": "Mohamed Hany",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 16805,
+              "name": "Rami Rabia",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 196343,
+              "name": "Mohamed Abdelmonem",
+              "number": 6,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 2649,
+              "name": "Ahmed Fatouh",
+              "number": 13,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 16841,
+              "name": "Mohanad Lasheen",
+              "number": 17,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 69196,
+              "name": "Mahmoud Saber",
+              "number": 21,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 17269,
+              "name": "Emam Ashour",
+              "number": 8,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 306,
+              "name": "Mohamed Salah",
+              "number": 10,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 2664,
+              "name": "Mahmoud Trézéguet",
+              "number": 7,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 395075,
+              "name": "Mostafa Ziko",
+              "number": 11,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 16804,
+              "name": "Yasser Ibrahim",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 190575,
+              "name": "Marwan Attia",
+              "number": 19,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 81573,
+              "name": "Omar Marmoush",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 16871,
+              "name": "Zizo",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 550547,
+              "name": "Hamza Abdelkarim",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 16797,
+              "name": "Mohamed El-Shenawy",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 16831,
+              "name": "Mahdi Soliman",
+              "number": 16,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 498250,
+              "name": "Mohamed Alaa",
+              "number": 26,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2656,
+              "name": "Karim Hafez",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 550371,
+              "name": "Tarek Alaa",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2660,
+              "name": "Nabil Donga",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 20844,
+              "name": "Haissem Hassan",
+              "number": 12,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 70535,
+              "name": "Ibrahim Adel",
+              "number": 20,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 19341,
+          "name": "Hossam Hassan",
+          "photo": "https://media.api-sports.io/football/coachs/19341.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 22,
+          "name": "Iran",
+          "logo": "https://media.api-sports.io/football/teams/22.png",
+          "colors": {
+            "player": {
+              "primary": "cc0000",
+              "number": "ffffff",
+              "border": "cc0000"
+            },
+            "goalkeeper": {
+              "primary": "cbe641",
+              "number": "000000",
+              "border": "cbe641"
+            }
+          }
+        },
+        "formation": "5-4-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 2682,
+              "name": "Alireza Beiranvand",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2691,
+              "name": "Ramin Rezaeian",
+              "number": 23,
+              "pos": "D",
+              "grid": "2:5"
+            }
+          },
+          {
+            "player": {
+              "id": 2687,
+              "name": "Hossein Kanaani",
+              "number": 13,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 29704,
+              "name": "Shoja Khalilzadeh",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 29809,
+              "name": "Ali Nemati",
+              "number": 19,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 2688,
+              "name": "Milad Mohammadi",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2699,
+              "name": "Saman Ghoddos",
+              "number": 14,
+              "pos": "M",
+              "grid": "3:4"
+            }
+          },
+          {
+            "player": {
+              "id": 341844,
+              "name": "Mohammad Ghorbani",
+              "number": 21,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 19614,
+              "name": "Saeid Ezatolahi",
+              "number": 6,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 134217,
+              "name": "Mohammad Mohebi",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 42315,
+              "name": "Mehdi Taremi",
+              "number": 9,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 136880,
+              "name": "Saleh Hardani",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 89982,
+              "name": "Shahriar Moghanlou",
+              "number": 20,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2700,
+              "name": "Alireza Jahanbakhsh",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2681,
+              "name": "Payam Niazmand",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 29755,
+              "name": "Hossein Hosseini",
+              "number": 22,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2685,
+              "name": "Ehsan Hajsafi",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 532950,
+              "name": "Danial Eiri",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2683,
+              "name": "Roozbeh Cheshmi",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 343405,
+              "name": "Aria Yousefi",
+              "number": 17,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 423753,
+              "name": "Amirmohammad Razzaghinia",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 29781,
+              "name": "Mehdi Ghayedi",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2697,
+              "name": "Mahdi Torabi",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 29720,
+              "name": "Ali Alipour",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 29937,
+              "name": "Amirhossein Hosseinzadeh",
+              "number": 18,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 37892,
+              "name": "Dennis Eckert Ayensa",
+              "number": 24,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 2703,
+          "name": "Amir Ghalenoei",
+          "photo": "https://media.api-sports.io/football/coachs/2703.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "5",
+        "team": "Egypt",
+        "player": "M. Saber",
+        "assist": "Trezeguet",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "11",
+        "team": "Iran",
+        "player": "M. Taremi",
+        "assist": "M. Taremi",
+        "type": "Goal",
+        "detail": "Missed Penalty",
+        "comments": ""
+      },
+      {
+        "time": "14",
+        "team": "Iran",
+        "player": "R. Rezaeian",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "14",
+        "team": "Egypt",
+        "player": "M. Abdelmonem",
+        "assist": "Y. Ibrahim",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "19",
+        "team": "Iran",
+        "player": "H. Kanaani",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "20",
+        "team": "Egypt",
+        "player": "M. Saber",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Roughing"
+      },
+      {
+        "time": "42",
+        "team": "Egypt",
+        "player": "Y. Ibrahim",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Foul"
+      },
+      {
+        "time": "43",
+        "team": "Iran",
+        "player": "A. Nemati",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "46",
+        "team": "Iran",
+        "player": "H. Kanaani",
+        "assist": "S. Hardani",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "Egypt",
+        "player": "E. Ashour",
+        "assist": "O. Marmoush",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "Egypt",
+        "player": "M. Saber",
+        "assist": "M. Attia",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "57",
+        "team": "Egypt",
+        "player": "M. Salah",
+        "assist": "Zizo",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "67",
+        "team": "Iran",
+        "player": "S. Ghoddos",
+        "assist": "S. Moghanlou",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "76",
+        "team": "Egypt",
+        "player": "M. Ziko",
+        "assist": "H. Abdelkarim",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "79",
+        "team": "Iran",
+        "player": "S. Ezatolahi",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": ""
+      },
+      {
+        "time": "90+1",
+        "team": "Iran",
+        "player": "M. Mohebi",
+        "assist": "A. Jahanbakhsh",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "90+2",
+        "team": "Egypt",
+        "player": "M. Lasheen",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": ""
+      },
+      {
+        "time": "90+3",
+        "team": "Iran",
+        "player": "S. Khalilzadeh",
+        "assist": null,
+        "type": "Var",
+        "detail": "Goal Disallowed - offside",
+        "comments": ""
+      },
+      {
+        "time": "90+4",
+        "team": "Iran",
+        "player": "S. Khalilzadeh",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Unsportsmanlike conduct"
+      }
+    ],
+    "players": [
+      {
+        "team": "Egypt",
+        "players": [
+          {
+            "name": "Mostafa Shobeir",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohamed Hany",
+            "rating": "7.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Rami Rabia",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohamed Abdelmonem",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ahmed Fatouh",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohanad Lasheen",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mahmoud Saber",
+            "rating": "7.3",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Emam Ashour",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohamed Salah",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mahmoud Trézéguet",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Mostafa Ziko",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yasser Ibrahim",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marwan Attia",
+            "rating": "7.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Omar Marmoush",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Zizo",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Hamza Abdelkarim",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohamed El-Shenawy",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mahdi Soliman",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohamed Alaa",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Karim Hafez",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tarek Alaa",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nabil Donga",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Haissem Hassan",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ibrahim Adel",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Iran",
+        "players": [
+          {
+            "name": "Alireza Beiranvand",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ramin Rezaeian",
+            "rating": "6.9",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Hossein Kanaani",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Shoja Khalilzadeh",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ali Nemati",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Milad Mohammadi",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Saman Ghoddos",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohammad Ghorbani",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Saeid Ezatolahi",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohammad Mohebi",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mehdi Taremi",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Saleh Hardani",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Shahriar Moghanlou",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alireza Jahanbakhsh",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Payam Niazmand",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Hossein Hosseini",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ehsan Hajsafi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Danial Eiri",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Roozbeh Cheshmi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Aria Yousefi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Amirmohammad Razzaghinia",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mehdi Ghayedi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mahdi Torabi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ali Alipour",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Amirhossein Hosseinzadeh",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Dennis Eckert Ayensa",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m066": {
-    "fixtureId": "1489415"
+    "fixtureId": 1489415,
+    "date": "2026-06-27T03:00:00+00:00",
+    "venue": "BC Place",
+    "status": "Match Finished",
+    "homeTeam": "New Zealand",
+    "awayTeam": "Belgium",
+    "score": {
+      "home": 1,
+      "away": 5
+    },
+    "statistics": {
+      "New Zealand": {
+        "Shots on Goal": 2,
+        "Shots off Goal": 3,
+        "Total Shots": 6,
+        "Blocked Shots": 1,
+        "Shots insidebox": 3,
+        "Shots outsidebox": 3,
+        "Fouls": 10,
+        "Corner Kicks": 5,
+        "Offsides": 1,
+        "Ball Possession": "45%",
+        "Yellow Cards": 2,
+        "Red Cards": null,
+        "Goalkeeper Saves": 5,
+        "Total passes": 435,
+        "Passes accurate": 369,
+        "Passes %": "85%",
+        "expected_goals": "0.24",
+        "goals_prevented": "-0.79"
+      },
+      "Belgium": {
+        "Shots on Goal": 10,
+        "Shots off Goal": 13,
+        "Total Shots": 35,
+        "Blocked Shots": 12,
+        "Shots insidebox": 23,
+        "Shots outsidebox": 12,
+        "Fouls": 7,
+        "Corner Kicks": 8,
+        "Offsides": 1,
+        "Ball Possession": "55%",
+        "Yellow Cards": 0,
+        "Red Cards": null,
+        "Goalkeeper Saves": 1,
+        "Total passes": 526,
+        "Passes accurate": 462,
+        "Passes %": "88%",
+        "expected_goals": "3.60",
+        "goals_prevented": "-0.79"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 4673,
+          "name": "New Zealand",
+          "logo": "https://media.api-sports.io/football/teams/4673.png",
+          "colors": {
+            "player": {
+              "primary": "e7e8ec",
+              "number": "000000",
+              "border": "e7e8ec"
+            },
+            "goalkeeper": {
+              "primary": "3c691f",
+              "number": "0d0d0d",
+              "border": "3c691f"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 18110,
+              "name": "Max Crocombe",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 94346,
+              "name": "Tim Payne",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 210165,
+              "name": "Finn Surman",
+              "number": 16,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 430835,
+              "name": "Tyler Bindon",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 6931,
+              "name": "Liberato Cacace",
+              "number": 13,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 94541,
+              "name": "Joe Bell",
+              "number": 6,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 179862,
+              "name": "Marko Stamenić",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 6935,
+              "name": "Sarpreet Singh",
+              "number": 10,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 242,
+              "name": "Ryan Thomas",
+              "number": 23,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 94333,
+              "name": "Elijah Just",
+              "number": 11,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 18931,
+              "name": "Chris Wood",
+              "number": 9,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 158688,
+              "name": "Jesse Randall",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 179856,
+              "name": "Benjamin Old",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 51149,
+              "name": "Michael Boxall",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 94322,
+              "name": "Callum McCowatt",
+              "number": 20,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 94405,
+              "name": "Francis De Vries",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36777,
+              "name": "Michael Woud",
+              "number": 22,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 94360,
+              "name": "Alex Paulsen",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 94344,
+              "name": "Nando Pijnaker",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 51307,
+              "name": "Tommy Smith",
+              "number": 26,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6932,
+              "name": "Callan Elliot",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6934,
+              "name": "Alex Rufer",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 405957,
+              "name": "Lachlan Bayliss",
+              "number": 25,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 26161,
+              "name": "Logan Rogerson",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6865,
+              "name": "Kosta Barbarouses",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6938,
+              "name": "Ben Waine",
+              "number": 18,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 0,
+          "name": null,
+          "photo": null
+        }
+      },
+      "away": {
+        "team": {
+          "id": 1,
+          "name": "Belgium",
+          "logo": "https://media.api-sports.io/football/teams/1.png",
+          "colors": {
+            "player": {
+              "primary": "b5d0e9",
+              "number": "1b1a21",
+              "border": "b5d0e9"
+            },
+            "goalkeeper": {
+              "primary": "4095d7",
+              "number": "fafafa",
+              "border": "4095d7"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 730,
+              "name": "Thibaut Courtois",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2920,
+              "name": "Timothy Castagne",
+              "number": 21,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 69,
+              "name": "Brandon Mechele",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 204043,
+              "name": "Arthur Theate",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 162007,
+              "name": "Maxim De Cuyper",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2926,
+              "name": "Youri Tielemans",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 78,
+              "name": "Hans Vanaken",
+              "number": 20,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 1422,
+              "name": "Jérémy Doku",
+              "number": 11,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 629,
+              "name": "Kevin De Bruyne",
+              "number": 7,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 1946,
+              "name": "Leandro Trossard",
+              "number": 10,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 147859,
+              "name": "Charles De Ketelaere",
+              "number": 17,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 340077,
+              "name": "Matías Fernández-Pardo",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 162714,
+              "name": "Amadou Onana",
+              "number": 24,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1417,
+              "name": "Alexis Saelemaekers",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2120,
+              "name": "Nicolas Raskin",
+              "number": 23,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 907,
+              "name": "Romelu Lukaku",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 162511,
+              "name": "Senne Lammens",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 340151,
+              "name": "Mike Penders",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 375974,
+              "name": "Joaquin Seys",
+              "number": 18,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 162141,
+              "name": "Koni De Winter",
+              "number": 16,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 264,
+              "name": "Thomas Meunier",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 335056,
+              "name": "Diego Moreira",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 25458,
+              "name": "Dodi Lukebakio",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 20,
+              "name": "Axel Witsel",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 2551,
+          "name": "Rudi Garcia",
+          "photo": "https://media.api-sports.io/football/coachs/2551.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "28",
+        "team": "Belgium",
+        "player": "L. Trossard",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "New Zealand",
+        "player": "S. Singh",
+        "assist": "J. Randall",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "New Zealand",
+        "player": "R. Thomas",
+        "assist": "B. Old",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "New Zealand",
+        "player": "M. Stamenic",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "50",
+        "team": "Belgium",
+        "player": "L. Trossard",
+        "assist": "H. Vanaken",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "56",
+        "team": "New Zealand",
+        "player": "E. Just",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Holding"
+      },
+      {
+        "time": "56",
+        "team": "Belgium",
+        "player": "J. Doku",
+        "assist": "M. Fernandez-Pardo",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "64",
+        "team": "New Zealand",
+        "player": "T. Payne",
+        "assist": "M. Boxall",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "64",
+        "team": "New Zealand",
+        "player": "J. Bell",
+        "assist": "C. McCowatt",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "66",
+        "team": "Belgium",
+        "player": "K. De Bruyne",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "72",
+        "team": "Belgium",
+        "player": "L. Trossard",
+        "assist": "A. Saelemaekers",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "72",
+        "team": "Belgium",
+        "player": "K. De Bruyne",
+        "assist": "A. Onana",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "79",
+        "team": "New Zealand",
+        "player": "L. Cacace",
+        "assist": "F. De Vries",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "84",
+        "team": "New Zealand",
+        "player": "E. Just",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "85",
+        "team": "Belgium",
+        "player": "C. De Ketelaere",
+        "assist": "R. Lukaku",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "85",
+        "team": "Belgium",
+        "player": "Y. Tielemans",
+        "assist": "N. Raskin",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "86",
+        "team": "Belgium",
+        "player": "R. Lukaku",
+        "assist": "N. Raskin",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "90+4",
+        "team": "Belgium",
+        "player": "A. Saelemaekers",
+        "assist": "R. Lukaku",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "New Zealand",
+        "players": [
+          {
+            "name": "Max Crocombe",
+            "rating": "5.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tim Payne",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Finn Surman",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tyler Bindon",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Liberato Cacace",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Joe Bell",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marko Stamenić",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Sarpreet Singh",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ryan Thomas",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Elijah Just",
+            "rating": "7.3",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Chris Wood",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jesse Randall",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Benjamin Old",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Michael Boxall",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Callum McCowatt",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Francis De Vries",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Michael Woud",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alex Paulsen",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nando Pijnaker",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tommy Smith",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Callan Elliot",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alex Rufer",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lachlan Bayliss",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Logan Rogerson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kosta Barbarouses",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ben Waine",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Belgium",
+        "players": [
+          {
+            "name": "Thibaut Courtois",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Timothy Castagne",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Brandon Mechele",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Arthur Theate",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Maxim De Cuyper",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Youri Tielemans",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Hans Vanaken",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Jérémy Doku",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kevin De Bruyne",
+            "rating": "9",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Leandro Trossard",
+            "rating": "8.7",
+            "goals": 2,
+            "assists": 0
+          },
+          {
+            "name": "Charles De Ketelaere",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Matías Fernández-Pardo",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Amadou Onana",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alexis Saelemaekers",
+            "rating": "7.9",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Nicolas Raskin",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Romelu Lukaku",
+            "rating": "7.3",
+            "goals": 1,
+            "assists": 1
+          },
+          {
+            "name": "Senne Lammens",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mike Penders",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Joaquin Seys",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Koni De Winter",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Thomas Meunier",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Diego Moreira",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Dodi Lukebakio",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Axel Witsel",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m063": {
     "fixtureId": 1489417,
