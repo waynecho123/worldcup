@@ -178,6 +178,13 @@
       "matches": 3
     },
     {
+      "name": "Mohamed Salah",
+      "photo": "https://media.api-sports.io/football/players/306.png",
+      "team": "Egypt",
+      "assists": 2,
+      "matches": 3
+    },
+    {
       "name": "V. Gyökeres",
       "photo": "https://media.api-sports.io/football/players/18979.png",
       "team": "Sweden",
@@ -195,13 +202,6 @@
       "name": "N. Saliba",
       "photo": "https://media.api-sports.io/football/players/294824.png",
       "team": "Canada",
-      "assists": 2,
-      "matches": 2
-    },
-    {
-      "name": "Mohamed Salah",
-      "photo": "https://media.api-sports.io/football/players/306.png",
-      "team": "Egypt",
       "assists": 2,
       "matches": 2
     },
@@ -269,16 +269,16 @@
       "matches": 3
     },
     {
-      "name": "M. Ødegaard",
-      "photo": "https://media.api-sports.io/football/players/37127.png",
-      "team": "Norway",
-      "assists": 2,
-      "matches": 2
-    },
-    {
       "name": "C. Wood",
       "photo": "https://media.api-sports.io/football/players/18931.png",
       "team": "New Zealand",
+      "assists": 2,
+      "matches": 3
+    },
+    {
+      "name": "M. Ødegaard",
+      "photo": "https://media.api-sports.io/football/players/37127.png",
+      "team": "Norway",
       "assists": 2,
       "matches": 2
     }
@@ -289,6 +289,13 @@
       "photo": "https://media.api-sports.io/football/players/2507.png",
       "team": "Paraguay",
       "yellow": 1,
+      "red": 1
+    },
+    {
+      "name": "A. Canobbio",
+      "photo": "https://media.api-sports.io/football/players/51603.png",
+      "team": "Uruguay",
+      "yellow": 0,
       "red": 1
     },
     {
@@ -369,6 +376,13 @@
       "red": 0
     },
     {
+      "name": "J. Bacuna",
+      "photo": "https://media.api-sports.io/football/players/19047.png",
+      "team": "Curaçao",
+      "yellow": 2,
+      "red": 0
+    },
+    {
       "name": "Amir Al Ammari",
       "photo": "https://media.api-sports.io/football/players/47792.png",
       "team": "Iraq",
@@ -376,9 +390,16 @@
       "red": 0
     },
     {
-      "name": "J. Bacuna",
-      "photo": "https://media.api-sports.io/football/players/19047.png",
-      "team": "Curaçao",
+      "name": "S. Ezatolahi",
+      "photo": "https://media.api-sports.io/football/players/19614.png",
+      "team": "Iran",
+      "yellow": 2,
+      "red": 0
+    },
+    {
+      "name": "Mohanad Lasheen",
+      "photo": "https://media.api-sports.io/football/players/16841.png",
+      "team": "Egypt",
       "yellow": 2,
       "red": 0
     },
@@ -402,28 +423,7 @@
       "team": "Netherlands",
       "yellow": 1,
       "red": 0
-    },
-    {
-      "name": "R. Christie",
-      "photo": "https://media.api-sports.io/football/players/1125.png",
-      "team": "Scotland",
-      "yellow": 1,
-      "red": 0
-    },
-    {
-      "name": "J. Irvine",
-      "photo": "https://media.api-sports.io/football/players/2749.png",
-      "team": "Australia",
-      "yellow": 1,
-      "red": 0
-    },
-    {
-      "name": "L. Bergvall",
-      "photo": "https://media.api-sports.io/football/players/347316.png",
-      "team": "Sweden",
-      "yellow": 1,
-      "red": 0
     }
   ],
-  "updatedAt": "2026-06-27T08:11:34.451Z"
+  "updatedAt": "2026-06-27T10:06:36.414Z"
 }
