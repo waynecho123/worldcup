@@ -85,6 +85,13 @@
       "matches": 3
     },
     {
+      "name": "E. Just",
+      "photo": "https://media.api-sports.io/football/players/94333.png",
+      "team": "New Zealand",
+      "goals": 3,
+      "matches": 3
+    },
+    {
       "name": "C. Summerville",
       "photo": "https://media.api-sports.io/football/players/37724.png",
       "team": "Netherlands",
@@ -106,6 +113,13 @@
       "matches": 3
     },
     {
+      "name": "Mikel Oyarzabal",
+      "photo": "https://media.api-sports.io/football/players/47323.png",
+      "team": "Spain",
+      "goals": 2,
+      "matches": 3
+    },
+    {
       "name": "A. Ueda",
       "photo": "https://media.api-sports.io/football/players/72155.png",
       "team": "Japan",
@@ -113,30 +127,16 @@
       "matches": 3
     },
     {
-      "name": "C. Gakpo",
-      "photo": "https://media.api-sports.io/football/players/247.png",
-      "team": "Netherlands",
-      "goals": 2,
-      "matches": 3
-    },
-    {
-      "name": "Mikel Oyarzabal",
-      "photo": "https://media.api-sports.io/football/players/47323.png",
-      "team": "Spain",
-      "goals": 2,
-      "matches": 2
-    },
-    {
       "name": "M. Araújo",
       "photo": "https://media.api-sports.io/football/players/51776.png",
       "team": "Uruguay",
       "goals": 2,
-      "matches": 2
+      "matches": 3
     },
     {
-      "name": "A. Elanga",
-      "photo": "https://media.api-sports.io/football/players/153430.png",
-      "team": "Sweden",
+      "name": "C. Gakpo",
+      "photo": "https://media.api-sports.io/football/players/247.png",
+      "team": "Netherlands",
       "goals": 2,
       "matches": 3
     }
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-06-27T06:11:50.058Z"
+  "updatedAt": "2026-06-27T08:06:39.262Z"
 }
