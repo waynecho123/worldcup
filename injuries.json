@@ -47,19 +47,19 @@
     {
       "player": "Z. Debast",
       "type": "Missing Fixture",
-      "reason": "Thigh Muscle Strain",
+      "reason": "Injury",
       "fixture": "2026-06-15T19:00:00+00:00"
     },
     {
       "player": "Z. Debast",
       "type": "Missing Fixture",
-      "reason": "Thigh Muscle Strain",
+      "reason": "Injury",
       "fixture": "2026-06-21T19:00:00+00:00"
     },
     {
       "player": "Z. Debast",
       "type": "Missing Fixture",
-      "reason": "Thigh Muscle Strain",
+      "reason": "Injury",
       "fixture": "2026-06-27T03:00:00+00:00"
     }
   ],
@@ -155,6 +155,28 @@
       "fixture": "2026-06-29T20:30:00+00:00"
     }
   ],
+  "RSA": [
+    {
+      "player": "T. Mokoena",
+      "type": "Missing Fixture",
+      "reason": "Yellow Card",
+      "fixture": "2026-06-25T01:00:00+00:00"
+    }
+  ],
+  "ENG": [
+    {
+      "player": "R. James",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Injury",
+      "fixture": "2026-06-27T21:00:00+00:00"
+    },
+    {
+      "player": "R. James",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Injury",
+      "fixture": "2026-07-01T16:00:00+00:00"
+    }
+  ],
   "SEN": [
     {
       "player": "É. Mendy",
@@ -239,14 +261,6 @@
       "type": "Missing Fixture",
       "reason": "Red Card",
       "fixture": "2026-06-24T19:00:00+00:00"
-    }
-  ],
-  "RSA": [
-    {
-      "player": "T. Mokoena",
-      "type": "Missing Fixture",
-      "reason": "Yellow Card",
-      "fixture": "2026-06-25T01:00:00+00:00"
     }
   ],
   "QAT": [
