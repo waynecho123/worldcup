@@ -24,7 +24,7 @@
     "goalsAgainst": 3,
     "goalDiff": -1,
     "points": 4,
-    "form": "WDL",
+    "form": "LWDL",
     "status": "same"
   },
   "KOR": {
@@ -66,7 +66,7 @@
     "goalsAgainst": 3,
     "goalDiff": 5,
     "points": 4,
-    "form": "LWD",
+    "form": "WLWD",
     "status": "same"
   },
   "BIH": {

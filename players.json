@@ -57,6 +57,13 @@
       "matches": 3
     },
     {
+      "name": "J. David",
+      "photo": "https://media.api-sports.io/football/players/8489.png",
+      "team": "Canada",
+      "goals": 3,
+      "matches": 4
+    },
+    {
       "name": "B. Brobbey",
       "photo": "https://media.api-sports.io/football/players/38750.png",
       "team": "Netherlands",
@@ -67,13 +74,6 @@
       "name": "Matheus Cunha",
       "photo": "https://media.api-sports.io/football/players/1165.png",
       "team": "Brazil",
-      "goals": 3,
-      "matches": 3
-    },
-    {
-      "name": "J. David",
-      "photo": "https://media.api-sports.io/football/players/8489.png",
-      "team": "Canada",
       "goals": 3,
       "matches": 3
     },
@@ -178,6 +178,13 @@
       "matches": 3
     },
     {
+      "name": "N. Saliba",
+      "photo": "https://media.api-sports.io/football/players/294824.png",
+      "team": "Canada",
+      "assists": 2,
+      "matches": 3
+    },
+    {
       "name": "Mohamed Salah",
       "photo": "https://media.api-sports.io/football/players/306.png",
       "team": "Egypt",
@@ -195,13 +202,6 @@
       "name": "I. Ndiaye",
       "photo": "https://media.api-sports.io/football/players/18592.png",
       "team": "Senegal",
-      "assists": 2,
-      "matches": 2
-    },
-    {
-      "name": "N. Saliba",
-      "photo": "https://media.api-sports.io/football/players/294824.png",
-      "team": "Canada",
       "assists": 2,
       "matches": 2
     },
@@ -262,16 +262,16 @@
       "matches": 3
     },
     {
-      "name": "D. Dumfries",
-      "photo": "https://media.api-sports.io/football/players/226.png",
-      "team": "Netherlands",
+      "name": "H. Mejbri",
+      "photo": "https://media.api-sports.io/football/players/180560.png",
+      "team": "Tunisia",
       "assists": 2,
       "matches": 3
     },
     {
-      "name": "H. Mejbri",
-      "photo": "https://media.api-sports.io/football/players/180560.png",
-      "team": "Tunisia",
+      "name": "D. Dumfries",
+      "photo": "https://media.api-sports.io/football/players/226.png",
+      "team": "Netherlands",
       "assists": 2,
       "matches": 3
     },
@@ -299,6 +299,13 @@
       "red": 1
     },
     {
+      "name": "S. Sithole",
+      "photo": "https://media.api-sports.io/football/players/158433.png",
+      "team": "South Africa",
+      "yellow": 0,
+      "red": 1
+    },
+    {
       "name": "Rebin Solaka",
       "photo": "https://media.api-sports.io/football/players/42261.png",
       "team": "Iraq",
@@ -316,13 +323,6 @@
       "name": "Assim Madibo",
       "photo": "https://media.api-sports.io/football/players/2535.png",
       "team": "Qatar",
-      "yellow": 0,
-      "red": 1
-    },
-    {
-      "name": "S. Sithole",
-      "photo": "https://media.api-sports.io/football/players/158433.png",
-      "team": "South Africa",
       "yellow": 0,
       "red": 1
     },
@@ -376,16 +376,16 @@
       "red": 0
     },
     {
-      "name": "J. Bacuna",
-      "photo": "https://media.api-sports.io/football/players/19047.png",
-      "team": "Curaçao",
+      "name": "Amir Al Ammari",
+      "photo": "https://media.api-sports.io/football/players/47792.png",
+      "team": "Iraq",
       "yellow": 2,
       "red": 0
     },
     {
-      "name": "Amir Al Ammari",
-      "photo": "https://media.api-sports.io/football/players/47792.png",
-      "team": "Iraq",
+      "name": "J. Bacuna",
+      "photo": "https://media.api-sports.io/football/players/19047.png",
+      "team": "Curaçao",
       "yellow": 2,
       "red": 0
     },
@@ -404,6 +404,13 @@
       "red": 0
     },
     {
+      "name": "T. Mokoena",
+      "photo": "https://media.api-sports.io/football/players/3287.png",
+      "team": "South Africa",
+      "yellow": 2,
+      "red": 0
+    },
+    {
       "name": "A. Khusanov",
       "photo": "https://media.api-sports.io/football/players/360114.png",
       "team": "Uzbekistan",
@@ -416,14 +423,7 @@
       "team": "Cape Verde Islands",
       "yellow": 2,
       "red": 0
-    },
-    {
-      "name": "T. Mokoena",
-      "photo": "https://media.api-sports.io/football/players/3287.png",
-      "team": "South Africa",
-      "yellow": 2,
-      "red": 0
     }
   ],
-  "updatedAt": "2026-06-28T20:11:09.210Z"
+  "updatedAt": "2026-06-28T22:06:22.919Z"
 }
