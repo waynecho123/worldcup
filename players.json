@@ -4,8 +4,8 @@
       "name": "L. Messi",
       "photo": "https://media.api-sports.io/football/players/154.png",
       "team": "Argentina",
-      "goals": 5,
-      "matches": 2
+      "goals": 6,
+      "matches": 3
     },
     {
       "name": "Kylian Mbappé",
@@ -92,6 +92,20 @@
       "matches": 3
     },
     {
+      "name": "H. Kane",
+      "photo": "https://media.api-sports.io/football/players/184.png",
+      "team": "England",
+      "goals": 3,
+      "matches": 3
+    },
+    {
+      "name": "Y. Wissa",
+      "photo": "https://media.api-sports.io/football/players/20649.png",
+      "team": "Congo DR",
+      "goals": 3,
+      "matches": 3
+    },
+    {
       "name": "C. Summerville",
       "photo": "https://media.api-sports.io/football/players/37724.png",
       "team": "Netherlands",
@@ -113,30 +127,16 @@
       "matches": 3
     },
     {
+      "name": "R. Mahrez",
+      "photo": "https://media.api-sports.io/football/players/635.png",
+      "team": "Algeria",
+      "goals": 2,
+      "matches": 3
+    },
+    {
       "name": "Mikel Oyarzabal",
       "photo": "https://media.api-sports.io/football/players/47323.png",
       "team": "Spain",
-      "goals": 2,
-      "matches": 3
-    },
-    {
-      "name": "A. Ueda",
-      "photo": "https://media.api-sports.io/football/players/72155.png",
-      "team": "Japan",
-      "goals": 2,
-      "matches": 3
-    },
-    {
-      "name": "M. Araújo",
-      "photo": "https://media.api-sports.io/football/players/51776.png",
-      "team": "Uruguay",
-      "goals": 2,
-      "matches": 3
-    },
-    {
-      "name": "C. Gakpo",
-      "photo": "https://media.api-sports.io/football/players/247.png",
-      "team": "Netherlands",
       "goals": 2,
       "matches": 3
     }
@@ -213,6 +213,13 @@
       "matches": 3
     },
     {
+      "name": "B. Saka",
+      "photo": "https://media.api-sports.io/football/players/1460.png",
+      "team": "England",
+      "assists": 2,
+      "matches": 3
+    },
+    {
       "name": "Brahim Díaz",
       "photo": "https://media.api-sports.io/football/players/744.png",
       "team": "Morocco",
@@ -274,13 +281,6 @@
       "team": "New Zealand",
       "assists": 2,
       "matches": 3
-    },
-    {
-      "name": "M. Ødegaard",
-      "photo": "https://media.api-sports.io/football/players/37127.png",
-      "team": "Norway",
-      "assists": 2,
-      "matches": 2
     }
   ],
   "cards": [
@@ -404,6 +404,13 @@
       "red": 0
     },
     {
+      "name": "A. Khusanov",
+      "photo": "https://media.api-sports.io/football/players/360114.png",
+      "team": "Uzbekistan",
+      "yellow": 2,
+      "red": 0
+    },
+    {
       "name": "S. Lopes Cabral",
       "photo": "https://media.api-sports.io/football/players/308689.png",
       "team": "Cape Verde Islands",
@@ -416,14 +423,7 @@
       "team": "South Africa",
       "yellow": 2,
       "red": 0
-    },
-    {
-      "name": "M. Depay",
-      "photo": "https://media.api-sports.io/football/players/667.png",
-      "team": "Netherlands",
-      "yellow": 1,
-      "red": 0
     }
   ],
-  "updatedAt": "2026-06-28T06:11:06.982Z"
+  "updatedAt": "2026-06-28T08:06:11.035Z"
 }
