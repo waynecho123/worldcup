@@ -3133,6 +3133,7 @@ function showDate(dateStr) {
 }
 
 function renderTodayMatches(dateStr) {
+  const stageLabels = {group:'小组赛',r32:'1/16决赛',r16:'1/8决赛',qf:'1/4决赛',sf:'半决赛',tpp:'季军赛',final:'🏆决赛'};
   const dateStrEff = dateStr || getTournamentDateStr();
   const matches = MATCH_SCHEDULE.filter(m => m.date === dateStrEff);
   if (matches.length === 0) {
