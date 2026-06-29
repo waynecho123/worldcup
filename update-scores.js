@@ -1151,6 +1151,129 @@ async function updateMatchDetails() {
   console.log(`[${ts}] Match details: ${n} updated (total: ${Object.keys(existing).length})`);
 }
 
+// ========== UPDATE: Match Stats + Tactical Profiles (from match-details.json) ==========
+async function updateTactical() {
+  const details = loadJSON(path.join(BASE_DIR, 'match-details.json'));
+  const tacticalFile = path.join(BASE_DIR, 'tactical.json');
+  const entries = Object.entries(details);
+  if (entries.length === 0) { console.log('No match details, skipping tactical'); return; }
+
+  const teams = {}; // per-team accumulator
+  var processed = 0;
+
+  entries.forEach(([mid, d]) => {
+    if (!d.statistics || !d.homeTeam || !d.awayTeam) return;
+    [d.homeTeam, d.awayTeam].forEach(teamName => {
+      const stats = d.statistics[teamName];
+      if (!stats) return;
+      // Find team ID by matching name
+      var tid = null;
+      for (var k in TEAMS) {
+        var t = TEAMS[k];
+        if (t.name === teamName || t.alt === teamName || (t.name||'').toLowerCase() === (teamName||'').toLowerCase()) {
+          tid = k; break;
+        }
+      }
+      if (!tid) return;
+
+      if (!teams[tid]) teams[tid] = { matches: 0, possession: 0, passAccuracy: 0, totalPasses: 0, shots: 0, shotsOnTarget: 0,
+        tackles: 0, fouls: 0, corners: 0, formations: {}, xg: 0, goals: 0, goalsAgainst: 0 };
+
+      var tm = teams[tid];
+      tm.matches++;
+      var pos = parseFloat(stats['Ball Possession'] || stats['Ball Possession %'] || '50');
+      var passAcc = parseFloat(stats['Passes %'] || stats['Pass accuracy'] || '75');
+      var passes = parseInt(stats['Total passes'] || '0');
+      var shots = parseInt(stats['Total Shots'] || '0');
+      var sot = parseInt(stats['Shots on Goal'] || stats['Shots on goal'] || '0');
+      var tackles = parseInt(stats['Total Tackles'] || stats['Tackles'] || '0');
+      var fouls = parseInt(stats['Fouls'] || '0');
+      var corners = parseInt(stats['Corner Kicks'] || '0');
+      var xg = parseFloat(stats['Expected Goals'] || stats['expected_goals'] || '1');
+      tm.possession += pos;
+      tm.passAccuracy += passAcc;
+      tm.totalPasses += passes;
+      tm.shots += shots;
+      tm.shotsOnTarget += sot;
+      tm.tackles += tackles;
+      tm.fouls += fouls;
+      tm.corners += corners;
+      tm.xg += xg;
+
+      // Formation
+      var lineup = (d.lineups || {});
+      var lu = teamName === d.homeTeam ? lineup.home : lineup.away;
+      if (lu && lu.formation) {
+        var fmt = lu.formation;
+        tm.formations[fmt] = (tm.formations[fmt] || 0) + 1;
+      }
+
+      // Goals
+      var score = d.score || {};
+      var gf = teamName === d.homeTeam ? (score.home || 0) : (score.away || 0);
+      var ga = teamName === d.homeTeam ? (score.away || 0) : (score.home || 0);
+      tm.goals += gf;
+      tm.goalsAgainst += ga;
+      processed++;
+    });
+  });
+
+  // Build output: per-team averages + derived style
+  var result = {};
+  Object.entries(teams).forEach(([tid, tm]) => {
+    var n = tm.matches;
+    var avgPoss = Math.round(tm.possession / n);
+    var avgPassAcc = Math.round(tm.passAccuracy / n);
+    var avgShots = (tm.shots / n).toFixed(1);
+    var avgSOT = (tm.shotsOnTarget / n).toFixed(1);
+    var avgXg = (tm.xg / n).toFixed(2);
+    var avgTackles = Math.round(tm.tackles / n);
+    var avgFouls = Math.round(tm.fouls / n);
+    var avgCorners = (tm.corners / n).toFixed(1);
+    var avgPasses = Math.round(tm.totalPasses / n);
+
+    // Derive tactical dimensions (0-10 scale)
+    var tempo = Math.min(10, Math.max(1, Math.round(avgPasses / 50))); // 500+ passes = high tempo
+    var technique = Math.min(10, Math.max(1, Math.round(avgPassAcc / 10))); // 85%+ = high technique
+    var pressing = Math.min(10, Math.max(1, Math.round(avgTackles / 2))); // tackles correlate with pressing
+    var physical = Math.min(10, Math.max(1, Math.round(avgFouls / 1.5))); // fouls correlate with physicality
+
+    // Style: possession-based vs direct
+    var style = avgPoss > 55 ? 'possession' : avgPoss > 45 ? 'balanced' : 'direct';
+
+    // Best formation
+    var bestFormation = '';
+    var bestFmtCount = 0;
+    Object.entries(tm.formations).forEach(([fmt, cnt]) => {
+      if (cnt > bestFmtCount) { bestFmtCount = cnt; bestFormation = fmt; }
+    });
+
+    result[tid] = {
+      matches: n,
+      formation: bestFormation || '4-3-3',
+      style: style,
+      avgPossession: avgPoss,
+      avgPassAccuracy: avgPassAcc,
+      avgPasses: avgPasses,
+      avgShots: avgShots,
+      avgShotsOnTarget: avgSOT,
+      avgXg: avgXg,
+      avgTackles: avgTackles,
+      avgFouls: avgFouls,
+      avgCorners: avgCorners,
+      goals: tm.goals,
+      goalsAgainst: tm.goalsAgainst,
+      tempo: tempo,
+      technique: technique,
+      pressing: pressing,
+      physical: physical
+    };
+  });
+
+  saveJSON(tacticalFile, result);
+  console.log(`[${ts}] Tactical: ${processed} team-performances from ${Object.keys(teams).length} teams`);
+}
+
 // ========== UPDATE: Injuries (via API-Sports) ==========
 async function updateInjuries() {
   if (!APISPORTS_KEY) { console.log('APISPORTS_KEY not set, skipping injuries'); return; }
@@ -1312,6 +1435,7 @@ async function main() {
   if (args.includes('--injuries')) { await updateInjuries(); ran = true; }
   if (args.includes('--standings')) { await updateStandings(); ran = true; }
   if (args.includes('--players')) { await updatePlayerStats(); ran = true; }
+  if (args.includes('--tactical')) { await updateTactical(); ran = true; }
   if (!ran) await updateAll();
 }
 
