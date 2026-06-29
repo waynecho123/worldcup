@@ -40,7 +40,7 @@
       "photo": "https://media.api-sports.io/football/players/26475.png",
       "team": "Germany",
       "goals": 3,
-      "matches": 3
+      "matches": 4
     },
     {
       "name": "J. Manzambi",
@@ -92,6 +92,13 @@
       "matches": 3
     },
     {
+      "name": "K. Havertz",
+      "photo": "https://media.api-sports.io/football/players/978.png",
+      "team": "Germany",
+      "goals": 3,
+      "matches": 4
+    },
+    {
       "name": "H. Kane",
       "photo": "https://media.api-sports.io/football/players/184.png",
       "team": "England",
@@ -132,13 +139,6 @@
       "team": "Switzerland",
       "goals": 2,
       "matches": 3
-    },
-    {
-      "name": "R. Mahrez",
-      "photo": "https://media.api-sports.io/football/players/635.png",
-      "team": "Algeria",
-      "goals": 2,
-      "matches": 3
     }
   ],
   "assists": [
@@ -155,6 +155,13 @@
       "team": "Sweden",
       "assists": 3,
       "matches": 3
+    },
+    {
+      "name": "F. Wirtz",
+      "photo": "https://media.api-sports.io/football/players/203224.png",
+      "team": "Germany",
+      "assists": 3,
+      "matches": 4
     },
     {
       "name": "M. Olise",
@@ -175,7 +182,14 @@
       "photo": "https://media.api-sports.io/football/players/26475.png",
       "team": "Germany",
       "assists": 2,
-      "matches": 3
+      "matches": 4
+    },
+    {
+      "name": "J. Enciso",
+      "photo": "https://media.api-sports.io/football/players/70747.png",
+      "team": "Paraguay",
+      "assists": 2,
+      "matches": 4
     },
     {
       "name": "N. Saliba",
@@ -213,6 +227,13 @@
       "matches": 3
     },
     {
+      "name": "J. Kimmich",
+      "photo": "https://media.api-sports.io/football/players/502.png",
+      "team": "Germany",
+      "assists": 2,
+      "matches": 4
+    },
+    {
       "name": "B. Saka",
       "photo": "https://media.api-sports.io/football/players/1460.png",
       "team": "England",
@@ -223,20 +244,6 @@
       "name": "Brahim Díaz",
       "photo": "https://media.api-sports.io/football/players/744.png",
       "team": "Morocco",
-      "assists": 2,
-      "matches": 3
-    },
-    {
-      "name": "J. Kimmich",
-      "photo": "https://media.api-sports.io/football/players/502.png",
-      "team": "Germany",
-      "assists": 2,
-      "matches": 3
-    },
-    {
-      "name": "F. Wirtz",
-      "photo": "https://media.api-sports.io/football/players/203224.png",
-      "team": "Germany",
       "assists": 2,
       "matches": 3
     },
@@ -255,9 +262,9 @@
       "matches": 3
     },
     {
-      "name": "J. Enciso",
-      "photo": "https://media.api-sports.io/football/players/70747.png",
-      "team": "Paraguay",
+      "name": "D. Dumfries",
+      "photo": "https://media.api-sports.io/football/players/226.png",
+      "team": "Netherlands",
       "assists": 2,
       "matches": 3
     },
@@ -265,13 +272,6 @@
       "name": "H. Mejbri",
       "photo": "https://media.api-sports.io/football/players/180560.png",
       "team": "Tunisia",
-      "assists": 2,
-      "matches": 3
-    },
-    {
-      "name": "D. Dumfries",
-      "photo": "https://media.api-sports.io/football/players/226.png",
-      "team": "Netherlands",
       "assists": 2,
       "matches": 3
     },
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-06-29T20:11:08.266Z"
+  "updatedAt": "2026-06-29T22:06:04.220Z"
 }
