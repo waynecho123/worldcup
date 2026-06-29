@@ -172,13 +172,13 @@ function getMatchSchedule() { return [
   {id:"m070",home:"COD",away:"UZB"},
   {id:"m071",home:"ALG",away:"AUT"},
   {id:"m072",home:"JOR",away:"ARG"},
-  // ===== R32 (API confirmation pending) =====
-  {id:"m073",home:"MEX",away:"BIH"},{id:"m074",home:"SUI",away:"SEN"},{id:"m075",home:"BRA",away:"ECU"},
-  {id:"m076",home:"USA",away:"COD"},{id:"m077",home:"GER",away:"GHA"},{id:"m078",home:"NED",away:"PAR"},
-  {id:"m079",home:"BEL",away:"ALG"},{id:"m080",home:"ESP",away:"SWE"},{id:"m081",home:"RSA",away:"CAN"},
-  {id:"m082",home:"MAR",away:"AUS"},{id:"m083",home:"CIV",away:"JPN"},{id:"m084",home:"EGY",away:"CPV"},
-  {id:"m085",home:"FRA",away:"POR"},{id:"m086",home:"ARG",away:"CRO"},{id:"m087",home:"COL",away:"AUT"},
-  {id:"m088",home:"ENG",away:"NOR"},
+  // ===== R32 (from API) =====
+  {id:"m073",home:"RSA",away:"CAN"},{id:"m074",home:"BRA",away:"JPN"},{id:"m075",home:"NED",away:"MAR"},
+  {id:"m076",home:"USA",away:"BIH"},{id:"m077",home:"CIV",away:"NOR"},{id:"m078",home:"GER",away:"PAR"},
+  {id:"m079",home:"FRA",away:"SWE"},{id:"m080",home:"AUS",away:"EGY"},{id:"m081",home:"ARG",away:"CPV"},
+  {id:"m082",home:"MEX",away:"ECU"},{id:"m083",home:"ENG",away:"COD"},{id:"m084",home:"BEL",away:"SEN"},
+  {id:"m085",home:"POR",away:"CRO"},{id:"m086",home:"COL",away:"GHA"},{id:"m087",home:"ESP",away:"AUT"},
+  {id:"m088",home:"SUI",away:"ALG"},
   // ===== R16 (TBD) =====
   {id:"m089",home:"?",away:"?"},{id:"m090",home:"?",away:"?"},{id:"m091",home:"?",away:"?"},{id:"m092",home:"?",away:"?"},
   {id:"m093",home:"?",away:"?"},{id:"m094",home:"?",away:"?"},{id:"m095",home:"?",away:"?"},{id:"m096",home:"?",away:"?"},
