@@ -61,6 +61,12 @@
       "type": "Missing Fixture",
       "reason": "Injury",
       "fixture": "2026-06-27T03:00:00+00:00"
+    },
+    {
+      "player": "Z. Debast",
+      "type": "Missing Fixture",
+      "reason": "Injury",
+      "fixture": "2026-07-01T20:00:00+00:00"
     }
   ],
   "JPN": [
@@ -161,6 +167,50 @@
       "type": "Missing Fixture",
       "reason": "Yellow Card",
       "fixture": "2026-06-25T01:00:00+00:00"
+    },
+    {
+      "player": "T. Zwane",
+      "type": "Missing Fixture",
+      "reason": "Suspension Through Sports Court",
+      "fixture": "2026-06-18T16:00:00+00:00"
+    },
+    {
+      "player": "T. Zwane",
+      "type": "Missing Fixture",
+      "reason": "Suspension Through Sports Court",
+      "fixture": "2026-06-25T01:00:00+00:00"
+    },
+    {
+      "player": "T. Zwane",
+      "type": "Missing Fixture",
+      "reason": "Suspension Through Sports Court",
+      "fixture": "2026-06-28T19:00:00+00:00"
+    }
+  ],
+  "CAN": [
+    {
+      "player": "A. Jones",
+      "type": "Missing Fixture",
+      "reason": "Muscle Bruise",
+      "fixture": "2026-06-18T22:00:00+00:00"
+    },
+    {
+      "player": "A. Jones",
+      "type": "Missing Fixture",
+      "reason": "Muscle Bruise",
+      "fixture": "2026-06-24T19:00:00+00:00"
+    },
+    {
+      "player": "I. Koné",
+      "type": "Missing Fixture",
+      "reason": "Fracture Of Lower Leg",
+      "fixture": "2026-06-24T19:00:00+00:00"
+    },
+    {
+      "player": "I. Koné",
+      "type": "Missing Fixture",
+      "reason": "Fracture Of Lower Leg",
+      "fixture": "2026-06-28T19:00:00+00:00"
     }
   ],
   "ENG": [
@@ -183,6 +233,12 @@
       "type": "Missing Fixture",
       "reason": "Twisted Knee",
       "fixture": "2026-06-26T19:00:00+00:00"
+    },
+    {
+      "player": "É. Mendy",
+      "type": "Missing Fixture",
+      "reason": "Twisted Knee",
+      "fixture": "2026-07-01T20:00:00+00:00"
     }
   ],
   "SUI": [
@@ -274,32 +330,6 @@
       "player": "Assim Madibo",
       "type": "Missing Fixture",
       "reason": "Red Card",
-      "fixture": "2026-06-24T19:00:00+00:00"
-    }
-  ],
-  "CAN": [
-    {
-      "player": "I. Koné",
-      "type": "Missing Fixture",
-      "reason": "Fracture Of Lower Leg",
-      "fixture": "2026-06-24T19:00:00+00:00"
-    },
-    {
-      "player": "I. Koné",
-      "type": "Missing Fixture",
-      "reason": "Fracture Of Lower Leg",
-      "fixture": "2026-06-28T19:00:00+00:00"
-    },
-    {
-      "player": "A. Jones",
-      "type": "Missing Fixture",
-      "reason": "Muscle Bruise",
-      "fixture": "2026-06-18T22:00:00+00:00"
-    },
-    {
-      "player": "A. Jones",
-      "type": "Missing Fixture",
-      "reason": "Muscle Bruise",
       "fixture": "2026-06-24T19:00:00+00:00"
     }
   ]
