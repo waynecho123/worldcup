@@ -4989,7 +4989,7 @@ function renderReviewMatchList(comps) {
 
 function showResultInput(matchId) {
   // Build match selector or pre-select
-  const matchOptions = MATCH_SCHEDULE.filter(m => m.stage === 'group').map(m => {
+  const matchOptions = MATCH_SCHEDULE.filter(m => { var ht=TEAMS.find(t=>t.id===m.home), at=TEAMS.find(t=>t.id===m.away); return ht&&at; }).map(m => {
     const ht = TEAMS.find(t => t.id === m.home), at = TEAMS.find(t => t.id === m.away);
     const htn = ht ? ht.cn : m.home, atn = at ? at.cn : m.away;
     const hasResult = !!actualResults[m.id];
