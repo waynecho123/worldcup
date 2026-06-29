@@ -1153,6 +1153,8 @@ async function updateMatchDetails() {
 
 // ========== UPDATE: Match Stats + Tactical Profiles (from match-details.json) ==========
 async function updateTactical() {
+  const now = new Date();
+  const ts = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
   const details = loadJSON(path.join(BASE_DIR, 'match-details.json'));
   const tacticalFile = path.join(BASE_DIR, 'tactical.json');
   const entries = Object.entries(details);
@@ -1235,8 +1237,8 @@ async function updateTactical() {
     // Derive tactical dimensions (0-10 scale)
     var tempo = Math.min(10, Math.max(1, Math.round(avgPasses / 50))); // 500+ passes = high tempo
     var technique = Math.min(10, Math.max(1, Math.round(avgPassAcc / 10))); // 85%+ = high technique
-    var pressing = Math.min(10, Math.max(1, Math.round(avgTackles / 2))); // tackles correlate with pressing
-    var physical = Math.min(10, Math.max(1, Math.round(avgFouls / 1.5))); // fouls correlate with physicality
+    var pressing = Math.min(10, Math.max(1, Math.round(avgFouls / 1.8))); // fouls proxy for pressing intensity
+    var physical = Math.min(10, Math.max(1, Math.round(avgFouls / 1.2))); // physicality from fouls
 
     // Style: possession-based vs direct
     var style = avgPoss > 55 ? 'possession' : avgPoss > 45 ? 'balanced' : 'direct';
