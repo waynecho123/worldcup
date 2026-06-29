@@ -680,8 +680,8 @@ const GROUPS = ['A','B','C','D','E','F','G','H','I','J','K','L'];
 // =============================================================================
 // 1c. TACTICAL PROFILES & MATCHUP SYSTEM
 // =============================================================================
-// Tactical data based on REAL squad lists, qualifying results, and match analysis
-const TACTICAL = {
+// Fallback: static profiles. Overwritten by loadTactical() with real match data.
+const TACTICAL_FALLBACK = {
   // Group A — 真实数据：FIFA官方大名单+世预赛+近期比赛分析
   MEX: {manager:'Javier Aguirre',style:'high_press',formation:'4-3-3',tempo:8,width:7,pressing:8,setPiece:6,transition:7,physical:7,technique:5,
     strength:'高压迫+快速节奏+东道主气势',weakness:'进球困难（近7场仅1次进球超1个）',qualifying:'东道主自动晋级',note:'Giménez恢复中, Marcel Ruiz十字韧带撕裂缺阵'},
@@ -791,6 +791,29 @@ const TACTICAL = {
   PAN: {manager:'Thomas Christiansen',style:'defensive_block',formation:'5-4-1',tempo:3,width:5,pressing:3,setPiece:5,transition:4,physical:7,technique:4,
     strength:'2024美洲杯8强+五后卫大巴',weakness:'攻击力严重不足',qualifying:'北美区晋级',note:'Murillo核心后卫'},
 };
+// Active tactical profiles: start with fallback, load real data asynchronously
+var TACTICAL = Object.assign({}, TACTICAL_FALLBACK);
+(function loadTacticalData() {
+  fetch('tactical.json').then(r => r.json()).then(data => {
+    if (!data || Object.keys(data).length < 10) return;
+    Object.keys(data).forEach(tid => {
+      var t = data[tid];
+      if (!TACTICAL[tid]) TACTICAL[tid] = {};
+      // Merge real stats into tactical profile
+      TACTICAL[tid].formation = t.formation || TACTICAL[tid].formation;
+      TACTICAL[tid].style = t.style === 'possession' ? 'possession' : t.style === 'direct' ? 'direct' : 'balanced';
+      TACTICAL[tid].tempo = t.tempo || TACTICAL[tid].tempo || 5;
+      TACTICAL[tid].pressing = t.pressing || TACTICAL[tid].pressing || 5;
+      TACTICAL[tid].physical = t.physical || TACTICAL[tid].physical || 5;
+      TACTICAL[tid].technique = Math.round(t.avgPassAccuracy / 10) || TACTICAL[tid].technique || 5;
+      TACTICAL[tid].setPiece = TACTICAL[tid].setPiece || 5;
+      TACTICAL[tid].transition = TACTICAL[tid].transition || 5;
+      TACTICAL[tid].width = TACTICAL[tid].width || 5;
+      TACTICAL[tid]._real = true; // marked as real data
+    });
+    console.log('Tactical: loaded ' + Object.keys(data).length + ' teams from API');
+  }).catch(() => {}); // silent fail, keep fallback
+})();
 
 // Style matchup modifiers: styleA vs styleB → adjustment factor for home team
 // Positive = home team's style counters away team's style

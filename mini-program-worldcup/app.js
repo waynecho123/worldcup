@@ -27,6 +27,8 @@ App({
     this.loadResults();
     // Load news from cloud DB
     this.loadNews();
+    // Load tactical data (real match stats)
+    this.loadTactical();
 
     try {
 
@@ -135,5 +137,49 @@ App({
       }
     });
   },
+
+  loadTactical() {
+    var that = this;
+    var data = require('./utils/data');
+    wx.request({
+      url: 'https://waynecho123.github.io/worldcup/tactical.json',
+      timeout: 10000,
+      success: function(res) {
+        if (res.data && Object.keys(res.data).length > 10) {
+          Object.keys(res.data).forEach(function(tid) {
+            var t = res.data[tid];
+            if (!data.TACTICAL[tid]) data.TACTICAL[tid] = {};
+            data.TACTICAL[tid].formation = t.formation || data.TACTICAL[tid].formation;
+            data.TACTICAL[tid].style = t.style === 'possession' ? 'possession' : t.style === 'direct' ? 'direct' : 'balanced';
+            data.TACTICAL[tid].tempo = t.tempo || data.TACTICAL[tid].tempo || 5;
+            data.TACTICAL[tid].pressing = t.pressing || data.TACTICAL[tid].pressing || 5;
+            data.TACTICAL[tid].physical = t.physical || data.TACTICAL[tid].physical || 5;
+            data.TACTICAL[tid].technique = Math.round(t.avgPassAccuracy / 10) || data.TACTICAL[tid].technique || 5;
+          });
+          wx.setStorageSync('tactical_cache', JSON.stringify(res.data));
+          console.log('Tactical: loaded ' + Object.keys(res.data).length + ' teams');
+        }
+      },
+      fail: function() {
+        var cached = wx.getStorageSync('tactical_cache');
+        if (cached) {
+          try {
+            var data = require('./utils/data');
+            var tc = JSON.parse(cached);
+            Object.keys(tc).forEach(function(tid) {
+              var t = tc[tid];
+              if (!data.TACTICAL[tid]) data.TACTICAL[tid] = {};
+              data.TACTICAL[tid].formation = t.formation || data.TACTICAL[tid].formation;
+              data.TACTICAL[tid].style = t.style || data.TACTICAL[tid].style;
+              data.TACTICAL[tid].tempo = t.tempo || data.TACTICAL[tid].tempo || 5;
+              data.TACTICAL[tid].pressing = t.pressing || data.TACTICAL[tid].pressing || 5;
+              data.TACTICAL[tid].physical = t.physical || data.TACTICAL[tid].physical || 5;
+              data.TACTICAL[tid].technique = Math.round(t.avgPassAccuracy / 10) || data.TACTICAL[tid].technique || 5;
+            });
+          } catch(e) {}
+        }
+      }
+    });
+  }
 
 });
