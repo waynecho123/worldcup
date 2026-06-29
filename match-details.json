@@ -74577,7 +74577,1050 @@
     ]
   },
   "m074": {
-    "fixtureId": "1562344"
+    "fixtureId": 1562344,
+    "date": "2026-06-29T17:00:00+00:00",
+    "venue": "NRG Stadium",
+    "status": "Match Finished",
+    "homeTeam": "Brazil",
+    "awayTeam": "Japan",
+    "score": {
+      "home": 2,
+      "away": 1
+    },
+    "statistics": {
+      "Brazil": {
+        "Shots on Goal": 7,
+        "Shots off Goal": 6,
+        "Total Shots": 19,
+        "Blocked Shots": 6,
+        "Shots insidebox": 12,
+        "Shots outsidebox": 7,
+        "Fouls": 4,
+        "Corner Kicks": 6,
+        "Offsides": 1,
+        "Ball Possession": "69%",
+        "Yellow Cards": 2,
+        "Red Cards": null,
+        "Goalkeeper Saves": 1,
+        "Total passes": 682,
+        "Passes accurate": 625,
+        "Passes %": "92%",
+        "expected_goals": "1.69",
+        "goals_prevented": "-0.35"
+      },
+      "Japan": {
+        "Shots on Goal": 2,
+        "Shots off Goal": 1,
+        "Total Shots": 5,
+        "Blocked Shots": 2,
+        "Shots insidebox": 2,
+        "Shots outsidebox": 3,
+        "Fouls": 13,
+        "Corner Kicks": 2,
+        "Offsides": 0,
+        "Ball Possession": "31%",
+        "Yellow Cards": 3,
+        "Red Cards": null,
+        "Goalkeeper Saves": 4,
+        "Total passes": 315,
+        "Passes accurate": 261,
+        "Passes %": "83%",
+        "expected_goals": "0.23",
+        "goals_prevented": "-0.35"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 6,
+          "name": "Brazil",
+          "logo": "https://media.api-sports.io/football/teams/6.png",
+          "colors": {
+            "player": {
+              "primary": "eae380",
+              "number": "1edb80",
+              "border": "eae380"
+            },
+            "goalkeeper": {
+              "primary": "47484d",
+              "number": "c8d77c",
+              "border": "47484d"
+            }
+          }
+        },
+        "formation": "4-3-3",
+        "startXI": [
+          {
+            "player": {
+              "id": 280,
+              "name": "Alisson",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 618,
+              "name": "Danilo",
+              "number": 13,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 257,
+              "name": "Marquinhos",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 22224,
+              "name": "Gabriel Magalhães",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 24866,
+              "name": "Douglas Santos",
+              "number": 16,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 10135,
+              "name": "Bruno Guimarães",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 747,
+              "name": "Casemiro",
+              "number": 5,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 1646,
+              "name": "Lucas Paquetá",
+              "number": 20,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 407806,
+              "name": "Rayan",
+              "number": 26,
+              "pos": "F",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 1165,
+              "name": "Matheus Cunha",
+              "number": 9,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 762,
+              "name": "Vinícius Júnior",
+              "number": 7,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 377122,
+              "name": "Endrick",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 127769,
+              "name": "Gabriel Martinelli",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 299,
+              "name": "Fabinho",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 275170,
+              "name": "Danilo Santos",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 617,
+              "name": "Ederson",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2410,
+              "name": "Weverton",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 860,
+              "name": "Alex Sandro",
+              "number": 6,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30497,
+              "name": "Bremer",
+              "number": 14,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 10124,
+              "name": "Léo Pereira",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30424,
+              "name": "Roger Ibañez",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 10097,
+              "name": "Éderson",
+              "number": 2,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 265785,
+              "name": "Luiz Henrique",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 196156,
+              "name": "Igor Thiago",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 276,
+              "name": "Neymar",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 2407,
+          "name": "Carlo Ancelotti",
+          "photo": "https://media.api-sports.io/football/coachs/2407.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 12,
+          "name": "Japan",
+          "logo": "https://media.api-sports.io/football/teams/12.png",
+          "colors": {
+            "player": {
+              "primary": "ffffff",
+              "number": "050505",
+              "border": "ffffff"
+            },
+            "goalkeeper": {
+              "primary": "f3e60e",
+              "number": "f6f2f2",
+              "border": "f3e60e"
+            }
+          }
+        },
+        "formation": "3-4-2-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 199578,
+              "name": "Zion Suzuki",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2597,
+              "name": "Takehiro Tomiyasu",
+              "number": 22,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 32954,
+              "name": "Shogo Taniguchi",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 32893,
+              "name": "Hiroki Itō",
+              "number": 21,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2598,
+              "name": "Ritsu Doan",
+              "number": 10,
+              "pos": "M",
+              "grid": "3:4"
+            }
+          },
+          {
+            "player": {
+              "id": 33889,
+              "name": "Kaishu Sano",
+              "number": 24,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 2601,
+              "name": "Daichi Kamada",
+              "number": 15,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 33321,
+              "name": "Keito Nakamura",
+              "number": 13,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 1942,
+              "name": "Junya Ito",
+              "number": 14,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 33224,
+              "name": "Daizen Maeda",
+              "number": 11,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 72155,
+              "name": "Ayase Ueda",
+              "number": 18,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 32887,
+              "name": "Yukinari Sugawara",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 351014,
+              "name": "Junnosuke Suzuki",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 32966,
+              "name": "Ao Tanaka",
+              "number": 7,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 106851,
+              "name": "Shuto Machino",
+              "number": 6,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 33289,
+              "name": "Koki Ogawa",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 33034,
+              "name": "Keisuke Osako",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 304782,
+              "name": "Tomoki Hayakawa",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 38114,
+              "name": "Ko Itakura",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 440,
+              "name": "Yuto Nagatomo",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 32858,
+              "name": "Tsuyoshi Watanabe",
+              "number": 16,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 33165,
+              "name": "Ayumu Seko",
+              "number": 20,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 199143,
+              "name": "Yuito Suzuki",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 32862,
+              "name": "Takefusa Kubo",
+              "number": 8,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 422572,
+              "name": "Kento Shiogai",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 375930,
+              "name": "Keisuke Goto",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 323,
+          "name": "Hajime Moriyasu",
+          "photo": "https://media.api-sports.io/football/coachs/323.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "12",
+        "team": "Japan",
+        "player": "K. Sano",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Roughing"
+      },
+      {
+        "time": "14",
+        "team": "Brazil",
+        "player": "Casemiro",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "29",
+        "team": "Japan",
+        "player": "K. Sano",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "45",
+        "team": "Japan",
+        "player": "D. Kamada",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Holding"
+      },
+      {
+        "time": "46",
+        "team": "Brazil",
+        "player": "Lucas Paqueta",
+        "assist": "Endrick",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "48",
+        "team": "Brazil",
+        "player": "Danilo",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Elbowing"
+      },
+      {
+        "time": "56",
+        "team": "Brazil",
+        "player": "Casemiro",
+        "assist": "Gabriel",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "66",
+        "team": "Brazil",
+        "player": "M. Cunha",
+        "assist": "G. Martinelli",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "66",
+        "team": "Japan",
+        "player": "R. Doan",
+        "assist": "Y. Sugawara",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "66",
+        "team": "Japan",
+        "player": "K. Nakamura",
+        "assist": "J. Suzuki",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "78",
+        "team": "Japan",
+        "player": "D. Kamada",
+        "assist": "A. Tanaka",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "78",
+        "team": "Japan",
+        "player": "J. Ito",
+        "assist": "S. Machino",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "84",
+        "team": "Japan",
+        "player": "J. Suzuki",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "90+3",
+        "team": "Brazil",
+        "player": "Casemiro",
+        "assist": "Fabinho",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "90+5",
+        "team": "Brazil",
+        "player": "G. Martinelli",
+        "assist": "Bruno Guimaraes",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "90+7",
+        "team": "Japan",
+        "player": "D. Maeda",
+        "assist": "K. Ogawa",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "90+8",
+        "team": "Brazil",
+        "player": "Bruno Guimaraes",
+        "assist": "Danilo Santos",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Brazil",
+        "players": [
+          {
+            "name": "Alisson",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Danilo",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marquinhos",
+            "rating": "7.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gabriel Magalhães",
+            "rating": "7.9",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Douglas Santos",
+            "rating": "7.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Bruno Guimarães",
+            "rating": "7.5",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Casemiro",
+            "rating": "8",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Lucas Paquetá",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Rayan",
+            "rating": "7.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Matheus Cunha",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Vinícius Júnior",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Endrick",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gabriel Martinelli",
+            "rating": "7.5",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Fabinho",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Danilo Santos",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ederson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Weverton",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alex Sandro",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Bremer",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Léo Pereira",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Roger Ibañez",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Éderson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Luiz Henrique",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Igor Thiago",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Neymar",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Japan",
+        "players": [
+          {
+            "name": "Zion Suzuki",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Takehiro Tomiyasu",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Shogo Taniguchi",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Hiroki Itō",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ritsu Doan",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kaishu Sano",
+            "rating": "7.6",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Daichi Kamada",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Keito Nakamura",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Junya Ito",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Daizen Maeda",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ayase Ueda",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yukinari Sugawara",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Junnosuke Suzuki",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ao Tanaka",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Shuto Machino",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Koki Ogawa",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Keisuke Osako",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tomoki Hayakawa",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ko Itakura",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yuto Nagatomo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tsuyoshi Watanabe",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ayumu Seko",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yuito Suzuki",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Takefusa Kubo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kento Shiogai",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Keisuke Goto",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m075": {
     "fixtureId": "1562345"

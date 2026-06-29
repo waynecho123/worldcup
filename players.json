@@ -15,16 +15,16 @@
       "matches": 3
     },
     {
-      "name": "O. Dembélé",
-      "photo": "https://media.api-sports.io/football/players/153.png",
-      "team": "France",
-      "goals": 4,
-      "matches": 3
-    },
-    {
       "name": "Vinícius Júnior",
       "photo": "https://media.api-sports.io/football/players/762.png",
       "team": "Brazil",
+      "goals": 4,
+      "matches": 4
+    },
+    {
+      "name": "O. Dembélé",
+      "photo": "https://media.api-sports.io/football/players/153.png",
+      "team": "France",
       "goals": 4,
       "matches": 3
     },
@@ -57,6 +57,13 @@
       "matches": 3
     },
     {
+      "name": "Matheus Cunha",
+      "photo": "https://media.api-sports.io/football/players/1165.png",
+      "team": "Brazil",
+      "goals": 3,
+      "matches": 4
+    },
+    {
       "name": "J. David",
       "photo": "https://media.api-sports.io/football/players/8489.png",
       "team": "Canada",
@@ -67,13 +74,6 @@
       "name": "B. Brobbey",
       "photo": "https://media.api-sports.io/football/players/38750.png",
       "team": "Netherlands",
-      "goals": 3,
-      "matches": 3
-    },
-    {
-      "name": "Matheus Cunha",
-      "photo": "https://media.api-sports.io/football/players/1165.png",
-      "team": "Brazil",
       "goals": 3,
       "matches": 3
     },
@@ -106,6 +106,13 @@
       "matches": 3
     },
     {
+      "name": "A. Ueda",
+      "photo": "https://media.api-sports.io/football/players/72155.png",
+      "team": "Japan",
+      "goals": 2,
+      "matches": 4
+    },
+    {
       "name": "C. Summerville",
       "photo": "https://media.api-sports.io/football/players/37724.png",
       "team": "Netherlands",
@@ -132,16 +139,16 @@
       "team": "Algeria",
       "goals": 2,
       "matches": 3
-    },
-    {
-      "name": "Mikel Oyarzabal",
-      "photo": "https://media.api-sports.io/football/players/47323.png",
-      "team": "Spain",
-      "goals": 2,
-      "matches": 3
     }
   ],
   "assists": [
+    {
+      "name": "Bruno Guimarães",
+      "photo": "https://media.api-sports.io/football/players/10135.png",
+      "team": "Brazil",
+      "assists": 4,
+      "matches": 4
+    },
     {
       "name": "A. Isak",
       "photo": "https://media.api-sports.io/football/players/2864.png",
@@ -153,13 +160,6 @@
       "name": "M. Olise",
       "photo": "https://media.api-sports.io/football/players/19617.png",
       "team": "France",
-      "assists": 3,
-      "matches": 3
-    },
-    {
-      "name": "Bruno Guimarães",
-      "photo": "https://media.api-sports.io/football/players/10135.png",
-      "team": "Brazil",
       "assists": 3,
       "matches": 3
     },
@@ -355,6 +355,20 @@
       "red": 1
     },
     {
+      "name": "Casemiro",
+      "photo": "https://media.api-sports.io/football/players/747.png",
+      "team": "Brazil",
+      "yellow": 2,
+      "red": 0
+    },
+    {
+      "name": "Danilo",
+      "photo": "https://media.api-sports.io/football/players/618.png",
+      "team": "Brazil",
+      "yellow": 2,
+      "red": 0
+    },
+    {
       "name": "G. Kastaneer",
       "photo": "https://media.api-sports.io/football/players/38708.png",
       "team": "Curaçao",
@@ -376,16 +390,16 @@
       "red": 0
     },
     {
-      "name": "Amir Al Ammari",
-      "photo": "https://media.api-sports.io/football/players/47792.png",
-      "team": "Iraq",
+      "name": "J. Bacuna",
+      "photo": "https://media.api-sports.io/football/players/19047.png",
+      "team": "Curaçao",
       "yellow": 2,
       "red": 0
     },
     {
-      "name": "J. Bacuna",
-      "photo": "https://media.api-sports.io/football/players/19047.png",
-      "team": "Curaçao",
+      "name": "Amir Al Ammari",
+      "photo": "https://media.api-sports.io/football/players/47792.png",
+      "team": "Iraq",
       "yellow": 2,
       "red": 0
     },
@@ -409,21 +423,7 @@
       "team": "South Africa",
       "yellow": 2,
       "red": 0
-    },
-    {
-      "name": "A. Khusanov",
-      "photo": "https://media.api-sports.io/football/players/360114.png",
-      "team": "Uzbekistan",
-      "yellow": 2,
-      "red": 0
-    },
-    {
-      "name": "S. Lopes Cabral",
-      "photo": "https://media.api-sports.io/football/players/308689.png",
-      "team": "Cape Verde Islands",
-      "yellow": 2,
-      "red": 0
     }
   ],
-  "updatedAt": "2026-06-29T18:11:18.449Z"
+  "updatedAt": "2026-06-29T20:06:16.337Z"
 }
