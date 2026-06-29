@@ -73599,5 +73599,1012 @@
         ]
       }
     ]
+  },
+  "m073": {
+    "fixtureId": 1561329,
+    "date": "2026-06-28T19:00:00+00:00",
+    "venue": "SoFi Stadium",
+    "status": "Match Finished",
+    "homeTeam": "South Africa",
+    "awayTeam": "Canada",
+    "score": {
+      "home": 0,
+      "away": 1
+    },
+    "statistics": {
+      "South Africa": {
+        "Shots on Goal": 1,
+        "Shots off Goal": 4,
+        "Total Shots": 6,
+        "Blocked Shots": 1,
+        "Shots insidebox": 1,
+        "Shots outsidebox": 5,
+        "Fouls": 10,
+        "Corner Kicks": 1,
+        "Offsides": 1,
+        "Ball Possession": "58%",
+        "Yellow Cards": 0,
+        "Red Cards": null,
+        "Goalkeeper Saves": 5,
+        "Total passes": 550,
+        "Passes accurate": 468,
+        "Passes %": "85%",
+        "expected_goals": "0.13",
+        "goals_prevented": "0.04"
+      },
+      "Canada": {
+        "Shots on Goal": 7,
+        "Shots off Goal": 5,
+        "Total Shots": 12,
+        "Blocked Shots": 0,
+        "Shots insidebox": 9,
+        "Shots outsidebox": 3,
+        "Fouls": 16,
+        "Corner Kicks": 4,
+        "Offsides": 0,
+        "Ball Possession": "42%",
+        "Yellow Cards": 2,
+        "Red Cards": null,
+        "Goalkeeper Saves": 1,
+        "Total passes": 380,
+        "Passes accurate": 298,
+        "Passes %": "78%",
+        "expected_goals": "1.32",
+        "goals_prevented": "0.04"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 1531,
+          "name": "South Africa",
+          "logo": "https://media.api-sports.io/football/teams/1531.png",
+          "colors": {
+            "player": {
+              "primary": "fdd301",
+              "number": "006600",
+              "border": "fdd301"
+            },
+            "goalkeeper": {
+              "primary": "f4c589",
+              "number": "ffffff",
+              "border": "f4c589"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 3275,
+              "name": "Ronwen Williams",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 46601,
+              "name": "Khuliso Mudau",
+              "number": 20,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 406752,
+              "name": "Ime Okon",
+              "number": 21,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 510799,
+              "name": "Mbekezeli Mbokazi",
+              "number": 14,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 46334,
+              "name": "Aubrey Modiba",
+              "number": 6,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 3287,
+              "name": "Teboho Mokoena",
+              "number": 4,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 158433,
+              "name": "Sphephelo Sithole",
+              "number": 13,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 354831,
+              "name": "Thapelo Maseko",
+              "number": 12,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 414149,
+              "name": "Relebohile Mofokeng",
+              "number": 10,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 179893,
+              "name": "Oswin Appollis",
+              "number": 7,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 201354,
+              "name": "Evidence Makgopa",
+              "number": 17,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 194430,
+              "name": "Thalente Mbatha",
+              "number": 5,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 295977,
+              "name": "Tshepang Moremi",
+              "number": 8,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 127429,
+              "name": "Iqraam Rayners",
+              "number": 15,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 46417,
+              "name": "Sipho Chaine",
+              "number": 16,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 46245,
+              "name": "Ricardo Goss",
+              "number": 22,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 330174,
+              "name": "Tholo Thabang Matuludi",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 474630,
+              "name": "Khulumani Ndamane",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 430078,
+              "name": "Samukelo Kabini",
+              "number": 18,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 46458,
+              "name": "Nkosinathi Sibisi",
+              "number": 19,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 392387,
+              "name": "Olwethu Makhanya",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 163041,
+              "name": "Bradley Cross",
+              "number": 26,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 268710,
+              "name": "Jayden Adams",
+              "number": 23,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 359561,
+              "name": "Kamogelo Sebelebele",
+              "number": 25,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 98936,
+              "name": "Lyle Foster",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 2883,
+          "name": "Hugo Broos",
+          "photo": "https://media.api-sports.io/football/coachs/2883.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 5529,
+          "name": "Canada",
+          "logo": "https://media.api-sports.io/football/teams/5529.png",
+          "colors": {
+            "player": {
+              "primary": "383838",
+              "number": "dddddd",
+              "border": "383838"
+            },
+            "goalkeeper": {
+              "primary": "1b3186",
+              "number": "ffffff",
+              "border": "1b3186"
+            }
+          }
+        },
+        "formation": "4-4-2",
+        "startXI": [
+          {
+            "player": {
+              "id": 51274,
+              "name": "Maxime Crépeau",
+              "number": 16,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 78547,
+              "name": "Alistair Johnston",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 407017,
+              "name": "Moise Bombito",
+              "number": 15,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 51295,
+              "name": "Derek Cornelius",
+              "number": 13,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 50816,
+              "name": "Richie Laryea",
+              "number": 22,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 51016,
+              "name": "Tajon Buchanan",
+              "number": 17,
+              "pos": "M",
+              "grid": "3:4"
+            }
+          },
+          {
+            "player": {
+              "id": 294824,
+              "name": "Nathan-Dylan Saliba",
+              "number": 25,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 35570,
+              "name": "Stephen Eustaquio",
+              "number": 7,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 44798,
+              "name": "Liam Millar",
+              "number": 11,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 8489,
+              "name": "Jonathan David",
+              "number": 10,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 351587,
+              "name": "Tani Oluwaseyi",
+              "number": 12,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 327738,
+              "name": "Luc De Fougerolles",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 416901,
+              "name": "Niko Sigur",
+              "number": 23,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50826,
+              "name": "Jacob Shaffelburg",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 313353,
+              "name": "Promise David",
+              "number": 24,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 509,
+              "name": "Alphonso Davies",
+              "number": 19,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 51148,
+              "name": "Dayne St. Clair",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 284554,
+              "name": "Owen Goodman",
+              "number": 18,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 18938,
+              "name": "Alfie Jones",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 78494,
+              "name": "Joel Waterman",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50788,
+              "name": "Mathieu Choinière",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 362145,
+              "name": "Ali Ahmed",
+              "number": 20,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50817,
+              "name": "Jonathan Osorio",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2001,
+              "name": "Cyle Larin",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 193279,
+              "name": "Jayden Nelson",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 28218,
+          "name": "Jesse Marsch",
+          "photo": "https://media.api-sports.io/football/coachs/28218.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "46",
+        "team": "South Africa",
+        "player": "R. Mofokeng",
+        "assist": "T. Mbatha",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "54",
+        "team": "Canada",
+        "player": "N. Saliba",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Holding"
+      },
+      {
+        "time": "59",
+        "team": "Canada",
+        "player": "N. Saliba",
+        "assist": "N. Sigur",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "59",
+        "team": "Canada",
+        "player": "M. Bombito",
+        "assist": "L. De Fougerolles",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "67",
+        "team": "Canada",
+        "player": "N. Sigur",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Holding"
+      },
+      {
+        "time": "70",
+        "team": "Canada",
+        "player": "T. Oluwaseyi",
+        "assist": "P. David",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "70",
+        "team": "Canada",
+        "player": "L. Millar",
+        "assist": "J. Shaffelburg",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "75",
+        "team": "Canada",
+        "player": "T. Buchanan",
+        "assist": "A. Davies",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "86",
+        "team": "South Africa",
+        "player": "E. Makgopa",
+        "assist": "I. Rayners",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "86",
+        "team": "South Africa",
+        "player": "T. Maseko",
+        "assist": "T. Moremi",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "90+2",
+        "team": "Canada",
+        "player": "S. Eustaquio",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "South Africa",
+        "players": [
+          {
+            "name": "Ronwen Williams",
+            "rating": "8.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Khuliso Mudau",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ime Okon",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mbekezeli Mbokazi",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Aubrey Modiba",
+            "rating": "7.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Teboho Mokoena",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Sphephelo Sithole",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Thapelo Maseko",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Relebohile Mofokeng",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Oswin Appollis",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Evidence Makgopa",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Thalente Mbatha",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tshepang Moremi",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Iqraam Rayners",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Sipho Chaine",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ricardo Goss",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tholo Thabang Matuludi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Khulumani Ndamane",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Samukelo Kabini",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nkosinathi Sibisi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Olwethu Makhanya",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Bradley Cross",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jayden Adams",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kamogelo Sebelebele",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lyle Foster",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Canada",
+        "players": [
+          {
+            "name": "Maxime Crépeau",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alistair Johnston",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Moise Bombito",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Derek Cornelius",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Richie Laryea",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tajon Buchanan",
+            "rating": "6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nathan-Dylan Saliba",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Stephen Eustaquio",
+            "rating": "8.9",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Liam Millar",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jonathan David",
+            "rating": "6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tani Oluwaseyi",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Luc De Fougerolles",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Niko Sigur",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jacob Shaffelburg",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Promise David",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alphonso Davies",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Dayne St. Clair",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Owen Goodman",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alfie Jones",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Joel Waterman",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mathieu Choinière",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ali Ahmed",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jonathan Osorio",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Cyle Larin",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jayden Nelson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
+  },
+  "m074": {
+    "fixtureId": "1562344"
+  },
+  "m075": {
+    "fixtureId": "1562345"
+  },
+  "m077": {
+    "fixtureId": "1564789"
+  },
+  "m079": {
+    "fixtureId": "1565177"
+  },
+  "m082": {
+    "fixtureId": "1567306"
+  },
+  "m083": {
+    "fixtureId": "1567307"
+  },
+  "m084": {
+    "fixtureId": "1567308"
+  },
+  "m085": {
+    "fixtureId": "1567309"
+  },
+  "m087": {
+    "fixtureId": "1567311"
+  },
+  "m088": {
+    "fixtureId": "1567312"
   }
 }
