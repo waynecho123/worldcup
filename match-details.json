@@ -48635,12 +48635,17 @@
             }
           }
         },
+        "coach": {
+          "id": 370,
+          "name": "Sebastien Desabre",
+          "photo": "https://media.api-sports.io/football/coachs/370.png"
+        },
         "formation": "4-4-2",
         "startXI": [
           {
             "player": {
               "id": 24012,
-              "name": "Lionel Mpasi Nzau",
+              "name": "L. Mpasi-Nzau",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -48649,7 +48654,7 @@
           {
             "player": {
               "id": 18846,
-              "name": "Aaron Wan-Bissaka",
+              "name": "A. Wan-Bissaka",
               "number": 2,
               "pos": "D",
               "grid": "2:4"
@@ -48658,7 +48663,7 @@
           {
             "player": {
               "id": 375,
-              "name": "Chancel Mbemba",
+              "name": "C. Mbemba",
               "number": 22,
               "pos": "D",
               "grid": "2:3"
@@ -48667,7 +48672,7 @@
           {
             "player": {
               "id": 19182,
-              "name": "Axel Tuanzebe",
+              "name": "A. Tuanzebe",
               "number": 4,
               "pos": "D",
               "grid": "2:2"
@@ -48676,7 +48681,7 @@
           {
             "player": {
               "id": 18816,
-              "name": "Arthur Masuaku",
+              "name": "A. Masuaku",
               "number": 26,
               "pos": "D",
               "grid": "2:1"
@@ -48685,7 +48690,7 @@
           {
             "player": {
               "id": 129670,
-              "name": "Nathanaël Mbuku",
+              "name": "N. Mbuku",
               "number": 7,
               "pos": "M",
               "grid": "3:4"
@@ -48694,7 +48699,7 @@
           {
             "player": {
               "id": 21101,
-              "name": "Samuel Moutoussamy",
+              "name": "S. Moutoussamy",
               "number": 8,
               "pos": "M",
               "grid": "3:3"
@@ -48703,7 +48708,7 @@
           {
             "player": {
               "id": 365331,
-              "name": "Noah Sadiki",
+              "name": "N. Sadiki",
               "number": 14,
               "pos": "M",
               "grid": "3:2"
@@ -48712,7 +48717,7 @@
           {
             "player": {
               "id": 279482,
-              "name": "Brian Cipenga",
+              "name": "B. Cipenga",
               "number": 9,
               "pos": "M",
               "grid": "3:1"
@@ -48721,7 +48726,7 @@
           {
             "player": {
               "id": 3033,
-              "name": "Cédric Bakambu",
+              "name": "C. Bakambu",
               "number": 17,
               "pos": "F",
               "grid": "4:2"
@@ -48730,7 +48735,7 @@
           {
             "player": {
               "id": 20649,
-              "name": "Yoane Wissa",
+              "name": "Y. Wissa",
               "number": 20,
               "pos": "F",
               "grid": "4:1"
@@ -48740,53 +48745,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 179699,
-              "name": "Fiston Mayele",
-              "number": 19,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 8627,
-              "name": "Théo Bongonda",
-              "number": 10,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 375598,
-              "name": "Ngal'ayel Mukau",
-              "number": 6,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 3034,
-              "name": "Meschak Elia",
-              "number": 13,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 21098,
-              "name": "Joris Kayembe",
-              "number": 12,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 314509,
-              "name": "Matthieu Epolo",
+              "name": "M. Epolo",
               "number": 21,
               "pos": "G",
               "grid": null
@@ -48795,7 +48755,7 @@
           {
             "player": {
               "id": 48501,
-              "name": "Timothy Fayulu",
+              "name": "T. Fayulu",
               "number": 16,
               "pos": "G",
               "grid": null
@@ -48803,44 +48763,17 @@
           },
           {
             "player": {
-              "id": 8445,
-              "name": "Dylan Batubinsika",
-              "number": 5,
+              "id": 21098,
+              "name": "J. Kayembe",
+              "number": 12,
               "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 24245,
-              "name": "Gedeon Kalulu",
-              "number": 24,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 199767,
-              "name": "Steve Kapuadi",
-              "number": 3,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 44791,
-              "name": "Aaron Tshibola",
-              "number": 15,
-              "pos": "M",
               "grid": null
             }
           },
           {
             "player": {
               "id": 48555,
-              "name": "Charles Pickel",
+              "name": "C. Pickel",
               "number": 18,
               "pos": "M",
               "grid": null
@@ -48848,17 +48781,26 @@
           },
           {
             "player": {
-              "id": 47545,
-              "name": "Gaël Kakuta",
-              "number": 11,
-              "pos": "M",
+              "id": 24245,
+              "name": "G. Kalulu",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 20674,
+              "name": "S. Banza",
+              "number": 23,
+              "pos": "F",
               "grid": null
             }
           },
           {
             "player": {
               "id": 1424,
-              "name": "Edo Kayembe",
+              "name": "E. Kayembe",
               "number": 25,
               "pos": "M",
               "grid": null
@@ -48866,19 +48808,77 @@
           },
           {
             "player": {
-              "id": 20674,
-              "name": "Simon Banza",
-              "number": 23,
+              "id": 179699,
+              "name": "F. Mayele",
+              "number": 19,
               "pos": "F",
               "grid": null
             }
+          },
+          {
+            "player": {
+              "id": 199767,
+              "name": "S. Kapuadi",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47545,
+              "name": "G. Kakuta",
+              "number": 11,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 8445,
+              "name": "D. Batubinsika",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 8627,
+              "name": "T. Bongonda",
+              "number": 10,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44791,
+              "name": "A. Tshibola",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 3034,
+              "name": "M. Elia",
+              "number": 13,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 375598,
+              "name": "N. Mukau",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
           }
-        ],
-        "coach": {
-          "id": 370,
-          "name": "Sebastien Desabre",
-          "photo": "https://media.api-sports.io/football/coachs/370.png"
-        }
+        ]
       },
       "away": {
         "team": {
@@ -48898,12 +48898,17 @@
             }
           }
         },
+        "coach": {
+          "id": 53,
+          "name": "Fabio Cannavaro",
+          "photo": "https://media.api-sports.io/football/coachs/53.png"
+        },
         "formation": "3-4-2-1",
         "startXI": [
           {
             "player": {
               "id": 73507,
-              "name": "Abduvokhid Nematov",
+              "name": "A. Nematov",
               "number": 12,
               "pos": "G",
               "grid": "1:1"
@@ -48912,7 +48917,7 @@
           {
             "player": {
               "id": 34121,
-              "name": "Rustam Ashurmatov",
+              "name": "R. Ashurmatov",
               "number": 5,
               "pos": "D",
               "grid": "2:3"
@@ -48921,7 +48926,7 @@
           {
             "player": {
               "id": 360114,
-              "name": "Abdukodir Khusanov",
+              "name": "A. Khusanov",
               "number": 2,
               "pos": "D",
               "grid": "2:2"
@@ -48930,7 +48935,7 @@
           {
             "player": {
               "id": 358427,
-              "name": "Jakhongir Urozov",
+              "name": "J. Urozov",
               "number": 26,
               "pos": "D",
               "grid": "2:1"
@@ -48939,7 +48944,7 @@
           {
             "player": {
               "id": 72122,
-              "name": "Khozhiakbar Alizhonov",
+              "name": "K. Alizhonov",
               "number": 3,
               "pos": "M",
               "grid": "3:4"
@@ -48948,7 +48953,7 @@
           {
             "player": {
               "id": 73522,
-              "name": "Akmal Mozgovoy",
+              "name": "A. Mozgovoy",
               "number": 6,
               "pos": "M",
               "grid": "3:3"
@@ -48957,7 +48962,7 @@
           {
             "player": {
               "id": 50272,
-              "name": "Otabek Shukurov",
+              "name": "O. Shukurov",
               "number": 7,
               "pos": "M",
               "grid": "3:2"
@@ -48966,7 +48971,7 @@
           {
             "player": {
               "id": 73514,
-              "name": "Sherzod Nasrullaev",
+              "name": "S. Nasrullaev",
               "number": 13,
               "pos": "M",
               "grid": "3:1"
@@ -48975,7 +48980,7 @@
           {
             "player": {
               "id": 53834,
-              "name": "Dostonbek Khamdamov",
+              "name": "D. Khamdamov",
               "number": 17,
               "pos": "F",
               "grid": "4:2"
@@ -48984,7 +48989,7 @@
           {
             "player": {
               "id": 263676,
-              "name": "Abbosbek Fayzullaev",
+              "name": "A. Fayzullaev",
               "number": 22,
               "pos": "F",
               "grid": "4:1"
@@ -48993,7 +48998,7 @@
           {
             "player": {
               "id": 53535,
-              "name": "Eldor Shomurodov",
+              "name": "E. Shomurodov",
               "number": 14,
               "pos": "F",
               "grid": "5:1"
@@ -49003,62 +49008,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 73520,
-              "name": "Azizjon Ganiev",
-              "number": 19,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 53835,
-              "name": "Odiljon Khamrobekov",
-              "number": 9,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 72127,
-              "name": "Oston Urunov",
-              "number": 11,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 65576,
-              "name": "Jamshid Iskandarov",
-              "number": 8,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 72128,
-              "name": "Igor Sergeev",
-              "number": 21,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 72120,
-              "name": "Botirali Ergashev",
-              "number": 16,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 73534,
-              "name": "Utkir Yusupov",
+              "name": "U. Yusupov",
               "number": 1,
               "pos": "G",
               "grid": null
@@ -49066,8 +49017,35 @@
           },
           {
             "player": {
+              "id": 72120,
+              "name": "B. Ergashev",
+              "number": 16,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 72128,
+              "name": "I. Sergeev",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 65576,
+              "name": "J. Iskanderov",
+              "number": 8,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 65571,
-              "name": "Avazbek Ulmasaliyev",
+              "name": "A. Ulmasaliev",
               "number": 25,
               "pos": "D",
               "grid": null
@@ -49075,26 +49053,17 @@
           },
           {
             "player": {
-              "id": 53830,
-              "name": "Farrukh Sayfiev",
-              "number": 4,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 73510,
-              "name": "Umarbek Eshmuradov",
-              "number": 15,
-              "pos": "D",
+              "id": 73418,
+              "name": "A. Abdullaev",
+              "number": 18,
+              "pos": "M",
               "grid": null
             }
           },
           {
             "player": {
               "id": 416964,
-              "name": "Bekhruz Karimov",
+              "name": "B. Karimov",
               "number": 24,
               "pos": "D",
               "grid": null
@@ -49102,8 +49071,44 @@
           },
           {
             "player": {
+              "id": 53835,
+              "name": "O. Khamrobekov",
+              "number": 9,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 73520,
+              "name": "A. Ganiev",
+              "number": 19,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 73510,
+              "name": "U. Eshmurodov",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 72127,
+              "name": "O. Urunov",
+              "number": 11,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 65584,
-              "name": "Azizbek Amanov",
+              "name": "A. Amonov",
               "number": 20,
               "pos": "F",
               "grid": null
@@ -49112,7 +49117,7 @@
           {
             "player": {
               "id": 312231,
-              "name": "Ruslanbek Jiyanov",
+              "name": "R. Jiyanov",
               "number": 10,
               "pos": "M",
               "grid": null
@@ -49121,7 +49126,7 @@
           {
             "player": {
               "id": 363723,
-              "name": "Sherzod Esanov",
+              "name": "S. Esanov",
               "number": 23,
               "pos": "M",
               "grid": null
@@ -49129,19 +49134,14 @@
           },
           {
             "player": {
-              "id": 73418,
-              "name": "Abdulla Abdullaev",
-              "number": 18,
-              "pos": "M",
+              "id": 532759,
+              "name": "F. Sayfiev",
+              "number": 4,
+              "pos": null,
               "grid": null
             }
           }
-        ],
-        "coach": {
-          "id": 53,
-          "name": "Fabio Cannavaro",
-          "photo": "https://media.api-sports.io/football/coachs/53.png"
-        }
+        ]
       }
     },
     "events": [
