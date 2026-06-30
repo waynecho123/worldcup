@@ -75623,7 +75623,1038 @@
     ]
   },
   "m075": {
-    "fixtureId": "1562345"
+    "fixtureId": 1562345,
+    "date": "2026-06-30T01:00:00+00:00",
+    "venue": "Estadio BBVA",
+    "status": "Match Finished",
+    "homeTeam": "Netherlands",
+    "awayTeam": "Morocco",
+    "score": {
+      "home": 1,
+      "away": 1
+    },
+    "statistics": {
+      "Netherlands": {
+        "Shots on Goal": 2,
+        "Shots off Goal": 1,
+        "Total Shots": 6,
+        "Blocked Shots": 3,
+        "Shots insidebox": 4,
+        "Shots outsidebox": 2,
+        "Fouls": 18,
+        "Corner Kicks": 5,
+        "Offsides": 3,
+        "Ball Possession": "30%",
+        "Yellow Cards": 0,
+        "Red Cards": null,
+        "Goalkeeper Saves": 5,
+        "Total passes": 373,
+        "Passes accurate": 293,
+        "Passes %": "79%",
+        "expected_goals": "0.23",
+        "goals_prevented": "-0.83"
+      },
+      "Morocco": {
+        "Shots on Goal": 5,
+        "Shots off Goal": 4,
+        "Total Shots": 11,
+        "Blocked Shots": 2,
+        "Shots insidebox": 7,
+        "Shots outsidebox": 4,
+        "Fouls": 15,
+        "Corner Kicks": 8,
+        "Offsides": 0,
+        "Ball Possession": "70%",
+        "Yellow Cards": 1,
+        "Red Cards": null,
+        "Goalkeeper Saves": 1,
+        "Total passes": 878,
+        "Passes accurate": 800,
+        "Passes %": "91%",
+        "expected_goals": "1.40",
+        "goals_prevented": "-0.83"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 1118,
+          "name": "Netherlands",
+          "logo": "https://media.api-sports.io/football/teams/1118.png",
+          "colors": {
+            "player": {
+              "primary": "ff6803",
+              "number": "000000",
+              "border": "ff6803"
+            },
+            "goalkeeper": {
+              "primary": "5886c6",
+              "number": "f9f1f1",
+              "border": "5886c6"
+            }
+          }
+        },
+        "formation": "3-4-2-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 129058,
+              "name": "Bart Verbruggen",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 38695,
+              "name": "Jan Paul van Hecke",
+              "number": 6,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 290,
+              "name": "Virgil van Dijk",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 18861,
+              "name": "Nathan Aké",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 226,
+              "name": "Denzel Dumfries",
+              "number": 22,
+              "pos": "M",
+              "grid": "3:4"
+            }
+          },
+          {
+            "player": {
+              "id": 542,
+              "name": "Ryan Gravenberch",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 538,
+              "name": "Frenkie de Jong",
+              "number": 21,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 152849,
+              "name": "Micky van de Ven",
+              "number": 15,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 37724,
+              "name": "Crysencio Summerville",
+              "number": 24,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 247,
+              "name": "Cody Gakpo",
+              "number": 11,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 38750,
+              "name": "Brian Brobbey",
+              "number": 19,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 36899,
+              "name": "Teun Koopmeiners",
+              "number": 20,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 25416,
+              "name": "Wout Weghorst",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 341642,
+              "name": "Jorrel Hato",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 38747,
+              "name": "Quinten Timber",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30432,
+              "name": "Marten de Roon",
+              "number": 3,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 792,
+              "name": "Justin Kluivert",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 26232,
+              "name": "Mark Flekken",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 194536,
+              "name": "Robin Roefs",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 37143,
+              "name": "Lutsharel Geertruida",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 92993,
+              "name": "Mats Wieffer",
+              "number": 12,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36905,
+              "name": "Guus Til",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36902,
+              "name": "Tijjani Reijnders",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 249,
+              "name": "Donyell Malen",
+              "number": 18,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 667,
+              "name": "Memphis Depay",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 544,
+              "name": "Noa Lang",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 73,
+          "name": "Ronald Koeman",
+          "photo": "https://media.api-sports.io/football/coachs/73.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 31,
+          "name": "Morocco",
+          "logo": "https://media.api-sports.io/football/teams/31.png",
+          "colors": {
+            "player": {
+              "primary": "e60000",
+              "number": "ffffff",
+              "border": "e60000"
+            },
+            "goalkeeper": {
+              "primary": "99bff0",
+              "number": "000000",
+              "border": "99bff0"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 2701,
+              "name": "Yassine Bounou",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 9,
+              "name": "Achraf Hakimi",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 18814,
+              "name": "Issa Diop",
+              "number": 14,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 278898,
+              "name": "Chadi Riad",
+              "number": 18,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 545,
+              "name": "Noussair Mazraoui",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 438688,
+              "name": "Ayyoub Bouaddi",
+              "number": 6,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 277003,
+              "name": "Neil El Aynaoui",
+              "number": 24,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 744,
+              "name": "Brahim Díaz",
+              "number": 10,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 129678,
+              "name": "Azzedine Ounahi",
+              "number": 8,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 340573,
+              "name": "Bilal El Khannouss",
+              "number": 23,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 161897,
+              "name": "Ismael Saibari",
+              "number": 11,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 162451,
+              "name": "Anass Salah-Eddine",
+              "number": 26,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 369544,
+              "name": "Gessime Yassine",
+              "number": 16,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 415431,
+              "name": "Samir El Mourabet",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36579,
+              "name": "Soufiane Rahimi",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 336659,
+              "name": "Chemsdine Talbi",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2703,
+              "name": "Ahmed Reda Tagnaouti",
+              "number": 22,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2702,
+              "name": "Munir El Kajoui",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50042,
+              "name": "Marwane Saadane",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 326183,
+              "name": "Redouane Halhal",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 146772,
+              "name": "Youssef Belammari",
+              "number": 19,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 283252,
+              "name": "Zakaria El Ouahdi",
+              "number": 13,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 191289,
+              "name": "Amine Sbai",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 74,
+              "name": "Sofyan Amrabat",
+              "number": 4,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2722,
+              "name": "Ayoub El Kaabi",
+              "number": 20,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 535046,
+              "name": "Ayoube Amaimouni Echghouyab",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 28221,
+          "name": "Mohamed Ouahbi",
+          "photo": "https://media.api-sports.io/football/coachs/28221.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "47",
+        "team": "Morocco",
+        "player": "I. Diop",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Foul"
+      },
+      {
+        "time": "71",
+        "team": "Netherlands",
+        "player": "N. Ake",
+        "assist": "T. Koopmeiners",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "71",
+        "team": "Netherlands",
+        "player": "B. Brobbey",
+        "assist": "W. Weghorst",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "72",
+        "team": "Netherlands",
+        "player": "C. Gakpo",
+        "assist": "C. Summerville",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "75",
+        "team": "Morocco",
+        "player": "C. Riad",
+        "assist": "A. Salah-Eddine",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "79",
+        "team": "Morocco",
+        "player": "B. Diaz",
+        "assist": "G. Yassine",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "79",
+        "team": "Morocco",
+        "player": "A. Bouaddi",
+        "assist": "S. El Mourabet",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "86",
+        "team": "Morocco",
+        "player": "A. Ounahi",
+        "assist": "S. Rahimi",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "86",
+        "team": "Netherlands",
+        "player": "M. van de Ven",
+        "assist": "J. Hato",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "86",
+        "team": "Netherlands",
+        "player": "R. Gravenberch",
+        "assist": "Q. Timber",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "87",
+        "team": "Morocco",
+        "player": "B. El Khannouss",
+        "assist": "C. Talbi",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "90+1",
+        "team": "Morocco",
+        "player": "I. Diop",
+        "assist": "C. Talbi",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "110",
+        "team": "Netherlands",
+        "player": "F. de Jong",
+        "assist": "M. De Roon",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "113",
+        "team": "Netherlands",
+        "player": "C. Gakpo",
+        "assist": "J. Kluivert",
+        "type": "subst",
+        "detail": "Substitution 6",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Netherlands",
+        "players": [
+          {
+            "name": "Bart Verbruggen",
+            "rating": "8.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jan Paul van Hecke",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Virgil van Dijk",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nathan Aké",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Denzel Dumfries",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ryan Gravenberch",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Frenkie de Jong",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Micky van de Ven",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Crysencio Summerville",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Cody Gakpo",
+            "rating": "6.9",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Brian Brobbey",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Teun Koopmeiners",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Wout Weghorst",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jorrel Hato",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Quinten Timber",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marten de Roon",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Justin Kluivert",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mark Flekken",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Robin Roefs",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lutsharel Geertruida",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mats Wieffer",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Guus Til",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tijjani Reijnders",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Donyell Malen",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Memphis Depay",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Noa Lang",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Morocco",
+        "players": [
+          {
+            "name": "Yassine Bounou",
+            "rating": "6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Achraf Hakimi",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Issa Diop",
+            "rating": "7.3",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Chadi Riad",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Noussair Mazraoui",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ayyoub Bouaddi",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Neil El Aynaoui",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Brahim Díaz",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Azzedine Ounahi",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Bilal El Khannouss",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ismael Saibari",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Anass Salah-Eddine",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gessime Yassine",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Samir El Mourabet",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Soufiane Rahimi",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Chemsdine Talbi",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Ahmed Reda Tagnaouti",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Munir El Kajoui",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marwane Saadane",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Redouane Halhal",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Youssef Belammari",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Zakaria El Ouahdi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Amine Sbai",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Sofyan Amrabat",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ayoub El Kaabi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ayoube Amaimouni Echghouyab",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m077": {
     "fixtureId": "1564789"
@@ -76216,8 +77247,8 @@
       {
         "time": "42",
         "team": "Paraguay",
-        "player": "J. Enciso",
-        "assist": "M. Galarza",
+        "player": "Julio Enciso",
+        "assist": "Matías Galarza",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -76225,8 +77256,8 @@
       {
         "time": "46",
         "team": "Germany",
-        "player": "F. Nmecha",
-        "assist": "L. Goretzka",
+        "player": "Felix Nmecha",
+        "assist": "Leon Goretzka",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -76234,8 +77265,8 @@
       {
         "time": "54",
         "team": "Germany",
-        "player": "K. Havertz",
-        "assist": "F. Wirtz",
+        "player": "Kai Havertz",
+        "assist": "Florian Wirtz",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -76243,8 +77274,8 @@
       {
         "time": "55",
         "team": "Paraguay",
-        "player": "G. Avalos",
-        "assist": "G. Caballero",
+        "player": "Gabriel Ávalos",
+        "assist": "Gustavo Caballero",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -76252,7 +77283,7 @@
       {
         "time": "57",
         "team": "Paraguay",
-        "player": "J. Enciso",
+        "player": "Julio Enciso",
         "assist": "Mauricio",
         "type": "subst",
         "detail": "Substitution 2",
@@ -76261,8 +77292,8 @@
       {
         "time": "63",
         "team": "Germany",
-        "player": "D. Undav",
-        "assist": "J. Musiala",
+        "player": "Deniz Undav",
+        "assist": "Jamal Musiala",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -76270,17 +77301,17 @@
       {
         "time": "65",
         "team": "Paraguay",
-        "player": "A. Cubas",
+        "player": "Andrés Cubas",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Roughing"
+        "comments": "Foul"
       },
       {
         "time": "79",
         "team": "Germany",
-        "player": "A. Pavlovic",
-        "assist": "W. Anton",
+        "player": "Aleksandar Pavlović",
+        "assist": "Waldemar Anton",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -76288,8 +77319,8 @@
       {
         "time": "88",
         "team": "Germany",
-        "player": "L. Sane",
-        "assist": "N. Woltemade",
+        "player": "Leroy Sané",
+        "assist": "Nick Woltemade",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -76297,8 +77328,8 @@
       {
         "time": "91",
         "team": "Paraguay",
-        "player": "M. Almiron",
-        "assist": "G. Velazquez",
+        "player": "Miguel Almirón",
+        "assist": "Gustavo Velázquez",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -76306,8 +77337,8 @@
       {
         "time": "99",
         "team": "Paraguay",
-        "player": "J. Caceres",
-        "assist": "B. Ojeda",
+        "player": "Damián Bobadilla",
+        "assist": "Antonio Sanabria",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -76315,43 +77346,25 @@
       {
         "time": "99",
         "team": "Paraguay",
-        "player": "D. Bobadilla",
-        "assist": "A. Sanabria",
+        "player": "Juan Cáceres",
+        "assist": "Braian Ojeda",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
       },
       {
-        "time": "102",
+        "time": "103",
         "team": "Germany",
-        "player": "J. Tah",
+        "player": "Jonathan Tah",
         "assist": null,
         "type": "Var",
-        "detail": "Goal Disallowed - Foul",
-        "comments": ""
-      },
-      {
-        "time": "105",
-        "team": "Paraguay",
-        "player": "G. Alfaro",
-        "assist": null,
-        "type": "Card",
-        "detail": "Yellow Card",
-        "comments": ""
-      },
-      {
-        "time": "105+1",
-        "team": "Germany",
-        "player": "J. Nagelsmann",
-        "assist": null,
-        "type": "Card",
-        "detail": "Yellow Card",
+        "detail": "Goal cancelled",
         "comments": ""
       },
       {
         "time": "106",
         "team": "Germany",
-        "player": "K. Havertz",
+        "player": "Kai Havertz",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -76360,8 +77373,8 @@
       {
         "time": "110",
         "team": "Germany",
-        "player": "F. Wirtz",
-        "assist": "N. Amiri",
+        "player": "Florian Wirtz",
+        "assist": "Nadiem Amiri",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -76369,8 +77382,8 @@
       {
         "time": "110",
         "team": "Germany",
-        "player": "A. Rudiger",
-        "assist": "M. Thiaw",
+        "player": "Antonio Rüdiger",
+        "assist": "Malick Thiaw",
         "type": "subst",
         "detail": "Substitution 6",
         "comments": ""
@@ -76378,137 +77391,29 @@
       {
         "time": "115",
         "team": "Germany",
-        "player": "J. Musiala",
-        "assist": null,
-        "type": "Card",
-        "detail": "Yellow Card",
-        "comments": "Roughing"
-      },
-      {
-        "time": "117",
-        "team": "Paraguay",
-        "player": "M. Galarza",
+        "player": "Jamal Musiala",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
         "comments": "Foul"
       },
       {
-        "time": "120+2",
+        "time": "117",
         "team": "Paraguay",
-        "player": "J. Alonso",
-        "assist": "Fabian Balbuena",
+        "player": "Matías Galarza",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Foul"
+      },
+      {
+        "time": "120",
+        "team": "Paraguay",
+        "player": "Junior Alonso",
+        "assist": "Fabián Balbuena",
         "type": "subst",
         "detail": "Substitution 6",
         "comments": ""
-      },
-      {
-        "time": "120+1",
-        "team": "Germany",
-        "player": "K. Havertz",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Missed Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "120+1",
-        "team": "Paraguay",
-        "player": "Mauricio",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "120+2",
-        "team": "Germany",
-        "player": "J. Kimmich",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "120+2",
-        "team": "Paraguay",
-        "player": "G. Gomez",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "120+3",
-        "team": "Germany",
-        "player": "J. Musiala",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "120+3",
-        "team": "Paraguay",
-        "player": "M. Galarza",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "120+4",
-        "team": "Germany",
-        "player": "N. Woltemade",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Missed Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "120+4",
-        "team": "Paraguay",
-        "player": "A. Sanabria",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Missed Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "120+5",
-        "team": "Germany",
-        "player": "N. Amiri",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "120+5",
-        "team": "Paraguay",
-        "player": "Fabian Balbuena",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Missed Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "120+6",
-        "team": "Germany",
-        "player": "J. Tah",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Missed Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "120+6",
-        "team": "Paraguay",
-        "player": "J. Canale",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
       }
     ],
     "players": [
