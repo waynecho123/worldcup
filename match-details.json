@@ -31121,11 +31121,11 @@
         "Yellow Cards": 1,
         "Red Cards": null,
         "Goalkeeper Saves": 2,
-        "Total passes": 339,
+        "Total passes": 340,
         "Passes accurate": 277,
-        "Passes %": "82%",
-        "expected_goals": "1.10",
-        "goals_prevented": "-0.61"
+        "Passes %": "81%",
+        "expected_goals": "1.16",
+        "goals_prevented": "-0.50"
       },
       "South Korea": {
         "Shots on Goal": 3,
@@ -31141,11 +31141,11 @@
         "Yellow Cards": 1,
         "Red Cards": null,
         "Goalkeeper Saves": 3,
-        "Total passes": 720,
-        "Passes accurate": 643,
+        "Total passes": 719,
+        "Passes accurate": 641,
         "Passes %": "89%",
-        "expected_goals": "1.00",
-        "goals_prevented": "-0.61"
+        "expected_goals": "0.90",
+        "goals_prevented": "-0.50"
       }
     },
     "lineups": {
@@ -31771,7 +31771,7 @@
           },
           {
             "name": "Khuliso Mudau",
-            "rating": "7.3",
+            "rating": "7.2",
             "goals": 0,
             "assists": 0
           },
@@ -31795,7 +31795,7 @@
           },
           {
             "name": "Thalente Mbatha",
-            "rating": "6.9",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
@@ -31807,7 +31807,7 @@
           },
           {
             "name": "Thapelo Maseko",
-            "rating": "7.6",
+            "rating": "7.7",
             "goals": 1,
             "assists": 0
           },
@@ -31831,13 +31831,13 @@
           },
           {
             "name": "Tshepang Moremi",
-            "rating": "7.3",
+            "rating": "7.2",
             "goals": 0,
             "assists": 1
           },
           {
             "name": "Iqraam Rayners",
-            "rating": "6.7",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
@@ -31932,7 +31932,7 @@
           },
           {
             "name": "Gi-Hyuk Lee",
-            "rating": "7.3",
+            "rating": "7.7",
             "goals": 0,
             "assists": 0
           },
@@ -31962,13 +31962,13 @@
           },
           {
             "name": "Kang-in Lee",
-            "rating": "6.9",
+            "rating": "6.7",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Hwang Hee-chan",
-            "rating": "6.5",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
@@ -31992,7 +31992,7 @@
           },
           {
             "name": "Son Heung-min",
-            "rating": "6.5",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
@@ -32009,7 +32009,7 @@
             "assists": 0
           },
           {
-            "name": "Jo Hyeonwoo",
+            "name": "Jo Hyeon-woo",
             "rating": null,
             "goals": 0,
             "assists": 0
@@ -35186,9 +35186,9 @@
         "Red Cards": null,
         "Goalkeeper Saves": 2,
         "Total passes": 398,
-        "Passes accurate": 332,
-        "Passes %": "83%",
-        "expected_goals": "0.47",
+        "Passes accurate": 333,
+        "Passes %": "84%",
+        "expected_goals": "0.53",
         "goals_prevented": "0.13"
       },
       "Mexico": {
@@ -35205,10 +35205,10 @@
         "Yellow Cards": 1,
         "Red Cards": null,
         "Goalkeeper Saves": 1,
-        "Total passes": 388,
-        "Passes accurate": 331,
+        "Total passes": 386,
+        "Passes accurate": 330,
         "Passes %": "85%",
-        "expected_goals": "1.79",
+        "expected_goals": "1.74",
         "goals_prevented": "0.13"
       }
     },
@@ -35871,7 +35871,7 @@
           },
           {
             "name": "Tomáš Holeš",
-            "rating": "6.5",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
@@ -35883,7 +35883,7 @@
           },
           {
             "name": "Ladislav Krejčí",
-            "rating": "6",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
@@ -35901,7 +35901,7 @@
           },
           {
             "name": "Michal Sadílek",
-            "rating": "6.9",
+            "rating": "6.7",
             "goals": 0,
             "assists": 0
           },
@@ -35919,13 +35919,13 @@
           },
           {
             "name": "Denis Višinský",
-            "rating": "6.7",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Adam Hložek",
-            "rating": "7",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
@@ -36020,7 +36020,7 @@
         "players": [
           {
             "name": "Raúl Rangel",
-            "rating": "7.2",
+            "rating": "7",
             "goals": 0,
             "assists": 0
           },
@@ -36032,7 +36032,7 @@
           },
           {
             "name": "César Montes",
-            "rating": "7.2",
+            "rating": "7.5",
             "goals": 0,
             "assists": 0
           },
@@ -36056,13 +36056,13 @@
           },
           {
             "name": "Edson Álvarez",
-            "rating": "6.9",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Luis Romo",
-            "rating": "6.9",
+            "rating": "6.7",
             "goals": 0,
             "assists": 1
           },
@@ -36074,7 +36074,7 @@
           },
           {
             "name": "Guillermo Martínez",
-            "rating": "6.2",
+            "rating": "6",
             "goals": 0,
             "assists": 0
           },
@@ -37764,11 +37764,11 @@
       {
         "time": "46",
         "team": "Australia",
-        "player": "J. Irvine",
+        "player": "Jackson Irvine",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Tripping"
+        "comments": "Foul"
       },
       {
         "time": "46",
@@ -37800,11 +37800,11 @@
       {
         "time": "77",
         "team": "Paraguay",
-        "player": "D. Gomez",
+        "player": "Diego Gómez",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": ""
+        "comments": "Foul"
       },
       {
         "time": "84",
@@ -67416,7 +67416,7 @@
           {
             "player": {
               "id": 22221,
-              "name": "M. Maignan",
+              "name": "Mike Maignan",
               "number": 16,
               "pos": "G",
               "grid": "1:1"
@@ -67425,7 +67425,7 @@
           {
             "player": {
               "id": 1257,
-              "name": "J. Kounde",
+              "name": "Jules Koundé",
               "number": 5,
               "pos": "D",
               "grid": "2:4"
@@ -67434,7 +67434,7 @@
           {
             "player": {
               "id": 1149,
-              "name": "D. Upamecano",
+              "name": "Dayot Upamecano",
               "number": 4,
               "pos": "D",
               "grid": "2:3"
@@ -67443,7 +67443,7 @@
           {
             "player": {
               "id": 22090,
-              "name": "W. Saliba",
+              "name": "William Saliba",
               "number": 17,
               "pos": "D",
               "grid": "2:2"
@@ -67452,7 +67452,7 @@
           {
             "player": {
               "id": 47300,
-              "name": "T. Hernandez",
+              "name": "Theo Hernández",
               "number": 19,
               "pos": "D",
               "grid": "2:1"
@@ -67461,7 +67461,7 @@
           {
             "player": {
               "id": 1271,
-              "name": "A. Tchouameni",
+              "name": "Aurélien Tchouaméni",
               "number": 8,
               "pos": "M",
               "grid": "3:2"
@@ -67470,7 +67470,7 @@
           {
             "player": {
               "id": 272,
-              "name": "A. Rabiot",
+              "name": "Adrien Rabiot",
               "number": 14,
               "pos": "M",
               "grid": "3:1"
@@ -67479,7 +67479,7 @@
           {
             "player": {
               "id": 19617,
-              "name": "M. Olise",
+              "name": "Michael Olise",
               "number": 11,
               "pos": "M",
               "grid": "4:3"
@@ -67488,7 +67488,7 @@
           {
             "player": {
               "id": 153,
-              "name": "O. Dembele",
+              "name": "Ousmane Dembélé",
               "number": 7,
               "pos": "M",
               "grid": "4:2"
@@ -67497,7 +67497,7 @@
           {
             "player": {
               "id": 343027,
-              "name": "D. Doue",
+              "name": "Désiré Doué",
               "number": 20,
               "pos": "M",
               "grid": "4:1"
@@ -67506,7 +67506,7 @@
           {
             "player": {
               "id": 278,
-              "name": "K. Mbappe",
+              "name": "Kylian Mbappé",
               "number": 10,
               "pos": "F",
               "grid": "5:1"
@@ -67516,8 +67516,26 @@
         "substitutes": [
           {
             "player": {
+              "id": 161904,
+              "name": "Bradley Barcola",
+              "number": 12,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 156477,
+              "name": "Rayan Cherki",
+              "number": 24,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 21628,
-              "name": "B. Samba",
+              "name": "Brice Samba",
               "number": 1,
               "pos": "G",
               "grid": null
@@ -67526,7 +67544,7 @@
           {
             "player": {
               "id": 347211,
-              "name": "R. Risser",
+              "name": "Robin Risser",
               "number": 23,
               "pos": "G",
               "grid": null
@@ -67534,17 +67552,8 @@
           },
           {
             "player": {
-              "id": 1145,
-              "name": "I. Konate",
-              "number": 15,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 20995,
-              "name": "M. Lacroix",
+              "name": "Maxence Lacroix",
               "number": 26,
               "pos": "D",
               "grid": null
@@ -67552,53 +67561,8 @@
           },
           {
             "player": {
-              "id": 161907,
-              "name": "M. Gusto",
-              "number": 2,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 274300,
-              "name": "M. Akliouche",
-              "number": 25,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 336657,
-              "name": "W. Zaire-Emery",
-              "number": 18,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 2724,
-              "name": "L. Digne",
-              "number": 3,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 2290,
-              "name": "N. Kante",
-              "number": 13,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 33,
-              "name": "L. Hernandez",
+              "name": "Lucas Hernández",
               "number": 21,
               "pos": "D",
               "grid": null
@@ -67606,8 +67570,71 @@
           },
           {
             "player": {
+              "id": 2724,
+              "name": "Lucas Digne",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1145,
+              "name": "Ibrahima Konaté",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 161907,
+              "name": "Malo Gusto",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 22147,
+              "name": "Manu Koné",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2290,
+              "name": "N'Golo Kanté",
+              "number": 13,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 336657,
+              "name": "Warren Zaïre-Emery",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 274300,
+              "name": "Maghnes Akliouche",
+              "number": 25,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 21509,
-              "name": "M. Thuram",
+              "name": "Marcus Thuram",
               "number": 9,
               "pos": "F",
               "grid": null
@@ -67616,35 +67643,8 @@
           {
             "player": {
               "id": 25927,
-              "name": "J. Mateta",
+              "name": "Jean-Philippe Mateta",
               "number": 22,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 156477,
-              "name": "R. Cherki",
-              "number": 24,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 22147,
-              "name": "M. Kone",
-              "number": 6,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 161904,
-              "name": "B. Barcola",
-              "number": 12,
               "pos": "F",
               "grid": null
             }
@@ -67679,7 +67679,7 @@
           {
             "player": {
               "id": 2986,
-              "name": "E. Mendy",
+              "name": "Edouard Mendy",
               "number": 16,
               "pos": "G",
               "grid": "1:1"
@@ -67688,7 +67688,7 @@
           {
             "player": {
               "id": 81,
-              "name": "K. Diatta",
+              "name": "Krépin Diatta",
               "number": 15,
               "pos": "D",
               "grid": "2:4"
@@ -67697,7 +67697,7 @@
           {
             "player": {
               "id": 318,
-              "name": "K. Koulibaly",
+              "name": "Kalidou Koulibaly",
               "number": 3,
               "pos": "D",
               "grid": "2:3"
@@ -67706,7 +67706,7 @@
           {
             "player": {
               "id": 25916,
-              "name": "M. Niakhate",
+              "name": "Moussa Niakhaté",
               "number": 19,
               "pos": "D",
               "grid": "2:2"
@@ -67715,7 +67715,7 @@
           {
             "player": {
               "id": 409303,
-              "name": "M. Diouf",
+              "name": "El Hadji Malick Diouf",
               "number": 25,
               "pos": "D",
               "grid": "2:1"
@@ -67724,7 +67724,7 @@
           {
             "player": {
               "id": 2990,
-              "name": "I. Gueye",
+              "name": "Idrissa Gana Gueye",
               "number": 5,
               "pos": "M",
               "grid": "3:2"
@@ -67733,7 +67733,7 @@
           {
             "player": {
               "id": 20696,
-              "name": "P. Gueye",
+              "name": "Pape Gueye",
               "number": 26,
               "pos": "M",
               "grid": "3:1"
@@ -67742,7 +67742,7 @@
           {
             "player": {
               "id": 2218,
-              "name": "I. Sarr",
+              "name": "Ismaïla Sarr",
               "number": 18,
               "pos": "M",
               "grid": "4:3"
@@ -67751,7 +67751,7 @@
           {
             "player": {
               "id": 374058,
-              "name": "L. Camara",
+              "name": "Lamine Camara",
               "number": 8,
               "pos": "M",
               "grid": "4:2"
@@ -67760,7 +67760,7 @@
           {
             "player": {
               "id": 304,
-              "name": "S. Mane",
+              "name": "Sadio Mané",
               "number": 10,
               "pos": "M",
               "grid": "4:1"
@@ -67769,7 +67769,7 @@
           {
             "player": {
               "id": 283058,
-              "name": "N. Jackson",
+              "name": "Nicolas Jackson",
               "number": 11,
               "pos": "F",
               "grid": "5:1"
@@ -67779,35 +67779,35 @@
         "substitutes": [
           {
             "player": {
-              "id": 119853,
-              "name": "M. Diaw",
-              "number": 23,
-              "pos": "G",
+              "id": 446249,
+              "name": "Ibrahim Mbaye",
+              "number": 20,
+              "pos": "F",
               "grid": null
             }
           },
           {
             "player": {
-              "id": 20566,
-              "name": "Y. Diouf",
-              "number": 1,
-              "pos": "G",
+              "id": 327631,
+              "name": "Habib Diarra",
+              "number": 21,
+              "pos": "M",
               "grid": null
             }
           },
           {
             "player": {
-              "id": 158121,
-              "name": "I. Jakobs",
-              "number": 14,
-              "pos": "D",
+              "id": 18592,
+              "name": "Iliman Ndiaye",
+              "number": 13,
+              "pos": "F",
               "grid": null
             }
           },
           {
             "player": {
               "id": 284072,
-              "name": "B. Dieng",
+              "name": "Ahmadou Bamba Dieng",
               "number": 9,
               "pos": "F",
               "grid": null
@@ -67815,8 +67815,44 @@
           },
           {
             "player": {
+              "id": 41552,
+              "name": "Pathé Ismaël Ciss",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 20566,
+              "name": "Yehvann Diouf",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 119853,
+              "name": "Mory Diaw",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 158121,
+              "name": "Ismail Jakobs",
+              "number": 14,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 313937,
-              "name": "A. Mendy",
+              "name": "Antoine Mendy",
               "number": 24,
               "pos": "D",
               "grid": null
@@ -67825,7 +67861,7 @@
           {
             "player": {
               "id": 276184,
-              "name": "M. Sarr",
+              "name": "Mamadou Sarr",
               "number": 2,
               "pos": "D",
               "grid": null
@@ -67833,26 +67869,8 @@
           },
           {
             "player": {
-              "id": 327631,
-              "name": "H. Diarra",
-              "number": 21,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 400948,
-              "name": "A. Diao",
-              "number": 7,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 8450,
-              "name": "A. Seck",
+              "name": "Abdoulaye Seck",
               "number": 4,
               "pos": "D",
               "grid": null
@@ -67860,35 +67878,8 @@
           },
           {
             "player": {
-              "id": 14379,
-              "name": "C. Ndiaye",
-              "number": 12,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 41552,
-              "name": "P. Ciss",
-              "number": 6,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 18592,
-              "name": "I. Ndiaye",
-              "number": 13,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 237129,
-              "name": "P. M. Sarr",
+              "name": "Pape Matar Sarr",
               "number": 17,
               "pos": "M",
               "grid": null
@@ -67896,19 +67887,28 @@
           },
           {
             "player": {
-              "id": 446249,
-              "name": "I. Mbaye",
-              "number": 20,
+              "id": 630895,
+              "name": "Bara Sapoko Ndiaye",
+              "number": 22,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 14379,
+              "name": "Cherif Ndiaye",
+              "number": 12,
               "pos": "F",
               "grid": null
             }
           },
           {
             "player": {
-              "id": 630895,
-              "name": "B. Sapoko Ndiaye",
-              "number": 22,
-              "pos": "M",
+              "id": 400948,
+              "name": "Assane Diao",
+              "number": 7,
+              "pos": "F",
               "grid": null
             }
           }
@@ -67928,8 +67928,8 @@
       {
         "time": "66",
         "team": "France",
-        "player": "K. Mbappe",
-        "assist": "M. Olise",
+        "player": "Kylian Mbappé",
+        "assist": "Michael Olise",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -67937,8 +67937,8 @@
       {
         "time": "75",
         "team": "Senegal",
-        "player": "I. Sarr",
-        "assist": "I. Mbaye",
+        "player": "Ismaïla Sarr",
+        "assist": "Ibrahim Mbaye",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -67946,8 +67946,8 @@
       {
         "time": "76",
         "team": "Senegal",
-        "player": "L. Camara",
-        "assist": "H. Diarra",
+        "player": "Lamine Camara",
+        "assist": "Habib Diarra",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -67955,8 +67955,8 @@
       {
         "time": "80",
         "team": "France",
-        "player": "O. Dembele",
-        "assist": "B. Barcola",
+        "player": "Ousmane Dembélé",
+        "assist": "Bradley Barcola",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -67964,8 +67964,8 @@
       {
         "time": "82",
         "team": "France",
-        "player": "B. Barcola",
-        "assist": "A. Rabiot",
+        "player": "Bradley Barcola",
+        "assist": "Adrien Rabiot",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -67973,8 +67973,8 @@
       {
         "time": "83",
         "team": "Senegal",
-        "player": "N. Jackson",
-        "assist": "B. Dieng",
+        "player": "Nicolas Jackson",
+        "assist": "Ahmadou Bamba Dieng",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -67982,8 +67982,8 @@
       {
         "time": "83",
         "team": "Senegal",
-        "player": "P. Gueye",
-        "assist": "I. Ndiaye",
+        "player": "Pape Gueye",
+        "assist": "Iliman Ndiaye",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -67991,8 +67991,8 @@
       {
         "time": "87",
         "team": "France",
-        "player": "D. Doue",
-        "assist": "R. Cherki",
+        "player": "Désiré Doué",
+        "assist": "Rayan Cherki",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -68000,26 +68000,26 @@
       {
         "time": "88",
         "team": "Senegal",
-        "player": "I. Gueye",
-        "assist": "P. Ciss",
+        "player": "Idrissa Gana Gueye",
+        "assist": "Pathé Ismaël Ciss",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
       },
       {
-        "time": "90",
-        "team": "Senegal",
-        "player": "I. Mbaye",
-        "assist": "I. Ndiaye",
+        "time": "90+6",
+        "team": "France",
+        "player": "Kylian Mbappé",
+        "assist": null,
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
       },
       {
-        "time": "90",
-        "team": "France",
-        "player": "K. Mbappe",
-        "assist": null,
+        "time": "90+5",
+        "team": "Senegal",
+        "player": "Ibrahim Mbaye",
+        "assist": "Iliman Ndiaye",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -77345,17 +77345,17 @@
       {
         "time": "42",
         "team": "Paraguay",
-        "player": "Julio Enciso",
-        "assist": "Matías Galarza",
+        "player": "J. Enciso",
+        "assist": "M. Galarza",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
       },
       {
-        "time": "46",
+        "time": "45",
         "team": "Germany",
-        "player": "Felix Nmecha",
-        "assist": "Leon Goretzka",
+        "player": "F. Nmecha",
+        "assist": "L. Goretzka",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -77363,8 +77363,8 @@
       {
         "time": "54",
         "team": "Germany",
-        "player": "Kai Havertz",
-        "assist": "Florian Wirtz",
+        "player": "K. Havertz",
+        "assist": "F. Wirtz",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -77372,8 +77372,8 @@
       {
         "time": "55",
         "team": "Paraguay",
-        "player": "Gabriel Ávalos",
-        "assist": "Gustavo Caballero",
+        "player": "G. Ávalos",
+        "assist": "G. Caballero",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -77381,8 +77381,8 @@
       {
         "time": "57",
         "team": "Paraguay",
-        "player": "Julio Enciso",
-        "assist": "Mauricio",
+        "player": "J. Enciso",
+        "assist": "Maurício",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -77390,8 +77390,8 @@
       {
         "time": "63",
         "team": "Germany",
-        "player": "Deniz Undav",
-        "assist": "Jamal Musiala",
+        "player": "D. Undav",
+        "assist": "J. Musiala",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -77399,7 +77399,7 @@
       {
         "time": "65",
         "team": "Paraguay",
-        "player": "Andrés Cubas",
+        "player": "A. Cubas",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -77408,8 +77408,8 @@
       {
         "time": "79",
         "team": "Germany",
-        "player": "Aleksandar Pavlović",
-        "assist": "Waldemar Anton",
+        "player": "A. Pavlović",
+        "assist": "W. Anton",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -77417,17 +77417,17 @@
       {
         "time": "88",
         "team": "Germany",
-        "player": "Leroy Sané",
-        "assist": "Nick Woltemade",
+        "player": "L. Sané",
+        "assist": "N. Woltemade",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
       },
       {
-        "time": "91",
+        "time": "90",
         "team": "Paraguay",
-        "player": "Miguel Almirón",
-        "assist": "Gustavo Velázquez",
+        "player": "M. Almirón",
+        "assist": "G. Velázquez",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -77435,8 +77435,8 @@
       {
         "time": "99",
         "team": "Paraguay",
-        "player": "Damián Bobadilla",
-        "assist": "Antonio Sanabria",
+        "player": "J. Cáceres",
+        "assist": "B. Ojeda",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -77444,25 +77444,43 @@
       {
         "time": "99",
         "team": "Paraguay",
-        "player": "Juan Cáceres",
-        "assist": "Braian Ojeda",
+        "player": "D. Bobadilla",
+        "assist": "A. Sanabria",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
       },
       {
-        "time": "103",
+        "time": "104",
         "team": "Germany",
-        "player": "Jonathan Tah",
+        "player": "J. Tah",
         "assist": null,
         "type": "Var",
         "detail": "Goal cancelled",
         "comments": ""
       },
       {
+        "time": "105",
+        "team": "Paraguay",
+        "player": "Gustavo Julio Alfaro",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Dissent"
+      },
+      {
+        "time": "105+1",
+        "team": "Germany",
+        "player": "Julian Nagelsmann",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Dissent"
+      },
+      {
         "time": "106",
         "team": "Germany",
-        "player": "Kai Havertz",
+        "player": "K. Havertz",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -77471,8 +77489,8 @@
       {
         "time": "110",
         "team": "Germany",
-        "player": "Florian Wirtz",
-        "assist": "Nadiem Amiri",
+        "player": "F. Wirtz",
+        "assist": "N. Amiri",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -77480,8 +77498,8 @@
       {
         "time": "110",
         "team": "Germany",
-        "player": "Antonio Rüdiger",
-        "assist": "Malick Thiaw",
+        "player": "A. Rüdiger",
+        "assist": "M. Thiaw",
         "type": "subst",
         "detail": "Substitution 6",
         "comments": ""
@@ -77489,29 +77507,155 @@
       {
         "time": "115",
         "team": "Germany",
-        "player": "Jamal Musiala",
+        "player": "J. Musiala",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
         "comments": "Foul"
+      },
+      {
+        "time": "116",
+        "team": "Germany",
+        "player": "Mads Buttgereit",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": ""
       },
       {
         "time": "117",
         "team": "Paraguay",
-        "player": "Matías Galarza",
+        "player": "Alejandro Juan Manograsso",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": ""
+      },
+      {
+        "time": "117",
+        "team": "Paraguay",
+        "player": "M. Galarza",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
         "comments": "Foul"
       },
       {
-        "time": "120",
+        "time": "120+2",
         "team": "Paraguay",
-        "player": "Junior Alonso",
-        "assist": "Fabián Balbuena",
+        "player": "J. Alonso",
+        "assist": "F. Balbuena",
         "type": "subst",
         "detail": "Substitution 6",
         "comments": ""
+      },
+      {
+        "time": "122",
+        "team": "Germany",
+        "player": "K. Havertz",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Missed Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "124",
+        "team": "Paraguay",
+        "player": "Maurício",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "125",
+        "team": "Germany",
+        "player": "J. Kimmich",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "125",
+        "team": "Paraguay",
+        "player": "G. Gómez",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "126",
+        "team": "Germany",
+        "player": "J. Musiala",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "127",
+        "team": "Paraguay",
+        "player": "M. Galarza",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "128",
+        "team": "Germany",
+        "player": "N. Woltemade",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Missed Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "129",
+        "team": "Paraguay",
+        "player": "A. Sanabria",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Missed Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "130",
+        "team": "Germany",
+        "player": "N. Amiri",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "131",
+        "team": "Paraguay",
+        "player": "F. Balbuena",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Missed Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "132",
+        "team": "Germany",
+        "player": "J. Tah",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Missed Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "132",
+        "team": "Paraguay",
+        "player": "J. Canale",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
       }
     ],
     "players": [
