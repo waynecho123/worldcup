@@ -76755,7 +76755,1020 @@
     ]
   },
   "m077": {
-    "fixtureId": "1564789"
+    "fixtureId": 1564789,
+    "date": "2026-06-30T17:00:00+00:00",
+    "venue": "AT&T Stadium",
+    "status": "Match Finished",
+    "homeTeam": "Ivory Coast",
+    "awayTeam": "Norway",
+    "score": {
+      "home": 1,
+      "away": 2
+    },
+    "statistics": {
+      "Ivory Coast": {
+        "Shots on Goal": 5,
+        "Shots off Goal": 9,
+        "Total Shots": 14,
+        "Blocked Shots": 1,
+        "Shots insidebox": 10,
+        "Shots outsidebox": 4,
+        "Fouls": 6,
+        "Corner Kicks": 14,
+        "Offsides": 2,
+        "Ball Possession": "47%",
+        "Yellow Cards": 0,
+        "Red Cards": null,
+        "Goalkeeper Saves": 1,
+        "Total passes": 401,
+        "Passes accurate": 339,
+        "Passes %": "85%",
+        "expected_goals": "1.36",
+        "goals_prevented": "0.44"
+      },
+      "Norway": {
+        "Shots on Goal": 4,
+        "Shots off Goal": 2,
+        "Total Shots": 9,
+        "Blocked Shots": 3,
+        "Shots insidebox": 8,
+        "Shots outsidebox": 1,
+        "Fouls": 7,
+        "Corner Kicks": 3,
+        "Offsides": 2,
+        "Ball Possession": "53%",
+        "Yellow Cards": 1,
+        "Red Cards": null,
+        "Goalkeeper Saves": 4,
+        "Total passes": 473,
+        "Passes accurate": 415,
+        "Passes %": "88%",
+        "expected_goals": "2.02",
+        "goals_prevented": "0.44"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 1501,
+          "name": "Ivory Coast",
+          "logo": "https://media.api-sports.io/football/teams/1501.png",
+          "colors": {
+            "player": {
+              "primary": "ff7c0a",
+              "number": "ffffff",
+              "border": "ff7c0a"
+            },
+            "goalkeeper": {
+              "primary": "58d8fb",
+              "number": "1d1a1a",
+              "border": "58d8fb"
+            }
+          }
+        },
+        "formation": "4-1-4-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 64190,
+              "name": "Yahia Fofana",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 161747,
+              "name": "Guéla Doué",
+              "number": 17,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 48119,
+              "name": "Odilon Kossounou",
+              "number": 7,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 135068,
+              "name": "Emmanuel Agbadou",
+              "number": 20,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 22002,
+              "name": "Ghislain Konan",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 22149,
+              "name": "Ibrahim Sangaré",
+              "number": 18,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 3246,
+              "name": "Nicolas Pépé",
+              "number": 19,
+              "pos": "M",
+              "grid": "4:4"
+            }
+          },
+          {
+            "player": {
+              "id": 1642,
+              "name": "Franck Kessié",
+              "number": 8,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 474591,
+              "name": "Christ Inao Oulaï",
+              "number": 26,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 513776,
+              "name": "Yan Diomande",
+              "number": 11,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 275651,
+              "name": "Ange-Yoan Bonny",
+              "number": 9,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 157997,
+              "name": "Amad Diallo",
+              "number": 15,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 162707,
+              "name": "Elye Wahi",
+              "number": 12,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 334429,
+              "name": "Oumar Diakité",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 387643,
+              "name": "Bazoumana Touré",
+              "number": 24,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 137303,
+              "name": "Evann Guessand",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 277046,
+              "name": "Mohamed Koné",
+              "number": 16,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30393,
+              "name": "Alban Lafont",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 354753,
+              "name": "Ousmane Diomande",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30504,
+              "name": "Wilfried Singo",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 20836,
+              "name": "Christopher Operi",
+              "number": 13,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1807,
+              "name": "Evan Ndicka",
+              "number": 21,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 3243,
+              "name": "Jean Michaël Seri",
+              "number": 4,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30807,
+              "name": "Seko Fofana",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 263228,
+              "name": "Parfait Guiagon",
+              "number": 25,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 301771,
+              "name": "Simon Adingra",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 28719,
+          "name": "Emerse Fae",
+          "photo": "https://media.api-sports.io/football/coachs/28719.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 1090,
+          "name": "Norway",
+          "logo": "https://media.api-sports.io/football/teams/1090.png",
+          "colors": {
+            "player": {
+              "primary": "e9e9eb",
+              "number": "000000",
+              "border": "e9e9eb"
+            },
+            "goalkeeper": {
+              "primary": "3da509",
+              "number": "000000",
+              "border": "3da509"
+            }
+          }
+        },
+        "formation": "4-3-3",
+        "startXI": [
+          {
+            "player": {
+              "id": 19172,
+              "name": "Ørjan Nyland",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 39362,
+              "name": "Marcus Pedersen",
+              "number": 16,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 1119,
+              "name": "Kristoffer Ajer",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 39254,
+              "name": "Torbjørn Heggem",
+              "number": 17,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 265782,
+              "name": "David Møller Wolfe",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 37127,
+              "name": "Martin Ødegaard",
+              "number": 10,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 1934,
+              "name": "Sander Berge",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 39064,
+              "name": "Patrick Berg",
+              "number": 6,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 8492,
+              "name": "Alexander Sørloth",
+              "number": 7,
+              "pos": "F",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 1100,
+              "name": "Erling Haaland",
+              "number": 9,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 314511,
+              "name": "Antonio Nusa",
+              "number": 20,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 301528,
+              "name": "Andreas Schjelderup",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 278133,
+              "name": "Oscar Bobb",
+              "number": 22,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 39043,
+              "name": "Fredrik Aursnes",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 264378,
+              "name": "Sander Tangvik",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 39082,
+              "name": "Egil Selvik",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 18967,
+              "name": "Leo Østigård",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 39058,
+              "name": "Fredrik André Bjørkan",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 265444,
+              "name": "Sondre Langås",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 180937,
+              "name": "Henrik Sælebakke Falchener",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36980,
+              "name": "Morten Thorsby",
+              "number": 2,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 39143,
+              "name": "Kristian Thorstvedt",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 277930,
+              "name": "Thelo Aasgaard",
+              "number": 19,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 24845,
+              "name": "Julian Ryerson",
+              "number": 26,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2032,
+              "name": "Jørgen Strand Larsen",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 39073,
+              "name": "Jens Petter Hauge",
+              "number": 23,
+              "pos": "M",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 1675,
+          "name": "Stale Solbakken",
+          "photo": "https://media.api-sports.io/football/coachs/1675.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "39",
+        "team": "Norway",
+        "player": "A. Nusa",
+        "assist": "M. Odegaard",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "45+1",
+        "team": "Norway",
+        "player": "A. Nusa",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "60",
+        "team": "Ivory Coast",
+        "player": "C. Inao Oulai",
+        "assist": "A. Diallo",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "60",
+        "team": "Ivory Coast",
+        "player": "A. Bonny",
+        "assist": "E. Wahi",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "71",
+        "team": "Norway",
+        "player": "A. Sorloth",
+        "assist": "O. Bobb",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "71",
+        "team": "Norway",
+        "player": "A. Nusa",
+        "assist": "A. Schjelderup",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "74",
+        "team": "Ivory Coast",
+        "player": "A. Diallo",
+        "assist": "N. Pepe",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "83",
+        "team": "Norway",
+        "player": "M. Pedersen",
+        "assist": "F. Aursnes",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "86",
+        "team": "Norway",
+        "player": "E. Haaland",
+        "assist": "P. Berg",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "87",
+        "team": "Ivory Coast",
+        "player": "N. Pepe",
+        "assist": "O. Diakite",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "90+3",
+        "team": "Ivory Coast",
+        "player": "Y. Diomande",
+        "assist": "E. Guessand",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "90+3",
+        "team": "Ivory Coast",
+        "player": "G. Konan",
+        "assist": "B. Toure",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Ivory Coast",
+        "players": [
+          {
+            "name": "Yahia Fofana",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Guéla Doué",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Odilon Kossounou",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Emmanuel Agbadou",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ghislain Konan",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ibrahim Sangaré",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nicolas Pépé",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Franck Kessié",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Christ Inao Oulaï",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yan Diomande",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ange-Yoan Bonny",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Amad Diallo",
+            "rating": "9.5",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Elye Wahi",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Oumar Diakité",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Bazoumana Touré",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Evann Guessand",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohamed Koné",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alban Lafont",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ousmane Diomande",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Wilfried Singo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Christopher Operi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Evan Ndicka",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jean Michaël Seri",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Seko Fofana",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Parfait Guiagon",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Simon Adingra",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Norway",
+        "players": [
+          {
+            "name": "Ørjan Nyland",
+            "rating": "7.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marcus Pedersen",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kristoffer Ajer",
+            "rating": "7.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Torbjørn Heggem",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "David Møller Wolfe",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Martin Ødegaard",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Sander Berge",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Patrick Berg",
+            "rating": "7.9",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Alexander Sørloth",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Erling Haaland",
+            "rating": "7.5",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Antonio Nusa",
+            "rating": "7.2",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Andreas Schjelderup",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Oscar Bobb",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Fredrik Aursnes",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Sander Tangvik",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Egil Selvik",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Leo Østigård",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Fredrik André Bjørkan",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Sondre Langås",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Henrik Sælebakke Falchener",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Morten Thorsby",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kristian Thorstvedt",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Thelo Aasgaard",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Julian Ryerson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jørgen Strand Larsen",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jens Petter Hauge",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m079": {
     "fixtureId": "1565177"
