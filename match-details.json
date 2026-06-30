@@ -37232,10 +37232,10 @@
         "Yellow Cards": 1,
         "Red Cards": null,
         "Goalkeeper Saves": 5,
-        "Total passes": 427,
+        "Total passes": 426,
         "Passes accurate": 330,
         "Passes %": "77%",
-        "expected_goals": "0.25",
+        "expected_goals": "0.24",
         "goals_prevented": "0.30"
       },
       "Australia": {
@@ -37252,10 +37252,10 @@
         "Yellow Cards": 1,
         "Red Cards": null,
         "Goalkeeper Saves": 2,
-        "Total passes": 536,
+        "Total passes": 537,
         "Passes accurate": 438,
         "Passes %": "82%",
-        "expected_goals": "0.57",
+        "expected_goals": "0.55",
         "goals_prevented": "0.30"
       }
     },
@@ -37894,7 +37894,7 @@
           },
           {
             "name": "Diego Gómez",
-            "rating": "6.5",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
@@ -38025,7 +38025,7 @@
           },
           {
             "name": "Harry Souttar",
-            "rating": "7.2",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
