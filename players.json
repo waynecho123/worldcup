@@ -22,9 +22,23 @@
       "matches": 3
     },
     {
+      "name": "H. Kane",
+      "photo": "https://media.api-sports.io/football/players/184.png",
+      "team": "England",
+      "goals": 5,
+      "matches": 4
+    },
+    {
       "name": "O. Dembélé",
       "photo": "https://media.api-sports.io/football/players/153.png",
       "team": "France",
+      "goals": 4,
+      "matches": 4
+    },
+    {
+      "name": "I. Sarr",
+      "photo": "https://media.api-sports.io/football/players/2218.png",
+      "team": "Senegal",
       "goals": 4,
       "matches": 4
     },
@@ -60,13 +74,6 @@
       "name": "J. Manzambi",
       "photo": "https://media.api-sports.io/football/players/406244.png",
       "team": "Switzerland",
-      "goals": 3,
-      "matches": 3
-    },
-    {
-      "name": "I. Sarr",
-      "photo": "https://media.api-sports.io/football/players/2218.png",
-      "team": "Senegal",
       "goals": 3,
       "matches": 3
     },
@@ -113,18 +120,11 @@
       "matches": 4
     },
     {
-      "name": "H. Kane",
-      "photo": "https://media.api-sports.io/football/players/184.png",
-      "team": "England",
-      "goals": 3,
-      "matches": 3
-    },
-    {
       "name": "Y. Wissa",
       "photo": "https://media.api-sports.io/football/players/20649.png",
       "team": "Congo DR",
       "goals": 3,
-      "matches": 3
+      "matches": 4
     },
     {
       "name": "C. Summerville",
@@ -227,6 +227,13 @@
       "matches": 4
     },
     {
+      "name": "I. Ndiaye",
+      "photo": "https://media.api-sports.io/football/players/18592.png",
+      "team": "Senegal",
+      "assists": 2,
+      "matches": 3
+    },
+    {
       "name": "N. Saliba",
       "photo": "https://media.api-sports.io/football/players/294824.png",
       "team": "Canada",
@@ -241,18 +248,18 @@
       "matches": 3
     },
     {
-      "name": "I. Ndiaye",
-      "photo": "https://media.api-sports.io/football/players/18592.png",
-      "team": "Senegal",
-      "assists": 2,
-      "matches": 2
-    },
-    {
       "name": "B. Embolo",
       "photo": "https://media.api-sports.io/football/players/421.png",
       "team": "Switzerland",
       "assists": 2,
       "matches": 3
+    },
+    {
+      "name": "B. Saka",
+      "photo": "https://media.api-sports.io/football/players/1460.png",
+      "team": "England",
+      "assists": 2,
+      "matches": 4
     },
     {
       "name": "P. Berg",
@@ -272,13 +279,6 @@
       "name": "R. Gravenberch",
       "photo": "https://media.api-sports.io/football/players/542.png",
       "team": "Netherlands",
-      "assists": 2,
-      "matches": 4
-    },
-    {
-      "name": "J. Kimmich",
-      "photo": "https://media.api-sports.io/football/players/502.png",
-      "team": "Germany",
       "assists": 2,
       "matches": 4
     }
@@ -369,6 +369,13 @@
       "red": 0
     },
     {
+      "name": "N. Sadiki",
+      "photo": "https://media.api-sports.io/football/players/365331.png",
+      "team": "Congo DR",
+      "yellow": 2,
+      "red": 0
+    },
+    {
       "name": "Casemiro",
       "photo": "https://media.api-sports.io/football/players/747.png",
       "team": "Brazil",
@@ -416,14 +423,7 @@
       "team": "Curaçao",
       "yellow": 2,
       "red": 0
-    },
-    {
-      "name": "S. Ezatolahi",
-      "photo": "https://media.api-sports.io/football/players/19614.png",
-      "team": "Iran",
-      "yellow": 2,
-      "red": 0
     }
   ],
-  "updatedAt": "2026-07-01T20:12:12.844Z"
+  "updatedAt": "2026-07-01T22:06:55.949Z"
 }
