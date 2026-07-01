@@ -78790,7 +78790,1056 @@
     ]
   },
   "m082": {
-    "fixtureId": "1567306"
+    "fixtureId": 1567306,
+    "date": "2026-07-01T01:00:00+00:00",
+    "venue": "Estadio Banorte",
+    "status": "Match Finished",
+    "homeTeam": "Mexico",
+    "awayTeam": "Ecuador",
+    "score": {
+      "home": 2,
+      "away": 0
+    },
+    "statistics": {
+      "Mexico": {
+        "Shots on Goal": 3,
+        "Shots off Goal": 9,
+        "Total Shots": 15,
+        "Blocked Shots": 3,
+        "Shots insidebox": 10,
+        "Shots outsidebox": 5,
+        "Fouls": 10,
+        "Corner Kicks": 3,
+        "Offsides": 0,
+        "Ball Possession": "43%",
+        "Yellow Cards": 0,
+        "Red Cards": 0,
+        "Goalkeeper Saves": 1,
+        "Total passes": 319,
+        "Passes accurate": 249,
+        "Passes %": "78%",
+        "expected_goals": "1.02",
+        "goals_prevented": "-0.57"
+      },
+      "Ecuador": {
+        "Shots on Goal": 1,
+        "Shots off Goal": 5,
+        "Total Shots": 7,
+        "Blocked Shots": 1,
+        "Shots insidebox": 5,
+        "Shots outsidebox": 2,
+        "Fouls": 14,
+        "Corner Kicks": 8,
+        "Offsides": 1,
+        "Ball Possession": "57%",
+        "Yellow Cards": 3,
+        "Red Cards": 1,
+        "Goalkeeper Saves": 1,
+        "Total passes": 407,
+        "Passes accurate": 340,
+        "Passes %": "84%",
+        "expected_goals": "0.73",
+        "goals_prevented": "-0.57"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 16,
+          "name": "Mexico",
+          "logo": "https://media.api-sports.io/football/teams/16.png",
+          "colors": {
+            "player": {
+              "primary": "298b77",
+              "number": "ffffff",
+              "border": "298b77"
+            },
+            "goalkeeper": {
+              "primary": "d54882",
+              "number": "ebebeb",
+              "border": "d54882"
+            }
+          }
+        },
+        "formation": "4-3-3",
+        "startXI": [
+          {
+            "player": {
+              "id": 270774,
+              "name": "Raúl Rangel",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2878,
+              "name": "Jorge Sánchez",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 2873,
+              "name": "César Montes",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 35544,
+              "name": "Johan Vásquez",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 2881,
+              "name": "Jesús Gallardo",
+              "number": 23,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 482605,
+              "name": "Gilberto Mora",
+              "number": 19,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 266345,
+              "name": "Erik Lira",
+              "number": 6,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 35970,
+              "name": "Luis Romo",
+              "number": 7,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2879,
+              "name": "Roberto Alvarado",
+              "number": 25,
+              "pos": "F",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 2887,
+              "name": "Raúl Jiménez",
+              "number": 9,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 35532,
+              "name": "Julián Quiñones",
+              "number": 16,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 35769,
+              "name": "Carlos Acevedo",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2098,
+              "name": "Guillermo Ochoa",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 127227,
+              "name": "Israel Reyes",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 390002,
+              "name": "Mateo Chávez",
+              "number": 20,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2869,
+              "name": "Edson Álvarez",
+              "number": 4,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 35690,
+              "name": "Luis Chávez",
+              "number": 24,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 750,
+              "name": "Álvaro Fidalgo",
+              "number": 8,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 35576,
+              "name": "Orbelín Pineda",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 313383,
+              "name": "Obed Vargas",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 212233,
+              "name": "Brian Gutiérrez",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36111,
+              "name": "César Huerta",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2889,
+              "name": "Alexis Vega",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 291713,
+              "name": "Armando González",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36088,
+              "name": "Guillermo Martínez",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 94562,
+              "name": "Santiago Giménez",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 27707,
+          "name": "Javier Aguirre",
+          "photo": "https://media.api-sports.io/football/coachs/27707.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 2382,
+          "name": "Ecuador",
+          "logo": "https://media.api-sports.io/football/teams/2382.png",
+          "colors": {
+            "player": {
+              "primary": "ebd31e",
+              "number": "0a2175",
+              "border": "ebd31e"
+            },
+            "goalkeeper": {
+              "primary": "5f9c6e",
+              "number": "ffffff",
+              "border": "5f9c6e"
+            }
+          }
+        },
+        "formation": "4-4-2",
+        "startXI": [
+          {
+            "player": {
+              "id": 16380,
+              "name": "Hernán Galíndez",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 16360,
+              "name": "Alan Franco",
+              "number": 21,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 354027,
+              "name": "Joel Ordóñez",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 16367,
+              "name": "Willian Pacho",
+              "number": 6,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 127817,
+              "name": "Piero Hincapié",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 25414,
+              "name": "John Yeboah",
+              "number": 9,
+              "pos": "M",
+              "grid": "3:4"
+            }
+          },
+          {
+            "player": {
+              "id": 116117,
+              "name": "Moisés Caicedo",
+              "number": 23,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 237078,
+              "name": "Pedro Vite",
+              "number": 15,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 311543,
+              "name": "Nilson Angulo",
+              "number": 20,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 16369,
+              "name": "Gonzalo Plata",
+              "number": 19,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 35533,
+              "name": "Enner Valencia",
+              "number": 13,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 81224,
+              "name": "Moisés Ramírez",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 16642,
+              "name": "Gonzalo Valle",
+              "number": 22,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2575,
+              "name": "Jackson Porozo",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 63964,
+              "name": "Félix Torres",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 306940,
+              "name": "Yaimar Medina",
+              "number": 26,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 16470,
+              "name": "Jordy Alcivar",
+              "number": 5,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 406303,
+              "name": "Kendry Páez",
+              "number": 10,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 338045,
+              "name": "Denil Castillo",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2583,
+              "name": "Ángelo Preciado",
+              "number": 17,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 46731,
+              "name": "Pervis Estupiñán",
+              "number": 7,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 198347,
+              "name": "Anthony Valencia",
+              "number": 8,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 280695,
+              "name": "Alan Minda",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 16590,
+              "name": "Jordy Caicedo",
+              "number": 16,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 361966,
+              "name": "Kevin Rodriguez",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 350799,
+              "name": "Jeremy Arevalo",
+              "number": 24,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 856,
+          "name": "Sebastian Beccacece",
+          "photo": "https://media.api-sports.io/football/coachs/856.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "22",
+        "team": "Mexico",
+        "player": "J. Quinones",
+        "assist": "R. Alvarado",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "31",
+        "team": "Mexico",
+        "player": "R. Jimenez",
+        "assist": "J. Quinones",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "45+1",
+        "team": "Ecuador",
+        "player": "A. Franco",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "46",
+        "team": "Ecuador",
+        "player": "A. Franco",
+        "assist": "Y. Medina",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "Ecuador",
+        "player": "J. Ordonez",
+        "assist": "A. Preciado",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "58",
+        "team": "Mexico",
+        "player": "G. Mora",
+        "assist": "B. Gutierrez",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "59",
+        "team": "Ecuador",
+        "player": "E. Valencia",
+        "assist": "K. Rodriguez",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "73",
+        "team": "Mexico",
+        "player": "L. Romo",
+        "assist": "O. Vargas",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "74",
+        "team": "Mexico",
+        "player": "R. Jimenez",
+        "assist": "S. Gimenez",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "79",
+        "team": "Ecuador",
+        "player": "J. Yeboah",
+        "assist": "J. Caicedo",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "79",
+        "team": "Ecuador",
+        "player": "N. Angulo",
+        "assist": "K. Paez",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "80",
+        "team": "Mexico",
+        "player": "J. Quinones",
+        "assist": "O. Pineda",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "80",
+        "team": "Mexico",
+        "player": "R. Alvarado",
+        "assist": "I. Reyes",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "90+3",
+        "team": "Ecuador",
+        "player": "K. Paez",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "90+5",
+        "team": "Ecuador",
+        "player": "P. Hincapie",
+        "assist": null,
+        "type": "Card",
+        "detail": "Red Card",
+        "comments": "Unsportsmanlike conduct"
+      },
+      {
+        "time": "90+9",
+        "team": "Ecuador",
+        "player": "M. Caicedo",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      }
+    ],
+    "players": [
+      {
+        "team": "Mexico",
+        "players": [
+          {
+            "name": "Raúl Rangel",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jorge Sánchez",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "César Montes",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Johan Vásquez",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jesús Gallardo",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gilberto Mora",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Erik Lira",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Luis Romo",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Roberto Alvarado",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Raúl Jiménez",
+            "rating": "7.7",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Julián Quiñones",
+            "rating": "8.3",
+            "goals": 1,
+            "assists": 1
+          },
+          {
+            "name": "Brian Gutiérrez",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Obed Vargas",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Santiago Giménez",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Israel Reyes",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Orbelín Pineda",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Carlos Acevedo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Guillermo Ochoa",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mateo Chávez",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Edson Álvarez",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Luis Chávez",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Álvaro Fidalgo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "César Huerta",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alexis Vega",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Armando González",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Guillermo Martínez",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Ecuador",
+        "players": [
+          {
+            "name": "Hernán Galíndez",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alan Franco",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Joel Ordóñez",
+            "rating": "5.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Willian Pacho",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Piero Hincapié",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "John Yeboah",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Moisés Caicedo",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Pedro Vite",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nilson Angulo",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gonzalo Plata",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Enner Valencia",
+            "rating": "6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yaimar Medina",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ángelo Preciado",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kevin Rodriguez",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kendry Páez",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jordy Caicedo",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Moisés Ramírez",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gonzalo Valle",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jackson Porozo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Félix Torres",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jordy Alcivar",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Denil Castillo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Pervis Estupiñán",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Anthony Valencia",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alan Minda",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jeremy Arevalo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m083": {
     "fixtureId": "1567307"
