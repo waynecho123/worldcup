@@ -77771,7 +77771,1023 @@
     ]
   },
   "m079": {
-    "fixtureId": "1565177"
+    "fixtureId": 1565177,
+    "date": "2026-06-30T21:00:00+00:00",
+    "venue": "MetLife Stadium",
+    "status": "Match Finished",
+    "homeTeam": "France",
+    "awayTeam": "Sweden",
+    "score": {
+      "home": 3,
+      "away": 0
+    },
+    "statistics": {
+      "France": {
+        "Shots on Goal": 12,
+        "Shots off Goal": 9,
+        "Total Shots": 25,
+        "Blocked Shots": 4,
+        "Shots insidebox": 16,
+        "Shots outsidebox": 9,
+        "Fouls": 14,
+        "Corner Kicks": 9,
+        "Offsides": 3,
+        "Ball Possession": "61%",
+        "Yellow Cards": null,
+        "Red Cards": null,
+        "Goalkeeper Saves": 3,
+        "Total passes": 551,
+        "Passes accurate": 485,
+        "Passes %": "88%",
+        "expected_goals": "3.17",
+        "goals_prevented": "1.16"
+      },
+      "Sweden": {
+        "Shots on Goal": 3,
+        "Shots off Goal": 4,
+        "Total Shots": 8,
+        "Blocked Shots": 1,
+        "Shots insidebox": 7,
+        "Shots outsidebox": 1,
+        "Fouls": 10,
+        "Corner Kicks": 1,
+        "Offsides": 1,
+        "Ball Possession": "39%",
+        "Yellow Cards": null,
+        "Red Cards": null,
+        "Goalkeeper Saves": 9,
+        "Total passes": 352,
+        "Passes accurate": 280,
+        "Passes %": "80%",
+        "expected_goals": "0.65",
+        "goals_prevented": "1.16"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 2,
+          "name": "France",
+          "logo": "https://media.api-sports.io/football/teams/2.png",
+          "colors": {
+            "player": {
+              "primary": "1a55bd",
+              "number": "ffffff",
+              "border": "1a55bd"
+            },
+            "goalkeeper": {
+              "primary": "1b191e",
+              "number": "faf9f9",
+              "border": "1b191e"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 22221,
+              "name": "Mike Maignan",
+              "number": 16,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 1257,
+              "name": "Jules Koundé",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 1149,
+              "name": "Dayot Upamecano",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 22090,
+              "name": "William Saliba",
+              "number": 17,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 2724,
+              "name": "Lucas Digne",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 1271,
+              "name": "Aurélien Tchouaméni",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 272,
+              "name": "Adrien Rabiot",
+              "number": 14,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 153,
+              "name": "Ousmane Dembélé",
+              "number": 7,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 19617,
+              "name": "Michael Olise",
+              "number": 11,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 161904,
+              "name": "Bradley Barcola",
+              "number": 12,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 278,
+              "name": "Kylian Mbappé",
+              "number": 10,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 161907,
+              "name": "Malo Gusto",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 343027,
+              "name": "Désiré Doué",
+              "number": 20,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47300,
+              "name": "Theo Hernández",
+              "number": 19,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 156477,
+              "name": "Rayan Cherki",
+              "number": 24,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 25927,
+              "name": "Jean-Philippe Mateta",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 347211,
+              "name": "Robin Risser",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 21628,
+              "name": "Brice Samba",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 33,
+              "name": "Lucas Hernández",
+              "number": 21,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 20995,
+              "name": "Maxence Lacroix",
+              "number": 26,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1145,
+              "name": "Ibrahima Konaté",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 22147,
+              "name": "Manu Koné",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 274300,
+              "name": "Maghnes Akliouche",
+              "number": 25,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 336657,
+              "name": "Warren Zaïre-Emery",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2290,
+              "name": "N'Golo Kanté",
+              "number": 13,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 21509,
+              "name": "Marcus Thuram",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 180,
+          "name": "Didier Deschamps",
+          "photo": "https://media.api-sports.io/football/coachs/180.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 5,
+          "name": "Sweden",
+          "logo": "https://media.api-sports.io/football/teams/5.png",
+          "colors": {
+            "player": {
+              "primary": "f9de52",
+              "number": "000000",
+              "border": "f9de52"
+            },
+            "goalkeeper": {
+              "primary": "cdc9c6",
+              "number": "1d1d1d",
+              "border": "cdc9c6"
+            }
+          }
+        },
+        "formation": "4-4-2",
+        "startXI": [
+          {
+            "player": {
+              "id": 48033,
+              "name": "Jacob Widell Zetterström",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 198654,
+              "name": "Daniel Svensson",
+              "number": 8,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 137721,
+              "name": "Gustaf Lagerbielke",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 889,
+              "name": "Victor Lindelöf",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 47969,
+              "name": "Gabriel Gudmundsson",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 153430,
+              "name": "Anthony Elanga",
+              "number": 11,
+              "pos": "M",
+              "grid": "3:4"
+            }
+          },
+          {
+            "player": {
+              "id": 347316,
+              "name": "Lucas Bergvall",
+              "number": 7,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 265820,
+              "name": "Yasin Ayari",
+              "number": 18,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 226765,
+              "name": "Elliot Stroud",
+              "number": 24,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 18979,
+              "name": "Viktor Gyökeres",
+              "number": 17,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 2864,
+              "name": "Alexander Isak",
+              "number": 9,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 350850,
+              "name": "Besfort Zeneli",
+              "number": 22,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 160925,
+              "name": "Taha Abdi Ali",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30484,
+              "name": "Mattias Svanberg",
+              "number": 19,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 48002,
+              "name": "Benjamin Nygren",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 15683,
+              "name": "Gustaf Nilsson",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2851,
+              "name": "Kristoffer Nordfeldt",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 158700,
+              "name": "Viktor Johansson",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47903,
+              "name": "Hjalmar Ekdal",
+              "number": 14,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 8486,
+              "name": "Eric Smith",
+              "number": 20,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47988,
+              "name": "Carl Starfelt",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 161504,
+              "name": "Herman Johansson",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2860,
+              "name": "Ken Sema",
+              "number": 13,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 48047,
+              "name": "Jesper Karlström",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47696,
+              "name": "Alexander Bernhardsson",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 12,
+          "name": "Graham Potter",
+          "photo": "https://media.api-sports.io/football/coachs/12.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "21",
+        "team": "France",
+        "player": "K. Mbappe",
+        "assist": null,
+        "type": "Var",
+        "detail": "Goal Disallowed - offside",
+        "comments": ""
+      },
+      {
+        "time": "45",
+        "team": "France",
+        "player": "K. Mbappe",
+        "assist": "O. Dembele",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "53",
+        "team": "France",
+        "player": "B. Barcola",
+        "assist": "M. Olise",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "66",
+        "team": "Sweden",
+        "player": "E. Stroud",
+        "assist": "T. Ali",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "66",
+        "team": "Sweden",
+        "player": "L. Bergvall",
+        "assist": "B. Zeneli",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "74",
+        "team": "France",
+        "player": "K. Mbappe",
+        "assist": "M. Olise",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "75",
+        "team": "France",
+        "player": "J. Kounde",
+        "assist": "M. Gusto",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "75",
+        "team": "France",
+        "player": "O. Dembele",
+        "assist": "D. Doue",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "78",
+        "team": "France",
+        "player": "L. Digne",
+        "assist": "T. Hernandez",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "82",
+        "team": "Sweden",
+        "player": "D. Svensson",
+        "assist": "M. Svanberg",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "82",
+        "team": "Sweden",
+        "player": "Y. Ayari",
+        "assist": "B. Nygren",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "85",
+        "team": "France",
+        "player": "K. Mbappe",
+        "assist": "J. Mateta",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "85",
+        "team": "France",
+        "player": "M. Olise",
+        "assist": "R. Cherki",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "89",
+        "team": "Sweden",
+        "player": "A. Isak",
+        "assist": "G. Nilsson",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "France",
+        "players": [
+          {
+            "name": "Mike Maignan",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jules Koundé",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Dayot Upamecano",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "William Saliba",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lucas Digne",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Aurélien Tchouaméni",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Adrien Rabiot",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ousmane Dembélé",
+            "rating": "7.5",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Michael Olise",
+            "rating": "9",
+            "goals": 0,
+            "assists": 2
+          },
+          {
+            "name": "Bradley Barcola",
+            "rating": "7.9",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Kylian Mbappé",
+            "rating": "9.6",
+            "goals": 2,
+            "assists": 0
+          },
+          {
+            "name": "Malo Gusto",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Désiré Doué",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Theo Hernández",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Rayan Cherki",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jean-Philippe Mateta",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Robin Risser",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Brice Samba",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lucas Hernández",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Maxence Lacroix",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ibrahima Konaté",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Manu Koné",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Maghnes Akliouche",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Warren Zaïre-Emery",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "N'Golo Kanté",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marcus Thuram",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Sweden",
+        "players": [
+          {
+            "name": "Jacob Widell Zetterström",
+            "rating": "8.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Daniel Svensson",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gustaf Lagerbielke",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Victor Lindelöf",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gabriel Gudmundsson",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Anthony Elanga",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lucas Bergvall",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yasin Ayari",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Elliot Stroud",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Viktor Gyökeres",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alexander Isak",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Besfort Zeneli",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Taha Abdi Ali",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mattias Svanberg",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Benjamin Nygren",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gustaf Nilsson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kristoffer Nordfeldt",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Viktor Johansson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Hjalmar Ekdal",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Eric Smith",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Carl Starfelt",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Herman Johansson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ken Sema",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jesper Karlström",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alexander Bernhardsson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m082": {
     "fixtureId": "1567306"
