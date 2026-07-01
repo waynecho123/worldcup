@@ -239,20 +239,6 @@
       "fixture": "2026-06-29T20:30:00+00:00"
     }
   ],
-  "ENG": [
-    {
-      "player": "R. James",
-      "type": "Missing Fixture",
-      "reason": "Hamstring Injury",
-      "fixture": "2026-06-27T21:00:00+00:00"
-    },
-    {
-      "player": "R. James",
-      "type": "Missing Fixture",
-      "reason": "Hamstring Injury",
-      "fixture": "2026-07-01T16:00:00+00:00"
-    }
-  ],
   "SEN": [
     {
       "player": "É. Mendy",
@@ -265,6 +251,42 @@
       "type": "Missing Fixture",
       "reason": "Twisted Knee",
       "fixture": "2026-07-01T20:00:00+00:00"
+    }
+  ],
+  "BIH": [
+    {
+      "player": "T. Muharemović",
+      "type": "Missing Fixture",
+      "reason": "Red Card",
+      "fixture": "2026-06-24T19:00:00+00:00"
+    }
+  ],
+  "SWE": [
+    {
+      "player": "I. Hien",
+      "type": "Missing Fixture",
+      "reason": "Muscle Bruise",
+      "fixture": "2026-06-15T02:00:00+00:00"
+    }
+  ],
+  "ENG": [
+    {
+      "player": "R. James",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Injury",
+      "fixture": "2026-06-27T21:00:00+00:00"
+    },
+    {
+      "player": "R. James",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Injury",
+      "fixture": "2026-07-01T16:00:00+00:00"
+    },
+    {
+      "player": "J. Quansah",
+      "type": "Missing Fixture",
+      "reason": "Sprained Ankle",
+      "fixture": "2026-07-01T16:00:00+00:00"
     }
   ],
   "SUI": [
@@ -309,14 +331,12 @@
       "type": "Missing Fixture",
       "reason": "Muscle Bruise",
       "fixture": "2026-06-27T03:00:00+00:00"
-    }
-  ],
-  "BIH": [
+    },
     {
-      "player": "T. Muharemović",
+      "player": "Hamdi Fathy",
       "type": "Missing Fixture",
-      "reason": "Red Card",
-      "fixture": "2026-06-24T19:00:00+00:00"
+      "reason": "Muscle Bruise",
+      "fixture": "2026-07-03T18:00:00+00:00"
     }
   ],
   "QAT": [
