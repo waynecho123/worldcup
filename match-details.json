@@ -79858,19 +79858,19 @@
         "Yellow Cards": 1,
         "Red Cards": null,
         "Goalkeeper Saves": 1,
-        "Total passes": 515,
-        "Passes accurate": 467,
+        "Total passes": 517,
+        "Passes accurate": 468,
         "Passes %": "91%",
         "expected_goals": "2.04",
         "goals_prevented": "-0.04"
       },
       "Congo DR": {
         "Shots on Goal": 2,
-        "Shots off Goal": 2,
-        "Total Shots": 6,
+        "Shots off Goal": 3,
+        "Total Shots": 7,
         "Blocked Shots": 2,
         "Shots insidebox": 2,
-        "Shots outsidebox": 4,
+        "Shots outsidebox": 5,
         "Fouls": 12,
         "Corner Kicks": 3,
         "Offsides": 4,
@@ -79881,7 +79881,7 @@
         "Total passes": 365,
         "Passes accurate": 299,
         "Passes %": "82%",
-        "expected_goals": "0.76",
+        "expected_goals": "0.80",
         "goals_prevented": "-0.04"
       }
     },
@@ -80036,6 +80036,15 @@
           },
           {
             "player": {
+              "id": 626,
+              "name": "John Stones",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 162489,
               "name": "James Trafford",
               "number": 23,
@@ -80057,15 +80066,6 @@
               "id": 19720,
               "name": "Trevoh Chalobah",
               "number": 12,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 626,
-              "name": "John Stones",
-              "number": 5,
               "pos": "D",
               "grid": null
             }
@@ -80299,6 +80299,24 @@
           },
           {
             "player": {
+              "id": 21098,
+              "name": "Joris Kayembe",
+              "number": 12,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 179699,
+              "name": "Fiston Mayele",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 314509,
               "name": "Matthieu Epolo",
               "number": 21,
@@ -80329,15 +80347,6 @@
               "id": 24245,
               "name": "Gedeon Kalulu",
               "number": 24,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 21098,
-              "name": "Joris Kayembe",
-              "number": 12,
               "pos": "D",
               "grid": null
             }
@@ -80375,15 +80384,6 @@
               "name": "Aaron Tshibola",
               "number": 15,
               "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 179699,
-              "name": "Fiston Mayele",
-              "number": 19,
-              "pos": "F",
               "grid": null
             }
           },
@@ -80595,7 +80595,7 @@
           },
           {
             "name": "Jude Bellingham",
-            "rating": "7",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
@@ -80786,19 +80786,19 @@
           },
           {
             "name": "Edo Kayembe",
-            "rating": "6.3",
+            "rating": "6.7",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Joris Kayembe",
-            "rating": null,
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Fiston Mayele",
-            "rating": null,
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
