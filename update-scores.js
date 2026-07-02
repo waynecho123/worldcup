@@ -179,7 +179,7 @@ function getMatchSchedule() { return [
   {id:"m082",home:"MEX",away:"ECU"},{id:"m083",home:"ENG",away:"COD"},{id:"m084",home:"BEL",away:"SEN"},
   {id:"m085",home:"POR",away:"CRO"},{id:"m086",home:"COL",away:"GHA"},{id:"m087",home:"ESP",away:"AUT"},
   {id:"m088",home:"SUI",away:"ALG"},
-  // ===== R16 (from API, partial) =====
+  // ===== R16 (from API) =====
   {id:"m089",home:"CAN",away:"MAR"},{id:"m090",home:"PAR",away:"FRA"},{id:"m091",home:"BRA",away:"NOR"},{id:"m092",home:"?",away:"?"},
   {id:"m093",home:"MEX",away:"ENG"},{id:"m094",home:"?",away:"?"},{id:"m095",home:"?",away:"?"},{id:"m096",home:"?",away:"?"},
   // ===== QF (TBD) =====
