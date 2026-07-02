@@ -83156,35 +83156,35 @@
         "Shots outsidebox": 2,
         "Fouls": 7,
         "Corner Kicks": 4,
-        "Offsides": 2,
+        "Offsides": 3,
         "Ball Possession": "48%",
         "Yellow Cards": 0,
         "Red Cards": 1,
         "Goalkeeper Saves": 3,
-        "Total passes": 408,
-        "Passes accurate": 344,
-        "Passes %": "84%",
+        "Total passes": 415,
+        "Passes accurate": 346,
+        "Passes %": "83%",
         "expected_goals": "0.92",
         "goals_prevented": "-1.73"
       },
       "Bosnia & Herzegovina": {
         "Shots on Goal": 3,
-        "Shots off Goal": 3,
-        "Total Shots": 9,
+        "Shots off Goal": 4,
+        "Total Shots": 10,
         "Blocked Shots": 3,
         "Shots insidebox": 5,
-        "Shots outsidebox": 4,
-        "Fouls": 12,
+        "Shots outsidebox": 5,
+        "Fouls": 13,
         "Corner Kicks": 3,
         "Offsides": 0,
         "Ball Possession": "52%",
         "Yellow Cards": 1,
         "Red Cards": 0,
         "Goalkeeper Saves": 0,
-        "Total passes": 441,
-        "Passes accurate": 362,
+        "Total passes": 446,
+        "Passes accurate": 364,
         "Passes %": "82%",
-        "expected_goals": "0.21",
+        "expected_goals": "0.25",
         "goals_prevented": "-1.73"
       }
     },
@@ -83207,7 +83207,7 @@
             }
           }
         },
-        "formation": "4-3-3",
+        "formation": null,
         "startXI": [
           {
             "player": {
@@ -83215,7 +83215,7 @@
               "name": "Matthew Freese",
               "number": 24,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -83224,7 +83224,7 @@
               "name": "Alexander Freeman",
               "number": 16,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -83233,7 +83233,7 @@
               "name": "Chris Richards",
               "number": 3,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -83242,7 +83242,7 @@
               "name": "Tim Ream",
               "number": 13,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -83251,7 +83251,7 @@
               "name": "Antonee Robinson",
               "number": 5,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -83260,7 +83260,7 @@
               "name": "Weston McKennie",
               "number": 8,
               "pos": "M",
-              "grid": "3:3"
+              "grid": null
             }
           },
           {
@@ -83269,7 +83269,7 @@
               "name": "Tyler Adams",
               "number": 4,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -83278,7 +83278,7 @@
               "name": "Malik Tillman",
               "number": 17,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -83287,7 +83287,7 @@
               "name": "Sergiño Dest",
               "number": 2,
               "pos": "F",
-              "grid": "4:3"
+              "grid": null
             }
           },
           {
@@ -83296,7 +83296,7 @@
               "name": "Folarin Balogun",
               "number": 20,
               "pos": "F",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -83305,11 +83305,38 @@
               "name": "Christian Pulišić",
               "number": 10,
               "pos": "F",
-              "grid": "4:1"
+              "grid": null
             }
           }
         ],
         "substitutes": [
+          {
+            "player": {
+              "id": 201713,
+              "name": "Sebastian Berhalter",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 73868,
+              "name": "Ricardo Pepi",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 161921,
+              "name": "Giovanni Reyna",
+              "number": 7,
+              "pos": "M",
+              "grid": null
+            }
+          },
           {
             "player": {
               "id": 50999,
@@ -83375,27 +83402,9 @@
           },
           {
             "player": {
-              "id": 161921,
-              "name": "Giovanni Reyna",
-              "number": 7,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 362400,
               "name": "Maximilian Arfsten",
               "number": 18,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 201713,
-              "name": "Sebastian Berhalter",
-              "number": 14,
               "pos": "M",
               "grid": null
             }
@@ -83414,15 +83423,6 @@
               "id": 427,
               "name": "Haji Wright",
               "number": 19,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 73868,
-              "name": "Ricardo Pepi",
-              "number": 9,
               "pos": "F",
               "grid": null
             }
@@ -83452,7 +83452,7 @@
             }
           }
         },
-        "formation": "5-3-2",
+        "formation": null,
         "startXI": [
           {
             "player": {
@@ -83460,7 +83460,7 @@
               "name": "Nikola Vasilj",
               "number": 1,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -83469,7 +83469,7 @@
               "name": "Amar Dedić",
               "number": 7,
               "pos": "D",
-              "grid": "2:5"
+              "grid": null
             }
           },
           {
@@ -83478,7 +83478,7 @@
               "name": "Nikola Katić",
               "number": 18,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -83487,7 +83487,7 @@
               "name": "Tarik Muharemović",
               "number": 4,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -83496,7 +83496,7 @@
               "name": "Stjepan Radeljić",
               "number": 21,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -83505,7 +83505,7 @@
               "name": "Sead Kolašinac",
               "number": 5,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -83514,7 +83514,7 @@
               "name": "Armin Gigović",
               "number": 8,
               "pos": "M",
-              "grid": "3:3"
+              "grid": null
             }
           },
           {
@@ -83523,7 +83523,7 @@
               "name": "Ivan Šunjić",
               "number": 14,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -83532,7 +83532,7 @@
               "name": "Kerim Alajbegović",
               "number": 19,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -83541,7 +83541,7 @@
               "name": "Edin Džeko",
               "number": 11,
               "pos": "F",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -83550,7 +83550,7 @@
               "name": "Ermedin Demirović",
               "number": 10,
               "pos": "F",
-              "grid": "4:1"
+              "grid": null
             }
           }
         ],
@@ -83578,6 +83578,24 @@
               "id": 329409,
               "name": "Esmir Bajraktarević",
               "number": 20,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 322101,
+              "name": "Amar Memić",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 28382,
+              "name": "Haris Tabaković",
+              "number": 23,
               "pos": "F",
               "grid": null
             }
@@ -83638,15 +83656,6 @@
           },
           {
             "player": {
-              "id": 322101,
-              "name": "Amar Memić",
-              "number": 15,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 25129,
               "name": "Dženis Burnić",
               "number": 17,
@@ -83668,15 +83677,6 @@
               "id": 77037,
               "name": "Jovo Lukić",
               "number": 25,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 28382,
-              "name": "Haris Tabaković",
-              "number": 23,
               "pos": "F",
               "grid": null
             }
@@ -83823,37 +83823,37 @@
         "players": [
           {
             "name": "Matthew Freese",
-            "rating": "6.6",
+            "rating": "7",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Alexander Freeman",
-            "rating": "7.2",
+            "rating": "7.7",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Chris Richards",
-            "rating": "7.3",
+            "rating": "7.5",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Tim Ream",
-            "rating": "7.2",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Antonee Robinson",
-            "rating": "7.2",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Weston McKennie",
-            "rating": "7.2",
+            "rating": "7.5",
             "goals": 0,
             "assists": 0
           },
@@ -83865,7 +83865,7 @@
           },
           {
             "name": "Malik Tillman",
-            "rating": "7.9",
+            "rating": "8",
             "goals": 1,
             "assists": 0
           },
@@ -83877,7 +83877,7 @@
           },
           {
             "name": "Folarin Balogun",
-            "rating": "6.5",
+            "rating": "6.2",
             "goals": 1,
             "assists": 0
           },
@@ -83889,13 +83889,13 @@
           },
           {
             "name": "Sebastian Berhalter",
-            "rating": "6.9",
+            "rating": "6.7",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Ricardo Pepi",
-            "rating": "6.3",
+            "rating": "6.5",
             "goals": 0,
             "assists": 0
           },
@@ -83990,7 +83990,7 @@
           },
           {
             "name": "Tarik Muharemović",
-            "rating": "6.9",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
@@ -84038,13 +84038,13 @@
           },
           {
             "name": "Benjamin Tahirović",
-            "rating": "6.7",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Ermin Mahmić",
-            "rating": "6.3",
+            "rating": "6",
             "goals": 0,
             "assists": 0
           },
