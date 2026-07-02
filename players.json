@@ -36,16 +36,16 @@
       "matches": 4
     },
     {
-      "name": "I. Sarr",
-      "photo": "https://media.api-sports.io/football/players/2218.png",
-      "team": "Senegal",
+      "name": "Vinícius Júnior",
+      "photo": "https://media.api-sports.io/football/players/762.png",
+      "team": "Brazil",
       "goals": 4,
       "matches": 4
     },
     {
-      "name": "Vinícius Júnior",
-      "photo": "https://media.api-sports.io/football/players/762.png",
-      "team": "Brazil",
+      "name": "I. Sarr",
+      "photo": "https://media.api-sports.io/football/players/2218.png",
+      "team": "Senegal",
       "goals": 4,
       "matches": 4
     },
@@ -106,6 +106,13 @@
       "matches": 4
     },
     {
+      "name": "F. Balogun",
+      "photo": "https://media.api-sports.io/football/players/138835.png",
+      "team": "USA",
+      "goals": 3,
+      "matches": 3
+    },
+    {
       "name": "E. Just",
       "photo": "https://media.api-sports.io/football/players/94333.png",
       "team": "New Zealand",
@@ -130,13 +137,6 @@
       "name": "C. Summerville",
       "photo": "https://media.api-sports.io/football/players/37724.png",
       "team": "Netherlands",
-      "goals": 2,
-      "matches": 4
-    },
-    {
-      "name": "B. Barcola",
-      "photo": "https://media.api-sports.io/football/players/161904.png",
-      "team": "France",
       "goals": 2,
       "matches": 4
     }
@@ -299,6 +299,13 @@
       "red": 1
     },
     {
+      "name": "F. Balogun",
+      "photo": "https://media.api-sports.io/football/players/138835.png",
+      "team": "USA",
+      "yellow": 1,
+      "red": 1
+    },
+    {
       "name": "A. Canobbio",
       "photo": "https://media.api-sports.io/football/players/51603.png",
       "team": "Uruguay",
@@ -309,6 +316,13 @@
       "name": "S. Sithole",
       "photo": "https://media.api-sports.io/football/players/158433.png",
       "team": "South Africa",
+      "yellow": 0,
+      "red": 1
+    },
+    {
+      "name": "T. Muharemović",
+      "photo": "https://media.api-sports.io/football/players/271350.png",
+      "team": "Bosnia & Herzegovina",
       "yellow": 0,
       "red": 1
     },
@@ -344,13 +358,6 @@
       "name": "N. Ngoy",
       "photo": "https://media.api-sports.io/football/players/312964.png",
       "team": "Belgium",
-      "yellow": 0,
-      "red": 1
-    },
-    {
-      "name": "T. Muharemović",
-      "photo": "https://media.api-sports.io/football/players/271350.png",
-      "team": "Bosnia & Herzegovina",
       "yellow": 0,
       "red": 1
     },
@@ -416,14 +423,7 @@
       "team": "Iraq",
       "yellow": 2,
       "red": 0
-    },
-    {
-      "name": "J. Bacuna",
-      "photo": "https://media.api-sports.io/football/players/19047.png",
-      "team": "Curaçao",
-      "yellow": 2,
-      "red": 0
     }
   ],
-  "updatedAt": "2026-07-02T04:12:18.021Z"
+  "updatedAt": "2026-07-02T06:06:52.426Z"
 }
