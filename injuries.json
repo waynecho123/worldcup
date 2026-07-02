@@ -47,25 +47,25 @@
     {
       "player": "Z. Debast",
       "type": "Missing Fixture",
-      "reason": "Injury",
+      "reason": "Leg Injury",
       "fixture": "2026-06-15T19:00:00+00:00"
     },
     {
       "player": "Z. Debast",
       "type": "Missing Fixture",
-      "reason": "Injury",
+      "reason": "Leg Injury",
       "fixture": "2026-06-21T19:00:00+00:00"
     },
     {
       "player": "Z. Debast",
       "type": "Missing Fixture",
-      "reason": "Injury",
+      "reason": "Leg Injury",
       "fixture": "2026-06-27T03:00:00+00:00"
     },
     {
       "player": "Z. Debast",
       "type": "Missing Fixture",
-      "reason": "Injury",
+      "reason": "Leg Injury",
       "fixture": "2026-07-01T20:00:00+00:00"
     }
   ],
@@ -211,6 +211,12 @@
       "type": "Missing Fixture",
       "reason": "Fracture Of Lower Leg",
       "fixture": "2026-06-28T19:00:00+00:00"
+    },
+    {
+      "player": "I. Koné",
+      "type": "Missing Fixture",
+      "reason": "Fracture Of Lower Leg",
+      "fixture": "2026-07-04T17:00:00+00:00"
     }
   ],
   "GER": [
@@ -239,34 +245,12 @@
       "fixture": "2026-06-29T20:30:00+00:00"
     }
   ],
-  "SEN": [
-    {
-      "player": "É. Mendy",
-      "type": "Missing Fixture",
-      "reason": "Twisted Knee",
-      "fixture": "2026-06-26T19:00:00+00:00"
-    },
-    {
-      "player": "É. Mendy",
-      "type": "Missing Fixture",
-      "reason": "Twisted Knee",
-      "fixture": "2026-07-01T20:00:00+00:00"
-    }
-  ],
   "BIH": [
     {
       "player": "T. Muharemović",
       "type": "Missing Fixture",
       "reason": "Red Card",
       "fixture": "2026-06-24T19:00:00+00:00"
-    }
-  ],
-  "SWE": [
-    {
-      "player": "I. Hien",
-      "type": "Missing Fixture",
-      "reason": "Muscle Bruise",
-      "fixture": "2026-06-15T02:00:00+00:00"
     }
   ],
   "ENG": [
@@ -289,11 +273,33 @@
       "fixture": "2026-07-01T16:00:00+00:00"
     }
   ],
+  "SWE": [
+    {
+      "player": "I. Hien",
+      "type": "Missing Fixture",
+      "reason": "Muscle Bruise",
+      "fixture": "2026-06-15T02:00:00+00:00"
+    }
+  ],
+  "SEN": [
+    {
+      "player": "É. Mendy",
+      "type": "Missing Fixture",
+      "reason": "Knee Contusion",
+      "fixture": "2026-06-26T19:00:00+00:00"
+    },
+    {
+      "player": "É. Mendy",
+      "type": "Missing Fixture",
+      "reason": "Knee Contusion",
+      "fixture": "2026-07-01T20:00:00+00:00"
+    }
+  ],
   "SUI": [
     {
       "player": "M. Muheim",
       "type": "Missing Fixture",
-      "reason": "Calf Muscle Strain",
+      "reason": "Injury",
       "fixture": "2026-06-24T19:00:00+00:00"
     }
   ],
