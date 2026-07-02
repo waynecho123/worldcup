@@ -80867,7 +80867,1062 @@
     ]
   },
   "m084": {
-    "fixtureId": "1567308"
+    "fixtureId": 1567308,
+    "date": "2026-07-01T20:00:00+00:00",
+    "venue": "Lumen Field",
+    "status": "Match Finished",
+    "homeTeam": "Belgium",
+    "awayTeam": "Senegal",
+    "score": {
+      "home": 3,
+      "away": 2
+    },
+    "statistics": {
+      "Belgium": {
+        "Shots on Goal": 5,
+        "Shots off Goal": 9,
+        "Total Shots": 19,
+        "Blocked Shots": 5,
+        "Shots insidebox": 11,
+        "Shots outsidebox": 8,
+        "Fouls": 22,
+        "Corner Kicks": 4,
+        "Offsides": 2,
+        "Ball Possession": "52%",
+        "Yellow Cards": 1,
+        "Red Cards": null,
+        "Goalkeeper Saves": 3,
+        "Total passes": 699,
+        "Passes accurate": 602,
+        "Passes %": "86%",
+        "expected_goals": "1.80",
+        "goals_prevented": "-0.61"
+      },
+      "Senegal": {
+        "Shots on Goal": 5,
+        "Shots off Goal": 11,
+        "Total Shots": 19,
+        "Blocked Shots": 3,
+        "Shots insidebox": 10,
+        "Shots outsidebox": 9,
+        "Fouls": 12,
+        "Corner Kicks": 2,
+        "Offsides": 2,
+        "Ball Possession": "48%",
+        "Yellow Cards": 1,
+        "Red Cards": null,
+        "Goalkeeper Saves": 3,
+        "Total passes": 639,
+        "Passes accurate": 536,
+        "Passes %": "84%",
+        "expected_goals": "3.54",
+        "goals_prevented": "-0.61"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 1,
+          "name": "Belgium",
+          "logo": "https://media.api-sports.io/football/teams/1.png",
+          "colors": {
+            "player": {
+              "primary": "d42838",
+              "number": "f6cb4f",
+              "border": "d42838"
+            },
+            "goalkeeper": {
+              "primary": "f1eb8a",
+              "number": "6971d0",
+              "border": "f1eb8a"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 730,
+              "name": "Thibaut Courtois",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2920,
+              "name": "Timothy Castagne",
+              "number": 21,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 69,
+              "name": "Brandon Mechele",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 204043,
+              "name": "Arthur Theate",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 162007,
+              "name": "Maxim De Cuyper",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2926,
+              "name": "Youri Tielemans",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 78,
+              "name": "Hans Vanaken",
+              "number": 20,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 1946,
+              "name": "Leandro Trossard",
+              "number": 10,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 629,
+              "name": "Kevin De Bruyne",
+              "number": 7,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 1422,
+              "name": "Jérémy Doku",
+              "number": 11,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 147859,
+              "name": "Charles De Ketelaere",
+              "number": 17,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 907,
+              "name": "Romelu Lukaku",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2120,
+              "name": "Nicolas Raskin",
+              "number": 23,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 25458,
+              "name": "Dodi Lukebakio",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 335056,
+              "name": "Diego Moreira",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 264,
+              "name": "Thomas Meunier",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 162714,
+              "name": "Amadou Onana",
+              "number": 24,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 340151,
+              "name": "Mike Penders",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 162511,
+              "name": "Senne Lammens",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 162141,
+              "name": "Koni De Winter",
+              "number": 16,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 375974,
+              "name": "Joaquin Seys",
+              "number": 18,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 312964,
+              "name": "Nathan Ngoy",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 20,
+              "name": "Axel Witsel",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1417,
+              "name": "Alexis Saelemaekers",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 340077,
+              "name": "Matías Fernández-Pardo",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 2551,
+          "name": "Rudi Garcia",
+          "photo": "https://media.api-sports.io/football/coachs/2551.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 13,
+          "name": "Senegal",
+          "logo": "https://media.api-sports.io/football/teams/13.png",
+          "colors": {
+            "player": {
+              "primary": "ffffff",
+              "number": "2e795f",
+              "border": "ffffff"
+            },
+            "goalkeeper": {
+              "primary": "f6933c",
+              "number": "201b1b",
+              "border": "f6933c"
+            }
+          }
+        },
+        "formation": "4-3-3",
+        "startXI": [
+          {
+            "player": {
+              "id": 119853,
+              "name": "Mory Diaw",
+              "number": 23,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 81,
+              "name": "Krépin Diatta",
+              "number": 15,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 41552,
+              "name": "Pathé Ismaël Ciss",
+              "number": 6,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 25916,
+              "name": "Moussa Niakhaté",
+              "number": 19,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 158121,
+              "name": "Ismail Jakobs",
+              "number": 14,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 327631,
+              "name": "Habib Diarra",
+              "number": 21,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 2990,
+              "name": "Idrissa Gana Gueye",
+              "number": 5,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 20696,
+              "name": "Pape Gueye",
+              "number": 26,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 18592,
+              "name": "Iliman Ndiaye",
+              "number": 13,
+              "pos": "F",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 2218,
+              "name": "Ismaïla Sarr",
+              "number": 18,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 304,
+              "name": "Sadio Mané",
+              "number": 10,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 374058,
+              "name": "Lamine Camara",
+              "number": 8,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 237129,
+              "name": "Pape Matar Sarr",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 446249,
+              "name": "Ibrahim Mbaye",
+              "number": 20,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 409303,
+              "name": "El Hadji Malick Diouf",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 283058,
+              "name": "Nicolas Jackson",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 630895,
+              "name": "Bara Sapoko Ndiaye",
+              "number": 22,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 20566,
+              "name": "Yehvann Diouf",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 318,
+              "name": "Kalidou Koulibaly",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 8450,
+              "name": "Abdoulaye Seck",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 313937,
+              "name": "Antoine Mendy",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 276184,
+              "name": "Mamadou Sarr",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 400948,
+              "name": "Assane Diao",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 284072,
+              "name": "Ahmadou Bamba Dieng",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 14379,
+              "name": "Cherif Ndiaye",
+              "number": 12,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 17636,
+          "name": "Bouna Thiaw Pape",
+          "photo": "https://media.api-sports.io/football/coachs/17636.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "25",
+        "team": "Senegal",
+        "player": "H. Diarra",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "Belgium",
+        "player": "C. De Ketelaere",
+        "assist": "R. Lukaku",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "51",
+        "team": "Senegal",
+        "player": "I. Sarr",
+        "assist": "M. Niakhate",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "56",
+        "team": "Belgium",
+        "player": "K. De Bruyne",
+        "assist": "N. Raskin",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "56",
+        "team": "Belgium",
+        "player": "J. Doku",
+        "assist": "D. Lukebakio",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "63",
+        "team": "Belgium",
+        "player": "H. Vanaken",
+        "assist": "D. Moreira",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "64",
+        "team": "Belgium",
+        "player": "B. Mechele",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Roughing"
+      },
+      {
+        "time": "66",
+        "team": "Senegal",
+        "player": "P. Gueye",
+        "assist": "L. Camara",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "67",
+        "team": "Senegal",
+        "player": "L. Camara",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Roughing"
+      },
+      {
+        "time": "73",
+        "team": "Senegal",
+        "player": "I. Ndiaye",
+        "assist": "I. Mbaye",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "73",
+        "team": "Senegal",
+        "player": "H. Diarra",
+        "assist": "P. M. Sarr",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "78",
+        "team": "Belgium",
+        "player": "M. De Cuyper",
+        "assist": "T. Meunier",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "86",
+        "team": "Belgium",
+        "player": "R. Lukaku",
+        "assist": "T. Meunier",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "89",
+        "team": "Belgium",
+        "player": "Y. Tielemans",
+        "assist": "L. Trossard",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "90",
+        "team": "Belgium",
+        "player": "R. Garcia",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": ""
+      },
+      {
+        "time": "93",
+        "team": "Senegal",
+        "player": "S. Mane",
+        "assist": "N. Jackson",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "93",
+        "team": "Senegal",
+        "player": "I. Jakobs",
+        "assist": "M. Diouf",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "96",
+        "team": "Senegal",
+        "player": "I. Gueye",
+        "assist": "B. Sapoko Ndiaye",
+        "type": "subst",
+        "detail": "Substitution 6",
+        "comments": ""
+      },
+      {
+        "time": "109",
+        "team": "Belgium",
+        "player": "L. Trossard",
+        "assist": "A. Onana",
+        "type": "subst",
+        "detail": "Substitution 6",
+        "comments": ""
+      },
+      {
+        "time": "120+5",
+        "team": "Belgium",
+        "player": "Y. Tielemans",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Belgium",
+        "players": [
+          {
+            "name": "Thibaut Courtois",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Timothy Castagne",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Brandon Mechele",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Arthur Theate",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Maxim De Cuyper",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Youri Tielemans",
+            "rating": "8.3",
+            "goals": 2,
+            "assists": 0
+          },
+          {
+            "name": "Hans Vanaken",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Leandro Trossard",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Kevin De Bruyne",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jérémy Doku",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Charles De Ketelaere",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Romelu Lukaku",
+            "rating": "7.7",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Nicolas Raskin",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Dodi Lukebakio",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Diego Moreira",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Thomas Meunier",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Amadou Onana",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mike Penders",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Senne Lammens",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Koni De Winter",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Joaquin Seys",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nathan Ngoy",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Axel Witsel",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alexis Saelemaekers",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Matías Fernández-Pardo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Senegal",
+        "players": [
+          {
+            "name": "Mory Diaw",
+            "rating": "6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Krépin Diatta",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Pathé Ismaël Ciss",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Moussa Niakhaté",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Ismail Jakobs",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Habib Diarra",
+            "rating": "7.3",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Idrissa Gana Gueye",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Pape Gueye",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Iliman Ndiaye",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ismaïla Sarr",
+            "rating": "8.3",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Sadio Mané",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lamine Camara",
+            "rating": "5.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Pape Matar Sarr",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ibrahim Mbaye",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "El Hadji Malick Diouf",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nicolas Jackson",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Bara Sapoko Ndiaye",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yehvann Diouf",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kalidou Koulibaly",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Abdoulaye Seck",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Antoine Mendy",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mamadou Sarr",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Assane Diao",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ahmadou Bamba Dieng",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Cherif Ndiaye",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m085": {
     "fixtureId": "1567309"
