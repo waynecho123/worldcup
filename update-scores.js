@@ -1084,10 +1084,28 @@ async function updateMatchDetails() {
         if (!mid) continue;
         if (!existing[mid]) existing[mid] = {};
         existing[mid].fixtureId = fid;
-        n++;
         const homeName = fixture.teams?.home?.name, awayName = fixture.teams?.away?.name;
         const status = fixture.fixture?.status?.long;
-        // Only save if match is finished (lineups + events are final)
+        // Always save basic info (UTC date + teams), even before match starts
+        existing[mid].date = fixture.fixture?.date;       // UTC ISO timestamp
+        existing[mid].homeTeam = homeName;
+        existing[mid].awayTeam = awayName;
+        existing[mid].status = status;
+        n++;
+
+        // For scores.json: use regular-time score for AI comparison, final score for display
+        var isKO = mid >= 'm073'; // knockout matches start from m073
+        var finalScore = { home: fixture.goals?.home, away: fixture.goals?.away };
+        var regularScore = null;
+        if (isKO && (status === 'Match Finished AET' || status === 'Match Finished AP')) {
+          // Knockout went beyond regular time — record both
+          var ft = fixture.score?.fulltime || {};
+          regularScore = { home: ft.home, away: ft.away };
+          // Store as the "AI comparison" score (regular time only)
+          existing[mid].regularTimeScore = { home: ft.home ?? fixture.goals?.home, away: ft.away ?? fixture.goals?.away };
+        }
+
+        // Only save detailed data if match is finished
         if (status !== 'Match Finished' && status !== 'Match Finished AET' && status !== 'Match Finished AP') continue;
 
         // Extract key team statistics
