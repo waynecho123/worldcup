@@ -805,15 +805,15 @@ const MATCH_SCHEDULE = [
   {id:"m081",date:"2026-07-04",time:"06:00",home:"ARG",away:"CPV",grp:"KO",stage:"r32",venue:"Levi's Stadium, San Francisco"},
   {id:"m086",date:"2026-07-04",time:"09:30",home:"COL",away:"GHA",grp:"KO",stage:"r32",venue:"AT&T Stadium, Dallas"},
 
-  // ===== ROUND OF 16 (7/4 - 7/6) =====
-  {id:"m089",date:"2026-07-04",time:"23:00",home:"?",away:"?",grp:"KO",stage:"r16",venue:"Arrowhead Stadium, Kansas City"},
-  {id:"m090",date:"2026-07-05",time:"02:00",home:"?",away:"?",grp:"KO",stage:"r16",venue:"Gillette Stadium, Boston"},
-  {id:"m091",date:"2026-07-05",time:"05:00",home:"?",away:"?",grp:"KO",stage:"r16",venue:"BC Place, Vancouver"},
+  // ===== ROUND OF 16 (7/4 - 7/6, from API, partial) =====
+  {id:"m089",date:"2026-07-04",time:"02:00",home:"CAN",away:"MAR",grp:"KO",stage:"r16",venue:"Arrowhead Stadium, Kansas City"},
+  {id:"m090",date:"2026-07-05",time:"02:00",home:"PAR",away:"FRA",grp:"KO",stage:"r16",venue:"Gillette Stadium, Boston"},
+  {id:"m091",date:"2026-07-05",time:"05:00",home:"BRA",away:"NOR",grp:"KO",stage:"r16",venue:"BC Place, Vancouver"},
   {id:"m092",date:"2026-07-05",time:"08:00",home:"?",away:"?",grp:"KO",stage:"r16",venue:"Lumen Field, Seattle"},
-  {id:"m093",date:"2026-07-05",time:"23:00",home:"?",away:"?",grp:"KO",stage:"r16",venue:"Levi's Stadium, San Francisco"},
-  {id:"m094",date:"2026-07-06",time:"02:00",home:"?",away:"?",grp:"KO",stage:"r16",venue:"Hard Rock Stadium, Miami"},
-  {id:"m095",date:"2026-07-06",time:"05:00",home:"?",away:"?",grp:"KO",stage:"r16",venue:"NRG Stadium, Houston"},
-  {id:"m096",date:"2026-07-06",time:"08:00",home:"?",away:"?",grp:"KO",stage:"r16",venue:"Lincoln Financial Field, Philadelphia"},
+  {id:"m093",date:"2026-07-06",time:"02:00",home:"MEX",away:"ENG",grp:"KO",stage:"r16",venue:"Levi's Stadium, San Francisco"},
+  {id:"m094",date:"2026-07-06",time:"05:00",home:"?",away:"?",grp:"KO",stage:"r16",venue:"Hard Rock Stadium, Miami"},
+  {id:"m095",date:"2026-07-06",time:"08:00",home:"?",away:"?",grp:"KO",stage:"r16",venue:"NRG Stadium, Houston"},
+  {id:"m096",date:"2026-07-06",time:"23:00",home:"?",away:"?",grp:"KO",stage:"r16",venue:"Lincoln Financial Field, Philadelphia"},
 
   // ===== QUARTER-FINALS (7/8 - 7/11) =====
   {id:"m097",date:"2026-07-08",time:"23:00",home:"?",away:"?",grp:"KO",stage:"qf",venue:"MetLife Stadium, East Rutherford"},
