@@ -164,7 +164,7 @@
     "goalsAgainst": 2,
     "goalDiff": 0,
     "points": 4,
-    "form": "DLW",
+    "form": "LDLW",
     "status": "same"
   },
   "PAR": {
@@ -304,7 +304,7 @@
     "goalsAgainst": 3,
     "goalDiff": 2,
     "points": 5,
-    "form": "DWD",
+    "form": "WDWD",
     "status": "same"
   },
   "IRN": {
