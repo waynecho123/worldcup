@@ -237,6 +237,12 @@ async function updateScores() {
     if (!htla || !atla) return;
     const mid = lookup[htla + '-' + atla] || lookup[atla + '-' + htla];
     if (!mid) return;
+    // Skip matches scheduled in the future (prevent fake/early scores)
+    var matchDate = MATCH_DATES[mid];
+    if (matchDate && matchDate > now.toISOString().slice(0,10)) {
+      console.log(`[${ts}] Scores: skipping ${mid} (scheduled ${matchDate}, not yet played)`);
+      return;
+    }
     const s = { homeScore, awayScore, recordedAt: now.toISOString() };
     if (!existing[mid]) { existing[mid] = s; n++; }
     else if (existing[mid].homeScore !== s.homeScore || existing[mid].awayScore !== s.awayScore) { existing[mid] = s; u++; }
