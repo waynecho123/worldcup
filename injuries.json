@@ -29,6 +29,12 @@
       "type": "Missing Fixture",
       "reason": "Hamstring Muscle Injury",
       "fixture": "2026-06-29T17:00:00+00:00"
+    },
+    {
+      "player": "Raphinha",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Muscle Injury",
+      "fixture": "2026-07-05T20:00:00+00:00"
     }
   ],
   "BEL": [
@@ -101,6 +107,12 @@
       "type": "Missing Fixture",
       "reason": "Hamstring Muscle Injury",
       "fixture": "2026-06-23T03:00:00+00:00"
+    },
+    {
+      "player": "A. Benbouali",
+      "type": "Missing Fixture",
+      "reason": "Wound",
+      "fixture": "2026-07-03T03:00:00+00:00"
     }
   ],
   "URU": [
@@ -273,6 +285,20 @@
       "fixture": "2026-07-01T16:00:00+00:00"
     }
   ],
+  "SUI": [
+    {
+      "player": "M. Muheim",
+      "type": "Missing Fixture",
+      "reason": "Injury",
+      "fixture": "2026-06-24T19:00:00+00:00"
+    },
+    {
+      "player": "L. Jaquez",
+      "type": "Missing Fixture",
+      "reason": "Muscle Bruise",
+      "fixture": "2026-07-03T03:00:00+00:00"
+    }
+  ],
   "SWE": [
     {
       "player": "I. Hien",
@@ -295,20 +321,30 @@
       "fixture": "2026-07-01T20:00:00+00:00"
     }
   ],
-  "SUI": [
-    {
-      "player": "M. Muheim",
-      "type": "Missing Fixture",
-      "reason": "Injury",
-      "fixture": "2026-06-24T19:00:00+00:00"
-    }
-  ],
   "AUS": [
+    {
+      "player": "M. Leckie",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Injury",
+      "fixture": "2026-06-26T02:00:00+00:00"
+    },
+    {
+      "player": "M. Leckie",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Injury",
+      "fixture": "2026-07-03T18:00:00+00:00"
+    },
     {
       "player": "J. Italiano",
       "type": "Missing Fixture",
-      "reason": "Adductor Injury",
+      "reason": "Ankle Problems",
       "fixture": "2026-06-26T02:00:00+00:00"
+    },
+    {
+      "player": "J. Italiano",
+      "type": "Missing Fixture",
+      "reason": "Ankle Problems",
+      "fixture": "2026-07-03T18:00:00+00:00"
     }
   ],
   "TUN": [
@@ -331,6 +367,18 @@
       "type": "Missing Fixture",
       "reason": "Suspension Through Sports Court",
       "fixture": "2026-06-27T03:00:00+00:00"
+    },
+    {
+      "player": "Hossam Abdelmaguid",
+      "type": "Missing Fixture",
+      "reason": "Suspension Through Sports Court",
+      "fixture": "2026-07-03T18:00:00+00:00"
+    },
+    {
+      "player": "Mohanad Lasheen",
+      "type": "Missing Fixture",
+      "reason": "Yellow Card",
+      "fixture": "2026-07-03T18:00:00+00:00"
     },
     {
       "player": "Hamdi Fathy",
