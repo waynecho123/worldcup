@@ -81938,7 +81938,7 @@
     "date": "2026-07-02T23:00:00+00:00",
     "homeTeam": "Portugal",
     "awayTeam": "Croatia",
-    "status": "Not Started"
+    "status": "Second Half"
   },
   "m087": {
     "fixtureId": 1567311,
@@ -85045,5 +85045,26 @@
         ]
       }
     ]
+  },
+  "m089": {
+    "fixtureId": "1567824",
+    "date": "2026-07-04T17:00:00+00:00",
+    "homeTeam": "Canada",
+    "awayTeam": "Morocco",
+    "status": "Not Started"
+  },
+  "m090": {
+    "fixtureId": "1569870",
+    "date": "2026-07-04T21:00:00+00:00",
+    "homeTeam": "Paraguay",
+    "awayTeam": "France",
+    "status": "Not Started"
+  },
+  "m091": {
+    "fixtureId": "1568100",
+    "date": "2026-07-05T20:00:00+00:00",
+    "homeTeam": "Brazil",
+    "awayTeam": "Norway",
+    "status": "Not Started"
   }
 }
