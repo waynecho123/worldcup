@@ -43473,139 +43473,131 @@
             }
           }
         },
+        "formation": "4-2-3-1",
         "startXI": [
           {
             "player": {
               "id": 18110,
-              "name": "M. Crocombe",
+              "name": "Max Crocombe",
               "number": 1,
               "pos": "G",
-              "grid": null
+              "grid": "1:1"
             }
           },
           {
             "player": {
               "id": 94346,
-              "name": "T. Payne",
+              "name": "Tim Payne",
               "number": 2,
               "pos": "D",
-              "grid": null
+              "grid": "2:4"
             }
           },
           {
             "player": {
               "id": 210165,
-              "name": "F. Surman",
+              "name": "Finn Surman",
               "number": 16,
               "pos": "D",
-              "grid": null
+              "grid": "2:3"
             }
           },
           {
             "player": {
               "id": 430835,
-              "name": "T. Bindon",
+              "name": "Tyler Bindon",
               "number": 4,
               "pos": "D",
-              "grid": null
+              "grid": "2:2"
             }
           },
           {
             "player": {
               "id": 6931,
-              "name": "L. Cacace",
+              "name": "Liberato Cacace",
               "number": 13,
               "pos": "D",
-              "grid": null
+              "grid": "2:1"
             }
           },
           {
             "player": {
               "id": 94541,
-              "name": "J. Bell",
+              "name": "Joe Bell",
               "number": 6,
               "pos": "M",
-              "grid": null
+              "grid": "3:2"
             }
           },
           {
             "player": {
               "id": 179862,
-              "name": "M. Stamenic",
+              "name": "Marko Stamenić",
               "number": 8,
               "pos": "M",
-              "grid": null
+              "grid": "3:1"
             }
           },
           {
             "player": {
               "id": 6935,
-              "name": "S. Singh",
+              "name": "Sarpreet Singh",
               "number": 10,
               "pos": "M",
-              "grid": null
+              "grid": "4:3"
             }
           },
           {
             "player": {
               "id": 242,
-              "name": "R. Thomas",
+              "name": "Ryan Thomas",
               "number": 23,
               "pos": "M",
-              "grid": null
+              "grid": "4:2"
             }
           },
           {
             "player": {
               "id": 94333,
-              "name": "E. Just",
+              "name": "Elijah Just",
               "number": 11,
               "pos": "M",
-              "grid": null
+              "grid": "4:1"
             }
           },
           {
             "player": {
               "id": 18931,
-              "name": "C. Wood",
+              "name": "Chris Wood",
               "number": 9,
               "pos": "F",
-              "grid": null
+              "grid": "5:1"
             }
           }
         ],
         "substitutes": [
           {
             "player": {
-              "id": 36777,
-              "name": "M. Woud",
-              "number": 22,
-              "pos": "G",
+              "id": 158688,
+              "name": "Jesse Randall",
+              "number": 21,
+              "pos": "F",
               "grid": null
             }
           },
           {
             "player": {
-              "id": 94360,
-              "name": "A. Paulsen",
-              "number": 12,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 51307,
-              "name": "T. Smith",
-              "number": 26,
-              "pos": "D",
+              "id": 179856,
+              "name": "Benjamin Old",
+              "number": 19,
+              "pos": "F",
               "grid": null
             }
           },
           {
             "player": {
               "id": 51149,
-              "name": "M. Boxall",
+              "name": "Michael Boxall",
               "number": 5,
               "pos": "D",
               "grid": null
@@ -43614,7 +43606,7 @@
           {
             "player": {
               "id": 94322,
-              "name": "C. McCowatt",
+              "name": "Callum McCowatt",
               "number": 20,
               "pos": "M",
               "grid": null
@@ -43622,71 +43614,8 @@
           },
           {
             "player": {
-              "id": 6938,
-              "name": "B. Waine",
-              "number": 18,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 179856,
-              "name": "B. Old",
-              "number": 19,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 158688,
-              "name": "J. Randall",
-              "number": 21,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 405957,
-              "name": "L. Bayliss",
-              "number": 25,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 6865,
-              "name": "K. Barbarouses",
-              "number": 17,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 6934,
-              "name": "A. Rufer",
-              "number": 14,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 26161,
-              "name": "L. Rogerson",
-              "number": 7,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 94405,
-              "name": "F. De Vries",
+              "name": "Francis De Vries",
               "number": 3,
               "pos": "D",
               "grid": null
@@ -43694,8 +43623,44 @@
           },
           {
             "player": {
+              "id": 36777,
+              "name": "Michael Woud",
+              "number": 22,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 94360,
+              "name": "Alex Paulsen",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 94344,
+              "name": "Nando Pijnaker",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 51307,
+              "name": "Tommy Smith",
+              "number": 26,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 6932,
-              "name": "C. Elliot",
+              "name": "Callan Elliot",
               "number": 24,
               "pos": "D",
               "grid": null
@@ -43703,10 +43668,46 @@
           },
           {
             "player": {
-              "id": 94344,
-              "name": "N. Pijnaker",
-              "number": 15,
-              "pos": "D",
+              "id": 6934,
+              "name": "Alex Rufer",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 405957,
+              "name": "Lachlan Bayliss",
+              "number": 25,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 26161,
+              "name": "Logan Rogerson",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6865,
+              "name": "Kosta Barbarouses",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6938,
+              "name": "Ben Waine",
+              "number": 18,
+              "pos": "F",
               "grid": null
             }
           }
@@ -43714,8 +43715,7 @@
         "coach": {
           "id": null,
           "name": null
-        },
-        "formation": null
+        }
       },
       "away": {
         "team": {
@@ -43745,7 +43745,7 @@
           {
             "player": {
               "id": 730,
-              "name": "T. Courtois",
+              "name": "Thibaut Courtois",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -43754,7 +43754,7 @@
           {
             "player": {
               "id": 2920,
-              "name": "T. Castagne",
+              "name": "Timothy Castagne",
               "number": 21,
               "pos": "D",
               "grid": "2:4"
@@ -43763,7 +43763,7 @@
           {
             "player": {
               "id": 69,
-              "name": "B. Mechele",
+              "name": "Brandon Mechele",
               "number": 4,
               "pos": "D",
               "grid": "2:3"
@@ -43772,7 +43772,7 @@
           {
             "player": {
               "id": 204043,
-              "name": "A. Theate",
+              "name": "Arthur Theate",
               "number": 3,
               "pos": "D",
               "grid": "2:2"
@@ -43781,7 +43781,7 @@
           {
             "player": {
               "id": 162007,
-              "name": "M. De Cuyper",
+              "name": "Maxim De Cuyper",
               "number": 5,
               "pos": "D",
               "grid": "2:1"
@@ -43790,7 +43790,7 @@
           {
             "player": {
               "id": 2926,
-              "name": "Y. Tielemans",
+              "name": "Youri Tielemans",
               "number": 8,
               "pos": "M",
               "grid": "3:2"
@@ -43799,7 +43799,7 @@
           {
             "player": {
               "id": 78,
-              "name": "H. Vanaken",
+              "name": "Hans Vanaken",
               "number": 20,
               "pos": "M",
               "grid": "3:1"
@@ -43808,7 +43808,7 @@
           {
             "player": {
               "id": 1422,
-              "name": "J. Doku",
+              "name": "Jérémy Doku",
               "number": 11,
               "pos": "M",
               "grid": "4:3"
@@ -43817,7 +43817,7 @@
           {
             "player": {
               "id": 629,
-              "name": "K. De Bruyne",
+              "name": "Kevin De Bruyne",
               "number": 7,
               "pos": "M",
               "grid": "4:2"
@@ -43826,7 +43826,7 @@
           {
             "player": {
               "id": 1946,
-              "name": "L. Trossard",
+              "name": "Leandro Trossard",
               "number": 10,
               "pos": "M",
               "grid": "4:1"
@@ -43835,7 +43835,7 @@
           {
             "player": {
               "id": 147859,
-              "name": "C. De Ketelaere",
+              "name": "Charles De Ketelaere",
               "number": 17,
               "pos": "F",
               "grid": "5:1"
@@ -43845,44 +43845,26 @@
         "substitutes": [
           {
             "player": {
-              "id": 162511,
-              "name": "S. Lammens",
-              "number": 12,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 340151,
-              "name": "M. Penders",
-              "number": 13,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 20,
-              "name": "A. Witsel",
-              "number": 6,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 907,
-              "name": "R. Lukaku",
-              "number": 9,
+              "id": 340077,
+              "name": "Matías Fernández-Pardo",
+              "number": 26,
               "pos": "F",
               "grid": null
             }
           },
           {
             "player": {
+              "id": 162714,
+              "name": "Amadou Onana",
+              "number": 24,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 1417,
-              "name": "A. Saelemaekers",
+              "name": "Alexis Saelemaekers",
               "number": 22,
               "pos": "F",
               "grid": null
@@ -43891,7 +43873,7 @@
           {
             "player": {
               "id": 2120,
-              "name": "N. Raskin",
+              "name": "Nicolas Raskin",
               "number": 23,
               "pos": "M",
               "grid": null
@@ -43899,53 +43881,44 @@
           },
           {
             "player": {
-              "id": 162714,
-              "name": "A. Onana",
-              "number": 24,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 340077,
-              "name": "M. Fernandez-Pardo",
-              "number": 26,
+              "id": 907,
+              "name": "Romelu Lukaku",
+              "number": 9,
               "pos": "F",
               "grid": null
             }
           },
           {
             "player": {
-              "id": 335056,
-              "name": "D. Moreira",
-              "number": 19,
-              "pos": "F",
+              "id": 162511,
+              "name": "Senne Lammens",
+              "number": 12,
+              "pos": "G",
               "grid": null
             }
           },
           {
             "player": {
-              "id": 264,
-              "name": "T. Meunier",
-              "number": 15,
+              "id": 340151,
+              "name": "Mike Penders",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 375974,
+              "name": "Joaquin Seys",
+              "number": 18,
               "pos": "D",
               "grid": null
             }
           },
           {
             "player": {
-              "id": 25458,
-              "name": "D. Lukebakio",
-              "number": 14,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 162141,
-              "name": "K. De Winter",
+              "name": "Koni De Winter",
               "number": 16,
               "pos": "D",
               "grid": null
@@ -43953,10 +43926,37 @@
           },
           {
             "player": {
-              "id": 375974,
-              "name": "J. Seys",
-              "number": 18,
+              "id": 264,
+              "name": "Thomas Meunier",
+              "number": 15,
               "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 335056,
+              "name": "Diego Moreira",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 25458,
+              "name": "Dodi Lukebakio",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 20,
+              "name": "Axel Witsel",
+              "number": 6,
+              "pos": "M",
               "grid": null
             }
           }
@@ -43974,18 +43974,9 @@
         "comments": ""
       },
       {
-        "time": "21",
-        "team": "Belgium",
-        "player": null,
-        "assist": null,
-        "type": "Goal",
-        "detail": "Normal Goal",
-        "comments": ""
-      },
-      {
         "time": "28",
         "team": "Belgium",
-        "player": "L. Trossard",
+        "player": "Leandro Trossard",
         "assist": null,
         "type": "Goal",
         "detail": "Normal Goal",
@@ -44003,8 +43994,8 @@
       {
         "time": "46",
         "team": "New Zealand",
-        "player": "R. Thomas",
-        "assist": "B. Old",
+        "player": "Sarpreet Singh",
+        "assist": "Jesse Randall",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -44012,8 +44003,8 @@
       {
         "time": "46",
         "team": "New Zealand",
-        "player": "S. Singh",
-        "assist": "J. Randall",
+        "player": "Ryan Thomas",
+        "assist": "Benjamin Old",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -44021,8 +44012,8 @@
       {
         "time": "50",
         "team": "Belgium",
-        "player": "L. Trossard",
-        "assist": "H. Vanaken",
+        "player": "Leandro Trossard",
+        "assist": "Hans Vanaken",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -44039,8 +44030,8 @@
       {
         "time": "56",
         "team": "Belgium",
-        "player": "J. Doku",
-        "assist": "M. Fernandez-Pardo",
+        "player": "Jérémy Doku",
+        "assist": "Matías Fernández-Pardo",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -44048,8 +44039,8 @@
       {
         "time": "64",
         "team": "New Zealand",
-        "player": "T. Payne",
-        "assist": "M. Boxall",
+        "player": "Joe Bell",
+        "assist": "Callum McCowatt",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -44057,8 +44048,8 @@
       {
         "time": "64",
         "team": "New Zealand",
-        "player": "J. Bell",
-        "assist": "C. McCowatt",
+        "player": "Tim Payne",
+        "assist": "Michael Boxall",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -44066,7 +44057,7 @@
       {
         "time": "66",
         "team": "Belgium",
-        "player": "K. De Bruyne",
+        "player": "Kevin De Bruyne",
         "assist": null,
         "type": "Goal",
         "detail": "Normal Goal",
@@ -44075,8 +44066,8 @@
       {
         "time": "72",
         "team": "Belgium",
-        "player": "L. Trossard",
-        "assist": "A. Saelemaekers",
+        "player": "Kevin De Bruyne",
+        "assist": "Amadou Onana",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -44084,8 +44075,8 @@
       {
         "time": "72",
         "team": "Belgium",
-        "player": "K. De Bruyne",
-        "assist": "A. Onana",
+        "player": "Leandro Trossard",
+        "assist": "Alexis Saelemaekers",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -44093,8 +44084,8 @@
       {
         "time": "79",
         "team": "New Zealand",
-        "player": "L. Cacace",
-        "assist": "F. De Vries",
+        "player": "Liberato Cacace",
+        "assist": "Francis De Vries",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -44102,7 +44093,7 @@
       {
         "time": "84",
         "team": "New Zealand",
-        "player": "E. Just",
+        "player": "Elijah Just",
         "assist": null,
         "type": "Goal",
         "detail": "Normal Goal",
@@ -44111,8 +44102,8 @@
       {
         "time": "85",
         "team": "Belgium",
-        "player": "C. De Ketelaere",
-        "assist": "R. Lukaku",
+        "player": "Youri Tielemans",
+        "assist": "Nicolas Raskin",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -44120,8 +44111,8 @@
       {
         "time": "85",
         "team": "Belgium",
-        "player": "Y. Tielemans",
-        "assist": "N. Raskin",
+        "player": "Charles De Ketelaere",
+        "assist": "Romelu Lukaku",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -44129,17 +44120,17 @@
       {
         "time": "86",
         "team": "Belgium",
-        "player": "R. Lukaku",
-        "assist": "N. Raskin",
+        "player": "Romelu Lukaku",
+        "assist": "Nicolas Raskin",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
       },
       {
-        "time": "90",
+        "time": "90+4",
         "team": "Belgium",
-        "player": "A. Saelemaekers",
-        "assist": "R. Lukaku",
+        "player": "Alexis Saelemaekers",
+        "assist": "Romelu Lukaku",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -86080,7 +86071,7 @@
     "date": "2026-07-03T18:00:00+00:00",
     "homeTeam": "Australia",
     "awayTeam": "Egypt",
-    "status": "First Half"
+    "status": "Extra Time"
   },
   "m081": {
     "fixtureId": "1565179",
