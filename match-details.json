@@ -80417,8 +80417,8 @@
       {
         "time": "7",
         "team": "Congo DR",
-        "player": "Brian Cipenga",
-        "assist": "Chancel Mbemba",
+        "player": "B. Cipenga",
+        "assist": "C. Mbemba",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -80451,19 +80451,19 @@
         "comments": ""
       },
       {
-        "time": "60",
+        "time": "61",
         "team": "England",
-        "player": "Noni Madueke",
-        "assist": "Bukayo Saka",
+        "player": "M. Rashford",
+        "assist": "A. Gordon",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
       },
       {
-        "time": "60",
+        "time": "61",
         "team": "England",
-        "player": "Marcus Rashford",
-        "assist": "Anthony Gordon",
+        "player": "N. Madueke",
+        "assist": "B. Saka",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -80471,17 +80471,17 @@
       {
         "time": "64",
         "team": "Congo DR",
-        "player": "Nathanaël Mbuku",
-        "assist": "Meschak Elia",
+        "player": "N. Mbuku",
+        "assist": "M. Elia",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
       },
       {
-        "time": "71",
+        "time": "70",
         "team": "England",
-        "player": "Djed Spence",
-        "assist": "Eberechi Eze",
+        "player": "D. Spence",
+        "assist": "E. Eze",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -80489,8 +80489,8 @@
       {
         "time": "75",
         "team": "England",
-        "player": "Harry Kane",
-        "assist": "Anthony Gordon",
+        "player": "H. Kane",
+        "assist": "A. Gordon",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -80498,8 +80498,8 @@
       {
         "time": "76",
         "team": "Congo DR",
-        "player": "Brian Cipenga",
-        "assist": "Théo Bongonda",
+        "player": "N. Mukau",
+        "assist": "E. Kayembe",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -80507,8 +80507,8 @@
       {
         "time": "76",
         "team": "Congo DR",
-        "player": "Ngal'ayel Mukau",
-        "assist": "Edo Kayembe",
+        "player": "B. Cipenga",
+        "assist": "T. Bongonda",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -80516,8 +80516,8 @@
       {
         "time": "86",
         "team": "England",
-        "player": "Harry Kane",
-        "assist": "Anthony Gordon",
+        "player": "H. Kane",
+        "assist": "A. Gordon",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -80525,8 +80525,8 @@
       {
         "time": "89",
         "team": "Congo DR",
-        "player": "Samuel Moutoussamy",
-        "assist": "Fiston Mayele",
+        "player": "A. Masuaku",
+        "assist": "J. Kayembe",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -80534,17 +80534,17 @@
       {
         "time": "89",
         "team": "Congo DR",
-        "player": "Arthur Masuaku",
-        "assist": "Joris Kayembe",
+        "player": "S. Moutoussamy",
+        "assist": "F. Mayele",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
       },
       {
-        "time": "90",
+        "time": "90+1",
         "team": "England",
-        "player": "Declan Rice",
-        "assist": "John Stones",
+        "player": "D. Rice",
+        "assist": "J. Stones",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -81440,9 +81440,9 @@
     },
     "events": [
       {
-        "time": "25",
+        "time": "24",
         "team": "Senegal",
-        "player": "Habib Diarra",
+        "player": "H. Diarra",
         "assist": null,
         "type": "Goal",
         "detail": "Normal Goal",
@@ -81451,8 +81451,8 @@
       {
         "time": "46",
         "team": "Belgium",
-        "player": "Charles De Ketelaere",
-        "assist": "Romelu Lukaku",
+        "player": "C. De Ketelaere",
+        "assist": "R. Lukaku",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -81460,8 +81460,8 @@
       {
         "time": "51",
         "team": "Senegal",
-        "player": "Ismaïla Sarr",
-        "assist": "Moussa Niakhaté",
+        "player": "I. Sarr",
+        "assist": "M. Niakhate",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -81469,8 +81469,8 @@
       {
         "time": "56",
         "team": "Belgium",
-        "player": "Kevin De Bruyne",
-        "assist": "Nicolas Raskin",
+        "player": "K. De Bruyne",
+        "assist": "N. Raskin",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -81478,8 +81478,8 @@
       {
         "time": "56",
         "team": "Belgium",
-        "player": "Jérémy Doku",
-        "assist": "Dodi Lukebakio",
+        "player": "J. Doku",
+        "assist": "D. Lukebakio",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -81487,8 +81487,8 @@
       {
         "time": "63",
         "team": "Belgium",
-        "player": "Hans Vanaken",
-        "assist": "Diego Moreira",
+        "player": "H. Vanaken",
+        "assist": "D. Moreira",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -81505,8 +81505,8 @@
       {
         "time": "66",
         "team": "Senegal",
-        "player": "Pape Gueye",
-        "assist": "Lamine Camara",
+        "player": "P. Gueye",
+        "assist": "L. Camara",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -81523,8 +81523,8 @@
       {
         "time": "73",
         "team": "Senegal",
-        "player": "Habib Diarra",
-        "assist": "Pape Matar Sarr",
+        "player": "H. Diarra",
+        "assist": "P. M. Sarr",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -81532,8 +81532,8 @@
       {
         "time": "73",
         "team": "Senegal",
-        "player": "Iliman Ndiaye",
-        "assist": "Ibrahim Mbaye",
+        "player": "I. Ndiaye",
+        "assist": "I. Mbaye",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -81541,8 +81541,8 @@
       {
         "time": "78",
         "team": "Belgium",
-        "player": "Maxim De Cuyper",
-        "assist": "Thomas Meunier",
+        "player": "M. De Cuyper",
+        "assist": "T. Meunier",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -81550,8 +81550,8 @@
       {
         "time": "86",
         "team": "Belgium",
-        "player": "Romelu Lukaku",
-        "assist": "Thomas Meunier",
+        "player": "R. Lukaku",
+        "assist": "T. Meunier",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -81559,26 +81559,26 @@
       {
         "time": "89",
         "team": "Belgium",
-        "player": "Youri Tielemans",
-        "assist": "Leandro Trossard",
+        "player": "Y. Tielemans",
+        "assist": "L. Trossard",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
       },
       {
-        "time": "93",
+        "time": "94",
         "team": "Senegal",
-        "player": "Ismail Jakobs",
-        "assist": "El Hadji Malick Diouf",
+        "player": "S. Mane",
+        "assist": "N. Jackson",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
       },
       {
-        "time": "93",
+        "time": "94",
         "team": "Senegal",
-        "player": "Sadio Mané",
-        "assist": "Nicolas Jackson",
+        "player": "I. Jakobs",
+        "assist": "M. Diouf",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -81586,8 +81586,8 @@
       {
         "time": "96",
         "team": "Senegal",
-        "player": "Idrissa Gana Gueye",
-        "assist": "Bara Sapoko Ndiaye",
+        "player": "I. Gueye",
+        "assist": "B. Sapoko Ndiaye",
         "type": "subst",
         "detail": "Substitution 6",
         "comments": ""
@@ -81595,19 +81595,10 @@
       {
         "time": "109",
         "team": "Belgium",
-        "player": "Leandro Trossard",
-        "assist": "Amadou Onana",
+        "player": "L. Trossard",
+        "assist": "A. Onana",
         "type": "subst",
         "detail": "Substitution 6",
-        "comments": ""
-      },
-      {
-        "time": "120+5",
-        "team": "Belgium",
-        "player": "Youri Tielemans",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
         "comments": ""
       },
       {
@@ -81617,6 +81608,15 @@
         "assist": null,
         "type": "Var",
         "detail": "Penalty confirmed",
+        "comments": ""
+      },
+      {
+        "time": "120",
+        "team": "Belgium",
+        "player": "Y. Tielemans",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
         "comments": ""
       }
     ],
@@ -82005,7 +82005,7 @@
             }
           }
         },
-        "formation": null,
+        "formation": "4-2-3-1",
         "startXI": [
           {
             "player": {
@@ -82013,7 +82013,7 @@
               "name": "Diogo Costa",
               "number": 1,
               "pos": "G",
-              "grid": null
+              "grid": "1:1"
             }
           },
           {
@@ -82022,7 +82022,7 @@
               "name": "João Cancelo",
               "number": 20,
               "pos": "D",
-              "grid": null
+              "grid": "2:4"
             }
           },
           {
@@ -82031,7 +82031,7 @@
               "name": "Rúben Dias",
               "number": 3,
               "pos": "D",
-              "grid": null
+              "grid": "2:3"
             }
           },
           {
@@ -82040,7 +82040,7 @@
               "name": "Renato Veiga",
               "number": 13,
               "pos": "D",
-              "grid": null
+              "grid": "2:2"
             }
           },
           {
@@ -82049,7 +82049,7 @@
               "name": "Nuno Mendes",
               "number": 25,
               "pos": "D",
-              "grid": null
+              "grid": "2:1"
             }
           },
           {
@@ -82058,7 +82058,7 @@
               "name": "João Neves",
               "number": 15,
               "pos": "M",
-              "grid": null
+              "grid": "3:2"
             }
           },
           {
@@ -82067,7 +82067,7 @@
               "name": "Vitinha",
               "number": 23,
               "pos": "M",
-              "grid": null
+              "grid": "3:1"
             }
           },
           {
@@ -82076,7 +82076,7 @@
               "name": "Pedro Neto",
               "number": 18,
               "pos": "M",
-              "grid": null
+              "grid": "4:3"
             }
           },
           {
@@ -82085,7 +82085,7 @@
               "name": "Bruno Fernandes",
               "number": 8,
               "pos": "M",
-              "grid": null
+              "grid": "4:2"
             }
           },
           {
@@ -82094,7 +82094,7 @@
               "name": "Rafael Leão",
               "number": 17,
               "pos": "M",
-              "grid": null
+              "grid": "4:1"
             }
           },
           {
@@ -82103,7 +82103,7 @@
               "name": "Cristiano Ronaldo",
               "number": 7,
               "pos": "F",
-              "grid": null
+              "grid": "5:1"
             }
           }
         ],
@@ -82268,7 +82268,7 @@
             }
           }
         },
-        "formation": null,
+        "formation": "4-2-3-1",
         "startXI": [
           {
             "player": {
@@ -82276,7 +82276,7 @@
               "name": "Dominik Livaković",
               "number": 1,
               "pos": "G",
-              "grid": null
+              "grid": "1:1"
             }
           },
           {
@@ -82285,7 +82285,7 @@
               "name": "Josip Stanišić",
               "number": 2,
               "pos": "D",
-              "grid": null
+              "grid": "2:4"
             }
           },
           {
@@ -82294,7 +82294,7 @@
               "name": "Josip Šutalo",
               "number": 6,
               "pos": "D",
-              "grid": null
+              "grid": "2:3"
             }
           },
           {
@@ -82303,7 +82303,7 @@
               "name": "Marin Pongračić",
               "number": 3,
               "pos": "D",
-              "grid": null
+              "grid": "2:2"
             }
           },
           {
@@ -82312,7 +82312,7 @@
               "name": "Ivan Perišić",
               "number": 14,
               "pos": "D",
-              "grid": null
+              "grid": "2:1"
             }
           },
           {
@@ -82321,7 +82321,7 @@
               "name": "Luka Modrić",
               "number": 10,
               "pos": "M",
-              "grid": null
+              "grid": "3:2"
             }
           },
           {
@@ -82330,7 +82330,7 @@
               "name": "Mateo Kovačić",
               "number": 8,
               "pos": "M",
-              "grid": null
+              "grid": "3:1"
             }
           },
           {
@@ -82339,7 +82339,7 @@
               "name": "Nikola Vlašić",
               "number": 13,
               "pos": "M",
-              "grid": null
+              "grid": "4:3"
             }
           },
           {
@@ -82348,7 +82348,7 @@
               "name": "Petar Sučić",
               "number": 17,
               "pos": "M",
-              "grid": null
+              "grid": "4:2"
             }
           },
           {
@@ -82357,7 +82357,7 @@
               "name": "Martin Baturina",
               "number": 16,
               "pos": "M",
-              "grid": null
+              "grid": "4:1"
             }
           },
           {
@@ -82366,7 +82366,7 @@
               "name": "Ante Budimir",
               "number": 11,
               "pos": "F",
-              "grid": null
+              "grid": "5:1"
             }
           }
         ],
@@ -83075,7 +83075,7 @@
             }
           }
         },
-        "formation": "4-2-3-1",
+        "formation": null,
         "startXI": [
           {
             "player": {
@@ -83083,7 +83083,7 @@
               "name": "Unai Simón",
               "number": 23,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -83092,7 +83092,7 @@
               "name": "Pedro Porro",
               "number": 12,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -83101,7 +83101,7 @@
               "name": "Pau Cubarsí",
               "number": 22,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -83110,7 +83110,7 @@
               "name": "Aymeric Laporte",
               "number": 14,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -83119,7 +83119,7 @@
               "name": "Marc Cucurella",
               "number": 24,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -83128,7 +83128,7 @@
               "name": "Rodri",
               "number": 16,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -83137,7 +83137,7 @@
               "name": "Pedri",
               "number": 20,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -83146,7 +83146,7 @@
               "name": "Lamine Yamal",
               "number": 19,
               "pos": "M",
-              "grid": "4:3"
+              "grid": null
             }
           },
           {
@@ -83155,7 +83155,7 @@
               "name": "Dani Olmo",
               "number": 10,
               "pos": "M",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -83164,7 +83164,7 @@
               "name": "Alex Baena",
               "number": 15,
               "pos": "M",
-              "grid": "4:1"
+              "grid": null
             }
           },
           {
@@ -83173,7 +83173,7 @@
               "name": "Mikel Oyarzabal",
               "number": 21,
               "pos": "F",
-              "grid": "5:1"
+              "grid": null
             }
           }
         ],
@@ -83338,7 +83338,7 @@
             }
           }
         },
-        "formation": "4-2-3-1",
+        "formation": null,
         "startXI": [
           {
             "player": {
@@ -83346,7 +83346,7 @@
               "name": "Alexander Schlager",
               "number": 1,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -83355,7 +83355,7 @@
               "name": "Stefan Posch",
               "number": 5,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -83364,7 +83364,7 @@
               "name": "Kevin Danso",
               "number": 3,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -83373,7 +83373,7 @@
               "name": "David Alaba",
               "number": 8,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -83382,7 +83382,7 @@
               "name": "Konrad Laimer",
               "number": 20,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -83391,7 +83391,7 @@
               "name": "Nicolas Seiwald",
               "number": 6,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -83400,7 +83400,7 @@
               "name": "Xaver Schlager",
               "number": 4,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -83409,7 +83409,7 @@
               "name": "Romano Schmid",
               "number": 18,
               "pos": "M",
-              "grid": "4:3"
+              "grid": null
             }
           },
           {
@@ -83418,7 +83418,7 @@
               "name": "Paul Wanner",
               "number": 24,
               "pos": "M",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -83427,7 +83427,7 @@
               "name": "Marcel Sabitzer",
               "number": 9,
               "pos": "M",
-              "grid": "4:1"
+              "grid": null
             }
           },
           {
@@ -83436,7 +83436,7 @@
               "name": "Michael Gregoritsch",
               "number": 11,
               "pos": "F",
-              "grid": "5:1"
+              "grid": null
             }
           }
         ],
@@ -83588,8 +83588,8 @@
       {
         "time": "36",
         "team": "Spain",
-        "player": "M. Oyarzabal",
-        "assist": "M. Cucurella",
+        "player": "Mikel Oyarzabal",
+        "assist": "Marc Cucurella",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -83597,8 +83597,8 @@
       {
         "time": "46",
         "team": "Austria",
-        "player": "N. Seiwald",
-        "assist": "C. Chukwuemeka",
+        "player": "Nicolas Seiwald",
+        "assist": "Carney Chukwuemeka",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -83606,8 +83606,8 @@
       {
         "time": "46",
         "team": "Austria",
-        "player": "X. Schlager",
-        "assist": "F. Grillitsch",
+        "player": "Xaver Schlager",
+        "assist": "Florian Grillitsch",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -83615,8 +83615,8 @@
       {
         "time": "60",
         "team": "Austria",
-        "player": "M. Gregoritsch",
-        "assist": "M. Arnautovic",
+        "player": "Michael Gregoritsch",
+        "assist": "Marko Arnautović",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -83624,8 +83624,8 @@
       {
         "time": "60",
         "team": "Austria",
-        "player": "R. Schmid",
-        "assist": "S. Kalajdzic",
+        "player": "Romano Schmid",
+        "assist": "Saša Kalajdžić",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -83633,8 +83633,8 @@
       {
         "time": "66",
         "team": "Spain",
-        "player": "P. Porro",
-        "assist": "A. Baena",
+        "player": "Pedro Porro",
+        "assist": "Alex Baena",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -83642,8 +83642,8 @@
       {
         "time": "71",
         "team": "Spain",
-        "player": "A. Baena",
-        "assist": "F. Torres",
+        "player": "Dani Olmo",
+        "assist": "Mikel Merino",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -83651,8 +83651,8 @@
       {
         "time": "71",
         "team": "Spain",
-        "player": "D. Olmo",
-        "assist": "M. Merino",
+        "player": "Alex Baena",
+        "assist": "Ferran Torres",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -83660,17 +83660,17 @@
       {
         "time": "83",
         "team": "Austria",
-        "player": "S. Posch",
+        "player": "Stefan Posch",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Holding"
+        "comments": "Foul"
       },
       {
         "time": "85",
         "team": "Spain",
         "player": "Lamine Yamal",
-        "assist": "Gavi",
+        "assist": "Pablo Gavi",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -83678,8 +83678,8 @@
       {
         "time": "85",
         "team": "Austria",
-        "player": "S. Posch",
-        "assist": "A. Prass",
+        "player": "Stefan Posch",
+        "assist": "Alexander Prass",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -83687,26 +83687,26 @@
       {
         "time": "89",
         "team": "Spain",
-        "player": "M. Oyarzabal",
-        "assist": "M. Cucurella",
+        "player": "Mikel Oyarzabal",
+        "assist": "Marc Cucurella",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
       },
       {
-        "time": "90+3",
+        "time": "90",
         "team": "Spain",
-        "player": "Pedri",
-        "assist": "F. Ruiz",
+        "player": "Aymeric Laporte",
+        "assist": "Marc Pubill",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
       },
       {
-        "time": "90+3",
+        "time": "90",
         "team": "Spain",
-        "player": "A. Laporte",
-        "assist": "M. Pubill",
+        "player": "Pedri",
+        "assist": "Fabián Ruiz",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -84038,11 +84038,993 @@
     ]
   },
   "m088": {
-    "fixtureId": "1567312",
+    "fixtureId": 1567312,
     "date": "2026-07-03T03:00:00+00:00",
+    "venue": "BC Place",
+    "status": "Match Finished",
     "homeTeam": "Switzerland",
     "awayTeam": "Algeria",
-    "status": "Second Half"
+    "score": {
+      "home": 2,
+      "away": 0
+    },
+    "statistics": {
+      "Switzerland": {
+        "Shots on Goal": 5,
+        "Shots off Goal": 4,
+        "Total Shots": 11,
+        "Blocked Shots": 2,
+        "Shots insidebox": 9,
+        "Shots outsidebox": 2,
+        "Fouls": 10,
+        "Corner Kicks": 4,
+        "Offsides": 0,
+        "Ball Possession": "45%",
+        "Yellow Cards": 0,
+        "Red Cards": null,
+        "Goalkeeper Saves": 2,
+        "Total passes": 436,
+        "Passes accurate": 354,
+        "Passes %": "81%",
+        "expected_goals": "2.56",
+        "goals_prevented": "-0.29"
+      },
+      "Algeria": {
+        "Shots on Goal": 2,
+        "Shots off Goal": 3,
+        "Total Shots": 8,
+        "Blocked Shots": 3,
+        "Shots insidebox": 5,
+        "Shots outsidebox": 3,
+        "Fouls": 12,
+        "Corner Kicks": 2,
+        "Offsides": 2,
+        "Ball Possession": "55%",
+        "Yellow Cards": 2,
+        "Red Cards": null,
+        "Goalkeeper Saves": 2,
+        "Total passes": 561,
+        "Passes accurate": 476,
+        "Passes %": "85%",
+        "expected_goals": "0.73",
+        "goals_prevented": "-0.29"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 15,
+          "name": "Switzerland",
+          "logo": "https://media.api-sports.io/football/teams/15.png",
+          "colors": {
+            "player": {
+              "primary": "de152f",
+              "number": "ffffff",
+              "border": "de152f"
+            },
+            "goalkeeper": {
+              "primary": "eee191",
+              "number": "0c0b0b",
+              "border": "eee191"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 25282,
+              "name": "Gregor Kobel",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2810,
+              "name": "Denis Zakaria",
+              "number": 6,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 2803,
+              "name": "Nico Elvedi",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 5,
+              "name": "Manuel Akanji",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 1631,
+              "name": "Ricardo Rodríguez",
+              "number": 13,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2807,
+              "name": "Remo Freuler",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 1464,
+              "name": "Granit Xhaka",
+              "number": 10,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 48648,
+              "name": "Dan Ndoye",
+              "number": 11,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 406244,
+              "name": "Johan Manzambi",
+              "number": 9,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 48471,
+              "name": "Rubén Vargas",
+              "number": 17,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 421,
+              "name": "Breel Embolo",
+              "number": 7,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 163032,
+              "name": "Fabian Rieder",
+              "number": 22,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 48389,
+              "name": "Noah Okafor",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 123469,
+              "name": "Zeki Amdouni",
+              "number": 23,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 48378,
+              "name": "Silvan Widmer",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 951,
+              "name": "Michel Aebischer",
+              "number": 20,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1142,
+              "name": "Yvon Mvogo",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 123468,
+              "name": "Marvin Keller",
+              "number": 21,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 48372,
+              "name": "Eray Cömert",
+              "number": 18,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 162414,
+              "name": "Aurèle Amenda",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 48489,
+              "name": "Miro Muheim",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 952,
+              "name": "Christian Fassnacht",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 264705,
+              "name": "Ardon Jashari",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 957,
+              "name": "Djibril Sow",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 48497,
+              "name": "Cédric Itten",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 1504,
+          "name": "Murat Yakin",
+          "photo": "https://media.api-sports.io/football/coachs/1504.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 1532,
+          "name": "Algeria",
+          "logo": "https://media.api-sports.io/football/teams/1532.png",
+          "colors": {
+            "player": {
+              "primary": "ffffff",
+              "number": "4faf95",
+              "border": "ffffff"
+            },
+            "goalkeeper": {
+              "primary": "73b8eb",
+              "number": "ffffff",
+              "border": "73b8eb"
+            }
+          }
+        },
+        "formation": "4-3-3",
+        "startXI": [
+          {
+            "player": {
+              "id": 732,
+              "name": "Luca Zidane",
+              "number": 23,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 303362,
+              "name": "Rafik Belghali",
+              "number": 17,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 1567,
+              "name": "Aïssa Mandi",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 2194,
+              "name": "Ramy Bensebaini",
+              "number": 21,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 21138,
+              "name": "Rayan Aït-Nouri",
+              "number": 15,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 129047,
+              "name": "Ramiz Zerrouki",
+              "number": 6,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 409,
+              "name": "Nabil Bentaleb",
+              "number": 19,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 276670,
+              "name": "Farès Chaïbi",
+              "number": 10,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 635,
+              "name": "Riyad Mahrez",
+              "number": 7,
+              "pos": "F",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 380587,
+              "name": "Ibrahim Maza",
+              "number": 22,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 658,
+              "name": "Houssem Aouar",
+              "number": 8,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 271539,
+              "name": "Jaouen Hadjam",
+              "number": 13,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 85041,
+              "name": "Amine Gouiri",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 326067,
+              "name": "Anis Hadj Moussa",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 4399,
+              "name": "Hicham Boudaoui",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 329163,
+              "name": "Adil Boulbina",
+              "number": 20,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 304229,
+              "name": "Melvin Mastil",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 4414,
+              "name": "Oussama Benbot",
+              "number": 16,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 342740,
+              "name": "Achref Abada",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 4569,
+              "name": "Mohamed Tougai",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 4561,
+              "name": "Zineddine Belaid",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 20869,
+              "name": "Samir Sophian Chergui",
+              "number": 26,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 327599,
+              "name": "Yassine Titraoui",
+              "number": 24,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 334915,
+              "name": "Farès Ghedjemis",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 28220,
+          "name": "Vladimir Petkovic",
+          "photo": "https://media.api-sports.io/football/coachs/28220.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "10",
+        "team": "Switzerland",
+        "player": "B. Embolo",
+        "assist": "J. Manzambi",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "36",
+        "team": "Algeria",
+        "player": "F. Chaibi",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "46",
+        "team": "Switzerland",
+        "player": "D. Ndoye",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "58",
+        "team": "Algeria",
+        "player": "H. Aouar",
+        "assist": "J. Hadjam",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "58",
+        "team": "Algeria",
+        "player": "R. Zerrouki",
+        "assist": "A. Gouiri",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "71",
+        "team": "Switzerland",
+        "player": "R. Vargas",
+        "assist": "F. Rieder",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "71",
+        "team": "Switzerland",
+        "player": "J. Manzambi",
+        "assist": "N. Okafor",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "71",
+        "team": "Algeria",
+        "player": "R. Mahrez",
+        "assist": "A. Hadj Moussa",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "71",
+        "team": "Algeria",
+        "player": "N. Bentaleb",
+        "assist": "H. Boudaoui",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "72",
+        "team": "Algeria",
+        "player": "H. Boudaoui",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Roughing"
+      },
+      {
+        "time": "82",
+        "team": "Algeria",
+        "player": "R. Belghali",
+        "assist": "A. Boulbina",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "83",
+        "team": "Switzerland",
+        "player": "B. Embolo",
+        "assist": "Z. Amdouni",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "87",
+        "team": "Switzerland",
+        "player": "D. Zakaria",
+        "assist": "S. Widmer",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "87",
+        "team": "Switzerland",
+        "player": "D. Ndoye",
+        "assist": "M. Aebischer",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Switzerland",
+        "players": [
+          {
+            "name": "Gregor Kobel",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Denis Zakaria",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nico Elvedi",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Manuel Akanji",
+            "rating": "7.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ricardo Rodríguez",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Remo Freuler",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Granit Xhaka",
+            "rating": "7.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Dan Ndoye",
+            "rating": "8.2",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Johan Manzambi",
+            "rating": "7.9",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Rubén Vargas",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Breel Embolo",
+            "rating": "6.9",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Fabian Rieder",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Noah Okafor",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Zeki Amdouni",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Silvan Widmer",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Michel Aebischer",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yvon Mvogo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marvin Keller",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Eray Cömert",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Aurèle Amenda",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Miro Muheim",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Christian Fassnacht",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ardon Jashari",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Djibril Sow",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Cédric Itten",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Algeria",
+        "players": [
+          {
+            "name": "Luca Zidane",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Rafik Belghali",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Aïssa Mandi",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ramy Bensebaini",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Rayan Aït-Nouri",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ramiz Zerrouki",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nabil Bentaleb",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Farès Chaïbi",
+            "rating": "6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Riyad Mahrez",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ibrahim Maza",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Houssem Aouar",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jaouen Hadjam",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Amine Gouiri",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Anis Hadj Moussa",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Hicham Boudaoui",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Adil Boulbina",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Melvin Mastil",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Oussama Benbot",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Achref Abada",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohamed Tougai",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Zineddine Belaid",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Samir Sophian Chergui",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yassine Titraoui",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Farès Ghedjemis",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m078": {
     "fixtureId": 1565176,
@@ -85690,8 +86672,8 @@
       {
         "time": "51",
         "team": "Bosnia & Herzegovina",
-        "player": "A. Gigovic",
-        "assist": "E. Bajraktarevic",
+        "player": "E. Dzeko",
+        "assist": "E. Mahmic",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -85699,8 +86681,8 @@
       {
         "time": "51",
         "team": "Bosnia & Herzegovina",
-        "player": "I. Sunjic",
-        "assist": "B. Tahirovic",
+        "player": "A. Gigovic",
+        "assist": "E. Bajraktarevic",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -85708,8 +86690,8 @@
       {
         "time": "51",
         "team": "Bosnia & Herzegovina",
-        "player": "E. Dzeko",
-        "assist": "E. Mahmic",
+        "player": "I. Sunjic",
+        "assist": "B. Tahirovic",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""

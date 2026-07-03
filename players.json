@@ -36,6 +36,13 @@
       "matches": 4
     },
     {
+      "name": "Mikel Oyarzabal",
+      "photo": "https://media.api-sports.io/football/players/47323.png",
+      "team": "Spain",
+      "goals": 4,
+      "matches": 4
+    },
+    {
       "name": "Vinícius Júnior",
       "photo": "https://media.api-sports.io/football/players/762.png",
       "team": "Brazil",
@@ -57,6 +64,13 @@
       "matches": 4
     },
     {
+      "name": "J. Manzambi",
+      "photo": "https://media.api-sports.io/football/players/406244.png",
+      "team": "Switzerland",
+      "goals": 3,
+      "matches": 4
+    },
+    {
       "name": "J. Quiñones",
       "photo": "https://media.api-sports.io/football/players/35532.png",
       "team": "Mexico",
@@ -69,13 +83,6 @@
       "team": "Netherlands",
       "goals": 3,
       "matches": 4
-    },
-    {
-      "name": "J. Manzambi",
-      "photo": "https://media.api-sports.io/football/players/406244.png",
-      "team": "Switzerland",
-      "goals": 3,
-      "matches": 3
     },
     {
       "name": "B. Brobbey",
@@ -120,24 +127,17 @@
       "matches": 3
     },
     {
+      "name": "Cristiano Ronaldo",
+      "photo": "https://media.api-sports.io/football/players/874.png",
+      "team": "Portugal",
+      "goals": 3,
+      "matches": 4
+    },
+    {
       "name": "K. Havertz",
       "photo": "https://media.api-sports.io/football/players/978.png",
       "team": "Germany",
       "goals": 3,
-      "matches": 4
-    },
-    {
-      "name": "Y. Wissa",
-      "photo": "https://media.api-sports.io/football/players/20649.png",
-      "team": "Congo DR",
-      "goals": 3,
-      "matches": 4
-    },
-    {
-      "name": "C. Summerville",
-      "photo": "https://media.api-sports.io/football/players/37724.png",
-      "team": "Netherlands",
-      "goals": 2,
       "matches": 4
     }
   ],
@@ -397,6 +397,20 @@
       "red": 0
     },
     {
+      "name": "S. Posch",
+      "photo": "https://media.api-sports.io/football/players/711.png",
+      "team": "Austria",
+      "yellow": 2,
+      "red": 0
+    },
+    {
+      "name": "I. Perišić",
+      "photo": "https://media.api-sports.io/football/players/207.png",
+      "team": "Croatia",
+      "yellow": 2,
+      "red": 0
+    },
+    {
       "name": "G. Kastaneer",
       "photo": "https://media.api-sports.io/football/players/38708.png",
       "team": "Curaçao",
@@ -409,21 +423,7 @@
       "team": "Qatar",
       "yellow": 2,
       "red": 0
-    },
-    {
-      "name": "D. Gómez",
-      "photo": "https://media.api-sports.io/football/players/278370.png",
-      "team": "Paraguay",
-      "yellow": 2,
-      "red": 0
-    },
-    {
-      "name": "Amir Al Ammari",
-      "photo": "https://media.api-sports.io/football/players/47792.png",
-      "team": "Iraq",
-      "yellow": 2,
-      "red": 0
     }
   ],
-  "updatedAt": "2026-07-03T04:11:46.368Z"
+  "updatedAt": "2026-07-03T06:06:50.590Z"
 }
