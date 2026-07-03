@@ -82518,17 +82518,17 @@
       {
         "time": "17",
         "team": "Portugal",
-        "player": "R. Dias",
+        "player": "Rúben Dias",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Elbowing"
+        "comments": "Foul"
       },
       {
         "time": "46",
         "team": "Croatia",
-        "player": "A. Budimir",
-        "assist": "I. Matanovic",
+        "player": "Ante Budimir",
+        "assist": "Igor Matanović",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -82536,7 +82536,7 @@
       {
         "time": "53",
         "team": "Croatia",
-        "player": "I. Perisic",
+        "player": "Ivan Perišić",
         "assist": null,
         "type": "Goal",
         "detail": "Normal Goal",
@@ -82545,61 +82545,70 @@
       {
         "time": "59",
         "team": "Croatia",
-        "player": "L. Modric",
+        "player": "Luka Modrić",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Tripping"
+        "comments": "Foul"
       },
       {
         "time": "61",
         "team": "Portugal",
-        "player": "C. Ronaldo",
+        "player": "Cristiano Ronaldo",
         "assist": null,
         "type": "Var",
-        "detail": "Goal Disallowed - offside",
+        "detail": "Goal cancelled",
+        "comments": ""
+      },
+      {
+        "time": "62",
+        "team": "Portugal",
+        "player": "João Cancelo",
+        "assist": "Gonçalo Ramos",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "62",
+        "team": "Portugal",
+        "player": "Bruno Fernandes",
+        "assist": "Nélson Semedo",
+        "type": "subst",
+        "detail": "Substitution 2",
         "comments": ""
       },
       {
         "time": "62",
         "team": "Portugal",
         "player": "Vitinha",
-        "assist": "B. Silva",
-        "type": "subst",
-        "detail": "Substitution 1",
-        "comments": ""
-      },
-      {
-        "time": "63",
-        "team": "Portugal",
-        "player": "P. Neto",
-        "assist": "F. Conceicao",
-        "type": "subst",
-        "detail": "Substitution 2",
-        "comments": ""
-      },
-      {
-        "time": "63",
-        "team": "Portugal",
-        "player": "B. Fernandes",
-        "assist": "N. Semedo",
+        "assist": "Bernardo Silva",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
       },
       {
-        "time": "63",
+        "time": "62",
         "team": "Portugal",
-        "player": "J. Cancelo",
-        "assist": "G. Ramos",
+        "player": "Pedro Neto",
+        "assist": "Francisco Conceição",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
       },
       {
+        "time": "67",
+        "team": "Portugal",
+        "player": "Renato Veiga",
+        "assist": null,
+        "type": "Var",
+        "detail": "Penalty confirmed",
+        "comments": ""
+      },
+      {
         "time": "68",
         "team": "Portugal",
-        "player": "C. Ronaldo",
+        "player": "Cristiano Ronaldo",
         "assist": null,
         "type": "Goal",
         "detail": "Penalty",
@@ -82608,73 +82617,64 @@
       {
         "time": "68",
         "team": "Croatia",
-        "player": "M. Baturina",
-        "assist": "M. Pasalic",
+        "player": "Martin Baturina",
+        "assist": "Mario Pašalić",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
       },
       {
         "time": "81",
-        "team": "Croatia",
-        "player": "P. Sucic",
-        "assist": null,
-        "type": "Var",
-        "detail": "Goal Disallowed - offside",
-        "comments": ""
-      },
-      {
-        "time": "81",
         "team": "Portugal",
-        "player": "C. Ronaldo",
-        "assist": "R. Neves",
+        "player": "Cristiano Ronaldo",
+        "assist": "Rúben Neves",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
       },
       {
-        "time": "90+2",
-        "team": "Croatia",
-        "player": "N. Vlasic",
-        "assist": "J. Gvardiol",
-        "type": "subst",
-        "detail": "Substitution 3",
-        "comments": ""
-      },
-      {
         "time": "90+4",
         "team": "Portugal",
-        "player": "G. Ramos",
-        "assist": "R. Leao",
+        "player": "Gonçalo Ramos",
+        "assist": "Rafael Leão",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
       },
       {
-        "time": "90+6",
-        "team": "Croatia",
-        "player": "M. Kovacic",
-        "assist": "A. Kramaric",
-        "type": "subst",
-        "detail": "Substitution 4",
-        "comments": ""
-      },
-      {
         "time": "90+8",
         "team": "Croatia",
-        "player": "I. Perisic",
+        "player": "Ivan Perišić",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Unsportsmanlike conduct"
+        "comments": "Off the ball foul"
       },
       {
-        "time": "90+13",
+        "time": "90+16",
         "team": "Croatia",
-        "player": "J. Gvardiol",
+        "player": "Joško Gvardiol",
         "assist": null,
         "type": "Var",
-        "detail": "Goal Disallowed - offside",
+        "detail": "Goal cancelled",
+        "comments": ""
+      },
+      {
+        "time": "90",
+        "team": "Croatia",
+        "player": "Mateo Kovačić",
+        "assist": "Andrej Kramarić",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "90",
+        "team": "Croatia",
+        "player": "Nikola Vlašić",
+        "assist": "Joško Gvardiol",
+        "type": "subst",
+        "detail": "Substitution 4",
         "comments": ""
       }
     ],
@@ -84042,7 +84042,7 @@
     "date": "2026-07-03T03:00:00+00:00",
     "homeTeam": "Switzerland",
     "awayTeam": "Algeria",
-    "status": "Not Started"
+    "status": "Second Half"
   },
   "m078": {
     "fixtureId": 1565176,
