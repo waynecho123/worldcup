@@ -206,9 +206,23 @@
       "matches": 4
     },
     {
+      "name": "J. Manzambi",
+      "photo": "https://media.api-sports.io/football/players/406244.png",
+      "team": "Switzerland",
+      "assists": 2,
+      "matches": 4
+    },
+    {
       "name": "C. Summerville",
       "photo": "https://media.api-sports.io/football/players/37724.png",
       "team": "Netherlands",
+      "assists": 2,
+      "matches": 4
+    },
+    {
+      "name": "B. Embolo",
+      "photo": "https://media.api-sports.io/football/players/421.png",
+      "team": "Switzerland",
       "assists": 2,
       "matches": 4
     },
@@ -248,13 +262,6 @@
       "matches": 3
     },
     {
-      "name": "B. Embolo",
-      "photo": "https://media.api-sports.io/football/players/421.png",
-      "team": "Switzerland",
-      "assists": 2,
-      "matches": 3
-    },
-    {
       "name": "B. Saka",
       "photo": "https://media.api-sports.io/football/players/1460.png",
       "team": "England",
@@ -272,13 +279,6 @@
       "name": "Brahim Díaz",
       "photo": "https://media.api-sports.io/football/players/744.png",
       "team": "Morocco",
-      "assists": 2,
-      "matches": 4
-    },
-    {
-      "name": "R. Gravenberch",
-      "photo": "https://media.api-sports.io/football/players/542.png",
-      "team": "Netherlands",
       "assists": 2,
       "matches": 4
     }
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-07-03T08:11:47.879Z"
+  "updatedAt": "2026-07-03T10:06:42.791Z"
 }
