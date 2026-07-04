@@ -1115,7 +1115,7 @@
           {
             "player": {
               "id": 7525,
-              "name": "Alexander Schlager",
+              "name": "A. Schlager",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -1124,7 +1124,7 @@
           {
             "player": {
               "id": 711,
-              "name": "Stefan Posch",
+              "name": "S. Posch",
               "number": 5,
               "pos": "D",
               "grid": "2:4"
@@ -1133,7 +1133,7 @@
           {
             "player": {
               "id": 26240,
-              "name": "Philipp Lienhart",
+              "name": "P. Lienhart",
               "number": 15,
               "pos": "D",
               "grid": "2:3"
@@ -1142,7 +1142,7 @@
           {
             "player": {
               "id": 505,
-              "name": "David Alaba",
+              "name": "D. Alaba",
               "number": 8,
               "pos": "D",
               "grid": "2:2"
@@ -1151,7 +1151,7 @@
           {
             "player": {
               "id": 25915,
-              "name": "Phillipp Mwene",
+              "name": "P. Mwene",
               "number": 16,
               "pos": "D",
               "grid": "2:1"
@@ -1160,7 +1160,7 @@
           {
             "player": {
               "id": 7328,
-              "name": "Nicolas Seiwald",
+              "name": "N. Seiwald",
               "number": 6,
               "pos": "M",
               "grid": "3:2"
@@ -1169,7 +1169,7 @@
           {
             "player": {
               "id": 1095,
-              "name": "Xaver Schlager",
+              "name": "X. Schlager",
               "number": 4,
               "pos": "M",
               "grid": "3:1"
@@ -1178,7 +1178,7 @@
           {
             "player": {
               "id": 7562,
-              "name": "Romano Schmid",
+              "name": "R. Schmid",
               "number": 18,
               "pos": "M",
               "grid": "4:3"
@@ -1187,7 +1187,7 @@
           {
             "player": {
               "id": 1157,
-              "name": "Konrad Laimer",
+              "name": "K. Laimer",
               "number": 20,
               "pos": "M",
               "grid": "4:2"
@@ -1196,7 +1196,7 @@
           {
             "player": {
               "id": 1159,
-              "name": "Marcel Sabitzer",
+              "name": "M. Sabitzer",
               "number": 9,
               "pos": "M",
               "grid": "4:1"
@@ -1205,7 +1205,7 @@
           {
             "player": {
               "id": 7722,
-              "name": "Saša Kalajdžić",
+              "name": "S. Kalajdzic",
               "number": 14,
               "pos": "F",
               "grid": "5:1"
@@ -1215,62 +1215,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 18830,
-              "name": "Marko Arnautović",
-              "number": 7,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 25287,
-              "name": "Kevin Danso",
-              "number": 3,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 138935,
-              "name": "Carney Chukwuemeka",
-              "number": 17,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 327895,
-              "name": "Paul Wanner",
-              "number": 24,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 126642,
-              "name": "Patrick Wimmer",
-              "number": 21,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 221605,
-              "name": "Florian Wiegele",
-              "number": 12,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 7598,
-              "name": "Patrick Pentz",
+              "name": "P. Pentz",
               "number": 13,
               "pos": "G",
               "grid": null
@@ -1278,26 +1224,44 @@
           },
           {
             "player": {
-              "id": 126640,
-              "name": "David Affengruber",
-              "number": 2,
-              "pos": "D",
+              "id": 221605,
+              "name": "F. Wiegele",
+              "number": 12,
+              "pos": "G",
               "grid": null
             }
           },
           {
             "player": {
-              "id": 25314,
-              "name": "Marco Friedl",
-              "number": 23,
-              "pos": "D",
+              "id": 18830,
+              "name": "M. Arnautovic",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 719,
+              "name": "F. Grillitsch",
+              "number": 10,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1725,
+              "name": "D. Ljubicic",
+              "number": 19,
+              "pos": "M",
               "grid": null
             }
           },
           {
             "player": {
               "id": 7090,
-              "name": "Michael Svoboda",
+              "name": "M. Svoboda",
               "number": 25,
               "pos": "D",
               "grid": null
@@ -1306,7 +1270,7 @@
           {
             "player": {
               "id": 7327,
-              "name": "Alexander Prass",
+              "name": "A. Prass",
               "number": 22,
               "pos": "D",
               "grid": null
@@ -1314,27 +1278,18 @@
           },
           {
             "player": {
-              "id": 417,
-              "name": "Alessandro Schöpf",
-              "number": 26,
-              "pos": "M",
+              "id": 126640,
+              "name": "D. Affengruber",
+              "number": 2,
+              "pos": "D",
               "grid": null
             }
           },
           {
             "player": {
-              "id": 1725,
-              "name": "Dejan Ljubičić",
-              "number": 19,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 719,
-              "name": "Florian Grillitsch",
-              "number": 10,
+              "id": 327895,
+              "name": "P. Wanner",
+              "number": 24,
               "pos": "M",
               "grid": null
             }
@@ -1342,9 +1297,54 @@
           {
             "player": {
               "id": 25297,
-              "name": "Michael Gregoritsch",
+              "name": "M. Gregoritsch",
               "number": 11,
               "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 417,
+              "name": "A. Schopf",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 25287,
+              "name": "K. Danso",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 25314,
+              "name": "M. Friedl",
+              "number": 23,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 126642,
+              "name": "P. Wimmer",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 138935,
+              "name": "C. Chukwuemeka",
+              "number": 17,
+              "pos": "M",
               "grid": null
             }
           }
@@ -1378,7 +1378,7 @@
           {
             "player": {
               "id": 140607,
-              "name": "Yazeed Abu Laila",
+              "name": "Y. Abulaila",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -1387,7 +1387,7 @@
           {
             "player": {
               "id": 310835,
-              "name": "Abdallah Nasib",
+              "name": "A. Nasib",
               "number": 3,
               "pos": "D",
               "grid": "2:3"
@@ -1396,7 +1396,7 @@
           {
             "player": {
               "id": 53900,
-              "name": "Yazan Al-Arab",
+              "name": "Y. Al Arab",
               "number": 5,
               "pos": "D",
               "grid": "2:2"
@@ -1405,7 +1405,7 @@
           {
             "player": {
               "id": 102538,
-              "name": "Mo Abualnadi",
+              "name": "M. Abualnadi",
               "number": 16,
               "pos": "D",
               "grid": "2:1"
@@ -1414,7 +1414,7 @@
           {
             "player": {
               "id": 53902,
-              "name": "Ehsan Haddad",
+              "name": "E. Haddad",
               "number": 23,
               "pos": "M",
               "grid": "3:4"
@@ -1423,7 +1423,7 @@
           {
             "player": {
               "id": 213980,
-              "name": "Nizar Al-Rashdan",
+              "name": "N. Al Rashdan",
               "number": 21,
               "pos": "M",
               "grid": "3:3"
@@ -1432,7 +1432,7 @@
           {
             "player": {
               "id": 140609,
-              "name": "Noor Al-Rawabdeh",
+              "name": "N. Al Rawabdeh",
               "number": 8,
               "pos": "M",
               "grid": "3:2"
@@ -1441,7 +1441,7 @@
           {
             "player": {
               "id": 310785,
-              "name": "Mohannad Abu Taha",
+              "name": "M. Abu Taha",
               "number": 20,
               "pos": "M",
               "grid": "3:1"
@@ -1449,17 +1449,17 @@
           },
           {
             "player": {
-              "id": 492980,
-              "name": "Odeh Fakhoury",
+              "id": 568556,
+              "name": "O. Al Fakhouri",
               "number": 11,
-              "pos": "F",
+              "pos": null,
               "grid": "4:2"
             }
           },
           {
             "player": {
               "id": 164026,
-              "name": "Ali Olwan",
+              "name": "A. Olwan",
               "number": 9,
               "pos": "F",
               "grid": "4:1"
@@ -1468,7 +1468,7 @@
           {
             "player": {
               "id": 15286,
-              "name": "Mousa Tamari",
+              "name": "M. Tamari",
               "number": 10,
               "pos": "F",
               "grid": "5:1"
@@ -1478,62 +1478,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 72140,
-              "name": "Saleem Obaid",
-              "number": 17,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 314882,
-              "name": "Saad Al Rousan",
-              "number": 19,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 123530,
-              "name": "Mahmoud Al-Mardi",
-              "number": 13,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 104244,
-              "name": "Mohammad Al Daoud",
-              "number": 25,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 575283,
-              "name": "Ali Al Azaizah",
-              "number": 24,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 163884,
-              "name": "Abdallah Al-Fakhouri",
-              "number": 22,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 163908,
-              "name": "Noureddin Zaid",
+              "name": "N. Bani Attiah",
               "number": 12,
               "pos": "G",
               "grid": null
@@ -1541,53 +1487,17 @@
           },
           {
             "player": {
-              "id": 543035,
-              "name": "Husam Ali Mohammad Abudahab",
-              "number": 4,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 601853,
-              "name": "Mohammad Abu Ghoush",
-              "number": 18,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 315099,
-              "name": "Mohammad Ali Hasheesh",
-              "number": 2,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 664028,
-              "name": "Anas Badawi",
-              "number": 26,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 198211,
-              "name": "Amer Jamous",
-              "number": 6,
-              "pos": "M",
+              "id": 163884,
+              "name": "A. Al Fakhouri",
+              "number": 22,
+              "pos": "G",
               "grid": null
             }
           },
           {
             "player": {
               "id": 104242,
-              "name": "Rajaei Ayed",
+              "name": "R. Ayed",
               "number": 14,
               "pos": "M",
               "grid": null
@@ -1595,8 +1505,80 @@
           },
           {
             "player": {
+              "id": 651096,
+              "name": "M. Al Daoud",
+              "number": 25,
+              "pos": null,
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 72140,
+              "name": "S. Obaid",
+              "number": 17,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 542768,
+              "name": "I. Saadeh",
+              "number": 15,
+              "pos": null,
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 213978,
+              "name": "S. Al Rosan",
+              "number": 19,
+              "pos": null,
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 542710,
+              "name": "M. Abu Hasheesh",
+              "number": 2,
+              "pos": null,
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 542822,
+              "name": "H. Abu Dahab",
+              "number": 4,
+              "pos": null,
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 123530,
+              "name": "M. Al Mardi",
+              "number": 13,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 198211,
+              "name": "A. Jamous",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 72142,
-              "name": "Mohammad Abu Zrayq",
+              "name": "Shararh",
               "number": 7,
               "pos": "F",
               "grid": null
@@ -1604,10 +1586,28 @@
           },
           {
             "player": {
-              "id": 164214,
-              "name": "Ibrahim Sadeh",
-              "number": 15,
-              "pos": "M",
+              "id": 664028,
+              "name": "A. Badawi",
+              "number": 26,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 575283,
+              "name": "A. Azaizeh",
+              "number": 24,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 601853,
+              "name": "M. Abu Ghoush",
+              "number": 18,
+              "pos": "D",
               "grid": null
             }
           }
@@ -71645,7 +71645,7 @@
           {
             "player": {
               "id": 138804,
-              "name": "Matěj Kovář",
+              "name": "M. Kovar",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -71654,7 +71654,7 @@
           {
             "player": {
               "id": 2252,
-              "name": "Tomáš Holeš",
+              "name": "T. Holes",
               "number": 3,
               "pos": "D",
               "grid": "2:3"
@@ -71663,7 +71663,7 @@
           {
             "player": {
               "id": 162964,
-              "name": "Robin Hranáč",
+              "name": "R. Hranac",
               "number": 4,
               "pos": "D",
               "grid": "2:2"
@@ -71672,7 +71672,7 @@
           {
             "player": {
               "id": 66407,
-              "name": "Ladislav Krejčí",
+              "name": "L. Krejci",
               "number": 7,
               "pos": "D",
               "grid": "2:1"
@@ -71681,7 +71681,7 @@
           {
             "player": {
               "id": 1231,
-              "name": "Vladimír Coufal",
+              "name": "V. Coufal",
               "number": 5,
               "pos": "M",
               "grid": "3:5"
@@ -71690,7 +71690,7 @@
           {
             "player": {
               "id": 25348,
-              "name": "Vladimír Darida",
+              "name": "V. Darida",
               "number": 8,
               "pos": "M",
               "grid": "3:4"
@@ -71699,7 +71699,7 @@
           {
             "player": {
               "id": 162194,
-              "name": "Lukáš Červ",
+              "name": "L. Cerv",
               "number": 12,
               "pos": "M",
               "grid": "3:3"
@@ -71708,7 +71708,7 @@
           {
             "player": {
               "id": 241,
-              "name": "Michal Sadílek",
+              "name": "M. Sadilek",
               "number": 18,
               "pos": "M",
               "grid": "3:2"
@@ -71717,7 +71717,7 @@
           {
             "player": {
               "id": 386837,
-              "name": "Alexandr Sojka",
+              "name": "A. Sojka",
               "number": 24,
               "pos": "M",
               "grid": "3:1"
@@ -71726,7 +71726,7 @@
           {
             "player": {
               "id": 794,
-              "name": "Patrik Schick",
+              "name": "P. Schick",
               "number": 10,
               "pos": "F",
               "grid": "4:2"
@@ -71735,7 +71735,7 @@
           {
             "player": {
               "id": 66019,
-              "name": "Adam Hložek",
+              "name": "A. Hlozek",
               "number": 9,
               "pos": "F",
               "grid": "4:1"
@@ -71745,53 +71745,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 1237,
-              "name": "Jaroslav Zelený",
-              "number": 20,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 66387,
-              "name": "Pavel Šulc",
-              "number": 15,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 1243,
-              "name": "Tomáš Souček",
-              "number": 22,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 66353,
-              "name": "Lukáš Provod",
-              "number": 17,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 128772,
-              "name": "David Zima",
-              "number": 2,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 66347,
-              "name": "Jindřich Staněk",
+              "name": "J. Stanek",
               "number": 16,
               "pos": "G",
               "grid": null
@@ -71800,7 +71755,7 @@
           {
             "player": {
               "id": 269349,
-              "name": "Lukáš Horníček",
+              "name": "L. Hornicek",
               "number": 23,
               "pos": "G",
               "grid": null
@@ -71808,36 +71763,9 @@
           },
           {
             "player": {
-              "id": 337740,
-              "name": "Štěpán Chaloupek",
-              "number": 6,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 66214,
-              "name": "David Douděra",
-              "number": 21,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 555437,
-              "name": "Hugo Sochurek",
-              "number": 25,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 290212,
-              "name": "Denis Višinský",
-              "number": 26,
+              "id": 66353,
+              "name": "L. Provod",
+              "number": 17,
               "pos": "M",
               "grid": null
             }
@@ -71845,7 +71773,7 @@
           {
             "player": {
               "id": 66340,
-              "name": "Jan Kuchta",
+              "name": "J. Kuchta",
               "number": 11,
               "pos": "F",
               "grid": null
@@ -71853,8 +71781,71 @@
           },
           {
             "player": {
+              "id": 66214,
+              "name": "D. Doudera",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 128772,
+              "name": "D. Zima",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 290212,
+              "name": "D. Visinsky",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 337740,
+              "name": "S. Chaloupek",
+              "number": 6,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1237,
+              "name": "J. Zeleny",
+              "number": 20,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 818,
+              "name": "T. Chory",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1243,
+              "name": "T. Soucek",
+              "number": 22,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 66275,
-              "name": "Mojmír Chytil",
+              "name": "M. Chytil",
               "number": 13,
               "pos": "F",
               "grid": null
@@ -71862,10 +71853,19 @@
           },
           {
             "player": {
-              "id": 818,
-              "name": "Tomáš Chorý",
-              "number": 19,
-              "pos": "F",
+              "id": 66387,
+              "name": "P. Sulc",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 555437,
+              "name": "H. Sochurek",
+              "number": 25,
+              "pos": "M",
               "grid": null
             }
           }
@@ -71899,7 +71899,7 @@
           {
             "player": {
               "id": 3275,
-              "name": "Ronwen Williams",
+              "name": "R. Williams",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -71908,7 +71908,7 @@
           {
             "player": {
               "id": 46601,
-              "name": "Khuliso Mudau",
+              "name": "K. Mudau",
               "number": 20,
               "pos": "D",
               "grid": "2:4"
@@ -71917,7 +71917,7 @@
           {
             "player": {
               "id": 406752,
-              "name": "Ime Okon",
+              "name": "I. Okon",
               "number": 21,
               "pos": "D",
               "grid": "2:3"
@@ -71926,7 +71926,7 @@
           {
             "player": {
               "id": 510799,
-              "name": "Mbekezeli Mbokazi",
+              "name": "M. Mbokazi",
               "number": 14,
               "pos": "D",
               "grid": "2:2"
@@ -71935,7 +71935,7 @@
           {
             "player": {
               "id": 46334,
-              "name": "Aubrey Modiba",
+              "name": "A. Modiba",
               "number": 6,
               "pos": "D",
               "grid": "2:1"
@@ -71944,7 +71944,7 @@
           {
             "player": {
               "id": 194430,
-              "name": "Thalente Mbatha",
+              "name": "T. Mbatha",
               "number": 5,
               "pos": "M",
               "grid": "3:3"
@@ -71953,7 +71953,7 @@
           {
             "player": {
               "id": 3287,
-              "name": "Teboho Mokoena",
+              "name": "T. Mokoena",
               "number": 4,
               "pos": "M",
               "grid": "3:2"
@@ -71962,7 +71962,7 @@
           {
             "player": {
               "id": 268710,
-              "name": "Jayden Adams",
+              "name": "J. Adams",
               "number": 23,
               "pos": "M",
               "grid": "3:1"
@@ -71971,7 +71971,7 @@
           {
             "player": {
               "id": 354831,
-              "name": "Thapelo Maseko",
+              "name": "T. Maseko",
               "number": 12,
               "pos": "F",
               "grid": "4:3"
@@ -71980,7 +71980,7 @@
           {
             "player": {
               "id": 127429,
-              "name": "Iqraam Rayners",
+              "name": "I. Rayners",
               "number": 15,
               "pos": "F",
               "grid": "4:2"
@@ -71989,7 +71989,7 @@
           {
             "player": {
               "id": 179893,
-              "name": "Oswin Appollis",
+              "name": "O. Appollis",
               "number": 7,
               "pos": "F",
               "grid": "4:1"
@@ -71999,44 +71999,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 414149,
-              "name": "Relebohile Mofokeng",
-              "number": 10,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 201354,
-              "name": "Evidence Makgopa",
-              "number": 17,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 359561,
-              "name": "Kamogelo Sebelebele",
-              "number": 25,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 46417,
-              "name": "Sipho Chaine",
-              "number": 16,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 46245,
-              "name": "Ricardo Goss",
+              "name": "R. Goss",
               "number": 22,
               "pos": "G",
               "grid": null
@@ -72044,8 +72008,35 @@
           },
           {
             "player": {
+              "id": 46417,
+              "name": "S. Chaine",
+              "number": 16,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 163041,
+              "name": "B. Cross",
+              "number": 26,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 201354,
+              "name": "E. Makgopa",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 330174,
-              "name": "Tholo Thabang Matuludi",
+              "name": "T. Matuludi",
               "number": 2,
               "pos": "D",
               "grid": null
@@ -72054,7 +72045,7 @@
           {
             "player": {
               "id": 474630,
-              "name": "Khulumani Ndamane",
+              "name": "K. Ndamane",
               "number": 3,
               "pos": "D",
               "grid": null
@@ -72062,17 +72053,8 @@
           },
           {
             "player": {
-              "id": 430078,
-              "name": "Samukelo Kabini",
-              "number": 18,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 46458,
-              "name": "Nkosinathi Sibisi",
+              "name": "N. Sibisi",
               "number": 19,
               "pos": "D",
               "grid": null
@@ -72080,26 +72062,17 @@
           },
           {
             "player": {
-              "id": 392387,
-              "name": "Olwethu Makhanya",
-              "number": 24,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 163041,
-              "name": "Bradley Cross",
-              "number": 26,
-              "pos": "D",
+              "id": 98936,
+              "name": "L. Foster",
+              "number": 9,
+              "pos": "F",
               "grid": null
             }
           },
           {
             "player": {
               "id": 295977,
-              "name": "Tshepang Moremi",
+              "name": "T. Moremi",
               "number": 8,
               "pos": "F",
               "grid": null
@@ -72107,10 +72080,37 @@
           },
           {
             "player": {
-              "id": 98936,
-              "name": "Lyle Foster",
-              "number": 9,
+              "id": 359561,
+              "name": "K. Sebelebele",
+              "number": 25,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 392387,
+              "name": "O. Makhanya",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 414149,
+              "name": "R. Mofokeng",
+              "number": 10,
               "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 430078,
+              "name": "S. Kabini",
+              "number": 18,
+              "pos": "D",
               "grid": null
             }
           }
@@ -90165,7 +90165,7 @@
     "date": "2026-07-04T17:00:00+00:00",
     "homeTeam": "Canada",
     "awayTeam": "Morocco",
-    "status": "Not Started"
+    "status": "Halftime"
   },
   "m090": {
     "fixtureId": "1569870",
