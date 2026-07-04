@@ -90161,11 +90161,1086 @@
     ]
   },
   "m089": {
-    "fixtureId": "1567824",
+    "fixtureId": 1567824,
     "date": "2026-07-04T17:00:00+00:00",
+    "venue": "NRG Stadium",
+    "status": "Match Finished",
     "homeTeam": "Canada",
     "awayTeam": "Morocco",
-    "status": "Second Half"
+    "score": {
+      "home": 0,
+      "away": 3
+    },
+    "statistics": {
+      "Canada": {
+        "Shots on Goal": 3,
+        "Shots off Goal": 5,
+        "Total Shots": 11,
+        "Blocked Shots": 3,
+        "Shots insidebox": 7,
+        "Shots outsidebox": 4,
+        "Fouls": 24,
+        "Corner Kicks": 11,
+        "Offsides": 2,
+        "Ball Possession": "45%",
+        "Yellow Cards": 4,
+        "Red Cards": null,
+        "Goalkeeper Saves": 1,
+        "Total passes": 357,
+        "Passes accurate": 272,
+        "Passes %": "76%",
+        "expected_goals": "0.86",
+        "goals_prevented": "0.66"
+      },
+      "Morocco": {
+        "Shots on Goal": 4,
+        "Shots off Goal": 1,
+        "Total Shots": 5,
+        "Blocked Shots": 0,
+        "Shots insidebox": 3,
+        "Shots outsidebox": 2,
+        "Fouls": 14,
+        "Corner Kicks": 1,
+        "Offsides": 3,
+        "Ball Possession": "55%",
+        "Yellow Cards": 4,
+        "Red Cards": null,
+        "Goalkeeper Saves": 3,
+        "Total passes": 472,
+        "Passes accurate": 389,
+        "Passes %": "82%",
+        "expected_goals": "0.78",
+        "goals_prevented": "0.66"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 5529,
+          "name": "Canada",
+          "logo": "https://media.api-sports.io/football/teams/5529.png",
+          "colors": {
+            "player": {
+              "primary": "a70115",
+              "number": "ffffff",
+              "border": "a70115"
+            },
+            "goalkeeper": {
+              "primary": "1b2f85",
+              "number": "f0eded",
+              "border": "1b2f85"
+            }
+          }
+        },
+        "formation": "4-4-2",
+        "startXI": [
+          {
+            "player": {
+              "id": 51274,
+              "name": "Maxime Crépeau",
+              "number": 16,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 78547,
+              "name": "Alistair Johnston",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 407017,
+              "name": "Moise Bombito",
+              "number": 15,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 327738,
+              "name": "Luc De Fougerolles",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 50816,
+              "name": "Richie Laryea",
+              "number": 22,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 51016,
+              "name": "Tajon Buchanan",
+              "number": 17,
+              "pos": "M",
+              "grid": "3:4"
+            }
+          },
+          {
+            "player": {
+              "id": 416901,
+              "name": "Niko Sigur",
+              "number": 23,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 35570,
+              "name": "Stephen Eustaquio",
+              "number": 7,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 362145,
+              "name": "Ali Ahmed",
+              "number": 20,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 8489,
+              "name": "Jonathan David",
+              "number": 10,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 351587,
+              "name": "Tani Oluwaseyi",
+              "number": 12,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 2001,
+              "name": "Cyle Larin",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50826,
+              "name": "Jacob Shaffelburg",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 313353,
+              "name": "Promise David",
+              "number": 24,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50817,
+              "name": "Jonathan Osorio",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 193279,
+              "name": "Jayden Nelson",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 284554,
+              "name": "Owen Goodman",
+              "number": 18,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 51148,
+              "name": "Dayne St. Clair",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 78494,
+              "name": "Joel Waterman",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 509,
+              "name": "Alphonso Davies",
+              "number": 19,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 18938,
+              "name": "Alfie Jones",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 51295,
+              "name": "Derek Cornelius",
+              "number": 13,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50788,
+              "name": "Mathieu Choinière",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 294824,
+              "name": "Nathan-Dylan Saliba",
+              "number": 25,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 44798,
+              "name": "Liam Millar",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 28218,
+          "name": "Jesse Marsch",
+          "photo": "https://media.api-sports.io/football/coachs/28218.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 31,
+          "name": "Morocco",
+          "logo": "https://media.api-sports.io/football/teams/31.png",
+          "colors": {
+            "player": {
+              "primary": "e60000",
+              "number": "ffffff",
+              "border": "e60000"
+            },
+            "goalkeeper": {
+              "primary": "bfda7f",
+              "number": "000000",
+              "border": "bfda7f"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 2701,
+              "name": "Yassine Bounou",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 9,
+              "name": "Achraf Hakimi",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 18814,
+              "name": "Issa Diop",
+              "number": 14,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 326183,
+              "name": "Redouane Halhal",
+              "number": 25,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 545,
+              "name": "Noussair Mazraoui",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 438688,
+              "name": "Ayyoub Bouaddi",
+              "number": 6,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 277003,
+              "name": "Neil El Aynaoui",
+              "number": 24,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 744,
+              "name": "Brahim Díaz",
+              "number": 10,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 129678,
+              "name": "Azzedine Ounahi",
+              "number": 8,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 340573,
+              "name": "Bilal El Khannouss",
+              "number": 23,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 161897,
+              "name": "Ismael Saibari",
+              "number": 11,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 36579,
+              "name": "Soufiane Rahimi",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 74,
+              "name": "Sofyan Amrabat",
+              "number": 4,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 336659,
+              "name": "Chemsdine Talbi",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50042,
+              "name": "Marwane Saadane",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 415431,
+              "name": "Samir El Mourabet",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2702,
+              "name": "Munir El Kajoui",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2703,
+              "name": "Ahmed Reda Tagnaouti",
+              "number": 22,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 162451,
+              "name": "Anass Salah-Eddine",
+              "number": 26,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 283252,
+              "name": "Zakaria El Ouahdi",
+              "number": 13,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 146772,
+              "name": "Youssef Belammari",
+              "number": 19,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 278898,
+              "name": "Chadi Riad",
+              "number": 18,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 191289,
+              "name": "Amine Sbai",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 369544,
+              "name": "Gessime Yassine",
+              "number": 16,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2722,
+              "name": "Ayoub El Kaabi",
+              "number": 20,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 535046,
+              "name": "Ayoube Amaimouni Echghouyab",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 28221,
+          "name": "Mohamed Ouahbi",
+          "photo": "https://media.api-sports.io/football/coachs/28221.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "20",
+        "team": "Morocco",
+        "player": "R. Halhal",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Roughing"
+      },
+      {
+        "time": "22",
+        "team": "Morocco",
+        "player": "I. Saibari",
+        "assist": "S. Rahimi",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "40",
+        "team": "Morocco",
+        "player": "A. Hakimi",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Unsportsmanlike conduct"
+      },
+      {
+        "time": "40",
+        "team": "Canada",
+        "player": "R. Laryea",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Unsportsmanlike conduct"
+      },
+      {
+        "time": "43",
+        "team": "Canada",
+        "player": "J. David",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Holding"
+      },
+      {
+        "time": "45",
+        "team": "Morocco",
+        "player": "A. Ounahi",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "45+6",
+        "team": "Morocco",
+        "player": "B. El Khannouss",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Roughing"
+      },
+      {
+        "time": "49",
+        "team": "Canada",
+        "player": "L. De Fougerolles",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "50",
+        "team": "Morocco",
+        "player": "A. Ounahi",
+        "assist": "A. Hakimi",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "63",
+        "team": "Morocco",
+        "player": "A. Bouaddi",
+        "assist": "S. Amrabat",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "63",
+        "team": "Morocco",
+        "player": "B. El Khannouss",
+        "assist": "C. Talbi",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "63",
+        "team": "Canada",
+        "player": "T. Oluwaseyi",
+        "assist": "C. Larin",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "67",
+        "team": "Canada",
+        "player": "C. Larin",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Foul"
+      },
+      {
+        "time": "78",
+        "team": "Canada",
+        "player": "A. Ahmed",
+        "assist": "P. David",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "78",
+        "team": "Canada",
+        "player": "R. Laryea",
+        "assist": "J. Shaffelburg",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "82",
+        "team": "Morocco",
+        "player": "A. Ounahi",
+        "assist": "B. Diaz",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "87",
+        "team": "Morocco",
+        "player": "I. Diop",
+        "assist": "M. Saadane",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "87",
+        "team": "Morocco",
+        "player": "A. Ounahi",
+        "assist": "S. El Mourabet",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "87",
+        "team": "Canada",
+        "player": "T. Buchanan",
+        "assist": "J. Nelson",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "87",
+        "team": "Canada",
+        "player": "N. Sigur",
+        "assist": "J. Osorio",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "90+8",
+        "team": "Morocco",
+        "player": "S. Rahimi",
+        "assist": "B. Diaz",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Canada",
+        "players": [
+          {
+            "name": "Maxime Crépeau",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alistair Johnston",
+            "rating": "6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Moise Bombito",
+            "rating": "5.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Luc De Fougerolles",
+            "rating": "5.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Richie Laryea",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tajon Buchanan",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Niko Sigur",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Stephen Eustaquio",
+            "rating": "7.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ali Ahmed",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jonathan David",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tani Oluwaseyi",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Cyle Larin",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jacob Shaffelburg",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Promise David",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jonathan Osorio",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jayden Nelson",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Owen Goodman",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Dayne St. Clair",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Joel Waterman",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alphonso Davies",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alfie Jones",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Derek Cornelius",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mathieu Choinière",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nathan-Dylan Saliba",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Liam Millar",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Morocco",
+        "players": [
+          {
+            "name": "Yassine Bounou",
+            "rating": "7.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Achraf Hakimi",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Issa Diop",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Redouane Halhal",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Noussair Mazraoui",
+            "rating": "7.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ayyoub Bouaddi",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Neil El Aynaoui",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Brahim Díaz",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 2
+          },
+          {
+            "name": "Azzedine Ounahi",
+            "rating": "9.2",
+            "goals": 2,
+            "assists": 0
+          },
+          {
+            "name": "Bilal El Khannouss",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ismael Saibari",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Soufiane Rahimi",
+            "rating": "7.2",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Sofyan Amrabat",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Chemsdine Talbi",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marwane Saadane",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Samir El Mourabet",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Munir El Kajoui",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ahmed Reda Tagnaouti",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Anass Salah-Eddine",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Zakaria El Ouahdi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Youssef Belammari",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Chadi Riad",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Amine Sbai",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gessime Yassine",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ayoub El Kaabi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ayoube Amaimouni Echghouyab",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m090": {
     "fixtureId": "1569870",
