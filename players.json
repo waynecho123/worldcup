@@ -234,6 +234,13 @@
       "matches": 4
     },
     {
+      "name": "Mohamed Salah",
+      "photo": "https://media.api-sports.io/football/players/306.png",
+      "team": "Egypt",
+      "assists": 2,
+      "matches": 4
+    },
+    {
       "name": "V. Gyökeres",
       "photo": "https://media.api-sports.io/football/players/18979.png",
       "team": "Sweden",
@@ -251,13 +258,6 @@
       "name": "N. Saliba",
       "photo": "https://media.api-sports.io/football/players/294824.png",
       "team": "Canada",
-      "assists": 2,
-      "matches": 3
-    },
-    {
-      "name": "Mohamed Salah",
-      "photo": "https://media.api-sports.io/football/players/306.png",
-      "team": "Egypt",
       "assists": 2,
       "matches": 3
     },
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-07-04T08:12:08.290Z"
+  "updatedAt": "2026-07-04T10:06:46.095Z"
 }
