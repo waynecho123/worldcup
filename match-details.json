@@ -70518,7 +70518,7 @@
           {
             "player": {
               "id": 51274,
-              "name": "M. Crepeau",
+              "name": "Maxime Crépeau",
               "number": 16,
               "pos": "G",
               "grid": "1:1"
@@ -70527,7 +70527,7 @@
           {
             "player": {
               "id": 78547,
-              "name": "A. Johnston",
+              "name": "Alistair Johnston",
               "number": 2,
               "pos": "D",
               "grid": "2:4"
@@ -70536,7 +70536,7 @@
           {
             "player": {
               "id": 327738,
-              "name": "L. De Fougerolles",
+              "name": "Luc De Fougerolles",
               "number": 4,
               "pos": "D",
               "grid": "2:3"
@@ -70545,7 +70545,7 @@
           {
             "player": {
               "id": 51295,
-              "name": "D. Cornelius",
+              "name": "Derek Cornelius",
               "number": 13,
               "pos": "D",
               "grid": "2:2"
@@ -70554,7 +70554,7 @@
           {
             "player": {
               "id": 50816,
-              "name": "R. Laryea",
+              "name": "Richie Laryea",
               "number": 22,
               "pos": "D",
               "grid": "2:1"
@@ -70563,7 +70563,7 @@
           {
             "player": {
               "id": 51016,
-              "name": "T. Buchanan",
+              "name": "Tajon Buchanan",
               "number": 17,
               "pos": "M",
               "grid": "3:4"
@@ -70572,7 +70572,7 @@
           {
             "player": {
               "id": 328046,
-              "name": "I. Kone",
+              "name": "Ismael Koné",
               "number": 8,
               "pos": "M",
               "grid": "3:3"
@@ -70581,7 +70581,7 @@
           {
             "player": {
               "id": 35570,
-              "name": "S. Eustaquio",
+              "name": "Stephen Eustaquio",
               "number": 7,
               "pos": "M",
               "grid": "3:2"
@@ -70590,7 +70590,7 @@
           {
             "player": {
               "id": 362145,
-              "name": "A. Ahmed",
+              "name": "Ali Ahmed",
               "number": 20,
               "pos": "M",
               "grid": "3:1"
@@ -70599,7 +70599,7 @@
           {
             "player": {
               "id": 8489,
-              "name": "J. David",
+              "name": "Jonathan David",
               "number": 10,
               "pos": "F",
               "grid": "4:2"
@@ -70608,7 +70608,7 @@
           {
             "player": {
               "id": 2001,
-              "name": "C. Larin",
+              "name": "Cyle Larin",
               "number": 9,
               "pos": "F",
               "grid": "4:1"
@@ -70618,8 +70618,53 @@
         "substitutes": [
           {
             "player": {
+              "id": 407017,
+              "name": "Moise Bombito",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 294824,
+              "name": "Nathan-Dylan Saliba",
+              "number": 25,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50826,
+              "name": "Jacob Shaffelburg",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 351587,
+              "name": "Tani Oluwaseyi",
+              "number": 12,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 416901,
+              "name": "Niko Sigur",
+              "number": 23,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 51148,
-              "name": "D. St.Clair",
+              "name": "Dayne St. Clair",
               "number": 1,
               "pos": "G",
               "grid": null
@@ -70628,7 +70673,7 @@
           {
             "player": {
               "id": 284554,
-              "name": "O. Goodman",
+              "name": "Owen Goodman",
               "number": 18,
               "pos": "G",
               "grid": null
@@ -70637,7 +70682,7 @@
           {
             "player": {
               "id": 78494,
-              "name": "J. Waterman",
+              "name": "Joel Waterman",
               "number": 5,
               "pos": "D",
               "grid": null
@@ -70646,7 +70691,7 @@
           {
             "player": {
               "id": 509,
-              "name": "A. Davies",
+              "name": "Alphonso Davies",
               "number": 19,
               "pos": "D",
               "grid": null
@@ -70654,62 +70699,8 @@
           },
           {
             "player": {
-              "id": 50826,
-              "name": "J. Shaffelburg",
-              "number": 14,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 193279,
-              "name": "J. Nelson",
-              "number": 26,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 407017,
-              "name": "M. Bombito",
-              "number": 15,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 416901,
-              "name": "N. Sigur",
-              "number": 23,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 50817,
-              "name": "J. Osorio",
-              "number": 21,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 44798,
-              "name": "L. Millar",
-              "number": 11,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 50788,
-              "name": "M. Choiniere",
+              "name": "Mathieu Choinière",
               "number": 6,
               "pos": "M",
               "grid": null
@@ -70717,9 +70708,18 @@
           },
           {
             "player": {
-              "id": 294824,
-              "name": "N. Saliba",
-              "number": 25,
+              "id": 44798,
+              "name": "Liam Millar",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50817,
+              "name": "Jonathan Osorio",
+              "number": 21,
               "pos": "M",
               "grid": null
             }
@@ -70727,7 +70727,7 @@
           {
             "player": {
               "id": 313353,
-              "name": "P. David",
+              "name": "Promise David",
               "number": 24,
               "pos": "F",
               "grid": null
@@ -70735,9 +70735,9 @@
           },
           {
             "player": {
-              "id": 351587,
-              "name": "T. Oluwaseyi",
-              "number": 12,
+              "id": 193279,
+              "name": "Jayden Nelson",
+              "number": 26,
               "pos": "F",
               "grid": null
             }
@@ -70772,7 +70772,7 @@
           {
             "player": {
               "id": 42207,
-              "name": "M. Abunada",
+              "name": "Mahmud Abunada",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -70781,7 +70781,7 @@
           {
             "player": {
               "id": 377930,
-              "name": "A. Al Oui",
+              "name": "Ayoub Al Oui",
               "number": 13,
               "pos": "D",
               "grid": "2:4"
@@ -70799,7 +70799,7 @@
           {
             "player": {
               "id": 2532,
-              "name": "B. Khoukhi",
+              "name": "Boualem Khoukhi",
               "number": 16,
               "pos": "D",
               "grid": "2:2"
@@ -70808,7 +70808,7 @@
           {
             "player": {
               "id": 175439,
-              "name": "H. Al Amin",
+              "name": "Homam Al-Amin",
               "number": 14,
               "pos": "D",
               "grid": "2:1"
@@ -70817,7 +70817,7 @@
           {
             "player": {
               "id": 200981,
-              "name": "J. Gaber",
+              "name": "Jassem Gaber Abdulsallam",
               "number": 5,
               "pos": "M",
               "grid": "3:3"
@@ -70826,7 +70826,7 @@
           {
             "player": {
               "id": 2535,
-              "name": "A. O. Madibo",
+              "name": "Assim Madibo",
               "number": 23,
               "pos": "M",
               "grid": "3:2"
@@ -70835,7 +70835,7 @@
           {
             "player": {
               "id": 366516,
-              "name": "I. Laye",
+              "name": "Issa Laye",
               "number": 4,
               "pos": "M",
               "grid": "3:1"
@@ -70853,7 +70853,7 @@
           {
             "player": {
               "id": 542541,
-              "name": "Y. Abdurisag",
+              "name": "Yusuf Abdurisag",
               "number": 15,
               "pos": "F",
               "grid": "4:2"
@@ -70862,7 +70862,7 @@
           {
             "player": {
               "id": 2544,
-              "name": "A. Afif",
+              "name": "Akram Afif",
               "number": 11,
               "pos": "F",
               "grid": "4:1"
@@ -70872,71 +70872,17 @@
         "substitutes": [
           {
             "player": {
-              "id": 136503,
-              "name": "S. Zakaria",
-              "number": 21,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 42021,
-              "name": "M. Barsham",
-              "number": 22,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 2545,
-              "name": "H. Al Haydos",
-              "number": 10,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 42089,
-              "name": "M. Muntari",
-              "number": 9,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 542542,
-              "name": "A. Al Hussain",
-              "number": 25,
+              "id": 42060,
+              "name": "Sultan Al-Brake",
+              "number": 18,
               "pos": "D",
               "grid": null
             }
           },
           {
             "player": {
-              "id": 2533,
-              "name": "A. Hatem",
-              "number": 6,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 2543,
-              "name": "A. Ali",
-              "number": 19,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 2539,
-              "name": "A. Fathi",
+              "name": "Ahmed Fathi",
               "number": 20,
               "pos": "M",
               "grid": null
@@ -70944,10 +70890,19 @@
           },
           {
             "player": {
-              "id": 423737,
-              "name": "T. Jamshid",
-              "number": 24,
-              "pos": "F",
+              "id": 283174,
+              "name": "Mohamed Naceur Almanai",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 542542,
+              "name": "Al-Hashmi Al-Hussain",
+              "number": 25,
+              "pos": "D",
               "grid": null
             }
           },
@@ -70962,8 +70917,35 @@
           },
           {
             "player": {
+              "id": 136503,
+              "name": "Salah Zakaria",
+              "number": 21,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 42021,
+              "name": "Meshaal Barsham",
+              "number": 22,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2533,
+              "name": "Abdelaziz Hatem",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 2537,
-              "name": "K. Boudiaf",
+              "name": "Karim Boudiaf",
               "number": 12,
               "pos": "M",
               "grid": null
@@ -70971,26 +70953,8 @@
           },
           {
             "player": {
-              "id": 2542,
-              "name": "A. Alaaeldin",
-              "number": 7,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 42060,
-              "name": "S. Al Brake",
-              "number": 18,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 42286,
-              "name": "A. Al Ganehi",
+              "name": "Ahmed Al-Ganehi",
               "number": 17,
               "pos": "F",
               "grid": null
@@ -70998,10 +70962,46 @@
           },
           {
             "player": {
-              "id": 283174,
-              "name": "M. Al Mannai",
-              "number": 26,
-              "pos": "M",
+              "id": 2543,
+              "name": "Almoez Ali",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2542,
+              "name": "Ahmed Alaaeldin",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 42089,
+              "name": "Mohammed Muntari",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2545,
+              "name": "Hassan Al Haydos",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 423737,
+              "name": "Tahsin Mohammed Jamshid",
+              "number": 24,
+              "pos": "F",
               "grid": null
             }
           }
@@ -71021,7 +71021,7 @@
       {
         "time": "16",
         "team": "Canada",
-        "player": "C. Larin",
+        "player": "Cyle Larin",
         "assist": null,
         "type": "Goal",
         "detail": "Normal Goal",
@@ -71030,7 +71030,7 @@
       {
         "time": "29",
         "team": "Canada",
-        "player": "J. David",
+        "player": "Jonathan David",
         "assist": null,
         "type": "Goal",
         "detail": "Normal Goal",
@@ -71064,27 +71064,18 @@
         "comments": ""
       },
       {
-        "time": "33",
-        "team": "Canada",
-        "player": null,
-        "assist": null,
-        "type": "Goal",
-        "detail": "Normal Goal",
-        "comments": ""
-      },
-      {
         "time": "40",
         "team": "Qatar",
-        "player": "Y. Abdurisag",
-        "assist": "S. Al Brake",
+        "player": "Yusuf Abdurisag",
+        "assist": "Sultan Al-Brake",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
       },
       {
-        "time": "45",
+        "time": "45+3",
         "team": "Canada",
-        "player": "J. David",
+        "player": "Jonathan David",
         "assist": null,
         "type": "Goal",
         "detail": "Normal Goal",
@@ -71093,8 +71084,8 @@
       {
         "time": "46",
         "team": "Canada",
-        "player": "D. Cornelius",
-        "assist": "M. Bombito",
+        "player": "Derek Cornelius",
+        "assist": "Moise Bombito",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -71102,8 +71093,8 @@
       {
         "time": "46",
         "team": "Qatar",
-        "player": "Edmilson Junior",
-        "assist": "A. Fathi",
+        "player": "Jassem Gaber Abdulsallam",
+        "assist": "Mohamed Naceur Almanai",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -71111,8 +71102,8 @@
       {
         "time": "46",
         "team": "Qatar",
-        "player": "J. Gaber",
-        "assist": "M. Al Mannai",
+        "player": "Edmilson Junior",
+        "assist": "Ahmed Fathi",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -71138,8 +71129,8 @@
       {
         "time": "57",
         "team": "Canada",
-        "player": "I. Kone",
-        "assist": "N. Saliba",
+        "player": "Ismael Koné",
+        "assist": "Nathan-Dylan Saliba",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -71147,8 +71138,8 @@
       {
         "time": "59",
         "team": "Qatar",
-        "player": "A. Afif",
-        "assist": "A. Al Hussain",
+        "player": "Akram Afif",
+        "assist": "Al-Hashmi Al-Hussain",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -71165,7 +71156,7 @@
       {
         "time": "64",
         "team": "Canada",
-        "player": "N. Saliba",
+        "player": "Nathan-Dylan Saliba",
         "assist": null,
         "type": "Goal",
         "detail": "Normal Goal",
@@ -71174,8 +71165,8 @@
       {
         "time": "71",
         "team": "Canada",
-        "player": "L. De Fougerolles",
-        "assist": "J. Shaffelburg",
+        "player": "Ali Ahmed",
+        "assist": "Tani Oluwaseyi",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -71183,8 +71174,8 @@
       {
         "time": "71",
         "team": "Canada",
-        "player": "A. Ahmed",
-        "assist": "T. Oluwaseyi",
+        "player": "Luc De Fougerolles",
+        "assist": "Jacob Shaffelburg",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -71192,7 +71183,7 @@
       {
         "time": "75",
         "team": "Canada",
-        "player": "M. Al Mannai",
+        "player": "Mohamed Naceur Almanai",
         "assist": null,
         "type": "Goal",
         "detail": "Own Goal",
@@ -71201,8 +71192,8 @@
       {
         "time": "83",
         "team": "Canada",
-        "player": "T. Buchanan",
-        "assist": "N. Sigur",
+        "player": "Tajon Buchanan",
+        "assist": "Niko Sigur",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -71210,17 +71201,17 @@
       {
         "time": "87",
         "team": "Qatar",
-        "player": null,
+        "player": "Ahmed Fathi",
         "assist": "Lucas Mendes",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
       },
       {
-        "time": "90",
+        "time": "90+2",
         "team": "Canada",
-        "player": "J. David",
-        "assist": "N. Saliba",
+        "player": "Jonathan David",
+        "assist": "Nathan-Dylan Saliba",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -87102,7 +87093,7 @@
     "date": "2026-07-03T22:00:00+00:00",
     "homeTeam": "Argentina",
     "awayTeam": "Cape Verde Islands",
-    "status": "First Half"
+    "status": "Extra Time"
   },
   "m086": {
     "fixtureId": "1567310",
