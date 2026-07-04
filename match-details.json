@@ -87673,8 +87673,8 @@
       {
         "time": "29",
         "team": "Argentina",
-        "player": "L. Messi",
-        "assist": "L. Martinez",
+        "player": "Lionel Messi",
+        "assist": "Lisandro Martínez",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -87682,8 +87682,8 @@
       {
         "time": "59",
         "team": "Cape Verde Islands",
-        "player": "D. Duarte",
-        "assist": "R. Mendes",
+        "player": "Deroy Duarte",
+        "assist": "Ryan Mendes",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -87691,17 +87691,17 @@
       {
         "time": "63",
         "team": "Argentina",
-        "player": "L. Martinez",
-        "assist": "J. Alvarez",
+        "player": "Thiago Almada",
+        "assist": "Nicolás González",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
       },
       {
-        "time": "64",
+        "time": "63",
         "team": "Argentina",
-        "player": "T. Almada",
-        "assist": "N. Gonzalez",
+        "player": "Lautaro Martínez",
+        "assist": "Julián Alvarez",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -87709,8 +87709,8 @@
       {
         "time": "67",
         "team": "Cape Verde Islands",
-        "player": "L. Duarte",
-        "assist": "J. Monteiro",
+        "player": "Nuno Da Costa",
+        "assist": "Dailon Rocha Livramento",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -87718,8 +87718,8 @@
       {
         "time": "67",
         "team": "Cape Verde Islands",
-        "player": "N. Da Costa",
-        "assist": "D. Livramento",
+        "player": "Laros Duarte",
+        "assist": "Jamiro Monteiro",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -87727,17 +87727,17 @@
       {
         "time": "68",
         "team": "Cape Verde Islands",
-        "player": "K. Lenini",
+        "player": "Kevin Lenini",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Holding"
+        "comments": "Foul"
       },
       {
         "time": "80",
         "team": "Cape Verde Islands",
-        "player": "R. Mendes",
-        "assist": "W. Semedo",
+        "player": "Jovane Cabral",
+        "assist": "Hélio Varela",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -87745,8 +87745,8 @@
       {
         "time": "80",
         "team": "Cape Verde Islands",
-        "player": "J. Cabral",
-        "assist": "H. Varela",
+        "player": "Ryan Mendes",
+        "assist": "Willy Semedo",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -87754,8 +87754,8 @@
       {
         "time": "84",
         "team": "Argentina",
-        "player": "R. de Paul",
-        "assist": "L. Paredes",
+        "player": "Rodrigo De Paul",
+        "assist": "Leandro Paredes",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -87763,17 +87763,17 @@
       {
         "time": "86",
         "team": "Argentina",
-        "player": "F. Medina",
-        "assist": "N. Tagliafico",
+        "player": "Facundo Medina",
+        "assist": "Nicolás Tagliafico",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
       },
       {
-        "time": "92",
+        "time": "93",
         "team": "Argentina",
-        "player": "L. Martinez",
-        "assist": "A. Mac Allister",
+        "player": "Lisandro Martínez",
+        "assist": "Alexis Mac Allister",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -87781,8 +87781,8 @@
       {
         "time": "100",
         "team": "Cape Verde Islands",
-        "player": "D. Duarte",
-        "assist": "Y. Semedo",
+        "player": "Kevin Lenini",
+        "assist": "Gilson Tavares",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -87790,8 +87790,8 @@
       {
         "time": "100",
         "team": "Cape Verde Islands",
-        "player": "K. Lenini",
-        "assist": "Benchimol",
+        "player": "Deroy Duarte",
+        "assist": "Yannick Semedo",
         "type": "subst",
         "detail": "Substitution 6",
         "comments": ""
@@ -87799,8 +87799,8 @@
       {
         "time": "103",
         "team": "Cape Verde Islands",
-        "player": "S. Lopes Cabral",
-        "assist": "Y. Semedo",
+        "player": "Sidny Lopes Cabral",
+        "assist": null,
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -87808,8 +87808,8 @@
       {
         "time": "104",
         "team": "Argentina",
-        "player": "N. Molina",
-        "assist": "G. Montiel",
+        "player": "Nahuel Molina",
+        "assist": "Gonzalo Montiel",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -87817,7 +87817,7 @@
       {
         "time": "111",
         "team": "Argentina",
-        "player": "D. Borges",
+        "player": "Diney Borges",
         "assist": null,
         "type": "Goal",
         "detail": "Own Goal",
@@ -87826,11 +87826,11 @@
       {
         "time": "115",
         "team": "Argentina",
-        "player": "G. Montiel",
+        "player": "Gonzalo Montiel",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Tripping"
+        "comments": "Foul"
       }
     ],
     "players": [
@@ -88159,11 +88159,1056 @@
     ]
   },
   "m086": {
-    "fixtureId": "1567310",
+    "fixtureId": 1567310,
     "date": "2026-07-04T01:30:00+00:00",
+    "venue": "Arrowhead Stadium",
+    "status": "Match Finished",
     "homeTeam": "Colombia",
     "awayTeam": "Ghana",
-    "status": "First Half"
+    "score": {
+      "home": 1,
+      "away": 0
+    },
+    "statistics": {
+      "Colombia": {
+        "Shots on Goal": 8,
+        "Shots off Goal": 8,
+        "Total Shots": 20,
+        "Blocked Shots": 4,
+        "Shots insidebox": 12,
+        "Shots outsidebox": 8,
+        "Fouls": 14,
+        "Corner Kicks": 3,
+        "Offsides": 2,
+        "Ball Possession": "61%",
+        "Yellow Cards": 2,
+        "Red Cards": null,
+        "Goalkeeper Saves": 0,
+        "Total passes": 586,
+        "Passes accurate": 532,
+        "Passes %": "91%",
+        "expected_goals": "2.18",
+        "goals_prevented": "1.92"
+      },
+      "Ghana": {
+        "Shots on Goal": 0,
+        "Shots off Goal": 3,
+        "Total Shots": 8,
+        "Blocked Shots": 5,
+        "Shots insidebox": 2,
+        "Shots outsidebox": 6,
+        "Fouls": 10,
+        "Corner Kicks": 2,
+        "Offsides": 0,
+        "Ball Possession": "39%",
+        "Yellow Cards": 3,
+        "Red Cards": null,
+        "Goalkeeper Saves": 7,
+        "Total passes": 376,
+        "Passes accurate": 312,
+        "Passes %": "83%",
+        "expected_goals": "0.26",
+        "goals_prevented": "1.92"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 8,
+          "name": "Colombia",
+          "logo": "https://media.api-sports.io/football/teams/8.png",
+          "colors": {
+            "player": {
+              "primary": "f0e975",
+              "number": "003399",
+              "border": "f0e975"
+            },
+            "goalkeeper": {
+              "primary": "bfbfbf",
+              "number": "1e1a1a",
+              "border": "bfbfbf"
+            }
+          }
+        },
+        "formation": "4-3-3",
+        "startXI": [
+          {
+            "player": {
+              "id": 2482,
+              "name": "Camilo Vargas",
+              "number": 12,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 13736,
+              "name": "Daniel Muñoz",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 168,
+              "name": "Davinson Sánchez",
+              "number": 23,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 1929,
+              "name": "Jhon Lucumí",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 64268,
+              "name": "Johan Mojica",
+              "number": 17,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 324034,
+              "name": "Gustavo Puerta",
+              "number": 14,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 2490,
+              "name": "Jefferson Lerma",
+              "number": 16,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 13708,
+              "name": "Jhon Arias",
+              "number": 11,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 517,
+              "name": "James Rodríguez",
+              "number": 10,
+              "pos": "F",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 24810,
+              "name": "Jhon Córdoba",
+              "number": 9,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 2489,
+              "name": "Luis Díaz",
+              "number": 7,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 47237,
+              "name": "Luis Javier Suárez",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 195104,
+              "name": "Richard Ríos",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6005,
+              "name": "Juan Fernando Quintero",
+              "number": 20,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 13376,
+              "name": "Jaminton Campaz",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 313,
+              "name": "David Ospina",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2481,
+              "name": "Álvaro Montero",
+              "number": 24,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30,
+              "name": "Santiago Arias",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2484,
+              "name": "Yerry Mina",
+              "number": 13,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 13571,
+              "name": "Willer Ditta",
+              "number": 18,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2483,
+              "name": "Deiver Machado",
+              "number": 22,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 289592,
+              "name": "Kevin Castaño",
+              "number": 5,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 5994,
+              "name": "Jorge Carrascal",
+              "number": 8,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 13151,
+              "name": "Juan Portilla",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 345748,
+              "name": "Andrés Gómez",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47582,
+              "name": "Cucho Hernández",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 14213,
+          "name": "Nestor Lorenzo",
+          "photo": "https://media.api-sports.io/football/coachs/14213.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 1504,
+          "name": "Ghana",
+          "logo": "https://media.api-sports.io/football/teams/1504.png",
+          "colors": {
+            "player": {
+              "primary": "f1d375",
+              "number": "0f0f0f",
+              "border": "f1d375"
+            },
+            "goalkeeper": {
+              "primary": "52c8de",
+              "number": "0a0a0a",
+              "border": "52c8de"
+            }
+          }
+        },
+        "formation": "4-1-4-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 3412,
+              "name": "Lawrence Ati Zigi",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 191240,
+              "name": "Marvin Senaya",
+              "number": 26,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 25341,
+              "name": "Derrick Luckassen",
+              "number": 23,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 137223,
+              "name": "Jerome Opoku",
+              "number": 18,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 7578,
+              "name": "Gideon Mensah",
+              "number": 14,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 49,
+              "name": "Thomas Partey",
+              "number": 5,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 47294,
+              "name": "Iñaki Williams",
+              "number": 19,
+              "pos": "M",
+              "grid": "4:4"
+            }
+          },
+          {
+            "player": {
+              "id": 475575,
+              "name": "Caleb Yirenkyi",
+              "number": 3,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 3608,
+              "name": "Kwasi Sibo",
+              "number": 8,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 19281,
+              "name": "Antoine Semenyo",
+              "number": 11,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 3428,
+              "name": "Jordan Ayew",
+              "number": 9,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 196187,
+              "name": "Alidu Seidu",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 21010,
+              "name": "Elisha Owusu",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 303467,
+              "name": "Abdul Fatawu Issahaku",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 350856,
+              "name": "Ernest Nuamah",
+              "number": 24,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 410016,
+              "name": "Prince Kwabena Adu",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 144709,
+              "name": "Joseph Anang",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 480108,
+              "name": "Benjamin Asare",
+              "number": 16,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 369425,
+              "name": "Jonas Adjei Adjetey",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 15900,
+              "name": "Abdul Mumin",
+              "number": 6,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 21996,
+              "name": "Rahman Baba",
+              "number": 17,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 404172,
+              "name": "Kojo Peprah Oppong",
+              "number": 21,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 411800,
+              "name": "Christopher Baah",
+              "number": 13,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 337426,
+              "name": "Augustine Boakye",
+              "number": 20,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 82090,
+              "name": "Brandon Thomas-Asante",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 199837,
+              "name": "Kamaldeen Sulemana",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 324,
+          "name": "Carlos Queiroz",
+          "photo": "https://media.api-sports.io/football/coachs/324.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "8",
+        "team": "Colombia",
+        "player": "J. Cordoba",
+        "assist": "L. Suarez",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "12",
+        "team": "Colombia",
+        "player": "J. Arias",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "13",
+        "team": "Ghana",
+        "player": "M. Senaya",
+        "assist": "A. Seidu",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "14",
+        "team": "Colombia",
+        "player": "J. Arias",
+        "assist": "L. Suarez",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "Colombia",
+        "player": "J. Rodriguez",
+        "assist": "R. Rios",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "49",
+        "team": "Ghana",
+        "player": "C. Yirenkyi",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Holding"
+      },
+      {
+        "time": "56",
+        "team": "Colombia",
+        "player": "L. Diaz",
+        "assist": null,
+        "type": "Var",
+        "detail": "Goal Disallowed - offside",
+        "comments": ""
+      },
+      {
+        "time": "62",
+        "team": "Ghana",
+        "player": "I. Williams",
+        "assist": "I. Fatawu",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "62",
+        "team": "Ghana",
+        "player": "K. Sibo",
+        "assist": "E. Owusu",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "66",
+        "team": "Ghana",
+        "player": "I. Fatawu",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Unsportsmanlike conduct"
+      },
+      {
+        "time": "73",
+        "team": "Colombia",
+        "player": "J. Arias",
+        "assist": "J. Quintero",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "76",
+        "team": "Ghana",
+        "player": "A. Seidu",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "78",
+        "team": "Colombia",
+        "player": "R. Rios",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "79",
+        "team": "Ghana",
+        "player": "J. Ayew",
+        "assist": "E. Nuamah",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "79",
+        "team": "Ghana",
+        "player": "C. Yirenkyi",
+        "assist": "P. Adu",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "90",
+        "team": "Colombia",
+        "player": "L. Diaz",
+        "assist": "J. Campaz",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Colombia",
+        "players": [
+          {
+            "name": "Camilo Vargas",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Daniel Muñoz",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Davinson Sánchez",
+            "rating": "7.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jhon Lucumí",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Johan Mojica",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gustavo Puerta",
+            "rating": "8.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jefferson Lerma",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jhon Arias",
+            "rating": "8.2",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "James Rodríguez",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jhon Córdoba",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Luis Díaz",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Luis Javier Suárez",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Richard Ríos",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Juan Fernando Quintero",
+            "rating": "7.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jaminton Campaz",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "David Ospina",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Álvaro Montero",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Santiago Arias",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yerry Mina",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Willer Ditta",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Deiver Machado",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kevin Castaño",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jorge Carrascal",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Juan Portilla",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Andrés Gómez",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Cucho Hernández",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Ghana",
+        "players": [
+          {
+            "name": "Lawrence Ati Zigi",
+            "rating": "9.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marvin Senaya",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Derrick Luckassen",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jerome Opoku",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gideon Mensah",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Thomas Partey",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Iñaki Williams",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Caleb Yirenkyi",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kwasi Sibo",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Antoine Semenyo",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jordan Ayew",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alidu Seidu",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Elisha Owusu",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Abdul Fatawu Issahaku",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ernest Nuamah",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Prince Kwabena Adu",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Joseph Anang",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Benjamin Asare",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jonas Adjei Adjetey",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Abdul Mumin",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Rahman Baba",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kojo Peprah Oppong",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Christopher Baah",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Augustine Boakye",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Brandon Thomas-Asante",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kamaldeen Sulemana",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m076": {
     "fixtureId": 1562586,

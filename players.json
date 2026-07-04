@@ -1,18 +1,18 @@
 {
   "scorers": [
     {
+      "name": "L. Messi",
+      "photo": "https://media.api-sports.io/football/players/154.png",
+      "team": "Argentina",
+      "goals": 7,
+      "matches": 4
+    },
+    {
       "name": "Kylian Mbappé",
       "photo": "https://media.api-sports.io/football/players/278.png",
       "team": "France",
       "goals": 6,
       "matches": 4
-    },
-    {
-      "name": "L. Messi",
-      "photo": "https://media.api-sports.io/football/players/154.png",
-      "team": "Argentina",
-      "goals": 6,
-      "matches": 3
     },
     {
       "name": "E. Haaland",
@@ -383,6 +383,13 @@
       "red": 0
     },
     {
+      "name": "Caleb Marfo Yirenkyi",
+      "photo": "https://media.api-sports.io/football/players/475575.png",
+      "team": "Ghana",
+      "yellow": 2,
+      "red": 0
+    },
+    {
       "name": "Casemiro",
       "photo": "https://media.api-sports.io/football/players/747.png",
       "team": "Brazil",
@@ -411,19 +418,12 @@
       "red": 0
     },
     {
-      "name": "G. Kastaneer",
-      "photo": "https://media.api-sports.io/football/players/38708.png",
-      "team": "Curaçao",
-      "yellow": 2,
-      "red": 0
-    },
-    {
-      "name": "Ahmed Fathi",
-      "photo": "https://media.api-sports.io/football/players/2539.png",
-      "team": "Qatar",
+      "name": "Yasser Ibrahim",
+      "photo": "https://media.api-sports.io/football/players/16804.png",
+      "team": "Egypt",
       "yellow": 2,
       "red": 0
     }
   ],
-  "updatedAt": "2026-07-04T02:11:34.194Z"
+  "updatedAt": "2026-07-04T04:11:38.520Z"
 }
