@@ -61767,8 +61767,8 @@
       {
         "time": "27",
         "team": "Australia",
-        "player": "Nestory Irankunda",
-        "assist": "Paul Okon-Engstler",
+        "player": "N. Irankunda",
+        "assist": "P. Okon-Engstler",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -61776,8 +61776,8 @@
       {
         "time": "46",
         "team": "Türkiye",
-        "player": "Barış Alper Yılmaz",
-        "assist": "Kenan Yıldız",
+        "player": "B. Yilmaz",
+        "assist": "K. Yildiz",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -61785,8 +61785,8 @@
       {
         "time": "61",
         "team": "Australia",
-        "player": "Nestory Irankunda",
-        "assist": "Nishan Velupillay",
+        "player": "N. Irankunda",
+        "assist": "N. Velupillay",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -61794,8 +61794,8 @@
       {
         "time": "62",
         "team": "Türkiye",
-        "player": "Orkun Kökçü",
-        "assist": "Yunus Akgün",
+        "player": "O. Kokcu",
+        "assist": "Y. Akgun",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -61803,8 +61803,8 @@
       {
         "time": "74",
         "team": "Australia",
-        "player": "Jacob Italiano",
-        "assist": "Jason Geria",
+        "player": "J. Italiano",
+        "assist": "J. Geria",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -61812,8 +61812,8 @@
       {
         "time": "74",
         "team": "Australia",
-        "player": "Mohamed Touré",
-        "assist": "Tete Yengi",
+        "player": "M. Toure",
+        "assist": "T. Yengi",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -61821,7 +61821,7 @@
       {
         "time": "75",
         "team": "Australia",
-        "player": "Connor Metcalfe",
+        "player": "C. Metcalfe",
         "assist": null,
         "type": "Goal",
         "detail": "Normal Goal",
@@ -61830,8 +61830,8 @@
       {
         "time": "81",
         "team": "Türkiye",
-        "player": "Zeki Çelik",
-        "assist": "Mert Müldür",
+        "player": "Z. Celik",
+        "assist": "M. Muldur",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -61839,8 +61839,8 @@
       {
         "time": "81",
         "team": "Türkiye",
-        "player": "İsmail Yüksek",
-        "assist": "Salih Özcan",
+        "player": "I. Yuksek",
+        "assist": "S. Ozcan",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -61848,8 +61848,8 @@
       {
         "time": "84",
         "team": "Australia",
-        "player": "Paul Okon-Engstler",
-        "assist": "Jackson Irvine",
+        "player": "J. Bos",
+        "assist": "A. Behich",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -61857,8 +61857,8 @@
       {
         "time": "84",
         "team": "Australia",
-        "player": "Jordan Bos",
-        "assist": "Aziz Behich",
+        "player": "P. Okon-Engstler",
+        "assist": "J. Irvine",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -61866,8 +61866,8 @@
       {
         "time": "85",
         "team": "Türkiye",
-        "player": "Kerem Aktürkoğlu",
-        "assist": "Deniz Gül",
+        "player": "K. Akturkoglu",
+        "assist": "D. Gul",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
