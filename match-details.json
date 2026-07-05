@@ -79115,12 +79115,6 @@
             }
           }
         },
-        "coach": {
-          "id": 856,
-          "name": "Sebastian Beccacece",
-          "photo": "https://media.api-sports.io/football/coachs/856.png"
-        },
-        "formation": "4-4-2",
         "startXI": [
           {
             "player": {
@@ -79128,7 +79122,7 @@
               "name": "H. Galindez",
               "number": 1,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -79137,7 +79131,7 @@
               "name": "A. Franco",
               "number": 21,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -79146,7 +79140,7 @@
               "name": "J. Ordonez",
               "number": 4,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -79155,7 +79149,7 @@
               "name": "W. Pacho",
               "number": 6,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -79164,7 +79158,7 @@
               "name": "P. Hincapie",
               "number": 3,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -79173,7 +79167,7 @@
               "name": "J. Yeboah",
               "number": 9,
               "pos": "M",
-              "grid": "3:4"
+              "grid": null
             }
           },
           {
@@ -79182,7 +79176,7 @@
               "name": "M. Caicedo",
               "number": 23,
               "pos": "M",
-              "grid": "3:3"
+              "grid": null
             }
           },
           {
@@ -79191,7 +79185,7 @@
               "name": "P. Vite",
               "number": 15,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -79200,7 +79194,7 @@
               "name": "N. Angulo",
               "number": 20,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -79209,7 +79203,7 @@
               "name": "G. Plata",
               "number": 19,
               "pos": "F",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -79218,7 +79212,7 @@
               "name": "E. Valencia",
               "number": 13,
               "pos": "F",
-              "grid": "4:1"
+              "grid": null
             }
           }
         ],
@@ -79358,7 +79352,12 @@
               "grid": null
             }
           }
-        ]
+        ],
+        "coach": {
+          "id": null,
+          "name": null
+        },
+        "formation": null
       }
     },
     "events": [

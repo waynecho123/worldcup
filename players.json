@@ -147,7 +147,14 @@
       "photo": "https://media.api-sports.io/football/players/19617.png",
       "team": "France",
       "assists": 5,
-      "matches": 4
+      "matches": 5
+    },
+    {
+      "name": "Brahim Díaz",
+      "photo": "https://media.api-sports.io/football/players/744.png",
+      "team": "Morocco",
+      "assists": 4,
+      "matches": 5
     },
     {
       "name": "Bruno Guimarães",
@@ -189,14 +196,14 @@
       "photo": "https://media.api-sports.io/football/players/278.png",
       "team": "France",
       "assists": 2,
-      "matches": 4
+      "matches": 5
     },
     {
       "name": "O. Dembélé",
       "photo": "https://media.api-sports.io/football/players/153.png",
       "team": "France",
       "assists": 2,
-      "matches": 4
+      "matches": 5
     },
     {
       "name": "D. Undav",
@@ -231,7 +238,14 @@
       "photo": "https://media.api-sports.io/football/players/70747.png",
       "team": "Paraguay",
       "assists": 2,
-      "matches": 4
+      "matches": 5
+    },
+    {
+      "name": "A. Hakimi",
+      "photo": "https://media.api-sports.io/football/players/9.png",
+      "team": "Morocco",
+      "assists": 2,
+      "matches": 5
     },
     {
       "name": "Mohamed Salah",
@@ -265,20 +279,6 @@
       "name": "B. Saka",
       "photo": "https://media.api-sports.io/football/players/1460.png",
       "team": "England",
-      "assists": 2,
-      "matches": 4
-    },
-    {
-      "name": "P. Berg",
-      "photo": "https://media.api-sports.io/football/players/39064.png",
-      "team": "Norway",
-      "assists": 2,
-      "matches": 4
-    },
-    {
-      "name": "Brahim Díaz",
-      "photo": "https://media.api-sports.io/football/players/744.png",
-      "team": "Morocco",
       "assists": 2,
       "matches": 4
     }
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-07-05T08:11:51.257Z"
+  "updatedAt": "2026-07-05T10:06:57.203Z"
 }
