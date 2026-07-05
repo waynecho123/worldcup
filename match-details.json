@@ -92249,11 +92249,999 @@
     ]
   },
   "m091": {
-    "fixtureId": "1568100",
+    "fixtureId": 1568100,
     "date": "2026-07-05T20:00:00+00:00",
+    "venue": "MetLife Stadium",
+    "status": "Match Finished",
     "homeTeam": "Brazil",
     "awayTeam": "Norway",
-    "status": "First Half"
+    "score": {
+      "home": 1,
+      "away": 2
+    },
+    "statistics": {
+      "Brazil": {
+        "Shots on Goal": 4,
+        "Shots off Goal": 6,
+        "Total Shots": 14,
+        "Blocked Shots": 4,
+        "Shots insidebox": 10,
+        "Shots outsidebox": 4,
+        "Fouls": 7,
+        "Corner Kicks": 5,
+        "Offsides": 1,
+        "Ball Possession": "33%",
+        "Yellow Cards": 1,
+        "Red Cards": null,
+        "Goalkeeper Saves": 3,
+        "Total passes": 326,
+        "Passes accurate": 277,
+        "Passes %": "85%",
+        "expected_goals": "1.93",
+        "goals_prevented": "1.00"
+      },
+      "Norway": {
+        "Shots on Goal": 5,
+        "Shots off Goal": 3,
+        "Total Shots": 9,
+        "Blocked Shots": 1,
+        "Shots insidebox": 7,
+        "Shots outsidebox": 2,
+        "Fouls": 6,
+        "Corner Kicks": 5,
+        "Offsides": 1,
+        "Ball Possession": "67%",
+        "Yellow Cards": 0,
+        "Red Cards": null,
+        "Goalkeeper Saves": 4,
+        "Total passes": 677,
+        "Passes accurate": 616,
+        "Passes %": "91%",
+        "expected_goals": "0.73",
+        "goals_prevented": "1.00"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 6,
+          "name": "Brazil",
+          "logo": "https://media.api-sports.io/football/teams/6.png",
+          "colors": {
+            "player": {
+              "primary": "eae380",
+              "number": "1edb80",
+              "border": "eae380"
+            },
+            "goalkeeper": {
+              "primary": "330479",
+              "number": "ffffff",
+              "border": "330479"
+            }
+          }
+        },
+        "formation": "4-4-2",
+        "startXI": [
+          {
+            "player": {
+              "id": 280,
+              "name": "Alisson",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 618,
+              "name": "Danilo",
+              "number": 13,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 257,
+              "name": "Marquinhos",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 22224,
+              "name": "Gabriel Magalhães",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 24866,
+              "name": "Douglas Santos",
+              "number": 16,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 407806,
+              "name": "Rayan",
+              "number": 26,
+              "pos": "M",
+              "grid": "3:4"
+            }
+          },
+          {
+            "player": {
+              "id": 10135,
+              "name": "Bruno Guimarães",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 747,
+              "name": "Casemiro",
+              "number": 5,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 127769,
+              "name": "Gabriel Martinelli",
+              "number": 22,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 1165,
+              "name": "Matheus Cunha",
+              "number": 9,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 762,
+              "name": "Vinícius Júnior",
+              "number": 7,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 377122,
+              "name": "Endrick",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 275170,
+              "name": "Danilo Santos",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 276,
+              "name": "Neymar",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2410,
+              "name": "Weverton",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 617,
+              "name": "Ederson",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 860,
+              "name": "Alex Sandro",
+              "number": 6,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30497,
+              "name": "Bremer",
+              "number": 14,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 10124,
+              "name": "Léo Pereira",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30424,
+              "name": "Roger Ibañez",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 10097,
+              "name": "Éderson",
+              "number": 2,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 299,
+              "name": "Fabinho",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1496,
+              "name": "Raphinha",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 265785,
+              "name": "Luiz Henrique",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 196156,
+              "name": "Igor Thiago",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 2407,
+          "name": "Carlo Ancelotti",
+          "photo": "https://media.api-sports.io/football/coachs/2407.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 1090,
+          "name": "Norway",
+          "logo": "https://media.api-sports.io/football/teams/1090.png",
+          "colors": {
+            "player": {
+              "primary": "e63237",
+              "number": "ffffff",
+              "border": "e63237"
+            },
+            "goalkeeper": {
+              "primary": "fdd919",
+              "number": "191616",
+              "border": "fdd919"
+            }
+          }
+        },
+        "formation": "4-3-3",
+        "startXI": [
+          {
+            "player": {
+              "id": 19172,
+              "name": "Ørjan Nyland",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 24845,
+              "name": "Julian Ryerson",
+              "number": 26,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 1119,
+              "name": "Kristoffer Ajer",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 39254,
+              "name": "Torbjørn Heggem",
+              "number": 17,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 265782,
+              "name": "David Møller Wolfe",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 37127,
+              "name": "Martin Ødegaard",
+              "number": 10,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 1934,
+              "name": "Sander Berge",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 39064,
+              "name": "Patrick Berg",
+              "number": 6,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 8492,
+              "name": "Alexander Sørloth",
+              "number": 7,
+              "pos": "F",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 1100,
+              "name": "Erling Haaland",
+              "number": 9,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 314511,
+              "name": "Antonio Nusa",
+              "number": 20,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 301528,
+              "name": "Andreas Schjelderup",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 278133,
+              "name": "Oscar Bobb",
+              "number": 22,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 39043,
+              "name": "Fredrik Aursnes",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 264378,
+              "name": "Sander Tangvik",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 39082,
+              "name": "Egil Selvik",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 18967,
+              "name": "Leo Østigård",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 39058,
+              "name": "Fredrik André Bjørkan",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 265444,
+              "name": "Sondre Langås",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 180937,
+              "name": "Henrik Sælebakke Falchener",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36980,
+              "name": "Morten Thorsby",
+              "number": 2,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 39143,
+              "name": "Kristian Thorstvedt",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 277930,
+              "name": "Thelo Aasgaard",
+              "number": 19,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 39073,
+              "name": "Jens Petter Hauge",
+              "number": 23,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2032,
+              "name": "Jørgen Strand Larsen",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 1675,
+          "name": "Stale Solbakken",
+          "photo": "https://media.api-sports.io/football/coachs/1675.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "14",
+        "team": "Brazil",
+        "player": "Bruno Guimaraes",
+        "assist": "Bruno Guimaraes",
+        "type": "Goal",
+        "detail": "Missed Penalty",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "Norway",
+        "player": "A. Sorloth",
+        "assist": "O. Bobb",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "Norway",
+        "player": "A. Nusa",
+        "assist": "A. Schjelderup",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "58",
+        "team": "Brazil",
+        "player": "M. Cunha",
+        "assist": "Endrick",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "63",
+        "team": "Norway",
+        "player": "J. Ryerson",
+        "assist": "F. Aursnes",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "67",
+        "team": "Brazil",
+        "player": "G. Martinelli",
+        "assist": "Neymar",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "67",
+        "team": "Brazil",
+        "player": "Rayan",
+        "assist": "Danilo Santos",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "79",
+        "team": "Brazil",
+        "player": "Bruno Guimaraes",
+        "assist": "Ederson",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "79",
+        "team": "Norway",
+        "player": "E. Haaland",
+        "assist": "A. Schjelderup",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "90",
+        "team": "Norway",
+        "player": "E. Haaland",
+        "assist": "A. Schjelderup",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "90+5",
+        "team": "Norway",
+        "player": "D. Wolfe",
+        "assist": "L. Ostigard",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "90+6",
+        "team": "Brazil",
+        "player": "Neymar",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "90+10",
+        "team": "Brazil",
+        "player": "Neymar",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Brazil",
+        "players": [
+          {
+            "name": "Alisson",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Danilo",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marquinhos",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gabriel Magalhães",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Douglas Santos",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Rayan",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Bruno Guimarães",
+            "rating": "6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Casemiro",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gabriel Martinelli",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Matheus Cunha",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Vinícius Júnior",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Endrick",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Danilo Santos",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Neymar",
+            "rating": "6.9",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Éderson",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Weverton",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ederson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alex Sandro",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Bremer",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Léo Pereira",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Roger Ibañez",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Fabinho",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Raphinha",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Luiz Henrique",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Igor Thiago",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Norway",
+        "players": [
+          {
+            "name": "Ørjan Nyland",
+            "rating": "7.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Julian Ryerson",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kristoffer Ajer",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Torbjørn Heggem",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "David Møller Wolfe",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Martin Ødegaard",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Sander Berge",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Patrick Berg",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alexander Sørloth",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Erling Haaland",
+            "rating": "9",
+            "goals": 2,
+            "assists": 0
+          },
+          {
+            "name": "Antonio Nusa",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Andreas Schjelderup",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 2
+          },
+          {
+            "name": "Oscar Bobb",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Fredrik Aursnes",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Leo Østigård",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Sander Tangvik",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Egil Selvik",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Fredrik André Bjørkan",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Sondre Langås",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Henrik Sælebakke Falchener",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Morten Thorsby",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kristian Thorstvedt",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Thelo Aasgaard",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jens Petter Hauge",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jørgen Strand Larsen",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m094": {
     "fixtureId": "1576756",
