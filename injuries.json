@@ -35,6 +35,18 @@
       "type": "Missing Fixture",
       "reason": "Hamstring Muscle Injury",
       "fixture": "2026-07-05T20:00:00+00:00"
+    },
+    {
+      "player": "Lucas Paquetá",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Muscle Injury",
+      "fixture": "2026-06-29T17:00:00+00:00"
+    },
+    {
+      "player": "Lucas Paquetá",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Muscle Injury",
+      "fixture": "2026-07-05T20:00:00+00:00"
     }
   ],
   "BEL": [
@@ -303,6 +315,12 @@
       "type": "Missing Fixture",
       "reason": "Muscle Bruise",
       "fixture": "2026-07-03T03:00:00+00:00"
+    },
+    {
+      "player": "L. Jaquez",
+      "type": "Missing Fixture",
+      "reason": "Muscle Bruise",
+      "fixture": "2026-07-07T20:00:00+00:00"
     }
   ],
   "EGY": [
@@ -361,10 +379,22 @@
       "fixture": "2026-07-03T18:00:00+00:00"
     },
     {
+      "player": "Ahmed Abou El Fotouh",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Muscle Injury",
+      "fixture": "2026-07-07T16:00:00+00:00"
+    },
+    {
       "player": "Mohamed Abdelmonem",
       "type": "Missing Fixture",
       "reason": "Ankle Problems",
       "fixture": "2026-07-03T18:00:00+00:00"
+    },
+    {
+      "player": "Mohamed Abdelmonem",
+      "type": "Missing Fixture",
+      "reason": "Ankle Problems",
+      "fixture": "2026-07-07T16:00:00+00:00"
     }
   ],
   "SWE": [
