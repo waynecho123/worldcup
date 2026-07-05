@@ -91827,17 +91827,17 @@
       {
         "time": "19",
         "team": "France",
-        "player": "B. Barcola",
+        "player": "Bradley Barcola",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Roughing"
+        "comments": "Foul"
       },
       {
         "time": "58",
         "team": "Paraguay",
-        "player": "O. Alderete",
-        "assist": "J. Canale",
+        "player": "Omar Alderete",
+        "assist": "José Canale",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -91845,8 +91845,8 @@
       {
         "time": "61",
         "team": "Paraguay",
-        "player": "J. Enciso",
-        "assist": "G. Caballero",
+        "player": "Julio Enciso",
+        "assist": "Gustavo Caballero",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -91854,16 +91854,25 @@
       {
         "time": "61",
         "team": "France",
-        "player": "B. Barcola",
-        "assist": "D. Doue",
+        "player": "Bradley Barcola",
+        "assist": "Désiré Doué",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
       },
       {
+        "time": "68",
+        "team": "France",
+        "player": "Désiré Doué",
+        "assist": null,
+        "type": "Var",
+        "detail": "Penalty confirmed",
+        "comments": ""
+      },
+      {
         "time": "70",
         "team": "France",
-        "player": "K. Mbappe",
+        "player": "Kylian Mbappé",
         "assist": null,
         "type": "Goal",
         "detail": "Penalty",
@@ -91872,8 +91881,8 @@
       {
         "time": "71",
         "team": "Paraguay",
-        "player": "G. Gomez",
-        "assist": "Mauricio",
+        "player": "Miguel Almirón",
+        "assist": "Gabriel Ávalos",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -91881,8 +91890,8 @@
       {
         "time": "71",
         "team": "Paraguay",
-        "player": "M. Almiron",
-        "assist": "G. Avalos",
+        "player": "Gustavo Gómez",
+        "assist": "Mauricio",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -91890,17 +91899,17 @@
       {
         "time": "81",
         "team": "France",
-        "player": "M. Kone",
+        "player": "Manu Koné",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Tripping"
+        "comments": "Foul"
       },
       {
         "time": "84",
         "team": "France",
-        "player": "O. Dembele",
-        "assist": "R. Cherki",
+        "player": "Ousmane Dembélé",
+        "assist": "Rayan Cherki",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -91908,11 +91917,11 @@
       {
         "time": "90+7",
         "team": "France",
-        "player": "M. Olise",
+        "player": "Michael Olise",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Unsportsmanlike conduct"
+        "comments": "Unsporting behaviour"
       }
     ],
     "players": [

@@ -285,16 +285,16 @@
   ],
   "cards": [
     {
-      "name": "P. Hincapié",
-      "photo": "https://media.api-sports.io/football/players/127817.png",
-      "team": "Ecuador",
+      "name": "M. Almirón",
+      "photo": "https://media.api-sports.io/football/players/2507.png",
+      "team": "Paraguay",
       "yellow": 1,
       "red": 1
     },
     {
-      "name": "M. Almirón",
-      "photo": "https://media.api-sports.io/football/players/2507.png",
-      "team": "Paraguay",
+      "name": "P. Hincapié",
+      "photo": "https://media.api-sports.io/football/players/127817.png",
+      "team": "Ecuador",
       "yellow": 1,
       "red": 1
     },
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-07-05T02:11:57.228Z"
+  "updatedAt": "2026-07-05T04:06:47.054Z"
 }
