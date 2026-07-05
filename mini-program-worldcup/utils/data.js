@@ -786,6 +786,23 @@ const MATCH_SCHEDULE = [
   {id:"m070",date:"2026-06-28",time:"11:30",home:"COD",away:"UZB",grp:"K",stage:"group",matchday:3,venue:"Mercedes-Benz Stadium, Atlanta"}",
 
   {id:"m071",date:"2026-06-28",time:"15:00",home:"ALG",away:"AUT",grp:"J",stage:"group",matchday:3,venue:"Arrowhead Stadium, Kansas City"}",
+  // ===== ROUND OF 32 (6/29 - 7/3) =====
+  {id:"m073",date:"2026-06-29",time:"23:00",home:"MEX",away:"BIH",grp:"KO",stage:"r32",venue:"MetLife Stadium, East Rutherford"},
+  {id:"m074",date:"2026-06-30",time:"02:00",home:"SUI",away:"SEN",grp:"KO",stage:"r32",venue:"AT&T Stadium, Dallas"},
+  {id:"m075",date:"2026-06-30",time:"05:00",home:"BRA",away:"ECU",grp:"KO",stage:"r32",venue:"Mercedes-Benz Stadium, Atlanta"},
+  {id:"m076",date:"2026-06-30",time:"08:00",home:"USA",away:"COD",grp:"KO",stage:"r32",venue:"SoFi Stadium, Los Angeles"},
+  {id:"m077",date:"2026-06-30",time:"23:00",home:"GER",away:"GHA",grp:"KO",stage:"r32",venue:"Arrowhead Stadium, Kansas City"},
+  {id:"m078",date:"2026-07-01",time:"02:00",home:"NED",away:"PAR",grp:"KO",stage:"r32",venue:"Gillette Stadium, Boston"},
+  {id:"m079",date:"2026-07-01",time:"05:00",home:"BEL",away:"ALG",grp:"KO",stage:"r32",venue:"BC Place, Vancouver"},
+  {id:"m080",date:"2026-07-01",time:"08:00",home:"ESP",away:"SWE",grp:"KO",stage:"r32",venue:"Lumen Field, Seattle"},
+  {id:"m081",date:"2026-07-01",time:"23:00",home:"RSA",away:"CAN",grp:"KO",stage:"r32",venue:"Levi's Stadium, San Francisco"},
+  {id:"m082",date:"2026-07-02",time:"02:00",home:"MAR",away:"AUS",grp:"KO",stage:"r32",venue:"Hard Rock Stadium, Miami"},
+  {id:"m083",date:"2026-07-02",time:"05:00",home:"CIV",away:"JPN",grp:"KO",stage:"r32",venue:"NRG Stadium, Houston"},
+  {id:"m084",date:"2026-07-02",time:"08:00",home:"EGY",away:"CPV",grp:"KO",stage:"r32",venue:"Lincoln Financial Field, Philadelphia"},
+  {id:"m085",date:"2026-07-02",time:"23:00",home:"FRA",away:"POR",grp:"KO",stage:"r32",venue:"MetLife Stadium, East Rutherford"},
+  {id:"m086",date:"2026-07-03",time:"02:00",home:"ARG",away:"CRO",grp:"KO",stage:"r32",venue:"AT&T Stadium, Dallas"},
+  {id:"m087",date:"2026-07-03",time:"05:00",home:"COL",away:"AUT",grp:"KO",stage:"r32",venue:"Mercedes-Benz Stadium, Atlanta"},
+  {id:"m088",date:"2026-07-03",time:"08:00",home:"ENG",away:"NOR",grp:"KO",stage:"r32",venue:"SoFi Stadium, Los Angeles"},
 
   {id:"m072",date:"2026-06-28",time:"15:00",home:"JOR",away:"ARG",grp:"J",stage:"group",matchday:3,venue:"AT&T Stadium, Dallas"}",
 

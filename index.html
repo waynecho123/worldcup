@@ -597,11 +597,8 @@ if (!isDuelMode) {
   });
 }
 
-// =============================================================================
-// 1. 2026 WORLD CUP — REAL TEAM DATA (with latest news June 2026)
-// =============================================================================
-
-const TEAMS = [
+// ======================================================================// 1. 2026 WORLD CUP — REAL TEAM DATA (with latest news June 2026)
+// ===============================================================const TEAMS = [
   // ===== GROUP A =====
   {id:"MEX",name:"Mexico",cn:"墨西哥",flag:"🇲🇽",grp:"A",seed:"host",rk:18,att:76,def:72,best:"8强(1970,1986)",apps:17,stars:["Giménez","Lozano","Ochoa"],conf:"CONCACAF",recent:"2024美洲杯小组赛",news:"东道主揭幕战压力巨大",inj:""},
   {id:"RSA",name:"South Africa",cn:"南非",flag:"🇿🇦",grp:"A",seed:"4",rk:57,att:66,def:65,best:"小组赛",apps:3,stars:["Tau","Foster","Mokoena"],conf:"CAF",recent:"2023非洲杯季军",news:"揭幕战对阵东道主",inj:""},
@@ -677,10 +674,8 @@ const TEAMS = [
 
 const GROUPS = ['A','B','C','D','E','F','G','H','I','J','K','L'];
 
-// =============================================================================
-// 1c. TACTICAL PROFILES & MATCHUP SYSTEM
-// =============================================================================
-// Fallback: static profiles. Overwritten by loadTactical() with real match data.
+// ======================================================================// 1c. TACTICAL PROFILES & MATCHUP SYSTEM
+// ======================================================================// Fallback: static profiles. Overwritten by loadTactical() with real match data.
 const TACTICAL_FALLBACK = {
   // Group A — 真实数据：FIFA官方大名单+世预赛+近期比赛分析
   MEX: {manager:'Javier Aguirre',style:'high_press',formation:'4-3-3',tempo:8,width:7,pressing:8,setPiece:6,transition:7,physical:7,technique:5,
@@ -896,10 +891,8 @@ function getTacticalAnalysis(homeTeam, awayTeam) {
   };
 }
 
-// =============================================================================
-// 1d. PREDICTED STARTING XI — Based on real squad announcements + match reports
-// =============================================================================
-const STARTING_XI = {
+// ======================================================================// 1d. PREDICTED STARTING XI — Based on real squad announcements + match reports
+// ======================================================================const STARTING_XI = {
   // Group A
   MEX: {f:'4-3-3',g:'Ochoa',d:['J.Sánchez','Montes','Vásquez','Arteaga'],m:['E.Álvarez(C)','Chávez','Ruiz'],fwd:['Antuna','Giménez','Huerta'],subs:'Lozano,Jiménez,Pineda',note:'Giménez伤愈恢复中'},
   RSA: {f:'4-2-3-1',g:'Williams',d:['Mudau','Kekana','Mvala','Modiba'],m:['Mokoena','Sithole'],fwd:['Tau','Zwane','Foster'],st:'Makgopa',subs:'Mofokeng,Lorch',note:'Foster主力中锋'},
@@ -1025,10 +1018,8 @@ function getLineup(teamId) {
   return hc || null;
 }
 
-// =============================================================================
-// 1e. PLAYER NAME TRANSLATIONS — English → Chinese transliteration
-// =============================================================================
-const PLAYER_CN = {
+// ======================================================================// 1e. PLAYER NAME TRANSLATIONS — English → Chinese transliteration
+// ======================================================================const PLAYER_CN = {
   // Goalkeepers
   'Ochoa':'奥乔亚','Williams':'威廉姆斯','Kim Seung-gyu':'金承奎','Staněk':'斯塔涅克',
   'Crépeau':'克雷波','Šehić':'舍希奇','Barsham':'巴沙姆','Kobel':'科贝尔',
@@ -1494,10 +1485,8 @@ function renderLineupComparison(homeId, awayId) {
 }
 
 
-// =============================================================================
-// 2a. NEWS ENGINE — Auto-refresh every 2 hours via RSS feeds
-// =============================================================================
-const NEWS_REFRESH_MS = 7200000; // 2 hours
+// ======================================================================// 2a. NEWS ENGINE — Auto-refresh every 2 hours via RSS feeds
+// ======================================================================const NEWS_REFRESH_MS = 7200000; // 2 hours
 const NEWS_CACHE_KEY = 'wc2026_news_cache';
 
 // Fallback/default news items (used when fetch fails or first load)
@@ -1924,10 +1913,8 @@ function startNewsRotation() {
   }, 4000);
 }
 
-// =============================================================================
-// 2b. DAILY PREDICTION SCHEDULER — Show at 12:00, Lock at 16:00 each day
-// =============================================================================
-const PREDICTION_LOCK_KEY = 'wc2026_locked_preds';
+// ======================================================================// 2b. DAILY PREDICTION SCHEDULER — Show at 12:00, Lock at 16:00 each day
+// ======================================================================const PREDICTION_LOCK_KEY = 'wc2026_locked_preds';
 // Predictions: visible 24h before kickoff, locked at kickoff (竞猜停售=开赛时间)
 
 /** Get prediction visibility status for a match date:
@@ -1998,10 +1985,8 @@ function getTodayStr() {
   return getTournamentDateStr();
 }
 
-// =============================================================================
-// PREDICTION CHANGE LOG — Track prediction updates every 2 hours
-// =============================================================================
-var PRED_LOG_KEY = 'wc2026_pred_log';
+// ======================================================================// PREDICTION CHANGE LOG — Track prediction updates every 2 hours
+// ======================================================================var PRED_LOG_KEY = 'wc2026_pred_log';
 var predChangeLog = JSON.parse(localStorage.getItem(PRED_LOG_KEY) || '{}');
 
 /** Save current prediction snapshot and detect changes */
@@ -2097,10 +2082,8 @@ function getPredictionStatusText(dateStr) {
   return { text: ''+h+'小时后显示预测', cls: 'hidden', icon: '🔐' };
 }
 
-// =============================================================================
-// 1b. BETTING ODDS — Championship winner (decimal odds) & Opta supercomputer %
-// =============================================================================
-const TEAM_ODDS = {
+// ======================================================================// 1b. BETTING ODDS — Championship winner (decimal odds) & Opta supercomputer %
+// ======================================================================const TEAM_ODDS = {
   // Group A
   MEX: {odds:67.0, opta:1.8}, RSA: {odds:351.0, opta:0.2}, KOR: {odds:126.0, opta:0.8}, CZE: {odds:151.0, opta:0.6},
   // Group B
@@ -2177,11 +2160,8 @@ function getTeamOdds(teamId) {
   return TEAM_ODDS[teamId] || { odds: 500, opta: 0.1 };
 }
 
-// =============================================================================
-// 2. FULL MATCH SCHEDULE
-// =============================================================================
-
-// All 104 matches with real dates (Beijing time), groups, and match type
+// ======================================================================// 2. FULL MATCH SCHEDULE
+// ===============================================================// All 104 matches with real dates (Beijing time), groups, and match type
 // 72 matches from API-Sports, Beijing time
 const MATCH_SCHEDULE = [
   {id:"m001",date:"2026-06-12",time:"03:00",home:"MEX",away:"RSA",grp:"A",stage:"group",matchday:1,venue:"Estadio Azteca, Mexico City",featured:true},
@@ -2300,7 +2280,6 @@ const MATCH_SCHEDULE = [
   {id:"m090",date:"2026-07-05",time:"09:00",home:"PAR",away:"FRA",grp:"16强",stage:"r16",venue:"Gillette Stadium, Boston"},
   {id:"m092",date:"2026-07-05",time:"23:00",home:"USA",away:"EGY",grp:"16强",stage:"r16",venue:"Lumen Field, Seattle"},
   {id:"m091",date:"2026-07-06",time:"11:00",home:"BRA",away:"NOR",grp:"16强",stage:"r16",venue:"BC Place, Vancouver"},
-  {id:"m092",date:"2026-07-05",time:"23:00",home:"USA",away:"EGY",grp:"16强",stage:"r16",venue:"Lumen Field, Seattle"},
   {id:"m093",date:"2026-07-06",time:"02:00",home:"MEX",away:"ENG",grp:"16强",stage:"r16",venue:"Levi's Stadium, San Francisco"},
   {id:"m094",date:"2026-07-06",time:"23:00",home:"POR",away:"ESP",grp:"16强",stage:"r16",venue:"Hard Rock Stadium, Miami"},
   {id:"m095",date:"2026-07-07",time:"02:00",home:"ARG",away:"BEL",grp:"16强",stage:"r16",venue:"NRG Stadium, Houston"},
@@ -2318,9 +2297,11 @@ const MATCH_SCHEDULE = [
 
   // ===== FINAL (7/18 - 7/19) =====
   {id:"m103",date:"2026-07-18",time:"23:00",home:"?",away:"?",grp:"季军赛",stage:"tpp",venue:"MetLife Stadium, East Rutherford"},
-  {id:"m104",date:"2026-07-19",time:"23:00",home:"?",away:"?",grp:"决赛",stage:"final",venue:"MetLife Stadium, East Rutherford"},
-
+  {id:"m104",date:"2026-07-19",time:"23:00",home:"?",away:"?",grp:"决赛",stage:"final",venue:"MetLife Stadium, East Rutherford"}
 ];
+
+  // ===== ROUND OF 32 (6/29 - 7/3) =====;
+
 
 const TOURNAMENT_START = new Date('2026-06-12');
 const TOURNAMENT_END = new Date('2026-07-20');
@@ -2337,10 +2318,8 @@ function getTournamentDateStr() {
 }
 
 
-// =============================================================================
-// 2d. HISTORICAL ODDS DATABASE
-// =============================================================================
-// REAL DATA from football-data.co.uk: 9,557 matches across 12 leagues, 3 seasons (2022-25)
+// ======================================================================// 2d. HISTORICAL ODDS DATABASE
+// ======================================================================// REAL DATA from football-data.co.uk: 9,557 matches across 12 leagues, 3 seasons (2022-25)
 // Premier League, Championship, L1, L2, Bundesliga, BL2, Serie A, Serie B, La Liga, Segunda, Ligue 1, Ligue 2
 // Bet365 closing 1X2 odds + actual results
 
@@ -2579,10 +2558,7 @@ function renderHistoricalMini(oddsH, oddsD, oddsA, aiH, aiD, aiA) {
   </div>`;
 }
 
-// =============================================================================
-// =============================================================================
-
-function jcFair(spf){const r=1/spf[0]+1/spf[1]+1/spf[2];return{home:(1/spf[0])/r,draw:(1/spf[1])/r,away:(1/spf[2])/r}}
+// ======================================================================// ===============================================================function jcFair(spf){const r=1/spf[0]+1/spf[1]+1/spf[2];return{home:(1/spf[0])/r,draw:(1/spf[1])/r,away:(1/spf[2])/r}}
 
 function getJCRecommendation(mid,ht,at){
   const jc=MATCH_ODDS[mid];if(!jc)return null;
@@ -2666,8 +2642,7 @@ function renderJCCombo(matches) {
   '</div>';
 }
 
-// ========== 竞猜进阶玩法: 比分/半全场/总进球 ==========
-
+// ========== 竞猜进阶玩法: 比分/半全场/总进球 ===
 /** Calculate half-time outcome probabilities using Poisson */
 function calcHtFt(homeLambda, awayLambda) {
   const htLambdaH = homeLambda * 0.43, htLambdaA = awayLambda * 0.43;
@@ -2940,8 +2915,7 @@ function predictMatch(homeTeam, awayTeam, matchOdds) {
   return { homeWinProb: finalHome, drawProb: finalDraw, awayWinProb: finalAway, expH: lambdaH, expA: lambdaA, predScore: bestS || [Math.round(lambdaH), Math.round(lambdaA)], topScores: topScores, hStr, aStr, tacticalAdj, tacAnalysis, marketConsensus: null, aiProbs, oddsBlended, upsetProb, upsetAlert: isUpsetAlert, upsetTeam: isUpsetAlert ? underdog.cn : null };
 }
 
-// ========== TEAM LEARNING SYSTEM ==========
-var TEAM_LEARNING = {};
+// ========== TEAM LEARNING SYSTEM ===var TEAM_LEARNING = {};
 var LEARNING_KEY = 'wc_team_learning_v2';
 
 function loadLearning() {
@@ -3142,11 +3116,8 @@ function runMonteCarlo(numRuns, progressCb) {
   return { ts: new Date().toISOString(), runs: numRuns, champProb, grpCnt, roundProbs, bestBracket: bracketPool[0]||null };
 }
 
-// =============================================================================
-// 4. UI RENDERING
-// =============================================================================
-
-let lastResult = null;
+// ======================================================================// 4. UI RENDERING
+// ===============================================================let lastResult = null;
 let champChart = null, confedChart = null, roundChart = null, advChart = null, oddsCompChart = null;
 
 // ---------- TODAY'S MATCHES ----------
@@ -4408,15 +4379,10 @@ function showToast(msg) {
   document.body.appendChild(t); setTimeout(() => t.remove(), 2500);
 }
 
-// =============================================================================
-// 4b. ACTUAL RESULTS & REVIEW ENGINE
-// =============================================================================
-
-// =============================================================================
-// DATA LOADING — Cloud function HTTP endpoints as single source of truth
+// ======================================================================// 4b. ACTUAL RESULTS & REVIEW ENGINE
+// ===============================================================// ======================================================================// DATA LOADING — Cloud function HTTP endpoints as single source of truth
 // Priority: scores.json (GitHub Action auto-update) > localStorage > demo seed
-// =============================================================================
-let actualResults = {};
+// ======================================================================let actualResults = {};
 let _resultsLoaded = false;
 const SCORES_CACHE_KEY = 'wc2026_actual';
 
@@ -4555,8 +4521,7 @@ async function initResults() {
   }, 180000);
 }
 
-// ========== LIVE ODDS & INFO ==========
-let liveOdds = {};
+// ========== LIVE ODDS & INFO ===let liveOdds = {};
 let liveInfo = {};
 let matchDetails = {};
 let liveInjuries = {};
@@ -5090,8 +5055,7 @@ function submitResult() {
   showToast('结果已保存！' + msg);
 }
 
-// ========== 人机对决引擎 ==========
-var currentUser=localStorage.getItem("wc2026_user")||"";function loginUser(){var u=prompt("Username:",currentUser);if(!u||!u.trim())return;currentUser=u.trim();localStorage.setItem("wc2026_user",currentUser);DUEL_KEY="wc2026_duel_"+currentUser;renderDuel();showToast("OK: "+currentUser)}function logoutUser(){currentUser="";localStorage.removeItem("wc2026_user");DUEL_KEY="wc2026_duel";renderDuel()}
+// ========== 人机对决引擎 ===var currentUser=localStorage.getItem("wc2026_user")||"";function loginUser(){var u=prompt("Username:",currentUser);if(!u||!u.trim())return;currentUser=u.trim();localStorage.setItem("wc2026_user",currentUser);DUEL_KEY="wc2026_duel_"+currentUser;renderDuel();showToast("OK: "+currentUser)}function logoutUser(){currentUser="";localStorage.removeItem("wc2026_user");DUEL_KEY="wc2026_duel";renderDuel()}
 var DUEL_KEY=currentUser?"wc2026_duel_"+currentUser:"wc2026_duel";
 function getDuelState() {
   const d = JSON.parse(localStorage.getItem(DUEL_KEY) || 'null');
@@ -5400,8 +5364,7 @@ function settleDuel(dateStr) {
   showToast(dateStr+' 结算: '+winner+'！AI '+(aiProfit>=0?'+':'')+'¥'+aiProfit+' vs 人类 '+(humanProfit>=0?'+':'')+'¥'+humanProfit);
 }
 
-// ========== AI反思引擎 ==========
-function generateAIReflection(dateStr, aiStrats, hStrats, aiProfit, humanProfit, aiHits, humanHits) {
+// ========== AI反思引擎 ===function generateAIReflection(dateStr, aiStrats, hStrats, aiProfit, humanProfit, aiHits, humanHits) {
   var reflections = JSON.parse(localStorage.getItem('wc2026_ai_reflections') || '[]');
   // Check if already reflected
   if (reflections.find(function(r){return r.date===dateStr})) return;
@@ -5762,11 +5725,8 @@ function buildHistorySection(div, duel) {
 
 function refreshAll() { renderTeamGrid(); renderHistory(); renderFullSchedule(); renderReview(); renderDuel(); }
 
-// =============================================================================
-// 5. MAIN CONTROLLER
-// =============================================================================
-
-function refreshAll() { renderDashboard(); renderGroups(); renderBracket(); renderTeamGrid(); renderHistory(); renderFullSchedule(); }
+// ======================================================================// 5. MAIN CONTROLLER
+// ===============================================================function refreshAll() { renderDashboard(); renderGroups(); renderBracket(); renderTeamGrid(); renderHistory(); renderFullSchedule(); }
 
 async function runSimulation() {
   const btn = document.getElementById('btnSim'), runs = parseInt(document.getElementById('simRuns').value);
@@ -5805,11 +5765,8 @@ function switchTab(tab) {
   if (tab === 'players') renderPlayerTab('scorers');
 }
 
-// =============================================================================
-// 6. INIT
-// =============================================================================
-
-document.getElementById('tabNav').addEventListener('click', e => {
+// ======================================================================// 6. INIT
+// ===============================================================document.getElementById('tabNav').addEventListener('click', e => {
   if (e.target.tagName === 'BUTTON') switchTab(e.target.dataset.tab);
 });
 
