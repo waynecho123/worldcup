@@ -82005,12 +82005,17 @@
             }
           }
         },
+        "coach": {
+          "id": 48,
+          "name": "Roberto Martinez",
+          "photo": "https://media.api-sports.io/football/coachs/48.png"
+        },
         "formation": "4-2-3-1",
         "startXI": [
           {
             "player": {
               "id": 369,
-              "name": "Diogo Costa",
+              "name": "D. Costa",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -82019,7 +82024,7 @@
           {
             "player": {
               "id": 855,
-              "name": "João Cancelo",
+              "name": "J. Cancelo",
               "number": 20,
               "pos": "D",
               "grid": "2:4"
@@ -82028,7 +82033,7 @@
           {
             "player": {
               "id": 567,
-              "name": "Rúben Dias",
+              "name": "R. Dias",
               "number": 3,
               "pos": "D",
               "grid": "2:3"
@@ -82037,7 +82042,7 @@
           {
             "player": {
               "id": 336671,
-              "name": "Renato Veiga",
+              "name": "R. Veiga",
               "number": 13,
               "pos": "D",
               "grid": "2:2"
@@ -82046,7 +82051,7 @@
           {
             "player": {
               "id": 263482,
-              "name": "Nuno Mendes",
+              "name": "N. Mendes",
               "number": 25,
               "pos": "D",
               "grid": "2:1"
@@ -82055,7 +82060,7 @@
           {
             "player": {
               "id": 335051,
-              "name": "João Neves",
+              "name": "J. Neves",
               "number": 15,
               "pos": "M",
               "grid": "3:2"
@@ -82073,7 +82078,7 @@
           {
             "player": {
               "id": 1864,
-              "name": "Pedro Neto",
+              "name": "P. Neto",
               "number": 18,
               "pos": "M",
               "grid": "4:3"
@@ -82082,7 +82087,7 @@
           {
             "player": {
               "id": 1485,
-              "name": "Bruno Fernandes",
+              "name": "B. Fernandes",
               "number": 8,
               "pos": "M",
               "grid": "4:2"
@@ -82091,7 +82096,7 @@
           {
             "player": {
               "id": 22236,
-              "name": "Rafael Leão",
+              "name": "R. Leao",
               "number": 17,
               "pos": "M",
               "grid": "4:1"
@@ -82100,7 +82105,7 @@
           {
             "player": {
               "id": 874,
-              "name": "Cristiano Ronaldo",
+              "name": "C. Ronaldo",
               "number": 7,
               "pos": "F",
               "grid": "5:1"
@@ -82110,53 +82115,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 130,
-              "name": "Nélson Semedo",
-              "number": 2,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 636,
-              "name": "Bernardo Silva",
-              "number": 10,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 161585,
-              "name": "Francisco Conceição",
-              "number": 26,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 41585,
-              "name": "Gonçalo Ramos",
-              "number": 9,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 2676,
-              "name": "Rúben Neves",
-              "number": 21,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 1590,
-              "name": "José Sá",
+              "name": "J. Sa",
               "number": 12,
               "pos": "G",
               "grid": null
@@ -82165,7 +82125,7 @@
           {
             "player": {
               "id": 46672,
-              "name": "Rui Silva",
+              "name": "R. Silva",
               "number": 22,
               "pos": "G",
               "grid": null
@@ -82173,53 +82133,8 @@
           },
           {
             "player": {
-              "id": 161939,
-              "name": "Tomás Araújo",
-              "number": 4,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 41621,
-              "name": "Matheus Nunes",
-              "number": 6,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 265595,
-              "name": "Gonçalo Inácio",
-              "number": 14,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 886,
-              "name": "Diogo Dalot",
-              "number": 5,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 41112,
-              "name": "Francisco Trincão",
-              "number": 16,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 925,
-              "name": "Gonçalo Guedes",
+              "name": "G. Guedes",
               "number": 19,
               "pos": "F",
               "grid": null
@@ -82227,8 +82142,44 @@
           },
           {
             "player": {
+              "id": 130,
+              "name": "N. Semedo",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 886,
+              "name": "D. Dalot",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 41585,
+              "name": "G. Ramos",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 265595,
+              "name": "G. Inacio",
+              "number": 14,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 190485,
-              "name": "Samú Costa",
+              "name": "Samu Costa",
               "number": 24,
               "pos": "M",
               "grid": null
@@ -82236,19 +82187,68 @@
           },
           {
             "player": {
+              "id": 41621,
+              "name": "M. Nunes",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 636,
+              "name": "B. Silva",
+              "number": 10,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2676,
+              "name": "R. Neves",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 583,
-              "name": "João Félix",
+              "name": "Joao Felix",
               "number": 11,
               "pos": "F",
               "grid": null
             }
+          },
+          {
+            "player": {
+              "id": 41112,
+              "name": "Trincao",
+              "number": 16,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 161939,
+              "name": "T. Araujo",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 161585,
+              "name": "F. Conceicao",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
           }
-        ],
-        "coach": {
-          "id": 48,
-          "name": "Roberto Martinez",
-          "photo": "https://media.api-sports.io/football/coachs/48.png"
-        }
+        ]
       },
       "away": {
         "team": {
@@ -82268,12 +82268,17 @@
             }
           }
         },
+        "coach": {
+          "id": 115,
+          "name": "Zlatko Dalic",
+          "photo": "https://media.api-sports.io/football/coachs/115.png"
+        },
         "formation": "4-2-3-1",
         "startXI": [
           {
             "player": {
               "id": 1305,
-              "name": "Dominik Livaković",
+              "name": "D. Livakovic",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -82282,7 +82287,7 @@
           {
             "player": {
               "id": 125171,
-              "name": "Josip Stanišić",
+              "name": "J. Stanisic",
               "number": 2,
               "pos": "D",
               "grid": "2:4"
@@ -82291,7 +82296,7 @@
           {
             "player": {
               "id": 14701,
-              "name": "Josip Šutalo",
+              "name": "J. Sutalo",
               "number": 6,
               "pos": "D",
               "grid": "2:3"
@@ -82300,7 +82305,7 @@
           {
             "player": {
               "id": 1084,
-              "name": "Marin Pongračić",
+              "name": "M. Pongracic",
               "number": 3,
               "pos": "D",
               "grid": "2:2"
@@ -82309,7 +82314,7 @@
           {
             "player": {
               "id": 207,
-              "name": "Ivan Perišić",
+              "name": "I. Perisic",
               "number": 14,
               "pos": "D",
               "grid": "2:1"
@@ -82318,7 +82323,7 @@
           {
             "player": {
               "id": 754,
-              "name": "Luka Modrić",
+              "name": "L. Modric",
               "number": 10,
               "pos": "M",
               "grid": "3:2"
@@ -82327,7 +82332,7 @@
           {
             "player": {
               "id": 2291,
-              "name": "Mateo Kovačić",
+              "name": "M. Kovacic",
               "number": 8,
               "pos": "M",
               "grid": "3:1"
@@ -82336,7 +82341,7 @@
           {
             "player": {
               "id": 842,
-              "name": "Nikola Vlašić",
+              "name": "N. Vlasic",
               "number": 13,
               "pos": "M",
               "grid": "4:3"
@@ -82345,7 +82350,7 @@
           {
             "player": {
               "id": 348205,
-              "name": "Petar Sučić",
+              "name": "P. Sucic",
               "number": 17,
               "pos": "M",
               "grid": "4:2"
@@ -82354,7 +82359,7 @@
           {
             "player": {
               "id": 295026,
-              "name": "Martin Baturina",
+              "name": "M. Baturina",
               "number": 16,
               "pos": "M",
               "grid": "4:1"
@@ -82363,7 +82368,7 @@
           {
             "player": {
               "id": 46746,
-              "name": "Ante Budimir",
+              "name": "A. Budimir",
               "number": 11,
               "pos": "F",
               "grid": "5:1"
@@ -82373,8 +82378,98 @@
         "substitutes": [
           {
             "player": {
+              "id": 524,
+              "name": "D. Kotarski",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 14268,
+              "name": "I. Pandur",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 726,
+              "name": "A. Kramaric",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1902,
+              "name": "D. Caleta-Car",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1322,
+              "name": "N. Moro",
+              "number": 7,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30827,
+              "name": "M. Erlic",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 14395,
+              "name": "K. Jakic",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 7332,
+              "name": "L. Sucic",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 129033,
+              "name": "J. Gvardiol",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 260865,
+              "name": "M. Pasalic",
+              "number": 24,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 202696,
-              "name": "Igor Matanović",
+              "name": "I. Matanovic",
               "number": 20,
               "pos": "F",
               "grid": null
@@ -82383,7 +82478,7 @@
           {
             "player": {
               "id": 2763,
-              "name": "Mario Pašalić",
+              "name": "M. Pasalic",
               "number": 15,
               "pos": "M",
               "grid": null
@@ -82391,81 +82486,9 @@
           },
           {
             "player": {
-              "id": 129033,
-              "name": "Joško Gvardiol",
-              "number": 4,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 726,
-              "name": "Andrej Kramarić",
-              "number": 9,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 14268,
-              "name": "Ivor Pandur",
-              "number": 12,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 524,
-              "name": "Dominik Kotarski",
-              "number": 23,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 1902,
-              "name": "Duje Ćaleta-Car",
-              "number": 5,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 387521,
-              "name": "Luka Vušković",
-              "number": 22,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 30827,
-              "name": "Martin Erlić",
-              "number": 25,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 1322,
-              "name": "Nikola Moro",
-              "number": 7,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 260865,
-              "name": "Marco Pašalić",
-              "number": 24,
+              "id": 66055,
+              "name": "P. Musa",
+              "number": 26,
               "pos": "F",
               "grid": null
             }
@@ -82473,7 +82496,7 @@
           {
             "player": {
               "id": 284869,
-              "name": "Toni Fruk",
+              "name": "T. Fruk",
               "number": 19,
               "pos": "M",
               "grid": null
@@ -82481,37 +82504,14 @@
           },
           {
             "player": {
-              "id": 7332,
-              "name": "Luka Sučić",
-              "number": 21,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 14395,
-              "name": "Kristijan Jakić",
-              "number": 18,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 66055,
-              "name": "Petar Musa",
-              "number": 26,
-              "pos": "F",
+              "id": 387521,
+              "name": "L. Vuskovic",
+              "number": 22,
+              "pos": "D",
               "grid": null
             }
           }
-        ],
-        "coach": {
-          "id": 115,
-          "name": "Zlatko Dalic",
-          "photo": "https://media.api-sports.io/football/coachs/115.png"
-        }
+        ]
       }
     },
     "events": [
