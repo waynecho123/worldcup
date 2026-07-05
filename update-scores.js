@@ -181,9 +181,9 @@ function getMatchSchedule() { return [
   {id:"m088",home:"SUI",away:"ALG"},
   // ===== R16 (from API) =====
   {id:"m089",home:"CAN",away:"MAR"},{id:"m090",home:"PAR",away:"FRA"},{id:"m091",home:"BRA",away:"NOR"},{id:"m092",home:"?",away:"?"},
-  {id:"m093",home:"MEX",away:"ENG"},{id:"m094",home:"BEL",away:"POR"},{id:"m095",home:"ARG",away:"ESP"},{id:"m096",home:"COL",away:"SUI"},
-  // ===== QF (TBD) =====
-  {id:"m097",home:"?",away:"?"},{id:"m098",home:"?",away:"?"},{id:"m099",home:"?",away:"?"},{id:"m100",home:"?",away:"?"},
+  {id:"m093",home:"MEX",away:"ENG"},{id:"m094",home:"POR",away:"ESP"},{id:"m095",home:"ARG",away:"BEL"},{id:"m096",home:"COL",away:"SUI"},
+  // ===== QF =====
+  {id:"m097",home:"FRA",away:"MAR"},{id:"m098",home:"?",away:"?"},{id:"m099",home:"?",away:"?"},{id:"m100",home:"?",away:"?"},
   // ===== SF+F (TBD) =====
   {id:"m101",home:"?",away:"?"},{id:"m102",home:"?",away:"?"},{id:"m103",home:"?",away:"?"},{id:"m104",home:"?",away:"?"}
 ];}
