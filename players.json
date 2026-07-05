@@ -11,8 +11,8 @@
       "name": "Kylian Mbappé",
       "photo": "https://media.api-sports.io/football/players/278.png",
       "team": "France",
-      "goals": 6,
-      "matches": 4
+      "goals": 7,
+      "matches": 5
     },
     {
       "name": "E. Haaland",
@@ -33,7 +33,7 @@
       "photo": "https://media.api-sports.io/football/players/153.png",
       "team": "France",
       "goals": 4,
-      "matches": 4
+      "matches": 5
     },
     {
       "name": "Mikel Oyarzabal",
@@ -85,6 +85,20 @@
       "matches": 4
     },
     {
+      "name": "I. Saibari",
+      "photo": "https://media.api-sports.io/football/players/161897.png",
+      "team": "Morocco",
+      "goals": 3,
+      "matches": 5
+    },
+    {
+      "name": "J. David",
+      "photo": "https://media.api-sports.io/football/players/8489.png",
+      "team": "Canada",
+      "goals": 3,
+      "matches": 5
+    },
+    {
       "name": "B. Brobbey",
       "photo": "https://media.api-sports.io/football/players/38750.png",
       "team": "Netherlands",
@@ -95,20 +109,6 @@
       "name": "Matheus Cunha",
       "photo": "https://media.api-sports.io/football/players/1165.png",
       "team": "Brazil",
-      "goals": 3,
-      "matches": 4
-    },
-    {
-      "name": "J. David",
-      "photo": "https://media.api-sports.io/football/players/8489.png",
-      "team": "Canada",
-      "goals": 3,
-      "matches": 4
-    },
-    {
-      "name": "I. Saibari",
-      "photo": "https://media.api-sports.io/football/players/161897.png",
-      "team": "Morocco",
       "goals": 3,
       "matches": 4
     },
@@ -369,6 +369,20 @@
       "red": 1
     },
     {
+      "name": "L. De Fougerolles",
+      "photo": "https://media.api-sports.io/football/players/327738.png",
+      "team": "Canada",
+      "yellow": 2,
+      "red": 0
+    },
+    {
+      "name": "C. Larin",
+      "photo": "https://media.api-sports.io/football/players/2001.png",
+      "team": "Canada",
+      "yellow": 2,
+      "red": 0
+    },
+    {
       "name": "A. Franco",
       "photo": "https://media.api-sports.io/football/players/16360.png",
       "team": "Ecuador",
@@ -397,33 +411,19 @@
       "red": 0
     },
     {
+      "name": "D. Gómez",
+      "photo": "https://media.api-sports.io/football/players/278370.png",
+      "team": "Paraguay",
+      "yellow": 2,
+      "red": 0
+    },
+    {
       "name": "Danilo",
       "photo": "https://media.api-sports.io/football/players/618.png",
       "team": "Brazil",
       "yellow": 2,
       "red": 0
-    },
-    {
-      "name": "S. Posch",
-      "photo": "https://media.api-sports.io/football/players/711.png",
-      "team": "Austria",
-      "yellow": 2,
-      "red": 0
-    },
-    {
-      "name": "I. Perišić",
-      "photo": "https://media.api-sports.io/football/players/207.png",
-      "team": "Croatia",
-      "yellow": 2,
-      "red": 0
-    },
-    {
-      "name": "Yasser Ibrahim",
-      "photo": "https://media.api-sports.io/football/players/16804.png",
-      "team": "Egypt",
-      "yellow": 2,
-      "red": 0
     }
   ],
-  "updatedAt": "2026-07-04T22:11:45.217Z"
+  "updatedAt": "2026-07-05T00:07:03.483Z"
 }
