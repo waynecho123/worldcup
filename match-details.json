@@ -92254,5 +92254,12 @@
     "homeTeam": "Brazil",
     "awayTeam": "Norway",
     "status": "Not Started"
+  },
+  "m094": {
+    "fixtureId": "1576756",
+    "date": "2026-07-06T19:00:00+00:00",
+    "homeTeam": "Portugal",
+    "awayTeam": "Spain",
+    "status": "Not Started"
   }
 }
