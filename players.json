@@ -161,7 +161,7 @@
       "photo": "https://media.api-sports.io/football/players/10135.png",
       "team": "Brazil",
       "assists": 4,
-      "matches": 4
+      "matches": 5
     },
     {
       "name": "A. Isak",
@@ -171,9 +171,30 @@
       "matches": 4
     },
     {
+      "name": "A. Schjelderup",
+      "photo": "https://media.api-sports.io/football/players/301528.png",
+      "team": "Norway",
+      "assists": 3,
+      "matches": 5
+    },
+    {
+      "name": "B. Saka",
+      "photo": "https://media.api-sports.io/football/players/1460.png",
+      "team": "England",
+      "assists": 3,
+      "matches": 5
+    },
+    {
       "name": "R. Alvarado",
       "photo": "https://media.api-sports.io/football/players/2879.png",
       "team": "Mexico",
+      "assists": 3,
+      "matches": 5
+    },
+    {
+      "name": "M. Ødegaard",
+      "photo": "https://media.api-sports.io/football/players/37127.png",
+      "team": "Norway",
       "assists": 3,
       "matches": 4
     },
@@ -183,13 +204,6 @@
       "team": "Germany",
       "assists": 3,
       "matches": 4
-    },
-    {
-      "name": "M. Ødegaard",
-      "photo": "https://media.api-sports.io/football/players/37127.png",
-      "team": "Norway",
-      "assists": 3,
-      "matches": 3
     },
     {
       "name": "Kylian Mbappé",
@@ -267,20 +281,6 @@
       "team": "Senegal",
       "assists": 2,
       "matches": 3
-    },
-    {
-      "name": "N. Saliba",
-      "photo": "https://media.api-sports.io/football/players/294824.png",
-      "team": "Canada",
-      "assists": 2,
-      "matches": 3
-    },
-    {
-      "name": "B. Saka",
-      "photo": "https://media.api-sports.io/football/players/1460.png",
-      "team": "England",
-      "assists": 2,
-      "matches": 4
     }
   ],
   "cards": [
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-07-06T08:58:51.402Z"
+  "updatedAt": "2026-07-06T10:07:01.949Z"
 }
