@@ -306,6 +306,20 @@
       "red": 1
     },
     {
+      "name": "J. Quansah",
+      "photo": "https://media.api-sports.io/football/players/158698.png",
+      "team": "England",
+      "yellow": 1,
+      "red": 1
+    },
+    {
+      "name": "C. Montes",
+      "photo": "https://media.api-sports.io/football/players/2873.png",
+      "team": "Mexico",
+      "yellow": 0,
+      "red": 1
+    },
+    {
       "name": "A. Canobbio",
       "photo": "https://media.api-sports.io/football/players/51603.png",
       "team": "Uruguay",
@@ -323,13 +337,6 @@
       "name": "T. Muharemović",
       "photo": "https://media.api-sports.io/football/players/271350.png",
       "team": "Bosnia & Herzegovina",
-      "yellow": 0,
-      "red": 1
-    },
-    {
-      "name": "C. Montes",
-      "photo": "https://media.api-sports.io/football/players/2873.png",
-      "team": "Mexico",
       "yellow": 0,
       "red": 1
     },
@@ -416,14 +423,7 @@
       "team": "Ghana",
       "yellow": 2,
       "red": 0
-    },
-    {
-      "name": "D. Gómez",
-      "photo": "https://media.api-sports.io/football/players/278370.png",
-      "team": "Paraguay",
-      "yellow": 2,
-      "red": 0
     }
   ],
-  "updatedAt": "2026-07-06T14:11:48.729Z"
+  "updatedAt": "2026-07-06T16:06:49.002Z"
 }
