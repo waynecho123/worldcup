@@ -783,9 +783,9 @@ const MATCH_SCHEDULE = [
   {id:"m067",date:"2026-06-28",time:"05:00",home:"CRO",away:"GHA",grp:"L",stage:"group",matchday:3,venue:"Lincoln Financial Field, Philadelphia"},
   {id:"m068",date:"2026-06-28",time:"05:00",home:"PAN",away:"ENG",grp:"L",stage:"group",matchday:3,venue:"MetLife Stadium, New York New Jersey"},
   {id:"m069",date:"2026-06-28",time:"07:30",home:"COL",away:"POR",grp:"K",stage:"group",matchday:3,venue:"Hard Rock Stadium, Miami"},
-  {id:"m070",date:"2026-06-28",time:"11:30",home:"COD",away:"UZB",grp:"K",stage:"group",matchday:3,venue:"Mercedes-Benz Stadium, Atlanta"}",
+  {id:"m070",date:"2026-06-28",time:"11:30",home:"COD",away:"UZB",grp:"K",stage:"group",matchday:3,venue:"Mercedes-Benz Stadium, Atlanta"},
 
-  {id:"m071",date:"2026-06-28",time:"15:00",home:"ALG",away:"AUT",grp:"J",stage:"group",matchday:3,venue:"Arrowhead Stadium, Kansas City"}",
+  {id:"m071",date:"2026-06-28",time:"15:00",home:"ALG",away:"AUT",grp:"J",stage:"group",matchday:3,venue:"Arrowhead Stadium, Kansas City"},
   // ===== ROUND OF 32 (6/29 - 7/3) =====
   {id:"m073",date:"2026-06-29",time:"23:00",home:"MEX",away:"BIH",grp:"KO",stage:"r32",venue:"MetLife Stadium, East Rutherford"},
   {id:"m074",date:"2026-06-30",time:"02:00",home:"SUI",away:"SEN",grp:"KO",stage:"r32",venue:"AT&T Stadium, Dallas"},
@@ -804,45 +804,45 @@ const MATCH_SCHEDULE = [
   {id:"m087",date:"2026-07-03",time:"05:00",home:"COL",away:"AUT",grp:"KO",stage:"r32",venue:"Mercedes-Benz Stadium, Atlanta"},
   {id:"m088",date:"2026-07-03",time:"08:00",home:"ENG",away:"NOR",grp:"KO",stage:"r32",venue:"SoFi Stadium, Los Angeles"},
 
-  {id:"m072",date:"2026-06-28",time:"15:00",home:"JOR",away:"ARG",grp:"J",stage:"group",matchday:3,venue:"AT&T Stadium, Dallas"}",
+  {id:"m072",date:"2026-06-28",time:"15:00",home:"JOR",away:"ARG",grp:"J",stage:"group",matchday:3,venue:"AT&T Stadium, Dallas"},
 
 
   // ===== ROUND OF 32 (BJT from API UTC) =====
-  {id:"m073",date:"2026-06-29",time:"07:00",home:"RSA",away:"CAN",grp:"32强",stage:"r32",venue:"MetLife Stadium, East Rutherford"}",
+  {id:"m073",date:"2026-06-29",time:"07:00",home:"RSA",away:"CAN",grp:"32强",stage:"r32",venue:"MetLife Stadium, East Rutherford"},
 
-  {id:"m074",date:"2026-06-30",time:"06:00",home:"BRA",away:"JPN",grp:"32强",stage:"r32",venue:"AT&T Stadium, Dallas"}",
+  {id:"m074",date:"2026-06-30",time:"06:00",home:"BRA",away:"JPN",grp:"32强",stage:"r32",venue:"AT&T Stadium, Dallas"},
 
-  {id:"m078",date:"2026-06-30",time:"08:30",home:"GER",away:"PAR",grp:"32强",stage:"r32",venue:"Gillette Stadium, Boston"}",
+  {id:"m078",date:"2026-06-30",time:"08:30",home:"GER",away:"PAR",grp:"32强",stage:"r32",venue:"Gillette Stadium, Boston"},
 
-  {id:"m075",date:"2026-06-30",time:"13:00",home:"NED",away:"MAR",grp:"32强",stage:"r32",venue:"Mercedes-Benz Stadium, Atlanta"}",
+  {id:"m075",date:"2026-06-30",time:"13:00",home:"NED",away:"MAR",grp:"32强",stage:"r32",venue:"Mercedes-Benz Stadium, Atlanta"},
 
-  {id:"m077",date:"2026-07-01",time:"06:00",home:"CIV",away:"NOR",grp:"32强",stage:"r32",venue:"Arrowhead Stadium, Kansas City"}",
+  {id:"m077",date:"2026-07-01",time:"06:00",home:"CIV",away:"NOR",grp:"32强",stage:"r32",venue:"Arrowhead Stadium, Kansas City"},
 
-  {id:"m079",date:"2026-07-01",time:"12:00",home:"FRA",away:"SWE",grp:"32强",stage:"r32",venue:"BC Place, Vancouver"}",
+  {id:"m079",date:"2026-07-01",time:"12:00",home:"FRA",away:"SWE",grp:"32强",stage:"r32",venue:"BC Place, Vancouver"},
 
-  {id:"m082",date:"2026-07-01",time:"16:00",home:"MEX",away:"ECU",grp:"32强",stage:"r32",venue:"Levi's Stadium, San Francisco"}",
+  {id:"m082",date:"2026-07-01",time:"16:00",home:"MEX",away:"ECU",grp:"32强",stage:"r32",venue:"Levi's Stadium, San Francisco"},
 
-  {id:"m083",date:"2026-07-02",time:"05:00",home:"ENG",away:"COD",grp:"32强",stage:"r32",venue:"NRG Stadium, Houston"}",
+  {id:"m083",date:"2026-07-02",time:"05:00",home:"ENG",away:"COD",grp:"32强",stage:"r32",venue:"NRG Stadium, Houston"},
 
-  {id:"m084",date:"2026-07-02",time:"08:00",home:"BEL",away:"SEN",grp:"32强",stage:"r32",venue:"Lincoln Financial Field, Philadelphia"}",
+  {id:"m084",date:"2026-07-02",time:"08:00",home:"BEL",away:"SEN",grp:"32强",stage:"r32",venue:"Lincoln Financial Field, Philadelphia"},
 
-  {id:"m076",date:"2026-07-02",time:"15:00",home:"USA",away:"BIH",grp:"32强",stage:"r32",venue:"SoFi Stadium, Los Angeles"}",
+  {id:"m076",date:"2026-07-02",time:"15:00",home:"USA",away:"BIH",grp:"32强",stage:"r32",venue:"SoFi Stadium, Los Angeles"},
 
-  {id:"m087",date:"2026-07-03",time:"08:00",home:"ESP",away:"AUT",grp:"32强",stage:"r32",venue:"AT&T Stadium, Dallas"}",
+  {id:"m087",date:"2026-07-03",time:"08:00",home:"ESP",away:"AUT",grp:"32强",stage:"r32",venue:"AT&T Stadium, Dallas"},
 
-  {id:"m085",date:"2026-07-03",time:"11:00",home:"POR",away:"CRO",grp:"32强",stage:"r32",venue:"MetLife Stadium, East Rutherford"}",
+  {id:"m085",date:"2026-07-03",time:"11:00",home:"POR",away:"CRO",grp:"32强",stage:"r32",venue:"MetLife Stadium, East Rutherford"},
 
-  {id:"m088",date:"2026-07-03",time:"15:00",home:"SUI",away:"ALG",grp:"32强",stage:"r32",venue:"Gillette Stadium, Boston"}",
+  {id:"m088",date:"2026-07-03",time:"15:00",home:"SUI",away:"ALG",grp:"32强",stage:"r32",venue:"Gillette Stadium, Boston"},
 
-  {id:"m080",date:"2026-07-04",time:"06:00",home:"AUS",away:"EGY",grp:"32强",stage:"r32",venue:"Hard Rock Stadium, Miami"}",
+  {id:"m080",date:"2026-07-04",time:"06:00",home:"AUS",away:"EGY",grp:"32强",stage:"r32",venue:"Hard Rock Stadium, Miami"},
 
-  {id:"m081",date:"2026-07-04",time:"13:00",home:"ARG",away:"CPV",grp:"32强",stage:"r32",venue:"Levi's Stadium, San Francisco"}",
+  {id:"m081",date:"2026-07-04",time:"13:00",home:"ARG",away:"CPV",grp:"32强",stage:"r32",venue:"Levi's Stadium, San Francisco"},
 
-  {id:"m086",date:"2026-07-04",time:"14:30",home:"COL",away:"GHA",grp:"32强",stage:"r32",venue:"AT&T Stadium, Dallas"}",
+  {id:"m086",date:"2026-07-04",time:"14:30",home:"COL",away:"GHA",grp:"32强",stage:"r32",venue:"AT&T Stadium, Dallas"},
 
 
   // ===== ROUND OF 16 (from API, BJT) =====
-  {id:"m089",date:"2026-07-05",time:"06:00",home:"CAN",away:"MAR",grp:"16强",stage:"r16",venue:"Arrowhead Stadium, Kansas City"}",
+  {id:"m089",date:"2026-07-05",time:"06:00",home:"CAN",away:"MAR",grp:"16强",stage:"r16",venue:"Arrowhead Stadium, Kansas City"},
 
   {id:"m090",date:"2026-07-05",time:"09:00",home:"PAR",away:"FRA",grp:"16强",stage:"r16",venue:"Gillette Stadium, Boston"},
   {id:"m092",date:"2026-07-05",time:"23:00",home:"USA",away:"EGY",grp:"16强",stage:"r16",venue:"Lumen Field, Seattle"},
