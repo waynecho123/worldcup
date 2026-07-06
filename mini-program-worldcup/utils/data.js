@@ -845,9 +845,9 @@ const MATCH_SCHEDULE = [
   {id:"m089",date:"2026-07-05",time:"06:00",home:"CAN",away:"MAR",grp:"16强",stage:"r16",venue:"Arrowhead Stadium, Kansas City"},
 
   {id:"m090",date:"2026-07-05",time:"09:00",home:"PAR",away:"FRA",grp:"16强",stage:"r16",venue:"Gillette Stadium, Boston"},
-  {id:"m092",date:"2026-07-06",time:"02:00",home:"ENG",away:"MEX",grp:"16强",stage:"r16",venue:"Lumen Field, Seattle"},
+  {id:"m092",date:"2026-07-06",time:"02:00",home:"MEX",away:"ENG",grp:"16强",stage:"r16",venue:"Lumen Field, Seattle"},
   {id:"m091",date:"2026-07-06",time:"11:00",home:"BRA",away:"NOR",grp:"16强",stage:"r16",venue:"BC Place, Vancouver"},
-  {id:"m092",date:"2026-07-06",time:"02:00",home:"ENG",away:"MEX",grp:"16强",stage:"r16",venue:"Lumen Field, Seattle"},
+  {id:"m092",date:"2026-07-06",time:"02:00",home:"MEX",away:"ENG",grp:"16强",stage:"r16",venue:"Lumen Field, Seattle"},
   {id:"m093",date:"2026-07-06",time:"05:00",home:"?",away:"?",grp:"16强",stage:"r16",venue:"Levi's Stadium, San Francisco"},
   {id:"m094",date:"2026-07-06",time:"23:00",home:"POR",away:"ESP",grp:"16强",stage:"r16",venue:"Hard Rock Stadium, Miami"},
   {id:"m095",date:"2026-07-07",time:"02:00",home:"ARG",away:"BEL",grp:"16强",stage:"r16",venue:"NRG Stadium, Houston"},
