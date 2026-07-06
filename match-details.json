@@ -93258,5 +93258,33 @@
     "homeTeam": "Portugal",
     "awayTeam": "Spain",
     "status": "Not Started"
+  },
+  "m095": {
+    "fixtureId": "1570715",
+    "date": "2026-07-07T00:00:00+00:00",
+    "homeTeam": "USA",
+    "awayTeam": "Belgium",
+    "status": "Not Started"
+  },
+  "m096": {
+    "fixtureId": "1576804",
+    "date": "2026-07-07T16:00:00+00:00",
+    "homeTeam": "Argentina",
+    "awayTeam": "Egypt",
+    "status": "Not Started"
+  },
+  "m097": {
+    "fixtureId": "1578539",
+    "date": "2026-07-09T20:00:00+00:00",
+    "homeTeam": "France",
+    "awayTeam": "Morocco",
+    "status": "Not Started"
+  },
+  "m098": {
+    "fixtureId": "1581037",
+    "date": "2026-07-11T21:00:00+00:00",
+    "homeTeam": "Norway",
+    "awayTeam": "England",
+    "status": "Not Started"
   }
 }
