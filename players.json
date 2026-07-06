@@ -8,6 +8,13 @@
       "matches": 4
     },
     {
+      "name": "E. Haaland",
+      "photo": "https://media.api-sports.io/football/players/1100.png",
+      "team": "Norway",
+      "goals": 7,
+      "matches": 4
+    },
+    {
       "name": "Kylian Mbappé",
       "photo": "https://media.api-sports.io/football/players/278.png",
       "team": "France",
@@ -15,23 +22,30 @@
       "matches": 5
     },
     {
-      "name": "E. Haaland",
-      "photo": "https://media.api-sports.io/football/players/1100.png",
-      "team": "Norway",
-      "goals": 5,
-      "matches": 4
-    },
-    {
       "name": "H. Kane",
       "photo": "https://media.api-sports.io/football/players/184.png",
       "team": "England",
-      "goals": 5,
-      "matches": 4
+      "goals": 6,
+      "matches": 5
     },
     {
       "name": "O. Dembélé",
       "photo": "https://media.api-sports.io/football/players/153.png",
       "team": "France",
+      "goals": 4,
+      "matches": 5
+    },
+    {
+      "name": "J. Quiñones",
+      "photo": "https://media.api-sports.io/football/players/35532.png",
+      "team": "Mexico",
+      "goals": 4,
+      "matches": 5
+    },
+    {
+      "name": "J. Bellingham",
+      "photo": "https://media.api-sports.io/football/players/129718.png",
+      "team": "England",
       "goals": 4,
       "matches": 5
     },
@@ -67,13 +81,6 @@
       "name": "J. Manzambi",
       "photo": "https://media.api-sports.io/football/players/406244.png",
       "team": "Switzerland",
-      "goals": 3,
-      "matches": 4
-    },
-    {
-      "name": "J. Quiñones",
-      "photo": "https://media.api-sports.io/football/players/35532.png",
-      "team": "Mexico",
       "goals": 3,
       "matches": 4
     },
@@ -127,16 +134,9 @@
       "matches": 3
     },
     {
-      "name": "Cristiano Ronaldo",
-      "photo": "https://media.api-sports.io/football/players/874.png",
-      "team": "Portugal",
-      "goals": 3,
-      "matches": 4
-    },
-    {
-      "name": "K. Havertz",
-      "photo": "https://media.api-sports.io/football/players/978.png",
-      "team": "Germany",
+      "name": "R. Jiménez",
+      "photo": "https://media.api-sports.io/football/players/2887.png",
+      "team": "Mexico",
       "goals": 3,
       "matches": 4
     }
@@ -376,16 +376,16 @@
       "red": 0
     },
     {
-      "name": "Danilo",
-      "photo": "https://media.api-sports.io/football/players/618.png",
-      "team": "Brazil",
+      "name": "L. De Fougerolles",
+      "photo": "https://media.api-sports.io/football/players/327738.png",
+      "team": "Canada",
       "yellow": 2,
       "red": 0
     },
     {
-      "name": "L. De Fougerolles",
-      "photo": "https://media.api-sports.io/football/players/327738.png",
-      "team": "Canada",
+      "name": "Danilo",
+      "photo": "https://media.api-sports.io/football/players/618.png",
+      "team": "Brazil",
       "yellow": 2,
       "red": 0
     },
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-07-06T10:27:44.194Z"
+  "updatedAt": "2026-07-06T12:06:48.858Z"
 }
