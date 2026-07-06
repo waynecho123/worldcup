@@ -93286,5 +93286,1109 @@
     "homeTeam": "Norway",
     "awayTeam": "England",
     "status": "Not Started"
+  },
+  "m092": {
+    "fixtureId": 1570714,
+    "date": "2026-07-06T01:00:00+00:00",
+    "venue": "Estadio Azteca",
+    "status": "Match Finished",
+    "homeTeam": "Mexico",
+    "awayTeam": "England",
+    "score": {
+      "home": 2,
+      "away": 3
+    },
+    "statistics": {
+      "Mexico": {
+        "Shots on Goal": 5,
+        "Shots off Goal": 8,
+        "Total Shots": 20,
+        "Blocked Shots": 7,
+        "Shots insidebox": 12,
+        "Shots outsidebox": 8,
+        "Fouls": 14,
+        "Corner Kicks": 12,
+        "Offsides": 1,
+        "Ball Possession": "67%",
+        "Yellow Cards": 2,
+        "Red Cards": 0,
+        "Goalkeeper Saves": 2,
+        "Total passes": 455,
+        "Passes accurate": 420,
+        "Passes %": "92%",
+        "expected_goals": "1.87",
+        "goals_prevented": "-0.15"
+      },
+      "England": {
+        "Shots on Goal": 5,
+        "Shots off Goal": 1,
+        "Total Shots": 6,
+        "Blocked Shots": 0,
+        "Shots insidebox": 4,
+        "Shots outsidebox": 2,
+        "Fouls": 7,
+        "Corner Kicks": 2,
+        "Offsides": 0,
+        "Ball Possession": "33%",
+        "Yellow Cards": 4,
+        "Red Cards": 1,
+        "Goalkeeper Saves": 3,
+        "Total passes": 244,
+        "Passes accurate": 195,
+        "Passes %": "80%",
+        "expected_goals": "1.55",
+        "goals_prevented": "-0.15"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 16,
+          "name": "Mexico",
+          "logo": "https://media.api-sports.io/football/teams/16.png",
+          "colors": {
+            "player": {
+              "primary": "298b77",
+              "number": "ffffff",
+              "border": "298b77"
+            },
+            "goalkeeper": {
+              "primary": "d64983",
+              "number": "fafafa",
+              "border": "d64983"
+            }
+          }
+        },
+        "formation": "4-3-3",
+        "startXI": [
+          {
+            "player": {
+              "id": 270774,
+              "name": "Raúl Rangel",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2878,
+              "name": "Jorge Sánchez",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 2873,
+              "name": "César Montes",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 35544,
+              "name": "Johan Vásquez",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 2881,
+              "name": "Jesús Gallardo",
+              "number": 23,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 482605,
+              "name": "Gilberto Mora",
+              "number": 19,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 266345,
+              "name": "Erik Lira",
+              "number": 6,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 35970,
+              "name": "Luis Romo",
+              "number": 7,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2879,
+              "name": "Roberto Alvarado",
+              "number": 25,
+              "pos": "F",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 2887,
+              "name": "Raúl Jiménez",
+              "number": 9,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 35532,
+              "name": "Julián Quiñones",
+              "number": 16,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 2869,
+              "name": "Edson Álvarez",
+              "number": 4,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 212233,
+              "name": "Brian Gutiérrez",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 94562,
+              "name": "Santiago Giménez",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 750,
+              "name": "Álvaro Fidalgo",
+              "number": 8,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36088,
+              "name": "Guillermo Martínez",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 35769,
+              "name": "Carlos Acevedo",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2098,
+              "name": "Guillermo Ochoa",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 127227,
+              "name": "Israel Reyes",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 390002,
+              "name": "Mateo Chávez",
+              "number": 20,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 35576,
+              "name": "Orbelín Pineda",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 313383,
+              "name": "Obed Vargas",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 35690,
+              "name": "Luis Chávez",
+              "number": 24,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2889,
+              "name": "Alexis Vega",
+              "number": 10,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36111,
+              "name": "César Huerta",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 291713,
+              "name": "Armando González",
+              "number": 14,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 27707,
+          "name": "Javier Aguirre",
+          "photo": "https://media.api-sports.io/football/coachs/27707.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 10,
+          "name": "England",
+          "logo": "https://media.api-sports.io/football/teams/10.png",
+          "colors": {
+            "player": {
+              "primary": "ffffff",
+              "number": "2a2f3c",
+              "border": "ffffff"
+            },
+            "goalkeeper": {
+              "primary": "f3a53d",
+              "number": "1a1619",
+              "border": "f3a53d"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 2932,
+              "name": "Jordan Pickford",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 158698,
+              "name": "Jarell Quansah",
+              "number": 26,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 19354,
+              "name": "Ezri Konsa",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 67971,
+              "name": "Marc Guéhi",
+              "number": 6,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 307123,
+              "name": "Nico O'Reilly",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2937,
+              "name": "Declan Rice",
+              "number": 4,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 138908,
+              "name": "Elliot Anderson",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 1460,
+              "name": "Bukayo Saka",
+              "number": 7,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 129718,
+              "name": "Jude Bellingham",
+              "number": 10,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 138787,
+              "name": "Anthony Gordon",
+              "number": 18,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 184,
+              "name": "Harry Kane",
+              "number": 9,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 626,
+              "name": "John Stones",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 18961,
+              "name": "Dan Burn",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19235,
+              "name": "Djed Spence",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19170,
+              "name": "Morgan Rogers",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19088,
+              "name": "Dean Henderson",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 162489,
+              "name": "James Trafford",
+              "number": 23,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19720,
+              "name": "Trevoh Chalobah",
+              "number": 12,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19545,
+              "name": "Reece James",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 292,
+              "name": "Jordan Henderson",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 284322,
+              "name": "Kobbie Mainoo",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19586,
+              "name": "Eberechi Eze",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 909,
+              "name": "Marcus Rashford",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19366,
+              "name": "Ollie Watkins",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 136723,
+              "name": "Noni Madueke",
+              "number": 20,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19974,
+              "name": "Ivan Toney",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 40,
+          "name": "Thomas Tuchel",
+          "photo": "https://media.api-sports.io/football/coachs/40.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "1",
+        "team": "England",
+        "player": "D. Rice",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Roughing"
+      },
+      {
+        "time": "36",
+        "team": "England",
+        "player": "J. Bellingham",
+        "assist": "B. Saka",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "38",
+        "team": "England",
+        "player": "J. Bellingham",
+        "assist": "H. Kane",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "42",
+        "team": "Mexico",
+        "player": "J. Quinones",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "Mexico",
+        "player": "C. Montes",
+        "assist": "E. Alvarez",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "54",
+        "team": "England",
+        "player": "J. Quansah",
+        "assist": null,
+        "type": "Card",
+        "detail": "Red Card",
+        "comments": "Serious foul"
+      },
+      {
+        "time": "57",
+        "team": "England",
+        "player": "B. Saka",
+        "assist": "J. Stones",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "60",
+        "team": "England",
+        "player": "H. Kane",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": ""
+      },
+      {
+        "time": "61",
+        "team": "Mexico",
+        "player": "G. Mora",
+        "assist": "S. Gimenez",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "61",
+        "team": "Mexico",
+        "player": "L. Romo",
+        "assist": "B. Gutierrez",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "68",
+        "team": "England",
+        "player": "M. Guehi",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Unsportsmanlike conduct"
+      },
+      {
+        "time": "69",
+        "team": "Mexico",
+        "player": "R. Jimenez",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": ""
+      },
+      {
+        "time": "71",
+        "team": "Mexico",
+        "player": "J. Sanchez",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Unsportsmanlike conduct"
+      },
+      {
+        "time": "72",
+        "team": "England",
+        "player": "N. O'Reilly",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Unsportsmanlike conduct"
+      },
+      {
+        "time": "74",
+        "team": "England",
+        "player": "N. O'Reilly",
+        "assist": "D. Spence",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "75",
+        "team": "England",
+        "player": "E. Anderson",
+        "assist": "D. Burn",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "79",
+        "team": "Mexico",
+        "player": "J. Sanchez",
+        "assist": "A. Fidalgo",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "81",
+        "team": "Mexico",
+        "player": "J. Quinones",
+        "assist": "G. Martinez",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "90",
+        "team": "England",
+        "player": "H. Kane",
+        "assist": "M. Rogers",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "90+8",
+        "team": "Mexico",
+        "player": "J. Vasquez",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Unsportsmanlike conduct"
+      },
+      {
+        "time": "90+8",
+        "team": "England",
+        "player": "J. Henderson",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Mexico",
+        "players": [
+          {
+            "name": "Raúl Rangel",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jorge Sánchez",
+            "rating": "5.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "César Montes",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Johan Vásquez",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jesús Gallardo",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gilberto Mora",
+            "rating": "5.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Erik Lira",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Luis Romo",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Roberto Alvarado",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Raúl Jiménez",
+            "rating": "7.2",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Julián Quiñones",
+            "rating": "7.9",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Edson Álvarez",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Brian Gutiérrez",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Santiago Giménez",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Álvaro Fidalgo",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Guillermo Martínez",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Carlos Acevedo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Guillermo Ochoa",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Israel Reyes",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mateo Chávez",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Orbelín Pineda",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Obed Vargas",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Luis Chávez",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alexis Vega",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "César Huerta",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Armando González",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "England",
+        "players": [
+          {
+            "name": "Jordan Pickford",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jarell Quansah",
+            "rating": "5.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ezri Konsa",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marc Guéhi",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nico O'Reilly",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Declan Rice",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Elliot Anderson",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Bukayo Saka",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Jude Bellingham",
+            "rating": "9",
+            "goals": 2,
+            "assists": 0
+          },
+          {
+            "name": "Anthony Gordon",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Harry Kane",
+            "rating": "7.3",
+            "goals": 1,
+            "assists": 1
+          },
+          {
+            "name": "John Stones",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Dan Burn",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Djed Spence",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Morgan Rogers",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Dean Henderson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "James Trafford",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Trevoh Chalobah",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Reece James",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jordan Henderson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kobbie Mainoo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Eberechi Eze",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marcus Rashford",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ollie Watkins",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Noni Madueke",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ivan Toney",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
+  },
+  "m093": {
+    "fixtureId": "1576805",
+    "date": "2026-07-07T20:00:00+00:00",
+    "homeTeam": "Switzerland",
+    "awayTeam": "Colombia",
+    "status": "Not Started"
   }
 }
