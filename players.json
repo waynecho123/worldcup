@@ -19,7 +19,7 @@
       "photo": "https://media.api-sports.io/football/players/1100.png",
       "team": "Norway",
       "goals": 5,
-      "matches": 3
+      "matches": 4
     },
     {
       "name": "H. Kane",
@@ -36,16 +36,16 @@
       "matches": 5
     },
     {
-      "name": "Mikel Oyarzabal",
-      "photo": "https://media.api-sports.io/football/players/47323.png",
-      "team": "Spain",
-      "goals": 4,
-      "matches": 4
-    },
-    {
       "name": "Vinícius Júnior",
       "photo": "https://media.api-sports.io/football/players/762.png",
       "team": "Brazil",
+      "goals": 4,
+      "matches": 5
+    },
+    {
+      "name": "Mikel Oyarzabal",
+      "photo": "https://media.api-sports.io/football/players/47323.png",
+      "team": "Spain",
       "goals": 4,
       "matches": 4
     },
@@ -85,6 +85,13 @@
       "matches": 4
     },
     {
+      "name": "Matheus Cunha",
+      "photo": "https://media.api-sports.io/football/players/1165.png",
+      "team": "Brazil",
+      "goals": 3,
+      "matches": 5
+    },
+    {
       "name": "I. Saibari",
       "photo": "https://media.api-sports.io/football/players/161897.png",
       "team": "Morocco",
@@ -102,13 +109,6 @@
       "name": "B. Brobbey",
       "photo": "https://media.api-sports.io/football/players/38750.png",
       "team": "Netherlands",
-      "goals": 3,
-      "matches": 4
-    },
-    {
-      "name": "Matheus Cunha",
-      "photo": "https://media.api-sports.io/football/players/1165.png",
-      "team": "Brazil",
       "goals": 3,
       "matches": 4
     },
@@ -369,6 +369,20 @@
       "red": 1
     },
     {
+      "name": "Casemiro",
+      "photo": "https://media.api-sports.io/football/players/747.png",
+      "team": "Brazil",
+      "yellow": 2,
+      "red": 0
+    },
+    {
+      "name": "Danilo",
+      "photo": "https://media.api-sports.io/football/players/618.png",
+      "team": "Brazil",
+      "yellow": 2,
+      "red": 0
+    },
+    {
       "name": "L. De Fougerolles",
       "photo": "https://media.api-sports.io/football/players/327738.png",
       "team": "Canada",
@@ -404,26 +418,12 @@
       "red": 0
     },
     {
-      "name": "Casemiro",
-      "photo": "https://media.api-sports.io/football/players/747.png",
-      "team": "Brazil",
-      "yellow": 2,
-      "red": 0
-    },
-    {
       "name": "D. Gómez",
       "photo": "https://media.api-sports.io/football/players/278370.png",
       "team": "Paraguay",
       "yellow": 2,
       "red": 0
-    },
-    {
-      "name": "Danilo",
-      "photo": "https://media.api-sports.io/football/players/618.png",
-      "team": "Brazil",
-      "yellow": 2,
-      "red": 0
     }
   ],
-  "updatedAt": "2026-07-05T22:06:45.797Z"
+  "updatedAt": "2026-07-06T00:07:02.016Z"
 }

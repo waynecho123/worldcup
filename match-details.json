@@ -92270,15 +92270,15 @@
         "Fouls": 7,
         "Corner Kicks": 5,
         "Offsides": 1,
-        "Ball Possession": "33%",
+        "Ball Possession": "34%",
         "Yellow Cards": 1,
         "Red Cards": null,
         "Goalkeeper Saves": 3,
-        "Total passes": 326,
-        "Passes accurate": 277,
+        "Total passes": 329,
+        "Passes accurate": 279,
         "Passes %": "85%",
-        "expected_goals": "1.93",
-        "goals_prevented": "1.00"
+        "expected_goals": "2.73",
+        "goals_prevented": "0.76"
       },
       "Norway": {
         "Shots on Goal": 5,
@@ -92290,15 +92290,15 @@
         "Fouls": 6,
         "Corner Kicks": 5,
         "Offsides": 1,
-        "Ball Possession": "67%",
+        "Ball Possession": "66%",
         "Yellow Cards": 0,
         "Red Cards": null,
         "Goalkeeper Saves": 4,
-        "Total passes": 677,
-        "Passes accurate": 616,
+        "Total passes": 680,
+        "Passes accurate": 617,
         "Passes %": "91%",
-        "expected_goals": "0.73",
-        "goals_prevented": "1.00"
+        "expected_goals": "0.84",
+        "goals_prevented": "0.76"
       }
     },
     "lineups": {
@@ -92452,6 +92452,15 @@
           },
           {
             "player": {
+              "id": 10097,
+              "name": "Éderson",
+              "number": 2,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 2410,
               "name": "Weverton",
               "number": 12,
@@ -92501,15 +92510,6 @@
               "name": "Roger Ibañez",
               "number": 24,
               "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 10097,
-              "name": "Éderson",
-              "number": 2,
-              "pos": "M",
               "grid": null
             }
           },
@@ -92706,6 +92706,15 @@
           },
           {
             "player": {
+              "id": 18967,
+              "name": "Leo Østigård",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 264378,
               "name": "Sander Tangvik",
               "number": 12,
@@ -92719,15 +92728,6 @@
               "name": "Egil Selvik",
               "number": 13,
               "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 18967,
-              "name": "Leo Østigård",
-              "number": 4,
-              "pos": "D",
               "grid": null
             }
           },
@@ -92966,13 +92966,13 @@
           },
           {
             "name": "Rayan",
-            "rating": "6.9",
+            "rating": "7",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Bruno Guimarães",
-            "rating": "6",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },
@@ -92984,7 +92984,7 @@
           },
           {
             "name": "Gabriel Martinelli",
-            "rating": "7.2",
+            "rating": "7.5",
             "goals": 0,
             "assists": 0
           },
@@ -93097,7 +93097,7 @@
           },
           {
             "name": "Julian Ryerson",
-            "rating": "6.6",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
@@ -93115,7 +93115,7 @@
           },
           {
             "name": "David Møller Wolfe",
-            "rating": "7",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
