@@ -94349,7 +94349,7 @@
             }
           }
         },
-        "formation": "4-3-3",
+        "formation": null,
         "startXI": [
           {
             "player": {
@@ -94357,7 +94357,7 @@
               "name": "Matthew Freese",
               "number": 24,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -94366,7 +94366,7 @@
               "name": "Alexander Freeman",
               "number": 16,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -94375,7 +94375,7 @@
               "name": "Chris Richards",
               "number": 3,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -94384,7 +94384,7 @@
               "name": "Tim Ream",
               "number": 13,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -94393,7 +94393,7 @@
               "name": "Antonee Robinson",
               "number": 5,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -94402,7 +94402,7 @@
               "name": "Weston McKennie",
               "number": 8,
               "pos": "M",
-              "grid": "3:3"
+              "grid": null
             }
           },
           {
@@ -94411,7 +94411,7 @@
               "name": "Tyler Adams",
               "number": 4,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -94420,7 +94420,7 @@
               "name": "Malik Tillman",
               "number": 17,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -94429,7 +94429,7 @@
               "name": "Sergiño Dest",
               "number": 2,
               "pos": "F",
-              "grid": "4:3"
+              "grid": null
             }
           },
           {
@@ -94438,7 +94438,7 @@
               "name": "Folarin Balogun",
               "number": 20,
               "pos": "F",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -94447,7 +94447,7 @@
               "name": "Christian Pulišić",
               "number": 10,
               "pos": "F",
-              "grid": "4:1"
+              "grid": null
             }
           }
         ],
@@ -94603,7 +94603,7 @@
             }
           }
         },
-        "formation": "4-2-3-1",
+        "formation": null,
         "startXI": [
           {
             "player": {
@@ -94611,7 +94611,7 @@
               "name": "Thibaut Courtois",
               "number": 1,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -94620,7 +94620,7 @@
               "name": "Timothy Castagne",
               "number": 21,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -94629,7 +94629,7 @@
               "name": "Nathan Ngoy",
               "number": 25,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -94638,7 +94638,7 @@
               "name": "Brandon Mechele",
               "number": 4,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -94647,7 +94647,7 @@
               "name": "Maxim De Cuyper",
               "number": 5,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -94656,7 +94656,7 @@
               "name": "Amadou Onana",
               "number": 24,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -94665,7 +94665,7 @@
               "name": "Nicolas Raskin",
               "number": 23,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -94674,7 +94674,7 @@
               "name": "Dodi Lukebakio",
               "number": 14,
               "pos": "M",
-              "grid": "4:3"
+              "grid": null
             }
           },
           {
@@ -94683,7 +94683,7 @@
               "name": "Youri Tielemans",
               "number": 8,
               "pos": "M",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -94692,7 +94692,7 @@
               "name": "Leandro Trossard",
               "number": 10,
               "pos": "M",
-              "grid": "4:1"
+              "grid": null
             }
           },
           {
@@ -94701,7 +94701,7 @@
               "name": "Charles De Ketelaere",
               "number": 17,
               "pos": "F",
-              "grid": "5:1"
+              "grid": null
             }
           }
         ],
