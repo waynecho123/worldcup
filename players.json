@@ -36,6 +36,13 @@
       "matches": 5
     },
     {
+      "name": "Mikel Oyarzabal",
+      "photo": "https://media.api-sports.io/football/players/47323.png",
+      "team": "Spain",
+      "goals": 4,
+      "matches": 5
+    },
+    {
       "name": "J. Quiñones",
       "photo": "https://media.api-sports.io/football/players/35532.png",
       "team": "Mexico",
@@ -57,13 +64,6 @@
       "matches": 5
     },
     {
-      "name": "Mikel Oyarzabal",
-      "photo": "https://media.api-sports.io/football/players/47323.png",
-      "team": "Spain",
-      "goals": 4,
-      "matches": 4
-    },
-    {
       "name": "I. Sarr",
       "photo": "https://media.api-sports.io/football/players/2218.png",
       "team": "Senegal",
@@ -83,6 +83,13 @@
       "team": "Switzerland",
       "goals": 3,
       "matches": 4
+    },
+    {
+      "name": "R. Lukaku",
+      "photo": "https://media.api-sports.io/football/players/907.png",
+      "team": "Belgium",
+      "goals": 3,
+      "matches": 5
     },
     {
       "name": "C. Gakpo",
@@ -124,7 +131,7 @@
       "photo": "https://media.api-sports.io/football/players/138835.png",
       "team": "USA",
       "goals": 3,
-      "matches": 3
+      "matches": 4
     },
     {
       "name": "E. Just",
@@ -132,13 +139,6 @@
       "team": "New Zealand",
       "goals": 3,
       "matches": 3
-    },
-    {
-      "name": "R. Jiménez",
-      "photo": "https://media.api-sports.io/football/players/2887.png",
-      "team": "Mexico",
-      "goals": 3,
-      "matches": 4
     }
   ],
   "assists": [
@@ -397,6 +397,20 @@
       "red": 0
     },
     {
+      "name": "Renato Veiga",
+      "photo": "https://media.api-sports.io/football/players/336671.png",
+      "team": "Portugal",
+      "yellow": 2,
+      "red": 0
+    },
+    {
+      "name": "Bernardo Silva",
+      "photo": "https://media.api-sports.io/football/players/636.png",
+      "team": "Portugal",
+      "yellow": 2,
+      "red": 0
+    },
+    {
       "name": "C. Larin",
       "photo": "https://media.api-sports.io/football/players/2001.png",
       "team": "Canada",
@@ -409,21 +423,7 @@
       "team": "Ecuador",
       "yellow": 2,
       "red": 0
-    },
-    {
-      "name": "N. Sadiki",
-      "photo": "https://media.api-sports.io/football/players/365331.png",
-      "team": "Congo DR",
-      "yellow": 2,
-      "red": 0
-    },
-    {
-      "name": "Caleb Marfo Yirenkyi",
-      "photo": "https://media.api-sports.io/football/players/475575.png",
-      "team": "Ghana",
-      "yellow": 2,
-      "red": 0
     }
   ],
-  "updatedAt": "2026-07-07T10:11:48.645Z"
+  "updatedAt": "2026-07-07T12:06:58.277Z"
 }
