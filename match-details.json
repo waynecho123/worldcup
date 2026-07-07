@@ -94303,18 +94303,18 @@
         "Yellow Cards": 2,
         "Red Cards": null,
         "Goalkeeper Saves": 3,
-        "Total passes": 520,
-        "Passes accurate": 454,
+        "Total passes": 527,
+        "Passes accurate": 458,
         "Passes %": "87%",
-        "expected_goals": "0.64",
+        "expected_goals": "0.67",
         "goals_prevented": "-0.69"
       },
       "Belgium": {
-        "Shots on Goal": 6,
+        "Shots on Goal": 7,
         "Shots off Goal": 4,
-        "Total Shots": 14,
+        "Total Shots": 15,
         "Blocked Shots": 4,
-        "Shots insidebox": 9,
+        "Shots insidebox": 10,
         "Shots outsidebox": 5,
         "Fouls": 9,
         "Corner Kicks": 5,
@@ -94323,10 +94323,10 @@
         "Yellow Cards": 0,
         "Red Cards": null,
         "Goalkeeper Saves": 1,
-        "Total passes": 402,
-        "Passes accurate": 327,
+        "Total passes": 410,
+        "Passes accurate": 333,
         "Passes %": "81%",
-        "expected_goals": "2.10",
+        "expected_goals": "2.15",
         "goals_prevented": "-0.69"
       }
     },
@@ -94472,6 +94472,33 @@
           },
           {
             "player": {
+              "id": 73868,
+              "name": "Ricardo Pepi",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 362400,
+              "name": "Maximilian Arfsten",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 427,
+              "name": "Haji Wright",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 50999,
               "name": "Matt Turner",
               "number": 1,
@@ -94535,15 +94562,6 @@
           },
           {
             "player": {
-              "id": 362400,
-              "name": "Maximilian Arfsten",
-              "number": 18,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 1138,
               "name": "Timothy Weah",
               "number": 21,
@@ -94557,24 +94575,6 @@
               "name": "Brenden Aaronson",
               "number": 11,
               "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 427,
-              "name": "Haji Wright",
-              "number": 19,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 73868,
-              "name": "Ricardo Pepi",
-              "number": 9,
-              "pos": "F",
               "grid": null
             }
           }
@@ -94726,6 +94726,33 @@
           },
           {
             "player": {
+              "id": 907,
+              "name": "Romelu Lukaku",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1417,
+              "name": "Alexis Saelemaekers",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 20,
+              "name": "Axel Witsel",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 340151,
               "name": "Mike Penders",
               "number": 13,
@@ -94798,24 +94825,6 @@
           },
           {
             "player": {
-              "id": 1417,
-              "name": "Alexis Saelemaekers",
-              "number": 22,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 20,
-              "name": "Axel Witsel",
-              "number": 6,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 629,
               "name": "Kevin De Bruyne",
               "number": 7,
@@ -94828,15 +94837,6 @@
               "id": 340077,
               "name": "Matías Fernández-Pardo",
               "number": 26,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 907,
-              "name": "Romelu Lukaku",
-              "number": 9,
               "pos": "F",
               "grid": null
             }
@@ -95010,25 +95010,25 @@
         "players": [
           {
             "name": "Matthew Freese",
-            "rating": "6.3",
+            "rating": "5.9",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Alexander Freeman",
-            "rating": "7",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Chris Richards",
             "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
           {
+            "name": "Chris Richards",
+            "rating": "6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
             "name": "Tim Ream",
-            "rating": "5.6",
+            "rating": "5.5",
             "goals": 0,
             "assists": 0
           },
@@ -95052,7 +95052,7 @@
           },
           {
             "name": "Malik Tillman",
-            "rating": "7.3",
+            "rating": "7.2",
             "goals": 1,
             "assists": 0
           },
@@ -95076,13 +95076,13 @@
           },
           {
             "name": "Giovanni Reyna",
-            "rating": "6.6",
+            "rating": "6.7",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Sebastian Berhalter",
-            "rating": "7",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
@@ -95171,7 +95171,7 @@
           },
           {
             "name": "Timothy Castagne",
-            "rating": "6.9",
+            "rating": "7",
             "goals": 0,
             "assists": 0
           },
@@ -95231,20 +95231,20 @@
           },
           {
             "name": "Hans Vanaken",
-            "rating": "7.3",
+            "rating": "7.9",
             "goals": 1,
-            "assists": 0
+            "assists": 1
           },
           {
             "name": "Jérémy Doku",
-            "rating": "7.2",
+            "rating": "7",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Romelu Lukaku",
-            "rating": "6.5",
-            "goals": 0,
+            "rating": "7.3",
+            "goals": 1,
             "assists": 0
           },
           {
