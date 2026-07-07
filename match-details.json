@@ -85599,7 +85599,7 @@
         "comments": ""
       },
       {
-        "time": "46",
+        "time": "45",
         "team": "Germany",
         "player": "F. Nmecha",
         "assist": "L. Goretzka",
@@ -85619,7 +85619,7 @@
       {
         "time": "55",
         "team": "Paraguay",
-        "player": "G. Avalos",
+        "player": "G. Ávalos",
         "assist": "G. Caballero",
         "type": "subst",
         "detail": "Substitution 1",
@@ -85629,7 +85629,7 @@
         "time": "57",
         "team": "Paraguay",
         "player": "J. Enciso",
-        "assist": "Mauricio",
+        "assist": "Maurício",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -85646,7 +85646,7 @@
       {
         "time": "65",
         "team": "Paraguay",
-        "player": "Andrés Cubas",
+        "player": "A. Cubas",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -85655,7 +85655,7 @@
       {
         "time": "79",
         "team": "Germany",
-        "player": "A. Pavlovic",
+        "player": "A. Pavlović",
         "assist": "W. Anton",
         "type": "subst",
         "detail": "Substitution 3",
@@ -85664,19 +85664,28 @@
       {
         "time": "88",
         "team": "Germany",
-        "player": "L. Sane",
+        "player": "L. Sané",
         "assist": "N. Woltemade",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
       },
       {
-        "time": "91",
+        "time": "90",
         "team": "Paraguay",
-        "player": "M. Almiron",
-        "assist": "G. Velazquez",
+        "player": "M. Almirón",
+        "assist": "G. Velázquez",
         "type": "subst",
         "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "99",
+        "team": "Paraguay",
+        "player": "J. Cáceres",
+        "assist": "B. Ojeda",
+        "type": "subst",
+        "detail": "Substitution 4",
         "comments": ""
       },
       {
@@ -85685,31 +85694,40 @@
         "player": "D. Bobadilla",
         "assist": "A. Sanabria",
         "type": "subst",
-        "detail": "Substitution 4",
-        "comments": ""
-      },
-      {
-        "time": "99",
-        "team": "Paraguay",
-        "player": "J. Caceres",
-        "assist": "B. Ojeda",
-        "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
       },
       {
-        "time": "103",
+        "time": "104",
         "team": "Germany",
-        "player": "Jonathan Tah",
+        "player": "J. Tah",
         "assist": null,
         "type": "Var",
         "detail": "Goal cancelled",
         "comments": ""
       },
       {
+        "time": "105",
+        "team": "Paraguay",
+        "player": "Gustavo Julio Alfaro",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Dissent"
+      },
+      {
+        "time": "105+1",
+        "team": "Germany",
+        "player": "Julian Nagelsmann",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Dissent"
+      },
+      {
         "time": "106",
         "team": "Germany",
-        "player": "Kai Havertz",
+        "player": "K. Havertz",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -85727,7 +85745,7 @@
       {
         "time": "110",
         "team": "Germany",
-        "player": "A. Rudiger",
+        "player": "A. Rüdiger",
         "assist": "M. Thiaw",
         "type": "subst",
         "detail": "Substitution 6",
@@ -85736,16 +85754,34 @@
       {
         "time": "115",
         "team": "Germany",
-        "player": "Jamal Musiala",
+        "player": "J. Musiala",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
         "comments": "Foul"
       },
       {
+        "time": "116",
+        "team": "Germany",
+        "player": "Mads Buttgereit",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": ""
+      },
+      {
         "time": "117",
         "team": "Paraguay",
-        "player": "Matías Galarza",
+        "player": "Alejandro Juan Manograsso",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": ""
+      },
+      {
+        "time": "117",
+        "team": "Paraguay",
+        "player": "M. Galarza",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -85755,10 +85791,118 @@
         "time": "120+2",
         "team": "Paraguay",
         "player": "J. Alonso",
-        "assist": "Fabian Balbuena",
+        "assist": "F. Balbuena",
         "type": "subst",
         "detail": "Substitution 6",
         "comments": ""
+      },
+      {
+        "time": "122",
+        "team": "Germany",
+        "player": "K. Havertz",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Missed Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "124",
+        "team": "Paraguay",
+        "player": "Maurício",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "125",
+        "team": "Germany",
+        "player": "J. Kimmich",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "125",
+        "team": "Paraguay",
+        "player": "G. Gómez",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "126",
+        "team": "Germany",
+        "player": "J. Musiala",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "127",
+        "team": "Paraguay",
+        "player": "M. Galarza",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "128",
+        "team": "Germany",
+        "player": "N. Woltemade",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Missed Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "129",
+        "team": "Paraguay",
+        "player": "A. Sanabria",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Missed Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "130",
+        "team": "Germany",
+        "player": "N. Amiri",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "131",
+        "team": "Paraguay",
+        "player": "F. Balbuena",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Missed Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "132",
+        "team": "Germany",
+        "player": "J. Tah",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Missed Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "132",
+        "team": "Paraguay",
+        "player": "J. Canale",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
       }
     ],
     "players": [
@@ -97506,6 +97650,6 @@
     "date": "2026-07-07T20:00:00+00:00",
     "homeTeam": "Switzerland",
     "awayTeam": "Colombia",
-    "status": "First Half"
+    "status": "Extra Time"
   }
 }
