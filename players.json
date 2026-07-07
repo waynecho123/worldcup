@@ -234,6 +234,13 @@
       "matches": 4
     },
     {
+      "name": "L. Trossard",
+      "photo": "https://media.api-sports.io/football/players/1946.png",
+      "team": "Belgium",
+      "assists": 2,
+      "matches": 5
+    },
+    {
       "name": "C. Summerville",
       "photo": "https://media.api-sports.io/football/players/37724.png",
       "team": "Netherlands",
@@ -246,6 +253,13 @@
       "team": "Switzerland",
       "assists": 2,
       "matches": 4
+    },
+    {
+      "name": "H. Vanaken",
+      "photo": "https://media.api-sports.io/football/players/78.png",
+      "team": "Belgium",
+      "assists": 2,
+      "matches": 5
     },
     {
       "name": "J. Enciso",
@@ -267,20 +281,6 @@
       "team": "Egypt",
       "assists": 2,
       "matches": 4
-    },
-    {
-      "name": "V. Gyökeres",
-      "photo": "https://media.api-sports.io/football/players/18979.png",
-      "team": "Sweden",
-      "assists": 2,
-      "matches": 4
-    },
-    {
-      "name": "I. Ndiaye",
-      "photo": "https://media.api-sports.io/football/players/18592.png",
-      "team": "Senegal",
-      "assists": 2,
-      "matches": 3
     }
   ],
   "cards": [
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-07-07T08:11:38.624Z"
+  "updatedAt": "2026-07-07T10:06:59.456Z"
 }

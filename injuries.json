@@ -321,6 +321,12 @@
       "type": "Missing Fixture",
       "reason": "Muscle Bruise",
       "fixture": "2026-07-07T20:00:00+00:00"
+    },
+    {
+      "player": "M. Aebischer",
+      "type": "Missing Fixture",
+      "reason": "Injury",
+      "fixture": "2026-07-07T20:00:00+00:00"
     }
   ],
   "EGY": [
@@ -355,6 +361,18 @@
       "fixture": "2026-07-03T18:00:00+00:00"
     },
     {
+      "player": "Mohamed Abdelmonem",
+      "type": "Missing Fixture",
+      "reason": "Ankle Problems",
+      "fixture": "2026-07-03T18:00:00+00:00"
+    },
+    {
+      "player": "Mohamed Abdelmonem",
+      "type": "Missing Fixture",
+      "reason": "Ankle Problems",
+      "fixture": "2026-07-07T16:00:00+00:00"
+    },
+    {
       "player": "Ahmed Abou El Fotouh",
       "type": "Missing Fixture",
       "reason": "Hamstring Muscle Injury",
@@ -383,18 +401,6 @@
       "type": "Missing Fixture",
       "reason": "Hamstring Muscle Injury",
       "fixture": "2026-07-07T16:00:00+00:00"
-    },
-    {
-      "player": "Mohamed Abdelmonem",
-      "type": "Missing Fixture",
-      "reason": "Ankle Problems",
-      "fixture": "2026-07-03T18:00:00+00:00"
-    },
-    {
-      "player": "Mohamed Abdelmonem",
-      "type": "Missing Fixture",
-      "reason": "Ankle Problems",
-      "fixture": "2026-07-07T16:00:00+00:00"
     }
   ],
   "SWE": [
@@ -403,6 +409,20 @@
       "type": "Missing Fixture",
       "reason": "Muscle Bruise",
       "fixture": "2026-06-15T02:00:00+00:00"
+    }
+  ],
+  "COL": [
+    {
+      "player": "J. Córdoba",
+      "type": "Missing Fixture",
+      "reason": "Muscle Bruise",
+      "fixture": "2026-07-04T01:30:00+00:00"
+    },
+    {
+      "player": "J. Córdoba",
+      "type": "Missing Fixture",
+      "reason": "Muscle Bruise",
+      "fixture": "2026-07-07T20:00:00+00:00"
     }
   ],
   "SEN": [
