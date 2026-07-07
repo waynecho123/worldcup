@@ -95518,33 +95518,6 @@
           },
           {
             "player": {
-              "id": 47296,
-              "name": "Gerónimo Rulli",
-              "number": 12,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 2465,
-              "name": "Juan Musso",
-              "number": 1,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 6610,
-              "name": "Marcos Senesi",
-              "number": 2,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 2468,
               "name": "Gonzalo Montiel",
               "number": 4,
@@ -95566,6 +95539,33 @@
               "id": 6231,
               "name": "Facundo Medina",
               "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47296,
+              "name": "Gerónimo Rulli",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2465,
+              "name": "Juan Musso",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6610,
+              "name": "Marcos Senesi",
+              "number": 2,
               "pos": "D",
               "grid": null
             }
@@ -95772,6 +95772,33 @@
           },
           {
             "player": {
+              "id": 2664,
+              "name": "Mahmoud Trézéguet",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 81573,
+              "name": "Omar Marmoush",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 16871,
+              "name": "Zizo",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 16797,
               "name": "Mohamed El-Shenawy",
               "number": 1,
@@ -95817,27 +95844,9 @@
           },
           {
             "player": {
-              "id": 16871,
-              "name": "Zizo",
-              "number": 25,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 70535,
               "name": "Ibrahim Adel",
               "number": 20,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 2664,
-              "name": "Mahmoud Trézéguet",
-              "number": 7,
               "pos": "F",
               "grid": null
             }
@@ -95857,15 +95866,6 @@
               "name": "Nabil Donga",
               "number": 18,
               "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 81573,
-              "name": "Omar Marmoush",
-              "number": 22,
-              "pos": "F",
               "grid": null
             }
           },
@@ -96066,6 +96066,15 @@
         "type": "Card",
         "detail": "Yellow Card",
         "comments": ""
+      },
+      {
+        "time": "90+12",
+        "team": "Egypt",
+        "player": "H. Hassan",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "misses next match"
       }
     ],
     "players": [
@@ -96092,7 +96101,7 @@
           },
           {
             "name": "Lisandro Martínez",
-            "rating": "6.9",
+            "rating": "7",
             "goals": 0,
             "assists": 0
           },
@@ -96122,7 +96131,7 @@
           },
           {
             "name": "Enzo Fernández",
-            "rating": "7.9",
+            "rating": "8",
             "goals": 1,
             "assists": 0
           },
@@ -96146,7 +96155,7 @@
           },
           {
             "name": "Lautaro Martínez",
-            "rating": "7.3",
+            "rating": "7.2",
             "goals": 0,
             "assists": 1
           },
@@ -96277,13 +96286,13 @@
           },
           {
             "name": "Marwan Attia",
-            "rating": "6.3",
+            "rating": "6.7",
             "goals": 0,
             "assists": 1
           },
           {
             "name": "Emam Ashour",
-            "rating": "6.2",
+            "rating": "6.5",
             "goals": 0,
             "assists": 0
           },
@@ -96313,7 +96322,7 @@
           },
           {
             "name": "Omar Marmoush",
-            "rating": "6.7",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
@@ -97497,6 +97506,6 @@
     "date": "2026-07-07T20:00:00+00:00",
     "homeTeam": "Switzerland",
     "awayTeam": "Colombia",
-    "status": "Not Started"
+    "status": "First Half"
   }
 }
