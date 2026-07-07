@@ -95324,11 +95324,1062 @@
     ]
   },
   "m096": {
-    "fixtureId": "1576804",
+    "fixtureId": 1576804,
     "date": "2026-07-07T16:00:00+00:00",
+    "venue": "Mercedes-Benz Stadium",
+    "status": "Match Finished",
     "homeTeam": "Argentina",
     "awayTeam": "Egypt",
-    "status": "First Half"
+    "score": {
+      "home": 3,
+      "away": 2
+    },
+    "statistics": {
+      "Argentina": {
+        "Shots on Goal": 7,
+        "Shots off Goal": 8,
+        "Total Shots": 19,
+        "Blocked Shots": 4,
+        "Shots insidebox": 11,
+        "Shots outsidebox": 8,
+        "Fouls": 13,
+        "Corner Kicks": 6,
+        "Offsides": 3,
+        "Ball Possession": "64%",
+        "Yellow Cards": 0,
+        "Red Cards": null,
+        "Goalkeeper Saves": 0,
+        "Total passes": 602,
+        "Passes accurate": 540,
+        "Passes %": "90%",
+        "expected_goals": "2.90",
+        "goals_prevented": "-0.28"
+      },
+      "Egypt": {
+        "Shots on Goal": 2,
+        "Shots off Goal": 3,
+        "Total Shots": 5,
+        "Blocked Shots": 1,
+        "Shots insidebox": 4,
+        "Shots outsidebox": 1,
+        "Fouls": 11,
+        "Corner Kicks": 1,
+        "Offsides": 0,
+        "Ball Possession": "36%",
+        "Yellow Cards": 3,
+        "Red Cards": null,
+        "Goalkeeper Saves": 4,
+        "Total passes": 348,
+        "Passes accurate": 289,
+        "Passes %": "83%",
+        "expected_goals": "0.97",
+        "goals_prevented": "-0.28"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 26,
+          "name": "Argentina",
+          "logo": "https://media.api-sports.io/football/teams/26.png",
+          "colors": {
+            "player": {
+              "primary": "ffffff",
+              "number": "000000",
+              "border": "ffffff"
+            },
+            "goalkeeper": {
+              "primary": "309497",
+              "number": "272891",
+              "border": "309497"
+            }
+          }
+        },
+        "formation": "4-1-3-2",
+        "startXI": [
+          {
+            "player": {
+              "id": 19599,
+              "name": "Emiliano Martínez",
+              "number": 23,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 6503,
+              "name": "Nahuel Molina",
+              "number": 26,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 30776,
+              "name": "Cristian Romero",
+              "number": 13,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 2467,
+              "name": "Lisandro Martínez",
+              "number": 6,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 529,
+              "name": "Nicolás Tagliafico",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 271,
+              "name": "Leandro Paredes",
+              "number": 5,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2472,
+              "name": "Rodrigo De Paul",
+              "number": 7,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 6716,
+              "name": "Alexis Mac Allister",
+              "number": 20,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 5996,
+              "name": "Enzo Fernández",
+              "number": 24,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 154,
+              "name": "Lionel Messi",
+              "number": 10,
+              "pos": "F",
+              "grid": "5:2"
+            }
+          },
+          {
+            "player": {
+              "id": 6009,
+              "name": "Julián Alvarez",
+              "number": 9,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 26315,
+              "name": "Nicolás González",
+              "number": 15,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 217,
+              "name": "Lautaro Martínez",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47296,
+              "name": "Gerónimo Rulli",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2465,
+              "name": "Juan Musso",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6610,
+              "name": "Marcos Senesi",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2468,
+              "name": "Gonzalo Montiel",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 624,
+              "name": "Nicolás Otamendi",
+              "number": 19,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6231,
+              "name": "Facundo Medina",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 319572,
+              "name": "Valentín Barco",
+              "number": 8,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1578,
+              "name": "Giovani Lo Celso",
+              "number": 11,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6002,
+              "name": "Exequiel Palacios",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 6067,
+              "name": "Thiago Almada",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 323935,
+              "name": "Giuliano Simeone",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 350037,
+              "name": "Nico Paz",
+              "number": 18,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 295513,
+              "name": "José Manuel López",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 326,
+          "name": "Lionel Scaloni",
+          "photo": "https://media.api-sports.io/football/coachs/326.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 32,
+          "name": "Egypt",
+          "logo": "https://media.api-sports.io/football/teams/32.png",
+          "colors": {
+            "player": {
+              "primary": "ff0000",
+              "number": "d0c190",
+              "border": "ff0000"
+            },
+            "goalkeeper": {
+              "primary": "ceff00",
+              "number": "1e1919",
+              "border": "ceff00"
+            }
+          }
+        },
+        "formation": "4-4-2",
+        "startXI": [
+          {
+            "player": {
+              "id": 269174,
+              "name": "Mostafa Shobeir",
+              "number": 23,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2654,
+              "name": "Mohamed Hany",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 16804,
+              "name": "Yasser Ibrahim",
+              "number": 2,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 16805,
+              "name": "Rami Rabia",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 2656,
+              "name": "Karim Hafez",
+              "number": 15,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 20844,
+              "name": "Haissem Hassan",
+              "number": 12,
+              "pos": "M",
+              "grid": "3:4"
+            }
+          },
+          {
+            "player": {
+              "id": 16841,
+              "name": "Mohanad Lasheen",
+              "number": 17,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 190575,
+              "name": "Marwan Attia",
+              "number": 19,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 17269,
+              "name": "Emam Ashour",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 306,
+              "name": "Mohamed Salah",
+              "number": 10,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 395075,
+              "name": "Mostafa Ziko",
+              "number": 11,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 16813,
+              "name": "Hamdy Fathy",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 16797,
+              "name": "Mohamed El-Shenawy",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 498250,
+              "name": "Mohamed Alaa",
+              "number": 26,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 16831,
+              "name": "Mahdi Soliman",
+              "number": 16,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 550371,
+              "name": "Tarek Alaa",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 269621,
+              "name": "Hossam Abdelmaguid",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 16871,
+              "name": "Zizo",
+              "number": 25,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 70535,
+              "name": "Ibrahim Adel",
+              "number": 20,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2664,
+              "name": "Mahmoud Trézéguet",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 69196,
+              "name": "Mahmoud Saber",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2660,
+              "name": "Nabil Donga",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 81573,
+              "name": "Omar Marmoush",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 550547,
+              "name": "Hamza Abdelkarim",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 19341,
+          "name": "Hossam Hassan",
+          "photo": "https://media.api-sports.io/football/coachs/19341.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "15",
+        "team": "Egypt",
+        "player": "Y. Ibrahim",
+        "assist": "M. Attia",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "21",
+        "team": "Argentina",
+        "player": "L. Messi",
+        "assist": "L. Messi",
+        "type": "Goal",
+        "detail": "Missed Penalty",
+        "comments": ""
+      },
+      {
+        "time": "46",
+        "team": "Egypt",
+        "player": "E. Ashour",
+        "assist": "H. Fathy",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "58",
+        "team": "Egypt",
+        "player": "M. Ziko",
+        "assist": null,
+        "type": "Var",
+        "detail": "Goal Disallowed - Foul",
+        "comments": ""
+      },
+      {
+        "time": "66",
+        "team": "Argentina",
+        "player": "N. Tagliafico",
+        "assist": "N. Gonzalez",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "66",
+        "team": "Argentina",
+        "player": "R. de Paul",
+        "assist": "L. Martinez",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "67",
+        "team": "Egypt",
+        "player": "M. Ziko",
+        "assist": "H. Hassan",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "73",
+        "team": "Argentina",
+        "player": "N. Molina",
+        "assist": "G. Montiel",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "73",
+        "team": "Egypt",
+        "player": "H. Hassan",
+        "assist": "Trezeguet",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "79",
+        "team": "Argentina",
+        "player": "C. Romero",
+        "assist": "L. Messi",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "80",
+        "team": "Egypt",
+        "player": "M. Ziko",
+        "assist": "O. Marmoush",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "83",
+        "team": "Argentina",
+        "player": "L. Messi",
+        "assist": "G. Montiel",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "90+2",
+        "team": "Argentina",
+        "player": "E. Fernandez",
+        "assist": "L. Martinez",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "90+3",
+        "team": "Egypt",
+        "player": "M. Shobeir",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Unsportsmanlike conduct"
+      },
+      {
+        "time": "90+4",
+        "team": "Egypt",
+        "player": "H. Fathy",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Unsportsmanlike conduct"
+      },
+      {
+        "time": "90+5",
+        "team": "Argentina",
+        "player": "C. Romero",
+        "assist": "N. Otamendi",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "90+5",
+        "team": "Argentina",
+        "player": "J. Alvarez",
+        "assist": "F. Medina",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "90+6",
+        "team": "Egypt",
+        "player": "M. Lasheen",
+        "assist": "Zizo",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "90+8",
+        "team": "Egypt",
+        "player": "M. Attia",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Holding"
+      },
+      {
+        "time": "90+9",
+        "team": "Egypt",
+        "player": "H. Hassan",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "Argentina",
+        "players": [
+          {
+            "name": "Emiliano Martínez",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nahuel Molina",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Cristian Romero",
+            "rating": "7.9",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Lisandro Martínez",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nicolás Tagliafico",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Leandro Paredes",
+            "rating": "8.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Rodrigo De Paul",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alexis Mac Allister",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Enzo Fernández",
+            "rating": "7.9",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Lionel Messi",
+            "rating": "9",
+            "goals": 1,
+            "assists": 1
+          },
+          {
+            "name": "Julián Alvarez",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nicolás González",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Lautaro Martínez",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Gonzalo Montiel",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Nicolás Otamendi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Facundo Medina",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gerónimo Rulli",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Juan Musso",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marcos Senesi",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Valentín Barco",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Giovani Lo Celso",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Exequiel Palacios",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Thiago Almada",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Giuliano Simeone",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nico Paz",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "José Manuel López",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Egypt",
+        "players": [
+          {
+            "name": "Mostafa Shobeir",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohamed Hany",
+            "rating": "5.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yasser Ibrahim",
+            "rating": "7.2",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Rami Rabia",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Karim Hafez",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Haissem Hassan",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Mohanad Lasheen",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Marwan Attia",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Emam Ashour",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohamed Salah",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mostafa Ziko",
+            "rating": "7.7",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Hamdy Fathy",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mahmoud Trézéguet",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Omar Marmoush",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Zizo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohamed El-Shenawy",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mohamed Alaa",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mahdi Soliman",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tarek Alaa",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Hossam Abdelmaguid",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ibrahim Adel",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mahmoud Saber",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nabil Donga",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Hamza Abdelkarim",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m097": {
     "fixtureId": "1578539",
