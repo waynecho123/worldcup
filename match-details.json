@@ -94278,11 +94278,1050 @@
     ]
   },
   "m095": {
-    "fixtureId": "1570715",
+    "fixtureId": 1570715,
     "date": "2026-07-07T00:00:00+00:00",
+    "venue": "Lumen Field",
+    "status": "Match Finished",
     "homeTeam": "USA",
     "awayTeam": "Belgium",
-    "status": "First Half"
+    "score": {
+      "home": 1,
+      "away": 4
+    },
+    "statistics": {
+      "USA": {
+        "Shots on Goal": 2,
+        "Shots off Goal": 5,
+        "Total Shots": 7,
+        "Blocked Shots": 0,
+        "Shots insidebox": 5,
+        "Shots outsidebox": 2,
+        "Fouls": 11,
+        "Corner Kicks": 3,
+        "Offsides": 0,
+        "Ball Possession": "56%",
+        "Yellow Cards": 2,
+        "Red Cards": null,
+        "Goalkeeper Saves": 3,
+        "Total passes": 520,
+        "Passes accurate": 454,
+        "Passes %": "87%",
+        "expected_goals": "0.64",
+        "goals_prevented": "-0.69"
+      },
+      "Belgium": {
+        "Shots on Goal": 6,
+        "Shots off Goal": 4,
+        "Total Shots": 14,
+        "Blocked Shots": 4,
+        "Shots insidebox": 9,
+        "Shots outsidebox": 5,
+        "Fouls": 9,
+        "Corner Kicks": 5,
+        "Offsides": 1,
+        "Ball Possession": "44%",
+        "Yellow Cards": 0,
+        "Red Cards": null,
+        "Goalkeeper Saves": 1,
+        "Total passes": 402,
+        "Passes accurate": 327,
+        "Passes %": "81%",
+        "expected_goals": "2.10",
+        "goals_prevented": "-0.69"
+      }
+    },
+    "lineups": {
+      "home": {
+        "team": {
+          "id": 2384,
+          "name": "USA",
+          "logo": "https://media.api-sports.io/football/teams/2384.png",
+          "colors": {
+            "player": {
+              "primary": "171b2b",
+              "number": "ffffff",
+              "border": "171b2b"
+            },
+            "goalkeeper": {
+              "primary": "faed72",
+              "number": "1e1c16",
+              "border": "faed72"
+            }
+          }
+        },
+        "formation": "4-3-3",
+        "startXI": [
+          {
+            "player": {
+              "id": 50728,
+              "name": "Matthew Freese",
+              "number": 24,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 355994,
+              "name": "Alexander Freeman",
+              "number": 16,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 126949,
+              "name": "Chris Richards",
+              "number": 3,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 19023,
+              "name": "Tim Ream",
+              "number": 13,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 19549,
+              "name": "Antonee Robinson",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 415,
+              "name": "Weston McKennie",
+              "number": 8,
+              "pos": "M",
+              "grid": "3:3"
+            }
+          },
+          {
+            "player": {
+              "id": 1150,
+              "name": "Tyler Adams",
+              "number": 4,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 162037,
+              "name": "Malik Tillman",
+              "number": 17,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 38735,
+              "name": "Sergiño Dest",
+              "number": 2,
+              "pos": "F",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 138835,
+              "name": "Folarin Balogun",
+              "number": 20,
+              "pos": "F",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 17,
+              "name": "Christian Pulišić",
+              "number": 10,
+              "pos": "F",
+              "grid": "4:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 161921,
+              "name": "Giovanni Reyna",
+              "number": 7,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 201713,
+              "name": "Sebastian Berhalter",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50999,
+              "name": "Matt Turner",
+              "number": 1,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 266606,
+              "name": "Chris Brady",
+              "number": 25,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50879,
+              "name": "Miles Robinson",
+              "number": 12,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50735,
+              "name": "Mark McKenzie",
+              "number": 22,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50737,
+              "name": "Auston Trusty",
+              "number": 6,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50852,
+              "name": "Joe Scally",
+              "number": 23,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 35885,
+              "name": "Alex Zendejas",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 362400,
+              "name": "Maximilian Arfsten",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1138,
+              "name": "Timothy Weah",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 50739,
+              "name": "Brenden Aaronson",
+              "number": 11,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 427,
+              "name": "Haji Wright",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 73868,
+              "name": "Ricardo Pepi",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 28250,
+          "name": "Mauricio Pochettino",
+          "photo": "https://media.api-sports.io/football/coachs/28250.png"
+        }
+      },
+      "away": {
+        "team": {
+          "id": 1,
+          "name": "Belgium",
+          "logo": "https://media.api-sports.io/football/teams/1.png",
+          "colors": {
+            "player": {
+              "primary": "b5d0e9",
+              "number": "1b1a21",
+              "border": "b5d0e9"
+            },
+            "goalkeeper": {
+              "primary": "f1eb8a",
+              "number": "6971d0",
+              "border": "f1eb8a"
+            }
+          }
+        },
+        "formation": "4-2-3-1",
+        "startXI": [
+          {
+            "player": {
+              "id": 730,
+              "name": "Thibaut Courtois",
+              "number": 1,
+              "pos": "G",
+              "grid": "1:1"
+            }
+          },
+          {
+            "player": {
+              "id": 2920,
+              "name": "Timothy Castagne",
+              "number": 21,
+              "pos": "D",
+              "grid": "2:4"
+            }
+          },
+          {
+            "player": {
+              "id": 312964,
+              "name": "Nathan Ngoy",
+              "number": 25,
+              "pos": "D",
+              "grid": "2:3"
+            }
+          },
+          {
+            "player": {
+              "id": 69,
+              "name": "Brandon Mechele",
+              "number": 4,
+              "pos": "D",
+              "grid": "2:2"
+            }
+          },
+          {
+            "player": {
+              "id": 162007,
+              "name": "Maxim De Cuyper",
+              "number": 5,
+              "pos": "D",
+              "grid": "2:1"
+            }
+          },
+          {
+            "player": {
+              "id": 162714,
+              "name": "Amadou Onana",
+              "number": 24,
+              "pos": "M",
+              "grid": "3:2"
+            }
+          },
+          {
+            "player": {
+              "id": 2120,
+              "name": "Nicolas Raskin",
+              "number": 23,
+              "pos": "M",
+              "grid": "3:1"
+            }
+          },
+          {
+            "player": {
+              "id": 25458,
+              "name": "Dodi Lukebakio",
+              "number": 14,
+              "pos": "M",
+              "grid": "4:3"
+            }
+          },
+          {
+            "player": {
+              "id": 2926,
+              "name": "Youri Tielemans",
+              "number": 8,
+              "pos": "M",
+              "grid": "4:2"
+            }
+          },
+          {
+            "player": {
+              "id": 1946,
+              "name": "Leandro Trossard",
+              "number": 10,
+              "pos": "M",
+              "grid": "4:1"
+            }
+          },
+          {
+            "player": {
+              "id": 147859,
+              "name": "Charles De Ketelaere",
+              "number": 17,
+              "pos": "F",
+              "grid": "5:1"
+            }
+          }
+        ],
+        "substitutes": [
+          {
+            "player": {
+              "id": 78,
+              "name": "Hans Vanaken",
+              "number": 20,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1422,
+              "name": "Jérémy Doku",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 340151,
+              "name": "Mike Penders",
+              "number": 13,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 162511,
+              "name": "Senne Lammens",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 375974,
+              "name": "Joaquin Seys",
+              "number": 18,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 204043,
+              "name": "Arthur Theate",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 162141,
+              "name": "Koni De Winter",
+              "number": 16,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 304228,
+              "name": "Zeno Debast",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 264,
+              "name": "Thomas Meunier",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 335056,
+              "name": "Diego Moreira",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1417,
+              "name": "Alexis Saelemaekers",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 20,
+              "name": "Axel Witsel",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 629,
+              "name": "Kevin De Bruyne",
+              "number": 7,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 340077,
+              "name": "Matías Fernández-Pardo",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 907,
+              "name": "Romelu Lukaku",
+              "number": 9,
+              "pos": "F",
+              "grid": null
+            }
+          }
+        ],
+        "coach": {
+          "id": 2551,
+          "name": "Rudi Garcia",
+          "photo": "https://media.api-sports.io/football/coachs/2551.png"
+        }
+      }
+    },
+    "events": [
+      {
+        "time": "9",
+        "team": "Belgium",
+        "player": "C. De Ketelaere",
+        "assist": "N. Raskin",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "21",
+        "team": "Belgium",
+        "player": "A. Onana",
+        "assist": "H. Vanaken",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "31",
+        "team": "USA",
+        "player": "M. Tillman",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "33",
+        "team": "Belgium",
+        "player": "C. De Ketelaere",
+        "assist": "L. Trossard",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "35",
+        "team": "USA",
+        "player": "W. McKennie",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "46",
+        "team": "USA",
+        "player": "S. Dest",
+        "assist": "G. Reyna",
+        "type": "subst",
+        "detail": "Substitution 1",
+        "comments": ""
+      },
+      {
+        "time": "57",
+        "team": "Belgium",
+        "player": "H. Vanaken",
+        "assist": "C. De Ketelaere",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "59",
+        "team": "USA",
+        "player": "C. Pulisic",
+        "assist": "S. Berhalter",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "67",
+        "team": "Belgium",
+        "player": "D. Lukebakio",
+        "assist": "J. Doku",
+        "type": "subst",
+        "detail": "Substitution 2",
+        "comments": ""
+      },
+      {
+        "time": "67",
+        "team": "Belgium",
+        "player": "C. De Ketelaere",
+        "assist": "R. Lukaku",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "69",
+        "team": "USA",
+        "player": "M. Tillman",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Tripping"
+      },
+      {
+        "time": "72",
+        "team": "USA",
+        "player": "T. Adams",
+        "assist": "R. Pepi",
+        "type": "subst",
+        "detail": "Substitution 3",
+        "comments": ""
+      },
+      {
+        "time": "89",
+        "team": "Belgium",
+        "player": "L. Trossard",
+        "assist": "A. Saelemaekers",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "89",
+        "team": "Belgium",
+        "player": "N. Raskin",
+        "assist": "A. Witsel",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "90+2",
+        "team": "USA",
+        "player": "F. Balogun",
+        "assist": "H. Wright",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "90+2",
+        "team": "USA",
+        "player": "A. Robinson",
+        "assist": "M. Arfsten",
+        "type": "subst",
+        "detail": "Substitution 5",
+        "comments": ""
+      },
+      {
+        "time": "90+3",
+        "team": "Belgium",
+        "player": "R. Lukaku",
+        "assist": "H. Vanaken",
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      }
+    ],
+    "players": [
+      {
+        "team": "USA",
+        "players": [
+          {
+            "name": "Matthew Freese",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alexander Freeman",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Chris Richards",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tim Ream",
+            "rating": "5.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Antonee Robinson",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Weston McKennie",
+            "rating": "6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Tyler Adams",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Malik Tillman",
+            "rating": "7.3",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Sergiño Dest",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Folarin Balogun",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Christian Pulišić",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Giovanni Reyna",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Sebastian Berhalter",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ricardo Pepi",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Maximilian Arfsten",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Haji Wright",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Matt Turner",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Chris Brady",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Miles Robinson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mark McKenzie",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Auston Trusty",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Joe Scally",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alex Zendejas",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Timothy Weah",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Brenden Aaronson",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      },
+      {
+        "team": "Belgium",
+        "players": [
+          {
+            "name": "Thibaut Courtois",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Timothy Castagne",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nathan Ngoy",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Brandon Mechele",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Maxim De Cuyper",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Amadou Onana",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Nicolas Raskin",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Dodi Lukebakio",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Youri Tielemans",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Leandro Trossard",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 1
+          },
+          {
+            "name": "Charles De Ketelaere",
+            "rating": "8.3",
+            "goals": 2,
+            "assists": 1
+          },
+          {
+            "name": "Hans Vanaken",
+            "rating": "7.3",
+            "goals": 1,
+            "assists": 0
+          },
+          {
+            "name": "Jérémy Doku",
+            "rating": "7.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Romelu Lukaku",
+            "rating": "6.5",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Alexis Saelemaekers",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Axel Witsel",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Mike Penders",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Senne Lammens",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Joaquin Seys",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Arthur Theate",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Koni De Winter",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Zeno Debast",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Thomas Meunier",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Diego Moreira",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kevin De Bruyne",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Matías Fernández-Pardo",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          }
+        ]
+      }
+    ]
   },
   "m096": {
     "fixtureId": "1576804",
