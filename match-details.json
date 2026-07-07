@@ -92274,10 +92274,10 @@
         "Yellow Cards": 1,
         "Red Cards": null,
         "Goalkeeper Saves": 3,
-        "Total passes": 329,
+        "Total passes": 331,
         "Passes accurate": 279,
-        "Passes %": "85%",
-        "expected_goals": "2.73",
+        "Passes %": "84%",
+        "expected_goals": "2.61",
         "goals_prevented": "0.76"
       },
       "Norway": {
@@ -92294,10 +92294,10 @@
         "Yellow Cards": 0,
         "Red Cards": null,
         "Goalkeeper Saves": 4,
-        "Total passes": 680,
-        "Passes accurate": 617,
+        "Total passes": 681,
+        "Passes accurate": 618,
         "Passes %": "91%",
-        "expected_goals": "0.84",
+        "expected_goals": "1.05",
         "goals_prevented": "0.76"
       }
     },
@@ -92320,7 +92320,12 @@
             }
           }
         },
-        "formation": null,
+        "coach": {
+          "id": 2407,
+          "name": "Carlo Ancelotti",
+          "photo": "https://media.api-sports.io/football/coachs/2407.png"
+        },
+        "formation": "4-4-2",
         "startXI": [
           {
             "player": {
@@ -92328,7 +92333,7 @@
               "name": "Alisson",
               "number": 1,
               "pos": "G",
-              "grid": null
+              "grid": "1:1"
             }
           },
           {
@@ -92337,7 +92342,7 @@
               "name": "Danilo",
               "number": 13,
               "pos": "D",
-              "grid": null
+              "grid": "2:4"
             }
           },
           {
@@ -92346,16 +92351,16 @@
               "name": "Marquinhos",
               "number": 4,
               "pos": "D",
-              "grid": null
+              "grid": "2:3"
             }
           },
           {
             "player": {
               "id": 22224,
-              "name": "Gabriel Magalhães",
+              "name": "Gabriel",
               "number": 3,
               "pos": "D",
-              "grid": null
+              "grid": "2:2"
             }
           },
           {
@@ -92364,7 +92369,7 @@
               "name": "Douglas Santos",
               "number": 16,
               "pos": "D",
-              "grid": null
+              "grid": "2:1"
             }
           },
           {
@@ -92373,16 +92378,16 @@
               "name": "Rayan",
               "number": 26,
               "pos": "M",
-              "grid": null
+              "grid": "3:4"
             }
           },
           {
             "player": {
               "id": 10135,
-              "name": "Bruno Guimarães",
+              "name": "Bruno Guimaraes",
               "number": 8,
               "pos": "M",
-              "grid": null
+              "grid": "3:3"
             }
           },
           {
@@ -92391,71 +92396,44 @@
               "name": "Casemiro",
               "number": 5,
               "pos": "M",
-              "grid": null
+              "grid": "3:2"
             }
           },
           {
             "player": {
               "id": 127769,
-              "name": "Gabriel Martinelli",
+              "name": "G. Martinelli",
               "number": 22,
               "pos": "M",
-              "grid": null
+              "grid": "3:1"
             }
           },
           {
             "player": {
               "id": 1165,
-              "name": "Matheus Cunha",
+              "name": "M. Cunha",
               "number": 9,
               "pos": "F",
-              "grid": null
+              "grid": "4:2"
             }
           },
           {
             "player": {
               "id": 762,
-              "name": "Vinícius Júnior",
+              "name": "Vinicius Junior",
               "number": 7,
               "pos": "F",
-              "grid": null
+              "grid": "4:1"
             }
           }
         ],
         "substitutes": [
           {
             "player": {
-              "id": 377122,
-              "name": "Endrick",
-              "number": 19,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 275170,
-              "name": "Danilo Santos",
-              "number": 18,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 276,
-              "name": "Neymar",
-              "number": 10,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 10097,
-              "name": "Éderson",
-              "number": 2,
-              "pos": "M",
+              "id": 617,
+              "name": "Ederson",
+              "number": 23,
+              "pos": "G",
               "grid": null
             }
           },
@@ -92470,10 +92448,10 @@
           },
           {
             "player": {
-              "id": 617,
-              "name": "Ederson",
-              "number": 23,
-              "pos": "G",
+              "id": 276,
+              "name": "Neymar",
+              "number": 10,
+              "pos": "F",
               "grid": null
             }
           },
@@ -92488,37 +92466,10 @@
           },
           {
             "player": {
-              "id": 30497,
-              "name": "Bremer",
-              "number": 14,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 10124,
-              "name": "Léo Pereira",
+              "name": "Leo Pereira",
               "number": 15,
               "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 30424,
-              "name": "Roger Ibañez",
-              "number": 24,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 299,
-              "name": "Fabinho",
-              "number": 17,
-              "pos": "M",
               "grid": null
             }
           },
@@ -92533,6 +92484,24 @@
           },
           {
             "player": {
+              "id": 30424,
+              "name": "Ibanez",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 10097,
+              "name": "Ederson",
+              "number": 2,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 265785,
               "name": "Luiz Henrique",
               "number": 21,
@@ -92542,19 +92511,50 @@
           },
           {
             "player": {
+              "id": 377122,
+              "name": "Endrick",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 299,
+              "name": "Fabinho",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 30497,
+              "name": "Bremer",
+              "number": 14,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 196156,
-              "name": "Igor Thiago",
+              "name": "I. Thiago",
               "number": 25,
               "pos": "F",
               "grid": null
             }
+          },
+          {
+            "player": {
+              "id": 275170,
+              "name": "Danilo Santos",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
           }
-        ],
-        "coach": {
-          "id": 2407,
-          "name": "Carlo Ancelotti",
-          "photo": "https://media.api-sports.io/football/coachs/2407.png"
-        }
+        ]
       },
       "away": {
         "team": {
@@ -92574,158 +92574,118 @@
             }
           }
         },
-        "formation": null,
+        "coach": {
+          "id": 1675,
+          "name": "Stale Solbakken",
+          "photo": "https://media.api-sports.io/football/coachs/1675.png"
+        },
+        "formation": "4-3-3",
         "startXI": [
           {
             "player": {
               "id": 19172,
-              "name": "Ørjan Nyland",
+              "name": "O. Nyland",
               "number": 1,
               "pos": "G",
-              "grid": null
+              "grid": "1:1"
             }
           },
           {
             "player": {
               "id": 24845,
-              "name": "Julian Ryerson",
+              "name": "J. Ryerson",
               "number": 26,
               "pos": "D",
-              "grid": null
+              "grid": "2:4"
             }
           },
           {
             "player": {
               "id": 1119,
-              "name": "Kristoffer Ajer",
+              "name": "K. Ajer",
               "number": 3,
               "pos": "D",
-              "grid": null
+              "grid": "2:3"
             }
           },
           {
             "player": {
               "id": 39254,
-              "name": "Torbjørn Heggem",
+              "name": "T. Heggem",
               "number": 17,
               "pos": "D",
-              "grid": null
+              "grid": "2:2"
             }
           },
           {
             "player": {
               "id": 265782,
-              "name": "David Møller Wolfe",
+              "name": "D. Wolfe",
               "number": 5,
               "pos": "D",
-              "grid": null
+              "grid": "2:1"
             }
           },
           {
             "player": {
               "id": 37127,
-              "name": "Martin Ødegaard",
+              "name": "M. Odegaard",
               "number": 10,
               "pos": "M",
-              "grid": null
+              "grid": "3:3"
             }
           },
           {
             "player": {
               "id": 1934,
-              "name": "Sander Berge",
+              "name": "S. Berge",
               "number": 8,
               "pos": "M",
-              "grid": null
+              "grid": "3:2"
             }
           },
           {
             "player": {
               "id": 39064,
-              "name": "Patrick Berg",
+              "name": "P. Berg",
               "number": 6,
               "pos": "M",
-              "grid": null
+              "grid": "3:1"
             }
           },
           {
             "player": {
               "id": 8492,
-              "name": "Alexander Sørloth",
+              "name": "A. Sorloth",
               "number": 7,
               "pos": "F",
-              "grid": null
+              "grid": "4:3"
             }
           },
           {
             "player": {
               "id": 1100,
-              "name": "Erling Haaland",
+              "name": "E. Haaland",
               "number": 9,
               "pos": "F",
-              "grid": null
+              "grid": "4:2"
             }
           },
           {
             "player": {
               "id": 314511,
-              "name": "Antonio Nusa",
+              "name": "A. Nusa",
               "number": 20,
               "pos": "F",
-              "grid": null
+              "grid": "4:1"
             }
           }
         ],
         "substitutes": [
           {
             "player": {
-              "id": 301528,
-              "name": "Andreas Schjelderup",
-              "number": 21,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 278133,
-              "name": "Oscar Bobb",
-              "number": 22,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 39043,
-              "name": "Fredrik Aursnes",
-              "number": 14,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 18967,
-              "name": "Leo Østigård",
-              "number": 4,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 264378,
-              "name": "Sander Tangvik",
-              "number": 12,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 39082,
-              "name": "Egil Selvik",
+              "name": "E. Selvik",
               "number": 13,
               "pos": "G",
               "grid": null
@@ -92733,35 +92693,26 @@
           },
           {
             "player": {
-              "id": 39058,
-              "name": "Fredrik André Bjørkan",
-              "number": 15,
-              "pos": "D",
+              "id": 264378,
+              "name": "S. Tangvik",
+              "number": 12,
+              "pos": "G",
               "grid": null
             }
           },
           {
             "player": {
-              "id": 265444,
-              "name": "Sondre Langås",
-              "number": 24,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 180937,
-              "name": "Henrik Sælebakke Falchener",
-              "number": 25,
-              "pos": "D",
+              "id": 39043,
+              "name": "F. Aursnes",
+              "number": 14,
+              "pos": "M",
               "grid": null
             }
           },
           {
             "player": {
               "id": 36980,
-              "name": "Morten Thorsby",
+              "name": "M. Thorsby",
               "number": 2,
               "pos": "M",
               "grid": null
@@ -92769,26 +92720,17 @@
           },
           {
             "player": {
-              "id": 39143,
-              "name": "Kristian Thorstvedt",
-              "number": 18,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 277930,
-              "name": "Thelo Aasgaard",
-              "number": 19,
-              "pos": "M",
+              "id": 39058,
+              "name": "F. Bjorkan",
+              "number": 15,
+              "pos": "D",
               "grid": null
             }
           },
           {
             "player": {
               "id": 39073,
-              "name": "Jens Petter Hauge",
+              "name": "J. Hauge",
               "number": 23,
               "pos": "M",
               "grid": null
@@ -92797,18 +92739,76 @@
           {
             "player": {
               "id": 2032,
-              "name": "Jørgen Strand Larsen",
+              "name": "J. Larsen",
               "number": 11,
               "pos": "F",
               "grid": null
             }
+          },
+          {
+            "player": {
+              "id": 278133,
+              "name": "O. Bobb",
+              "number": 22,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 277930,
+              "name": "T. Aasgaard",
+              "number": 19,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 18967,
+              "name": "L. Ostigard",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 39143,
+              "name": "K. Thorstvedt",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 180937,
+              "name": "H. Falchener",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 265444,
+              "name": "S. Langas",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 301528,
+              "name": "A. Schjelderup",
+              "number": 21,
+              "pos": "F",
+              "grid": null
+            }
           }
-        ],
-        "coach": {
-          "id": 1675,
-          "name": "Stale Solbakken",
-          "photo": "https://media.api-sports.io/football/coachs/1675.png"
-        }
+        ]
       }
     },
     "events": [
@@ -92833,8 +92833,8 @@
       {
         "time": "46",
         "team": "Norway",
-        "player": "Antonio Nusa",
-        "assist": "Andreas Schjelderup",
+        "player": "A. Sorloth",
+        "assist": "O. Bobb",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -92842,8 +92842,8 @@
       {
         "time": "46",
         "team": "Norway",
-        "player": "Alexander Sørloth",
-        "assist": "Oscar Bobb",
+        "player": "A. Nusa",
+        "assist": "A. Schjelderup",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -92851,7 +92851,7 @@
       {
         "time": "58",
         "team": "Brazil",
-        "player": "Matheus Cunha",
+        "player": "M. Cunha",
         "assist": "Endrick",
         "type": "subst",
         "detail": "Substitution 1",
@@ -92860,26 +92860,26 @@
       {
         "time": "63",
         "team": "Norway",
-        "player": "Julian Ryerson",
-        "assist": "Fredrik Aursnes",
+        "player": "J. Ryerson",
+        "assist": "F. Aursnes",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
       },
       {
-        "time": "68",
+        "time": "67",
         "team": "Brazil",
-        "player": "Rayan",
-        "assist": "Danilo Santos",
+        "player": "G. Martinelli",
+        "assist": "Neymar",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
       },
       {
-        "time": "68",
+        "time": "67",
         "team": "Brazil",
-        "player": "Gabriel Martinelli",
-        "assist": "Neymar",
+        "player": "Rayan",
+        "assist": "Danilo Santos",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -92887,28 +92887,19 @@
       {
         "time": "79",
         "team": "Brazil",
-        "player": "Bruno Guimarães",
-        "assist": "Éderson",
+        "player": "Bruno Guimaraes",
+        "assist": "Ederson",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
       },
       {
-        "time": "80",
+        "time": "79",
         "team": "Norway",
-        "player": "Erling Haaland",
-        "assist": "Andreas Schjelderup",
+        "player": "E. Haaland",
+        "assist": "A. Schjelderup",
         "type": "Goal",
         "detail": "Normal Goal",
-        "comments": ""
-      },
-      {
-        "time": "90+9",
-        "team": "Brazil",
-        "player": "Neymar",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
         "comments": ""
       },
       {
@@ -92921,21 +92912,30 @@
         "comments": "Foul"
       },
       {
+        "time": "90+5",
+        "team": "Norway",
+        "player": "D. Wolfe",
+        "assist": "L. Ostigard",
+        "type": "subst",
+        "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
         "time": "90",
         "team": "Norway",
-        "player": "Erling Haaland",
-        "assist": "Andreas Schjelderup",
+        "player": "E. Haaland",
+        "assist": "A. Schjelderup",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
       },
       {
         "time": "90",
-        "team": "Norway",
-        "player": "David Møller Wolfe",
-        "assist": "Leo Østigård",
-        "type": "subst",
-        "detail": "Substitution 4",
+        "team": "Brazil",
+        "player": "Neymar",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
         "comments": ""
       }
     ],
@@ -92993,19 +92993,19 @@
           },
           {
             "name": "Gabriel Martinelli",
-            "rating": "7.5",
+            "rating": "7.2",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Matheus Cunha",
-            "rating": "6.9",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Vinícius Júnior",
-            "rating": "7.2",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
@@ -93017,7 +93017,7 @@
           },
           {
             "name": "Danilo Santos",
-            "rating": "7",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
@@ -93136,7 +93136,7 @@
           },
           {
             "name": "Sander Berge",
-            "rating": "7.2",
+            "rating": "7.5",
             "goals": 0,
             "assists": 0
           },
@@ -93154,7 +93154,7 @@
           },
           {
             "name": "Erling Haaland",
-            "rating": "9",
+            "rating": "9.2",
             "goals": 2,
             "assists": 0
           },
@@ -93324,7 +93324,7 @@
             }
           }
         },
-        "formation": "4-2-3-1",
+        "formation": null,
         "startXI": [
           {
             "player": {
@@ -93332,7 +93332,7 @@
               "name": "Diogo Costa",
               "number": 1,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -93341,7 +93341,7 @@
               "name": "João Cancelo",
               "number": 20,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -93350,7 +93350,7 @@
               "name": "Rúben Dias",
               "number": 3,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -93359,7 +93359,7 @@
               "name": "Renato Veiga",
               "number": 13,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -93368,7 +93368,7 @@
               "name": "Nuno Mendes",
               "number": 25,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -93377,7 +93377,7 @@
               "name": "Vitinha",
               "number": 23,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -93386,7 +93386,7 @@
               "name": "João Neves",
               "number": 15,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -93395,7 +93395,7 @@
               "name": "Pedro Neto",
               "number": 18,
               "pos": "M",
-              "grid": "4:3"
+              "grid": null
             }
           },
           {
@@ -93404,7 +93404,7 @@
               "name": "Bruno Fernandes",
               "number": 8,
               "pos": "M",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -93413,7 +93413,7 @@
               "name": "João Félix",
               "number": 11,
               "pos": "M",
-              "grid": "4:1"
+              "grid": null
             }
           },
           {
@@ -93422,7 +93422,7 @@
               "name": "Cristiano Ronaldo",
               "number": 7,
               "pos": "F",
-              "grid": "5:1"
+              "grid": null
             }
           }
         ],
@@ -93587,7 +93587,7 @@
             }
           }
         },
-        "formation": "4-2-3-1",
+        "formation": null,
         "startXI": [
           {
             "player": {
@@ -93595,7 +93595,7 @@
               "name": "Unai Simón",
               "number": 23,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -93604,7 +93604,7 @@
               "name": "Pedro Porro",
               "number": 12,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -93613,7 +93613,7 @@
               "name": "Pau Cubarsí",
               "number": 22,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -93622,7 +93622,7 @@
               "name": "Aymeric Laporte",
               "number": 14,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -93631,7 +93631,7 @@
               "name": "Marc Cucurella",
               "number": 24,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -93640,7 +93640,7 @@
               "name": "Rodri",
               "number": 16,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -93649,7 +93649,7 @@
               "name": "Pedri",
               "number": 20,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -93658,7 +93658,7 @@
               "name": "Lamine Yamal",
               "number": 19,
               "pos": "M",
-              "grid": "4:3"
+              "grid": null
             }
           },
           {
@@ -93667,7 +93667,7 @@
               "name": "Dani Olmo",
               "number": 10,
               "pos": "M",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -93676,7 +93676,7 @@
               "name": "Alex Baena",
               "number": 15,
               "pos": "M",
-              "grid": "4:1"
+              "grid": null
             }
           },
           {
@@ -93685,7 +93685,7 @@
               "name": "Mikel Oyarzabal",
               "number": 21,
               "pos": "F",
-              "grid": "5:1"
+              "grid": null
             }
           }
         ],
@@ -93837,8 +93837,8 @@
       {
         "time": "56",
         "team": "Portugal",
-        "player": "N. Mendes",
-        "assist": "N. Semedo",
+        "player": "Nuno Mendes",
+        "assist": "Nélson Semedo",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -93846,8 +93846,8 @@
       {
         "time": "71",
         "team": "Portugal",
-        "player": "Joao Felix",
-        "assist": "R. Leao",
+        "player": "João Cancelo",
+        "assist": "Diogo Dalot",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -93855,8 +93855,8 @@
       {
         "time": "71",
         "team": "Portugal",
-        "player": "J. Cancelo",
-        "assist": "D. Dalot",
+        "player": "João Félix",
+        "assist": "Rafael Leão",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -93864,8 +93864,8 @@
       {
         "time": "75",
         "team": "Spain",
-        "player": "A. Baena",
-        "assist": "F. Torres",
+        "player": "Alex Baena",
+        "assist": "Ferran Torres",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -93873,8 +93873,8 @@
       {
         "time": "83",
         "team": "Portugal",
-        "player": "P. Neto",
-        "assist": "F. Conceicao",
+        "player": "Vitinha",
+        "assist": "Bernardo Silva",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -93882,8 +93882,8 @@
       {
         "time": "83",
         "team": "Portugal",
-        "player": "Vitinha",
-        "assist": "B. Silva",
+        "player": "Pedro Neto",
+        "assist": "Francisco Conceição",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -93891,8 +93891,8 @@
       {
         "time": "85",
         "team": "Spain",
-        "player": "Pedri",
-        "assist": "F. Ruiz",
+        "player": "Dani Olmo",
+        "assist": "Mikel Merino",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -93900,8 +93900,8 @@
       {
         "time": "85",
         "team": "Spain",
-        "player": "D. Olmo",
-        "assist": "M. Merino",
+        "player": "Pedri",
+        "assist": "Fabián Ruiz",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -93909,47 +93909,47 @@
       {
         "time": "89",
         "team": "Portugal",
-        "player": "B. Silva",
+        "player": "Bernardo Silva",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Roughing"
+        "comments": "Foul"
+      },
+      {
+        "time": "90+4",
+        "team": "Portugal",
+        "player": "Renato Veiga",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": "Foul"
       },
       {
         "time": "90+1",
         "team": "Spain",
-        "player": "M. Merino",
-        "assist": "F. Torres",
+        "player": "Mikel Merino",
+        "assist": "Ferran Torres",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
       },
       {
-        "time": "90+4",
-        "team": "Portugal",
-        "player": "R. Veiga",
+        "time": "90+9",
+        "team": "Spain",
+        "player": "Ferran Torres",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Holding"
+        "comments": "Foul"
       },
       {
-        "time": "90+7",
+        "time": "90",
         "team": "Spain",
-        "player": "M. Oyarzabal",
-        "assist": "B. Iglesias",
+        "player": "Mikel Oyarzabal",
+        "assist": "Borja Iglesias",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
-      },
-      {
-        "time": "90+8",
-        "team": "Spain",
-        "player": "F. Torres",
-        "assist": null,
-        "type": "Card",
-        "detail": "Yellow Card",
-        "comments": "Tripping"
       }
     ],
     "players": [
@@ -94349,7 +94349,7 @@
             }
           }
         },
-        "formation": null,
+        "formation": "4-3-3",
         "startXI": [
           {
             "player": {
@@ -94357,7 +94357,7 @@
               "name": "Matthew Freese",
               "number": 24,
               "pos": "G",
-              "grid": null
+              "grid": "1:1"
             }
           },
           {
@@ -94366,7 +94366,7 @@
               "name": "Alexander Freeman",
               "number": 16,
               "pos": "D",
-              "grid": null
+              "grid": "2:4"
             }
           },
           {
@@ -94375,7 +94375,7 @@
               "name": "Chris Richards",
               "number": 3,
               "pos": "D",
-              "grid": null
+              "grid": "2:3"
             }
           },
           {
@@ -94384,7 +94384,7 @@
               "name": "Tim Ream",
               "number": 13,
               "pos": "D",
-              "grid": null
+              "grid": "2:2"
             }
           },
           {
@@ -94393,7 +94393,7 @@
               "name": "Antonee Robinson",
               "number": 5,
               "pos": "D",
-              "grid": null
+              "grid": "2:1"
             }
           },
           {
@@ -94402,7 +94402,7 @@
               "name": "Weston McKennie",
               "number": 8,
               "pos": "M",
-              "grid": null
+              "grid": "3:3"
             }
           },
           {
@@ -94411,7 +94411,7 @@
               "name": "Tyler Adams",
               "number": 4,
               "pos": "M",
-              "grid": null
+              "grid": "3:2"
             }
           },
           {
@@ -94420,7 +94420,7 @@
               "name": "Malik Tillman",
               "number": 17,
               "pos": "M",
-              "grid": null
+              "grid": "3:1"
             }
           },
           {
@@ -94429,7 +94429,7 @@
               "name": "Sergiño Dest",
               "number": 2,
               "pos": "F",
-              "grid": null
+              "grid": "4:3"
             }
           },
           {
@@ -94438,7 +94438,7 @@
               "name": "Folarin Balogun",
               "number": 20,
               "pos": "F",
-              "grid": null
+              "grid": "4:2"
             }
           },
           {
@@ -94447,7 +94447,7 @@
               "name": "Christian Pulišić",
               "number": 10,
               "pos": "F",
-              "grid": null
+              "grid": "4:1"
             }
           }
         ],
@@ -94603,7 +94603,7 @@
             }
           }
         },
-        "formation": null,
+        "formation": "4-2-3-1",
         "startXI": [
           {
             "player": {
@@ -94611,7 +94611,7 @@
               "name": "Thibaut Courtois",
               "number": 1,
               "pos": "G",
-              "grid": null
+              "grid": "1:1"
             }
           },
           {
@@ -94620,7 +94620,7 @@
               "name": "Timothy Castagne",
               "number": 21,
               "pos": "D",
-              "grid": null
+              "grid": "2:4"
             }
           },
           {
@@ -94629,7 +94629,7 @@
               "name": "Nathan Ngoy",
               "number": 25,
               "pos": "D",
-              "grid": null
+              "grid": "2:3"
             }
           },
           {
@@ -94638,7 +94638,7 @@
               "name": "Brandon Mechele",
               "number": 4,
               "pos": "D",
-              "grid": null
+              "grid": "2:2"
             }
           },
           {
@@ -94647,7 +94647,7 @@
               "name": "Maxim De Cuyper",
               "number": 5,
               "pos": "D",
-              "grid": null
+              "grid": "2:1"
             }
           },
           {
@@ -94656,7 +94656,7 @@
               "name": "Amadou Onana",
               "number": 24,
               "pos": "M",
-              "grid": null
+              "grid": "3:2"
             }
           },
           {
@@ -94665,7 +94665,7 @@
               "name": "Nicolas Raskin",
               "number": 23,
               "pos": "M",
-              "grid": null
+              "grid": "3:1"
             }
           },
           {
@@ -94674,7 +94674,7 @@
               "name": "Dodi Lukebakio",
               "number": 14,
               "pos": "M",
-              "grid": null
+              "grid": "4:3"
             }
           },
           {
@@ -94683,7 +94683,7 @@
               "name": "Youri Tielemans",
               "number": 8,
               "pos": "M",
-              "grid": null
+              "grid": "4:2"
             }
           },
           {
@@ -94692,7 +94692,7 @@
               "name": "Leandro Trossard",
               "number": 10,
               "pos": "M",
-              "grid": null
+              "grid": "4:1"
             }
           },
           {
@@ -94701,7 +94701,7 @@
               "name": "Charles De Ketelaere",
               "number": 17,
               "pos": "F",
-              "grid": null
+              "grid": "5:1"
             }
           }
         ],
@@ -95416,12 +95416,17 @@
             }
           }
         },
+        "coach": {
+          "id": 27707,
+          "name": "Javier Aguirre",
+          "photo": "https://media.api-sports.io/football/coachs/27707.png"
+        },
         "formation": "4-3-3",
         "startXI": [
           {
             "player": {
               "id": 270774,
-              "name": "Raúl Rangel",
+              "name": "R. Rangel",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -95430,7 +95435,7 @@
           {
             "player": {
               "id": 2878,
-              "name": "Jorge Sánchez",
+              "name": "J. Sanchez",
               "number": 2,
               "pos": "D",
               "grid": "2:4"
@@ -95439,7 +95444,7 @@
           {
             "player": {
               "id": 2873,
-              "name": "César Montes",
+              "name": "C. Montes",
               "number": 3,
               "pos": "D",
               "grid": "2:3"
@@ -95448,7 +95453,7 @@
           {
             "player": {
               "id": 35544,
-              "name": "Johan Vásquez",
+              "name": "J. Vasquez",
               "number": 5,
               "pos": "D",
               "grid": "2:2"
@@ -95457,7 +95462,7 @@
           {
             "player": {
               "id": 2881,
-              "name": "Jesús Gallardo",
+              "name": "J. Gallardo",
               "number": 23,
               "pos": "D",
               "grid": "2:1"
@@ -95466,7 +95471,7 @@
           {
             "player": {
               "id": 482605,
-              "name": "Gilberto Mora",
+              "name": "G. Mora",
               "number": 19,
               "pos": "M",
               "grid": "3:3"
@@ -95475,7 +95480,7 @@
           {
             "player": {
               "id": 266345,
-              "name": "Erik Lira",
+              "name": "E. Lira",
               "number": 6,
               "pos": "M",
               "grid": "3:2"
@@ -95484,7 +95489,7 @@
           {
             "player": {
               "id": 35970,
-              "name": "Luis Romo",
+              "name": "L. Romo",
               "number": 7,
               "pos": "M",
               "grid": "3:1"
@@ -95493,7 +95498,7 @@
           {
             "player": {
               "id": 2879,
-              "name": "Roberto Alvarado",
+              "name": "R. Alvarado",
               "number": 25,
               "pos": "F",
               "grid": "4:3"
@@ -95502,7 +95507,7 @@
           {
             "player": {
               "id": 2887,
-              "name": "Raúl Jiménez",
+              "name": "R. Jimenez",
               "number": 9,
               "pos": "F",
               "grid": "4:2"
@@ -95511,7 +95516,7 @@
           {
             "player": {
               "id": 35532,
-              "name": "Julián Quiñones",
+              "name": "J. Quinones",
               "number": 16,
               "pos": "F",
               "grid": "4:1"
@@ -95521,62 +95526,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 2869,
-              "name": "Edson Álvarez",
-              "number": 4,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 212233,
-              "name": "Brian Gutiérrez",
-              "number": 26,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 94562,
-              "name": "Santiago Giménez",
-              "number": 11,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 750,
-              "name": "Álvaro Fidalgo",
-              "number": 8,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 36088,
-              "name": "Guillermo Martínez",
-              "number": 22,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 35769,
-              "name": "Carlos Acevedo",
-              "number": 12,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 2098,
-              "name": "Guillermo Ochoa",
+              "name": "G. Ochoa",
               "number": 13,
               "pos": "G",
               "grid": null
@@ -95584,8 +95535,35 @@
           },
           {
             "player": {
+              "id": 35769,
+              "name": "C. Acevedo",
+              "number": 12,
+              "pos": "G",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 36088,
+              "name": "G. Martinez",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 35690,
+              "name": "L. Chavez",
+              "number": 24,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 127227,
-              "name": "Israel Reyes",
+              "name": "I. Reyes",
               "number": 15,
               "pos": "D",
               "grid": null
@@ -95593,8 +95571,17 @@
           },
           {
             "player": {
+              "id": 313383,
+              "name": "O. Vargas",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 390002,
-              "name": "Mateo Chávez",
+              "name": "M. Chavez Garcia",
               "number": 20,
               "pos": "D",
               "grid": null
@@ -95603,7 +95590,7 @@
           {
             "player": {
               "id": 35576,
-              "name": "Orbelín Pineda",
+              "name": "O. Pineda",
               "number": 17,
               "pos": "M",
               "grid": null
@@ -95611,18 +95598,9 @@
           },
           {
             "player": {
-              "id": 313383,
-              "name": "Obed Vargas",
-              "number": 18,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 35690,
-              "name": "Luis Chávez",
-              "number": 24,
+              "id": 750,
+              "name": "A. Fidalgo",
+              "number": 8,
               "pos": "M",
               "grid": null
             }
@@ -95630,7 +95608,7 @@
           {
             "player": {
               "id": 2889,
-              "name": "Alexis Vega",
+              "name": "A. Vega",
               "number": 10,
               "pos": "F",
               "grid": null
@@ -95638,8 +95616,26 @@
           },
           {
             "player": {
+              "id": 2869,
+              "name": "E. Alvarez",
+              "number": 4,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 94562,
+              "name": "S. Gimenez",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 36111,
-              "name": "César Huerta",
+              "name": "C. S. Huerta Valera",
               "number": 21,
               "pos": "M",
               "grid": null
@@ -95647,19 +95643,23 @@
           },
           {
             "player": {
+              "id": 212233,
+              "name": "B. Gutierrez",
+              "number": 26,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 291713,
-              "name": "Armando González",
+              "name": "A. Gonzalez",
               "number": 14,
               "pos": "F",
               "grid": null
             }
           }
-        ],
-        "coach": {
-          "id": 27707,
-          "name": "Javier Aguirre",
-          "photo": "https://media.api-sports.io/football/coachs/27707.png"
-        }
+        ]
       },
       "away": {
         "team": {
@@ -95679,12 +95679,17 @@
             }
           }
         },
+        "coach": {
+          "id": 40,
+          "name": "Thomas Tuchel",
+          "photo": "https://media.api-sports.io/football/coachs/40.png"
+        },
         "formation": "4-2-3-1",
         "startXI": [
           {
             "player": {
               "id": 2932,
-              "name": "Jordan Pickford",
+              "name": "J. Pickford",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -95693,7 +95698,7 @@
           {
             "player": {
               "id": 158698,
-              "name": "Jarell Quansah",
+              "name": "J. Quansah",
               "number": 26,
               "pos": "D",
               "grid": "2:4"
@@ -95702,7 +95707,7 @@
           {
             "player": {
               "id": 19354,
-              "name": "Ezri Konsa",
+              "name": "E. Konsa",
               "number": 2,
               "pos": "D",
               "grid": "2:3"
@@ -95711,7 +95716,7 @@
           {
             "player": {
               "id": 67971,
-              "name": "Marc Guéhi",
+              "name": "M. Guehi",
               "number": 6,
               "pos": "D",
               "grid": "2:2"
@@ -95720,7 +95725,7 @@
           {
             "player": {
               "id": 307123,
-              "name": "Nico O'Reilly",
+              "name": "N. O'Reilly",
               "number": 3,
               "pos": "D",
               "grid": "2:1"
@@ -95729,7 +95734,7 @@
           {
             "player": {
               "id": 2937,
-              "name": "Declan Rice",
+              "name": "D. Rice",
               "number": 4,
               "pos": "M",
               "grid": "3:2"
@@ -95738,7 +95743,7 @@
           {
             "player": {
               "id": 138908,
-              "name": "Elliot Anderson",
+              "name": "E. Anderson",
               "number": 8,
               "pos": "M",
               "grid": "3:1"
@@ -95747,7 +95752,7 @@
           {
             "player": {
               "id": 1460,
-              "name": "Bukayo Saka",
+              "name": "B. Saka",
               "number": 7,
               "pos": "M",
               "grid": "4:3"
@@ -95756,7 +95761,7 @@
           {
             "player": {
               "id": 129718,
-              "name": "Jude Bellingham",
+              "name": "J. Bellingham",
               "number": 10,
               "pos": "M",
               "grid": "4:2"
@@ -95765,7 +95770,7 @@
           {
             "player": {
               "id": 138787,
-              "name": "Anthony Gordon",
+              "name": "A. Gordon",
               "number": 18,
               "pos": "M",
               "grid": "4:1"
@@ -95774,7 +95779,7 @@
           {
             "player": {
               "id": 184,
-              "name": "Harry Kane",
+              "name": "H. Kane",
               "number": 9,
               "pos": "F",
               "grid": "5:1"
@@ -95784,44 +95789,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 626,
-              "name": "John Stones",
-              "number": 5,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 18961,
-              "name": "Dan Burn",
-              "number": 15,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 19235,
-              "name": "Djed Spence",
-              "number": 25,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 19170,
-              "name": "Morgan Rogers",
-              "number": 17,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 19088,
-              "name": "Dean Henderson",
+              "name": "D. Henderson",
               "number": 13,
               "pos": "G",
               "grid": null
@@ -95830,7 +95799,7 @@
           {
             "player": {
               "id": 162489,
-              "name": "James Trafford",
+              "name": "J. Trafford",
               "number": 23,
               "pos": "G",
               "grid": null
@@ -95838,8 +95807,35 @@
           },
           {
             "player": {
+              "id": 292,
+              "name": "J. Henderson",
+              "number": 14,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 18961,
+              "name": "D. Burn",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19366,
+              "name": "O. Watkins",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 19720,
-              "name": "Trevoh Chalobah",
+              "name": "T. Chalobah",
               "number": 12,
               "pos": "D",
               "grid": null
@@ -95848,7 +95844,7 @@
           {
             "player": {
               "id": 19545,
-              "name": "Reece James",
+              "name": "R. James",
               "number": 24,
               "pos": "D",
               "grid": null
@@ -95856,53 +95852,8 @@
           },
           {
             "player": {
-              "id": 292,
-              "name": "Jordan Henderson",
-              "number": 14,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 284322,
-              "name": "Kobbie Mainoo",
-              "number": 16,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 19586,
-              "name": "Eberechi Eze",
-              "number": 21,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 909,
-              "name": "Marcus Rashford",
-              "number": 11,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 19366,
-              "name": "Ollie Watkins",
-              "number": 19,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 136723,
-              "name": "Noni Madueke",
+              "name": "N. Madueke",
               "number": 20,
               "pos": "F",
               "grid": null
@@ -95910,19 +95861,68 @@
           },
           {
             "player": {
+              "id": 19170,
+              "name": "M. Rogers",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 284322,
+              "name": "K. Mainoo",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 626,
+              "name": "J. Stones",
+              "number": 5,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 19974,
-              "name": "Ivan Toney",
+              "name": "I. Toney",
               "number": 22,
               "pos": "F",
               "grid": null
             }
+          },
+          {
+            "player": {
+              "id": 909,
+              "name": "M. Rashford",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19586,
+              "name": "E. Eze",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19235,
+              "name": "D. Spence",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
           }
-        ],
-        "coach": {
-          "id": 40,
-          "name": "Thomas Tuchel",
-          "photo": "https://media.api-sports.io/football/coachs/40.png"
-        }
+        ]
       }
     },
     "events": [
@@ -96089,15 +96089,6 @@
         "comments": ""
       },
       {
-        "time": "90",
-        "team": "England",
-        "player": "H. Kane",
-        "assist": "M. Rogers",
-        "type": "subst",
-        "detail": "Substitution 4",
-        "comments": ""
-      },
-      {
         "time": "90+8",
         "team": "Mexico",
         "player": "J. Vasquez",
@@ -96113,6 +96104,15 @@
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
+        "comments": ""
+      },
+      {
+        "time": "90",
+        "team": "England",
+        "player": "H. Kane",
+        "assist": "M. Rogers",
+        "type": "subst",
+        "detail": "Substitution 4",
         "comments": ""
       }
     ],
