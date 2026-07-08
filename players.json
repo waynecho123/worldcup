@@ -4,8 +4,8 @@
       "name": "L. Messi",
       "photo": "https://media.api-sports.io/football/players/154.png",
       "team": "Argentina",
-      "goals": 7,
-      "matches": 4
+      "goals": 8,
+      "matches": 5
     },
     {
       "name": "E. Haaland",
@@ -397,6 +397,13 @@
       "red": 0
     },
     {
+      "name": "Marwan Attia",
+      "photo": "https://media.api-sports.io/football/players/190575.png",
+      "team": "Egypt",
+      "yellow": 2,
+      "red": 0
+    },
+    {
       "name": "Renato Veiga",
       "photo": "https://media.api-sports.io/football/players/336671.png",
       "team": "Portugal",
@@ -404,26 +411,19 @@
       "red": 0
     },
     {
-      "name": "Bernardo Silva",
-      "photo": "https://media.api-sports.io/football/players/636.png",
-      "team": "Portugal",
+      "name": "Yasser Ibrahim",
+      "photo": "https://media.api-sports.io/football/players/16804.png",
+      "team": "Egypt",
       "yellow": 2,
       "red": 0
     },
     {
-      "name": "C. Larin",
-      "photo": "https://media.api-sports.io/football/players/2001.png",
-      "team": "Canada",
-      "yellow": 2,
-      "red": 0
-    },
-    {
-      "name": "A. Franco",
-      "photo": "https://media.api-sports.io/football/players/16360.png",
-      "team": "Ecuador",
+      "name": "G. Xhaka",
+      "photo": "https://media.api-sports.io/football/players/1464.png",
+      "team": "Switzerland",
       "yellow": 2,
       "red": 0
     }
   ],
-  "updatedAt": "2026-07-08T10:11:11.613Z"
+  "updatedAt": "2026-07-08T12:06:09.208Z"
 }
