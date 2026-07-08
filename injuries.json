@@ -91,6 +91,18 @@
       "type": "Missing Fixture",
       "reason": "Leg Injury",
       "fixture": "2026-07-07T00:00:00+00:00"
+    },
+    {
+      "player": "A. Onana",
+      "type": "Missing Fixture",
+      "reason": "Cruciate Ligament Rupture",
+      "fixture": "2026-07-07T00:00:00+00:00"
+    },
+    {
+      "player": "A. Onana",
+      "type": "Missing Fixture",
+      "reason": "Cruciate Ligament Rupture",
+      "fixture": "2026-07-10T19:00:00+00:00"
     }
   ],
   "JPN": [
@@ -323,9 +335,15 @@
       "fixture": "2026-07-07T20:00:00+00:00"
     },
     {
+      "player": "J. Manzambi",
+      "type": "Missing Fixture",
+      "reason": "Jumpers Knee",
+      "fixture": "2026-07-07T20:00:00+00:00"
+    },
+    {
       "player": "M. Aebischer",
       "type": "Missing Fixture",
-      "reason": "Injury",
+      "reason": "Muscle Bruise",
       "fixture": "2026-07-07T20:00:00+00:00"
     }
   ],
@@ -401,14 +419,12 @@
       "type": "Missing Fixture",
       "reason": "Hamstring Muscle Injury",
       "fixture": "2026-07-07T16:00:00+00:00"
-    }
-  ],
-  "SWE": [
+    },
     {
-      "player": "I. Hien",
+      "player": "Mohamed Abdelmonem",
       "type": "Missing Fixture",
       "reason": "Muscle Bruise",
-      "fixture": "2026-06-15T02:00:00+00:00"
+      "fixture": "2026-06-27T03:00:00+00:00"
     }
   ],
   "COL": [
@@ -423,6 +439,14 @@
       "type": "Missing Fixture",
       "reason": "Muscle Bruise",
       "fixture": "2026-07-07T20:00:00+00:00"
+    }
+  ],
+  "SWE": [
+    {
+      "player": "I. Hien",
+      "type": "Missing Fixture",
+      "reason": "Muscle Bruise",
+      "fixture": "2026-06-15T02:00:00+00:00"
     }
   ],
   "SEN": [
