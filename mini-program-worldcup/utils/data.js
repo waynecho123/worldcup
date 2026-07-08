@@ -815,7 +815,7 @@ const MATCH_SCHEDULE = [
   // ===== QUARTER-FINALS (北京时间 BJT=UTC+8) =====
   {id:"m097",date:"2026-07-09",time:"11:00",home:"FRA",away:"MAR",grp:"8强",stage:"qf",venue:"MetLife Stadium, East Rutherford"},
   {id:"m098",date:"2026-07-11",time:"15:00",home:"NOR",away:"ENG",grp:"8强",stage:"qf",venue:"AT&T Stadium, Dallas"},
-  {id:"m099",date:"2026-07-11",time:"11:00",home:"?",away:"?",grp:"8强",stage:"qf",venue:"Mercedes-Benz Stadium, Atlanta"},
+  {id:"m099",date:"2026-07-11",time:"11:00",home:"COL",away:"?",grp:"8强",stage:"qf",venue:"Mercedes-Benz Stadium, Atlanta"},
   {id:"m100",date:"2026-07-12",time:"14:00",home:"?",away:"?",grp:"8强",stage:"qf",venue:"SoFi Stadium, Los Angeles"},
   // ===== SEMI-FINALS (北京时间 BJT=UTC+8) =====
   {id:"m101",date:"2026-07-15",time:"12:00",home:"?",away:"?",grp:"半决赛",stage:"sf",venue:"AT&T Stadium, Dallas"},
