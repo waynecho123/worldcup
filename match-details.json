@@ -97641,43 +97641,43 @@
     "statistics": {
       "Switzerland": {
         "Shots on Goal": 2,
-        "Shots off Goal": 0,
-        "Total Shots": 2,
-        "Blocked Shots": 0,
-        "Shots insidebox": 2,
-        "Shots outsidebox": 0,
-        "Fouls": 6,
-        "Corner Kicks": 1,
-        "Offsides": 1,
-        "Ball Possession": "49%",
-        "Yellow Cards": null,
+        "Shots off Goal": 4,
+        "Total Shots": 7,
+        "Blocked Shots": 1,
+        "Shots insidebox": 4,
+        "Shots outsidebox": 3,
+        "Fouls": 22,
+        "Corner Kicks": 3,
+        "Offsides": 5,
+        "Ball Possession": "53%",
+        "Yellow Cards": 3,
         "Red Cards": null,
-        "Goalkeeper Saves": 1,
-        "Total passes": 248,
-        "Passes accurate": 217,
-        "Passes %": "88%",
-        "expected_goals": "0.06",
-        "goals_prevented": "0.17"
+        "Goalkeeper Saves": 3,
+        "Total passes": 631,
+        "Passes accurate": 547,
+        "Passes %": "87%",
+        "expected_goals": "0.39",
+        "goals_prevented": "0.09"
       },
       "Colombia": {
-        "Shots on Goal": 1,
-        "Shots off Goal": 1,
-        "Total Shots": 5,
-        "Blocked Shots": 3,
-        "Shots insidebox": 3,
-        "Shots outsidebox": 2,
-        "Fouls": 6,
-        "Corner Kicks": 4,
-        "Offsides": 1,
-        "Ball Possession": "51%",
-        "Yellow Cards": null,
+        "Shots on Goal": 3,
+        "Shots off Goal": 8,
+        "Total Shots": 15,
+        "Blocked Shots": 4,
+        "Shots insidebox": 9,
+        "Shots outsidebox": 6,
+        "Fouls": 21,
+        "Corner Kicks": 7,
+        "Offsides": 4,
+        "Ball Possession": "47%",
+        "Yellow Cards": 2,
         "Red Cards": null,
         "Goalkeeper Saves": 2,
-        "Total passes": 256,
-        "Passes accurate": 218,
-        "Passes %": "85%",
-        "expected_goals": "0.25",
-        "goals_prevented": "0.17"
+        "Total passes": 547,
+        "Passes accurate": 454,
+        "Passes %": "83%",
+        "expected_goals": "1.09",
+        "goals_prevented": "0.09"
       }
     },
     "lineups": {
@@ -97698,6 +97698,11 @@
               "border": "eee191"
             }
           }
+        },
+        "coach": {
+          "id": 1504,
+          "name": "Murat Yakin",
+          "photo": "https://media.api-sports.io/football/coachs/1504.png"
         },
         "formation": "4-2-3-1",
         "startXI": [
@@ -97804,6 +97809,60 @@
         "substitutes": [
           {
             "player": {
+              "id": 957,
+              "name": "Djibril Sow",
+              "number": 15,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 48489,
+              "name": "Miro Muheim",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 48378,
+              "name": "Silvan Widmer",
+              "number": 3,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 48497,
+              "name": "Cédric Itten",
+              "number": 26,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 48471,
+              "name": "Rubén Vargas",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 123469,
+              "name": "Zeki Amdouni",
+              "number": 23,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 1142,
               "name": "Yvon Mvogo",
               "number": 12,
@@ -97840,45 +97899,9 @@
           },
           {
             "player": {
-              "id": 48489,
-              "name": "Miro Muheim",
-              "number": 2,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 48378,
-              "name": "Silvan Widmer",
-              "number": 3,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 957,
-              "name": "Djibril Sow",
-              "number": 15,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 952,
               "name": "Christian Fassnacht",
               "number": 16,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 48471,
-              "name": "Rubén Vargas",
-              "number": 17,
               "pos": "M",
               "grid": null
             }
@@ -97891,31 +97914,8 @@
               "pos": "F",
               "grid": null
             }
-          },
-          {
-            "player": {
-              "id": 123469,
-              "name": "Zeki Amdouni",
-              "number": 23,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 48497,
-              "name": "Cédric Itten",
-              "number": 26,
-              "pos": "F",
-              "grid": null
-            }
           }
-        ],
-        "coach": {
-          "id": 1504,
-          "name": "Murat Yakin",
-          "photo": "https://media.api-sports.io/football/coachs/1504.png"
-        }
+        ]
       },
       "away": {
         "team": {
@@ -97934,6 +97934,11 @@
               "border": "bfbfbf"
             }
           }
+        },
+        "coach": {
+          "id": 14213,
+          "name": "Nestor Lorenzo",
+          "photo": "https://media.api-sports.io/football/coachs/14213.png"
         },
         "formation": "4-4-1-1",
         "startXI": [
@@ -98040,6 +98045,51 @@
         "substitutes": [
           {
             "player": {
+              "id": 6005,
+              "name": "Juan Fernando Quintero",
+              "number": 20,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 13376,
+              "name": "Jaminton Campaz",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 195104,
+              "name": "Richard Ríos",
+              "number": 6,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 47582,
+              "name": "Cucho Hernández",
+              "number": 19,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2484,
+              "name": "Yerry Mina",
+              "number": 13,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 313,
               "name": "David Ospina",
               "number": 1,
@@ -98061,15 +98111,6 @@
               "id": 30,
               "name": "Santiago Arias",
               "number": 4,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 2484,
-              "name": "Yerry Mina",
-              "number": 13,
               "pos": "D",
               "grid": null
             }
@@ -98103,15 +98144,6 @@
           },
           {
             "player": {
-              "id": 195104,
-              "name": "Richard Ríos",
-              "number": 6,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 5994,
               "name": "Jorge Carrascal",
               "number": 8,
@@ -98130,28 +98162,10 @@
           },
           {
             "player": {
-              "id": 6005,
-              "name": "Juan Fernando Quintero",
-              "number": 20,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 345748,
               "name": "Andrés Gómez",
               "number": 26,
               "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 13376,
-              "name": "Jaminton Campaz",
-              "number": 21,
-              "pos": "M",
               "grid": null
             }
           },
@@ -98163,27 +98177,22 @@
               "pos": "F",
               "grid": null
             }
-          },
-          {
-            "player": {
-              "id": 47582,
-              "name": "Cucho Hernández",
-              "number": 19,
-              "pos": "F",
-              "grid": null
-            }
           }
-        ],
-        "coach": {
-          "id": 14213,
-          "name": "Nestor Lorenzo",
-          "photo": "https://media.api-sports.io/football/coachs/14213.png"
-        }
+        ]
       }
     },
     "events": [
       {
-        "time": "46",
+        "time": "40",
+        "team": "Colombia",
+        "player": "J. Arias",
+        "assist": null,
+        "type": "Var",
+        "detail": "Corner cancelled",
+        "comments": ""
+      },
+      {
+        "time": "45",
         "team": "Switzerland",
         "player": "A. Jashari",
         "assist": "D. Sow",
@@ -98198,7 +98207,7 @@
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Tripping"
+        "comments": "Foul"
       },
       {
         "time": "59",
@@ -98207,21 +98216,21 @@
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Tripping"
+        "comments": "Foul"
       },
       {
         "time": "60",
         "team": "Colombia",
-        "player": "L. Suarez",
+        "player": "L. Suárez",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Holding"
+        "comments": "Foul"
       },
       {
         "time": "66",
         "team": "Colombia",
-        "player": "J. Rodriguez",
+        "player": "J. Rodríguez",
         "assist": "J. Quintero",
         "type": "subst",
         "detail": "Substitution 1",
@@ -98239,7 +98248,7 @@
       {
         "time": "71",
         "team": "Switzerland",
-        "player": "R. Rodriguez",
+        "player": "R. Rodríguez",
         "assist": "M. Muheim",
         "type": "subst",
         "detail": "Substitution 2",
@@ -98248,8 +98257,8 @@
       {
         "time": "82",
         "team": "Colombia",
-        "player": "L. Suarez",
-        "assist": "C. Hernandez",
+        "player": "J. Lerma",
+        "assist": "R. Rios",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -98257,8 +98266,8 @@
       {
         "time": "82",
         "team": "Colombia",
-        "player": "J. Lerma",
-        "assist": "R. Rios",
+        "player": "L. Suárez",
+        "assist": "C. Hernández",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -98266,8 +98275,8 @@
       {
         "time": "87",
         "team": "Switzerland",
-        "player": "B. Embolo",
-        "assist": "C. Itten",
+        "player": "D. Zakaria",
+        "assist": "S. Widmer",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -98275,8 +98284,8 @@
       {
         "time": "87",
         "team": "Switzerland",
-        "player": "D. Zakaria",
-        "assist": "S. Widmer",
+        "player": "B. Embolo",
+        "assist": "C. Itten",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -98293,11 +98302,20 @@
       {
         "time": "95",
         "team": "Colombia",
-        "player": "D. Sanchez",
+        "player": "D. Sánchez",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Holding"
+        "comments": "Foul"
+      },
+      {
+        "time": "95",
+        "team": "Colombia",
+        "player": "Luis Amaranto Perea",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": ""
       },
       {
         "time": "103",
@@ -98315,19 +98333,19 @@
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Roughing"
+        "comments": "Foul"
       },
       {
         "time": "119",
         "team": "Colombia",
-        "player": "J. Lucumi",
+        "player": "J. Lucumí",
         "assist": "Y. Mina",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
       },
       {
-        "time": "120+1",
+        "time": "122",
         "team": "Colombia",
         "player": "J. Quintero",
         "assist": null,
@@ -98336,7 +98354,7 @@
         "comments": "Penalty Shootout"
       },
       {
-        "time": "120+1",
+        "time": "123",
         "team": "Switzerland",
         "player": "G. Xhaka",
         "assist": null,
@@ -98345,16 +98363,16 @@
         "comments": "Penalty Shootout"
       },
       {
-        "time": "120+2",
+        "time": "124",
         "team": "Colombia",
-        "player": "D. Sanchez",
+        "player": "D. Sánchez",
         "assist": null,
         "type": "Goal",
         "detail": "Missed Penalty",
         "comments": "Penalty Shootout"
       },
       {
-        "time": "120+2",
+        "time": "125",
         "team": "Switzerland",
         "player": "Z. Amdouni",
         "assist": null,
@@ -98363,7 +98381,7 @@
         "comments": "Penalty Shootout"
       },
       {
-        "time": "120+3",
+        "time": "126",
         "team": "Colombia",
         "player": "J. Campaz",
         "assist": null,
@@ -98372,7 +98390,7 @@
         "comments": "Penalty Shootout"
       },
       {
-        "time": "120+3",
+        "time": "127",
         "team": "Switzerland",
         "player": "M. Akanji",
         "assist": null,
@@ -98381,16 +98399,16 @@
         "comments": "Penalty Shootout"
       },
       {
-        "time": "120+4",
+        "time": "128",
         "team": "Colombia",
-        "player": "C. Hernandez",
+        "player": "C. Hernández",
         "assist": null,
         "type": "Goal",
         "detail": "Missed Penalty",
         "comments": "Penalty Shootout"
       },
       {
-        "time": "120+4",
+        "time": "129",
         "team": "Switzerland",
         "player": "C. Itten",
         "assist": null,
@@ -98399,16 +98417,16 @@
         "comments": "Penalty Shootout"
       },
       {
-        "time": "120+5",
+        "time": "130",
         "team": "Colombia",
-        "player": "L. Diaz",
+        "player": "L. Díaz",
         "assist": null,
         "type": "Goal",
         "detail": "Penalty",
         "comments": "Penalty Shootout"
       },
       {
-        "time": "120+5",
+        "time": "131",
         "team": "Switzerland",
         "player": "R. Vargas",
         "assist": null,
@@ -98422,140 +98440,140 @@
         "team": "Switzerland",
         "players": [
           {
-            "name": "A. Amenda",
-            "rating": "0",
+            "name": "Gregor Kobel",
+            "rating": "9.2",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "A. Jashari",
-            "rating": "6.52",
+            "name": "Denis Zakaria",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "Z. Amdouni",
-            "rating": "6.56",
+            "name": "Nico Elvedi",
+            "rating": "7.5",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "M. Keller",
-            "rating": "0",
+            "name": "Manuel Akanji",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "D. Ndoye",
+            "name": "Ricardo Rodríguez",
+            "rating": "6.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Remo Freuler",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Granit Xhaka",
+            "rating": "8",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Fabian Rieder",
+            "rating": "6.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Ardon Jashari",
             "rating": "6.5",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "F. Rieder",
-            "rating": "6.26",
+            "name": "Dan Ndoye",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "R. Vargas",
-            "rating": "6.74",
+            "name": "Breel Embolo",
+            "rating": "6.5",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "N. Okafor",
-            "rating": "0",
+            "name": "Djibril Sow",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "E. Cömert",
-            "rating": "0",
+            "name": "Miro Muheim",
+            "rating": "7",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "D. Sow",
-            "rating": "6.61",
+            "name": "Silvan Widmer",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "M. Muheim",
-            "rating": "6.28",
+            "name": "Cédric Itten",
+            "rating": "7",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "C. Fassnacht",
-            "rating": "0",
+            "name": "Rubén Vargas",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "D. Zakaria",
-            "rating": "5.93",
+            "name": "Zeki Amdouni",
+            "rating": "7",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "G. Kobel",
-            "rating": "7.6",
+            "name": "Yvon Mvogo",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "M. Akanji",
-            "rating": "7.12",
+            "name": "Marvin Keller",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "B. Embolo",
-            "rating": "6.41",
+            "name": "Eray Cömert",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "C. Itten",
-            "rating": "6.81",
+            "name": "Aurèle Amenda",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "N. Elvedi",
-            "rating": "7.05",
+            "name": "Christian Fassnacht",
+            "rating": null,
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "S. Widmer",
-            "rating": "6.2",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Y. Mvogo",
-            "rating": "0",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "G. Xhaka",
-            "rating": "7.2",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "R. Freuler",
-            "rating": "6.87",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "R. Rodríguez",
-            "rating": "6.13",
+            "name": "Noah Okafor",
+            "rating": null,
             "goals": 0,
             "assists": 0
           }
@@ -98565,158 +98583,158 @@
         "team": "Colombia",
         "players": [
           {
-            "name": "A. Gómez",
-            "rating": "0",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "G. Puerta",
-            "rating": "6.61",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "K. Castaño",
-            "rating": "0",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "R. Rios",
-            "rating": "6.76",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "J. Arias",
-            "rating": "6.36",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "J. Portilla",
-            "rating": "0",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "L. Suárez",
-            "rating": "6.31",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "W. Ditta",
-            "rating": "0",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "L. Díaz",
-            "rating": "6.76",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "C. Hernández",
-            "rating": "6.7",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "J. Campaz",
-            "rating": "6.96",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "D. Muñoz",
-            "rating": "6.86",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "D. Machado",
-            "rating": "0",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "J. Lucumí",
-            "rating": "6.52",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Á. Montero",
-            "rating": "0",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "J. Carrascal",
-            "rating": "0",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "D. Sánchez",
-            "rating": "6.28",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "Y. Mina",
-            "rating": "6.53",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "J. Lerma",
-            "rating": "6.74",
-            "goals": 0,
-            "assists": 0
-          },
-          {
-            "name": "J. Mojica",
+            "name": "Camilo Vargas",
             "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "J. Quintero",
+            "name": "Daniel Muñoz",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Davinson Sánchez",
+            "rating": "6.2",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jhon Lucumí",
+            "rating": "7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Johan Mojica",
+            "rating": "7.7",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jhon Arias",
+            "rating": "7.3",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jefferson Lerma",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Gustavo Puerta",
+            "rating": "6.9",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Luis Díaz",
             "rating": "7.2",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "S. Arias",
-            "rating": "0",
+            "name": "James Rodríguez",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "C. Vargas",
-            "rating": "7.29",
+            "name": "Luis Javier Suárez",
+            "rating": "6.5",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "J. Rodríguez",
-            "rating": "6.1",
+            "name": "Juan Fernando Quintero",
+            "rating": "7.6",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "D. Ospina",
-            "rating": "0",
+            "name": "Jaminton Campaz",
+            "rating": "7.5",
             "goals": 0,
             "assists": 0
           },
           {
-            "name": "J. Córdoba",
-            "rating": "0",
+            "name": "Richard Ríos",
+            "rating": "6.6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Cucho Hernández",
+            "rating": "6",
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Yerry Mina",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "David Ospina",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Álvaro Montero",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Santiago Arias",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Willer Ditta",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Deiver Machado",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Kevin Castaño",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jorge Carrascal",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Juan Portilla",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Andrés Gómez",
+            "rating": null,
+            "goals": 0,
+            "assists": 0
+          },
+          {
+            "name": "Jhon Córdoba",
+            "rating": null,
             "goals": 0,
             "assists": 0
           }
