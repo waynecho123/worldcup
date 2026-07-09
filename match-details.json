@@ -10417,12 +10417,6 @@
             }
           }
         },
-        "coach": {
-          "id": 344,
-          "name": "Herve Renard",
-          "photo": "https://media.api-sports.io/football/coachs/344.png"
-        },
-        "formation": "3-4-2-1",
         "startXI": [
           {
             "player": {
@@ -10430,7 +10424,7 @@
               "name": "A. Dahmen",
               "number": 16,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -10439,7 +10433,7 @@
               "name": "D. Bronn",
               "number": 6,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -10448,7 +10442,7 @@
               "name": "M. Talbi",
               "number": 3,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -10457,7 +10451,7 @@
               "name": "O. Rekik",
               "number": 4,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -10466,7 +10460,7 @@
               "name": "Y. Valery",
               "number": 20,
               "pos": "M",
-              "grid": "3:4"
+              "grid": null
             }
           },
           {
@@ -10475,7 +10469,7 @@
               "name": "A. Slimane",
               "number": 25,
               "pos": "M",
-              "grid": "3:3"
+              "grid": null
             }
           },
           {
@@ -10484,7 +10478,7 @@
               "name": "E. Skhiri",
               "number": 17,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -10493,7 +10487,7 @@
               "name": "A. Abdi",
               "number": 2,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -10502,7 +10496,7 @@
               "name": "E. Saad",
               "number": 8,
               "pos": "F",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -10511,7 +10505,7 @@
               "name": "H. Mejbri",
               "number": 10,
               "pos": "F",
-              "grid": "4:1"
+              "grid": null
             }
           },
           {
@@ -10520,7 +10514,7 @@
               "name": "S. Tounekti",
               "number": 26,
               "pos": "F",
-              "grid": "5:1"
+              "grid": null
             }
           }
         ],
@@ -10660,7 +10654,12 @@
               "grid": null
             }
           }
-        ]
+        ],
+        "coach": {
+          "id": null,
+          "name": null
+        },
+        "formation": null
       },
       "away": {
         "team": {
@@ -71635,12 +71634,6 @@
             }
           }
         },
-        "coach": {
-          "id": 28720,
-          "name": "Miroslav Koubek",
-          "photo": "https://media.api-sports.io/football/coachs/28720.png"
-        },
-        "formation": "3-5-2",
         "startXI": [
           {
             "player": {
@@ -71648,7 +71641,7 @@
               "name": "M. Kovar",
               "number": 1,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -71657,7 +71650,7 @@
               "name": "T. Holes",
               "number": 3,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -71666,7 +71659,7 @@
               "name": "R. Hranac",
               "number": 4,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -71675,7 +71668,7 @@
               "name": "L. Krejci",
               "number": 7,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -71684,7 +71677,7 @@
               "name": "V. Coufal",
               "number": 5,
               "pos": "M",
-              "grid": "3:5"
+              "grid": null
             }
           },
           {
@@ -71693,7 +71686,7 @@
               "name": "V. Darida",
               "number": 8,
               "pos": "M",
-              "grid": "3:4"
+              "grid": null
             }
           },
           {
@@ -71702,7 +71695,7 @@
               "name": "L. Cerv",
               "number": 12,
               "pos": "M",
-              "grid": "3:3"
+              "grid": null
             }
           },
           {
@@ -71711,7 +71704,7 @@
               "name": "M. Sadilek",
               "number": 18,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -71720,7 +71713,7 @@
               "name": "A. Sojka",
               "number": 24,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -71729,7 +71722,7 @@
               "name": "P. Schick",
               "number": 10,
               "pos": "F",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -71738,7 +71731,7 @@
               "name": "A. Hlozek",
               "number": 9,
               "pos": "F",
-              "grid": "4:1"
+              "grid": null
             }
           }
         ],
@@ -71869,7 +71862,12 @@
               "grid": null
             }
           }
-        ]
+        ],
+        "coach": {
+          "id": null,
+          "name": null
+        },
+        "formation": null
       },
       "away": {
         "team": {
@@ -95899,8 +95897,8 @@
       {
         "time": "15",
         "team": "Egypt",
-        "player": "Yasser Ibrahim",
-        "assist": "Marwan Attia",
+        "player": "Y. Ibrahim",
+        "assist": "M. Attia",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -95917,8 +95915,8 @@
       {
         "time": "46",
         "team": "Egypt",
-        "player": "Emam Ashour",
-        "assist": "Hamdy Fathy",
+        "player": "E. Ashour",
+        "assist": "H. Fathy",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -95935,8 +95933,8 @@
       {
         "time": "66",
         "team": "Argentina",
-        "player": "Rodrigo De Paul",
-        "assist": "Lautaro Martínez",
+        "player": "N. Tagliafico",
+        "assist": "N. Gonzalez",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -95944,8 +95942,8 @@
       {
         "time": "66",
         "team": "Argentina",
-        "player": "Nicolás Tagliafico",
-        "assist": "Nicolás González",
+        "player": "R. de Paul",
+        "assist": "L. Martinez",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -95953,8 +95951,8 @@
       {
         "time": "67",
         "team": "Egypt",
-        "player": "Mostafa Ziko",
-        "assist": "Haissem Hassan",
+        "player": "M. Ziko",
+        "assist": "H. Hassan",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -95962,8 +95960,8 @@
       {
         "time": "73",
         "team": "Argentina",
-        "player": "Nahuel Molina",
-        "assist": "Gonzalo Montiel",
+        "player": "N. Molina",
+        "assist": "G. Montiel",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -95971,8 +95969,8 @@
       {
         "time": "73",
         "team": "Egypt",
-        "player": "Haissem Hassan",
-        "assist": "Mahmoud Trézéguet",
+        "player": "H. Hassan",
+        "assist": "Trezeguet",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -95980,8 +95978,8 @@
       {
         "time": "79",
         "team": "Argentina",
-        "player": "Cristian Romero",
-        "assist": "Lionel Messi",
+        "player": "C. Romero",
+        "assist": "L. Messi",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -95989,8 +95987,8 @@
       {
         "time": "80",
         "team": "Egypt",
-        "player": "Mostafa Ziko",
-        "assist": "Omar Marmoush",
+        "player": "M. Ziko",
+        "assist": "O. Marmoush",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -95998,17 +95996,8 @@
       {
         "time": "83",
         "team": "Argentina",
-        "player": "Lionel Messi",
-        "assist": "Gonzalo Montiel",
-        "type": "Goal",
-        "detail": "Normal Goal",
-        "comments": ""
-      },
-      {
-        "time": "90+2",
-        "team": "Argentina",
-        "player": "Enzo Fernández",
-        "assist": "Lautaro Martínez",
+        "player": "L. Messi",
+        "assist": "G. Montiel",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -96041,30 +96030,39 @@
         "comments": "Argument"
       },
       {
-        "time": "90",
+        "time": "90+5",
         "team": "Argentina",
-        "player": "Cristian Romero",
-        "assist": "Nicolás Otamendi",
+        "player": "C. Romero",
+        "assist": "N. Otamendi",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
       },
       {
-        "time": "90",
+        "time": "90+5",
         "team": "Argentina",
-        "player": "Julián Alvarez",
-        "assist": "Facundo Medina",
+        "player": "J. Alvarez",
+        "assist": "F. Medina",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
       },
       {
-        "time": "90",
+        "time": "90+6",
         "team": "Egypt",
-        "player": "Mohanad Lasheen",
+        "player": "M. Lasheen",
         "assist": "Zizo",
         "type": "subst",
         "detail": "Substitution 4",
+        "comments": ""
+      },
+      {
+        "time": "90",
+        "team": "Argentina",
+        "player": "E. Fernandez",
+        "assist": "L. Martinez",
+        "type": "Goal",
+        "detail": "Normal Goal",
         "comments": ""
       }
     ],
@@ -98048,16 +98046,7 @@
     },
     "events": [
       {
-        "time": "40",
-        "team": "Colombia",
-        "player": "J. Arias",
-        "assist": null,
-        "type": "Var",
-        "detail": "Corner cancelled",
-        "comments": ""
-      },
-      {
-        "time": "45",
+        "time": "46",
         "team": "Switzerland",
         "player": "A. Jashari",
         "assist": "D. Sow",
@@ -98068,7 +98057,7 @@
       {
         "time": "51",
         "team": "Switzerland",
-        "player": "G. Xhaka",
+        "player": "Granit Xhaka",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -98077,7 +98066,7 @@
       {
         "time": "59",
         "team": "Switzerland",
-        "player": "D. Zakaria",
+        "player": "Denis Zakaria",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -98086,7 +98075,7 @@
       {
         "time": "60",
         "team": "Colombia",
-        "player": "L. Suárez",
+        "player": "Luis Javier Suárez",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -98095,7 +98084,7 @@
       {
         "time": "66",
         "team": "Colombia",
-        "player": "J. Rodríguez",
+        "player": "J. Rodriguez",
         "assist": "J. Quintero",
         "type": "subst",
         "detail": "Substitution 1",
@@ -98113,7 +98102,7 @@
       {
         "time": "71",
         "team": "Switzerland",
-        "player": "R. Rodríguez",
+        "player": "R. Rodriguez",
         "assist": "M. Muheim",
         "type": "subst",
         "detail": "Substitution 2",
@@ -98122,8 +98111,8 @@
       {
         "time": "82",
         "team": "Colombia",
-        "player": "J. Lerma",
-        "assist": "R. Rios",
+        "player": "L. Suarez",
+        "assist": "C. Hernandez",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -98131,8 +98120,8 @@
       {
         "time": "82",
         "team": "Colombia",
-        "player": "L. Suárez",
-        "assist": "C. Hernández",
+        "player": "J. Lerma",
+        "assist": "R. Rios",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -98167,20 +98156,11 @@
       {
         "time": "95",
         "team": "Colombia",
-        "player": "D. Sánchez",
+        "player": "Davinson Sánchez",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
         "comments": "Foul"
-      },
-      {
-        "time": "95",
-        "team": "Colombia",
-        "player": "Luis Amaranto Perea",
-        "assist": null,
-        "type": "Card",
-        "detail": "Yellow Card",
-        "comments": ""
       },
       {
         "time": "103",
@@ -98194,7 +98174,7 @@
       {
         "time": "105",
         "team": "Switzerland",
-        "player": "M. Muheim",
+        "player": "Miro Muheim",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -98203,101 +98183,11 @@
       {
         "time": "119",
         "team": "Colombia",
-        "player": "J. Lucumí",
+        "player": "J. Lucumi",
         "assist": "Y. Mina",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
-      },
-      {
-        "time": "122",
-        "team": "Colombia",
-        "player": "J. Quintero",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "123",
-        "team": "Switzerland",
-        "player": "G. Xhaka",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "124",
-        "team": "Colombia",
-        "player": "D. Sánchez",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Missed Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "125",
-        "team": "Switzerland",
-        "player": "Z. Amdouni",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "126",
-        "team": "Colombia",
-        "player": "J. Campaz",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "127",
-        "team": "Switzerland",
-        "player": "M. Akanji",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Missed Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "128",
-        "team": "Colombia",
-        "player": "C. Hernández",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Missed Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "129",
-        "team": "Switzerland",
-        "player": "C. Itten",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "130",
-        "team": "Colombia",
-        "player": "L. Díaz",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "131",
-        "team": "Switzerland",
-        "player": "R. Vargas",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
       }
     ],
     "players": [
