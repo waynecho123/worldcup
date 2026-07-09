@@ -5510,12 +5510,6 @@
             }
           }
         },
-        "coach": {
-          "id": 10461,
-          "name": "Myung-Bo Hong",
-          "photo": "https://media.api-sports.io/football/coachs/10461.png"
-        },
-        "formation": "3-4-2-1",
         "startXI": [
           {
             "player": {
@@ -5523,7 +5517,7 @@
               "name": "Kim Seung-Gyu",
               "number": 1,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -5532,7 +5526,7 @@
               "name": "Lee Han-Beom",
               "number": 2,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -5541,7 +5535,7 @@
               "name": "Kim Min-Jae",
               "number": 4,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -5550,7 +5544,7 @@
               "name": "Lee Gi-Hyuk",
               "number": 3,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -5559,7 +5553,7 @@
               "name": "Kim Moon-Hwan",
               "number": 15,
               "pos": "M",
-              "grid": "3:4"
+              "grid": null
             }
           },
           {
@@ -5568,7 +5562,7 @@
               "name": "Hwang In-Beom",
               "number": 6,
               "pos": "M",
-              "grid": "3:3"
+              "grid": null
             }
           },
           {
@@ -5577,7 +5571,7 @@
               "name": "Paik Seung-Ho",
               "number": 8,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -5586,7 +5580,7 @@
               "name": "Seol Young-Woo",
               "number": 22,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -5595,7 +5589,7 @@
               "name": "Lee Kang-In",
               "number": 19,
               "pos": "F",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -5604,7 +5598,7 @@
               "name": "Lee Jae-Sung",
               "number": 10,
               "pos": "F",
-              "grid": "4:1"
+              "grid": null
             }
           },
           {
@@ -5613,7 +5607,7 @@
               "name": "Son Heung-Min",
               "number": 7,
               "pos": "F",
-              "grid": "5:1"
+              "grid": null
             }
           }
         ],
@@ -5753,7 +5747,12 @@
               "grid": null
             }
           }
-        ]
+        ],
+        "coach": {
+          "id": null,
+          "name": null
+        },
+        "formation": null
       }
     },
     "events": [
@@ -13756,7 +13755,7 @@
           {
             "player": {
               "id": 269174,
-              "name": "O. Shobeir",
+              "name": "M. Shobeir",
               "number": 23,
               "pos": "G",
               "grid": "1:1"
@@ -22873,12 +22872,6 @@
             }
           }
         },
-        "coach": {
-          "id": 856,
-          "name": "Sebastian Beccacece",
-          "photo": "https://media.api-sports.io/football/coachs/856.png"
-        },
-        "formation": "3-1-4-2",
         "startXI": [
           {
             "player": {
@@ -22886,7 +22879,7 @@
               "name": "H. Galindez",
               "number": 1,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -22895,7 +22888,7 @@
               "name": "A. Franco",
               "number": 21,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -22904,7 +22897,7 @@
               "name": "W. Pacho",
               "number": 6,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -22913,7 +22906,7 @@
               "name": "P. Hincapie",
               "number": 3,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -22922,7 +22915,7 @@
               "name": "J. Alcivar",
               "number": 5,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -22931,7 +22924,7 @@
               "name": "J. Yeboah",
               "number": 9,
               "pos": "M",
-              "grid": "4:4"
+              "grid": null
             }
           },
           {
@@ -22940,7 +22933,7 @@
               "name": "P. Vite",
               "number": 15,
               "pos": "M",
-              "grid": "4:3"
+              "grid": null
             }
           },
           {
@@ -22949,7 +22942,7 @@
               "name": "M. Caicedo",
               "number": 23,
               "pos": "M",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -22958,7 +22951,7 @@
               "name": "P. Estupinan",
               "number": 7,
               "pos": "M",
-              "grid": "4:1"
+              "grid": null
             }
           },
           {
@@ -22967,7 +22960,7 @@
               "name": "G. Plata",
               "number": 19,
               "pos": "F",
-              "grid": "5:2"
+              "grid": null
             }
           },
           {
@@ -22976,7 +22969,7 @@
               "name": "E. Valencia",
               "number": 13,
               "pos": "F",
-              "grid": "5:1"
+              "grid": null
             }
           }
         ],
@@ -23116,7 +23109,12 @@
               "grid": null
             }
           }
-        ]
+        ],
+        "coach": {
+          "id": null,
+          "name": null
+        },
+        "formation": null
       },
       "away": {
         "team": {
@@ -31410,12 +31408,6 @@
             }
           }
         },
-        "coach": {
-          "id": 10461,
-          "name": "Myung-Bo Hong",
-          "photo": "https://media.api-sports.io/football/coachs/10461.png"
-        },
-        "formation": "3-4-2-1",
         "startXI": [
           {
             "player": {
@@ -31423,7 +31415,7 @@
               "name": "Kim Seung-Gyu",
               "number": 1,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -31432,7 +31424,7 @@
               "name": "Lee Han-Beom",
               "number": 2,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -31441,7 +31433,7 @@
               "name": "Kim Min-Jae",
               "number": 4,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -31450,7 +31442,7 @@
               "name": "Lee Gi-Hyuk",
               "number": 3,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -31459,7 +31451,7 @@
               "name": "Seol Young-Woo",
               "number": 22,
               "pos": "M",
-              "grid": "3:4"
+              "grid": null
             }
           },
           {
@@ -31468,7 +31460,7 @@
               "name": "Paik Seung-Ho",
               "number": 8,
               "pos": "M",
-              "grid": "3:3"
+              "grid": null
             }
           },
           {
@@ -31477,7 +31469,7 @@
               "name": "Hwang In-Beom",
               "number": 6,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -31486,7 +31478,7 @@
               "name": "Lee Tae-Seok",
               "number": 13,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -31495,7 +31487,7 @@
               "name": "Lee Kang-In",
               "number": 19,
               "pos": "F",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -31504,7 +31496,7 @@
               "name": "Hwang Hee-Chan",
               "number": 11,
               "pos": "F",
-              "grid": "4:1"
+              "grid": null
             }
           },
           {
@@ -31513,7 +31505,7 @@
               "name": "Oh Hyeon-Gyu",
               "number": 18,
               "pos": "F",
-              "grid": "5:1"
+              "grid": null
             }
           }
         ],
@@ -31653,7 +31645,12 @@
               "grid": null
             }
           }
-        ]
+        ],
+        "coach": {
+          "id": null,
+          "name": null
+        },
+        "formation": null
       }
     },
     "events": [
@@ -35227,12 +35224,6 @@
             }
           }
         },
-        "coach": {
-          "id": 28720,
-          "name": "Miroslav Koubek",
-          "photo": "https://media.api-sports.io/football/coachs/28720.png"
-        },
-        "formation": "3-4-2-1",
         "startXI": [
           {
             "player": {
@@ -35240,7 +35231,7 @@
               "name": "M. Kovar",
               "number": 1,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -35249,7 +35240,7 @@
               "name": "T. Holes",
               "number": 3,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -35258,7 +35249,7 @@
               "name": "R. Hranac",
               "number": 4,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -35267,7 +35258,7 @@
               "name": "L. Krejci",
               "number": 7,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -35276,7 +35267,7 @@
               "name": "V. Coufal",
               "number": 5,
               "pos": "M",
-              "grid": "3:4"
+              "grid": null
             }
           },
           {
@@ -35285,7 +35276,7 @@
               "name": "L. Cerv",
               "number": 12,
               "pos": "M",
-              "grid": "3:3"
+              "grid": null
             }
           },
           {
@@ -35294,7 +35285,7 @@
               "name": "M. Sadilek",
               "number": 18,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -35303,7 +35294,7 @@
               "name": "D. Doudera",
               "number": 21,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -35312,7 +35303,7 @@
               "name": "P. Sulc",
               "number": 15,
               "pos": "F",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -35321,7 +35312,7 @@
               "name": "D. Visinsky",
               "number": 26,
               "pos": "F",
-              "grid": "4:1"
+              "grid": null
             }
           },
           {
@@ -35330,7 +35321,7 @@
               "name": "A. Hlozek",
               "number": 9,
               "pos": "F",
-              "grid": "5:1"
+              "grid": null
             }
           }
         ],
@@ -35461,7 +35452,12 @@
               "grid": null
             }
           }
-        ]
+        ],
+        "coach": {
+          "id": null,
+          "name": null
+        },
+        "formation": null
       },
       "away": {
         "team": {
@@ -57341,12 +57337,6 @@
             }
           }
         },
-        "coach": {
-          "id": 76,
-          "name": "Steve Clarke",
-          "photo": "https://media.api-sports.io/football/coachs/76.png"
-        },
-        "formation": "4-4-2",
         "startXI": [
           {
             "player": {
@@ -57354,7 +57344,7 @@
               "name": "A. Gunn",
               "number": 1,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -57363,7 +57353,7 @@
               "name": "A. Hickey",
               "number": 2,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -57372,7 +57362,7 @@
               "name": "G. Hanley",
               "number": 5,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -57381,7 +57371,7 @@
               "name": "J. Hendry",
               "number": 13,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -57390,7 +57380,7 @@
               "name": "A. Robertson",
               "number": 3,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -57399,7 +57389,7 @@
               "name": "B. Gannon-Doak",
               "number": 17,
               "pos": "M",
-              "grid": "3:4"
+              "grid": null
             }
           },
           {
@@ -57408,7 +57398,7 @@
               "name": "S. McTominay",
               "number": 4,
               "pos": "M",
-              "grid": "3:3"
+              "grid": null
             }
           },
           {
@@ -57417,7 +57407,7 @@
               "name": "L. Ferguson",
               "number": 19,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -57426,7 +57416,7 @@
               "name": "J. McGinn",
               "number": 7,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -57435,7 +57425,7 @@
               "name": "L. Shankland",
               "number": 20,
               "pos": "F",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -57444,7 +57434,7 @@
               "name": "C. Adams",
               "number": 10,
               "pos": "F",
-              "grid": "4:1"
+              "grid": null
             }
           }
         ],
@@ -57584,7 +57574,12 @@
               "grid": null
             }
           }
-        ]
+        ],
+        "coach": {
+          "id": null,
+          "name": null
+        },
+        "formation": null
       }
     },
     "events": [
@@ -98042,7 +98037,16 @@
     },
     "events": [
       {
-        "time": "46",
+        "time": "40",
+        "team": "Colombia",
+        "player": "J. Arias",
+        "assist": null,
+        "type": "Var",
+        "detail": "Corner cancelled",
+        "comments": ""
+      },
+      {
+        "time": "45",
         "team": "Switzerland",
         "player": "A. Jashari",
         "assist": "D. Sow",
@@ -98053,7 +98057,7 @@
       {
         "time": "51",
         "team": "Switzerland",
-        "player": "Granit Xhaka",
+        "player": "G. Xhaka",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -98062,7 +98066,7 @@
       {
         "time": "59",
         "team": "Switzerland",
-        "player": "Denis Zakaria",
+        "player": "D. Zakaria",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -98071,7 +98075,7 @@
       {
         "time": "60",
         "team": "Colombia",
-        "player": "Luis Javier Suárez",
+        "player": "L. Suárez",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -98080,7 +98084,7 @@
       {
         "time": "66",
         "team": "Colombia",
-        "player": "J. Rodriguez",
+        "player": "J. Rodríguez",
         "assist": "J. Quintero",
         "type": "subst",
         "detail": "Substitution 1",
@@ -98098,7 +98102,7 @@
       {
         "time": "71",
         "team": "Switzerland",
-        "player": "R. Rodriguez",
+        "player": "R. Rodríguez",
         "assist": "M. Muheim",
         "type": "subst",
         "detail": "Substitution 2",
@@ -98107,8 +98111,8 @@
       {
         "time": "82",
         "team": "Colombia",
-        "player": "L. Suarez",
-        "assist": "C. Hernandez",
+        "player": "J. Lerma",
+        "assist": "R. Rios",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -98116,8 +98120,8 @@
       {
         "time": "82",
         "team": "Colombia",
-        "player": "J. Lerma",
-        "assist": "R. Rios",
+        "player": "L. Suárez",
+        "assist": "C. Hernández",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -98152,11 +98156,20 @@
       {
         "time": "95",
         "team": "Colombia",
-        "player": "Davinson Sánchez",
+        "player": "D. Sánchez",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
         "comments": "Foul"
+      },
+      {
+        "time": "95",
+        "team": "Colombia",
+        "player": "Luis Amaranto Perea",
+        "assist": null,
+        "type": "Card",
+        "detail": "Yellow Card",
+        "comments": ""
       },
       {
         "time": "103",
@@ -98170,7 +98183,7 @@
       {
         "time": "105",
         "team": "Switzerland",
-        "player": "Miro Muheim",
+        "player": "M. Muheim",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -98179,11 +98192,101 @@
       {
         "time": "119",
         "team": "Colombia",
-        "player": "J. Lucumi",
+        "player": "J. Lucumí",
         "assist": "Y. Mina",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
+      },
+      {
+        "time": "122",
+        "team": "Colombia",
+        "player": "J. Quintero",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "123",
+        "team": "Switzerland",
+        "player": "G. Xhaka",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "124",
+        "team": "Colombia",
+        "player": "D. Sánchez",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Missed Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "125",
+        "team": "Switzerland",
+        "player": "Z. Amdouni",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "126",
+        "team": "Colombia",
+        "player": "J. Campaz",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "127",
+        "team": "Switzerland",
+        "player": "M. Akanji",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Missed Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "128",
+        "team": "Colombia",
+        "player": "C. Hernández",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Missed Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "129",
+        "team": "Switzerland",
+        "player": "C. Itten",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "130",
+        "team": "Colombia",
+        "player": "L. Díaz",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
+      },
+      {
+        "time": "131",
+        "team": "Switzerland",
+        "player": "R. Vargas",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Penalty",
+        "comments": "Penalty Shootout"
       }
     ],
     "players": [
