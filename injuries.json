@@ -313,6 +313,12 @@
       "type": "Missing Fixture",
       "reason": "Sprained Ankle",
       "fixture": "2026-07-01T16:00:00+00:00"
+    },
+    {
+      "player": "J. Henderson",
+      "type": "Missing Fixture",
+      "reason": "Wirst Injury",
+      "fixture": "2026-07-11T21:00:00+00:00"
     }
   ],
   "SUI": [
@@ -335,6 +341,12 @@
       "fixture": "2026-07-07T20:00:00+00:00"
     },
     {
+      "player": "L. Jaquez",
+      "type": "Missing Fixture",
+      "reason": "Muscle Bruise",
+      "fixture": "2026-07-12T01:00:00+00:00"
+    },
+    {
       "player": "J. Manzambi",
       "type": "Missing Fixture",
       "reason": "Jumpers Knee",
@@ -345,6 +357,12 @@
       "type": "Missing Fixture",
       "reason": "Muscle Bruise",
       "fixture": "2026-07-07T20:00:00+00:00"
+    },
+    {
+      "player": "M. Aebischer",
+      "type": "Missing Fixture",
+      "reason": "Muscle Bruise",
+      "fixture": "2026-07-12T01:00:00+00:00"
     }
   ],
   "EGY": [
@@ -501,6 +519,22 @@
       "type": "Missing Fixture",
       "reason": "Wound",
       "fixture": "2026-06-25T23:00:00+00:00"
+    }
+  ],
+  "MAR": [
+    {
+      "player": "I. Saibari",
+      "type": "Missing Fixture",
+      "reason": "Hamstring Injury",
+      "fixture": "2026-07-09T20:00:00+00:00"
+    }
+  ],
+  "NOR": [
+    {
+      "player": "M. Pedersen",
+      "type": "Missing Fixture",
+      "reason": "Cold",
+      "fixture": "2026-07-11T21:00:00+00:00"
     }
   ],
   "QAT": [
