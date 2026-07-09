@@ -42426,7 +42426,7 @@
           {
             "player": {
               "id": 269174,
-              "name": "O. Shobeir",
+              "name": "M. Shobeir",
               "number": 23,
               "pos": "G",
               "grid": "1:1"
@@ -51829,12 +51829,6 @@
             }
           }
         },
-        "coach": {
-          "id": 10461,
-          "name": "Myung-Bo Hong",
-          "photo": "https://media.api-sports.io/football/coachs/10461.png"
-        },
-        "formation": "3-4-2-1",
         "startXI": [
           {
             "player": {
@@ -51842,7 +51836,7 @@
               "name": "Kim Seung-Gyu",
               "number": 1,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -51851,7 +51845,7 @@
               "name": "Lee Han-Beom",
               "number": 2,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -51860,7 +51854,7 @@
               "name": "Kim Min-Jae",
               "number": 4,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -51869,7 +51863,7 @@
               "name": "Lee Gi-Hyuk",
               "number": 3,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -51878,7 +51872,7 @@
               "name": "Seol Young-Woo",
               "number": 22,
               "pos": "M",
-              "grid": "3:4"
+              "grid": null
             }
           },
           {
@@ -51887,7 +51881,7 @@
               "name": "Hwang In-Beom",
               "number": 6,
               "pos": "M",
-              "grid": "3:3"
+              "grid": null
             }
           },
           {
@@ -51896,7 +51890,7 @@
               "name": "Paik Seung-Ho",
               "number": 8,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -51905,7 +51899,7 @@
               "name": "Lee Tae-Seok",
               "number": 13,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -51914,7 +51908,7 @@
               "name": "Lee Kang-In",
               "number": 19,
               "pos": "F",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -51923,7 +51917,7 @@
               "name": "Lee Jae-Sung",
               "number": 10,
               "pos": "F",
-              "grid": "4:1"
+              "grid": null
             }
           },
           {
@@ -51932,7 +51926,7 @@
               "name": "Son Heung-Min",
               "number": 7,
               "pos": "F",
-              "grid": "5:1"
+              "grid": null
             }
           }
         ],
@@ -52072,7 +52066,12 @@
               "grid": null
             }
           }
-        ]
+        ],
+        "coach": {
+          "id": null,
+          "name": null
+        },
+        "formation": null
       },
       "away": {
         "team": {
@@ -52092,12 +52091,6 @@
             }
           }
         },
-        "coach": {
-          "id": 28720,
-          "name": "Miroslav Koubek",
-          "photo": "https://media.api-sports.io/football/coachs/28720.png"
-        },
-        "formation": "3-4-2-1",
         "startXI": [
           {
             "player": {
@@ -52105,7 +52098,7 @@
               "name": "M. Kovar",
               "number": 1,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -52114,7 +52107,7 @@
               "name": "S. Chaloupek",
               "number": 6,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -52123,7 +52116,7 @@
               "name": "R. Hranac",
               "number": 4,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -52132,7 +52125,7 @@
               "name": "L. Krejci",
               "number": 7,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -52141,7 +52134,7 @@
               "name": "V. Coufal",
               "number": 5,
               "pos": "M",
-              "grid": "3:4"
+              "grid": null
             }
           },
           {
@@ -52150,7 +52143,7 @@
               "name": "T. Soucek",
               "number": 22,
               "pos": "M",
-              "grid": "3:3"
+              "grid": null
             }
           },
           {
@@ -52159,7 +52152,7 @@
               "name": "A. Sojka",
               "number": 24,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -52168,7 +52161,7 @@
               "name": "J. Zeleny",
               "number": 20,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -52177,7 +52170,7 @@
               "name": "L. Provod",
               "number": 17,
               "pos": "F",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -52186,7 +52179,7 @@
               "name": "P. Sulc",
               "number": 15,
               "pos": "F",
-              "grid": "4:1"
+              "grid": null
             }
           },
           {
@@ -52195,7 +52188,7 @@
               "name": "P. Schick",
               "number": 10,
               "pos": "F",
-              "grid": "5:1"
+              "grid": null
             }
           }
         ],
@@ -52335,7 +52328,12 @@
               "grid": null
             }
           }
-        ]
+        ],
+        "coach": {
+          "id": null,
+          "name": null
+        },
+        "formation": null
       }
     },
     "events": [
@@ -65571,12 +65569,6 @@
             }
           }
         },
-        "coach": {
-          "id": 344,
-          "name": "Herve Renard",
-          "photo": "https://media.api-sports.io/football/coachs/344.png"
-        },
-        "formation": "5-3-2",
         "startXI": [
           {
             "player": {
@@ -65584,7 +65576,7 @@
               "name": "A. Chamakh",
               "number": 1,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -65593,7 +65585,7 @@
               "name": "Y. Valery",
               "number": 20,
               "pos": "D",
-              "grid": "2:5"
+              "grid": null
             }
           },
           {
@@ -65602,7 +65594,7 @@
               "name": "O. Rekik",
               "number": 4,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -65611,7 +65603,7 @@
               "name": "M. Talbi",
               "number": 3,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -65620,7 +65612,7 @@
               "name": "M. Ben Hamida",
               "number": 21,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -65629,7 +65621,7 @@
               "name": "A. Abdi",
               "number": 2,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -65638,7 +65630,7 @@
               "name": "R. Khedira",
               "number": 13,
               "pos": "M",
-              "grid": "3:3"
+              "grid": null
             }
           },
           {
@@ -65647,7 +65639,7 @@
               "name": "E. Skhiri",
               "number": 17,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -65656,7 +65648,7 @@
               "name": "H. Mejbri",
               "number": 10,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -65665,7 +65657,7 @@
               "name": "E. Saad",
               "number": 8,
               "pos": "F",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -65674,7 +65666,7 @@
               "name": "A. Slimane",
               "number": 25,
               "pos": "F",
-              "grid": "4:1"
+              "grid": null
             }
           }
         ],
@@ -65814,7 +65806,12 @@
               "grid": null
             }
           }
-        ]
+        ],
+        "coach": {
+          "id": null,
+          "name": null
+        },
+        "formation": null
       }
     },
     "events": [
