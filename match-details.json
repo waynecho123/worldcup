@@ -96439,7 +96439,7 @@
             }
           }
         },
-        "formation": "4-2-3-1",
+        "formation": null,
         "startXI": [
           {
             "player": {
@@ -96447,7 +96447,7 @@
               "name": "Mike Maignan",
               "number": 16,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -96456,7 +96456,7 @@
               "name": "Jules Koundé",
               "number": 5,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -96465,7 +96465,7 @@
               "name": "Dayot Upamecano",
               "number": 4,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -96474,7 +96474,7 @@
               "name": "William Saliba",
               "number": 17,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -96483,7 +96483,7 @@
               "name": "Lucas Digne",
               "number": 3,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -96492,7 +96492,7 @@
               "name": "Manu Koné",
               "number": 6,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -96501,7 +96501,7 @@
               "name": "Adrien Rabiot",
               "number": 14,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -96510,7 +96510,7 @@
               "name": "Ousmane Dembélé",
               "number": 7,
               "pos": "M",
-              "grid": "4:3"
+              "grid": null
             }
           },
           {
@@ -96519,7 +96519,7 @@
               "name": "Michael Olise",
               "number": 11,
               "pos": "M",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -96528,7 +96528,7 @@
               "name": "Désiré Doué",
               "number": 20,
               "pos": "M",
-              "grid": "4:1"
+              "grid": null
             }
           },
           {
@@ -96537,7 +96537,7 @@
               "name": "Kylian Mbappé",
               "number": 10,
               "pos": "F",
-              "grid": "5:1"
+              "grid": null
             }
           }
         ],
@@ -96702,7 +96702,7 @@
             }
           }
         },
-        "formation": "4-2-3-1",
+        "formation": null,
         "startXI": [
           {
             "player": {
@@ -96710,7 +96710,7 @@
               "name": "Yassine Bounou",
               "number": 1,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -96719,7 +96719,7 @@
               "name": "Achraf Hakimi",
               "number": 2,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -96728,7 +96728,7 @@
               "name": "Issa Diop",
               "number": 14,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -96737,7 +96737,7 @@
               "name": "Noussair Mazraoui",
               "number": 3,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -96746,7 +96746,7 @@
               "name": "Anass Salah-Eddine",
               "number": 26,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -96755,7 +96755,7 @@
               "name": "Ayyoub Bouaddi",
               "number": 6,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -96764,7 +96764,7 @@
               "name": "Neil El Aynaoui",
               "number": 24,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -96773,7 +96773,7 @@
               "name": "Brahim Díaz",
               "number": 10,
               "pos": "M",
-              "grid": "4:3"
+              "grid": null
             }
           },
           {
@@ -96782,7 +96782,7 @@
               "name": "Azzedine Ounahi",
               "number": 8,
               "pos": "M",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -96791,7 +96791,7 @@
               "name": "Chemsdine Talbi",
               "number": 7,
               "pos": "M",
-              "grid": "4:1"
+              "grid": null
             }
           },
           {
@@ -96800,7 +96800,7 @@
               "name": "Bilal El Khannouss",
               "number": 23,
               "pos": "F",
-              "grid": "5:1"
+              "grid": null
             }
           }
         ],
@@ -96952,8 +96952,8 @@
       {
         "time": "28",
         "team": "France",
-        "player": "K. Mbappe",
-        "assist": "K. Mbappe",
+        "player": "Kylian Mbappé",
+        "assist": null,
         "type": "Goal",
         "detail": "Missed Penalty",
         "comments": ""
@@ -96961,8 +96961,8 @@
       {
         "time": "60",
         "team": "France",
-        "player": "K. Mbappe",
-        "assist": "D. Doue",
+        "player": "Kylian Mbappé",
+        "assist": "Désiré Doué",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -96970,8 +96970,8 @@
       {
         "time": "62",
         "team": "Morocco",
-        "player": "A. Bouaddi",
-        "assist": "S. Amrabat",
+        "player": "Bilal El Khannouss",
+        "assist": "Soufiane Rahimi",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -96979,8 +96979,8 @@
       {
         "time": "62",
         "team": "Morocco",
-        "player": "B. El Khannouss",
-        "assist": "S. Rahimi",
+        "player": "Ayyoub Bouaddi",
+        "assist": "Sofyan Amrabat",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -96988,26 +96988,26 @@
       {
         "time": "63",
         "team": "Morocco",
-        "player": "I. Diop",
+        "player": "Issa Diop",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": ""
+        "comments": "Foul"
       },
       {
         "time": "66",
         "team": "France",
-        "player": "O. Dembele",
-        "assist": "K. Mbappe",
+        "player": "Ousmane Dembélé",
+        "assist": "Kylian Mbappé",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
       },
       {
-        "time": "71",
+        "time": "70",
         "team": "France",
-        "player": "M. Kone",
-        "assist": "W. Zaire-Emery",
+        "player": "Manu Koné",
+        "assist": "Warren Zaïre-Emery",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -97015,8 +97015,8 @@
       {
         "time": "74",
         "team": "Morocco",
-        "player": "B. Diaz",
-        "assist": "G. Yassine",
+        "player": "Anass Salah-Eddine",
+        "assist": "Zakaria El Ouahdi",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -97024,8 +97024,8 @@
       {
         "time": "74",
         "team": "Morocco",
-        "player": "A. Salah-Eddine",
-        "assist": "Z. El Ouahdi",
+        "player": "Brahim Díaz",
+        "assist": "Gessime Yassine",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -97033,8 +97033,8 @@
       {
         "time": "77",
         "team": "France",
-        "player": "K. Mbappe",
-        "assist": "J. Mateta",
+        "player": "Désiré Doué",
+        "assist": "Bradley Barcola",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -97042,8 +97042,8 @@
       {
         "time": "77",
         "team": "France",
-        "player": "D. Doue",
-        "assist": "B. Barcola",
+        "player": "Kylian Mbappé",
+        "assist": "Jean-Philippe Mateta",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -97051,8 +97051,8 @@
       {
         "time": "85",
         "team": "Morocco",
-        "player": "C. Talbi",
-        "assist": "A. Sbai",
+        "player": "Chemsdine Talbi",
+        "assist": "Amine Sbai",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -97060,8 +97060,8 @@
       {
         "time": "87",
         "team": "France",
-        "player": "J. Kounde",
-        "assist": "M. Gusto",
+        "player": "Jules Koundé",
+        "assist": "Malo Gusto",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -99052,16 +99052,7 @@
     },
     "events": [
       {
-        "time": "40",
-        "team": "Colombia",
-        "player": "J. Arias",
-        "assist": null,
-        "type": "Var",
-        "detail": "Corner cancelled",
-        "comments": ""
-      },
-      {
-        "time": "45",
+        "time": "46",
         "team": "Switzerland",
         "player": "A. Jashari",
         "assist": "D. Sow",
@@ -99072,7 +99063,7 @@
       {
         "time": "51",
         "team": "Switzerland",
-        "player": "G. Xhaka",
+        "player": "Granit Xhaka",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -99081,7 +99072,7 @@
       {
         "time": "59",
         "team": "Switzerland",
-        "player": "D. Zakaria",
+        "player": "Denis Zakaria",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -99090,7 +99081,7 @@
       {
         "time": "60",
         "team": "Colombia",
-        "player": "L. Suárez",
+        "player": "Luis Javier Suárez",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -99099,7 +99090,7 @@
       {
         "time": "66",
         "team": "Colombia",
-        "player": "J. Rodríguez",
+        "player": "J. Rodriguez",
         "assist": "J. Quintero",
         "type": "subst",
         "detail": "Substitution 1",
@@ -99117,7 +99108,7 @@
       {
         "time": "71",
         "team": "Switzerland",
-        "player": "R. Rodríguez",
+        "player": "R. Rodriguez",
         "assist": "M. Muheim",
         "type": "subst",
         "detail": "Substitution 2",
@@ -99126,8 +99117,8 @@
       {
         "time": "82",
         "team": "Colombia",
-        "player": "J. Lerma",
-        "assist": "R. Rios",
+        "player": "L. Suarez",
+        "assist": "C. Hernandez",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -99135,8 +99126,8 @@
       {
         "time": "82",
         "team": "Colombia",
-        "player": "L. Suárez",
-        "assist": "C. Hernández",
+        "player": "J. Lerma",
+        "assist": "R. Rios",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -99171,20 +99162,11 @@
       {
         "time": "95",
         "team": "Colombia",
-        "player": "D. Sánchez",
+        "player": "Davinson Sánchez",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
         "comments": "Foul"
-      },
-      {
-        "time": "95",
-        "team": "Colombia",
-        "player": "Luis Amaranto Perea",
-        "assist": null,
-        "type": "Card",
-        "detail": "Yellow Card",
-        "comments": ""
       },
       {
         "time": "103",
@@ -99198,7 +99180,7 @@
       {
         "time": "105",
         "team": "Switzerland",
-        "player": "M. Muheim",
+        "player": "Miro Muheim",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
@@ -99207,101 +99189,11 @@
       {
         "time": "119",
         "team": "Colombia",
-        "player": "J. Lucumí",
+        "player": "J. Lucumi",
         "assist": "Y. Mina",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
-      },
-      {
-        "time": "122",
-        "team": "Colombia",
-        "player": "J. Quintero",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "123",
-        "team": "Switzerland",
-        "player": "G. Xhaka",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "124",
-        "team": "Colombia",
-        "player": "D. Sánchez",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Missed Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "125",
-        "team": "Switzerland",
-        "player": "Z. Amdouni",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "126",
-        "team": "Colombia",
-        "player": "J. Campaz",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "127",
-        "team": "Switzerland",
-        "player": "M. Akanji",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Missed Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "128",
-        "team": "Colombia",
-        "player": "C. Hernández",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Missed Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "129",
-        "team": "Switzerland",
-        "player": "C. Itten",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "130",
-        "team": "Colombia",
-        "player": "L. Díaz",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
-      },
-      {
-        "time": "131",
-        "team": "Switzerland",
-        "player": "R. Vargas",
-        "assist": null,
-        "type": "Goal",
-        "detail": "Penalty",
-        "comments": "Penalty Shootout"
       }
     ],
     "players": [
