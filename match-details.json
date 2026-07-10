@@ -96381,11 +96381,11 @@
     "statistics": {
       "France": {
         "Shots on Goal": 8,
-        "Shots off Goal": 8,
-        "Total Shots": 21,
+        "Shots off Goal": 9,
+        "Total Shots": 22,
         "Blocked Shots": 5,
         "Shots insidebox": 12,
-        "Shots outsidebox": 9,
+        "Shots outsidebox": 10,
         "Fouls": 10,
         "Corner Kicks": 5,
         "Offsides": null,
@@ -96393,11 +96393,11 @@
         "Yellow Cards": 0,
         "Red Cards": null,
         "Goalkeeper Saves": 1,
-        "Total passes": 481,
-        "Passes accurate": 429,
+        "Total passes": 485,
+        "Passes accurate": 432,
         "Passes %": "89%",
-        "expected_goals": "3.10",
-        "goals_prevented": "0.47"
+        "expected_goals": "3.04",
+        "goals_prevented": "0.60"
       },
       "Morocco": {
         "Shots on Goal": 1,
@@ -96406,18 +96406,18 @@
         "Blocked Shots": 1,
         "Shots insidebox": 1,
         "Shots outsidebox": 4,
-        "Fouls": 12,
+        "Fouls": 13,
         "Corner Kicks": 5,
         "Offsides": null,
         "Ball Possession": "52%",
         "Yellow Cards": 1,
         "Red Cards": null,
         "Goalkeeper Saves": 6,
-        "Total passes": 521,
-        "Passes accurate": 449,
+        "Total passes": 524,
+        "Passes accurate": 452,
         "Passes %": "86%",
-        "expected_goals": "0.13",
-        "goals_prevented": "0.47"
+        "expected_goals": "0.14",
+        "goals_prevented": "0.60"
       }
     },
     "lineups": {
@@ -96544,6 +96544,42 @@
         "substitutes": [
           {
             "player": {
+              "id": 336657,
+              "name": "Warren Zaïre-Emery",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 25927,
+              "name": "Jean-Philippe Mateta",
+              "number": 22,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 161904,
+              "name": "Bradley Barcola",
+              "number": 12,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 161907,
+              "name": "Malo Gusto",
+              "number": 2,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 21628,
               "name": "Brice Samba",
               "number": 1,
@@ -96580,15 +96616,6 @@
           },
           {
             "player": {
-              "id": 161907,
-              "name": "Malo Gusto",
-              "number": 2,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 47300,
               "name": "Theo Hernández",
               "number": 19,
@@ -96610,15 +96637,6 @@
               "id": 1271,
               "name": "Aurélien Tchouaméni",
               "number": 8,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 336657,
-              "name": "Warren Zaïre-Emery",
-              "number": 18,
               "pos": "M",
               "grid": null
             }
@@ -96655,24 +96673,6 @@
               "id": 21509,
               "name": "Marcus Thuram",
               "number": 9,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 25927,
-              "name": "Jean-Philippe Mateta",
-              "number": 22,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 161904,
-              "name": "Bradley Barcola",
-              "number": 12,
               "pos": "F",
               "grid": null
             }
@@ -96825,6 +96825,33 @@
           },
           {
             "player": {
+              "id": 283252,
+              "name": "Zakaria El Ouahdi",
+              "number": 13,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 369544,
+              "name": "Gessime Yassine",
+              "number": 16,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 191289,
+              "name": "Amine Sbai",
+              "number": 17,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 2702,
               "name": "Munir El Kajoui",
               "number": 12,
@@ -96846,15 +96873,6 @@
               "id": 50042,
               "name": "Marwane Saadane",
               "number": 5,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 283252,
-              "name": "Zakaria El Ouahdi",
-              "number": 13,
               "pos": "D",
               "grid": null
             }
@@ -96883,24 +96901,6 @@
               "name": "Youssef Belammari",
               "number": 19,
               "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 191289,
-              "name": "Amine Sbai",
-              "number": 17,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 369544,
-              "name": "Gessime Yassine",
-              "number": 16,
-              "pos": "F",
               "grid": null
             }
           },
@@ -97073,13 +97073,13 @@
         "players": [
           {
             "name": "Mike Maignan",
-            "rating": "6.6",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Jules Koundé",
-            "rating": "7",
+            "rating": "7.2",
             "goals": 0,
             "assists": 0
           },
@@ -97091,25 +97091,25 @@
           },
           {
             "name": "William Saliba",
-            "rating": "6.9",
+            "rating": "7.2",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Lucas Digne",
-            "rating": "6.9",
+            "rating": "7",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Manu Koné",
-            "rating": "7.2",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Adrien Rabiot",
-            "rating": "7.2",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
@@ -97121,13 +97121,13 @@
           },
           {
             "name": "Michael Olise",
-            "rating": "7.5",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Désiré Doué",
-            "rating": "7.2",
+            "rating": "7.5",
             "goals": 0,
             "assists": 1
           },
@@ -97139,7 +97139,7 @@
           },
           {
             "name": "Warren Zaïre-Emery",
-            "rating": "6.7",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
@@ -97157,7 +97157,7 @@
           },
           {
             "name": "Malo Gusto",
-            "rating": "6.7",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
@@ -97312,7 +97312,7 @@
           },
           {
             "name": "Zakaria El Ouahdi",
-            "rating": "6.7",
+            "rating": "6.6",
             "goals": 0,
             "assists": 0
           },
@@ -97324,7 +97324,7 @@
           },
           {
             "name": "Amine Sbai",
-            "rating": "6.5",
+            "rating": "6.2",
             "goals": 0,
             "assists": 0
           },

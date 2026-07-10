@@ -8,18 +8,18 @@
       "matches": 5
     },
     {
+      "name": "Kylian Mbappé",
+      "photo": "https://media.api-sports.io/football/players/278.png",
+      "team": "France",
+      "goals": 8,
+      "matches": 6
+    },
+    {
       "name": "E. Haaland",
       "photo": "https://media.api-sports.io/football/players/1100.png",
       "team": "Norway",
       "goals": 7,
       "matches": 4
-    },
-    {
-      "name": "Kylian Mbappé",
-      "photo": "https://media.api-sports.io/football/players/278.png",
-      "team": "France",
-      "goals": 7,
-      "matches": 5
     },
     {
       "name": "H. Kane",
@@ -32,8 +32,8 @@
       "name": "O. Dembélé",
       "photo": "https://media.api-sports.io/football/players/153.png",
       "team": "France",
-      "goals": 4,
-      "matches": 5
+      "goals": 5,
+      "matches": 6
     },
     {
       "name": "Mikel Oyarzabal",
@@ -147,14 +147,14 @@
       "photo": "https://media.api-sports.io/football/players/19617.png",
       "team": "France",
       "assists": 5,
-      "matches": 5
+      "matches": 6
     },
     {
       "name": "Brahim Díaz",
       "photo": "https://media.api-sports.io/football/players/744.png",
       "team": "Morocco",
       "assists": 4,
-      "matches": 5
+      "matches": 6
     },
     {
       "name": "Bruno Guimarães",
@@ -162,6 +162,13 @@
       "team": "Brazil",
       "assists": 4,
       "matches": 5
+    },
+    {
+      "name": "Kylian Mbappé",
+      "photo": "https://media.api-sports.io/football/players/278.png",
+      "team": "France",
+      "assists": 3,
+      "matches": 6
     },
     {
       "name": "A. Isak",
@@ -206,18 +213,11 @@
       "matches": 4
     },
     {
-      "name": "Kylian Mbappé",
-      "photo": "https://media.api-sports.io/football/players/278.png",
-      "team": "France",
-      "assists": 2,
-      "matches": 5
-    },
-    {
       "name": "O. Dembélé",
       "photo": "https://media.api-sports.io/football/players/153.png",
       "team": "France",
       "assists": 2,
-      "matches": 5
+      "matches": 6
     },
     {
       "name": "D. Undav",
@@ -255,6 +255,13 @@
       "matches": 5
     },
     {
+      "name": "A. Hakimi",
+      "photo": "https://media.api-sports.io/football/players/9.png",
+      "team": "Morocco",
+      "assists": 2,
+      "matches": 6
+    },
+    {
       "name": "H. Vanaken",
       "photo": "https://media.api-sports.io/football/players/78.png",
       "team": "Belgium",
@@ -272,13 +279,6 @@
       "name": "Mohamed Salah",
       "photo": "https://media.api-sports.io/football/players/306.png",
       "team": "Egypt",
-      "assists": 2,
-      "matches": 5
-    },
-    {
-      "name": "A. Hakimi",
-      "photo": "https://media.api-sports.io/football/players/9.png",
-      "team": "Morocco",
       "assists": 2,
       "matches": 5
     }
@@ -376,16 +376,23 @@
       "red": 1
     },
     {
-      "name": "L. De Fougerolles",
-      "photo": "https://media.api-sports.io/football/players/327738.png",
-      "team": "Canada",
-      "yellow": 2,
+      "name": "I. Diop",
+      "photo": "https://media.api-sports.io/football/players/18814.png",
+      "team": "Morocco",
+      "yellow": 3,
       "red": 0
     },
     {
       "name": "Casemiro",
       "photo": "https://media.api-sports.io/football/players/747.png",
       "team": "Brazil",
+      "yellow": 2,
+      "red": 0
+    },
+    {
+      "name": "L. De Fougerolles",
+      "photo": "https://media.api-sports.io/football/players/327738.png",
+      "team": "Canada",
       "yellow": 2,
       "red": 0
     },
@@ -416,14 +423,7 @@
       "team": "Egypt",
       "yellow": 2,
       "red": 0
-    },
-    {
-      "name": "G. Xhaka",
-      "photo": "https://media.api-sports.io/football/players/1464.png",
-      "team": "Switzerland",
-      "yellow": 2,
-      "red": 0
     }
   ],
-  "updatedAt": "2026-07-09T22:11:36.469Z"
+  "updatedAt": "2026-07-10T00:06:36.766Z"
 }
