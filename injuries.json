@@ -63,45 +63,51 @@
       "fixture": "2026-06-27T03:00:00+00:00"
     },
     {
+      "player": "A. Onana",
+      "type": "Missing Fixture",
+      "reason": "Cruciate Ligament Rupture",
+      "fixture": "2026-07-07T00:00:00+00:00"
+    },
+    {
+      "player": "A. Onana",
+      "type": "Missing Fixture",
+      "reason": "Cruciate Ligament Rupture",
+      "fixture": "2026-07-10T19:00:00+00:00"
+    },
+    {
       "player": "Z. Debast",
       "type": "Missing Fixture",
-      "reason": "Leg Injury",
+      "reason": "Wound",
       "fixture": "2026-06-15T19:00:00+00:00"
     },
     {
       "player": "Z. Debast",
       "type": "Missing Fixture",
-      "reason": "Leg Injury",
+      "reason": "Wound",
       "fixture": "2026-06-21T19:00:00+00:00"
     },
     {
       "player": "Z. Debast",
       "type": "Missing Fixture",
-      "reason": "Leg Injury",
+      "reason": "Wound",
       "fixture": "2026-06-27T03:00:00+00:00"
     },
     {
       "player": "Z. Debast",
       "type": "Missing Fixture",
-      "reason": "Leg Injury",
+      "reason": "Wound",
       "fixture": "2026-07-01T20:00:00+00:00"
     },
     {
       "player": "Z. Debast",
       "type": "Missing Fixture",
-      "reason": "Leg Injury",
+      "reason": "Wound",
       "fixture": "2026-07-07T00:00:00+00:00"
     },
     {
-      "player": "A. Onana",
+      "player": "Z. Debast",
       "type": "Missing Fixture",
-      "reason": "Cruciate Ligament Rupture",
-      "fixture": "2026-07-07T00:00:00+00:00"
-    },
-    {
-      "player": "A. Onana",
-      "type": "Missing Fixture",
-      "reason": "Cruciate Ligament Rupture",
+      "reason": "Wound",
       "fixture": "2026-07-10T19:00:00+00:00"
     }
   ],
@@ -479,6 +485,14 @@
       "fixture": "2026-07-09T20:00:00+00:00"
     }
   ],
+  "NOR": [
+    {
+      "player": "M. Pedersen",
+      "type": "Missing Fixture",
+      "reason": "Cold",
+      "fixture": "2026-07-11T21:00:00+00:00"
+    }
+  ],
   "SWE": [
     {
       "player": "I. Hien",
@@ -539,14 +553,6 @@
       "type": "Missing Fixture",
       "reason": "Wound",
       "fixture": "2026-06-25T23:00:00+00:00"
-    }
-  ],
-  "NOR": [
-    {
-      "player": "M. Pedersen",
-      "type": "Missing Fixture",
-      "reason": "Cold",
-      "fixture": "2026-07-11T21:00:00+00:00"
     }
   ],
   "QAT": [
