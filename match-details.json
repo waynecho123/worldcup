@@ -96393,11 +96393,11 @@
         "Yellow Cards": 0,
         "Red Cards": null,
         "Goalkeeper Saves": 1,
-        "Total passes": 485,
+        "Total passes": 486,
         "Passes accurate": 432,
         "Passes %": "89%",
-        "expected_goals": "3.04",
-        "goals_prevented": "0.60"
+        "expected_goals": "3.69",
+        "goals_prevented": "0.88"
       },
       "Morocco": {
         "Shots on Goal": 1,
@@ -96413,11 +96413,11 @@
         "Yellow Cards": 1,
         "Red Cards": null,
         "Goalkeeper Saves": 6,
-        "Total passes": 524,
+        "Total passes": 526,
         "Passes accurate": 452,
         "Passes %": "86%",
         "expected_goals": "0.14",
-        "goals_prevented": "0.60"
+        "goals_prevented": "0.88"
       }
     },
     "lineups": {
@@ -96961,8 +96961,8 @@
       {
         "time": "60",
         "team": "France",
-        "player": "Kylian Mbappé",
-        "assist": "Désiré Doué",
+        "player": "K. Mbappe",
+        "assist": "D. Doue",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -96970,8 +96970,8 @@
       {
         "time": "62",
         "team": "Morocco",
-        "player": "Bilal El Khannouss",
-        "assist": "Soufiane Rahimi",
+        "player": "A. Bouaddi",
+        "assist": "S. Amrabat",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -96979,8 +96979,8 @@
       {
         "time": "62",
         "team": "Morocco",
-        "player": "Ayyoub Bouaddi",
-        "assist": "Sofyan Amrabat",
+        "player": "B. El Khannouss",
+        "assist": "S. Rahimi",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -96997,17 +96997,17 @@
       {
         "time": "66",
         "team": "France",
-        "player": "Ousmane Dembélé",
-        "assist": "Kylian Mbappé",
+        "player": "O. Dembele",
+        "assist": "K. Mbappe",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
       },
       {
-        "time": "70",
+        "time": "71",
         "team": "France",
-        "player": "Manu Koné",
-        "assist": "Warren Zaïre-Emery",
+        "player": "M. Kone",
+        "assist": "W. Zaire-Emery",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -97015,8 +97015,8 @@
       {
         "time": "74",
         "team": "Morocco",
-        "player": "Anass Salah-Eddine",
-        "assist": "Zakaria El Ouahdi",
+        "player": "B. Diaz",
+        "assist": "G. Yassine",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -97024,8 +97024,8 @@
       {
         "time": "74",
         "team": "Morocco",
-        "player": "Brahim Díaz",
-        "assist": "Gessime Yassine",
+        "player": "A. Salah-Eddine",
+        "assist": "Z. El Ouahdi",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -97033,8 +97033,8 @@
       {
         "time": "77",
         "team": "France",
-        "player": "Désiré Doué",
-        "assist": "Bradley Barcola",
+        "player": "K. Mbappe",
+        "assist": "J. Mateta",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -97042,8 +97042,8 @@
       {
         "time": "77",
         "team": "France",
-        "player": "Kylian Mbappé",
-        "assist": "Jean-Philippe Mateta",
+        "player": "D. Doue",
+        "assist": "B. Barcola",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -97051,8 +97051,8 @@
       {
         "time": "85",
         "team": "Morocco",
-        "player": "Chemsdine Talbi",
-        "assist": "Amine Sbai",
+        "player": "C. Talbi",
+        "assist": "A. Sbai",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -97060,8 +97060,8 @@
       {
         "time": "87",
         "team": "France",
-        "player": "Jules Koundé",
-        "assist": "Malo Gusto",
+        "player": "J. Kounde",
+        "assist": "M. Gusto",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
