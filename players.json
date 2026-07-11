@@ -40,7 +40,7 @@
       "photo": "https://media.api-sports.io/football/players/47323.png",
       "team": "Spain",
       "goals": 4,
-      "matches": 5
+      "matches": 6
     },
     {
       "name": "J. Quiñones",
@@ -89,6 +89,13 @@
       "photo": "https://media.api-sports.io/football/players/907.png",
       "team": "Belgium",
       "goals": 3,
+      "matches": 6
+    },
+    {
+      "name": "C. De Ketelaere",
+      "photo": "https://media.api-sports.io/football/players/147859.png",
+      "team": "Belgium",
+      "goals": 3,
       "matches": 5
     },
     {
@@ -132,13 +139,6 @@
       "team": "USA",
       "goals": 3,
       "matches": 4
-    },
-    {
-      "name": "E. Just",
-      "photo": "https://media.api-sports.io/football/players/94333.png",
-      "team": "New Zealand",
-      "goals": 3,
-      "matches": 3
     }
   ],
   "assists": [
@@ -238,7 +238,7 @@
       "photo": "https://media.api-sports.io/football/players/1946.png",
       "team": "Belgium",
       "assists": 2,
-      "matches": 5
+      "matches": 6
     },
     {
       "name": "C. Summerville",
@@ -255,18 +255,18 @@
       "matches": 5
     },
     {
+      "name": "H. Vanaken",
+      "photo": "https://media.api-sports.io/football/players/78.png",
+      "team": "Belgium",
+      "assists": 2,
+      "matches": 6
+    },
+    {
       "name": "A. Hakimi",
       "photo": "https://media.api-sports.io/football/players/9.png",
       "team": "Morocco",
       "assists": 2,
       "matches": 6
-    },
-    {
-      "name": "H. Vanaken",
-      "photo": "https://media.api-sports.io/football/players/78.png",
-      "team": "Belgium",
-      "assists": 2,
-      "matches": 5
     },
     {
       "name": "J. Enciso",
@@ -320,6 +320,13 @@
       "red": 1
     },
     {
+      "name": "N. Ngoy",
+      "photo": "https://media.api-sports.io/football/players/312964.png",
+      "team": "Belgium",
+      "yellow": 0,
+      "red": 1
+    },
+    {
       "name": "A. Canobbio",
       "photo": "https://media.api-sports.io/football/players/51603.png",
       "team": "Uruguay",
@@ -330,13 +337,6 @@
       "name": "S. Sithole",
       "photo": "https://media.api-sports.io/football/players/158433.png",
       "team": "South Africa",
-      "yellow": 0,
-      "red": 1
-    },
-    {
-      "name": "N. Ngoy",
-      "photo": "https://media.api-sports.io/football/players/312964.png",
-      "team": "Belgium",
       "yellow": 0,
       "red": 1
     },
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-07-10T22:11:45.063Z"
+  "updatedAt": "2026-07-11T00:06:46.880Z"
 }
