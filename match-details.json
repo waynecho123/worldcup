@@ -97414,13 +97414,13 @@
         "Fouls": 10,
         "Corner Kicks": 7,
         "Offsides": 1,
-        "Ball Possession": "47%",
+        "Ball Possession": "48%",
         "Yellow Cards": 1,
         "Red Cards": null,
         "Goalkeeper Saves": 6,
-        "Total passes": 563,
-        "Passes accurate": 483,
-        "Passes %": "86%",
+        "Total passes": 576,
+        "Passes accurate": 492,
+        "Passes %": "85%",
         "expected_goals": "0.77",
         "goals_prevented": "-0.61"
       },
@@ -97434,12 +97434,12 @@
         "Fouls": 8,
         "Corner Kicks": 4,
         "Offsides": 5,
-        "Ball Possession": "53%",
+        "Ball Possession": "52%",
         "Yellow Cards": 0,
         "Red Cards": null,
         "Goalkeeper Saves": 3,
-        "Total passes": 621,
-        "Passes accurate": 563,
+        "Total passes": 626,
+        "Passes accurate": 567,
         "Passes %": "91%",
         "expected_goals": "1.09",
         "goals_prevented": "-0.61"
@@ -97877,6 +97877,15 @@
           },
           {
             "player": {
+              "id": 18961,
+              "name": "Dan Burn",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 19088,
               "name": "Dean Henderson",
               "number": 13,
@@ -97898,15 +97907,6 @@
               "id": 19720,
               "name": "Trevoh Chalobah",
               "number": 12,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 18961,
-              "name": "Dan Burn",
-              "number": 15,
               "pos": "D",
               "grid": null
             }
@@ -98137,7 +98137,7 @@
           },
           {
             "name": "Kristoffer Ajer",
-            "rating": "6",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
@@ -98161,7 +98161,7 @@
           },
           {
             "name": "Sander Berge",
-            "rating": "6.6",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
@@ -98197,7 +98197,7 @@
           },
           {
             "name": "Oscar Bobb",
-            "rating": "6.6",
+            "rating": "6.7",
             "goals": 0,
             "assists": 0
           },
@@ -98364,25 +98364,25 @@
           },
           {
             "name": "Reece James",
-            "rating": "6.9",
+            "rating": "7.2",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Djed Spence",
-            "rating": "7.5",
+            "rating": "7.9",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Morgan Rogers",
-            "rating": "6.5",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Dan Burn",
-            "rating": "6.3",
+            "rating": "6.9",
             "goals": 0,
             "assists": 0
           },
