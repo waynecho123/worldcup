@@ -337,6 +337,12 @@
       "type": "Missing Fixture",
       "reason": "Suspension Through Sports Court",
       "fixture": "2026-07-11T21:00:00+00:00"
+    },
+    {
+      "player": "J. Quansah",
+      "type": "Missing Fixture",
+      "reason": "Suspension Through Sports Court",
+      "fixture": "2026-07-15T19:00:00+00:00"
     }
   ],
   "SUI": [
@@ -365,12 +371,6 @@
       "fixture": "2026-07-12T01:00:00+00:00"
     },
     {
-      "player": "J. Manzambi",
-      "type": "Missing Fixture",
-      "reason": "Jumpers Knee",
-      "fixture": "2026-07-07T20:00:00+00:00"
-    },
-    {
       "player": "M. Aebischer",
       "type": "Missing Fixture",
       "reason": "Muscle Bruise",
@@ -381,6 +381,12 @@
       "type": "Missing Fixture",
       "reason": "Muscle Bruise",
       "fixture": "2026-07-12T01:00:00+00:00"
+    },
+    {
+      "player": "J. Manzambi",
+      "type": "Missing Fixture",
+      "reason": "Jumpers Knee",
+      "fixture": "2026-07-07T20:00:00+00:00"
     }
   ],
   "EGY": [
