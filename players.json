@@ -5,7 +5,7 @@
       "photo": "https://media.api-sports.io/football/players/154.png",
       "team": "Argentina",
       "goals": 8,
-      "matches": 5
+      "matches": 6
     },
     {
       "name": "Kylian Mbappé",
@@ -19,14 +19,21 @@
       "photo": "https://media.api-sports.io/football/players/1100.png",
       "team": "Norway",
       "goals": 7,
-      "matches": 4
+      "matches": 5
+    },
+    {
+      "name": "J. Bellingham",
+      "photo": "https://media.api-sports.io/football/players/129718.png",
+      "team": "England",
+      "goals": 6,
+      "matches": 6
     },
     {
       "name": "H. Kane",
       "photo": "https://media.api-sports.io/football/players/184.png",
       "team": "England",
       "goals": 6,
-      "matches": 5
+      "matches": 6
     },
     {
       "name": "O. Dembélé",
@@ -46,13 +53,6 @@
       "name": "J. Quiñones",
       "photo": "https://media.api-sports.io/football/players/35532.png",
       "team": "Mexico",
-      "goals": 4,
-      "matches": 5
-    },
-    {
-      "name": "J. Bellingham",
-      "photo": "https://media.api-sports.io/football/players/129718.png",
-      "team": "England",
       "goals": 4,
       "matches": 5
     },
@@ -164,9 +164,23 @@
       "matches": 5
     },
     {
+      "name": "M. Ødegaard",
+      "photo": "https://media.api-sports.io/football/players/37127.png",
+      "team": "Norway",
+      "assists": 4,
+      "matches": 5
+    },
+    {
       "name": "Kylian Mbappé",
       "photo": "https://media.api-sports.io/football/players/278.png",
       "team": "France",
+      "assists": 3,
+      "matches": 6
+    },
+    {
+      "name": "A. Schjelderup",
+      "photo": "https://media.api-sports.io/football/players/301528.png",
+      "team": "Norway",
       "assists": 3,
       "matches": 6
     },
@@ -178,15 +192,15 @@
       "matches": 4
     },
     {
-      "name": "A. Schjelderup",
-      "photo": "https://media.api-sports.io/football/players/301528.png",
-      "team": "Norway",
-      "assists": 3,
-      "matches": 5
-    },
-    {
       "name": "B. Saka",
       "photo": "https://media.api-sports.io/football/players/1460.png",
+      "team": "England",
+      "assists": 3,
+      "matches": 6
+    },
+    {
+      "name": "A. Gordon",
+      "photo": "https://media.api-sports.io/football/players/138787.png",
       "team": "England",
       "assists": 3,
       "matches": 5
@@ -199,18 +213,18 @@
       "matches": 5
     },
     {
-      "name": "M. Ødegaard",
-      "photo": "https://media.api-sports.io/football/players/37127.png",
-      "team": "Norway",
-      "assists": 3,
-      "matches": 4
-    },
-    {
       "name": "F. Wirtz",
       "photo": "https://media.api-sports.io/football/players/203224.png",
       "team": "Germany",
       "assists": 3,
       "matches": 4
+    },
+    {
+      "name": "L. Messi",
+      "photo": "https://media.api-sports.io/football/players/154.png",
+      "team": "Argentina",
+      "assists": 2,
+      "matches": 6
     },
     {
       "name": "O. Dembélé",
@@ -252,7 +266,7 @@
       "photo": "https://media.api-sports.io/football/players/421.png",
       "team": "Switzerland",
       "assists": 2,
-      "matches": 5
+      "matches": 6
     },
     {
       "name": "H. Vanaken",
@@ -267,20 +281,6 @@
       "team": "Morocco",
       "assists": 2,
       "matches": 6
-    },
-    {
-      "name": "J. Enciso",
-      "photo": "https://media.api-sports.io/football/players/70747.png",
-      "team": "Paraguay",
-      "assists": 2,
-      "matches": 5
-    },
-    {
-      "name": "Mohamed Salah",
-      "photo": "https://media.api-sports.io/football/players/306.png",
-      "team": "Egypt",
-      "assists": 2,
-      "matches": 5
     }
   ],
   "cards": [
@@ -383,9 +383,9 @@
       "red": 0
     },
     {
-      "name": "Casemiro",
-      "photo": "https://media.api-sports.io/football/players/747.png",
-      "team": "Brazil",
+      "name": "G. Xhaka",
+      "photo": "https://media.api-sports.io/football/players/1464.png",
+      "team": "Switzerland",
       "yellow": 2,
       "red": 0
     },
@@ -393,6 +393,20 @@
       "name": "L. De Fougerolles",
       "photo": "https://media.api-sports.io/football/players/327738.png",
       "team": "Canada",
+      "yellow": 2,
+      "red": 0
+    },
+    {
+      "name": "Casemiro",
+      "photo": "https://media.api-sports.io/football/players/747.png",
+      "team": "Brazil",
+      "yellow": 2,
+      "red": 0
+    },
+    {
+      "name": "D. Rice",
+      "photo": "https://media.api-sports.io/football/players/2937.png",
+      "team": "England",
       "yellow": 2,
       "red": 0
     },
@@ -409,21 +423,7 @@
       "team": "Egypt",
       "yellow": 2,
       "red": 0
-    },
-    {
-      "name": "Renato Veiga",
-      "photo": "https://media.api-sports.io/football/players/336671.png",
-      "team": "Portugal",
-      "yellow": 2,
-      "red": 0
-    },
-    {
-      "name": "Yasser Ibrahim",
-      "photo": "https://media.api-sports.io/football/players/16804.png",
-      "team": "Egypt",
-      "yellow": 2,
-      "red": 0
     }
   ],
-  "updatedAt": "2026-07-12T10:11:04.178Z"
+  "updatedAt": "2026-07-12T12:06:18.323Z"
 }
