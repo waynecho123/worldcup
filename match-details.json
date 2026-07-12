@@ -97464,7 +97464,7 @@
             }
           }
         },
-        "formation": "4-3-3",
+        "formation": null,
         "startXI": [
           {
             "player": {
@@ -97472,7 +97472,7 @@
               "name": "Ørjan Nyland",
               "number": 1,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -97481,7 +97481,7 @@
               "name": "Julian Ryerson",
               "number": 26,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -97490,7 +97490,7 @@
               "name": "Kristoffer Ajer",
               "number": 3,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -97499,7 +97499,7 @@
               "name": "Torbjørn Heggem",
               "number": 17,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -97508,7 +97508,7 @@
               "name": "David Møller Wolfe",
               "number": 5,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -97517,7 +97517,7 @@
               "name": "Martin Ødegaard",
               "number": 10,
               "pos": "M",
-              "grid": "3:3"
+              "grid": null
             }
           },
           {
@@ -97526,7 +97526,7 @@
               "name": "Sander Berge",
               "number": 8,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -97535,7 +97535,7 @@
               "name": "Patrick Berg",
               "number": 6,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -97544,7 +97544,7 @@
               "name": "Alexander Sørloth",
               "number": 7,
               "pos": "F",
-              "grid": "4:3"
+              "grid": null
             }
           },
           {
@@ -97553,7 +97553,7 @@
               "name": "Erling Haaland",
               "number": 9,
               "pos": "F",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -97562,7 +97562,7 @@
               "name": "Andreas Schjelderup",
               "number": 21,
               "pos": "F",
-              "grid": "4:1"
+              "grid": null
             }
           }
         ],
@@ -97727,7 +97727,7 @@
             }
           }
         },
-        "formation": "4-2-3-1",
+        "formation": null,
         "startXI": [
           {
             "player": {
@@ -97735,7 +97735,7 @@
               "name": "Jordan Pickford",
               "number": 1,
               "pos": "G",
-              "grid": "1:1"
+              "grid": null
             }
           },
           {
@@ -97744,7 +97744,7 @@
               "name": "Ezri Konsa",
               "number": 2,
               "pos": "D",
-              "grid": "2:4"
+              "grid": null
             }
           },
           {
@@ -97753,7 +97753,7 @@
               "name": "John Stones",
               "number": 5,
               "pos": "D",
-              "grid": "2:3"
+              "grid": null
             }
           },
           {
@@ -97762,7 +97762,7 @@
               "name": "Marc Guéhi",
               "number": 6,
               "pos": "D",
-              "grid": "2:2"
+              "grid": null
             }
           },
           {
@@ -97771,7 +97771,7 @@
               "name": "Nico O'Reilly",
               "number": 3,
               "pos": "D",
-              "grid": "2:1"
+              "grid": null
             }
           },
           {
@@ -97780,7 +97780,7 @@
               "name": "Declan Rice",
               "number": 4,
               "pos": "M",
-              "grid": "3:2"
+              "grid": null
             }
           },
           {
@@ -97789,7 +97789,7 @@
               "name": "Elliot Anderson",
               "number": 8,
               "pos": "M",
-              "grid": "3:1"
+              "grid": null
             }
           },
           {
@@ -97798,7 +97798,7 @@
               "name": "Noni Madueke",
               "number": 20,
               "pos": "M",
-              "grid": "4:3"
+              "grid": null
             }
           },
           {
@@ -97807,7 +97807,7 @@
               "name": "Jude Bellingham",
               "number": 10,
               "pos": "M",
-              "grid": "4:2"
+              "grid": null
             }
           },
           {
@@ -97816,7 +97816,7 @@
               "name": "Anthony Gordon",
               "number": 18,
               "pos": "M",
-              "grid": "4:1"
+              "grid": null
             }
           },
           {
@@ -97825,7 +97825,7 @@
               "name": "Harry Kane",
               "number": 9,
               "pos": "F",
-              "grid": "5:1"
+              "grid": null
             }
           }
         ],
