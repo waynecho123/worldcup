@@ -97968,8 +97968,8 @@
       {
         "time": "36",
         "team": "Norway",
-        "player": "A. Schjelderup",
-        "assist": "M. Odegaard",
+        "player": "Andreas Schjelderup",
+        "assist": "Martin Ødegaard",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -97977,8 +97977,8 @@
       {
         "time": "45+2",
         "team": "England",
-        "player": "J. Bellingham",
-        "assist": "A. Gordon",
+        "player": "Jude Bellingham",
+        "assist": "Anthony Gordon",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -97986,8 +97986,8 @@
       {
         "time": "46",
         "team": "England",
-        "player": "N. Madueke",
-        "assist": "B. Saka",
+        "player": "Noni Madueke",
+        "assist": "Bukayo Saka",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -97995,26 +97995,26 @@
       {
         "time": "46",
         "team": "England",
-        "player": "D. Rice",
-        "assist": "E. Eze",
+        "player": "Declan Rice",
+        "assist": "Eberechi Eze",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
       },
       {
-        "time": "55",
+        "time": "56",
         "team": "Norway",
-        "player": "T. Heggem",
+        "player": "Torbjørn Heggem",
         "assist": null,
         "type": "Var",
-        "detail": "Goal Disallowed - Foul",
+        "detail": "Goal cancelled",
         "comments": ""
       },
       {
         "time": "60",
         "team": "Norway",
-        "player": "J. Ryerson",
-        "assist": "F. Aursnes",
+        "player": "Julian Ryerson",
+        "assist": "Fredrik Aursnes",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -98022,8 +98022,8 @@
       {
         "time": "68",
         "team": "Norway",
-        "player": "A. Sorloth",
-        "assist": "O. Bobb",
+        "player": "Andreas Schjelderup",
+        "assist": "Antonio Nusa",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -98031,8 +98031,8 @@
       {
         "time": "68",
         "team": "Norway",
-        "player": "A. Schjelderup",
-        "assist": "A. Nusa",
+        "player": "Alexander Sørloth",
+        "assist": "Oscar Bobb",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -98040,8 +98040,8 @@
       {
         "time": "71",
         "team": "England",
-        "player": "A. Gordon",
-        "assist": "R. James",
+        "player": "Anthony Gordon",
+        "assist": "Reece James",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -98049,8 +98049,8 @@
       {
         "time": "86",
         "team": "England",
-        "player": "N. O'Reilly",
-        "assist": "D. Spence",
+        "player": "Nico O'Reilly",
+        "assist": "Djed Spence",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -98058,8 +98058,8 @@
       {
         "time": "89",
         "team": "England",
-        "player": "E. Konsa",
-        "assist": "M. Rogers",
+        "player": "Ezri Konsa",
+        "assist": "Morgan Rogers",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -98067,8 +98067,8 @@
       {
         "time": "90",
         "team": "Norway",
-        "player": "D. Wolfe",
-        "assist": "M. Pedersen",
+        "player": "David Møller Wolfe",
+        "assist": "Marcus Pedersen",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -98076,8 +98076,8 @@
       {
         "time": "91",
         "team": "Norway",
-        "player": "T. Heggem",
-        "assist": "L. Ostigard",
+        "player": "Torbjørn Heggem",
+        "assist": "Leo Østigård",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -98085,17 +98085,26 @@
       {
         "time": "93",
         "team": "England",
-        "player": "J. Bellingham",
+        "player": "Jude Bellingham",
         "assist": null,
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
       },
       {
+        "time": "101",
+        "team": "England",
+        "player": "Djed Spence",
+        "assist": null,
+        "type": "Var",
+        "detail": "Penalty cancelled",
+        "comments": ""
+      },
+      {
         "time": "106",
         "team": "Norway",
-        "player": "E. Haaland",
-        "assist": "J. Larsen",
+        "player": "Erling Haaland",
+        "assist": "Jørgen Strand Larsen",
         "type": "subst",
         "detail": "Substitution 6",
         "comments": ""
@@ -98103,8 +98112,8 @@
       {
         "time": "111",
         "team": "England",
-        "player": "J. Bellingham",
-        "assist": "D. Burn",
+        "player": "Jude Bellingham",
+        "assist": "Dan Burn",
         "type": "subst",
         "detail": "Substitution 6",
         "comments": ""
@@ -98112,11 +98121,11 @@
       {
         "time": "117",
         "team": "Norway",
-        "player": "K. Ajer",
+        "player": "Kristoffer Ajer",
         "assist": null,
         "type": "Card",
         "detail": "Yellow Card",
-        "comments": "Unsportsmanlike conduct"
+        "comments": "Argument"
       }
     ],
     "players": [
