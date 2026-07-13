@@ -97418,11 +97418,11 @@
         "Yellow Cards": 1,
         "Red Cards": null,
         "Goalkeeper Saves": 6,
-        "Total passes": 576,
-        "Passes accurate": 492,
-        "Passes %": "85%",
-        "expected_goals": "0.77",
-        "goals_prevented": "-0.61"
+        "Total passes": 577,
+        "Passes accurate": 494,
+        "Passes %": "86%",
+        "expected_goals": "0.68",
+        "goals_prevented": "-0.58"
       },
       "England": {
         "Shots on Goal": 8,
@@ -97438,11 +97438,11 @@
         "Yellow Cards": 0,
         "Red Cards": null,
         "Goalkeeper Saves": 3,
-        "Total passes": 626,
-        "Passes accurate": 567,
-        "Passes %": "91%",
-        "expected_goals": "1.09",
-        "goals_prevented": "-0.61"
+        "Total passes": 628,
+        "Passes accurate": 568,
+        "Passes %": "90%",
+        "expected_goals": "1.04",
+        "goals_prevented": "-0.58"
       }
     },
     "lineups": {
@@ -97464,12 +97464,17 @@
             }
           }
         },
+        "coach": {
+          "id": 1675,
+          "name": "Stale Solbakken",
+          "photo": "https://media.api-sports.io/football/coachs/1675.png"
+        },
         "formation": "4-3-3",
         "startXI": [
           {
             "player": {
               "id": 19172,
-              "name": "Ørjan Nyland",
+              "name": "O. Nyland",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -97478,7 +97483,7 @@
           {
             "player": {
               "id": 24845,
-              "name": "Julian Ryerson",
+              "name": "J. Ryerson",
               "number": 26,
               "pos": "D",
               "grid": "2:4"
@@ -97487,7 +97492,7 @@
           {
             "player": {
               "id": 1119,
-              "name": "Kristoffer Ajer",
+              "name": "K. Ajer",
               "number": 3,
               "pos": "D",
               "grid": "2:3"
@@ -97496,7 +97501,7 @@
           {
             "player": {
               "id": 39254,
-              "name": "Torbjørn Heggem",
+              "name": "T. Heggem",
               "number": 17,
               "pos": "D",
               "grid": "2:2"
@@ -97505,7 +97510,7 @@
           {
             "player": {
               "id": 265782,
-              "name": "David Møller Wolfe",
+              "name": "D. Wolfe",
               "number": 5,
               "pos": "D",
               "grid": "2:1"
@@ -97514,7 +97519,7 @@
           {
             "player": {
               "id": 37127,
-              "name": "Martin Ødegaard",
+              "name": "M. Odegaard",
               "number": 10,
               "pos": "M",
               "grid": "3:3"
@@ -97523,7 +97528,7 @@
           {
             "player": {
               "id": 1934,
-              "name": "Sander Berge",
+              "name": "S. Berge",
               "number": 8,
               "pos": "M",
               "grid": "3:2"
@@ -97532,7 +97537,7 @@
           {
             "player": {
               "id": 39064,
-              "name": "Patrick Berg",
+              "name": "P. Berg",
               "number": 6,
               "pos": "M",
               "grid": "3:1"
@@ -97541,7 +97546,7 @@
           {
             "player": {
               "id": 8492,
-              "name": "Alexander Sørloth",
+              "name": "A. Sorloth",
               "number": 7,
               "pos": "F",
               "grid": "4:3"
@@ -97550,7 +97555,7 @@
           {
             "player": {
               "id": 1100,
-              "name": "Erling Haaland",
+              "name": "E. Haaland",
               "number": 9,
               "pos": "F",
               "grid": "4:2"
@@ -97559,7 +97564,7 @@
           {
             "player": {
               "id": 301528,
-              "name": "Andreas Schjelderup",
+              "name": "A. Schjelderup",
               "number": 21,
               "pos": "F",
               "grid": "4:1"
@@ -97569,71 +97574,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 39043,
-              "name": "Fredrik Aursnes",
-              "number": 14,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 278133,
-              "name": "Oscar Bobb",
-              "number": 22,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 314511,
-              "name": "Antonio Nusa",
-              "number": 20,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 39362,
-              "name": "Marcus Pedersen",
-              "number": 16,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 18967,
-              "name": "Leo Østigård",
-              "number": 4,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 2032,
-              "name": "Jørgen Strand Larsen",
-              "number": 11,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 264378,
-              "name": "Sander Tangvik",
-              "number": 12,
-              "pos": "G",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 39082,
-              "name": "Egil Selvik",
+              "name": "E. Selvik",
               "number": 13,
               "pos": "G",
               "grid": null
@@ -97641,35 +97583,26 @@
           },
           {
             "player": {
-              "id": 39058,
-              "name": "Fredrik André Bjørkan",
-              "number": 15,
-              "pos": "D",
+              "id": 264378,
+              "name": "S. Tangvik",
+              "number": 12,
+              "pos": "G",
               "grid": null
             }
           },
           {
             "player": {
-              "id": 265444,
-              "name": "Sondre Langås",
-              "number": 24,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 180937,
-              "name": "Henrik Sælebakke Falchener",
-              "number": 25,
-              "pos": "D",
+              "id": 39043,
+              "name": "F. Aursnes",
+              "number": 14,
+              "pos": "M",
               "grid": null
             }
           },
           {
             "player": {
               "id": 36980,
-              "name": "Morten Thorsby",
+              "name": "M. Thorsby",
               "number": 2,
               "pos": "M",
               "grid": null
@@ -97677,9 +97610,36 @@
           },
           {
             "player": {
-              "id": 39143,
-              "name": "Kristian Thorstvedt",
-              "number": 18,
+              "id": 39058,
+              "name": "F. Bjorkan",
+              "number": 15,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 39073,
+              "name": "J. Hauge",
+              "number": 23,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 2032,
+              "name": "J. Larsen",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 278133,
+              "name": "O. Bobb",
+              "number": 22,
               "pos": "M",
               "grid": null
             }
@@ -97687,7 +97647,7 @@
           {
             "player": {
               "id": 277930,
-              "name": "Thelo Aasgaard",
+              "name": "T. Aasgaard",
               "number": 19,
               "pos": "M",
               "grid": null
@@ -97695,19 +97655,59 @@
           },
           {
             "player": {
-              "id": 39073,
-              "name": "Jens Petter Hauge",
-              "number": 23,
+              "id": 18967,
+              "name": "L. Ostigard",
+              "number": 4,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 39143,
+              "name": "K. Thorstvedt",
+              "number": 18,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 39362,
+              "name": "M. Pedersen",
+              "number": 16,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 180937,
+              "name": "H. Falchener",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 265444,
+              "name": "S. Langas",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 314511,
+              "name": "A. Nusa",
+              "number": 20,
               "pos": "M",
               "grid": null
             }
           }
-        ],
-        "coach": {
-          "id": 1675,
-          "name": "Stale Solbakken",
-          "photo": "https://media.api-sports.io/football/coachs/1675.png"
-        }
+        ]
       },
       "away": {
         "team": {
@@ -97727,12 +97727,17 @@
             }
           }
         },
+        "coach": {
+          "id": 40,
+          "name": "Thomas Tuchel",
+          "photo": "https://media.api-sports.io/football/coachs/40.png"
+        },
         "formation": "4-2-3-1",
         "startXI": [
           {
             "player": {
               "id": 2932,
-              "name": "Jordan Pickford",
+              "name": "J. Pickford",
               "number": 1,
               "pos": "G",
               "grid": "1:1"
@@ -97741,7 +97746,7 @@
           {
             "player": {
               "id": 19354,
-              "name": "Ezri Konsa",
+              "name": "E. Konsa",
               "number": 2,
               "pos": "D",
               "grid": "2:4"
@@ -97750,7 +97755,7 @@
           {
             "player": {
               "id": 626,
-              "name": "John Stones",
+              "name": "J. Stones",
               "number": 5,
               "pos": "D",
               "grid": "2:3"
@@ -97759,7 +97764,7 @@
           {
             "player": {
               "id": 67971,
-              "name": "Marc Guéhi",
+              "name": "M. Guehi",
               "number": 6,
               "pos": "D",
               "grid": "2:2"
@@ -97768,7 +97773,7 @@
           {
             "player": {
               "id": 307123,
-              "name": "Nico O'Reilly",
+              "name": "N. O'Reilly",
               "number": 3,
               "pos": "D",
               "grid": "2:1"
@@ -97777,7 +97782,7 @@
           {
             "player": {
               "id": 2937,
-              "name": "Declan Rice",
+              "name": "D. Rice",
               "number": 4,
               "pos": "M",
               "grid": "3:2"
@@ -97786,7 +97791,7 @@
           {
             "player": {
               "id": 138908,
-              "name": "Elliot Anderson",
+              "name": "E. Anderson",
               "number": 8,
               "pos": "M",
               "grid": "3:1"
@@ -97795,7 +97800,7 @@
           {
             "player": {
               "id": 136723,
-              "name": "Noni Madueke",
+              "name": "N. Madueke",
               "number": 20,
               "pos": "M",
               "grid": "4:3"
@@ -97804,7 +97809,7 @@
           {
             "player": {
               "id": 129718,
-              "name": "Jude Bellingham",
+              "name": "J. Bellingham",
               "number": 10,
               "pos": "M",
               "grid": "4:2"
@@ -97813,7 +97818,7 @@
           {
             "player": {
               "id": 138787,
-              "name": "Anthony Gordon",
+              "name": "A. Gordon",
               "number": 18,
               "pos": "M",
               "grid": "4:1"
@@ -97822,7 +97827,7 @@
           {
             "player": {
               "id": 184,
-              "name": "Harry Kane",
+              "name": "H. Kane",
               "number": 9,
               "pos": "F",
               "grid": "5:1"
@@ -97832,62 +97837,8 @@
         "substitutes": [
           {
             "player": {
-              "id": 19586,
-              "name": "Eberechi Eze",
-              "number": 21,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 1460,
-              "name": "Bukayo Saka",
-              "number": 7,
-              "pos": "F",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 19545,
-              "name": "Reece James",
-              "number": 24,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 19235,
-              "name": "Djed Spence",
-              "number": 25,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 19170,
-              "name": "Morgan Rogers",
-              "number": 17,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 18961,
-              "name": "Dan Burn",
-              "number": 15,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 19088,
-              "name": "Dean Henderson",
+              "name": "D. Henderson",
               "number": 13,
               "pos": "G",
               "grid": null
@@ -97896,7 +97847,7 @@
           {
             "player": {
               "id": 162489,
-              "name": "James Trafford",
+              "name": "J. Trafford",
               "number": 23,
               "pos": "G",
               "grid": null
@@ -97904,17 +97855,8 @@
           },
           {
             "player": {
-              "id": 19720,
-              "name": "Trevoh Chalobah",
-              "number": 12,
-              "pos": "D",
-              "grid": null
-            }
-          },
-          {
-            "player": {
               "id": 292,
-              "name": "Jordan Henderson",
+              "name": "J. Henderson",
               "number": 14,
               "pos": "M",
               "grid": null
@@ -97922,26 +97864,17 @@
           },
           {
             "player": {
-              "id": 284322,
-              "name": "Kobbie Mainoo",
-              "number": 16,
-              "pos": "M",
-              "grid": null
-            }
-          },
-          {
-            "player": {
-              "id": 909,
-              "name": "Marcus Rashford",
-              "number": 11,
-              "pos": "F",
+              "id": 18961,
+              "name": "D. Burn",
+              "number": 15,
+              "pos": "D",
               "grid": null
             }
           },
           {
             "player": {
               "id": 19366,
-              "name": "Ollie Watkins",
+              "name": "O. Watkins",
               "number": 19,
               "pos": "F",
               "grid": null
@@ -97949,36 +97882,103 @@
           },
           {
             "player": {
+              "id": 19720,
+              "name": "T. Chalobah",
+              "number": 12,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19545,
+              "name": "R. James",
+              "number": 24,
+              "pos": "D",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19170,
+              "name": "M. Rogers",
+              "number": 17,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 1460,
+              "name": "B. Saka",
+              "number": 7,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 284322,
+              "name": "K. Mainoo",
+              "number": 16,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
               "id": 19974,
-              "name": "Ivan Toney",
+              "name": "I. Toney",
               "number": 22,
               "pos": "F",
               "grid": null
             }
+          },
+          {
+            "player": {
+              "id": 909,
+              "name": "M. Rashford",
+              "number": 11,
+              "pos": "F",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19586,
+              "name": "E. Eze",
+              "number": 21,
+              "pos": "M",
+              "grid": null
+            }
+          },
+          {
+            "player": {
+              "id": 19235,
+              "name": "D. Spence",
+              "number": 25,
+              "pos": "D",
+              "grid": null
+            }
           }
-        ],
-        "coach": {
-          "id": 40,
-          "name": "Thomas Tuchel",
-          "photo": "https://media.api-sports.io/football/coachs/40.png"
-        }
+        ]
       }
     },
     "events": [
       {
         "time": "36",
         "team": "Norway",
-        "player": "Andreas Schjelderup",
-        "assist": "Martin Ødegaard",
+        "player": "A. Schjelderup",
+        "assist": "M. Odegaard",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
       },
       {
-        "time": "45+2",
+        "time": "45",
         "team": "England",
-        "player": "Jude Bellingham",
-        "assist": "Anthony Gordon",
+        "player": "J. Bellingham",
+        "assist": "A. Gordon",
         "type": "Goal",
         "detail": "Normal Goal",
         "comments": ""
@@ -97986,8 +97986,8 @@
       {
         "time": "46",
         "team": "England",
-        "player": "Noni Madueke",
-        "assist": "Bukayo Saka",
+        "player": "N. Madueke",
+        "assist": "B. Saka",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -97995,14 +97995,14 @@
       {
         "time": "46",
         "team": "England",
-        "player": "Declan Rice",
-        "assist": "Eberechi Eze",
+        "player": "D. Rice",
+        "assist": "E. Eze",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
       },
       {
-        "time": "56",
+        "time": "57",
         "team": "Norway",
         "player": "Torbjørn Heggem",
         "assist": null,
@@ -98013,8 +98013,8 @@
       {
         "time": "60",
         "team": "Norway",
-        "player": "Julian Ryerson",
-        "assist": "Fredrik Aursnes",
+        "player": "J. Ryerson",
+        "assist": "F. Aursnes",
         "type": "subst",
         "detail": "Substitution 1",
         "comments": ""
@@ -98022,8 +98022,8 @@
       {
         "time": "68",
         "team": "Norway",
-        "player": "Andreas Schjelderup",
-        "assist": "Antonio Nusa",
+        "player": "A. Sorloth",
+        "assist": "O. Bobb",
         "type": "subst",
         "detail": "Substitution 2",
         "comments": ""
@@ -98031,8 +98031,8 @@
       {
         "time": "68",
         "team": "Norway",
-        "player": "Alexander Sørloth",
-        "assist": "Oscar Bobb",
+        "player": "A. Schjelderup",
+        "assist": "A. Nusa",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -98040,8 +98040,8 @@
       {
         "time": "71",
         "team": "England",
-        "player": "Anthony Gordon",
-        "assist": "Reece James",
+        "player": "A. Gordon",
+        "assist": "R. James",
         "type": "subst",
         "detail": "Substitution 3",
         "comments": ""
@@ -98049,8 +98049,8 @@
       {
         "time": "86",
         "team": "England",
-        "player": "Nico O'Reilly",
-        "assist": "Djed Spence",
+        "player": "N. O'Reilly",
+        "assist": "D. Spence",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -98058,8 +98058,8 @@
       {
         "time": "89",
         "team": "England",
-        "player": "Ezri Konsa",
-        "assist": "Morgan Rogers",
+        "player": "E. Konsa",
+        "assist": "M. Rogers",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -98067,8 +98067,8 @@
       {
         "time": "90",
         "team": "Norway",
-        "player": "David Møller Wolfe",
-        "assist": "Marcus Pedersen",
+        "player": "D. Wolfe",
+        "assist": "M. Pedersen",
         "type": "subst",
         "detail": "Substitution 4",
         "comments": ""
@@ -98076,8 +98076,8 @@
       {
         "time": "91",
         "team": "Norway",
-        "player": "Torbjørn Heggem",
-        "assist": "Leo Østigård",
+        "player": "T. Heggem",
+        "assist": "L. Ostigard",
         "type": "subst",
         "detail": "Substitution 5",
         "comments": ""
@@ -98085,7 +98085,16 @@
       {
         "time": "93",
         "team": "England",
-        "player": "Jude Bellingham",
+        "player": "J. Bellingham",
+        "assist": null,
+        "type": "Goal",
+        "detail": "Normal Goal",
+        "comments": ""
+      },
+      {
+        "time": "99",
+        "team": "England",
+        "player": null,
         "assist": null,
         "type": "Goal",
         "detail": "Normal Goal",
@@ -98103,8 +98112,8 @@
       {
         "time": "106",
         "team": "Norway",
-        "player": "Erling Haaland",
-        "assist": "Jørgen Strand Larsen",
+        "player": "E. Haaland",
+        "assist": "J. Larsen",
         "type": "subst",
         "detail": "Substitution 6",
         "comments": ""
@@ -98112,8 +98121,8 @@
       {
         "time": "111",
         "team": "England",
-        "player": "Jude Bellingham",
-        "assist": "Dan Burn",
+        "player": "J. Bellingham",
+        "assist": "D. Burn",
         "type": "subst",
         "detail": "Substitution 6",
         "comments": ""
@@ -98134,7 +98143,7 @@
         "players": [
           {
             "name": "Ørjan Nyland",
-            "rating": "8.2",
+            "rating": "7.7",
             "goals": 0,
             "assists": 0
           },
@@ -98176,13 +98185,13 @@
           },
           {
             "name": "Patrick Berg",
-            "rating": "6.5",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Alexander Sørloth",
-            "rating": "6.3",
+            "rating": "6.7",
             "goals": 0,
             "assists": 0
           },
@@ -98200,7 +98209,7 @@
           },
           {
             "name": "Fredrik Aursnes",
-            "rating": "7.3",
+            "rating": "7.2",
             "goals": 0,
             "assists": 0
           },
@@ -98224,13 +98233,13 @@
           },
           {
             "name": "Leo Østigård",
-            "rating": "6.3",
+            "rating": "6.5",
             "goals": 0,
             "assists": 0
           },
           {
             "name": "Jørgen Strand Larsen",
-            "rating": "6.5",
+            "rating": "6.3",
             "goals": 0,
             "assists": 0
           },
@@ -98319,7 +98328,7 @@
           },
           {
             "name": "Nico O'Reilly",
-            "rating": "7.2",
+            "rating": "7.3",
             "goals": 0,
             "assists": 0
           },
@@ -98355,7 +98364,7 @@
           },
           {
             "name": "Harry Kane",
-            "rating": "6.2",
+            "rating": "6",
             "goals": 0,
             "assists": 0
           },
@@ -98373,7 +98382,7 @@
           },
           {
             "name": "Reece James",
-            "rating": "7.2",
+            "rating": "7",
             "goals": 0,
             "assists": 0
           },
