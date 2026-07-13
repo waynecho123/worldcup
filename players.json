@@ -390,16 +390,16 @@
       "red": 0
     },
     {
-      "name": "L. De Fougerolles",
-      "photo": "https://media.api-sports.io/football/players/327738.png",
-      "team": "Canada",
+      "name": "Casemiro",
+      "photo": "https://media.api-sports.io/football/players/747.png",
+      "team": "Brazil",
       "yellow": 2,
       "red": 0
     },
     {
-      "name": "Casemiro",
-      "photo": "https://media.api-sports.io/football/players/747.png",
-      "team": "Brazil",
+      "name": "L. De Fougerolles",
+      "photo": "https://media.api-sports.io/football/players/327738.png",
+      "team": "Canada",
       "yellow": 2,
       "red": 0
     },
@@ -425,5 +425,5 @@
       "red": 0
     }
   ],
-  "updatedAt": "2026-07-13T10:11:11.153Z"
+  "updatedAt": "2026-07-13T12:06:11.860Z"
 }
