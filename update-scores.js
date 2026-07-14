@@ -183,9 +183,9 @@ function getMatchSchedule() { return [
   {id:"m089",home:"CAN",away:"MAR"},{id:"m090",home:"PAR",away:"FRA"},{id:"m091",home:"BRA",away:"NOR"},{id:"m092",home:"MEX",away:"ENG"},
   {id:"m093",home:"SUI",away:"COL"},{id:"m094",home:"POR",away:"ESP"},{id:"m095",home:"USA",away:"BEL"},{id:"m096",home:"ARG",away:"EGY"},
   // ===== QF =====
-  {id:"m097",home:"FRA",away:"MAR"},{id:"m098",home:"NOR",away:"ENG"},{id:"m099",home:"SUI",away:"ESP"},{id:"m100",home:"BEL",away:"ARG"},
+  {id:"m097",home:"FRA",away:"MAR"},{id:"m098",home:"NOR",away:"ENG"},{id:"m099",home:"SUI",away:"ARG"},{id:"m100",home:"ESP",away:"BEL"},
   // ===== SF+F (TBD) =====
-  {id:"m101",home:"?",away:"?"},{id:"m102",home:"?",away:"?"},{id:"m103",home:"?",away:"?"},{id:"m104",home:"?",away:"?"}
+  {id:"m101",home:"FRA",away:"ESP"},{id:"m102",home:"ENG",away:"ARG"},{id:"m103",home:"?",away:"?"},{id:"m104",home:"?",away:"?"}
 ];}
 
 function loadMatchLookup() {
