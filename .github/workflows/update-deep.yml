@@ -19,9 +19,13 @@ jobs:
           GNEWS_KEY: ${{ secrets.GNEWS_KEY }}
           APISPORTS_KEY: ${{ secrets.APISPORTS_KEY }}
 
+      - name: Sync KO matchups
+        run: python3 sync-ko-matchups.py
+
       - name: Commit & push
         run: |
           git config user.name 'wc-bot'
           git config user.email 'bot@worldcup'
-          git add news.json match-details.json injuries.json standings.json players.json
+          git add news.json match-details.json injuries.json standings.json players.json ko-matchups.json tactical.json scores.json
+          git add index.html update-scores.js mini-program-worldcup/utils/data.js
           git diff --staged --quiet || (git commit -m "📊 deep data $(TZ='Asia/Shanghai' date +%m-%d_%H:%M)" && git push)

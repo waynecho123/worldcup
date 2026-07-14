@@ -1031,44 +1031,63 @@ async function updateMatchDetails() {
         var homeName = fixture.teams?.home?.name, awayName = fixture.teams?.away?.name;
         console.log(`[Match details]   ${homeName} vs ${awayName} (fid=${fixture.fixture?.id})`);
         var fixDate = (fixture.fixture?.date || '').slice(0, 10);
-        // Match by date + team names (or just fixture ID for odds mapping)
+        // Helpers: date match with +1 day tolerance (BJT rollover)
+        function dateMatch(scheduleMid) {
+          if (!fixDate) return true;
+          var d = MATCH_DATES[scheduleMid];
+          if (d === fixDate) return true;
+          var nd = new Date(fixDate + 'T00:00:00Z'); nd.setDate(nd.getDate() + 1);
+          return d === nd.toISOString().slice(0, 10);
+        }
+        function teamMatch(teamObj, apiName) {
+          if (!teamObj) return false;
+          return teamObj.cn === apiName || teamObj.name === apiName || teamObj.alt === apiName || (teamObj.name||'').toLowerCase() === (apiName||'').toLowerCase();
+        }
+        // Match by date + team names
         var m = getMatchSchedule().find(function(x) {
           var ht = TEAMS[x.home], at = TEAMS[x.away];
           if (!ht || !at) return false;
-          // Date filter: API uses UTC, Beijing time is UTC+8 (matches can cross midnight)
-          if (fixDate && MATCH_DATES[x.id] !== fixDate) {
-            // Also accept date+1 (Beijing time may be next day UTC)
-            var nextDay = new Date(fixDate + 'T00:00:00Z');
-            nextDay.setDate(nextDay.getDate() + 1);
-            var nextDayStr = nextDay.toISOString().slice(0, 10);
-            if (MATCH_DATES[x.id] !== nextDayStr) return false;
-          }
-          var hMatch = ht.cn === homeName || ht.name === homeName || ht.alt === homeName || (ht.name||'').toLowerCase() === (homeName||'').toLowerCase();
-          var aMatch = at.cn === awayName || at.name === awayName || at.alt === awayName || (at.name||'').toLowerCase() === (awayName||'').toLowerCase();
-          return hMatch && aMatch;
+          if (!dateMatch(x.id)) return false;
+          return teamMatch(ht, homeName) && teamMatch(at, awayName);
         });
         // Try reverse (away/home swap)
         if (!m) {
           m = getMatchSchedule().find(function(x) {
             var ht = TEAMS[x.home], at = TEAMS[x.away];
             if (!ht || !at) return false;
-            if (fixDate && MATCH_DATES[x.id] !== fixDate) {
-              var nd2 = new Date(fixDate + 'T00:00:00Z'); nd2.setDate(nd2.getDate() + 1);
-              if (MATCH_DATES[x.id] !== nd2.toISOString().slice(0, 10)) return false;
-            }
-            var hMatch = ht.cn === awayName || ht.name === awayName || ht.alt === awayName || (ht.name||'').toLowerCase() === (awayName||'').toLowerCase();
-            var aMatch = at.cn === homeName || at.name === homeName || at.alt === homeName || (at.name||'').toLowerCase() === (homeName||'').toLowerCase();
-            return hMatch && aMatch;
+            if (!dateMatch(x.id)) return false;
+            return teamMatch(ht, awayName) && teamMatch(at, homeName);
           });
         }
-        // If still no match, just store fixture ID for odds.json resolution
+        // PARTIAL MATCH: handle "?" placeholders — match by date + the known team
+        // This is critical for knockout rounds where matchups aren't known in advance
+        if (!m) {
+          m = getMatchSchedule().find(function(x) {
+            var isQHome = x.home === '?', isQAway = x.away === '?';
+            if (isQHome === isQAway) return false; // both known or both unknown
+            if (!dateMatch(x.id)) return false;
+            if (isQAway) return teamMatch(TEAMS[x.home], homeName);  // away is ?, match home
+            else return teamMatch(TEAMS[x.away], awayName);          // home is ?, match away
+          });
+          if (m) console.log(`[Match details]     → partial match ${m.id} (one side was "?")`);
+        }
+        // Reverse partial match
+        if (!m) {
+          m = getMatchSchedule().find(function(x) {
+            var isQHome = x.home === '?', isQAway = x.away === '?';
+            if (isQHome === isQAway) return false;
+            if (!dateMatch(x.id)) return false;
+            if (isQAway) return teamMatch(TEAMS[x.home], awayName);  // away ?, home matches API away
+            else return teamMatch(TEAMS[x.away], homeName);          // home ?, away matches API home
+          });
+          if (m) console.log(`[Match details]     → reverse partial match ${m.id}`);
+        }
+        // Fuzzy fallback: date + partial name
         if (!m && fixDate) {
-          // Find any schedule match on this date with home/away matching by first letter or partial
           m = getMatchSchedule().find(function(x) {
             var ht = TEAMS[x.home], at = TEAMS[x.away];
             if (!ht || !at) return false;
             if (MATCH_DATES[x.id] !== fixDate) return false;
-            // Fuzzy: check if team names share common words
             var hNameLo = ((ht.name||'')+' '+(ht.alt||'')).toLowerCase(), aNameLo = ((at.name||'')+' '+(at.alt||'')).toLowerCase();
             var fHomeLo = (homeName||'').toLowerCase(), fAwayLo = (awayName||'').toLowerCase();
             return (hNameLo.includes(fHomeLo) || fHomeLo.includes(hNameLo)) &&
@@ -1173,6 +1192,35 @@ async function updateMatchDetails() {
 
   fs.writeFileSync(DETAILS_FILE, JSON.stringify(existing, null, 2) + '\n');
   console.log(`[${ts}] Match details: ${n} updated (total: ${Object.keys(existing).length})`);
+
+  // Auto-export discovered KO matchups (teams found via partial matching)
+  // This feeds ko-matchups.json → read by HTML pages to fill "?" placeholders
+  var koUpdates = {};
+  var schedule = getMatchSchedule();
+  for (var i = 0; i < schedule.length; i++) {
+    var s = schedule[i];
+    if ((s.home === '?' || s.away === '?') && existing[s.id] && existing[s.id].homeTeam) {
+      var apiHome = existing[s.id].homeTeam, apiAway = existing[s.id].awayTeam;
+      // Find team IDs from names
+      var homeId = null, awayId = null;
+      for (var tid in TEAMS) {
+        if (TEAMS[tid].name === apiHome || TEAMS[tid].cn === apiHome || TEAMS[tid].alt === apiHome) homeId = tid;
+        if (TEAMS[tid].name === apiAway || TEAMS[tid].cn === apiAway || TEAMS[tid].alt === apiAway) awayId = tid;
+      }
+      if (homeId || awayId) {
+        koUpdates[s.id] = { home: homeId || apiHome, away: awayId || apiAway };
+        console.log(`[${ts}] KO update: ${s.id} = ${koUpdates[s.id].home} vs ${koUpdates[s.id].away}`);
+      }
+    }
+  }
+  if (Object.keys(koUpdates).length > 0) {
+    var koFile = path.join(BASE_DIR, 'ko-matchups.json');
+    var existingKo = {};
+    try { existingKo = JSON.parse(fs.readFileSync(koFile, 'utf8')); } catch(e) {}
+    Object.assign(existingKo, koUpdates);
+    fs.writeFileSync(koFile, JSON.stringify(existingKo, null, 2) + '\n');
+    console.log(`[${ts}] KO matchups exported: ${Object.keys(koUpdates).join(', ')}`);
+  }
 }
 
 // ========== UPDATE: Match Stats + Tactical Profiles (from match-details.json) ==========
