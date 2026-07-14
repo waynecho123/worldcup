@@ -1,7 +1,17 @@
 name: Update Deep Data
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'update-scores.js'
+      - 'index.html'
+      - 'mini-program-worldcup/utils/data.js'
+      - 'scores.json'
+      - 'ko-matchups.json'
   workflow_dispatch:
+  schedule:
+    - cron: '7 */2 * * *'
 
 jobs:
   update:
