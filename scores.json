@@ -488,5 +488,19 @@
     "homeScore": 1,
     "awayScore": 2,
     "recordedAt": "2026-07-11T23:55:53.900Z"
+  },
+  "m099": {
+    "homeScore": 1,
+    "awayScore": 3,
+    "recordedAt": "2026-07-14T13:00:00.000Z",
+    "regularTimeScore": {
+      "home": 1,
+      "away": 1
+    }
+  },
+  "m100": {
+    "homeScore": 2,
+    "awayScore": 1,
+    "recordedAt": "2026-07-14T13:00:00.000Z"
   }
 }
